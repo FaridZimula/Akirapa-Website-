@@ -1,37 +1,83 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Twitter, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, HeartPulse, ShieldCheck, Award, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container-narrow mx-auto section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-          {/* Brand */}
-          {/* Brand */}
-          <div className="lg:col-span-1 flex flex-col items-center">
-            <div className="flex justify-center mb-2">
-              <img
-                src="/suyel-footer-logo.png"
-                alt="SUYEL"
-                className="h-16 object-contain"
-              />
-            </div>
-            <p className="text-lg opacity-80 leading-relaxed">
-              Empowering Ugandan youths for sustainable development
+    <footer className="bg-[#76248a] text-white pt-16 pb-8 border-t-4 border-[#40ddd3]">
+      <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* Brand Column */}
+          <div className="space-y-4">
+            <Link to="/" className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-[#40ddd3] flex items-center justify-center text-[#76248a] shadow-md">
+                <HeartPulse className="w-7 h-7" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black tracking-tight text-white">
+                  AKIRAPA
+                </span>
+                <span className="text-xs font-bold tracking-widest text-[#40ddd3] uppercase -mt-1">
+                  HOME CARE
+                </span>
+              </div>
+            </Link>
+            <p className="text-white/80 text-base leading-relaxed">
+              Providing compassionate, high-quality, and personalized home care services designed around your schedule. Care Your Way.
             </p>
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#40ddd3] bg-white/10 px-3 py-1.5 rounded-lg w-fit">
+              <ShieldCheck className="w-4 h-4" />
+              <span>Licensed & Certified Caregivers</span>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Quick Links</h4>
+            <h4 className="font-bold text-lg mb-6 text-[#40ddd3] uppercase tracking-wider text-sm">
+              Quick Navigation
+            </h4>
             <ul className="space-y-3">
-              {["Home", "Our Profile", "Leadership", "Projects", "Donate", "Contact Us"].map((link) => (
-                <li key={link}>
+              {[
+                { label: "Home", path: "/" },
+                { label: "About Us", path: "/about" },
+                { label: "Care Services", path: "/services" },
+                { label: "Our Blog", path: "/blog" },
+                { label: "Contact Us", path: "/contact" },
+                { label: "Free Care Assessment", path: "/contact" }
+              ].map((link) => (
+                <li key={link.label}>
                   <Link
-                    to={link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "-").replace("our-", "").replace("-us", "")}`}
-                    className="text-lg opacity-80 hover:opacity-100 transition-opacity hover:underline"
+                    to={link.path}
+                    className="text-white/80 hover:text-[#40ddd3] transition-colors text-base flex items-center gap-2"
                   >
-                    {link}
+                    <span className="text-[#40ddd3] text-xs">›</span>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Core Services */}
+          <div>
+            <h4 className="font-bold text-lg mb-6 text-[#40ddd3] uppercase tracking-wider text-sm">
+              Our Services
+            </h4>
+            <ul className="space-y-3">
+              {[
+                "Hourly Home Care",
+                "Daily & 24/7 Home Care",
+                "Hospital to Home Care",
+                "Respite Care Services",
+                "Alzheimer's & Dementia Care",
+                "Parkinson's & Stroke Support"
+              ].map((service) => (
+                <li key={service}>
+                  <Link
+                    to="/services"
+                    className="text-white/80 hover:text-[#40ddd3] transition-colors text-base flex items-center gap-2"
+                  >
+                    <span className="text-[#40ddd3] text-xs">›</span>
+                    {service}
                   </Link>
                 </li>
               ))}
@@ -40,86 +86,44 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start justify-center gap-3">
-                <MapPin className="w-5 h-5 opacity-80 mt-0.5 flex-shrink-0" />
-                <span className="text-lg opacity-80">Iganga Kasokoso central division & Wakiso Gayaza</span>
+            <h4 className="font-bold text-lg mb-6 text-[#40ddd3] uppercase tracking-wider text-sm">
+              Contact & Location
+            </h4>
+            <ul className="space-y-4 text-base text-white/90">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-[#40ddd3] shrink-0 mt-1" />
+                <span>83 Cambridge Street, Burlington, MA 01803</span>
               </li>
-              <li className="flex items-center justify-center gap-3">
-                <Phone className="w-5 h-5 opacity-80 flex-shrink-0" />
-                <span className="text-lg opacity-80">0745878827 / 0770704041</span>
+              <li className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-[#40ddd3] shrink-0 mt-1" />
+                <div>
+                  <p className="font-bold text-white">339 970 1214 <span className="text-[#40ddd3] text-xs font-normal">(24/7 Service)</span></p>
+                  <p className="text-white/80 text-sm">781 472 9375</p>
+                </div>
               </li>
-              <li className="flex items-center justify-center gap-3">
-                <Mail className="w-5 h-5 opacity-80 flex-shrink-0" />
-                <span className="text-lg opacity-80">Suyel.ac.ug@gmail.com</span>
+              <li className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-[#40ddd3] shrink-0 mt-1" />
+                <div className="space-y-0.5 text-sm">
+                  <p>care@akirapahomecare.com</p>
+                  <p>cathy@akirapahomecare.com</p>
+                  <p>stuart@akirapahomecare.com</p>
+                </div>
               </li>
             </ul>
           </div>
-
-          {/* Social */}
-          <div>
-            <h4 className="font-bold text-lg mb-6">Follow Us</h4>
-            <div className="flex justify-center gap-4">
-              <a
-                href="https://www.instagram.com/step_up_uganda?igsh=aHpoM3F0YTJ3d2xh"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.tiktok.com/@suyel70?_r=1&_t=ZM-92opK5t6jwi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-5 h-5"
-                >
-                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
-                </svg>
-              </a>
-              <a
-                href="https://x.com/SuyelAc"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-            </div>
-            <p className="text-lg opacity-80 mt-6">
-              Stay connected and join our community of changemakers.
-            </p>
-          </div>
         </div>
 
-        <div className="border-t border-white/20 mt-12 pt-8 flex flex-col justify-center items-center gap-4 text-center">
-          <p className="text-lg opacity-70">
-            © {new Date().getFullYear()} SUYEL. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-lg opacity-70 hover:opacity-100 transition-opacity hover:underline">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-lg opacity-70 hover:opacity-100 transition-opacity hover:underline">
-              Terms of Service
-            </a>
+        {/* Bottom Copyright */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70 text-center md:text-left">
+          <p>© {new Date().getFullYear()} Akirapa Home Care. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <Link to="/about" className="hover:text-[#40ddd3] transition-colors">Privacy Policy</Link>
+            <Link to="/about" className="hover:text-[#40ddd3] transition-colors">Terms of Service</Link>
+            <Link to="/contact" className="hover:text-[#40ddd3] transition-colors">Consumer Rights</Link>
           </div>
         </div>
       </div>
-    </footer >
+    </footer>
   );
 };
 

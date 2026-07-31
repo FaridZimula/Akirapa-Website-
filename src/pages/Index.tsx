@@ -1,416 +1,352 @@
-import { useState, useEffect } from "react";
-import DonationCard from "@/components/DonationCard";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Users, Heart, Target, ArrowRight, Globe, BookOpen, Briefcase } from "lucide-react";
 import Layout from "@/components/layout/Layout";
-import heroImage from "@/assets/hero-youth.jpg";
-// Images are now loaded from the public directory using static paths
-import leaderImage from "@/assets/leader-1.jpg";
-
-import { useData, initialProjects, initialPartners } from "@/context/DataContext";
-import ProjectCard from "@/components/ProjectCard";
-import VideoGallery from "@/components/VideoGallery";
-import CountUp from "@/components/CountUp";
 import SEO from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { careServices } from "@/data/careServices";
+import { testimonials } from "@/data/testimonials";
+import { leaders } from "@/data/leadership";
+import { CareQuoteCalculator } from "@/components/CareQuoteCalculator";
+import {
+  Clock,
+  ShieldCheck,
+  Activity,
+  HeartHandshake,
+  Brain,
+  Phone,
+  CheckCircle2,
+  Star,
+  MapPin,
+  ArrowRight,
+  Heart,
+  Users,
+  Award
+} from "lucide-react";
 
-const stats = [
-  { number: "5,000+", label: "Youth Empowered", icon: Users },
-  { number: "50+", label: "Active Projects", icon: Target },
-  { number: "25+", label: "Communities Reached", icon: Globe },
-  { number: "100+", label: "Volunteers", icon: Heart },
-];
-
-
-const slides = [
-  {
-    image: "/Slide 1.jpg",
-    title: (
-      <>
-        Empowering Youth,{" "}
-        <span className="text-yellow-400">Transforming</span> Communities
-      </>
-    ),
-    description: "We believe in the power of young people to create lasting change. Join us in building a future where every youth has the opportunity to thrive."
-  },
-  {
-    image: "/Slide 2 (2).jpg",
-    title: (
-      <>
-        Building Skills{" "}
-        <span className="text-yellow-400">for Tomorrow</span>
-      </>
-    ),
-    description: "Equipping the next generation with the knowledge, technical expertise, and confidence to succeed in a rapidly evolving world."
-  },
-  {
-    image: "/Slide3.jpg",
-    title: (
-      <>
-        Nurturing{" "}
-        <span className="text-yellow-400">Future Leaders</span>
-      </>
-    ),
-    description: "Creating pathways for mentorship and personal growth to develop strong, compassionate leaders who serve their communities."
+const getServiceIcon = (iconName: string) => {
+  switch (iconName) {
+    case "Clock": return Clock;
+    case "ShieldCheck": return ShieldCheck;
+    case "Activity": return Activity;
+    case "HeartHandshake": return HeartHandshake;
+    case "Brain": return Brain;
+    default: return ShieldCheck;
   }
-];
+};
 
 const Index = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const { projects, partners } = useData();
-  
-  // Enforce the exact original order for the featured projects
-  const originalOrder = [
-    "Youth Leadership in Community Action",
-    "Outreach to Ishaka Adventist Hospital",
-    "Basoga Nssete Leadership Training",
-    "Mentorship and Career Guidance",
-    "Inter-University Mentorship Front",
-    "Community Outreach: Market Cleanup",
-    "Community Outreach: Elderly & Orphans",
-    "44th Tarehe Sita Anniversary Celebrations",
-    "State Dinner: 44th Tarehe Sita Anniversary",
-    "National University Leadership Training",
-    "Mentorship at Bassajabalaba Secondary School",
-    "Counseling and Guidance at Bassajabalaba Secondary School",
-    "Tech & Innovation: Mastering the New Economy"
-  ];
-
-  const filtered = projects.filter(p => originalOrder.includes(p.title));
-  
-  const sortedProjects = (filtered.length > 0 ? filtered : initialProjects)
-    .sort((a, b) => {
-      const indexA = originalOrder.indexOf(a.title);
-      const indexB = originalOrder.indexOf(b.title);
-      return indexA - indexB;
-    });
-
-  // Filter and fallback for partners
-  const originalPartners = ["Pamoja Foundation", "Balunywa Leadership Academy"];
-  const filteredPartners = partners.filter(p => originalPartners.includes(p.name));
-  const finalPartners = filteredPartners.length > 0 ? filteredPartners : initialPartners;
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <Layout>
-      {/* Hero Section */}
-      {/* Hero Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-6 bg-background">
-        <div className="relative min-h-[85vh] rounded-[2.5rem] overflow-hidden flex items-center shadow-2xl">
-          <div className="absolute inset-0 z-0">
-            {slides.map((slide, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
-                  }`}
-              >
-                <img
-                  src={slide.image}
-                  alt={`SUYEL Youth Empowerment - ${slide.description.substring(0, 50)}...`}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
-              </div>
-            ))}
-          </div>
+      <SEO
+        title="Akirapa Home Care | In-Home Senior Care & 24/7 Services"
+        description="Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Care Your Way."
+      />
 
-          <div className="w-full px-8 md:px-12 lg:px-16 relative z-10">
-            <div className="max-w-2xl">
-              <div key={currentSlide} className="animate-fade-up">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                  {slides[currentSlide].title}
-                </h1>
-                <p className="text-lg text-white/90 mb-8 leading-relaxed shadow-sm">
-                  {slides[currentSlide].description}
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
-                  <Link to="/projects">
-                    Explore Our Work
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="heroOutline" asChild>
-                  <Link to="/register">Register</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
+      {/* Hero Section */}
+      <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 bg-gradient-to-br from-[#76248a] via-[#561868] to-[#40ddd3] text-white overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <img
+            src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=1600"
+            alt="Akirapa Senior Home Care"
+            className="w-full h-full object-cover"
+          />
         </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-6 bg-background">
-        <div className="container-narrow mx-auto">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
-            {/* Left Side - Image Card */}
-            <div data-aos="fade-right" className="relative w-full aspect-video rounded-[2.5rem] overflow-hidden shadow-xl group">
-              <img
-                src="/Milestone 2.jpg"
-                alt="SUYEL Impact Milestone - Youth Engagement in Uganda"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
-            </div>
+        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 bg-[#40ddd3]/20 border border-[#40ddd3]/40 text-[#40ddd3] px-4 py-2 rounded-full font-bold text-sm backdrop-blur-md">
+                <Heart className="w-4 h-4" />
+                <span>Care Your Way • Contract-Free</span>
+              </div>
 
-            {/* Right Side - Content & Stats */}
-            <div data-aos="fade-left" className="flex flex-col justify-center">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                Would you rather stay at home than go into a health care facility?
+              </h1>
 
-              <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-6">
-                Our Milestones
-              </h2>
-              <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
-                We have successfully executed impactful initiatives ranging from youth mentorship programs, community health outreach, skills training workshops, and educational support projects across various districts in Uganda.
+              <p className="text-lg sm:text-xl text-white/90 font-medium leading-relaxed max-w-2xl">
+                We will come to your convenient location. Akirapa Home Care provides flexible, compassionate, and professional in-home care tailored around your daily routine.
               </p>
 
-              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full max-w-6xl mx-auto">
-                <div className="bg-primary rounded-[2rem] p-4 sm:p-6 text-center card-elevated hover:scale-105 transition-transform duration-300 flex flex-col justify-center items-center h-[120px] sm:h-[140px]">
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-2">
-                    <CountUp end={6000} suffix="+" duration={4000} />
-                  </div>
-                  <div className="text-white/90 text-xs sm:text-sm font-medium whitespace-nowrap">Youth Empowered</div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#76248a] font-extrabold text-lg h-14 px-8 rounded-2xl shadow-xl">
+                  <Link to="/contact">Schedule Free Assessment</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10 font-bold text-lg h-14 px-8 rounded-2xl">
+                  <Link to="/services">Explore Care Programs</Link>
+                </Button>
+              </div>
+
+              <div className="pt-6 border-t border-white/20 flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-white/80">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#40ddd3]" />
+                  <span>Licensed & Background Checked</span>
                 </div>
-                <div className="bg-primary rounded-[2rem] p-4 sm:p-6 text-center card-elevated hover:scale-105 transition-transform duration-300 flex flex-col justify-center items-center h-[120px] sm:h-[140px]">
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-2">
-                    <CountUp end={10} suffix="+" duration={2000} />
-                  </div>
-                  <div className="text-white/90 text-xs sm:text-sm font-medium whitespace-nowrap">Active Projects</div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#40ddd3]" />
+                  <span>24/7 Helpline Assistance</span>
                 </div>
-                <div className="bg-primary rounded-[2rem] p-4 sm:p-6 text-center card-elevated hover:scale-105 transition-transform duration-300 flex flex-col justify-center items-center h-[120px] sm:h-[140px]">
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-2">
-                    <CountUp end={15} suffix="+" duration={2000} />
-                  </div>
-                  <div className="text-white/90 text-xs sm:text-sm font-medium whitespace-nowrap">Communities Reached</div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#40ddd3]" />
+                  <span>Burlington, MA Headquarters</span>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Parallax CTA Section */}
-      <section
-        className="relative bg-fixed bg-cover bg-center py-12 md:py-20"
-        style={{ backgroundImage: "url('/Slide 1.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-
-        <div className="container-narrow mx-auto relative z-10 px-4">
-          <div data-aos="zoom-in" className="max-w-4xl mx-auto border border-white/30 bg-black/30 backdrop-blur-sm rounded-3xl p-8 md:p-16 text-center text-white shadow-2xl">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Join SUYEL today</h2>
-            <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
-              Be part of a thriving community that celebrates shared memories, fosters lifelong connections, and gives back. Together, we can make a difference through impactful projects, mentorship, and support for future generations.
-            </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white border-none rounded-full px-10 text-lg h-14 shadow-lg hover:shadow-primary/25 transition-all duration-300" asChild>
-              <Link to="/register">Register Now</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Corporate Partners Section */}
-      <section className="section-padding bg-background">
-        <div className="container-narrow mx-auto">
-          <div data-aos="fade-up" className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Our Corporate Partners
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Collaborating with industry leaders to create sustainable impact.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12 pb-8">
-            {finalPartners.map((partner, index) => (
-              <div
-                key={index}
-                data-aos="fade-up"
-                data-aos-delay={(index + 1) * 100}
-                className="bg-secondary rounded-2xl p-6 flex items-center justify-center w-64 h-48 hover:bg-secondary/80 transition-colors shadow-sm cursor-pointer group"
-              >
-                <img
-                  src={partner.logo}
-                  alt={`Official Partner of SUYEL - ${partner.name} Uganda`}
-                  className="max-w-full max-h-full object-contain filter hover:scale-105 transition-all duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Projects */}
-      <section className="px-4 sm:px-6 lg:px-8 py-6 bg-background">
-        <div className="bg-secondary rounded-[2.5rem] py-16 shadow-xl">
-          <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
-            <div data-aos="fade-up" className="text-center max-w-2xl mx-auto mb-12">
-
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
-                Featured Projects and Activities
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Discover how we're making a difference in the lives of young people across communities.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {sortedProjects.slice(0, 3).map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  title={project.title}
-                  description={project.shortDescription}
-                  images={project.images}
-                  icon={project.icon}
-                  showIcon={true}
-                  variant="home"
-                  category={project.category}
-                />
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <Button asChild size="lg">
-                <Link to="/projects">
-                  View All Projects
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Video Gallery Section */}
-      <VideoGallery />
-
-      {/* Message from Our President */}
-      <section className="section-padding bg-background">
-        <div className="container-narrow mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Portrait Image */}
-            <div data-aos="fade-right" className="relative">
-              <div className="aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl relative z-10 w-full max-w-md mx-auto lg:mr-auto">
-                <img
-                  src="/Presidents photo.jpg"
-                  alt="KIRUNDA MUHAWUYA - SUYEL President and Founder"
-                  className="w-full h-full object-cover [transform:scaleX(-1)]"
-                />
-              </div>
-
-            </div>
-
-            {/* Right Side - Article */}
-            {/* Right Side - Article */}
-            <div data-aos="fade-left" className="text-center lg:text-left">
-
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-                Message from Our President
-              </h2>
-              <div className="prose prose-lg text-muted-foreground mx-auto lg:mx-0">
-                <p className="mb-4">
-                  "At SUYEL, we envision a future where every young person is empowered to reach their full potential. Our journey has been one of resilience, innovation, and unwavering commitment to our community. We believe that the youth are not just beneficiaries of development, but active partners in driving sustainable change."
-                </p>
-                <p className="mb-4">
-                  "Seeing the transformation in the lives of the youth we work with is what drives us every day. From the classroom to the boardroom, we are nurturing a generation of leaders who will shape the destiny of our nation. Our programs are designed to bridge the gap between potential and opportunity, providing the skills and mentorship needed to succeed."
-                </p>
-
-                {isExpanded && (
-                  <div className="animate-fade-in space-y-4">
-                    <p>
-                      "We recognize the challenges that lie ahead, but we are fueled by the passion and creativity of the young minds we engage with. Through collaboration with our partners and the community, we are building ecosystems of support that enable innovation and entrepreneurship to thrive."
-                    </p>
-                    <p>
-                      "Our commitment extends beyond just skills training; we are fostering a culture of integrity, empathy, and social responsibility. We want our future leaders to lead with heart and purpose, making decisions that benefit not only themselves but society as a whole."
-                    </p>
-                    <p>
-                      "We invite you to join us on this transformative journey. Together, we can build a legacy of hope and opportunity for generations to come. Your support, whether through partnership, volunteerism, or advocacy, is crucial to our mission."
-                    </p>
-                  </div>
-                )}
-
-                {!isExpanded && (
-                  <p>
-                    "We invite you to join us on this transformative journey..."
+            {/* Right Card / Hotline Highlight */}
+            <div className="lg:col-span-5">
+              <div className="bg-white/95 backdrop-blur-md rounded-3xl p-8 text-gray-900 shadow-2xl border border-white/50 space-y-6">
+                <div className="text-center space-y-2">
+                  <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#40ddd3]/20 px-3 py-1 rounded-full">
+                    24/7 Immediate Response
+                  </span>
+                  <h3 className="text-2xl font-black text-gray-900">Need Care Right Away?</h3>
+                  <p className="text-gray-600 text-sm">
+                    Speak directly with our senior care coordinator in Burlington, MA.
                   </p>
-                )}
-              </div>
+                </div>
 
-              <div className="mt-6">
-                {!isExpanded ? (
-                  <Button
-                    onClick={() => setIsExpanded(true)}
-                    className="bg-primary text-white hover:bg-primary/90 rounded-full px-8"
-                  >
-                    Read More
-                  </Button>
-                ) : (
-                  <Button
-                    onClick={() => setIsExpanded(false)}
-                    className="bg-primary text-white hover:bg-primary/90 rounded-full px-8"
-                  >
-                    Show Less
-                  </Button>
-                )}
-              </div>
+                <div className="bg-gradient-to-r from-[#76248a] to-[#561868] text-white p-6 rounded-2xl text-center space-y-2 shadow-lg">
+                  <Phone className="w-8 h-8 text-[#40ddd3] mx-auto animate-pulse" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-white/80 block">Call Our Helpline</span>
+                  <a href="tel:3399701214" className="text-3xl font-black text-[#40ddd3] hover:underline block">
+                    339 970 1214
+                  </a>
+                  <p className="text-xs text-white/70">Secondary: 781 472 9375</p>
+                </div>
 
-              <div className="mt-8 border-t border-border/50 pt-6 inline-block w-full">
-                <h4 className="text-xl font-bold text-foreground">KIRUNDA MUHAWUYA</h4>
-                <p className="text-primary font-medium">President & Founder</p>
+                <ul className="space-y-3 text-sm font-semibold text-gray-700">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-[#76248a]" />
+                    <span>Free In-Home Care Assessment</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-[#76248a]" />
+                    <span>Hourly, Daily & Respite Shifts</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-[#76248a]" />
+                    <span>Family Care Portal Access</span>
+                  </li>
+                </ul>
+
+                <Button asChild className="w-full bg-[#76248a] hover:bg-[#561868] text-white font-bold h-12 text-base rounded-xl">
+                  <Link to="/contact">Request Immediate Callback</Link>
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-4 sm:px-6 lg:px-8 py-6 bg-background">
+      {/* Services Grid Section */}
+      <section className="section-padding bg-gray-50/80">
         <div className="container-narrow mx-auto">
-          <div data-aos="fade-up" className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            <DonationCard
-              variant="landscape"
-              providerName="Stanbic Bank"
-              accountName="Account Number"
-              accountNumber="9030025735322"
-              logoSrc="/stanbic logo.jpg"
-              colorClass="bg-blue-600"
-              className="lg:col-span-2 xl:col-span-1"
-            />
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#76248a]/10 px-4 py-1.5 rounded-full">
+              Tailored In-Home Programs
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
+              Our Core Home Care Services
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Designed to help seniors live safely, independently, and comfortably at home.
+            </p>
+          </div>
 
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {careServices.map((service) => {
+              const Icon = getServiceIcon(service.icon);
+              return (
+                <div
+                  key={service.id}
+                  className="bg-white rounded-3xl p-8 shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+                >
+                  <div className="space-y-4">
+                    <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                      <Icon className="w-7 h-7" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#76248a] transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-[#76248a] font-semibold text-xs uppercase tracking-wide">
+                      {service.tagline}
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-2 pt-2">
+                      {service.features.slice(0, 3).map((f, idx) => (
+                        <li key={idx} className="text-xs font-medium text-gray-700 flex items-center gap-2">
+                          <span className="text-[#40ddd3] font-bold">✓</span> {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-6 mt-6 border-t border-gray-100">
+                    <Link
+                      to="/services"
+                      className="inline-flex items-center gap-2 text-[#76248a] font-bold text-sm hover:text-[#561868] transition-colors"
+                    >
+                      <span>Learn More</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Quick Consultation Highlight Card */}
+            <div className="bg-gradient-to-br from-[#76248a] to-[#561868] text-white rounded-3xl p-8 shadow-xl flex flex-col justify-between border border-[#40ddd3]/30">
+              <div className="space-y-4">
+                <div className="w-14 h-14 rounded-2xl bg-[#40ddd3] text-[#76248a] flex items-center justify-center shadow-md">
+                  <Award className="w-7 h-7" />
+                </div>
+                <h3 className="text-2xl font-black text-white">
+                  Not Sure Which Care Plan Fits Best?
+                </h3>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  Our licensed care managers in Burlington MA offer free, no-obligation in-home assessments to help you evaluate daily needs.
+                </p>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-white/20">
+                <Button asChild className="w-full bg-[#40ddd3] hover:bg-[#34c4ba] text-[#76248a] font-bold h-12 rounded-xl text-base">
+                  <Link to="/contact">Schedule Free Consultation</Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Quote Calculator Section */}
+      <section className="section-padding bg-white">
+        <div className="container-narrow mx-auto">
+          <CareQuoteCalculator />
+        </div>
+      </section>
 
-      {/* CTA Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-6 bg-background">
-        <div data-aos="zoom-in" className="relative bg-primary rounded-[2.5rem] py-16 text-center shadow-2xl overflow-hidden">
-          {/* Background Image */}
-          <div className="absolute inset-0 opacity-[0.15]">
-            <img src="/Make a difference.jpg" alt="Join SUYEL to support youth empowerment projects" className="w-full h-full object-cover" />
+      {/* Founders & About Story Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-narrow mx-auto">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            {/* Left Image / Founders */}
+            <div className="lg:col-span-5 space-y-6">
+              <div className="relative">
+                <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                  <img
+                    src="https://images.unsplash.com/photo-1581579438747-1dc8d1e05842?auto=format&fit=crop&q=80&w=800"
+                    alt="Cathy Akirapa & Stuart Ssemwogerere"
+                    className="w-full h-[420px] object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -right-6 bg-[#76248a] text-white p-6 rounded-2xl shadow-xl border border-[#40ddd3]/30 hidden sm:block max-w-xs">
+                  <p className="text-2xl font-black text-[#40ddd3]">10+ Years</p>
+                  <p className="text-xs text-white/90 font-medium">Of Compassionate Senior Care Excellence (Est. 2013)</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Story */}
+            <div className="lg:col-span-7 space-y-6">
+              <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#76248a]/10 px-4 py-1.5 rounded-full">
+                Our Founding Story
+              </span>
+
+              <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight">
+                Founded on Personal Compassion & Dedicated Care
+              </h2>
+
+              <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+                Akirapa Home Care was founded in 2013 by <strong>Cathy Akirapa</strong> (CNA & Financial Professional) alongside <strong>Stuart Ssemwogerere</strong> (Executive Director) with a singular mission: to ensure seniors can live comfortably and safely in their own homes.
+              </p>
+
+              <p className="text-gray-600 text-base leading-relaxed">
+                Incorporated in 2015 and expanding regional healthcare partnerships in 2017, Akirapa Home Care has grown into a trusted home health care provider across Burlington, MA, and surrounding communities.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-4 pt-2">
+                <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm space-y-1">
+                  <h4 className="font-bold text-[#76248a]">Cathy Akirapa</h4>
+                  <p className="text-xs text-gray-600">Founder, CNA & Financial Professional</p>
+                </div>
+                <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm space-y-1">
+                  <h4 className="font-bold text-[#76248a]">Stuart Ssemwogerere</h4>
+                  <p className="text-xs text-gray-600">Co-Founder & Executive Director</p>
+                </div>
+              </div>
+
+              <div className="pt-4">
+                <Button asChild size="lg" className="bg-[#76248a] hover:bg-[#561868] text-white font-bold rounded-2xl">
+                  <Link to="/about">Read Our Full Journey</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Testimonials Section */}
+      <section className="section-padding bg-white">
+        <div className="container-narrow mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#76248a]/10 px-4 py-1.5 rounded-full">
+              Client & Family Reviews
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
+              What Families Say About Akirapa Home Care
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Trusted by families across Massachusetts and nationwide.
+            </p>
           </div>
 
-          <div className="container-narrow mx-auto relative z-10 px-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-6">
-              Ready to Make a Difference?
-            </h2>
-            <p className="text-primary-foreground/90 text-lg max-w-2xl mx-auto mb-8">
-              Whether you want to volunteer, donate, or partner with us, there are many ways to support our mission of empowering youth.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="hero" asChild>
-                <Link to="/contact">Contact Us Today</Link>
-              </Button>
-              <Button size="lg" variant="heroOutline" asChild>
-                <Link to="/leadership">Meet Our Team</Link>
-              </Button>
-            </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.slice(0, 4).map((item) => (
+              <div key={item.id} className="bg-gray-50/80 rounded-3xl p-8 border border-gray-100 space-y-4 shadow-sm relative">
+                <div className="flex items-center gap-1 text-amber-400">
+                  {[...Array(item.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-current" />
+                  ))}
+                </div>
+                <p className="text-gray-700 italic text-base leading-relaxed">
+                  "{item.text}"
+                </p>
+                <div className="pt-4 border-t border-gray-200 flex justify-between items-center text-sm">
+                  <div>
+                    <p className="font-bold text-gray-900">{item.author}</p>
+                    <p className="text-xs text-gray-500">{item.relation} • {item.location}</p>
+                  </div>
+                  {item.date && <span className="text-xs text-gray-400">{item.date}</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 24/7 Helpline Bottom Banner */}
+      <section className="py-16 bg-gradient-to-r from-[#76248a] to-[#561868] text-white">
+        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-black text-white">
+            Ready to Begin Your Home Care Journey?
+          </h2>
+          <p className="text-white/90 text-lg max-w-2xl mx-auto">
+            Call our 24/7 helpline today or request a free, contract-free in-home assessment in Burlington, MA.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
+            <a
+              href="tel:3399701214"
+              className="inline-flex items-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-[#76248a] font-extrabold text-xl px-8 py-4 rounded-2xl shadow-xl transition-all"
+            >
+              <Phone className="w-6 h-6" />
+              <span>Call 339 970 1214</span>
+            </a>
+            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 font-bold text-lg h-14 px-8 rounded-2xl">
+              <Link to="/contact">Book Free Consultation</Link>
+            </Button>
           </div>
         </div>
       </section>

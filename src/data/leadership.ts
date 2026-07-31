@@ -1,53 +1,39 @@
+export interface TeamMember {
+    name: string;
+    role: string;
+    bio: string;
+    image: string;
+    email?: string;
+}
 
-export const leaders = [
+export const leaders: TeamMember[] = [
     {
-        name: "KIRUNDA MUHAWUYA",
-        role: "Executive Director And President",
-        bio: "A dedicated leader committed to steering the organization towards sustainable growth and impactful youth empowerment initiatives.",
-        image: "/Kirunda Muhawuya.jpg",
+        name: "Cathy Akirapa",
+        role: "Founder, CNA & Financial Professional",
+        bio: "Cathy founded Akirapa Home Care in 2013 with a vision to provide dignified, compassionate, and personalized in-home senior care. As a certified nursing assistant and financial professional, she ensures every care plan balances high-quality healthcare standards with accessible care management.",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600",
+        email: "cathy@akirapahomecare.com"
     },
     {
-        name: "BASAJJABALABA YUDAYA",
-        role: "Voice President",
-        bio: "Bringing strategic insight and operational excellence to ensure our programs effectively reach and uplift communities.",
-        image: "/Basajjabalaba Yudaya.jpg",
-    },
-    {
-        name: "PROF. JUMA WASSWA BALUNWA",
-        role: "Co-Founder ANd B.O.D",
-        bio: "An experienced educator and leader providing wisdom and strategic direction to guide our mission and values.",
-        image: "/PROF. JUMA WASSWA.jpg",
-    },
-    {
-        name: "HON.ENG. LUKE KYOBE INHESIKO",
-        role: "Co-Founder And B.O.D",
-        bio: "Combining technical expertise with a passion for community service to drive innovation and structural development within the organization.",
-        image: "/HON. ENG. LUKE KYOBE.jpg",
-    },
-    {
-        name: "DR. JUMMA TEEKO",
-        role: "Co-Founder And B.O.D",
-        bio: "A steadfast advocate for youth development, offering valuable guidance to ensure our long-term success and community impact.",
-        image: "/DR JUMMA TEEKO.jpg",
-    },
+        name: "Stuart Ssemwogerere",
+        role: "Co-Founder & Executive Director",
+        bio: "Stuart co-leads Akirapa Home Care, directing operations, healthcare provider partnerships, and caregiving excellence. He is passionate about empowering families with senior care resources, real-time family communication tools, and around-the-clock peace of mind.",
+        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600",
+        email: "stuart@akirapahomecare.com"
+    }
 ];
 
-export const boardMembers = [
-    { name: "KASULE JOSHUA", role: "GeneralSecretary", image: "/Kasule Joshua.jpg" },
-    { name: "NAISOGA BEGAM", role: "Secretary", image: "/Naisonga Begam.jpg" },
-    { name: "MUTESI BAYAT", role: "Treasurer", image: "/Mutesi Rayat.jpg" },
-    { name: "MULUMBA KASSIM", role: "Ambassador Central Region", image: "/Mulumba Kassim.jpg" },
-    { name: "KISUBI DAVID", role: "Ambassador Eastern Region", image: "/Kisubi David.jpg" },
-    { name: "ALICE NYADOI", role: "Ambassador Northern Region", image: "/Alice Nyadoi.jpg" },
-    { name: "IMMANHIRIHO MERCY", role: "Ambassador Western Region", image: "/Immanihiro Tracy.jpg" },
-    { name: "MUBIRU LIM LYYN ARNOLD", role: "Ambassador Greater Masaka Region", image: "/Mubiru Lim Lyyn Arnold.jpg" },
-    { name: "KYOBE AISHA", role: "Ambassador Asia", image: "/Kyobe Aisha.jpg" },
-    { name: "ZIMULA FARID", role: "I.T Director", image: "/ZIMULA FARID.jpg" },
-    { name: "NAMBAGO DERICK AMOS", role: "General Coordinator", image: "/Nambago Derrick Amos.jpg" },
-    { name: "KATO MUHAMMAD NTALE", role: "Internal Coordinator", image: "/Kato Muhammad Ntale.jpg" },
-    { name: "GOODWILL LOKWANG", role: "Internal Coordinator", image: "/GoodWill Lokwang.jpg" },
-    { name: "NAMUKOSE FATUMA", role: "Representative Women Affairs", image: "/Namukose Fatumah.jpg" },
-    { name: "MUKOTI WAHAB", role: "Advisor On Management", image: "/Mukoti Wahab.jpg" },
-    { name: "MUHASIZI ELVIS", role: "Legal Advisor And Mgt Team", image: "/Musasizi Elvis.jpg" },
-    { name: "MR COLLINS", role: "Legal Advisor And Mgt Team", image: "/Mr Collins.jpg" },
+export const boardMembers: TeamMember[] = [
+    {
+        name: "Burlington Care Coordination Team",
+        role: "Care Assessment Specialists",
+        bio: "Our licensed care managers conduct free in-home assessments to design customized care plans for seniors throughout Burlington and Greater Boston.",
+        image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&q=80&w=600"
+    },
+    {
+        name: "Certified Nursing Assistants (CNAs)",
+        role: "Dedicated Caregivers",
+        bio: "Background-checked, compassionate professionals providing 24/7 care, mobility support, medication management, and daily companionship.",
+        image: "https://images.unsplash.com/photo-1590611936760-eeb9bc59302d?auto=format&fit=crop&q=80&w=600"
+    }
 ];

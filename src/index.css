@@ -7,91 +7,93 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 20% 10%;
+    --foreground: 280 20% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card-foreground: 280 20% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover-foreground: 280 20% 10%;
 
-    --primary: 221 70% 41%;
+    /* Purple #76248a */
+    --primary: 288 59% 34%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 20% 10%;
+    /* Cyan #40ddd3 */
+    --secondary: 176 71% 56%;
+    --secondary-foreground: 280 40% 10%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 280 15% 96%;
+    --muted-foreground: 280 10% 45%;
 
-    --accent: 221 70% 95%;
-    --accent-foreground: 221 70% 41%;
+    --accent: 176 71% 94%;
+    --accent-foreground: 288 59% 34%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 221 70% 41%;
+    --border: 280 15% 90%;
+    --input: 280 15% 90%;
+    --ring: 288 59% 34%;
 
     --radius: 0.75rem;
 
-    /* Custom NGO tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(221 70% 41%) 0%, hsl(221 70% 30%) 100%);
-    --card-shadow: 0 4px 24px -4px hsl(221 70% 41% / 0.12);
-    --card-shadow-hover: 0 12px 32px -8px hsl(221 70% 41% / 0.2);
+    /* Akirapa Home Care Theme Tokens */
+    --hero-gradient: linear-gradient(135deg, #76248a 0%, #561868 60%, #40ddd3 100%);
+    --card-shadow: 0 4px 24px -4px rgba(118, 36, 138, 0.15);
+    --card-shadow-hover: 0 12px 32px -8px rgba(118, 36, 138, 0.25);
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 280 5.3% 26.1%;
+    --sidebar-primary: 288 59% 34%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 176 71% 94%;
+    --sidebar-accent-foreground: 288 59% 34%;
+    --sidebar-border: 280 15% 90%;
+    --sidebar-ring: 288 59% 34%;
   }
 
   .dark {
-    --background: 220 20% 6%;
+    --background: 280 20% 6%;
     --foreground: 0 0% 98%;
 
-    --card: 220 20% 10%;
+    --card: 280 20% 10%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 220 20% 10%;
+    --popover: 280 20% 10%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 221 70% 55%;
+    --primary: 288 59% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 20% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 176 71% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 20% 15%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 280 20% 15%;
+    --muted-foreground: 280 10% 60%;
 
-    --accent: 221 70% 20%;
-    --accent-foreground: 221 70% 70%;
+    --accent: 288 59% 20%;
+    --accent-foreground: 176 71% 70%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
-    --ring: 221 70% 55%;
+    --border: 280 20% 18%;
+    --input: 280 20% 18%;
+    --ring: 288 59% 45%;
 
-    --hero-gradient: linear-gradient(135deg, hsl(221 70% 30%) 0%, hsl(221 70% 20%) 100%);
-    --card-shadow: 0 4px 24px -4px hsl(0 0% 0% / 0.3);
-    --card-shadow-hover: 0 12px 32px -8px hsl(0 0% 0% / 0.4);
+    --hero-gradient: linear-gradient(135deg, #561868 0%, #370d44 60%, #1e8780 100%);
+    --card-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.4);
+    --card-shadow-hover: 0 12px 32px -8px rgba(0, 0, 0, 0.6);
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 280 20% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 288 59% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 280 20% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 280 20% 18%;
+    --sidebar-ring: 288 59% 45%;
   }
 }
 
