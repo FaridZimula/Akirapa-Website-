@@ -55,10 +55,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 bg-[#40ddd3]/20 border border-[#40ddd3]/40 text-[#40ddd3] px-4 py-2 rounded-full font-bold text-sm backdrop-blur-md">
-                <Heart className="w-4 h-4" />
-                <span>Care Your Way • Contract-Free</span>
-              </div>
+
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
                 Would you rather stay at home than go into a health care facility?
@@ -97,9 +94,7 @@ const Index = () => {
             <div className="lg:col-span-5">
               <div className="bg-white/95 backdrop-blur-md rounded-3xl p-8 text-gray-900 shadow-2xl border border-white/50 space-y-6">
                 <div className="text-center space-y-2">
-                  <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#40ddd3]/20 px-3 py-1 rounded-full">
-                    24/7 Immediate Response
-                  </span>
+
                   <h3 className="text-2xl font-black text-gray-900">Need Care Right Away?</h3>
                   <p className="text-gray-600 text-sm">
                     Speak directly with our senior care coordinator in Burlington, MA.
@@ -143,9 +138,7 @@ const Index = () => {
       <section className="section-padding bg-gray-50/80">
         <div className="container-narrow mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#76248a]/10 px-4 py-1.5 rounded-full">
-              Tailored In-Home Programs
-            </span>
+
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
               Our Core Home Care Services
             </h2>
@@ -251,9 +244,7 @@ const Index = () => {
 
             {/* Right Story */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#76248a]/10 px-4 py-1.5 rounded-full">
-                Our Founding Story
-              </span>
+
 
               <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight">
                 Founded on Personal Compassion & Dedicated Care
@@ -292,9 +283,7 @@ const Index = () => {
       <section className="section-padding bg-white">
         <div className="container-narrow mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#76248a]/10 px-4 py-1.5 rounded-full">
-              Client & Family Reviews
-            </span>
+
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
               What Families Say About Akirapa Home Care
             </h2>

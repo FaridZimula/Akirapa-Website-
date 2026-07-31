@@ -34,7 +34,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-[#40ddd3]" />
-              <span>care@akirapahomecare.com</span>
+              <span>info@akirapahomecareus.com</span>
             </div>
             <div className="flex items-center gap-1 bg-[#40ddd3]/20 text-[#40ddd3] px-2.5 py-0.5 rounded-full font-semibold">
               <Clock className="w-3.5 h-3.5" />
@@ -124,7 +124,7 @@ const Navbar = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="w-4 h-4 text-[#40ddd3]" />
-                    <span>care@akirapahomecare.com</span>
+                    <span>info@akirapahomecareus.com</span>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3 px-4 pt-2">

@@ -51,9 +51,7 @@ const Contact = () => {
       {/* Hero Header */}
       <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-br from-[#76248a] via-[#561868] to-[#40ddd3] text-white">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <span className="text-xs font-black uppercase tracking-widest text-[#40ddd3] bg-white/10 px-4 py-1.5 rounded-full inline-block">
-            24/7 Service • Free In-Home Consultation
-          </span>
+
           <h1 className="text-4xl sm:text-5xl font-black text-white">
             Contact Akirapa Home Care
           </h1>
@@ -69,9 +67,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left: Contact Info Cards */}
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#76248a]/10 px-4 py-1.5 rounded-full">
-                Get In Touch
-              </span>
+
               <h2 className="text-3xl font-black text-gray-900">
                 Burlington, MA Office & 24/7 Helpline
               </h2>
@@ -102,9 +98,7 @@ const Contact = () => {
                     <Mail className="w-5 h-5" />
                   </div>
                   <h4 className="font-bold text-gray-900 text-base">Email Enquiries</h4>
-                  <p className="text-gray-600 text-xs">care@akirapahomecare.com</p>
-                  <p className="text-gray-600 text-xs">cathy@akirapahomecare.com</p>
-                  <p className="text-gray-600 text-xs">stuart@akirapahomecare.com</p>
+                  <p className="text-gray-600 text-xs">info@akirapahomecareus.com</p>
                 </div>
 
                 {/* Hours Card */}
@@ -249,9 +243,7 @@ const Contact = () => {
       <section className="section-padding bg-white">
         <div className="container-narrow mx-auto text-center space-y-6">
           <div className="max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#76248a]/10 px-4 py-1.5 rounded-full">
-              Our Location
-            </span>
+
             <h2 className="text-3xl font-black text-gray-900">Visit Our Burlington Office</h2>
             <p className="text-gray-600 text-sm">83 Cambridge Street, Burlington, MA 01803</p>
           </div>

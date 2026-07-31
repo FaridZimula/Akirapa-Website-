@@ -12,14 +12,14 @@ export const leaders: TeamMember[] = [
         role: "Founder, CNA & Financial Professional",
         bio: "Cathy founded Akirapa Home Care in 2013 with a vision to provide dignified, compassionate, and personalized in-home senior care. As a certified nursing assistant and financial professional, she ensures every care plan balances high-quality healthcare standards with accessible care management.",
         image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600",
-        email: "cathy@akirapahomecare.com"
+        email: "info@akirapahomecareus.com"
     },
     {
         name: "Stuart Ssemwogerere",
         role: "Co-Founder & Executive Director",
         bio: "Stuart co-leads Akirapa Home Care, directing operations, healthcare provider partnerships, and caregiving excellence. He is passionate about empowering families with senior care resources, real-time family communication tools, and around-the-clock peace of mind.",
         image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600",
-        email: "stuart@akirapahomecare.com"
+        email: "info@akirapahomecareus.com"
     }
 ];
 

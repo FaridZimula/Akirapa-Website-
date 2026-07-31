@@ -19,9 +19,6 @@ const Blog = () => {
       {/* Hero Header */}
       <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-br from-[#76248a] via-[#561868] to-[#40ddd3] text-white">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <span className="text-xs font-black uppercase tracking-widest text-[#40ddd3] bg-white/10 px-4 py-1.5 rounded-full inline-block">
-            Senior Care Advice & Resources
-          </span>
           <h1 className="text-4xl sm:text-5xl font-black text-white">
             Our Senior Care Blog
           </h1>

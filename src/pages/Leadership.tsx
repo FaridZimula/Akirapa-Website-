@@ -37,9 +37,7 @@ const Leadership = () => {
       {/* Hero Header */}
       <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-br from-[#76248a] to-[#561868] text-white">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <span className="text-xs font-black uppercase tracking-widest text-[#40ddd3] bg-white/10 px-4 py-1.5 rounded-full inline-block">
-            Established 2013 • Burlington, MA
-          </span>
+
           <h1 className="text-4xl sm:text-5xl font-black text-white">
             About Akirapa Home Care
           </h1>
@@ -54,9 +52,7 @@ const Leadership = () => {
         <div className="container-narrow mx-auto">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#76248a]/10 px-4 py-1.5 rounded-full">
-                Our Journey & Milestones
-              </span>
+
 
               <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight">
                 Over a Decade of Healthcare Compassion
@@ -133,9 +129,7 @@ const Leadership = () => {
       <section className="section-padding bg-gray-50">
         <div className="container-narrow mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#76248a]/10 px-4 py-1.5 rounded-full">
-              Leadership & Co-Founders
-            </span>
+
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
               Meet Our Executive Leaders
             </h2>
@@ -188,9 +182,7 @@ const Leadership = () => {
           <div className="grid lg:grid-cols-12 gap-12">
             {/* Left: Testimonials List */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#76248a]/10 px-4 py-1.5 rounded-full">
-                Client Testimonials
-              </span>
+
               <h2 className="text-3xl font-black text-gray-900">
                 Stories of Care & Trust
               </h2>
@@ -276,9 +268,7 @@ const Leadership = () => {
       <section className="section-padding bg-gray-50 border-t border-gray-200">
         <div className="container-narrow mx-auto text-center space-y-8">
           <div className="max-w-2xl mx-auto space-y-3">
-            <span className="text-xs font-black uppercase tracking-widest text-[#76248a] bg-[#76248a]/10 px-4 py-1.5 rounded-full">
-              Free Senior Care Resources
-            </span>
+
             <h2 className="text-3xl font-black text-gray-900">
               Senior Care Decision Guides & Handbooks
             </h2>
