@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Calculator, CheckCircle2, Clock, Calendar, HeartHandshake, ShieldCheck } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export const CareQuoteCalculator: React.FC = () => {
@@ -40,12 +39,10 @@ export const CareQuoteCalculator: React.FC = () => {
 
   return (
     <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 relative overflow-hidden">
-
-
       <div className="relative z-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-12 h-12 rounded-2xl bg-[#76248a] flex items-center justify-center text-[#40ddd3] shadow-md">
-            <Calculator className="w-6 h-6" />
+            <i className="fa-solid fa-calculator text-2xl text-[#40ddd3]"></i>
           </div>
           <div>
             <h3 className="text-2xl md:text-3xl font-black text-gray-900">
@@ -65,12 +62,11 @@ export const CareQuoteCalculator: React.FC = () => {
             </Label>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {[
-                { id: "hourly", label: "Hourly Care", icon: Clock },
-                { id: "daily", label: "24/7 Daily Care", icon: Calendar },
-                { id: "respite", label: "Respite Care", icon: HeartHandshake },
-                { id: "specialized", label: "Specialized Care", icon: ShieldCheck },
+                { id: "hourly", label: "Hourly Care", iconClass: "fa-solid fa-clock" },
+                { id: "daily", label: "24/7 Daily Care", iconClass: "fa-solid fa-calendar-days" },
+                { id: "respite", label: "Respite Care", iconClass: "fa-solid fa-hand-holding-heart" },
+                { id: "specialized", label: "Specialized Care", iconClass: "fa-solid fa-shield-halved" },
               ].map((item) => {
-                const Icon = item.icon;
                 const isSelected = careType === item.id;
                 return (
                   <button
@@ -83,7 +79,7 @@ export const CareQuoteCalculator: React.FC = () => {
                         : "border-gray-200 bg-gray-50/50 text-gray-700 hover:border-[#76248a]/50"
                     }`}
                   >
-                    <Icon className={`w-6 h-6 ${isSelected ? "text-[#40ddd3]" : "text-[#76248a]"}`} />
+                    <i className={`${item.iconClass} text-xl ${isSelected ? "text-[#40ddd3]" : "text-[#76248a]"}`}></i>
                     <span className="font-bold text-sm">{item.label}</span>
                   </button>
                 );
@@ -193,7 +189,7 @@ export const CareQuoteCalculator: React.FC = () => {
                   <Input
                     id="q-email"
                     type="email"
-                    placeholder="care@example.com"
+                    placeholder="info@akirapahomecareus.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -207,7 +203,7 @@ export const CareQuoteCalculator: React.FC = () => {
             </div>
           ) : (
             <div className="bg-green-50 border border-green-200 rounded-2xl p-6 text-center space-y-2">
-              <CheckCircle2 className="w-10 h-10 text-green-600 mx-auto" />
+              <i className="fa-solid fa-circle-check text-4xl text-green-600 mx-auto"></i>
               <h4 className="text-xl font-bold text-green-900">Thank You!</h4>
               <p className="text-green-800 text-sm">
                 Your quote estimate has been sent to our Burlington care team. We will call you at {phone} to confirm details.

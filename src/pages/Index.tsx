@@ -6,32 +6,6 @@ import { careServices } from "@/data/careServices";
 import { testimonials } from "@/data/testimonials";
 import { leaders } from "@/data/leadership";
 import { CareQuoteCalculator } from "@/components/CareQuoteCalculator";
-import {
-  Clock,
-  ShieldCheck,
-  Activity,
-  HeartHandshake,
-  Brain,
-  Phone,
-  CheckCircle2,
-  Star,
-  MapPin,
-  ArrowRight,
-  Heart,
-  Users,
-  Award
-} from "lucide-react";
-
-const getServiceIcon = (iconName: string) => {
-  switch (iconName) {
-    case "Clock": return Clock;
-    case "ShieldCheck": return ShieldCheck;
-    case "Activity": return Activity;
-    case "HeartHandshake": return HeartHandshake;
-    case "Brain": return Brain;
-    default: return ShieldCheck;
-  }
-};
 
 const Index = () => {
   return (
@@ -55,8 +29,6 @@ const Index = () => {
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-
-
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
                 Would you rather stay at home than go into a health care facility?
               </h1>
@@ -76,15 +48,15 @@ const Index = () => {
 
               <div className="pt-6 border-t border-white/20 flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-white/80">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#40ddd3]" />
+                  <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
                   <span>Licensed & Background Checked</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#40ddd3]" />
+                  <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
                   <span>24/7 Helpline Assistance</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#40ddd3]" />
+                  <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
                   <span>Burlington, MA Headquarters</span>
                 </div>
               </div>
@@ -94,7 +66,6 @@ const Index = () => {
             <div className="lg:col-span-5">
               <div className="bg-white/95 backdrop-blur-md rounded-3xl p-8 text-gray-900 shadow-2xl border border-white/50 space-y-6">
                 <div className="text-center space-y-2">
-
                   <h3 className="text-2xl font-black text-gray-900">Need Care Right Away?</h3>
                   <p className="text-gray-600 text-sm">
                     Speak directly with our senior care coordinator in Burlington, MA.
@@ -102,7 +73,7 @@ const Index = () => {
                 </div>
 
                 <div className="bg-[#76248a] text-white p-6 rounded-2xl text-center space-y-2 shadow-lg">
-                  <Phone className="w-8 h-8 text-[#40ddd3] mx-auto animate-pulse" />
+                  <i className="fa-solid fa-phone text-3xl text-[#40ddd3] block mb-2 animate-pulse"></i>
                   <span className="text-xs font-bold uppercase tracking-wider text-white/80 block">Call Our Helpline</span>
                   <a href="tel:3399701214" className="text-3xl font-black text-[#40ddd3] hover:underline block">
                     339 970 1214
@@ -112,15 +83,15 @@ const Index = () => {
 
                 <ul className="space-y-3 text-sm font-semibold text-gray-700">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#76248a]" />
+                    <i className="fa-solid fa-circle-check text-[#76248a]"></i>
                     <span>Free In-Home Care Assessment</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#76248a]" />
+                    <i className="fa-solid fa-circle-check text-[#76248a]"></i>
                     <span>Hourly, Daily & Respite Shifts</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#76248a]" />
+                    <i className="fa-solid fa-circle-check text-[#76248a]"></i>
                     <span>Family Care Portal Access</span>
                   </li>
                 </ul>
@@ -138,7 +109,6 @@ const Index = () => {
       <section className="section-padding bg-gray-50/80">
         <div className="container-narrow mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
               Our Core Home Care Services
             </h2>
@@ -148,53 +118,50 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {careServices.map((service) => {
-              const Icon = getServiceIcon(service.icon);
-              return (
-                <div
-                  key={service.id}
-                  className="bg-white rounded-3xl p-8 shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
-                >
-                  <div className="space-y-4">
-                    <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                      <Icon className="w-7 h-7" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#76248a] transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-[#76248a] font-semibold text-xs uppercase tracking-wide">
-                      {service.tagline}
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-                    <ul className="space-y-2 pt-2">
-                      {service.features.slice(0, 3).map((f, idx) => (
-                        <li key={idx} className="text-xs font-medium text-gray-700 flex items-center gap-2">
-                          <span className="text-[#40ddd3] font-bold">✓</span> {f}
-                        </li>
-                      ))}
-                    </ul>
+            {careServices.map((service) => (
+              <div
+                key={service.id}
+                className="bg-white rounded-3xl p-8 shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+              >
+                <div className="space-y-4">
+                  <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                    <i className={`${service.icon} text-2xl`}></i>
                   </div>
-
-                  <div className="pt-6 mt-6 border-t border-gray-100">
-                    <Link
-                      to="/services"
-                      className="inline-flex items-center gap-2 text-[#76248a] font-bold text-sm hover:text-[#561868] transition-colors"
-                    >
-                      <span>Learn More</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#76248a] transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-[#76248a] font-semibold text-xs uppercase tracking-wide">
+                    {service.tagline}
+                  </p>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                  <ul className="space-y-2 pt-2">
+                    {service.features.slice(0, 3).map((f, idx) => (
+                      <li key={idx} className="text-xs font-medium text-gray-700 flex items-center gap-2">
+                        <span className="text-[#40ddd3] font-bold">✓</span> {f}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              );
-            })}
+
+                <div className="pt-6 mt-6 border-t border-gray-100">
+                  <Link
+                    to="/services"
+                    className="inline-flex items-center gap-2 text-[#76248a] font-bold text-sm hover:text-[#561868] transition-colors"
+                  >
+                    <span>Learn More</span>
+                    <i className="fa-solid fa-arrow-right text-xs"></i>
+                  </Link>
+                </div>
+              </div>
+            ))}
 
             {/* Quick Consultation Highlight Card */}
             <div className="bg-[#76248a] text-white rounded-3xl p-8 shadow-xl flex flex-col justify-between border border-[#40ddd3]/30">
               <div className="space-y-4">
                 <div className="w-14 h-14 rounded-2xl bg-[#40ddd3] text-[#76248a] flex items-center justify-center shadow-md">
-                  <Award className="w-7 h-7" />
+                  <i className="fa-solid fa-award text-2xl text-[#76248a]"></i>
                 </div>
                 <h3 className="text-2xl font-black text-white">
                   Not Sure Which Care Plan Fits Best?
@@ -244,8 +211,6 @@ const Index = () => {
 
             {/* Right Story */}
             <div className="lg:col-span-7 space-y-6">
-
-
               <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight">
                 Founded on Personal Compassion & Dedicated Care
               </h2>
@@ -283,7 +248,6 @@ const Index = () => {
       <section className="section-padding bg-white">
         <div className="container-narrow mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
               What Families Say About Akirapa Home Care
             </h2>
@@ -297,7 +261,7 @@ const Index = () => {
               <div key={item.id} className="bg-gray-50/80 rounded-3xl p-8 border border-gray-100 space-y-4 shadow-sm relative">
                 <div className="flex items-center gap-1 text-amber-400">
                   {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-current" />
+                    <i key={i} className="fa-solid fa-star text-sm"></i>
                   ))}
                 </div>
                 <p className="text-gray-700 italic text-base leading-relaxed">
@@ -330,7 +294,7 @@ const Index = () => {
               href="tel:3399701214"
               className="inline-flex items-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-[#76248a] font-extrabold text-xl px-8 py-4 rounded-2xl shadow-xl transition-all"
             >
-              <Phone className="w-6 h-6" />
+              <i className="fa-solid fa-phone text-xl"></i>
               <span>Call 339 970 1214</span>
             </a>
             <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 font-bold text-lg h-14 px-8 rounded-2xl">

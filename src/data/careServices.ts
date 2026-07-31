@@ -4,7 +4,7 @@ export interface CareService {
   tagline: string;
   description: string;
   detailedDescription: string;
-  icon: string; // Lucide icon name
+  icon: string; // FontAwesome icon class string
   features: string[];
   idealFor: string[];
   callToAction: string;
@@ -17,7 +17,7 @@ export const careServices: CareService[] = [
     tagline: "Flexible Care Around Your Daily Schedule",
     description: "Customized care plans designed around your routine, from a few hours a week to daily visits.",
     detailedDescription: "Hourly home care allows clients to maintain their independence in the comfort of home while receiving assistance only when needed. Whether you require help with morning routines, meal preparation, medication reminders, or evening assistance, our certified caregivers adjust flexible shift hours based on a free care assessment.",
-    icon: "Clock",
+    icon: "fa-solid fa-clock",
     features: [
       "Customized care plans tailored around your 24-hour day",
       "Assistance with bathing, dressing & personal grooming",
@@ -39,7 +39,7 @@ export const careServices: CareService[] = [
     tagline: "Comprehensive Around-the-Clock Care at Home",
     description: "A continuous, compassionate alternative to nursing homes or assisted living facilities.",
     detailedDescription: "For seniors requiring continuous supervision and care, our daily around-the-clock home care program provides 24/7 peace of mind. Experienced, dedicated caregivers work in shifts to ensure maximum comfort, dignity, safety, and engagement around the clock in the familiar environment of home.",
-    icon: "ShieldCheck",
+    icon: "fa-solid fa-shield-halved",
     features: [
       "24/7 continuous in-home supervision and caregiving shifts",
       "Full assistance with activities of daily living (ADLs)",
@@ -61,7 +61,7 @@ export const careServices: CareService[] = [
     tagline: "Seamless Transition & Readmission Prevention",
     description: "Specialized post-hospitalization support to ensure a smooth recovery and avoid hospital readmission.",
     detailedDescription: "Transitioning from a hospital or rehab center back home can be overwhelming. Our Hospital to Home Care program bridges the gap between clinical discharge instructions and home execution, helping clients adhere to recovery protocols, manage prescriptions, and prevent costly hospital readmissions.",
-    icon: "Activity",
+    icon: "fa-solid fa-heart-pulse",
     features: [
       "Discharge plan coordination with hospital social workers & doctors",
       "Post-surgical wound care support & medication management",
@@ -83,7 +83,7 @@ export const careServices: CareService[] = [
     tagline: "Temporary Relief for Family Caregivers",
     description: "Contract-free, flexible relief care allowing primary family caregivers time to rest and recharge.",
     detailedDescription: "Caring for an aging family member is deeply rewarding, but it can also lead to mental and physical burnout. Respite Home Care provides family caregivers with a trusted partner to step in seamlessly, whether for a weekend getaway, vacation, or regular weekly breaks.",
-    icon: "HeartHandshake",
+    icon: "fa-solid fa-hand-holding-heart",
     features: [
       "Flexible short-term and contract-free caregiver relief",
       "Seamless continuation of established daily care routines",
@@ -104,7 +104,7 @@ export const careServices: CareService[] = [
     tagline: "Expert Support for Alzheimer's, Parkinson's & Memory Care",
     description: "Tailored care plans for individuals coping with progressive neurological conditions, stroke, or hospice support.",
     detailedDescription: "Progressive health conditions demand specialized knowledge and compassionate understanding. Our caregivers receive specialized training in managing cognitive changes, memory loss, agitation, mobility challenges, and end-of-life hospice support with dignity and respect.",
-    icon: "Brain",
+    icon: "fa-solid fa-brain",
     features: [
       "Alzheimer's & Dementia memory care & cognitive stimulation",
       "Parkinson's disease assistance with mobility & tremors",

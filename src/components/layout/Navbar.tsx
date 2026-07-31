@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, MapPin, Phone, Mail, HeartPulse, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -22,22 +21,22 @@ const Navbar = () => {
         <div className="container-narrow mx-auto flex justify-between items-center text-xs sm:text-sm font-medium">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-[#40ddd3]" />
+              <i className="fa-solid fa-location-dot text-[#40ddd3]"></i>
               <span>83 Cambridge Street, Burlington, MA 01803</span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-[#40ddd3]" />
+              <i className="fa-solid fa-phone text-[#40ddd3]"></i>
               <span className="font-bold text-[#40ddd3]">24/7 Helpline: 339 970 1214</span>
               <span className="text-white/70">/ 781 472 9375</span>
             </div>
           </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-[#40ddd3]" />
+              <i className="fa-solid fa-envelope text-[#40ddd3]"></i>
               <span>info@akirapahomecareus.com</span>
             </div>
-            <div className="flex items-center gap-1 bg-[#40ddd3]/20 text-[#40ddd3] px-2.5 py-0.5 rounded-full font-semibold">
-              <Clock className="w-3.5 h-3.5" />
+            <div className="flex items-center gap-1.5 bg-[#40ddd3]/20 text-[#40ddd3] px-2.5 py-0.5 rounded-full font-semibold">
+              <i className="fa-solid fa-clock text-xs"></i>
               <span>Care Your Way</span>
             </div>
           </div>
@@ -50,8 +49,8 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-20">
             {/* Brand Logo */}
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#76248a] to-[#561868] flex items-center justify-center text-white shadow-md border border-[#40ddd3]/30">
-                <HeartPulse className="w-7 h-7 text-[#40ddd3]" />
+              <div className="w-12 h-12 rounded-xl bg-[#76248a] flex items-center justify-center text-white shadow-md border border-[#40ddd3]/30">
+                <i className="fa-solid fa-heart-pulse text-2xl text-[#40ddd3]"></i>
               </div>
               <div className="flex flex-col">
                 <span className="text-xl sm:text-2xl font-black tracking-tight text-[#76248a]">
@@ -95,7 +94,11 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <i className="fa-solid fa-xmark text-2xl"></i>
+              ) : (
+                <i className="fa-solid fa-bars text-2xl"></i>
+              )}
             </button>
           </div>
 
@@ -119,11 +122,11 @@ const Navbar = () => {
                 ))}
                 <div className="px-4 py-3 border-t border-gray-100 mt-2 space-y-2 text-sm text-gray-600">
                   <div className="flex items-center gap-2 font-semibold text-[#76248a]">
-                    <Phone className="w-4 h-4 text-[#40ddd3]" />
+                    <i className="fa-solid fa-phone text-[#40ddd3]"></i>
                     <span>24/7 Hotline: 339 970 1214 / 781 472 9375</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-[#40ddd3]" />
+                    <i className="fa-solid fa-envelope text-[#40ddd3]"></i>
                     <span>info@akirapahomecareus.com</span>
                   </div>
                 </div>

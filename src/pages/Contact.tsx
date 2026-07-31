@@ -3,35 +3,34 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock, Send, Loader2, CheckCircle2, ShieldCheck } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    serviceNeeded: "Hourly Home Care",
+    careType: "hourly",
+    city: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    setLoading(true);
 
     setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
+      setLoading(false);
+      setSubmitted(true);
       toast({
-        title: "Free Assessment Requested!",
-        description: "Thank you for contacting Akirapa Home Care. Our Burlington care coordinator will reach out shortly.",
+        title: "Assessment Requested!",
+        description: "Thank you for reaching out to Akirapa Home Care. Our care manager will contact you shortly.",
       });
-      setFormData({ name: "", phone: "", email: "", serviceNeeded: "Hourly Home Care", message: "" });
     }, 600);
   };
 
@@ -51,7 +50,6 @@ const Contact = () => {
       {/* Hero Header */}
       <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-[#76248a] text-white">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-
           <h1 className="text-4xl sm:text-5xl font-black text-white">
             Contact Akirapa Home Care
           </h1>
@@ -67,52 +65,58 @@ const Contact = () => {
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left: Contact Info Cards */}
             <div className="lg:col-span-6 space-y-6">
-
               <h2 className="text-3xl font-black text-gray-900">
                 Burlington, MA Office & 24/7 Helpline
               </h2>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 {/* Address Card */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 space-y-2">
-                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center">
-                    <MapPin className="w-5 h-5" />
+                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-2">
+                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center mb-2">
+                    <i className="fa-solid fa-location-dot text-lg text-[#40ddd3]"></i>
                   </div>
-                  <h4 className="font-bold text-gray-900 text-base">Headquarters</h4>
-                  <p className="text-gray-600 text-sm">83 Cambridge Street<br />Burlington, MA 01803</p>
+                  <h4 className="font-bold text-gray-900 text-base">Office Address</h4>
+                  <p className="text-gray-600 text-xs leading-relaxed">
+                    83 Cambridge Street<br />
+                    Burlington, MA 01803
+                  </p>
                 </div>
 
-                {/* 24/7 Phone Card */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 space-y-2">
-                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center">
-                    <Phone className="w-5 h-5" />
+                {/* Phone Card */}
+                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-2">
+                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center mb-2">
+                    <i className="fa-solid fa-phone text-lg text-[#40ddd3]"></i>
                   </div>
-                  <h4 className="font-bold text-gray-900 text-base">Helpline (24/7)</h4>
-                  <p className="text-[#76248a] font-bold text-sm">339 970 1214</p>
-                  <p className="text-gray-600 text-xs">781 472 9375</p>
+                  <h4 className="font-bold text-gray-900 text-base">24/7 Helpline</h4>
+                  <a href="tel:3399701214" className="text-[#76248a] font-black text-lg block hover:underline">
+                    339 970 1214
+                  </a>
+                  <p className="text-gray-500 text-xs">Secondary: 781 472 9375</p>
                 </div>
 
                 {/* Email Card */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 space-y-2">
-                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center">
-                    <Mail className="w-5 h-5" />
+                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-2">
+                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center mb-2">
+                    <i className="fa-solid fa-envelope text-lg text-[#40ddd3]"></i>
                   </div>
                   <h4 className="font-bold text-gray-900 text-base">Email Enquiries</h4>
                   <p className="text-gray-600 text-xs">info@akirapahomecareus.com</p>
                 </div>
 
                 {/* Hours Card */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 space-y-2">
-                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center">
-                    <Clock className="w-5 h-5" />
+                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-2">
+                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center mb-2">
+                    <i className="fa-solid fa-clock text-lg text-[#40ddd3]"></i>
                   </div>
-                  <h4 className="font-bold text-gray-900 text-base">Office & Shift Hours</h4>
-                  <p className="text-gray-600 text-xs">Caregivers available 24 hours a day, 7 days a week, 365 days a year.</p>
+                  <h4 className="font-bold text-gray-900 text-base">Hours of Operation</h4>
+                  <p className="text-gray-600 text-xs">Office: Mon–Fri (8am - 6pm)</p>
+                  <p className="text-[#76248a] font-bold text-xs">Care Services: 24/7 Available</p>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-[#76248a] to-[#561868] text-white p-6 rounded-2xl shadow-lg border border-[#40ddd3]/30 flex items-center gap-4">
-                <ShieldCheck className="w-10 h-10 text-[#40ddd3] shrink-0" />
+              {/* Trust Box */}
+              <div className="bg-[#76248a] text-white p-6 rounded-2xl space-y-3 shadow-lg flex items-center gap-4">
+                <i className="fa-solid fa-shield-halved text-3xl text-[#40ddd3] shrink-0"></i>
                 <div>
                   <h4 className="font-bold text-white text-base">Contract-Free & Flexible</h4>
                   <p className="text-white/80 text-xs">No long-term commitments required. Modify your care hours as needed.</p>
@@ -130,107 +134,114 @@ const Contact = () => {
                   </p>
                 </div>
 
-                {!isSubmitted ? (
+                {!submitted ? (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <Label htmlFor="name" className="text-gray-800 text-xs font-semibold mb-1 block">Full Name</Label>
+                      <Label htmlFor="name" className="text-xs font-semibold text-gray-700">Your Full Name *</Label>
                       <Input
                         id="name"
                         name="name"
-                        placeholder="Your Full Name"
+                        required
+                        placeholder="John Smith"
                         value={formData.name}
                         onChange={handleChange}
-                        required
-                        className="bg-gray-50"
+                        className="bg-gray-50 mt-1"
                       />
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="phone" className="text-gray-800 text-xs font-semibold mb-1 block">Phone Number</Label>
+                        <Label htmlFor="phone" className="text-xs font-semibold text-gray-700">Phone Number *</Label>
                         <Input
                           id="phone"
                           name="phone"
+                          required
                           placeholder="339-970-1214"
                           value={formData.phone}
                           onChange={handleChange}
-                          required
-                          className="bg-gray-50"
+                          className="bg-gray-50 mt-1"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="email" className="text-gray-800 text-xs font-semibold mb-1 block">Email Address</Label>
+                        <Label htmlFor="email" className="text-xs font-semibold text-gray-700">Email Address *</Label>
                         <Input
                           id="email"
                           name="email"
                           type="email"
-                          placeholder="care@example.com"
+                          required
+                          placeholder="info@akirapahomecareus.com"
                           value={formData.email}
                           onChange={handleChange}
-                          required
-                          className="bg-gray-50"
+                          className="bg-gray-50 mt-1"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="careType" className="text-xs font-semibold text-gray-700">Care Program Needed</Label>
+                        <select
+                          id="careType"
+                          name="careType"
+                          value={formData.careType}
+                          onChange={handleChange}
+                          className="w-full h-10 mt-1 rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-900 focus:outline-none"
+                        >
+                          <option value="hourly">Hourly Home Care</option>
+                          <option value="daily">Daily & 24/7 Home Care</option>
+                          <option value="hospital">Hospital to Home Recovery</option>
+                          <option value="respite">Respite Care</option>
+                          <option value="specialized">Specialized Alzheimer's Care</option>
+                        </select>
+                      </div>
+                      <div>
+                        <Label htmlFor="city" className="text-xs font-semibold text-gray-700">City / Town in MA</Label>
+                        <Input
+                          id="city"
+                          name="city"
+                          placeholder="e.g. Burlington, MA"
+                          value={formData.city}
+                          onChange={handleChange}
+                          className="bg-gray-50 mt-1"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="serviceNeeded" className="text-gray-800 text-xs font-semibold mb-1 block">Care Program Needed</Label>
-                      <select
-                        id="serviceNeeded"
-                        name="serviceNeeded"
-                        value={formData.serviceNeeded}
-                        onChange={handleChange}
-                        className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm font-medium text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#76248a]"
-                      >
-                        <option value="Hourly Home Care">Hourly Home Care</option>
-                        <option value="Daily & 24/7 Home Care">Daily & 24/7 Home Care</option>
-                        <option value="Hospital to Home Care">Hospital to Home Care</option>
-                        <option value="Respite Home Care">Respite Home Care</option>
-                        <option value="Specialized Care (Alzheimer's/Parkinson's)">Specialized Care (Alzheimer's/Parkinson's)</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="message" className="text-gray-800 text-xs font-semibold mb-1 block">Care Details / Questions</Label>
+                      <Label htmlFor="message" className="text-xs font-semibold text-gray-700">Care Needs or Questions</Label>
                       <Textarea
                         id="message"
                         name="message"
-                        placeholder="Tell us about your care needs or questions..."
+                        placeholder="Please describe your family's current care situation..."
                         value={formData.message}
                         onChange={handleChange}
-                        className="bg-gray-50 min-h-[100px]"
+                        className="bg-gray-50 mt-1 h-28"
                       />
                     </div>
 
                     <Button
                       type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-[#76248a] hover:bg-[#561868] text-white font-bold text-base h-12 rounded-xl shadow-md"
+                      disabled={loading}
+                      size="lg"
+                      className="w-full bg-[#76248a] hover:bg-[#561868] text-white font-bold text-base h-12 rounded-xl"
                     >
-                      {isSubmitting ? (
-                        <div className="flex items-center gap-2">
-                          <Loader2 className="w-4 h-4 animate-spin text-[#40ddd3]" />
+                      {loading ? (
+                        <span className="flex items-center gap-2">
+                          <i className="fa-solid fa-circle-notch fa-spin text-lg"></i>
                           Submitting...
-                        </div>
+                        </span>
                       ) : (
-                        "Submit Consultation Request"
+                        "Request Free Assessment"
                       )}
                     </Button>
                   </form>
                 ) : (
-                  <div className="bg-green-50 border border-green-200 p-8 rounded-2xl text-center space-y-3">
-                    <CheckCircle2 className="w-12 h-12 text-green-600 mx-auto" />
-                    <h4 className="text-xl font-bold text-green-900">Request Submitted!</h4>
+                  <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center space-y-3">
+                    <i className="fa-solid fa-circle-check text-4xl text-green-600 mx-auto"></i>
+                    <h4 className="text-2xl font-bold text-green-900">Assessment Request Received!</h4>
                     <p className="text-green-800 text-sm">
-                      Thank you for contacting Akirapa Home Care. A care manager will reach out at {formData.phone} shortly.
+                      Thank you {formData.name}. Our Burlington care manager will contact you at {formData.phone} shortly.
                     </p>
-                    <Button
-                      onClick={() => setIsSubmitted(false)}
-                      variant="outline"
-                      className="border-green-600 text-green-700"
-                    >
-                      Submit Another Message
-                    </Button>
                   </div>
                 )}
               </div>
@@ -243,7 +254,6 @@ const Contact = () => {
       <section className="section-padding bg-white">
         <div className="container-narrow mx-auto text-center space-y-6">
           <div className="max-w-2xl mx-auto space-y-2">
-
             <h2 className="text-3xl font-black text-gray-900">Visit Our Burlington Office</h2>
             <p className="text-gray-600 text-sm">83 Cambridge Street, Burlington, MA 01803</p>
           </div>
@@ -253,10 +263,10 @@ const Contact = () => {
               title="Akirapa Home Care Burlington MA Location"
               width="100%"
               height="100%"
-              className="border-0"
+              style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
-              src="https://www.google.com/maps?q=83+Cambridge+Street+Burlington+MA+01803&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2941.56429388307!2d-71.19694162388358!3d42.5028989711792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37517c5df9121%3A0x6b77c5c0a37db7fa!2s83%20Cambridge%20St%2C%20Burlington%2C%20MA%2001803!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
             ></iframe>
           </div>
         </div>

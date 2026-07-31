@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, HeartPulse, ShieldCheck, Award, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -10,7 +9,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-[#40ddd3] flex items-center justify-center text-[#76248a] shadow-md">
-                <HeartPulse className="w-7 h-7" />
+                <i className="fa-solid fa-heart-pulse text-2xl text-[#76248a]"></i>
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-black tracking-tight text-white">
@@ -25,7 +24,7 @@ const Footer = () => {
               Providing compassionate, high-quality, and personalized home care services designed around your schedule. Care Your Way.
             </p>
             <div className="flex items-center gap-2 text-xs font-semibold text-[#40ddd3] bg-white/10 px-3 py-1.5 rounded-lg w-fit">
-              <ShieldCheck className="w-4 h-4" />
+              <i className="fa-solid fa-shield-halved text-sm"></i>
               <span>Licensed & Certified Caregivers</span>
             </div>
           </div>
@@ -91,18 +90,18 @@ const Footer = () => {
             </h4>
             <ul className="space-y-4 text-base text-white/90">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#40ddd3] shrink-0 mt-1" />
+                <i className="fa-solid fa-location-dot text-[#40ddd3] text-lg shrink-0 mt-1"></i>
                 <span>83 Cambridge Street, Burlington, MA 01803</span>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#40ddd3] shrink-0 mt-1" />
+                <i className="fa-solid fa-phone text-[#40ddd3] text-lg shrink-0 mt-1"></i>
                 <div>
                   <p className="font-bold text-white">339 970 1214 <span className="text-[#40ddd3] text-xs font-normal">(24/7 Service)</span></p>
                   <p className="text-white/80 text-sm">781 472 9375</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#40ddd3] shrink-0 mt-1" />
+                <i className="fa-solid fa-envelope text-[#40ddd3] text-lg shrink-0 mt-1"></i>
                 <div className="space-y-0.5 text-sm">
                   <p>info@akirapahomecareus.com</p>
                 </div>
