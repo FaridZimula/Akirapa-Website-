@@ -42,7 +42,7 @@ const Index = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 bg-gradient-to-br from-[#76248a] via-[#561868] to-[#40ddd3] text-white overflow-hidden">
+      <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 bg-[#76248a] text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <img
             src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=1600"
@@ -101,7 +101,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-[#76248a] to-[#561868] text-white p-6 rounded-2xl text-center space-y-2 shadow-lg">
+                <div className="bg-[#76248a] text-white p-6 rounded-2xl text-center space-y-2 shadow-lg">
                   <Phone className="w-8 h-8 text-[#40ddd3] mx-auto animate-pulse" />
                   <span className="text-xs font-bold uppercase tracking-wider text-white/80 block">Call Our Helpline</span>
                   <a href="tel:3399701214" className="text-3xl font-black text-[#40ddd3] hover:underline block">
@@ -191,7 +191,7 @@ const Index = () => {
             })}
 
             {/* Quick Consultation Highlight Card */}
-            <div className="bg-gradient-to-br from-[#76248a] to-[#561868] text-white rounded-3xl p-8 shadow-xl flex flex-col justify-between border border-[#40ddd3]/30">
+            <div className="bg-[#76248a] text-white rounded-3xl p-8 shadow-xl flex flex-col justify-between border border-[#40ddd3]/30">
               <div className="space-y-4">
                 <div className="w-14 h-14 rounded-2xl bg-[#40ddd3] text-[#76248a] flex items-center justify-center shadow-md">
                   <Award className="w-7 h-7" />
@@ -317,7 +317,7 @@ const Index = () => {
       </section>
 
       {/* 24/7 Helpline Bottom Banner */}
-      <section className="py-16 bg-gradient-to-r from-[#76248a] to-[#561868] text-white">
+      <section className="py-16 bg-[#76248a] text-white">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-black text-white">
             Ready to Begin Your Home Care Journey?

@@ -35,7 +35,7 @@ const Leadership = () => {
       />
 
       {/* Hero Header */}
-      <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-br from-[#76248a] to-[#561868] text-white">
+      <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-[#76248a] text-white">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
 
           <h1 className="text-4xl sm:text-5xl font-black text-white">
@@ -96,7 +96,7 @@ const Leadership = () => {
             </div>
 
             <div className="lg:col-span-6 space-y-6">
-              <div className="bg-gradient-to-br from-[#76248a] to-[#561868] text-white p-8 md:p-10 rounded-3xl shadow-xl space-y-6 border border-[#40ddd3]/30">
+              <div className="bg-[#76248a] text-white p-8 md:p-10 rounded-3xl shadow-xl space-y-6 border border-[#40ddd3]/30">
                 <div className="w-14 h-14 rounded-2xl bg-[#40ddd3] text-[#76248a] flex items-center justify-center shadow-md">
                   <Award className="w-7 h-7" />
                 </div>
@@ -206,7 +206,7 @@ const Leadership = () => {
 
             {/* Right: Submit Your Review */}
             <div className="lg:col-span-5">
-              <div className="bg-gradient-to-br from-[#76248a] to-[#561868] text-white p-8 rounded-3xl shadow-xl space-y-6">
+              <div className="bg-[#76248a] text-white p-8 rounded-3xl shadow-xl space-y-6">
                 <div className="flex items-center gap-3">
                   <MessageSquare className="w-6 h-6 text-[#40ddd3]" />
                   <h3 className="text-2xl font-black text-white">Share Your Feedback</h3>

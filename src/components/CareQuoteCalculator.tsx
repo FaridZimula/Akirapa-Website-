@@ -40,7 +40,7 @@ export const CareQuoteCalculator: React.FC = () => {
 
   return (
     <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#40ddd3]/20 to-[#76248a]/10 rounded-full blur-3xl -z-0"></div>
+
 
       <div className="relative z-10">
         <div className="flex items-center gap-3 mb-4">
@@ -135,7 +135,7 @@ export const CareQuoteCalculator: React.FC = () => {
           )}
 
           {/* Estimate Display Box */}
-          <div className="bg-gradient-to-br from-[#76248a] to-[#561868] p-6 rounded-2xl text-white flex flex-col md:flex-row justify-between items-center gap-6 shadow-lg border border-[#40ddd3]/30">
+          <div className="bg-[#76248a] p-6 rounded-2xl text-white flex flex-col md:flex-row justify-between items-center gap-6 shadow-lg border border-[#40ddd3]/30">
             <div>
               <span className="text-[#40ddd3] text-xs font-black uppercase tracking-wider block mb-1">
                 Estimated Investment

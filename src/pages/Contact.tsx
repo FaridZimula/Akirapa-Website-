@@ -49,7 +49,7 @@ const Contact = () => {
       />
 
       {/* Hero Header */}
-      <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-br from-[#76248a] via-[#561868] to-[#40ddd3] text-white">
+      <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-[#76248a] text-white">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
 
           <h1 className="text-4xl sm:text-5xl font-black text-white">

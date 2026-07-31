@@ -39,7 +39,7 @@
     --radius: 0.75rem;
 
     /* Akirapa Home Care Theme Tokens */
-    --hero-gradient: linear-gradient(135deg, #76248a 0%, #561868 60%, #40ddd3 100%);
+    --hero-gradient: #76248a;
     --card-shadow: 0 4px 24px -4px rgba(118, 36, 138, 0.15);
     --card-shadow-hover: 0 12px 32px -8px rgba(118, 36, 138, 0.25);
 
