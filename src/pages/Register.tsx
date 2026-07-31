@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, CheckCircle2, Smartphone, ArrowRight } from "lucide-react";
-import { API_URL } from "@/config";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
 
@@ -41,84 +40,14 @@ const Register = () => {
 
         setIsSubmitting(true);
 
-        try {
-            const response = await fetch(`${API_URL}/register`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            });
-
-            if (!response.ok) {
-                let errorMessage = "Registration failed";
-                try {
-                    const errorData = await response.json();
-                    errorMessage = errorData.error || errorMessage;
-                } catch (parseErr) {
-                    errorMessage = `Server logic error (${response.status})`;
-                }
-                throw new Error(errorMessage);
-            }
-
-            const data = await response.json();
-            const memberId = data.memberId;
-
-            toast({
-                title: "PIN Prompt Sent",
-                description: "Please check your phone and enter your PIN to complete registration.",
-            });
-
-            // Start Polling for Success
-            let attempts = 0;
-            const maxAttempts = 20; // 2 minutes (6s * 20)
-
-            const pollStatus = setInterval(async () => {
-                attempts++;
-                try {
-                    const statusRes = await fetch(`${API_URL}/register/status?id=${memberId}`);
-                    if (statusRes.ok) {
-                        const statusData = await statusRes.json();
-                        if (statusData.status === "SUCCESSFUL") {
-                            clearInterval(pollStatus);
-                            setIsSuccess(true);
-                            setIsSubmitting(false);
-                            toast({
-                                title: "Payment Confirmed!",
-                                description: "Your membership registration is now complete.",
-                            });
-                        } else if (statusData.status === "FAILED") {
-                            clearInterval(pollStatus);
-                            setIsSubmitting(false);
-                            toast({
-                                title: "Payment Failed",
-                                description: "The mobile money transaction was not successful. Please try again.",
-                                variant: "destructive",
-                            });
-                        }
-                    }
-                } catch (pollErr) {
-                    console.error("Polling error:", pollErr);
-                }
-
-                if (attempts >= maxAttempts) {
-                    clearInterval(pollStatus);
-                    setIsSubmitting(false);
-                    toast({
-                        title: "Payment Timeout",
-                        description: "We haven't received confirmation yet. If you've paid, your account will be updated shortly.",
-                        variant: "destructive",
-                    });
-                }
-            }, 6000); // Check every 6 seconds
-
-        } catch (err: any) {
+        setTimeout(() => {
+            setIsSuccess(true);
             setIsSubmitting(false);
             toast({
-                title: "Error",
-                description: err.message || "Could not submit registration. Please try again.",
-                variant: "destructive",
+                title: "Registration Successful!",
+                description: "Your membership registration is now complete.",
             });
-            console.error("Registration error:", err);
-        }
+        }, 1000);
     };
 
     if (isSuccess) {

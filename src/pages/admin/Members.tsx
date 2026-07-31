@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { API_URL } from "@/config";
 import { Loader2, Users, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
@@ -20,22 +19,11 @@ interface Member {
 
 const Members = () => {
     const [members, setMembers] = useState<Member[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
 
     const fetchMembers = async () => {
-        setIsLoading(true);
-        try {
-            const response = await fetch(`${API_URL}/admin/members`);
-            if (response.ok) {
-                const data = await response.json();
-                setMembers(data);
-            }
-        } catch (error) {
-            console.error("Error fetching members:", error);
-        } finally {
-            setIsLoading(false);
-        }
+        setIsLoading(false);
     };
 
     useEffect(() => {

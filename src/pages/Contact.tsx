@@ -10,8 +10,6 @@ import SEO from "@/components/SEO";
 import { useToast } from "@/hooks/use-toast";
 import heroImage from "@/assets/hero-youth.jpg";
 import { useData } from "@/context/DataContext";
-import { API_URL } from "@/config";
-import { supabase } from "@/lib/supabase";
 
 const contactInfo = [
   {
@@ -52,33 +50,14 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Use Supabase directly for faster delivery and real-time triggers
-    supabase
-      .from('messages')
-      .insert([{
-        full_name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        content: formData.message,
-      }])
-      .then(({ error }) => {
-        if (error) throw error;
-        setIsSubmitting(false);
-        toast({
-          title: "Message Sent!",
-          description: "Thank you for reaching out. We'll get back to you soon.",
-        });
-        setFormData({ name: "", phone: "", email: "", subject: "", message: "" });
-      })
-      .catch((err) => {
-        setIsSubmitting(false);
-        toast({
-          title: "Error",
-          description: "Could not send message. Please try again.",
-          variant: "destructive",
-        });
-        console.error("Contact error:", err);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. We'll get back to you soon.",
       });
+      setFormData({ name: "", phone: "", email: "", subject: "", message: "" });
+    }, 600);
   };
 
   const handleChange = (

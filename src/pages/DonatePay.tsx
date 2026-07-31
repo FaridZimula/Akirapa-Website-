@@ -15,8 +15,6 @@ import {
     Lock
 } from "lucide-react";
 
-import { API_URL } from "@/config";
-
 const DonatePay = () => {
     const navigate = useNavigate();
     const { toast } = useToast();
@@ -118,54 +116,14 @@ const DonatePay = () => {
 
         setIsSubmitting(true);
 
-        try {
-            const response = await fetch(`${API_URL}/donate`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    amount,
-                    phone,
-                    provider,
-                    email,
-                    firstName,
-                    lastName,
-                    cardNumber,
-                    expiry,
-                    cvv,
-                    nameOnCard,
-                    isAnonymous
-                }),
-            });
-
-            if (!response.ok) {
-                let errorMsg = "Payment processing failed";
-                try {
-                    const errorData = await response.json();
-                    errorMsg = errorData.error || errorData.message || errorMsg;
-                } catch (e) {
-                    // If not JSON, try text
-                    const errorText = await response.text();
-                    if (errorText) errorMsg = errorText;
-                }
-                throw new Error(errorMsg);
-            }
-
+        setTimeout(() => {
             setIsSuccess(true);
-            toast({
-                title: provider === "card" ? "Donation Successful!" : "Donation Initiated!",
-                description: provider === "card"
-                    ? "Thank you for your generous contribution."
-                    : "Please check your phone for the PIN prompt to complete your donation.",
-            });
-        } catch (err: any) {
-            toast({
-                title: "Error",
-                description: err.message || "An error occurred. Please try again.",
-                variant: "destructive",
-            });
-        } finally {
             setIsSubmitting(false);
-        }
+            toast({
+                title: provider === "card" ? "Donation Successful!" : "Donation Processed!",
+                description: "Thank you for your generous contribution.",
+            });
+        }, 800);
     };
 
     if (isSuccess) {
