@@ -46,20 +46,14 @@ const Navbar = () => {
       {/* Main Navbar */}
       <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-24 sm:h-28">
             {/* Brand Logo */}
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-[#76248a] flex items-center justify-center text-white shadow-md border border-[#40ddd3]/30">
-                <i className="fa-solid fa-heart-pulse text-2xl text-[#40ddd3]"></i>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl sm:text-2xl font-black tracking-tight text-[#76248a]">
-                  AKIRAPA
-                </span>
-                <span className="text-xs font-bold tracking-widest text-[#40ddd3] uppercase -mt-1">
-                  HOME CARE
-                </span>
-              </div>
+            <Link to="/" className="flex items-center overflow-visible py-2 pl-3">
+              <img
+                src="/AKIRAPA LOGO.png"
+                alt="Akirapa Home Care"
+                className="h-14 sm:h-16 w-auto object-contain scale-[2.2] sm:scale-[2.6] origin-left transition-transform hover:scale-[2.3] sm:hover:scale-[2.7]"
+              />
             </Link>
 
             {/* Desktop Navigation */}

@@ -14,8 +14,8 @@ const SplashScreen = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-1000">
             <div className="animate-pulse">
                 <img
-                    src="/Welcome logo.png"
-                    alt="Welcome to SUYEL"
+                    src="/AKIRAPA LOGO.png"
+                    alt="Welcome to Akirapa Home Care"
                     className="w-64 md:w-80 h-auto object-contain"
                 />
             </div>

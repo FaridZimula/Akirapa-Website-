@@ -9,13 +9,13 @@ interface SEOProps {
 }
 
 const SEO = ({
-    title = "SUYEL - Step Up Uganda Youth Empowerment League",
-    description = "Empowering young people in Uganda to become leaders of positive change through education, skills development, and community engagement.",
-    image = "/Favi Icon.png",
-    url = "https://suyel.org",
+    title = "Akirapa Home Care - Compassionate Home Care Services",
+    description = "Providing compassionate, high-quality, and personalized home care services designed around your schedule. Care Your Way.",
+    image = "/AKIRAPA LOGO.png",
+    url = "https://akirapahomecareus.com",
     type = "website"
 }: SEOProps) => {
-    const siteTitle = title.includes("SUYEL") ? title : `${title} | SUYEL`;
+    const siteTitle = title.includes("Akirapa") ? title : `${title} | Akirapa Home Care`;
 
     return (
         <Helmet>
@@ -41,21 +41,23 @@ const SEO = ({
             <script type="application/ld+json">
                 {JSON.stringify({
                     "@context": "https://schema.org",
-                    "@type": "NGO",
-                    "name": "SUYEL",
-                    "alternateName": "Step Up Uganda Youth Empowerment League",
-                    "url": "https://suyel.org",
-                    "logo": "https://suyel.org/Favi%20Icon.png",
+                    "@type": "Organization",
+                    "name": "Akirapa Home Care",
+                    "url": "https://akirapahomecareus.com",
+                    "logo": "https://akirapahomecareus.com/AKIRAPA%20LOGO.png",
                     "description": description,
                     "address": {
                         "@type": "PostalAddress",
-                        "addressLocality": "Iganga & Wakiso",
-                        "addressCountry": "UG"
+                        "streetAddress": "83 Cambridge Street",
+                        "addressLocality": "Burlington",
+                        "addressRegion": "MA",
+                        "postalCode": "01803",
+                        "addressCountry": "US"
                     },
                     "contactPoint": {
                         "@type": "ContactPoint",
-                        "telephone": "+256 745878827",
-                        "contactType": "General inquiries"
+                        "telephone": "+1-339-970-1214",
+                        "contactType": "Customer Service"
                     }
                 })}
             </script>

@@ -7,18 +7,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Column */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-[#40ddd3] flex items-center justify-center text-[#76248a] shadow-md">
-                <i className="fa-solid fa-heart-pulse text-2xl text-[#76248a]"></i>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-black tracking-tight text-white">
-                  AKIRAPA
-                </span>
-                <span className="text-xs font-bold tracking-widest text-[#40ddd3] uppercase -mt-1">
-                  HOME CARE
-                </span>
-              </div>
+            <Link to="/" className="inline-block overflow-visible py-2 pl-3">
+              <img
+                src="/FOOTER LOGO (2).png"
+                alt="Akirapa Home Care"
+                className="h-16 sm:h-18 w-auto object-contain scale-[2] sm:scale-[2.4] origin-left transition-transform hover:scale-[2.1] sm:hover:scale-[2.5]"
+              />
             </Link>
             <p className="text-white/80 text-base leading-relaxed">
               Providing compassionate, high-quality, and personalized home care services designed around your schedule. Care Your Way.
