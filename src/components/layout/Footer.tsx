@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="inline-block overflow-visible py-2 pl-3">
               <img
-                src="/FOOTER LOGO (2).png"
+                src="/footer-logo.png"
                 alt="Akirapa Home Care"
                 className="h-16 sm:h-18 w-auto object-contain scale-[2] sm:scale-[2.4] origin-left transition-transform hover:scale-[2.1] sm:hover:scale-[2.5]"
               />

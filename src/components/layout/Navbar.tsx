@@ -50,7 +50,7 @@ const Navbar = () => {
             {/* Brand Logo */}
             <Link to="/" className="flex items-center overflow-visible py-2 pl-3">
               <img
-                src="/AKIRAPA LOGO.png"
+                src="/akirapa-logo.png"
                 alt="Akirapa Home Care"
                 className="h-14 sm:h-16 w-auto object-contain scale-[2.2] sm:scale-[2.6] origin-left transition-transform hover:scale-[2.3] sm:hover:scale-[2.7]"
               />

@@ -11,7 +11,7 @@ interface SEOProps {
 const SEO = ({
     title = "Akirapa Home Care - Compassionate Home Care Services",
     description = "Providing compassionate, high-quality, and personalized home care services designed around your schedule. Care Your Way.",
-    image = "/AKIRAPA LOGO.png",
+    image = "/akirapa-logo.png",
     url = "https://akirapahomecareus.com",
     type = "website"
 }: SEOProps) => {
@@ -44,7 +44,7 @@ const SEO = ({
                     "@type": "Organization",
                     "name": "Akirapa Home Care",
                     "url": "https://akirapahomecareus.com",
-                    "logo": "https://akirapahomecareus.com/AKIRAPA%20LOGO.png",
+                    "logo": "https://akirapahomecareus.com/akirapa-logo.png",
                     "description": description,
                     "address": {
                         "@type": "PostalAddress",
