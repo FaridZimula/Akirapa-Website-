@@ -16,7 +16,7 @@ const Index = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 bg-[#76248a] text-white overflow-hidden">
+      <section className="relative pt-28 pb-16 md:pt-32 md:pb-20 lg:pt-32 lg:pb-12 lg:h-[680px] lg:min-h-[680px] flex items-center bg-[#76248a] text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <img
             src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=1600"
