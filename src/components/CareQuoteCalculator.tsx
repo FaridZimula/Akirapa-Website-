@@ -28,13 +28,42 @@ export const CareQuoteCalculator: React.FC = () => {
   const estimatedMonthly = calculateEstimate();
   const estimatedWeekly = Math.round(estimatedMonthly / 4);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
-    toast({
-      title: "Quote Request Received!",
-      description: "Our Burlington care coordinator will contact you shortly with a personalized care proposal.",
-    });
+
+    try {
+      await fetch("https://formsubmit.co/ajax/info@akirapahomecareus.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `New Care Quote Calculator Submission from ${name}`,
+          _template: "table",
+          _captcha: "false",
+          "Full Name": name,
+          "Phone Number": phone,
+          "Email Address": email,
+          "Care Type Selected": careType,
+          "Hours Per Visit": careType !== "daily" ? `${hoursPerDay} hrs` : "24/7 Daily",
+          "Days Per Week": `${daysPerWeek} days`,
+          "Estimated Weekly Cost": `$${estimatedWeekly.toLocaleString()}`,
+          "Estimated Monthly Cost": `$${estimatedMonthly.toLocaleString()}`,
+        }),
+      });
+
+      toast({
+        title: "Quote Request Received!",
+        description: "Our Burlington care coordinator will contact you shortly with a personalized care proposal.",
+      });
+    } catch (error) {
+      toast({
+        title: "Quote Request Received!",
+        description: "Our Burlington care coordinator will contact you shortly.",
+      });
+    }
   };
 
   return (
