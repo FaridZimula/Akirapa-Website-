@@ -25,81 +25,77 @@ const Index = () => {
           />
         </div>
 
-        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
-                Would you rather stay at home than go into a health care facility?
-              </h1>
+        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
+          <div className="max-w-3xl space-y-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-left">
+              Would you rather stay at home than go into a health care facility?
+            </h1>
 
-              <p className="text-lg sm:text-xl text-white/90 font-medium leading-relaxed max-w-2xl">
-                We will come to your convenient location. Akirapa Home Care provides flexible, compassionate, and professional in-home care tailored around your daily routine.
-              </p>
+            <p className="text-lg sm:text-xl text-white/90 font-medium leading-relaxed max-w-2xl text-left">
+              We will come to your convenient location. Akirapa Home Care provides flexible, compassionate, and professional in-home care tailored around your daily routine.
+            </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#76248a] font-extrabold text-lg h-14 px-8 rounded-2xl shadow-xl">
-                  <Link to="/contact">Schedule Free Assessment</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10 font-bold text-lg h-14 px-8 rounded-2xl">
-                  <Link to="/services">Explore Care Programs</Link>
-                </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-start items-stretch sm:items-center pt-4">
+              <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#76248a] font-extrabold text-lg h-14 px-8 rounded-2xl shadow-xl">
+                <Link to="/contact">Schedule Free Assessment</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10 font-bold text-lg h-14 px-8 rounded-2xl">
+                <Link to="/services">Explore Care Programs</Link>
+              </Button>
+            </div>
+
+            <div className="pt-6 border-t border-white/20 flex flex-wrap justify-start gap-6 text-sm text-white/80">
+              <div className="flex items-center gap-2">
+                <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
+                <span>Licensed & Background Checked</span>
               </div>
+              <div className="flex items-center gap-2">
+                <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
+                <span>24/7 Helpline Assistance</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
+                <span>Burlington, MA Headquarters</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div className="pt-6 border-t border-white/20 flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-white/80">
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
-                  <span>Licensed & Background Checked</span>
+      {/* High Impact Helpline Callout Banner */}
+      <section className="bg-gray-50/80 pt-6 pb-4">
+        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100 flex flex-col lg:flex-row items-center justify-between gap-6 -mt-14 sm:-mt-16 relative z-20">
+            <div className="flex items-center gap-4 text-center sm:text-left flex-col sm:flex-row">
+              <div className="w-16 h-16 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shrink-0 shadow-md">
+                <i className="fa-solid fa-phone-volume text-2xl text-white"></i>
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2 justify-center sm:justify-start">
+                  <span className="bg-[#76248a] text-white text-[10px] uppercase font-extrabold px-2.5 py-0.5 rounded-full">24/7 Helpline</span>
+                  <h3 className="text-xl sm:text-2xl font-black text-gray-900">Need Care Right Away?</h3>
                 </div>
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
-                  <span>24/7 Helpline Assistance</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
-                  <span>Burlington, MA Headquarters</span>
-                </div>
+                <p className="text-gray-600 text-sm">
+                  Speak directly with our senior care coordinator in Burlington, MA.
+                </p>
               </div>
             </div>
 
-            {/* Right Card / Hotline Highlight */}
-            <div className="lg:col-span-5">
-              <div className="bg-white/95 backdrop-blur-md rounded-3xl p-8 text-gray-900 shadow-2xl border border-white/50 space-y-6">
-                <div className="text-center space-y-2">
-                  <h3 className="text-2xl font-black text-gray-900">Need Care Right Away?</h3>
-                  <p className="text-gray-600 text-sm">
-                    Speak directly with our senior care coordinator in Burlington, MA.
-                  </p>
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto shrink-0">
+              <a
+                href="tel:3399701214"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#76248a] hover:bg-[#561868] text-white font-extrabold px-6 py-3.5 rounded-2xl shadow-lg transition-all text-base"
+              >
+                <i className="fa-solid fa-phone text-lg text-[#40ddd3]"></i>
+                <div className="text-left">
+                  <span className="text-[10px] text-white/70 block uppercase leading-none">Main Hotline</span>
+                  <span className="text-lg font-black text-[#40ddd3]">339 970 1214</span>
                 </div>
+              </a>
 
-                <div className="bg-[#76248a] text-white p-6 rounded-2xl text-center space-y-2 shadow-lg">
-                  <i className="fa-solid fa-phone text-3xl text-[#40ddd3] block mb-2 animate-pulse"></i>
-                  <span className="text-xs font-bold uppercase tracking-wider text-white/80 block">Call Our Helpline</span>
-                  <a href="tel:3399701214" className="text-3xl font-black text-[#40ddd3] hover:underline block">
-                    339 970 1214
-                  </a>
-                  <p className="text-xs text-white/70">Secondary: 781 472 9375</p>
-                </div>
-
-                <ul className="space-y-3 text-sm font-semibold text-gray-700">
-                  <li className="flex items-center gap-2">
-                    <i className="fa-solid fa-circle-check text-[#76248a]"></i>
-                    <span>Free In-Home Care Assessment</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <i className="fa-solid fa-circle-check text-[#76248a]"></i>
-                    <span>Hourly, Daily & Respite Shifts</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <i className="fa-solid fa-circle-check text-[#76248a]"></i>
-                    <span>Family Care Portal Access</span>
-                  </li>
-                </ul>
-
-                <Button asChild className="w-full bg-[#76248a] hover:bg-[#561868] text-white font-bold h-12 text-base rounded-xl">
-                  <Link to="/contact">Request Immediate Callback</Link>
-                </Button>
-              </div>
+              <Button asChild size="lg" className="w-full sm:w-auto bg-[#40ddd3] hover:bg-[#34c4ba] text-[#76248a] font-extrabold text-base h-14 px-6 rounded-2xl shadow-md">
+                <Link to="/contact">Request Immediate Callback</Link>
+              </Button>
             </div>
           </div>
         </div>
