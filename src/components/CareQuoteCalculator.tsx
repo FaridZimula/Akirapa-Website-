@@ -178,12 +178,6 @@ export const CareQuoteCalculator: React.FC = () => {
                 *Final rates are confirmed during your free in-home assessment.
               </p>
             </div>
-
-            <div className="text-right">
-              <span className="text-xs text-white/90 bg-[#40ddd3]/20 px-3 py-1 rounded-full font-bold">
-                Contract-Free & Flexible
-              </span>
-            </div>
           </div>
 
           {/* Contact Details to Lock in Quote */}
