@@ -47,7 +47,7 @@ Respite care provides temporary relief for primary family caregivers. Benefits i
     author: "Stuart Ssemwogerere",
     category: "Respite Care",
     readTime: "3 min read",
-    image: "https://images.unsplash.com/photo-1581579438747-1dc8d1e05842?auto=format&fit=crop&q=80&w=800"
+    image: "/CARE GIVER  (13).jpg"
   },
   {
     id: "post-3",

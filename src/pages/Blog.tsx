@@ -5,6 +5,88 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { blogPosts, BlogPost } from "@/data/blogPosts";
 
+const parseBoldText = (text: string) => {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i} className="font-bold text-gray-900">{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+};
+
+const renderArticleContent = (content: string) => {
+  const lines = content.split('\n');
+  const elements: JSX.Element[] = [];
+  let currentList: { num?: string; title: string; text: string }[] = [];
+
+  const flushList = () => {
+    if (currentList.length > 0) {
+      elements.push(
+        <div key={`list-${elements.length}`} className="my-6 space-y-3">
+          {currentList.map((item, idx) => (
+            <div
+              key={idx}
+              className="flex items-start gap-4 p-4 rounded-2xl bg-gray-50/90 border border-gray-200/80 shadow-xs hover:border-[#76248a]/40 transition-colors text-left"
+            >
+              <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-[#76248a] text-[#40ddd3] font-black flex items-center justify-center text-sm shadow-sm mt-0.5">
+                {item.num ? item.num : <i className="fa-solid fa-check text-xs"></i>}
+              </div>
+              <div className="space-y-1 text-left flex-1">
+                {item.title && (
+                  <h4 className="font-bold text-gray-900 text-base text-left">
+                    {item.title}
+                  </h4>
+                )}
+                {item.text && (
+                  <p className="text-gray-700 text-sm leading-relaxed text-left">
+                    {item.text}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+      currentList = [];
+    }
+  };
+
+  lines.forEach((line, index) => {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      flushList();
+      return;
+    }
+
+    // Match ordered item: e.g. "1. **Title**: text" or "1. text"
+    const orderedMatch = trimmed.match(/^(\d+)\.\s+(\*\*(.*?)\*\*:?\s*)?(.*)$/);
+    // Match unordered item: e.g. "- **Title**: text" or "- text"
+    const unorderedMatch = trimmed.match(/^[-*]\s+(\*\*(.*?)\*\*:?\s*)?(.*)$/);
+
+    if (orderedMatch) {
+      const num = orderedMatch[1];
+      const title = orderedMatch[3] || "";
+      const text = orderedMatch[4] || "";
+      currentList.push({ num, title, text });
+    } else if (unorderedMatch) {
+      const title = unorderedMatch[2] || "";
+      const text = unorderedMatch[3] || "";
+      currentList.push({ title, text });
+    } else {
+      flushList();
+      elements.push(
+        <p key={index} className="text-gray-700 leading-relaxed text-base mb-4 text-left">
+          {parseBoldText(trimmed)}
+        </p>
+      );
+    }
+  });
+
+  flushList();
+  return elements;
+};
+
 const Blog = () => {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
@@ -45,9 +127,6 @@ const Blog = () => {
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute top-4 left-4 bg-[#76248a] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                        {post.category}
-                      </div>
                     </div>
                     <div className="p-6 space-y-3">
                       <div className="flex items-center gap-4 text-xs text-gray-500 font-medium">
@@ -96,9 +175,6 @@ const Blog = () => {
               </button>
 
               <div className="space-y-3">
-                <span className="bg-[#76248a] text-white text-xs font-bold px-3 py-1 rounded-full">
-                  {selectedPost.category}
-                </span>
                 <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight">
                   {selectedPost.title}
                 </h1>
@@ -119,16 +195,19 @@ const Blog = () => {
                 />
               </div>
 
-              <div className="prose prose-purple max-w-none text-gray-700 leading-relaxed text-base space-y-4">
-                <p className="font-semibold text-lg text-gray-900">
+              <div className="prose prose-purple max-w-none text-gray-700 leading-relaxed text-base space-y-4 text-left">
+                <p className="font-semibold text-lg text-gray-900 text-left border-l-4 border-[#76248a] pl-4 py-1 bg-[#76248a]/5 rounded-r-xl">
                   {selectedPost.excerpt}
                 </p>
-                <p>
-                  {selectedPost.content}
-                </p>
-                <p>
-                  At Akirapa Home Care in Burlington, MA, our certified nursing assistants and care managers work closely with families to implement these strategies seamlessly. Whether your family needs hourly support or continuous daily care, we are here to support your journey.
-                </p>
+
+                {renderArticleContent(selectedPost.content)}
+
+                <div className="p-6 rounded-2xl bg-[#76248a]/5 border border-[#76248a]/20 mt-8 text-left space-y-2">
+                  <h4 className="font-bold text-[#76248a] text-lg text-left">Need Dedicated Care Support in Burlington, MA?</h4>
+                  <p className="text-gray-700 text-sm leading-relaxed text-left">
+                    At Akirapa Home Care in Burlington, MA, our certified nursing assistants and care managers work closely with families to implement these strategies seamlessly. Whether your family needs hourly support or continuous daily care, we are here to support your journey.
+                  </p>
+                </div>
               </div>
 
               <div className="pt-6 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
