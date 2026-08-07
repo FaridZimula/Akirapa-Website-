@@ -126,7 +126,7 @@ const Index = () => {
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#76248a] transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-[#76248a] font-semibold text-xs uppercase tracking-wide">
+                  <p className="text-[#76248a] font-semibold text-xs uppercase tracking-normal">
                     {service.tagline}
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">

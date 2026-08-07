@@ -162,7 +162,7 @@ export const CareQuoteCalculator: React.FC = () => {
           {/* Estimate Display Box */}
           <div className="bg-[#76248a] p-6 rounded-2xl text-white flex flex-col md:flex-row justify-between items-center gap-6 shadow-lg border border-[#40ddd3]/30">
             <div>
-              <span className="text-[#40ddd3] text-xs font-black uppercase tracking-wider block mb-1">
+              <span className="text-[#40ddd3] text-xs font-black uppercase tracking-normal block mb-1">
                 Estimated Investment
               </span>
               <div className="flex items-baseline gap-2">
