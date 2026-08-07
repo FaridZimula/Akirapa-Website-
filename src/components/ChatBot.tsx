@@ -79,7 +79,7 @@ export const ChatBot = () => {
       {!isOpen && showTooltip && (
         <div className="mb-3 bg-white/95 backdrop-blur-md text-[#76248a] font-bold text-xs py-2 px-4 rounded-2xl shadow-xl border border-[#76248a]/20 flex items-center gap-2 animate-bounce">
           <i className="fa-solid fa-comments text-[#76248a]"></i>
-          <span>Chat with Care Assistant</span>
+          <span>Chat with Akirapa Assistant</span>
           <button
             onClick={(e) => { e.stopPropagation(); setShowTooltip(false); }}
             className="ml-1 text-gray-400 hover:text-gray-600"
@@ -111,7 +111,7 @@ export const ChatBot = () => {
                 <i className="fa-solid fa-robot text-lg text-white"></i>
               </div>
               <div>
-                <h3 className="font-extrabold text-sm leading-tight text-white">Akirapa Care Assistant</h3>
+                <h3 className="font-extrabold text-sm leading-tight text-white">Akirapa Assistant</h3>
                 <div className="flex items-center gap-1.5 pt-0.5">
                   <span className="w-2 h-2 rounded-full bg-[#40ddd3] animate-pulse"></span>
                   <span className="text-[11px] text-white/90 font-medium">24/7 Support Online</span>

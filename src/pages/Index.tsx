@@ -79,22 +79,6 @@ const Index = () => {
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-white via-white/80 via-30% to-transparent sm:hidden pointer-events-none" />
         </div>
 
-        {/* Navigation Arrows */}
-        <button
-          onClick={prevSlide}
-          aria-label="Previous Slide"
-          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-lg border border-gray-200 text-gray-700 hover:text-[#76248a] hover:bg-white flex items-center justify-center transition-all"
-        >
-          <i className="fa-solid fa-chevron-left text-lg"></i>
-        </button>
-        <button
-          onClick={nextSlide}
-          aria-label="Next Slide"
-          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-lg border border-gray-200 text-gray-700 hover:text-[#76248a] hover:bg-white flex items-center justify-center transition-all"
-        >
-          <i className="fa-solid fa-chevron-right text-lg"></i>
-        </button>
-
         {/* Slide Indicators */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
           {heroSlides.map((_, index) => (
@@ -111,8 +95,8 @@ const Index = () => {
           ))}
         </div>
 
-        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-          <div className="max-w-2xl lg:max-w-3xl space-y-6 text-left">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-20">
+          <div className="max-w-3xl lg:max-w-4xl space-y-6 text-left pl-1 sm:pl-2">
             <div key={slide.id} className="space-y-6 transition-all duration-700 ease-in-out animate-fadeIn">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold sm:font-extrabold text-[#76248a] tracking-tight leading-[1.15] text-left">
                 {slide.title}
@@ -185,6 +169,103 @@ const Index = () => {
                 <Link to="/contact">Request Immediate Callback</Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Showcase Section with Images from Public Folder */}
+      <section className="py-16 md:py-20 bg-white border-b border-gray-100">
+        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-10">
+          {/* Main Headline */}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-tight text-left">
+            Would you rather stay at home than go into a health care facility or nursing home?
+          </h2>
+
+          {/* Sub-row with Teal Line and Button */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="flex items-start gap-4 max-w-2xl">
+              <div className="w-16 h-1 bg-[#40ddd3] rounded-full shrink-0 mt-3 hidden sm:block"></div>
+              <p className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed text-left">
+                Akirapa Home Care Inc provides the following home health care programs at flexible schedules and cost-friendly service rates.
+              </p>
+            </div>
+
+            <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#76248a] font-extrabold uppercase text-sm h-14 px-8 rounded-none shadow-md border-none shrink-0">
+              <Link to="/services">View Care Services</Link>
+            </Button>
+          </div>
+
+          {/* 5 Services Images Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 pt-4">
+            {/* Service 1 */}
+            <Link to="/services" className="group space-y-3.5 text-center">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 border border-gray-100 bg-gray-50">
+                <img
+                  src="/CARE GIVER  (1).jpg"
+                  alt="Hourly home care"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#40ddd3] transition-colors">
+                Hourly home care
+              </h3>
+            </Link>
+
+            {/* Service 2 */}
+            <Link to="/services" className="group space-y-3.5 text-center">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 border border-gray-100 bg-gray-50">
+                <img
+                  src="/CARE GIVER  (5).jpg"
+                  alt="Daily home care"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#40ddd3] transition-colors">
+                Daily home care
+              </h3>
+            </Link>
+
+            {/* Service 3 */}
+            <Link to="/services" className="group space-y-3.5 text-center">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 border border-gray-100 bg-gray-50">
+                <img
+                  src="/CARE GIVER  (8).jpg"
+                  alt="Hospital to home care"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#40ddd3] transition-colors">
+                Hospital to home care
+              </h3>
+            </Link>
+
+            {/* Service 4 */}
+            <Link to="/services" className="group space-y-3.5 text-center">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 border border-gray-100 bg-gray-50">
+                <img
+                  src="/CARE GIVER  (14).jpg"
+                  alt="Respite home care"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#40ddd3] transition-colors">
+                Respite home care
+              </h3>
+            </Link>
+
+            {/* Service 5 */}
+            <Link to="/services" className="group space-y-3.5 text-center">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 border border-gray-100 bg-gray-50">
+                <img
+                  src="/CARE GIVER  (16).jpg"
+                  alt="Specialized care"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#40ddd3] transition-colors">
+                Specialized care
+              </h3>
+            </Link>
           </div>
         </div>
       </section>
@@ -272,61 +353,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Founders & About Story Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-narrow mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            {/* Left Image / Founders */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="relative">
-                <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                  <img
-                    src="https://images.unsplash.com/photo-1581579438747-1dc8d1e05842?auto=format&fit=crop&q=80&w=800"
-                    alt="Cathy Akirapa & Stuart Ssemwogerere"
-                    className="w-full h-[420px] object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-6 -right-6 bg-[#76248a] text-white p-6 rounded-2xl shadow-xl border border-[#40ddd3]/30 hidden sm:block max-w-xs">
-                  <p className="text-2xl font-black text-[#40ddd3]">10+ Years</p>
-                  <p className="text-xs text-white/90 font-medium">Of Compassionate Senior Care Excellence (Est. 2013)</p>
-                </div>
-              </div>
-            </div>
 
-            {/* Right Story */}
-            <div className="lg:col-span-7 space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight">
-                Founded on Personal Compassion & Dedicated Care
-              </h2>
-
-              <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                Akirapa Home Care was founded in 2013 by <strong>Cathy Akirapa</strong> (CNA & Financial Professional) alongside <strong>Stuart Ssemwogerere</strong> (Executive Director) with a singular mission: to ensure seniors can live comfortably and safely in their own homes.
-              </p>
-
-              <p className="text-gray-600 text-base leading-relaxed">
-                Incorporated in 2015 and expanding regional healthcare partnerships in 2017, Akirapa Home Care has grown into a trusted home health care provider across Burlington, MA, and surrounding communities.
-              </p>
-
-              <div className="grid sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm space-y-1">
-                  <h4 className="font-bold text-[#76248a]">Cathy Akirapa</h4>
-                  <p className="text-xs text-gray-600">Founder, CNA & Financial Professional</p>
-                </div>
-                <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm space-y-1">
-                  <h4 className="font-bold text-[#76248a]">Stuart Ssemwogerere</h4>
-                  <p className="text-xs text-gray-600">Co-Founder & Executive Director</p>
-                </div>
-              </div>
-
-              <div className="pt-4">
-                <Button asChild size="lg" className="bg-[#76248a] hover:bg-[#561868] text-white font-bold rounded-2xl">
-                  <Link to="/about">Read Our Full Journey</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Client Testimonials Section */}
       <section className="py-16 md:py-24 bg-white">
