@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
@@ -7,7 +8,34 @@ import { testimonials } from "@/data/testimonials";
 import { leaders } from "@/data/leadership";
 import { CareQuoteCalculator } from "@/components/CareQuoteCalculator";
 
+const heroSlides = [
+  {
+    id: 1,
+    title: "You can't always be there. But we can.",
+    subtitle: "We offer a person-centred approach to keep seniors safe and sound at home, instead of anywhere else.",
+    image: "/CARE GIVER  (1).jpg"
+  },
+  {
+    id: 2,
+    title: "Would you rather stay at home than go into a health care facility?",
+    subtitle: "We will come to your convenient location. Akirapa Home Care provides flexible, compassionate, and professional in-home care.",
+    image: "/CARE GIVER  (16).jpg"
+  }
+];
+
 const Index = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
+  const slide = heroSlides[currentSlide];
+
   return (
     <Layout>
       <SEO
@@ -15,47 +43,69 @@ const Index = () => {
         description="Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Care Your Way."
       />
 
-      {/* Hero Section */}
-      <section className="relative pt-28 pb-16 md:pt-32 md:pb-20 lg:pt-32 lg:pb-12 lg:h-[680px] lg:min-h-[680px] flex items-center bg-[#76248a] text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
-          <img
-            src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=1600"
-            alt="Akirapa Senior Home Care"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {/* Light Elegant Hero Section */}
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-[#f9fbfb] text-gray-900 overflow-hidden border-b border-gray-100 min-h-[580px] flex items-center">
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          aria-label="Previous Slide"
+          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 text-gray-700 hover:text-[#76248a] hover:bg-gray-50 flex items-center justify-center transition-all"
+        >
+          <i className="fa-solid fa-chevron-left text-lg"></i>
+        </button>
+        <button
+          onClick={nextSlide}
+          aria-label="Next Slide"
+          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 text-gray-700 hover:text-[#76248a] hover:bg-gray-50 flex items-center justify-center transition-all"
+        >
+          <i className="fa-solid fa-chevron-right text-lg"></i>
+        </button>
 
-        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
-          <div className="max-w-3xl space-y-6">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-left">
-              Would you rather stay at home than go into a health care facility?
-            </h1>
+        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+          <div className="grid lg:grid-cols-12 gap-10 items-center">
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-[#5b1f6f] tracking-tight leading-[1.15] text-left">
+                {slide.title}
+              </h1>
 
-            <p className="text-lg sm:text-xl text-white/90 font-medium leading-relaxed max-w-2xl text-left">
-              We will come to your convenient location. Akirapa Home Care provides flexible, compassionate, and professional in-home care tailored around your daily routine.
-            </p>
+              <p className="text-lg sm:text-xl text-[#218981] font-semibold leading-relaxed max-w-2xl text-left">
+                {slide.subtitle}
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-start items-stretch sm:items-center pt-4">
-              <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#76248a] font-extrabold text-lg h-14 px-8 rounded-2xl shadow-xl">
-                <Link to="/contact">Schedule Free Assessment</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10 font-bold text-lg h-14 px-8 rounded-2xl">
-                <Link to="/services">Explore Care Programs</Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-start items-stretch sm:items-center pt-4">
+                <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#5b1f6f] font-extrabold uppercase tracking-normal text-sm h-14 px-8 rounded-none shadow-sm border-none">
+                  <Link to="/contact">Schedule Free Assessment</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="bg-white hover:bg-gray-50 border border-gray-300 text-gray-800 font-extrabold uppercase tracking-normal text-sm h-14 px-8 rounded-none shadow-xs">
+                  <Link to="/services">Explore Care Programs</Link>
+                </Button>
+              </div>
+
+              <div className="pt-6 border-t border-gray-200/80 flex flex-wrap justify-start gap-6 text-xs sm:text-sm font-semibold text-gray-600">
+                <div className="flex items-center gap-2">
+                  <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
+                  <span>Licensed Caregivers</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
+                  <span>24/7 Helpline Support</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
+                  <span>Burlington, MA</span>
+                </div>
+              </div>
             </div>
 
-            <div className="pt-6 border-t border-white/20 flex flex-wrap justify-start gap-6 text-sm text-white/80">
-              <div className="flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
-                <span>Licensed & Background Checked</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
-                <span>24/7 Helpline Assistance</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
-                <span>Burlington, MA Headquarters</span>
+            {/* Right Side Image Column */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white group">
+                <img
+                  src={slide.image}
+                  alt="Akirapa Home Care Senior Caregiver"
+                  className="w-full h-[400px] sm:h-[480px] object-cover transition-all duration-700 group-hover:scale-105"
+                />
               </div>
             </div>
           </div>
