@@ -256,23 +256,25 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {testimonials.slice(0, 4).map((item) => (
-              <div key={item.id} className="bg-gray-50/80 rounded-3xl p-8 border border-gray-100 space-y-4 shadow-sm relative">
-                <div className="flex items-center gap-1 text-amber-400">
-                  {[...Array(item.rating)].map((_, i) => (
-                    <i key={i} className="fa-solid fa-star text-sm"></i>
-                  ))}
+              <div key={item.id} className="bg-gray-50/80 rounded-3xl p-6 border border-gray-100 space-y-4 shadow-sm relative flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-1 text-amber-400">
+                    {[...Array(item.rating)].map((_, i) => (
+                      <i key={i} className="fa-solid fa-star text-sm"></i>
+                    ))}
+                  </div>
+                  <p className="text-gray-700 italic text-sm leading-relaxed">
+                    "{item.text}"
+                  </p>
                 </div>
-                <p className="text-gray-700 italic text-base leading-relaxed">
-                  "{item.text}"
-                </p>
-                <div className="pt-4 border-t border-gray-200 flex justify-between items-center text-sm">
+                <div className="pt-4 border-t border-gray-200 flex justify-between items-center text-xs">
                   <div>
                     <p className="font-bold text-gray-900">{item.author}</p>
                     <p className="text-xs text-gray-500">{item.relation} • {item.location}</p>
                   </div>
-                  {item.date && <span className="text-xs text-gray-400">{item.date}</span>}
+                  {item.date && <span className="text-xs text-gray-400 shrink-0 ml-1">{item.date}</span>}
                 </div>
               </div>
             ))}

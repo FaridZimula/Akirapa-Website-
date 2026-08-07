@@ -18,24 +18,24 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top Info Bar */}
       <div className="bg-[#76248a] text-white py-2 px-4 sm:px-6 lg:px-8 hidden md:block border-b border-white/10">
-        <div className="container-narrow mx-auto flex justify-between items-center text-xs sm:text-sm font-medium">
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
+        <div className="container-narrow mx-auto flex justify-between items-center text-xs sm:text-sm font-medium whitespace-nowrap">
+          <div className="flex items-center gap-6 flex-nowrap">
+            <div className="flex items-center gap-2 shrink-0">
               <i className="fa-solid fa-location-dot text-[#40ddd3]"></i>
               <span>83 Cambridge Street, Burlington, MA 01803</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 shrink-0">
               <i className="fa-solid fa-phone text-[#40ddd3]"></i>
               <span className="font-bold text-[#40ddd3]">24/7 Helpline: 339 970 1214</span>
               <span className="text-white/70">/ 781 472 9375</span>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4 flex-nowrap shrink-0">
+            <div className="flex items-center gap-2 shrink-0">
               <i className="fa-solid fa-envelope text-[#40ddd3]"></i>
               <span>info@akirapahomecareus.com</span>
             </div>
-            <div className="flex items-center gap-1.5 bg-[#40ddd3]/20 text-[#40ddd3] px-2.5 py-0.5 rounded-full font-semibold">
+            <div className="flex items-center gap-1.5 bg-[#40ddd3]/20 text-[#40ddd3] px-2.5 py-0.5 rounded-full font-semibold shrink-0">
               <i className="fa-solid fa-clock text-xs"></i>
               <span>Care Your Way</span>
             </div>
