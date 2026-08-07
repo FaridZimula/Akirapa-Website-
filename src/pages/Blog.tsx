@@ -29,7 +29,7 @@ const renderArticleContent = (content: string) => {
               key={idx}
               className="flex items-start gap-4 p-4 rounded-2xl bg-gray-50/90 border border-gray-200/80 shadow-xs hover:border-[#76248a]/40 transition-colors text-left"
             >
-              <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-[#76248a] text-[#40ddd3] font-black flex items-center justify-center text-sm shadow-sm mt-0.5">
+              <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-[#76248a] text-white font-black flex items-center justify-center text-sm shadow-sm mt-0.5">
                 {item.num ? item.num : <i className="fa-solid fa-check text-xs"></i>}
               </div>
               <div className="space-y-1 text-left flex-1">

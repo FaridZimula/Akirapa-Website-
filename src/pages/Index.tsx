@@ -124,7 +124,7 @@ const Index = () => {
                 className="bg-white rounded-3xl p-8 shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
               >
                 <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                     <i className={`${service.icon} text-2xl`}></i>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#76248a] transition-colors">

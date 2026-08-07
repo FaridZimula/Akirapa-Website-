@@ -56,7 +56,7 @@ const Projects = () => {
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-3">
-                <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center shadow-md">
+                <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shadow-md">
                   <i className={`${selectedService.icon} text-2xl`}></i>
                 </div>
                 <div>
