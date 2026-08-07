@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
@@ -13,18 +13,28 @@ const heroSlides = [
     id: 1,
     title: "You can't always be there. But we can.",
     subtitle: "We offer a person-centred approach to keep seniors safe and sound at home, instead of anywhere else.",
-    image: "/CARE GIVER  (1).jpg"
+    bgImage: "/CARE GIVER  (4).jpg"
   },
   {
     id: 2,
     title: "Would you rather stay at home than go into a health care facility?",
     subtitle: "We will come to your convenient location. Akirapa Home Care provides flexible, compassionate, and professional in-home care.",
-    image: "/CARE GIVER  (16).jpg"
+    bgImage: "/CARE GIVER  (16).jpg"
   }
 ];
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5500);
+
+    return () => clearInterval(timer);
+  }, [isPaused]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -43,28 +53,67 @@ const Index = () => {
         description="Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Care Your Way."
       />
 
-      {/* Light Elegant Hero Section */}
-      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-[#f9fbfb] text-gray-900 overflow-hidden border-b border-gray-100 min-h-[580px] flex items-center">
+      {/* Light Elegant Hero Section with Landscape Background & Strong White Gradient Overlay */}
+      <section
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-white text-gray-900 overflow-hidden border-b border-gray-100 min-h-[520px] md:min-h-[580px] flex items-center"
+      >
+        {/* Animated Background Landscape Images */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {heroSlides.map((item, index) => (
+            <img
+              key={item.id}
+              src={item.bgImage}
+              alt="Hero Caregiver Background"
+              className={`absolute inset-0 w-full h-full object-cover object-right md:object-right-top transition-all duration-1000 ease-in-out transform ${
+                index === currentSlide
+                  ? "opacity-100 scale-100 z-0"
+                  : "opacity-0 scale-105 -z-10"
+              }`}
+            />
+          ))}
+
+          {/* Strong White Gradient: 100% solid white across the text area (0-60%), smooth fade to transparent on the right */}
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-white via-white via-55% sm:via-white sm:via-60% md:via-white md:via-65% lg:via-white/95 lg:via-60% to-transparent pointer-events-none" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-white via-white/80 via-30% to-transparent sm:hidden pointer-events-none" />
+        </div>
+
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
           aria-label="Previous Slide"
-          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 text-gray-700 hover:text-[#76248a] hover:bg-gray-50 flex items-center justify-center transition-all"
+          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-lg border border-gray-200 text-gray-700 hover:text-[#76248a] hover:bg-white flex items-center justify-center transition-all"
         >
           <i className="fa-solid fa-chevron-left text-lg"></i>
         </button>
         <button
           onClick={nextSlide}
           aria-label="Next Slide"
-          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 text-gray-700 hover:text-[#76248a] hover:bg-gray-50 flex items-center justify-center transition-all"
+          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-lg border border-gray-200 text-gray-700 hover:text-[#76248a] hover:bg-white flex items-center justify-center transition-all"
         >
           <i className="fa-solid fa-chevron-right text-lg"></i>
         </button>
 
-        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
-            {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6 text-left">
+        {/* Slide Indicators */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+              className={`h-2.5 rounded-full transition-all duration-500 ${
+                index === currentSlide
+                  ? "w-8 bg-[#76248a]"
+                  : "w-2.5 bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
+
+        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 relative z-20">
+          <div className="max-w-2xl lg:max-w-3xl space-y-6 text-left">
+            <div key={slide.id} className="space-y-6 transition-all duration-700 ease-in-out animate-fadeIn">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-[#5b1f6f] tracking-tight leading-[1.15] text-left">
                 {slide.title}
               </h1>
@@ -72,40 +121,29 @@ const Index = () => {
               <p className="text-lg sm:text-xl text-[#218981] font-semibold leading-relaxed max-w-2xl text-left">
                 {slide.subtitle}
               </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-start items-stretch sm:items-center pt-4">
-                <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#5b1f6f] font-extrabold uppercase tracking-normal text-sm h-14 px-8 rounded-none shadow-sm border-none">
-                  <Link to="/contact">Schedule Free Assessment</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="bg-white hover:bg-gray-50 border border-gray-300 text-gray-800 font-extrabold uppercase tracking-normal text-sm h-14 px-8 rounded-none shadow-xs">
-                  <Link to="/services">Explore Care Programs</Link>
-                </Button>
-              </div>
-
-              <div className="pt-6 border-t border-gray-200/80 flex flex-wrap justify-start gap-6 text-xs sm:text-sm font-semibold text-gray-600">
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
-                  <span>Licensed Caregivers</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
-                  <span>24/7 Helpline Support</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-circle-check text-[#40ddd3]"></i>
-                  <span>Burlington, MA</span>
-                </div>
-              </div>
             </div>
 
-            {/* Right Side Image Column */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white group">
-                <img
-                  src={slide.image}
-                  alt="Akirapa Home Care Senior Caregiver"
-                  className="w-full h-[400px] sm:h-[480px] object-cover transition-all duration-700 group-hover:scale-105"
-                />
+            <div className="flex flex-col sm:flex-row gap-4 justify-start items-stretch sm:items-center pt-4">
+              <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#5b1f6f] font-extrabold uppercase tracking-normal text-sm h-14 px-8 rounded-none shadow-md border-none">
+                <Link to="/contact">Schedule Free Assessment</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="bg-white/90 hover:bg-white border border-gray-300 text-gray-800 font-extrabold uppercase tracking-normal text-sm h-14 px-8 rounded-none shadow-xs">
+                <Link to="/services">Explore Care Programs</Link>
+              </Button>
+            </div>
+
+            <div className="pt-6 border-t border-gray-300/80 flex flex-wrap justify-start gap-6 text-xs sm:text-sm font-semibold text-gray-700">
+              <div className="flex items-center gap-2">
+                <i className="fa-solid fa-circle-check text-[#218981]"></i>
+                <span>Licensed Caregivers</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <i className="fa-solid fa-circle-check text-[#218981]"></i>
+                <span>24/7 Helpline Support</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <i className="fa-solid fa-circle-check text-[#218981]"></i>
+                <span>Burlington, MA</span>
               </div>
             </div>
           </div>
