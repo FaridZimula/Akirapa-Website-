@@ -111,10 +111,10 @@ const Index = () => {
           ))}
         </div>
 
-        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 relative z-20">
+        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="max-w-2xl lg:max-w-3xl space-y-6 text-left">
             <div key={slide.id} className="space-y-6 transition-all duration-700 ease-in-out animate-fadeIn">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-[#5b1f6f] tracking-tight leading-[1.15] text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold sm:font-extrabold text-[#76248a] tracking-tight leading-[1.15] text-left">
                 {slide.title}
               </h1>
 
@@ -124,7 +124,7 @@ const Index = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-start items-stretch sm:items-center pt-4">
-              <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#5b1f6f] font-extrabold uppercase tracking-normal text-sm h-14 px-8 rounded-none shadow-md border-none">
+              <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#76248a] font-extrabold uppercase tracking-normal text-sm h-14 px-8 rounded-none shadow-md border-none">
                 <Link to="/contact">Schedule Free Assessment</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="bg-white/90 hover:bg-white border border-gray-300 text-gray-800 font-extrabold uppercase tracking-normal text-sm h-14 px-8 rounded-none shadow-xs">
@@ -329,37 +329,30 @@ const Index = () => {
       </section>
 
       {/* Client Testimonials Section */}
-      <section className="section-padding bg-white">
-        <div className="container-narrow mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-              What Families Say About Akirapa Home Care
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Trusted by families across Massachusetts and nationwide.
-            </p>
-          </div>
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 items-start">
+            {testimonials.map((item) => (
+              <div key={item.id} className="space-y-4 text-left">
+                {/* Cyan Quote Icon */}
+                <div className="text-left">
+                  <i className="fa-solid fa-quote-left text-3xl sm:text-4xl text-[#40ddd3]"></i>
+                </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-            {testimonials.slice(0, 4).map((item) => (
-              <div key={item.id} className="bg-gray-50/80 rounded-3xl p-6 border border-gray-100 space-y-4 shadow-sm relative flex flex-col justify-between hover:shadow-md transition-shadow">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-1 text-amber-400">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <i key={i} className="fa-solid fa-star text-sm"></i>
-                    ))}
-                  </div>
-                  <p className="text-gray-700 italic text-sm leading-relaxed">
-                    "{item.text}"
+                {/* Author Name and Subtitle */}
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#76248a] tracking-tight">
+                    {item.author}
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-500 font-normal pt-0.5">
+                    {item.location}
                   </p>
                 </div>
-                <div className="pt-4 border-t border-gray-200 flex justify-between items-center text-xs">
-                  <div>
-                    <p className="font-bold text-gray-900">{item.author}</p>
-                    <p className="text-xs text-gray-500">{item.relation} • {item.location}</p>
-                  </div>
-                  {item.date && <span className="text-xs text-gray-400 shrink-0 ml-1">{item.date}</span>}
-                </div>
+
+                {/* Remark Text */}
+                <p className="text-gray-600 text-base sm:text-lg font-normal leading-relaxed">
+                  {item.text}
+                </p>
               </div>
             ))}
           </div>

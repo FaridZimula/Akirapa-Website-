@@ -3,6 +3,7 @@ import { ArrowUp } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import SEO from "../SEO";
+import ChatBot from "../ChatBot";
 
 interface LayoutProps {
   children: ReactNode;
@@ -38,6 +39,9 @@ const Layout = ({ children }: LayoutProps) => {
       <Navbar />
       <main className="flex-1 pt-20 md:pt-32">{children}</main>
       <Footer />
+
+      {/* Hanging Floating ChatBot */}
+      <ChatBot />
 
       {/* Scroll to Top Button */}
       <button
