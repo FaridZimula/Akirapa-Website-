@@ -55,7 +55,7 @@ const Projects = () => {
                       : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
                   }`}
                 >
-                  <i className={`${service.icon} text-base ${isSelected ? "text-[#40ddd3]" : "text-[#76248a]"}`}></i>
+                  <i className={`${service.icon} text-base ${isSelected ? "text-white" : "text-[#76248a]"}`}></i>
                   <span>{service.title}</span>
                 </button>
               );

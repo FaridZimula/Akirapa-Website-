@@ -75,7 +75,7 @@ const Leadership = () => {
               {/* Milestones List */}
               <div className="space-y-4 pt-2">
                 <div className="flex items-start gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100">
-                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center font-bold text-sm shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-xs">
                     2013
                   </div>
                   <div>
@@ -85,7 +85,7 @@ const Leadership = () => {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100">
-                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center font-bold text-sm shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-xs">
                     2015
                   </div>
                   <div>
@@ -95,7 +95,7 @@ const Leadership = () => {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100">
-                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center font-bold text-sm shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-xs">
                     2017
                   </div>
                   <div>
@@ -107,7 +107,7 @@ const Leadership = () => {
             </div>
 
             <div className="lg:col-span-6 space-y-6">
-              <div className="bg-[#76248a] text-white p-8 md:p-10 rounded-3xl shadow-xl space-y-6 border border-[#40ddd3]/30">
+              <div className="bg-[#76248a] text-white p-8 md:p-10 rounded-3xl shadow-xl space-y-6 border border-white/20">
                 <div className="w-14 h-14 rounded-2xl bg-[#40ddd3] text-white flex items-center justify-center shadow-md">
                   <i className="fa-solid fa-award text-2xl text-white"></i>
                 </div>
@@ -217,7 +217,7 @@ const Leadership = () => {
             <div className="lg:col-span-5">
               <div className="bg-[#76248a] text-white p-8 rounded-3xl shadow-xl space-y-6">
                 <div className="flex items-center gap-3">
-                  <i className="fa-solid fa-comment-dots text-2xl text-[#40ddd3]"></i>
+                  <i className="fa-solid fa-comment-dots text-2xl text-white"></i>
                   <h3 className="text-2xl font-black text-white">Share Your Feedback</h3>
                 </div>
                 <p className="text-white/80 text-xs">

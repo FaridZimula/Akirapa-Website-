@@ -148,8 +148,8 @@ const Contact = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 {/* Address Card */}
                 <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-2">
-                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center mb-2">
-                    <i className="fa-solid fa-location-dot text-lg text-[#40ddd3]"></i>
+                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-white flex items-center justify-center mb-2 shadow-xs">
+                    <i className="fa-solid fa-location-dot text-lg text-white"></i>
                   </div>
                   <h4 className="font-bold text-gray-900 text-base">Office Address</h4>
                   <p className="text-gray-600 text-xs leading-relaxed">
@@ -160,8 +160,8 @@ const Contact = () => {
 
                 {/* Phone Card */}
                 <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-2">
-                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center mb-2">
-                    <i className="fa-solid fa-phone text-lg text-[#40ddd3]"></i>
+                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-white flex items-center justify-center mb-2 shadow-xs">
+                    <i className="fa-solid fa-phone text-lg text-white"></i>
                   </div>
                   <h4 className="font-bold text-gray-900 text-base">24/7 Helpline</h4>
                   <a href="tel:3399701214" className="text-[#76248a] font-black text-lg block hover:underline">
@@ -172,8 +172,8 @@ const Contact = () => {
 
                 {/* Email Card */}
                 <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-2">
-                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center mb-2">
-                    <i className="fa-solid fa-envelope text-lg text-[#40ddd3]"></i>
+                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-white flex items-center justify-center mb-2 shadow-xs">
+                    <i className="fa-solid fa-envelope text-lg text-white"></i>
                   </div>
                   <h4 className="font-bold text-gray-900 text-base">Email Enquiries</h4>
                   <p className="text-gray-600 text-xs">info@akirapahomecareus.com</p>
@@ -181,8 +181,8 @@ const Contact = () => {
 
                 {/* Hours Card */}
                 <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-2">
-                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-[#40ddd3] flex items-center justify-center mb-2">
-                    <i className="fa-solid fa-clock text-lg text-[#40ddd3]"></i>
+                  <div className="w-10 h-10 rounded-xl bg-[#76248a] text-white flex items-center justify-center mb-2 shadow-xs">
+                    <i className="fa-solid fa-clock text-lg text-white"></i>
                   </div>
                   <h4 className="font-bold text-gray-900 text-base">Hours of Operation</h4>
                   <p className="text-gray-600 text-xs">Office: Mon–Fri (8am - 6pm)</p>
@@ -192,7 +192,7 @@ const Contact = () => {
 
               {/* Trust Box */}
               <div className="bg-[#76248a] text-white p-6 rounded-2xl space-y-3 shadow-lg flex items-center gap-4">
-                <i className="fa-solid fa-shield-halved text-3xl text-[#40ddd3] shrink-0"></i>
+                <i className="fa-solid fa-shield-halved text-3xl text-white shrink-0"></i>
                 <div>
                   <h4 className="font-bold text-white text-base">Contract-Free & Flexible</h4>
                   <p className="text-white/80 text-xs">No long-term commitments required. Modify your care hours as needed.</p>
