@@ -11,6 +11,7 @@ import Leadership from "./pages/Leadership"; // About Us
 import Projects from "./pages/Projects"; // Care Services
 import Blog from "./pages/Blog"; // Our Blog
 import Contact from "./pages/Contact"; // Contact Us
+import Careers from "./pages/Careers"; // Careers
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import { HelmetProvider } from "react-helmet-async";
@@ -49,6 +50,7 @@ const App = () => {
                   <Route path="/about" element={<Leadership />} />
                   <Route path="/services" element={<Projects />} />
                   <Route path="/blog" element={<Blog />} />
+                  <Route path="/careers" element={<Careers />} />
                   <Route path="/contact" element={<Contact />} />
 
                   {/* Backward Compatibility Aliases */}

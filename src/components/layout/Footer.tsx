@@ -34,6 +34,7 @@ const Footer = () => {
                 { label: "About Us", path: "/about" },
                 { label: "Care Services", path: "/services" },
                 { label: "Our Blog", path: "/blog" },
+                { label: "Careers", path: "/careers" },
                 { label: "Contact Us", path: "/contact" },
                 { label: "Free Care Assessment", path: "/contact" }
               ].map((link) => (
