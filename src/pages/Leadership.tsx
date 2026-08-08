@@ -98,8 +98,8 @@ const Leadership = () => {
 
             <div className="lg:col-span-6 space-y-6">
               <div className="bg-[#76248a] text-white p-8 md:p-10 rounded-3xl shadow-xl space-y-6 border border-[#40ddd3]/30">
-                <div className="w-14 h-14 rounded-2xl bg-[#40ddd3] text-[#76248a] flex items-center justify-center shadow-md">
-                  <i className="fa-solid fa-award text-2xl text-[#76248a]"></i>
+                <div className="w-14 h-14 rounded-2xl bg-[#40ddd3] text-white flex items-center justify-center shadow-md">
+                  <i className="fa-solid fa-award text-2xl text-white"></i>
                 </div>
                 <h3 className="text-2xl font-black text-white">Our Mission & Promises</h3>
                 <ul className="space-y-4 text-sm text-white/90">
@@ -275,7 +275,7 @@ const Leadership = () => {
                         className="bg-white h-24"
                       />
                     </div>
-                    <Button type="submit" className="w-full bg-[#40ddd3] hover:bg-[#34c4ba] text-[#76248a] font-bold text-base h-12 rounded-xl">
+                    <Button type="submit" className="w-full bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-bold text-base h-12 rounded-xl">
                       Submit Feedback
                     </Button>
                   </form>

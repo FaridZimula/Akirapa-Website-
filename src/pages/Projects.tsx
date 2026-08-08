@@ -101,7 +101,7 @@ const Projects = () => {
                 <p className="text-xs text-white/80">
                   Ready to set up {selectedService.title.toLowerCase()} for your family?
                 </p>
-                <Button asChild size="lg" className="w-full bg-[#40ddd3] hover:bg-[#34c4ba] text-[#76248a] font-extrabold rounded-xl">
+                <Button asChild size="lg" className="w-full bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold rounded-xl">
                   <Link to="/contact">{selectedService.callToAction}</Link>
                 </Button>
               </div>
