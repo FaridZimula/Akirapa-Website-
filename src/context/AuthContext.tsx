@@ -22,8 +22,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const cleanUser = username.trim().toLowerCase();
         // Admin Credentials check
         if (
-            (cleanUser === 'admin@akirapahomecareus.com' && password === 'admin123') ||
-            (cleanUser === 'admin' && password === 'admin123') ||
+            (cleanUser === 'info@akirapahomecareus.com' && password === 'akirapa2634!') ||
+            (cleanUser === 'admin@akirapahomecareus.com' && password === 'akirapa2634!') ||
+            (cleanUser === 'admin' && password === 'akirapa2634!') ||
             (cleanUser === 'suyeladmin1' && password === 'suyeladminstrator123#')
         ) {
             setIsAuthenticated(true);

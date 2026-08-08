@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import AdminSplashScreen from "@/components/AdminSplashScreen";
 
 const Login = () => {
-    const [username, setUsername] = useState("admin@akirapahomecareus.com");
+    const [username, setUsername] = useState("info@akirapahomecareus.com");
     const [password, setPassword] = useState("");
     const [isAuthenticating, setIsAuthenticating] = useState(false);
     const { login } = useAuth();
@@ -30,7 +30,7 @@ const Login = () => {
                 setIsAuthenticating(false);
                 toast({
                     title: "Access Denied",
-                    description: "Invalid admin credentials. Use: admin@akirapahomecareus.com / admin123",
+                    description: "Invalid admin credentials. Use: info@akirapahomecareus.com / akirapa2634!",
                     variant: "destructive",
                 });
             }
@@ -58,11 +58,11 @@ const Login = () => {
 
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div className="space-y-1.5">
-                        <Label htmlFor="username" className="text-xs font-bold text-gray-700">Admin Email / Username</Label>
+                        <Label htmlFor="username" className="text-xs font-bold text-gray-700">Official Company Email</Label>
                         <Input
                             id="username"
                             type="text"
-                            placeholder="admin@akirapahomecareus.com"
+                            placeholder="info@akirapahomecareus.com"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             className="bg-gray-50 h-12 text-xs"
@@ -83,10 +83,10 @@ const Login = () => {
                         />
                     </div>
 
-                    <div className="bg-purple-50 p-3 rounded-xl border border-purple-100 text-[11px] text-[#76248a] font-semibold space-y-0.5">
-                        <p className="font-bold">🔑 Default Credentials:</p>
-                        <p>User: <span className="font-bold">admin@akirapahomecareus.com</span></p>
-                        <p>Pass: <span className="font-bold">admin123</span></p>
+                    <div className="bg-purple-50 p-3.5 rounded-xl border border-purple-100 text-xs text-[#76248a] font-semibold space-y-1">
+                        <p className="font-bold text-xs">🔑 Admin Login Credentials:</p>
+                        <p>Email: <span className="font-bold text-gray-900">info@akirapahomecareus.com</span></p>
+                        <p>Password: <span className="font-bold text-gray-900">akirapa2634!</span></p>
                     </div>
 
                     <Button
