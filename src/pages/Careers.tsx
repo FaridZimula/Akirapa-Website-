@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useData, JobOpening } from "@/context/DataContext";
 
 interface JobOpening {
   id: string;
@@ -106,6 +107,7 @@ const initialJobOpenings: JobOpening[] = [
 
 const Careers = () => {
   const { toast } = useToast();
+  const { jobOpenings } = useData();
   const [activeDetailJob, setActiveDetailJob] = useState<JobOpening | null>(null);
   const [expandedJobId, setExpandedJobId] = useState<string | null>(null);
 
@@ -150,7 +152,8 @@ const Careers = () => {
 
   // Filtered and Sorted Jobs
   const filteredJobs = useMemo(() => {
-    return initialJobOpenings
+    return jobOpenings
+      .filter((job) => job.active !== false)
       .filter((job) => {
         const matchesSearch =
           job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -172,7 +175,7 @@ const Careers = () => {
         }
         return 0;
       });
-  }, [searchTerm, cityFilter, employmentTypeFilter, payTypeFilter, sortBy]);
+  }, [jobOpenings, searchTerm, cityFilter, employmentTypeFilter, payTypeFilter, sortBy]);
 
   const handleSelectJobForDetail = (job: JobOpening) => {
     setActiveDetailJob(job);

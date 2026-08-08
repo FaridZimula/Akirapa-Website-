@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,6 +17,18 @@ import ScrollToTop from "./components/ScrollToTop";
 import { HelmetProvider } from "react-helmet-async";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+// Admin Imports
+import AdminLayout from "./pages/admin/AdminLayout";
+import Login from "./pages/admin/Login";
+import CareersEditor from "./pages/admin/CareersEditor";
+import Messages from "./pages/admin/Messages";
+import Donations from "./pages/admin/Donations";
+import VideosEditor from "./pages/admin/VideosEditor";
+import Members from "./pages/admin/Members";
+import ProjectsEditor from "./pages/admin/ProjectsEditor";
+import LeadershipEditor from "./pages/admin/LeadershipEditor";
+import PartnersEditor from "./pages/admin/PartnersEditor";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +64,20 @@ const App = () => {
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/careers" element={<Careers />} />
                   <Route path="/contact" element={<Contact />} />
+
+                  {/* Admin Portal Routes */}
+                  <Route path="/admin/login" element={<Login />} />
+                  <Route path="/admin" element={<AdminLayout />}>
+                    <Route index element={<CareersEditor />} />
+                    <Route path="careers" element={<CareersEditor />} />
+                    <Route path="messages" element={<Messages />} />
+                    <Route path="donations" element={<Donations />} />
+                    <Route path="videos" element={<VideosEditor />} />
+                    <Route path="members" element={<Members />} />
+                    <Route path="projects" element={<ProjectsEditor />} />
+                    <Route path="leadership" element={<LeadershipEditor />} />
+                    <Route path="partners" element={<PartnersEditor />} />
+                  </Route>
 
                   {/* Backward Compatibility Aliases */}
                   <Route path="/profile" element={<Leadership />} />

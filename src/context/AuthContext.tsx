@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface AuthContextType {
@@ -13,17 +12,22 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useEffect(() => {
-        const authState = localStorage.getItem('suyel_auth');
+        const authState = localStorage.getItem('akirapa_admin_auth');
         if (authState === 'true') {
             setIsAuthenticated(true);
         }
     }, []);
 
     const login = (username: string, password: string) => {
-        // Admin Credentials
-        if (username === 'suyeladmin1' && password === 'suyeladminstrator123#') {
+        const cleanUser = username.trim().toLowerCase();
+        // Admin Credentials check
+        if (
+            (cleanUser === 'admin@akirapahomecareus.com' && password === 'admin123') ||
+            (cleanUser === 'admin' && password === 'admin123') ||
+            (cleanUser === 'suyeladmin1' && password === 'suyeladminstrator123#')
+        ) {
             setIsAuthenticated(true);
-            localStorage.setItem('suyel_auth', 'true');
+            localStorage.setItem('akirapa_admin_auth', 'true');
             return true;
         }
         return false;
@@ -31,7 +35,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     const logout = () => {
         setIsAuthenticated(false);
-        localStorage.removeItem('suyel_auth');
+        localStorage.removeItem('akirapa_admin_auth');
     };
 
     return (
