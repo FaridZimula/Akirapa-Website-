@@ -16,9 +16,19 @@ const Projects = () => {
         description="Explore in-home care services by Akirapa Home Care: Hourly care, 24/7 daily care, hospital-to-home recovery, contract-free respite care, and specialized Alzheimer's support."
       />
 
-      {/* Hero Header */}
-      <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-[#76248a] text-white">
-        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      {/* Hero Header with 29% Opacity Background Image */}
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-[#76248a] text-white overflow-hidden">
+        {/* Background Image at 29% Opacity */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/CARE GIVER  (2).jpg"
+            alt="Akirapa Care Services"
+            className="w-full h-full object-cover opacity-[0.29] mix-blend-luminosity scale-105"
+          />
+          <div className="absolute inset-0 bg-[#76248a]/70" />
+        </div>
+
+        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
           <h1 className="text-4xl sm:text-5xl font-black text-white">
             In-Home Care Services Designed for You
           </h1>
@@ -110,29 +120,41 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Instant Care Cost Estimator */}
-      <section className="section-padding bg-white">
-        <div className="container-narrow mx-auto">
-          <CareQuoteCalculator />
+      {/* Hotline Assistance Banner (Placed ABOVE Quote Calculator, 300px Height & 29% Opacity Image) */}
+      <section className="relative min-h-[300px] py-10 md:py-12 bg-[#76248a] text-white overflow-hidden flex items-center justify-center">
+        {/* Background Image at 29% Opacity */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/CARE GIVER  (10).jpg"
+            alt="Akirapa Caregivers Support"
+            className="w-full h-full object-cover opacity-[0.29] mix-blend-luminosity scale-105"
+          />
+          <div className="absolute inset-0 bg-[#76248a]/75" />
         </div>
-      </section>
 
-      {/* Hotline Assistance Banner */}
-      <section className="py-14 bg-gray-900 text-white">
-        <div className="container-narrow mx-auto px-4 text-center space-y-4">
-          <h3 className="text-2xl font-black text-white">Have Questions About Senior Care Coverage?</h3>
-          <p className="text-gray-400 text-sm max-w-xl mx-auto">
+        <div className="container-narrow mx-auto px-4 text-center space-y-4 relative z-10 w-full">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+            Have Questions About Senior Care Coverage?
+          </h3>
+          <p className="text-white/90 text-base sm:text-lg max-w-xl mx-auto font-medium">
             Our Burlington care managers are ready to walk you through options, schedule assessments, and answer questions 24/7.
           </p>
           <div className="pt-2">
             <a
               href="tel:3399701214"
-              className="inline-flex items-center gap-2 bg-[#76248a] hover:bg-[#561868] text-white font-bold px-6 py-3 rounded-xl text-lg shadow-md"
+              className="inline-flex items-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold px-8 py-3.5 rounded-2xl shadow-xl transition-all hover:scale-105 text-base sm:text-lg"
             >
-              <i className="fa-solid fa-phone text-lg text-[#40ddd3]"></i>
+              <i className="fa-solid fa-phone text-lg text-white"></i>
               <span>Call Helpline: 339 970 1214</span>
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Instant Care Cost Estimator / Quote Calculator */}
+      <section className="section-padding bg-white">
+        <div className="container-narrow mx-auto">
+          <CareQuoteCalculator />
         </div>
       </section>
     </Layout>

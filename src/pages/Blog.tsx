@@ -97,9 +97,19 @@ const Blog = () => {
         description="Read senior care guides, caregiver burnout tips, fall prevention strategies, and in-home care advice from Akirapa Home Care."
       />
 
-      {/* Hero Header */}
-      <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-[#76248a] text-white">
-        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      {/* Hero Header with 29% Opacity Background Image */}
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-[#76248a] text-white overflow-hidden">
+        {/* Background Image at 29% Opacity */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/CARE GIVER  (4).jpg"
+            alt="Akirapa Senior Care Blog"
+            className="w-full h-full object-cover opacity-[0.29] mix-blend-luminosity scale-105"
+          />
+          <div className="absolute inset-0 bg-[#76248a]/70" />
+        </div>
+
+        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
           <h1 className="text-4xl sm:text-5xl font-black text-white">
             Our Senior Care Blog
           </h1>

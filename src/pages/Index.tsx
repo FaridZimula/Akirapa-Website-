@@ -195,10 +195,10 @@ const Index = () => {
             </Button>
           </div>
 
-          {/* 5 Services Images Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 pt-4">
+          {/* 5 Services Images Grid (Horizontal Scroll on Mobile, 5-Col Grid on Desktop) */}
+          <div className="flex overflow-x-auto gap-5 sm:gap-6 pt-4 pb-4 snap-x snap-mandatory scrollbar-none -mx-6 px-6 sm:-mx-12 sm:px-12 lg:grid lg:grid-cols-5 lg:gap-8 lg:mx-0 lg:px-0 lg:overflow-visible">
             {/* Service 1 */}
-            <Link to="/services" className="group space-y-3.5 text-center">
+            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 border border-gray-100 bg-gray-50">
                 <img
                   src="/CARE GIVER  (1).jpg"
@@ -212,7 +212,7 @@ const Index = () => {
             </Link>
 
             {/* Service 2 */}
-            <Link to="/services" className="group space-y-3.5 text-center">
+            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 border border-gray-100 bg-gray-50">
                 <img
                   src="/CARE GIVER  (5).jpg"
@@ -226,7 +226,7 @@ const Index = () => {
             </Link>
 
             {/* Service 3 */}
-            <Link to="/services" className="group space-y-3.5 text-center">
+            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 border border-gray-100 bg-gray-50">
                 <img
                   src="/CARE GIVER  (8).jpg"
@@ -240,7 +240,7 @@ const Index = () => {
             </Link>
 
             {/* Service 4 */}
-            <Link to="/services" className="group space-y-3.5 text-center">
+            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 border border-gray-100 bg-gray-50">
                 <img
                   src="/CARE GIVER  (14).jpg"
@@ -254,7 +254,7 @@ const Index = () => {
             </Link>
 
             {/* Service 5 */}
-            <Link to="/services" className="group space-y-3.5 text-center">
+            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 border border-gray-100 bg-gray-50">
                 <img
                   src="/CARE GIVER  (16).jpg"
@@ -326,10 +326,10 @@ const Index = () => {
             </Button>
           </div>
 
-          {/* 8 Colorful Feature Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
+          {/* 8 Colorful Feature Cards Horizontal Scroll Row */}
+          <div className="flex overflow-x-auto gap-6 pt-4 pb-6 snap-x snap-mandatory -mx-6 px-6 sm:-mx-12 sm:px-12 lg:-mx-16 lg:px-16 scrollbar-thin scrollbar-thumb-[#76248a]/20">
             {/* Card 1 - Dark Purple */}
-            <div className="bg-[#6b1d6f] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px]">
+            <div className="bg-[#6b1d6f] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
               <div className="space-y-4">
                 <i className="fa-solid fa-user-doctor text-4xl text-white"></i>
                 <h3 className="text-xl font-bold text-white leading-tight">Daily care experts</h3>
@@ -340,7 +340,7 @@ const Index = () => {
             </div>
 
             {/* Card 2 - Medium Magenta */}
-            <div className="bg-[#aa2a78] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px]">
+            <div className="bg-[#aa2a78] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
               <div className="space-y-4">
                 <i className="fa-solid fa-headset text-4xl text-white"></i>
                 <h3 className="text-xl font-bold text-white leading-tight">Available 24/7</h3>
@@ -351,7 +351,7 @@ const Index = () => {
             </div>
 
             {/* Card 3 - Coral Red */}
-            <div className="bg-[#e03b4e] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px]">
+            <div className="bg-[#e03b4e] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
               <div className="space-y-4">
                 <i className="fa-solid fa-wheelchair text-4xl text-white"></i>
                 <h3 className="text-xl font-bold text-white leading-tight">Balanced care</h3>
@@ -362,7 +362,7 @@ const Index = () => {
             </div>
 
             {/* Card 4 - Golden Orange */}
-            <div className="bg-[#f29807] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px]">
+            <div className="bg-[#f29807] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
               <div className="space-y-4">
                 <i className="fa-solid fa-heart-pulse text-4xl text-white"></i>
                 <h3 className="text-xl font-bold text-white leading-tight">high caliber caregivers</h3>
@@ -373,7 +373,7 @@ const Index = () => {
             </div>
 
             {/* Card 5 - Vibrant Green */}
-            <div className="bg-[#65b741] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px]">
+            <div className="bg-[#65b741] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
               <div className="space-y-4">
                 <i className="fa-solid fa-gem text-4xl text-white"></i>
                 <h3 className="text-xl font-bold text-white leading-tight">Peace of mind</h3>
@@ -384,7 +384,7 @@ const Index = () => {
             </div>
 
             {/* Card 6 - Deep Blue */}
-            <div className="bg-[#23509e] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px]">
+            <div className="bg-[#23509e] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
               <div className="space-y-4">
                 <i className="fa-solid fa-user-shield text-4xl text-white"></i>
                 <h3 className="text-xl font-bold text-white leading-tight">A trusted partner</h3>
@@ -395,7 +395,7 @@ const Index = () => {
             </div>
 
             {/* Card 7 - Teal */}
-            <div className="bg-[#1b99a4] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px]">
+            <div className="bg-[#1b99a4] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
               <div className="space-y-4">
                 <i className="fa-solid fa-flask text-4xl text-white"></i>
                 <h3 className="text-xl font-bold text-white leading-tight">Cognitive therapeutics</h3>
@@ -406,7 +406,7 @@ const Index = () => {
             </div>
 
             {/* Card 8 - Dark Teal */}
-            <div className="bg-[#158d88] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px]">
+            <div className="bg-[#158d88] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
               <div className="space-y-4">
                 <i className="fa-solid fa-file-contract text-4xl text-white"></i>
                 <h3 className="text-xl font-bold text-white leading-tight">No long term contract</h3>
@@ -444,7 +444,7 @@ const Index = () => {
           {/* Split Feature Box (Left: Theme Color Box with White Text, Right: Image from Public Folder) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 min-h-[380px]">
             {/* Left Card - Theme Color with White Text */}
-            <div className="lg:col-span-6 bg-[#218981] text-white p-8 sm:p-12 flex flex-col justify-between space-y-6">
+            <div className="order-2 lg:order-1 lg:col-span-6 bg-[#218981] text-white p-8 sm:p-12 flex flex-col justify-between space-y-6">
               <div className="space-y-2">
                 <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
                   Shara M.
@@ -463,7 +463,7 @@ const Index = () => {
             </div>
 
             {/* Right Card - Image from Public Folder */}
-            <div className="lg:col-span-6 relative min-h-[300px] lg:min-h-full">
+            <div className="order-1 lg:order-2 lg:col-span-6 relative min-h-[300px] lg:min-h-full">
               <img
                 src="/CARE GIVER  (13).jpg"
                 alt="Shara M. Caregiver and Mother"
