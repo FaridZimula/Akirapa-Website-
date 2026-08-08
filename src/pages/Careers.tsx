@@ -397,6 +397,7 @@ const Careers = () => {
                   <span className="flex items-center gap-1.5">
                     <i className="fa-solid fa-briefcase text-[#76248a]"></i>
                     {activeDetailJob.employmentType}
+                  </span>
                 </div>
               </div>
 
