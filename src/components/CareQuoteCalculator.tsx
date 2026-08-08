@@ -68,7 +68,7 @@ export const CareQuoteCalculator: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#3d1e43] rounded-3xl p-8 md:p-12 lg:p-14 shadow-2xl text-white relative overflow-hidden">
+    <div className="bg-[#76248a] rounded-3xl p-8 md:p-12 lg:p-14 shadow-2xl text-white relative overflow-hidden border border-white/20">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
         
         {/* Left Column - Heading & Call to Action text */}

@@ -1,33 +1,45 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { Navigate, Outlet, Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, MessageSquare, Briefcase, Users, LogOut, Settings, Menu, X } from "lucide-react";
+import { LayoutDashboard, MessageSquare, Briefcase, Users, LogOut, Settings, Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AdminSplashScreen from "@/components/AdminSplashScreen";
 
 const AdminLayout = () => {
     const { isAuthenticated, logout } = useAuth();
     const location = useLocation();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [showSplash, setShowSplash] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowSplash(false);
+        }, 900);
+        return () => clearTimeout(timer);
+    }, []);
 
     if (!isAuthenticated) {
         return <Navigate to="/admin/login" replace />;
     }
 
+    if (showSplash) {
+        return <AdminSplashScreen message="Initializing Akirapa Management System..." />;
+    }
+
     const navItems = [
-        { label: "Messages", path: "/admin", icon: MessageSquare },
+        { label: "Careers & Jobs", path: "/admin/careers", icon: Briefcase },
+        { label: "Client Messages", path: "/admin", icon: MessageSquare },
         { label: "Donations", path: "/admin/donations", icon: LayoutDashboard },
-        { label: "Videos", path: "/admin/videos", icon: MessageSquare },
-        { label: "Members", path: "/admin/members", icon: Users },
-        { label: "Projects", path: "/admin/projects", icon: Briefcase },
-        { label: "Leadership", path: "/admin/leadership", icon: Users },
+        { label: "Videos Gallery", path: "/admin/videos", icon: MessageSquare },
+        { label: "Staff & Members", path: "/admin/members", icon: Users },
+        { label: "Care Programs", path: "/admin/projects", icon: Briefcase },
         { label: "Partners", path: "/admin/partners", icon: Settings },
     ];
 
     const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
     return (
-        <div className="min-h-screen bg-gray-100 flex relative">
+        <div className="min-h-screen bg-gray-100 flex relative font-sans">
             {/* Mobile Sidebar Overlay */}
             {isSidebarOpen && (
                 <div
@@ -38,39 +50,53 @@ const AdminLayout = () => {
 
             {/* Sidebar */}
             <aside className={`
-                fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-md flex-col transition-transform duration-300 ease-in-out md:translate-x-0 md:static md:flex
+                fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg flex-col transition-transform duration-300 ease-in-out md:translate-x-0 md:static md:flex border-r border-gray-100
                 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
             `}>
-                <div className="p-6 border-b flex items-center justify-between">
+                <div className="p-6 border-b border-gray-100 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <img src="/Favi Icon.png" alt="SUYEL" className="w-10 h-10 object-contain" />
-                        <h2 className="text-xl font-bold text-primary">SUYEL Admin</h2>
+                        <img src="/akirapa-logo.png" alt="Akirapa Home Care" className="h-10 w-auto object-contain" />
+                        <div>
+                            <h2 className="text-base font-extrabold text-[#76248a]">Akirapa Admin</h2>
+                            <p className="text-[10px] font-semibold text-[#40ddd3] tracking-wider uppercase">Care Management</p>
+                        </div>
                     </div>
                     {/* Close button for mobile */}
-                    <button className="md:hidden text-gray-500" onClick={() => setIsSidebarOpen(false)}>
+                    <button className="md:hidden text-gray-500 hover:text-gray-700" onClick={() => setIsSidebarOpen(false)}>
                         <X className="w-6 h-6" />
                     </button>
                 </div>
-                <nav className="flex-1 p-4 space-y-2">
-                    {navItems.map((item) => (
-                        <Link
-                            key={item.path}
-                            to={item.path}
-                            onClick={() => setIsSidebarOpen(false)}
-                            className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${location.pathname === item.path
-                                ? "bg-primary text-white"
-                                : "text-gray-600 hover:bg-gray-50"
-                                }`}
-                        >
-                            <item.icon className="w-5 h-5" />
-                            <span className="font-medium">{item.label}</span>
-                        </Link>
-                    ))}
+
+                <nav className="flex-1 p-4 space-y-1.5 overflow-y-auto">
+                    {navItems.map((item) => {
+                        const isActive = location.pathname === item.path;
+                        return (
+                            <Link
+                                key={item.path}
+                                to={item.path}
+                                onClick={() => setIsSidebarOpen(false)}
+                                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-semibold text-sm ${isActive
+                                    ? "bg-[#76248a] text-white shadow-md"
+                                    : "text-gray-700 hover:bg-gray-50 hover:text-[#76248a]"
+                                    }`}
+                            >
+                                <item.icon className={`w-5 h-5 ${isActive ? "text-white" : "text-[#76248a]"}`} />
+                                <span>{item.label}</span>
+                            </Link>
+                        );
+                    })}
                 </nav>
-                <div className="p-4 border-t">
-                    <Button variant="ghost" className="w-full justify-start gap-3 text-red-600 hover:text-red-700 hover:bg-red-50" onClick={logout}>
-                        <LogOut className="w-5 h-5" />
-                        Logout
+
+                <div className="p-4 border-t border-gray-100 space-y-2">
+                    <Button variant="outline" asChild className="w-full justify-start gap-2 border-gray-200 text-xs font-bold text-gray-700">
+                        <Link to="/careers" target="_blank">
+                            <Globe className="w-4 h-4 text-[#76248a]" />
+                            View Public Careers Page
+                        </Link>
+                    </Button>
+                    <Button variant="ghost" className="w-full justify-start gap-3 text-red-600 hover:text-red-700 hover:bg-red-50 text-xs font-bold" onClick={logout}>
+                        <LogOut className="w-4 h-4" />
+                        Logout Admin
                     </Button>
                 </div>
             </aside>
@@ -78,14 +104,13 @@ const AdminLayout = () => {
             {/* Main Content */}
             <main className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
                 {/* Mobile Header */}
-                <header className="md:hidden bg-white shadow-sm p-4 flex items-center justify-between z-10">
+                <header className="md:hidden bg-white shadow-sm p-4 flex items-center justify-between z-10 border-b border-gray-100">
                     <div className="flex items-center gap-3">
-                        <button onClick={toggleSidebar} className="text-gray-700">
-                            <Menu className="w-6 h-6" />
+                        <button onClick={toggleSidebar} className="text-gray-700 p-1">
+                            <Menu className="w-6 h-6 text-[#76248a]" />
                         </button>
-                        <span className="font-bold text-primary">Admin Dashboard</span>
+                        <span className="font-extrabold text-[#76248a] text-base">Akirapa Admin Dashboard</span>
                     </div>
-                    {/* <Button variant="outline" size="sm" onClick={logout}>Logout</Button> */}
                 </header>
 
                 <div className="flex-1 overflow-auto p-4 md:p-8">

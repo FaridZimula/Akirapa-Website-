@@ -136,55 +136,7 @@ const Leadership = () => {
         </div>
       </section>
 
-      {/* Leadership Team Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-narrow mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-              Meet Our Executive Leaders
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Combining healthcare experience, financial oversight, and compassionate care management.
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {leaders.map((leader, index) => (
-              <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col justify-between">
-                <div>
-                  <div className="h-64 overflow-hidden relative">
-                    <img
-                      src={leader.image}
-                      alt={leader.name}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 right-4 bg-[#76248a] text-[#40ddd3] text-xs font-bold px-3 py-1 rounded-full">
-                      Co-Founder
-                    </div>
-                  </div>
-                  <div className="p-8 space-y-3">
-                    <h3 className="text-2xl font-black text-gray-900">{leader.name}</h3>
-                    <p className="text-xs font-bold uppercase tracking-wider text-[#76248a]">{leader.role}</p>
-                    <p className="text-gray-600 text-sm leading-relaxed">{leader.bio}</p>
-                  </div>
-                </div>
-
-                {leader.email && (
-                  <div className="px-8 pb-8 pt-0">
-                    <a
-                      href={`mailto:${leader.email}`}
-                      className="inline-flex items-center gap-2 text-xs font-bold text-[#76248a] hover:underline"
-                    >
-                      <i className="fa-solid fa-envelope text-[#40ddd3] text-sm"></i>
-                      <span>{leader.email}</span>
-                    </a>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials & Review Submission Form */}
       <section className="section-padding bg-white">
