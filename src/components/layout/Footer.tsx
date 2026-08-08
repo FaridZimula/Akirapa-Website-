@@ -17,10 +17,6 @@ const Footer = () => {
             <p className="text-white/80 text-base leading-relaxed max-w-sm">
               Providing compassionate, high-quality, and personalized home care services designed around your schedule. Care Your Way.
             </p>
-            <div className="flex items-center gap-2 text-xs font-semibold text-[#40ddd3] bg-white/10 px-3 py-1.5 rounded-lg w-fit">
-              <i className="fa-solid fa-shield-halved text-sm"></i>
-              <span>Licensed & Certified Caregivers</span>
-            </div>
           </div>
 
           {/* Quick Links */}
