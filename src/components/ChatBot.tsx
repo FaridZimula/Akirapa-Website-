@@ -1,4 +1,16 @@
-import { useState, useRef, useEffect } from "react";
+declare global {
+  interface Window {
+    tidioChatApi?: {
+      open: () => void;
+      close: () => void;
+      show: () => void;
+      hide: () => void;
+      on: (event: string, callback: (...args: any[]) => void) => void;
+      setVisitorData: (data: Record<string, any>) => void;
+      messageFromVisitor: (text: string) => void;
+    };
+  }
+}
 
 interface Message {
   id: string;
@@ -11,7 +23,39 @@ export const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputMessage, setInputMessage] = useState("");
   const [showTooltip, setShowTooltip] = useState(true);
+  const [isTidioLoaded, setIsTidioLoaded] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const tidioKey = import.meta.env.VITE_TIDIO_PUBLIC_KEY;
+
+  useEffect(() => {
+    // Check if Tidio is already loaded or key is available
+    if (window.tidioChatApi) {
+      setIsTidioLoaded(true);
+      return;
+    }
+
+    if (tidioKey) {
+      const existingScript = document.getElementById("tidio-chat-script");
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.id = "tidio-chat-script";
+        script.src = `//code.tidio.co/${tidioKey}.js`;
+        script.async = true;
+        script.onload = () => setIsTidioLoaded(true);
+        document.body.appendChild(script);
+      }
+    }
+  }, [tidioKey]);
+
+  const toggleChat = () => {
+    if (window.tidioChatApi) {
+      window.tidioChatApi.open();
+      setShowTooltip(false);
+    } else {
+      setIsOpen(!isOpen);
+    }
+  };
 
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -92,7 +136,7 @@ export const ChatBot = () => {
       {/* Floating Chat Bot Toggle Button */}
       {!isOpen && (
         <button
-          onClick={() => setIsOpen(true)}
+          onClick={toggleChat}
           className="relative w-14 h-14 rounded-full bg-[#76248a] hover:bg-[#561868] text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group border-2 border-white"
           aria-label="Open Live Chatbot"
         >
