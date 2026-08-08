@@ -479,9 +479,9 @@ const Index = () => {
         <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 items-start">
             {testimonials.map((item) => (
-              <div key={item.id} className="space-y-4 text-left">
+              <div key={item.id} className="space-y-4 text-center md:text-left">
                 {/* Cyan Quote Icon */}
-                <div className="text-left">
+                <div className="text-center md:text-left">
                   <i className="fa-solid fa-quote-left text-3xl sm:text-4xl text-[#40ddd3]"></i>
                 </div>
 

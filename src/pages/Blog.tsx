@@ -165,10 +165,10 @@ const Blog = () => {
                     </span>
                     <button
                       onClick={() => setSelectedPost(post)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#76248a] hover:text-[#561868]"
+                      className="inline-flex items-center gap-2 bg-[#76248a] hover:bg-[#561868] text-white font-bold text-xs px-4 py-2 rounded-xl shadow-xs transition-all hover:scale-105"
                     >
                       <span>Read Article</span>
-                      <i className="fa-solid fa-arrow-right text-xs"></i>
+                      <i className="fa-solid fa-arrow-right text-xs text-white"></i>
                     </button>
                   </div>
                 </article>
