@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,7 @@ const Contact = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -19,6 +21,39 @@ const Contact = () => {
     city: "",
     message: "",
   });
+
+  const faqs = [
+    {
+      question: "Does having home care result in a loss of independence?",
+      answer:
+        "No, in fact home care enhances independence! Our trained caregivers assist with routine daily activities so seniors can continue living safely, comfortably, and confidently in their own homes."
+    },
+    {
+      question: "How can I trust a caregiver in my home?",
+      answer:
+        "All Akirapa caregivers undergo thorough multi-state criminal background checks, reference verifications, and comprehensive in-person interviews. We only hire compassionate professionals we would trust in our own homes."
+    },
+    {
+      question: "How does Akirapa Home Care attract the best caregivers?",
+      answer:
+        "We offer competitive compensation, ongoing specialized nursing training, and a supportive family-oriented culture. Only 1 in 25 applicants meet our rigorous hiring standards."
+    },
+    {
+      question: "What if we don't like our caregiver?",
+      answer:
+        "Your total comfort and peace of mind are paramount. If for any reason the personality or care match isn't perfect, we will promptly pair you with an alternative caregiver who aligns with your preferences."
+    },
+    {
+      question: "Will we have a choice in selecting the caregiver?",
+      answer:
+        "Yes! We involve you and your family in the matching process to ensure personality compatibility, care skills alignment, and mutual confidence."
+    },
+    {
+      question: "What is the process of finding a caregiver?",
+      answer:
+        "It begins with a free in-home assessment to evaluate your specific care needs. We then craft a customized care plan and introduce a dedicated, licensed caregiver tailored to your family."
+    }
+  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -287,6 +322,107 @@ const Contact = () => {
                 )}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions Section (Placed Below Contact Form) */}
+      <section className="py-16 md:py-24 bg-white border-t border-gray-100">
+        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            
+            {/* Left Side: Expandable FAQ Questions List */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#76248a] tracking-tight">
+                Frequently asked questions
+              </h2>
+
+              <div className="space-y-3 pt-2">
+                {faqs.map((faq, index) => {
+                  const isOpen = openFaqIndex === index;
+                  return (
+                    <div
+                      key={index}
+                      className="border-b border-gray-100 pb-4 transition-all"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                        className="w-full text-left flex items-start gap-3 py-2 group cursor-pointer focus:outline-none"
+                      >
+                        <span className="text-[#40ddd3] text-xl font-bold shrink-0 transition-transform duration-200 mt-0.5">
+                          {isOpen ? "−" : "+"}
+                        </span>
+                        <span className="text-base sm:text-lg font-bold text-[#76248a] group-hover:text-[#561868] transition-colors leading-snug">
+                          {faq.question}
+                        </span>
+                      </button>
+
+                      {isOpen && (
+                        <div className="pl-7 pt-2 text-sm text-gray-600 leading-relaxed animate-fadeIn">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Right Side: Blog Insights Preview Card */}
+            <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100 space-y-6 text-left">
+              <div className="space-y-6">
+                <Link to="/blog" className="flex items-start gap-4 group">
+                  <div className="bg-[#40ddd3] text-white p-3 rounded-xl flex flex-col items-center justify-center font-bold shrink-0 w-14 text-center shadow-xs">
+                    <span className="text-xl font-black leading-none">21</span>
+                    <span className="text-[10px] font-bold uppercase leading-none mt-1">Mar</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-sm sm:text-base group-hover:text-[#76248a] transition-colors leading-snug">
+                      5 ways to regain your energy after caregiver burnout
+                    </h4>
+                    <p className="text-gray-500 text-xs mt-1 line-clamp-2">
+                      As a caregiver of an aging loved one, practical strategies can restore your well-being...
+                    </p>
+                  </div>
+                </Link>
+
+                <div className="border-t border-gray-100 pt-5">
+                  <Link to="/blog" className="flex items-start gap-4 group">
+                    <div className="bg-[#40ddd3] text-white p-3 rounded-xl flex flex-col items-center justify-center font-bold shrink-0 w-14 text-center shadow-xs">
+                      <span className="text-xl font-black leading-none">17</span>
+                      <span className="text-[10px] font-bold uppercase leading-none mt-1">Mar</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-sm sm:text-base group-hover:text-[#76248a] transition-colors leading-snug">
+                        How family caregivers can benefit from respite care
+                      </h4>
+                      <p className="text-gray-500 text-xs mt-1 line-clamp-2">
+                        What is Respite Care? Respite care provides temporary, contract-free support...
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+
+                <div className="border-t border-gray-100 pt-5">
+                  <Link to="/blog" className="flex items-start gap-4 group">
+                    <div className="bg-[#40ddd3] text-white p-3 rounded-xl flex flex-col items-center justify-center font-bold shrink-0 w-14 text-center shadow-xs">
+                      <span className="text-xl font-black leading-none">14</span>
+                      <span className="text-[10px] font-bold uppercase leading-none mt-1">Mar</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-sm sm:text-base group-hover:text-[#76248a] transition-colors leading-snug">
+                        Four fall prevention strategies for seniors
+                      </h4>
+                      <p className="text-gray-500 text-xs mt-1 line-clamp-2">
+                        Implement essential environmental and physical modifications to keep your home safe...
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
