@@ -6,6 +6,34 @@ import { Button } from "@/components/ui/button";
 import { careServices, CareService } from "@/data/careServices";
 import { CareQuoteCalculator } from "@/components/CareQuoteCalculator";
 
+const visualServices = [
+  {
+    id: "hourly-home-care",
+    title: "Hourly home care",
+    image: "/CARE GIVER  (1).jpg",
+  },
+  {
+    id: "daily-home-care",
+    title: "Daily home care",
+    image: "/CARE GIVER  (5).jpg",
+  },
+  {
+    id: "hospital-to-home",
+    title: "Hospital to home care",
+    image: "/CARE GIVER  (8).jpg",
+  },
+  {
+    id: "respite-home-care",
+    title: "Respite home care",
+    image: "/CARE GIVER  (14).jpg",
+  },
+  {
+    id: "specialized-care",
+    title: "Specialized care",
+    image: "/CARE GIVER  (16).jpg",
+  },
+];
+
 const Projects = () => {
   const [selectedService, setSelectedService] = useState<CareService>(careServices[0]);
 
@@ -41,6 +69,49 @@ const Projects = () => {
       {/* Service Selection Tabs & Detail Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-narrow mx-auto">
+          {/* 5 Services Images Grid (Horizontal Scroll on Mobile, 5-Col Grid on Desktop) */}
+          <div className="mb-12">
+            <div className="flex overflow-x-auto gap-5 sm:gap-6 pt-2 pb-4 snap-x snap-mandatory scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 lg:grid lg:grid-cols-5 lg:gap-8 lg:mx-0 lg:px-0 lg:overflow-visible">
+              {visualServices.map((item) => {
+                const matched = careServices.find((s) => s.id === item.id);
+                const isSelected = selectedService.id === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => {
+                      if (matched) setSelectedService(matched);
+                    }}
+                    className={`group space-y-3.5 text-center w-[200px] sm:w-[230px] shrink-0 snap-start lg:w-auto lg:shrink transition-transform cursor-pointer focus:outline-none ${
+                      isSelected ? "scale-[1.03]" : "hover:scale-[1.02]"
+                    }`}
+                  >
+                    <div
+                      className={`aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 border ${
+                        isSelected
+                          ? "border-4 border-[#76248a] shadow-lg ring-2 ring-[#40ddd3]"
+                          : "border-gray-100 bg-gray-50"
+                      }`}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <h3
+                      className={`text-sm sm:text-base font-bold transition-colors ${
+                        isSelected ? "text-[#76248a] font-extrabold" : "text-[#76248a] group-hover:text-[#40ddd3]"
+                      }`}
+                    >
+                      {item.title}
+                    </h3>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
           {/* Navigation Pills */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {careServices.map((service) => {

@@ -36,8 +36,8 @@ const Navbar = () => {
               <i className="fa-solid fa-envelope text-[#40ddd3]"></i>
               <span>info@akirapahomecareus.com</span>
             </div>
-            <div className="flex items-center gap-1.5 bg-[#40ddd3]/20 text-[#40ddd3] px-2.5 py-0.5 rounded-full font-semibold shrink-0">
-              <i className="fa-solid fa-clock text-xs"></i>
+            <div className="flex items-center gap-1.5 bg-[#40ddd3] text-white px-2.5 py-0.5 rounded-full font-semibold shrink-0 shadow-sm">
+              <i className="fa-solid fa-clock text-xs text-white"></i>
               <span>Care Your Way</span>
             </div>
           </div>
