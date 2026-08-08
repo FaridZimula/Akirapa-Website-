@@ -7,9 +7,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useData } from "@/context/DataContext";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { sendMessage } = useData();
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -60,6 +62,14 @@ const Contact = () => {
     setLoading(true);
 
     try {
+      // Save message to Supabase & DataContext
+      await sendMessage({
+        full_name: formData.name,
+        email: formData.email,
+        subject: `Care Request (${formData.careType}) - ${formData.city || 'Burlington'}`,
+        content: `Phone: ${formData.phone} | Program: ${formData.careType} | City: ${formData.city || 'N/A'} | Message: ${formData.message || 'N/A'}`
+      });
+
       const response = await fetch("https://formsubmit.co/ajax/info@akirapahomecareus.com", {
         method: "POST",
         headers: {

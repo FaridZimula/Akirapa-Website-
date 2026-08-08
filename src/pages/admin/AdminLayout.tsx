@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
+import { useData } from "@/context/DataContext";
 import { Navigate, Outlet, Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, MessageSquare, Briefcase, Users, LogOut, Settings, Menu, X, Globe } from "lucide-react";
+import { LayoutDashboard, MessageSquare, Briefcase, Users, LogOut, Settings, Menu, X, Globe, Database } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AdminSplashScreen from "@/components/AdminSplashScreen";
 
 const AdminLayout = () => {
     const { isAuthenticated, logout } = useAuth();
+    const { isSupabaseConnected } = useData();
     const location = useLocation();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [showSplash, setShowSplash] = useState(true);
@@ -88,6 +90,17 @@ const AdminLayout = () => {
                 </nav>
 
                 <div className="p-4 border-t border-gray-100 space-y-2">
+                    <div className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center justify-between border ${
+                        isSupabaseConnected 
+                            ? "bg-emerald-50 text-emerald-800 border-emerald-200" 
+                            : "bg-blue-50 text-blue-800 border-blue-200"
+                    }`}>
+                        <div className="flex items-center gap-2">
+                            <Database className="w-4 h-4 shrink-0 text-[#76248a]" />
+                            <span>Backend Database</span>
+                        </div>
+                        <span className={`w-2 h-2 rounded-full ${isSupabaseConnected ? "bg-emerald-500 animate-pulse" : "bg-blue-400"}`} />
+                    </div>
                     <Button variant="outline" asChild className="w-full justify-start gap-2 border-gray-200 text-xs font-bold text-gray-700">
                         <Link to="/careers" target="_blank">
                             <Globe className="w-4 h-4 text-[#76248a]" />
