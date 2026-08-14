@@ -6,6 +6,7 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Care Services", path: "/services" },
+  { name: "AkiVault", path: "/akivault" },
   { name: "Our Blog", path: "/blog" },
   { name: "Careers", path: "/careers" },
   { name: "Contact Us", path: "/contact" },

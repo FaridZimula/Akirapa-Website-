@@ -30,6 +30,8 @@ import ProjectsEditor from "./pages/admin/ProjectsEditor";
 import LeadershipEditor from "./pages/admin/LeadershipEditor";
 import PartnersEditor from "./pages/admin/PartnersEditor";
 
+import AkiVault from "./pages/AkiVault";
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -61,6 +63,8 @@ const App = () => {
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<Leadership />} />
                   <Route path="/services" element={<Projects />} />
+                  <Route path="/akivault" element={<AkiVault />} />
+                  <Route path="/AkiVault.html" element={<AkiVault />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/careers" element={<Careers />} />
                   <Route path="/contact" element={<Contact />} />

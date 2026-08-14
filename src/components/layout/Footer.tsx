@@ -29,6 +29,7 @@ const Footer = () => {
                 { label: "Home", path: "/" },
                 { label: "About Us", path: "/about" },
                 { label: "Care Services", path: "/services" },
+                { label: "AkiVault Platform", path: "/akivault" },
                 { label: "Our Blog", path: "/blog" },
                 { label: "Careers", path: "/careers" },
                 { label: "Contact Us", path: "/contact" },
