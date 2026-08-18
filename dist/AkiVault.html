@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AkiVault Technology Platform | Akirapa Home Care System</title>
+  <meta name="description" content="Discover AkiVault, the proprietary technology engine behind Akirapa Home Care. GPS EVV, 8-point welfare checks, Care Pod scheduling, and real-time family portal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#76248a',
+              darkPurple: '#561868',
+              cyan: '#40ddd3',
+              darkCyan: '#218981',
+            }
+          },
+          fontFamily: {
+            sans: ['Quicksand', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+  <!-- Header & Navbar -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <div class="bg-[#76248a] text-white py-2 px-4 text-xs font-semibold hidden md:block">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center gap-6">
+          <span><i class="fa-solid fa-location-dot text-[#40ddd3] mr-1"></i> 209 Burlington Rd, Bedford, MA</span>
+          <span><i class="fa-solid fa-phone text-[#40ddd3] mr-1"></i> 24/7 Helpline: (339) 970-1214</span>
+        </div>
+        <div>
+          <span class="bg-[#40ddd3] text-gray-950 px-2.5 py-0.5 rounded-full font-bold">Care Your Way</span>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="/akirapa-logo.png" alt="Akirapa Logo" class="h-12 w-auto" onerror="this.src='/AKIRAPA LOGO.png'">
+      </a>
+      <nav class="hidden lg:flex items-center gap-2">
+        <a href="/" class="px-4 py-2 text-gray-700 hover:text-[#76248a] font-bold">Home</a>
+        <a href="/about" class="px-4 py-2 text-gray-700 hover:text-[#76248a] font-bold">About Us</a>
+        <a href="/services" class="px-4 py-2 text-gray-700 hover:text-[#76248a] font-bold">Care Services</a>
+        <a href="/blog" class="px-4 py-2 text-gray-700 hover:text-[#76248a] font-bold">Our Blog</a>
+        <a href="/careers" class="px-4 py-2 text-gray-700 hover:text-[#76248a] font-bold">Careers</a>
+        <a href="/contact" class="px-4 py-2 text-gray-700 hover:text-[#76248a] font-bold">Contact Us</a>
+        <a href="/AkiVault.html" class="px-4 py-2 bg-[#76248a] text-white rounded-lg font-bold">AkiVault</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="/contact" class="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 px-5 py-2.5 rounded-xl font-black text-sm uppercase tracking-wide">
+          Free Assessment
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="relative pt-20 pb-20 bg-gradient-to-b from-[#76248a] via-[#561868] to-[#3a0d48] text-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 bg-white/10 text-[#40ddd3] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider mb-6 border border-[#40ddd3]/30">
+        <i class="fa-solid fa-vault"></i> AkiVault System Architecture
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight mb-6">
+        Why <span class="text-[#40ddd3]">Akirapa</span> Outperforms Traditional Caregiving Companies
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-200 font-medium max-w-3xl mx-auto leading-relaxed mb-8">
+        Built on proprietary <strong class="text-[#40ddd3]">GPS Geofenced EVV</strong>, automated <strong class="text-[#40ddd3]">8-Point Shift Welfare Checks</strong>, and dedicated <strong class="text-[#40ddd3]">Care Pod Rotation</strong>. Discover why families trust Akirapa over legacy agencies.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/contact" class="bg-[#40ddd3] text-gray-950 font-black px-8 py-4 rounded-2xl shadow-lg hover:bg-[#34c4ba]">
+          Get Started with Akirapa
+        </a>
+        <a href="#comparison" class="bg-white/10 text-white font-bold px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/20">
+          View Head-to-Head Comparison
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Head-to-Head Comparison Matrix -->
+  <section id="comparison" class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-[#76248a] font-black text-xs uppercase bg-[#76248a]/10 px-3 py-1 rounded-full">Comparison Matrix</span>
+        <h2 class="text-3xl font-black text-gray-900 mt-3">Akirapa Home Care System vs. Traditional Agencies</h2>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-200">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse min-w-[650px]">
+            <thead>
+              <tr class="bg-[#76248a] text-white">
+                <th class="p-5 font-bold">Feature</th>
+                <th class="p-5 font-bold bg-gray-900/40">Traditional Agencies</th>
+                <th class="p-5 font-bold bg-[#40ddd3] text-gray-950">Akirapa System (AkiVault)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="bg-white">
+                <td class="p-5 font-bold text-gray-900">Attendance Verification</td>
+                <td class="p-5 text-gray-600 bg-red-50/30"><i class="fa-solid fa-xmark text-red-500 mr-2"></i> Paper timesheets, zero proof of presence</td>
+                <td class="p-5 font-bold text-gray-900 bg-[#40ddd3]/10 border-l-2 border-[#40ddd3]"><i class="fa-solid fa-circle-check text-[#218981] mr-2"></i> GPS Geofenced EVV with live offset check</td>
+              </tr>
+              <tr class="bg-gray-50/50">
+                <td class="p-5 font-bold text-gray-900">Shift Health Diagnostics</td>
+                <td class="p-5 text-gray-600 bg-red-50/30"><i class="fa-solid fa-xmark text-red-500 mr-2"></i> No standardized checks or wellness reports</td>
+                <td class="p-5 font-bold text-gray-900 bg-[#40ddd3]/10 border-l-2 border-[#40ddd3]"><i class="fa-solid fa-circle-check text-[#218981] mr-2"></i> Mandatory 8-Point Welfare Check every shift</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="p-5 font-bold text-gray-900">Red-Flag Alert System</td>
+                <td class="p-5 text-gray-600 bg-red-50/30"><i class="fa-solid fa-xmark text-red-500 mr-2"></i> Delayed reporting hours or days later</td>
+                <td class="p-5 font-bold text-gray-900 bg-[#40ddd3]/10 border-l-2 border-[#40ddd3]"><i class="fa-solid fa-circle-check text-[#218981] mr-2"></i> Instant Red-Flag alert to Coordinators & Family</td>
+              </tr>
+              <tr class="bg-gray-50/50">
+                <td class="p-5 font-bold text-gray-900">Caregiver Match & Continuity</td>
+                <td class="p-5 text-gray-600 bg-red-50/30"><i class="fa-solid fa-xmark text-red-500 mr-2"></i> Random unvetted caregivers each week</td>
+                <td class="p-5 font-bold text-gray-900 bg-[#40ddd3]/10 border-l-2 border-[#40ddd3]"><i class="fa-solid fa-circle-check text-[#218981] mr-2"></i> Dedicated Care Pods (3 matched caregivers)</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="p-5 font-bold text-gray-900">Family Transparency</td>
+                <td class="p-5 text-gray-600 bg-red-50/30"><i class="fa-solid fa-xmark text-red-500 mr-2"></i> Zero visibility during shifts</td>
+                <td class="p-5 font-bold text-gray-900 bg-[#40ddd3]/10 border-l-2 border-[#40ddd3]"><i class="fa-solid fa-circle-check text-[#218981] mr-2"></i> 24/7 HIPAA Family Portal & Messaging</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 Pillars Grid -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-[#76248a] font-black text-xs uppercase bg-[#76248a]/10 px-3 py-1 rounded-full">Core Innovations</span>
+        <h2 class="text-3xl font-black text-gray-900 mt-3">The 6 Pillars of Akirapa Technology</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-[#76248a] text-white flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-location-dot"></i></div>
+          <h3 class="text-xl font-bold mb-2">GPS Geofenced EVV</h3>
+          <p class="text-sm text-gray-600">Proves caregiver location before clock-in to guarantee shift punctuality and stop time fraud.</p>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-[#76248a] text-white flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-clipboard-check"></i></div>
+          <h3 class="text-xl font-bold mb-2">8-Point Welfare Checks</h3>
+          <p class="text-sm text-gray-600">Standardized end-of-shift diagnostics monitor appetite, meds, mood, fatigue, mobility & pain.</p>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-[#76248a] text-white flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-user-group"></i></div>
+          <h3 class="text-xl font-bold mb-2">Dedicated Care Pods</h3>
+          <p class="text-sm text-gray-600">Clients are assigned 3 familiar caregivers to ensure 100% care continuity and trust.</p>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-[#76248a] text-white flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <h3 class="text-xl font-bold mb-2">Instant Red-Flag Alerts</h3>
+          <p class="text-sm text-gray-600">Automated triage alerts coordinators and families immediately if any welfare check red flags pop up.</p>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-[#76248a] text-white flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="text-xl font-bold mb-2">24/7 Family Portal</h3>
+          <p class="text-sm text-gray-600">HIPAA-compliant portal giving families real-time shift updates, notes, and direct messenger access.</p>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-[#76248a] text-white flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-file-shield"></i></div>
+          <h3 class="text-xl font-bold mb-2">Audit Compliance Logs</h3>
+          <p class="text-sm text-gray-600">Immutable timestamped logs track distance offsets, shift edits, and coordinator actions for total accountability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#76248a] text-white py-12 border-t-4 border-[#40ddd3]">
+    <div class="max-w-6xl mx-auto px-4 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
+      <div>
+        <p class="font-bold text-lg">Akirapa Home Care Inc.</p>
+        <p class="text-sm text-white/80">209 Burlington Rd, Bedford, MA | (339) 970-1214</p>
+      </div>
+      <div class="text-sm text-white/80">
+        &copy; 2026 Akirapa Home Care. Care Your Way.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
