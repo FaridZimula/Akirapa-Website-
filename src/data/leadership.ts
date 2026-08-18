@@ -25,9 +25,9 @@ export const leaders: TeamMember[] = [
 
 export const boardMembers: TeamMember[] = [
     {
-        name: "Burlington Care Coordination Team",
+        name: "Bedford Care Coordination Team",
         role: "Care Assessment Specialists",
-        bio: "Our licensed care managers conduct free in-home assessments to design customized care plans for seniors throughout Burlington and Greater Boston.",
+        bio: "Our licensed care managers conduct free in-home assessments to design customized care plans for seniors throughout Bedford and Greater Boston.",
         image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&q=80&w=600"
     },
     {

@@ -94,7 +94,7 @@ export const ChatBot = () => {
     if (!textToSend) setInputMessage("");
 
     setTimeout(() => {
-      let replyText = "Thank you for reaching out! Our team in Burlington, MA is available 24/7. You can also call us directly at 339 970 1214 for immediate assistance.";
+      let replyText = "Thank you for reaching out! Our team in Bedford, MA is available 24/7. You can also call us directly at 339 970 1214 for immediate assistance.";
       const lower = text.toLowerCase();
 
       if (lower.includes("cost") || lower.includes("price") || lower.includes("rate") || lower.includes("quote")) {
@@ -104,7 +104,7 @@ export const ChatBot = () => {
       } else if (lower.includes("services") || lower.includes("alzheimer") || lower.includes("dementia") || lower.includes("respite")) {
         replyText = "Akirapa Home Care provides Personal Care, 24/7 Companion Care, Respite Support, Post-Hospital Recovery, and Specialized Alzheimer's & Dementia Care.";
       } else if (lower.includes("location") || lower.includes("address") || lower.includes("where")) {
-        replyText = "Our primary office is located at 83 Cambridge Street, Burlington, MA 01803, serving seniors across Massachusetts.";
+        replyText = "Our primary office is located at 209 Burlington Rd, Bedford, MA, serving seniors across Massachusetts.";
       } else if (lower.includes("phone") || lower.includes("call") || lower.includes("number") || lower.includes("contact")) {
         replyText = "Our 24/7 Helpline Support numbers are: 339 970 1214 and 781 472 9375. We are ready to assist you any time day or night!";
       }

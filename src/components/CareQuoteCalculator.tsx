@@ -57,7 +57,7 @@ export const CareQuoteCalculator: React.FC = () => {
 
       toast({
         title: "Quote Request Submitted!",
-        description: "Our Burlington care team will reach out promptly to discuss your care quote.",
+        description: "Our Bedford care team will reach out promptly to discuss your care quote.",
       });
     } catch (error) {
       toast({
@@ -164,7 +164,7 @@ export const CareQuoteCalculator: React.FC = () => {
                   className="w-full h-14 px-5 pr-10 rounded-xl bg-white text-gray-800 font-semibold text-sm shadow-sm appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#40ddd3]"
                 >
                   <option value="" disabled>where are you located?</option>
-                  <option value="Burlington, MA">Burlington, MA</option>
+                  <option value="Bedford, MA">Bedford, MA</option>
                   <option value="Woburn, MA">Woburn, MA</option>
                   <option value="Lexington, MA">Lexington, MA</option>
                   <option value="Billerica, MA">Billerica, MA</option>
@@ -203,7 +203,7 @@ export const CareQuoteCalculator: React.FC = () => {
               <i className="fa-solid fa-circle-check text-5xl text-[#40ddd3] mx-auto"></i>
               <h3 className="text-2xl font-extrabold text-white">Thank You!</h3>
               <p className="text-white/90 text-sm max-w-md mx-auto">
-                We have received your quote request. Our care coordinator in Burlington, MA will call you at <strong className="text-[#40ddd3]">{phone || "your number"}</strong> shortly.
+                We have received your quote request. Our care coordinator in Bedford, MA will call you at <strong className="text-[#40ddd3]">{phone || "your number"}</strong> shortly.
               </p>
               <button
                 type="button"

@@ -21,7 +21,7 @@ const CareersEditor = () => {
   // Form Fields State
   const [formState, setFormState] = useState<Omit<JobOpening, "id">>({
     title: "",
-    city: "Burlington",
+    city: "Bedford",
     state: "MA",
     employmentType: "Full Time",
     payRate: "$24.00 - $30.00 per hour",
@@ -68,13 +68,13 @@ const CareersEditor = () => {
     ];
     setFormState({
       title: "",
-      city: "Burlington",
+      city: "Bedford",
       state: "MA",
       employmentType: "Full Time",
       payRate: "$24.00 - $30.00 per hour",
       payType: "Hourly",
       postedDate: new Date().toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric" }),
-      description: "Provide compassionate in-home care support, assisting with daily living activities, personal hygiene, and companionship for seniors in Burlington, MA.",
+      description: "Provide compassionate in-home care support, assisting with daily living activities, personal hygiene, and companionship for seniors in Bedford, MA.",
       requirements: defaultReqs,
       active: true,
     });
@@ -367,7 +367,7 @@ const CareersEditor = () => {
                 <Input
                   id="title"
                   required
-                  placeholder="e.g. Caregiver Associate / CNA - Burlington, MA"
+                  placeholder="e.g. Caregiver Associate / CNA - Bedford, MA"
                   value={formState.title}
                   onChange={(e) => setFormState({ ...formState, title: e.target.value })}
                   className="bg-gray-50 h-11 text-xs"
@@ -382,7 +382,7 @@ const CareersEditor = () => {
                   <Input
                     id="city"
                     required
-                    placeholder="Burlington"
+                    placeholder="Bedford"
                     value={formState.city}
                     onChange={(e) => setFormState({ ...formState, city: e.target.value })}
                     className="bg-gray-50 h-11 text-xs"

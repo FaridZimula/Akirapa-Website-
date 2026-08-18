@@ -23,15 +23,15 @@ interface JobOpening {
 
 const initialJobOpenings: JobOpening[] = [
   {
-    id: "cna-burlington",
-    title: "Caregiver Associate / CNA - Burlington, MA",
-    city: "Burlington",
+    id: "cna-bedford",
+    title: "Caregiver Associate / CNA - Bedford, MA",
+    city: "Bedford",
     state: "MA",
     employmentType: "Full Time",
     payRate: "$24.00 - $30.00 per hour",
     payType: "Hourly",
     postedDate: "Aug 04, 2026",
-    description: "Provide hands-on personal care, assistance with daily living activities, medication reminders, and vital sign monitoring for seniors in private homes in Burlington, MA.",
+    description: "Provide hands-on personal care, assistance with daily living activities, medication reminders, and vital sign monitoring for seniors in private homes in Bedford, MA.",
     requirements: [
       "Active MA CNA or HHA certification",
       "Current CPR & First Aid certification",
@@ -57,8 +57,8 @@ const initialJobOpenings: JobOpening[] = [
   },
   {
     id: "rn-care-manager",
-    title: "RN / LPN Field Nurse & Care Manager - Burlington, MA",
-    city: "Burlington",
+    title: "RN / LPN Field Nurse & Care Manager - Bedford, MA",
+    city: "Bedford",
     state: "MA",
     employmentType: "Full Time",
     payRate: "$42.00 - $52.00 per hour",
@@ -121,7 +121,7 @@ const Careers = () => {
   // Job Alerts Form State
   const [alertName, setAlertName] = useState("");
   const [alertEmail, setAlertEmail] = useState("");
-  const [alertLocation, setAlertLocation] = useState("Burlington, MA");
+  const [alertLocation, setAlertLocation] = useState("Bedford, MA");
   const [alertAgreed, setAlertAgreed] = useState(false);
   const [alertSubmitted, setAlertSubmitted] = useState(false);
 
@@ -136,7 +136,7 @@ const Careers = () => {
     phoneType: "Cell",
     commMethod: "Phone Call",
     availability: "Full Time",
-    city: "Burlington, MA",
+    city: "Bedford, MA",
     certifications: "",
     qualifications: "",
     agreed: false,
@@ -287,7 +287,7 @@ const Careers = () => {
             Join the Akirapa Home Care Team
           </h1>
           <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium">
-            Build a rewarding career helping seniors live with dignity, comfort, and independence in Burlington, MA and surrounding communities.
+            Build a rewarding career helping seniors live with dignity, comfort, and independence in Bedford, MA and surrounding communities.
           </p>
         </div>
       </section>
@@ -431,7 +431,7 @@ const Careers = () => {
                       Visits are typically 4 to 12 hours long, allowing you enough time to build a real, meaningful relationship with your client.
                     </p>
                     <p className="text-gray-700 text-sm leading-relaxed">
-                      You will work in clients' private homes across {activeDetailJob.city}, Burlington, Woburn, Lexington, and surrounding areas, providing personal care, companionship, meal preparation, and support with daily routines.
+                      You will work in clients' private homes across {activeDetailJob.city}, Bedford, Woburn, Lexington, and surrounding areas, providing personal care, companionship, meal preparation, and support with daily routines.
                     </p>
                     <p className="text-gray-700 text-sm leading-relaxed">
                       You will work closely with Akirapa's nurse care team to follow detailed care plans and ensure every client feels safe, comfortable, and genuinely cared for.
@@ -681,7 +681,7 @@ const Careers = () => {
                           <i className="fa-solid fa-circle-check text-4xl text-green-600 mx-auto"></i>
                           <h4 className="font-extrabold text-green-900 text-lg">Application Submitted!</h4>
                           <p className="text-xs text-green-800 leading-relaxed">
-                            Thank you <strong>{quickForm.firstName}</strong>. Our Burlington care recruitment manager will review your qualifications for <strong>{activeDetailJob.title}</strong> and contact you at <strong>{quickForm.phone}</strong>.
+                            Thank you <strong>{quickForm.firstName}</strong>. Our Bedford care recruitment manager will review your qualifications for <strong>{activeDetailJob.title}</strong> and contact you at <strong>{quickForm.phone}</strong>.
                           </p>
                           <button
                             type="button"
@@ -719,7 +719,7 @@ const Careers = () => {
                             className="bg-gray-50 h-9 text-xs"
                           />
                           <Input
-                            placeholder="Burlington, MA"
+                            placeholder="Bedford, MA"
                             value={alertLocation}
                             onChange={(e) => setAlertLocation(e.target.value)}
                             required
@@ -807,7 +807,7 @@ const Careers = () => {
                     className="h-10 px-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-700 text-xs font-medium focus:ring-[#40ddd3]"
                   >
                     <option value="All">All Cities</option>
-                    <option value="Burlington">Burlington, MA</option>
+                    <option value="Bedford">Bedford, MA</option>
                     <option value="Woburn">Woburn, MA</option>
                     <option value="Lexington">Lexington, MA</option>
                     <option value="Billerica">Billerica, MA</option>
@@ -938,7 +938,7 @@ const Careers = () => {
                           </div>
                           <div>
                             <Input
-                              placeholder="Burlington, MA"
+                              placeholder="Bedford, MA"
                               value={alertLocation}
                               onChange={(e) => setAlertLocation(e.target.value)}
                               required

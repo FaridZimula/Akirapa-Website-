@@ -97,14 +97,14 @@ export interface JobOpening {
 export const initialJobOpenings: JobOpening[] = [
     {
         id: "job-1",
-        title: "Caregiver Associate / CNA - Burlington, MA",
-        city: "Burlington",
+        title: "Caregiver Associate / CNA - Bedford, MA",
+        city: "Bedford",
         state: "MA",
         employmentType: "Full Time",
         payRate: "$24.00 - $30.00 per hour",
         payType: "Hourly",
-        postedDate: "Aug 04, 2026",
-        description: "Provide compassionate personal care support, assisting with daily living activities, mobility assistance, medication reminders, and companionship for seniors in Burlington.",
+        postedDate: "Aug 05, 2026",
+        description: "Provide compassionate personal care support, assisting with daily living activities, mobility assistance, medication reminders, and companionship for seniors in Bedford.",
         requirements: [
             "Active MA CNA or HHA certification",
             "Current CPR & First Aid certification",
@@ -168,8 +168,8 @@ export const initialJobOpenings: JobOpening[] = [
     },
     {
         id: "job-5",
-        title: "Registered Nurse (RN) Care Manager - Burlington Office",
-        city: "Burlington",
+        title: "Registered Nurse (RN) Care Manager - Bedford Office",
+        city: "Bedford",
         state: "MA",
         employmentType: "Full Time",
         payRate: "$42.00 - $52.00 per hour",

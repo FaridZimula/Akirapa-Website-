@@ -9,6 +9,7 @@ const navLinks = [
   { name: "Our Blog", path: "/blog" },
   { name: "Careers", path: "/careers" },
   { name: "Contact Us", path: "/contact" },
+  { name: "AkiVault", path: "/akivault" },
 ];
 
 const Navbar = () => {
@@ -23,7 +24,7 @@ const Navbar = () => {
           <div className="flex items-center gap-6 flex-nowrap">
             <div className="flex items-center gap-2 shrink-0">
               <i className="fa-solid fa-location-dot text-[#40ddd3]"></i>
-              <span>83 Cambridge Street, Burlington, MA 01803</span>
+              <span>209 Burlington Road, Bedford, MA</span>
             </div>
             <div className="flex items-center gap-2 shrink-0">
               <i className="fa-solid fa-phone text-[#40ddd3]"></i>
