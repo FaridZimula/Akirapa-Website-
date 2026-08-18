@@ -42,6 +42,7 @@ const Projects = () => {
       <SEO
         title="Our Care Services | Akirapa Home Care Burlington MA"
         description="Explore in-home care services by Akirapa Home Care: Hourly care, 24/7 daily care, hospital-to-home recovery, contract-free respite care, and specialized Alzheimer's support."
+        path="/services"
       />
 
       {/* Hero Header with 29% Opacity Background Image */}

@@ -49,8 +49,9 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="Akirapa Home Care | In-Home Senior Care & 24/7 Services"
-        description="Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Care Your Way."
+        title="Akirapa Home Care | In-Home Senior Care & 24/7 Services — Burlington, MA"
+        description="Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Call 339-970-1214."
+        path="/"
       />
 
       {/* Light Elegant Hero Section with Landscape Background & Strong White Gradient Overlay */}

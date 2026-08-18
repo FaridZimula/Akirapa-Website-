@@ -267,6 +267,7 @@ const Careers = () => {
       <SEO
         title="Careers & Caregiver Opportunities | Akirapa Home Care Burlington MA"
         description="Search current caregiver job listings at Akirapa Home Care. Apply online for CNA, HHA, LPN, RN, and 24/7 live-in care positions in Burlington MA."
+        path="/careers"
       />
 
       {/* Hero Header with 29% Opacity Background Image */}

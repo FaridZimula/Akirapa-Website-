@@ -33,6 +33,7 @@ const Leadership = () => {
       <SEO
         title="About Us & Leadership | Akirapa Home Care Burlington MA"
         description="Learn about Akirapa Home Care's history since 2013, founded by Cathy Akirapa and Stuart Ssemwogerere in Burlington MA. Read client reviews and senior care decision guides."
+        path="/about"
       />
 
       {/* Hero Header with 29% Opacity Background Image */}
