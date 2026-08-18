@@ -66,7 +66,7 @@ const Contact = () => {
       await sendMessage({
         full_name: formData.name,
         email: formData.email,
-        subject: `Care Request (${formData.careType}) - ${formData.city || 'Burlington'}`,
+        subject: `Care Request (${formData.careType}) - ${formData.city || 'Bedford'}`,
         content: `Phone: ${formData.phone} | Program: ${formData.careType} | City: ${formData.city || 'N/A'} | Message: ${formData.message || 'N/A'}`
       });
 
@@ -119,8 +119,8 @@ const Contact = () => {
   return (
     <Layout>
       <SEO
-        title="Contact Us | Free Care Assessment | Akirapa Home Care Burlington MA"
-        description="Contact Akirapa Home Care at 83 Cambridge Street, Burlington, MA 01803. Call our 24/7 helpline at 339 970 1214 or 781 472 9375 to schedule a free in-home assessment."
+        title="Contact Us | Free Care Assessment | Akirapa Home Care Bedford MA"
+        description="Contact Akirapa Home Care at 209 Burlington Rd, Bedford, MA. Call our 24/7 helpline at 339 970 1214 or 781 472 9375 to schedule a free in-home assessment."
       />
 
       {/* Hero Header with 29% Opacity Background Image */}
@@ -152,7 +152,7 @@ const Contact = () => {
             {/* Left: Contact Info Cards */}
             <div className="lg:col-span-6 space-y-6">
               <h2 className="text-3xl font-black text-gray-900">
-                Burlington, MA Office & 24/7 Helpline
+                Bedford, MA Office & 24/7 Helpline
               </h2>
 
               <div className="grid sm:grid-cols-2 gap-4">
@@ -163,8 +163,8 @@ const Contact = () => {
                   </div>
                   <h4 className="font-bold text-gray-900 text-base">Office Address</h4>
                   <p className="text-gray-600 text-xs leading-relaxed">
-                    83 Cambridge Street<br />
-                    Burlington, MA 01803
+                    209 Burlington Rd<br />
+                    Bedford, MA
                   </p>
                 </div>
 
@@ -285,7 +285,7 @@ const Contact = () => {
                         <Input
                           id="city"
                           name="city"
-                          placeholder="e.g. Burlington, MA"
+                          placeholder="e.g. Bedford, MA"
                           value={formData.city}
                           onChange={handleChange}
                           className="bg-gray-50 mt-1"
@@ -326,7 +326,7 @@ const Contact = () => {
                     <i className="fa-solid fa-circle-check text-4xl text-green-600 mx-auto"></i>
                     <h4 className="text-2xl font-bold text-green-900">Assessment Request Received!</h4>
                     <p className="text-green-800 text-sm">
-                      Thank you {formData.name}. Our Burlington care manager will contact you at {formData.phone} shortly.
+                      Thank you {formData.name}. Our Bedford care manager will contact you at {formData.phone} shortly.
                     </p>
                   </div>
                 )}
@@ -437,23 +437,23 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Burlington Location Map */}
+      {/* Bedford Location Map */}
       <section className="section-padding bg-white">
         <div className="container-narrow mx-auto text-center space-y-6">
           <div className="max-w-2xl mx-auto space-y-2">
-            <h2 className="text-3xl font-black text-gray-900">Visit Our Burlington Office</h2>
-            <p className="text-gray-600 text-sm">83 Cambridge Street, Burlington, MA 01803</p>
+            <h2 className="text-3xl font-black text-gray-900">Visit Our Bedford Office</h2>
+            <p className="text-gray-600 text-sm">209 Burlington Rd, Bedford, MA</p>
           </div>
 
           <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 h-[400px]">
             <iframe
-              title="Akirapa Home Care Burlington MA Location"
+              title="Akirapa Home Care Bedford MA Location"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2941.56429388307!2d-71.19694162388358!3d42.5028989711792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37517c5df9121%3A0x6b77c5c0a37db7fa!2s83%20Cambridge%20St%2C%20Burlington%2C%20MA%2001803!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2945.5642938830!2d-71.1915!3d42.4943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37e45c9b9b9b9%3A0x9b9b9b9b9b9b9b!2s209%20Burlington%20Rd%2C%20Bedford%2C%20MA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
             ></iframe>
           </div>
         </div>

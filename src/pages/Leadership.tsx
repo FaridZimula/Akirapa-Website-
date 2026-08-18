@@ -31,8 +31,8 @@ const Leadership = () => {
   return (
     <Layout>
       <SEO
-        title="About Us & Leadership | Akirapa Home Care Burlington MA"
-        description="Learn about Akirapa Home Care's history since 2013, founded by Cathy Akirapa and Stuart Ssemwogerere in Burlington MA. Read client reviews and senior care decision guides."
+        title="About Us & Leadership | Akirapa Home Care Bedford MA"
+        description="Learn about Akirapa Home Care's history since 2013, founded by Cathy Akirapa and Stuart Ssemwogerere in Bedford MA. Read client reviews and senior care decision guides."
       />
 
       {/* Hero Header with 29% Opacity Background Image */}
@@ -69,7 +69,7 @@ const Leadership = () => {
                 Founded in 2013 by <strong>Cathy Akirapa</strong> (CNA & Financial Professional) and <strong>Stuart Ssemwogerere</strong> (Executive Director), Akirapa Home Care was created out of a deep personal commitment to senior well-being and accessible healthcare management.
               </p>
               <p className="text-gray-600 text-sm leading-relaxed">
-                After official incorporation in 2015, Akirapa Home Care expanded regional caregiver training programs in 2017, establishing a benchmark for high-quality, contract-free in-home support across Burlington, MA and neighboring communities.
+                After official incorporation in 2015, Akirapa Home Care expanded regional caregiver training programs in 2017, establishing a benchmark for high-quality, contract-free in-home support across Bedford, MA and neighboring communities.
               </p>
 
               {/* Milestones List */}
@@ -79,7 +79,7 @@ const Leadership = () => {
                     2013
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900">Founded in Burlington, MA</h4>
+                    <h4 className="font-bold text-gray-900">Founded in Bedford, MA</h4>
                     <p className="text-xs text-gray-600">Established by Cathy Akirapa & Stuart Ssemwogerere to provide personal in-home care.</p>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ const Leadership = () => {
                 </ul>
 
                 <div className="pt-4 border-t border-white/20 text-xs text-[#40ddd3] font-semibold">
-                  Headquarters: 83 Cambridge Street, Burlington, MA 01803
+                  Headquarters: 209 Burlington Rd, Bedford, MA
                 </div>
               </div>
             </div>
@@ -205,7 +205,7 @@ const Leadership = () => {
                         <Label htmlFor="location" className="text-white text-xs font-semibold">Location</Label>
                         <Input
                           id="location"
-                          placeholder="e.g. Burlington, MA"
+                          placeholder="e.g. Bedford, MA"
                           value={location}
                           onChange={(e) => setLocation(e.target.value)}
                           required

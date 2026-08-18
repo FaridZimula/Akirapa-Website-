@@ -83,7 +83,7 @@ const Footer = () => {
             <ul className="space-y-4 text-base text-white/90">
               <li className="flex items-center sm:items-start justify-center sm:justify-start gap-3">
                 <i className="fa-solid fa-location-dot text-[#40ddd3] text-lg shrink-0 mt-1"></i>
-                <span className="text-center sm:text-left">83 Cambridge Street, Burlington, MA 01803</span>
+                <span className="text-center sm:text-left">209 Burlington Road, Bedford, MA</span>
               </li>
               <li className="flex items-center sm:items-start justify-center sm:justify-start gap-3">
                 <i className="fa-solid fa-phone text-[#40ddd3] text-lg shrink-0 mt-1"></i>

@@ -90,6 +90,53 @@ const technologyPillars = [
 
 export default function AkiVault() {
   const [activeRoleTab, setActiveRoleTab] = useState<"family" | "caregiver" | "coordinator">("family");
+  const [activeSectionNav, setActiveSectionNav] = useState<string>("hero");
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [cardPosition, setCardPosition] = useState({ x: 20, y: 120 });
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const navCardRef = React.useRef<HTMLDivElement>(null);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).closest("button, a, nav")) return;
+    setIsDragging(true);
+    const rect = navCardRef.current?.getBoundingClientRect();
+    if (rect) {
+      setDragOffset({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    const newX = e.clientX - dragOffset.x;
+    const newY = e.clientY - dragOffset.y;
+    setCardPosition({ x: Math.max(0, newX), y: Math.max(0, newY) });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const navigationSections = [
+    { id: "hero", label: "Introduction", icon: "fa-vault" },
+    { id: "comparison", label: "vs Traditional Care", icon: "fa-scale-balanced" },
+    { id: "pillars", label: "Technology Pillars", icon: "fa-layer-group" },
+    { id: "family", label: "For Families", icon: "fa-house-medical" },
+    { id: "caregivers", label: "For Caregivers", icon: "fa-user-nurse" },
+    { id: "coordinators", label: "For Coordinators", icon: "fa-clipboard-user" },
+    { id: "cta", label: "Get Started", icon: "fa-phone" },
+  ];
+
+  const scrollToSection = (sectionId: string) => {
+    setActiveSectionNav(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <Layout>
@@ -98,8 +145,59 @@ export default function AkiVault() {
         description="Explore AkiVault, the proprietary technology engine behind Akirapa Home Care. Discover GPS EVV, 8-point welfare checks, Care Pod scheduling, and real-time family portals."
       />
 
+      {/* Compact Floating Navigation Card */}
+      <div
+        ref={navCardRef}
+        className="fixed z-50 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl"
+        style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
+      >
+        <div
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          style={{ cursor: isDragging ? "grabbing" : "grab" }}
+          className="flex items-center justify-between bg-gradient-to-r from-[#76248a] to-[#561868] px-4 py-3 text-white select-none"
+          title="Drag to move navigation"
+        >
+          <div className="flex items-center gap-2">
+            <i className="fa-solid fa-grip-vertical text-white/60"></i>
+            <i className="fa-solid fa-compass text-[#40ddd3]"></i>
+            <span className="text-xs font-black uppercase tracking-wider">AkiVault Sections</span>
+          </div>
+          <button
+            type="button"
+            aria-label={isNavOpen ? "Collapse navigation" : "Expand navigation"}
+            onClick={() => setIsNavOpen((open) => !open)}
+            className="rounded-lg p-1.5 hover:bg-white/20"
+          >
+            <i className={`fa-solid fa-chevron-${isNavOpen ? "up" : "down"}`}></i>
+          </button>
+        </div>
+
+        {isNavOpen && (
+          <nav className="max-h-72 space-y-1 overflow-y-auto p-3" aria-label="AkiVault sections">
+            {navigationSections.map((section) => (
+              <button
+                key={section.id}
+                type="button"
+                onClick={() => scrollToSection(section.id)}
+                className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-xs font-semibold transition-all ${
+                  activeSectionNav === section.id
+                    ? "bg-[#76248a] text-white shadow-md"
+                    : "text-gray-700 hover:bg-gray-100 hover:text-[#76248a]"
+                }`}
+              >
+                <i className={`fa-solid ${section.icon} w-4 text-center`}></i>
+                <span>{section.label}</span>
+              </button>
+            ))}
+          </nav>
+        )}
+      </div>
+
       {/* Hero Header matching main site aesthetic */}
-      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-[#76248a] via-[#561868] to-[#3a0d48] text-white overflow-hidden">
+      <section id="hero" className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-[#76248a] via-[#561868] to-[#3a0d48] text-white overflow-hidden">
         {/* Glowing Decorative Backdrop Elements */}
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-[#40ddd3]/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-[#76248a]/40 rounded-full blur-3xl pointer-events-none" />
@@ -213,7 +311,7 @@ export default function AkiVault() {
       </section>
 
       {/* 6 Technology Pillars Grid */}
-      <section className="py-16 md:py-24 bg-white border-b border-gray-100">
+      <section id="pillars" className="py-16 md:py-24 bg-white border-b border-gray-100">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-[#76248a] font-extrabold text-sm uppercase tracking-wider bg-[#76248a]/10 px-3 py-1 rounded-full">
@@ -265,7 +363,7 @@ export default function AkiVault() {
           {/* Role Tabs */}
           <div className="flex justify-center gap-3 mb-10">
             <button
-              onClick={() => setActiveRoleTab("family")}
+              onClick={() => { setActiveRoleTab("family"); setActiveSectionNav("family"); }}
               className={`px-6 py-3 rounded-2xl font-bold text-sm sm:text-base transition-all flex items-center gap-2 ${
                 activeRoleTab === "family"
                   ? "bg-[#76248a] text-white shadow-lg"
@@ -276,7 +374,7 @@ export default function AkiVault() {
               <span>For Families</span>
             </button>
             <button
-              onClick={() => setActiveRoleTab("caregiver")}
+              onClick={() => { setActiveRoleTab("caregiver"); setActiveSectionNav("caregivers"); }}
               className={`px-6 py-3 rounded-2xl font-bold text-sm sm:text-base transition-all flex items-center gap-2 ${
                 activeRoleTab === "caregiver"
                   ? "bg-[#76248a] text-white shadow-lg"
@@ -287,7 +385,7 @@ export default function AkiVault() {
               <span>For Caregivers</span>
             </button>
             <button
-              onClick={() => setActiveRoleTab("coordinator")}
+              onClick={() => { setActiveRoleTab("coordinator"); setActiveSectionNav("coordinators"); }}
               className={`px-6 py-3 rounded-2xl font-bold text-sm sm:text-base transition-all flex items-center gap-2 ${
                 activeRoleTab === "coordinator"
                   ? "bg-[#76248a] text-white shadow-lg"
@@ -300,7 +398,7 @@ export default function AkiVault() {
           </div>
 
           {/* Role Content Card */}
-          <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-200/80 max-w-4xl mx-auto">
+          <div id="family" className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-200/80 max-w-4xl mx-auto">
             {activeRoleTab === "family" && (
               <div className="space-y-6 animate-fade-in">
                 <div className="flex items-center gap-3">
@@ -330,7 +428,7 @@ export default function AkiVault() {
             )}
 
             {activeRoleTab === "caregiver" && (
-              <div className="space-y-6 animate-fade-in">
+              <div id="caregivers" className="space-y-6 animate-fade-in">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-[#76248a]/20 text-[#76248a] flex items-center justify-center font-bold text-xl">
                     <i className="fa-solid fa-user-nurse"></i>
@@ -358,7 +456,7 @@ export default function AkiVault() {
             )}
 
             {activeRoleTab === "coordinator" && (
-              <div className="space-y-6 animate-fade-in">
+              <div id="coordinators" className="space-y-6 animate-fade-in">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-[#40ddd3]/20 text-gray-900 flex items-center justify-center font-bold text-xl">
                     <i className="fa-solid fa-chart-line"></i>
@@ -389,11 +487,11 @@ export default function AkiVault() {
       </section>
 
       {/* Call to Action Banner */}
-      <section className="py-16 bg-[#76248a] text-white">
+      <section id="cta" className="py-16 bg-[#76248a] text-white">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold">Ready for Better, Safer In-Home Care?</h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto font-medium">
-            Contact our Burlington, MA senior care team to learn how the Akirapa Home Care System provides unparalleled peace of mind.
+            Contact our Bedford, MA senior care team to learn how the Akirapa Home Care System provides unparalleled peace of mind.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#561868] font-extrabold text-base h-14 px-8 rounded-2xl shadow-xl border-none">

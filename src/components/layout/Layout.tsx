@@ -40,8 +40,25 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="flex-1 pt-20 md:pt-32">{children}</main>
       <Footer />
 
-      {/* Hanging Floating ChatBot */}
-      <ChatBot />
+      {/* Premium Direct Contact - Replaces ChatBot for High-End Leads */}
+      <div className="fixed bottom-8 right-8 z-50 bg-white shadow-2xl rounded-2xl overflow-hidden border-2 border-[#76248a] max-w-xs">
+        <div className="bg-[#76248a] text-white px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <i className="fa-solid fa-phone text-[#40ddd3] text-xl"></i>
+            <span className="font-bold text-sm">Akirapa Care Director</span>
+          </div>
+        </div>
+        <div className="p-4 space-y-3">
+          <p className="text-gray-700 text-sm font-medium">Speak directly with our clinical team:</p>
+          <a
+            href="tel:3399701214"
+            className="block w-full bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-bold py-3 px-4 rounded-lg text-center transition-all hover:shadow-md"
+          >
+            339 970 1214
+          </a>
+          <p className="text-gray-600 text-xs text-center">Available 24/7 for Premium Consultations</p>
+        </div>
+      </div>
 
       {/* Scroll to Top Button */}
       <button

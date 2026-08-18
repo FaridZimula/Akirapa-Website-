@@ -213,9 +213,9 @@ const Blog = () => {
                 {renderArticleContent(selectedPost.content)}
 
                 <div className="p-6 rounded-2xl bg-[#76248a]/5 border border-[#76248a]/20 mt-8 text-left space-y-2">
-                  <h4 className="font-bold text-[#76248a] text-lg text-left">Need Dedicated Care Support in Burlington, MA?</h4>
+                  <h4 className="font-bold text-[#76248a] text-lg text-left">Need Dedicated Care Support in Bedford, MA?</h4>
                   <p className="text-gray-700 text-sm leading-relaxed text-left">
-                    At Akirapa Home Care in Burlington, MA, our certified nursing assistants and care managers work closely with families to implement these strategies seamlessly. Whether your family needs hourly support or continuous daily care, we are here to support your journey.
+                    At Akirapa Home Care in Bedford, MA, our certified nursing assistants and care managers work closely with families to implement these strategies seamlessly. Whether your family needs hourly support or continuous daily care, we are here to support your journey.
                   </p>
                 </div>
               </div>

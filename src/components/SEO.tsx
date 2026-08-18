@@ -48,10 +48,10 @@ const SEO = ({
                     "description": description,
                     "address": {
                         "@type": "PostalAddress",
-                        "streetAddress": "83 Cambridge Street",
-                        "addressLocality": "Burlington",
+                        "streetAddress": "209 Burlington Rd",
+                        "addressLocality": "Bedford",
                         "addressRegion": "MA",
-                        "postalCode": "01803",
+                        "postalCode": "01730",
                         "addressCountry": "US"
                     },
                     "contactPoint": {

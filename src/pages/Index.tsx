@@ -11,16 +11,61 @@ import { CareQuoteCalculator } from "@/components/CareQuoteCalculator";
 const heroSlides = [
   {
     id: 1,
-    title: "You can't always be there. But we can.",
-    subtitle: "We offer a person-centred approach to keep seniors safe and sound at home, instead of anywhere else.",
+    title: "Concierge In-Home Care. Sophisticated Clinical Management.",
+    subtitle: "Managed securely via the AkiVault System—providing real-time documentation, automated Electronic Visit Verification (EVV), and an exclusive, fully encrypted 24/7 client family portal.",
     bgImage: "/CARE GIVER  (4).jpg"
   },
   {
     id: 2,
-    title: "Would you rather stay at home than go into a health care facility?",
-    subtitle: "We will come to your convenient location. Akirapa Home Care provides flexible, compassionate, and professional in-home care.",
+    title: "Elite Private-Duty Care Management Powered by Secured Infrastructure.",
+    subtitle: "Premium in-home care designed for discerning families and institutional payers. Advanced technology meets exceptional clinical expertise at your convenience.",
     bgImage: "/CARE GIVER  (16).jpg"
   }
+];
+
+const technologyPillars = [
+  {
+    icon: "fa-triangle-exclamation",
+    title: "Instant Red-Flag Safeguards",
+    description:
+      "Any concerning welfare check response instantly triggers high-priority alerts to Care Coordinators and family members.",
+    badge: "Real-Time Protection",
+  },
+  {
+    icon: "fa-shield-halved",
+    title: "HIPAA Family Portal & Messaging",
+    description:
+      "Encrypted messaging and real-time activity feeds keep family members informed of shift completions, vitals, and caregiver updates.",
+    badge: "Family Transparency",
+  },
+  {
+    icon: "fa-file-shield",
+    title: "Immutable Compliance & Audits",
+    description:
+      "Complete timestamped audit logging tracks every shift modification, location override, and coordinator review for total compliance.",
+    badge: "Regulatory Standard",
+  },
+  {
+    icon: "fa-user-group",
+    title: "Smart Care Pod Allocation",
+    description:
+      "Algorithmically assigns primary and backup caregivers to form consistent Care Pods, ensuring clients never receive a stranger at their door.",
+    badge: "Care Continuity",
+  },
+  {
+    icon: "fa-clipboard-check",
+    title: "8-Point Welfare Diagnostics",
+    description:
+      "Standardized end-of-shift questions track appetite drops, medication compliance, mood shifts, fall risks, and pain levels in real time.",
+    badge: "Clinical Intelligence",
+  },
+  {
+    icon: "fa-location-dot",
+    title: "GPS-Verified EVV & Geofencing",
+    description:
+      "Automated Electronic Visit Verification confirms caregivers are physically on site before clocking in, preventing shift fraud and ensuring punctuality.",
+    badge: "Verification Engine",
+  },
 ];
 
 const Index = () => {
@@ -50,7 +95,7 @@ const Index = () => {
     <Layout>
       <SEO
         title="Akirapa Home Care | In-Home Senior Care & 24/7 Services"
-        description="Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Care Your Way."
+        description="Compassionate in-home senior care in Bedford, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Care Your Way."
       />
 
       {/* Light Elegant Hero Section with Landscape Background & Strong White Gradient Overlay */}
@@ -97,37 +142,37 @@ const Index = () => {
 
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-20">
           <div className="max-w-3xl lg:max-w-4xl space-y-6 text-left pl-1 sm:pl-2">
-            <div key={slide.id} className="space-y-6 transition-all duration-700 ease-in-out animate-fadeIn">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold sm:font-extrabold text-[#76248a] tracking-tight leading-[1.15] text-left">
+            <div key={slide.id} className="space-y-4 transition-all duration-700 ease-in-out animate-fadeIn">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#76248a] tracking-tight leading-[1.2] text-left">
                 {slide.title}
               </h1>
 
-              <p className="text-lg sm:text-xl text-[#218981] font-semibold leading-relaxed max-w-2xl text-left">
+              <p className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed max-w-2xl text-left italic">
                 {slide.subtitle}
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-start items-stretch sm:items-center pt-4">
-              <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold uppercase tracking-normal text-sm h-14 px-8 rounded-none shadow-md border-none">
-                <Link to="/contact">Schedule Free Assessment</Link>
+            <div className="flex flex-col sm:flex-row gap-6 justify-start items-stretch sm:items-center pt-8">
+              <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-bold text-base h-14 px-8 rounded-lg shadow-lg border-none transition-all hover:shadow-xl">
+                <Link to="/contact">Explore Concierge Private Care</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="bg-white/90 hover:bg-white border border-gray-300 text-gray-800 font-extrabold uppercase tracking-normal text-sm h-14 px-8 rounded-none shadow-xs">
-                <Link to="/services">Explore Care Programs</Link>
+              <Button asChild variant="outline" size="lg" className="bg-white/95 hover:bg-white border-2 border-[#76248a] text-[#76248a] font-bold text-base h-14 px-8 rounded-lg shadow-md hover:shadow-lg transition-all">
+                <Link to="/insurance-partners">Insurance Partners & Clinical Payer Portal</Link>
               </Button>
             </div>
 
-            <div className="pt-6 border-t border-gray-300/80 flex flex-wrap justify-start gap-6 text-xs sm:text-sm font-semibold text-gray-700">
+            <div className="pt-8 border-t border-gray-300/60 flex flex-wrap justify-start gap-8 text-xs sm:text-sm font-semibold text-gray-600">
               <div className="flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-[#218981]"></i>
+                <i className="fa-solid fa-circle-check text-[#40ddd3] text-base"></i>
                 <span>Licensed Caregivers</span>
               </div>
               <div className="flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-[#218981]"></i>
-                <span>24/7 Helpline Support</span>
+                <i className="fa-solid fa-circle-check text-[#40ddd3] text-base"></i>
+                <span>24/7 Premium Support</span>
               </div>
               <div className="flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-[#218981]"></i>
-                <span>Burlington, MA</span>
+                <i className="fa-solid fa-circle-check text-[#40ddd3] text-base"></i>
+                <span>Bedford, MA</span>
               </div>
             </div>
           </div>
@@ -148,7 +193,7 @@ const Index = () => {
                   <h3 className="text-xl sm:text-2xl font-black text-gray-900">Need Care Right Away?</h3>
                 </div>
                 <p className="text-gray-600 text-sm">
-                  Speak directly with our senior care coordinator in Burlington, MA.
+                  Speak directly with our senior care coordinator in Bedford, MA.
                 </p>
               </div>
             </div>
@@ -169,6 +214,48 @@ const Index = () => {
                 <Link to="/contact">Request Immediate Callback</Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6 Technology Pillars of AkiVault Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white border-b border-gray-100">
+        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="text-[#76248a] font-extrabold text-sm uppercase tracking-wider bg-[#76248a]/10 px-3 py-1 rounded-full inline-block">
+              Advanced Technology
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
+              Powered by AkiVault
+            </h2>
+            <p className="text-gray-600 text-base sm:text-lg">
+              Six technological pillars ensuring security, transparency, and clinical excellence in every shift.
+            </p>
+            <div className="pt-4">
+              <Button asChild size="lg" className="bg-[#76248a] hover:bg-[#561868] text-white font-bold text-base h-12 px-6 rounded-2xl shadow-md">
+                <a href="https://akirapa-home-care-system-ynmt.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  Explore AkiVault Platform →
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {technologyPillars.map((pillar, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-white flex items-center justify-center mb-6 shadow-md group-hover:bg-[#40ddd3] group-hover:text-gray-950 transition-colors">
+                  <i className={`fa-solid ${pillar.icon} text-2xl`}></i>
+                </div>
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#76248a] bg-[#76248a]/10 px-2.5 py-1 rounded-full">
+                  {pillar.badge}
+                </span>
+                <h3 className="text-xl font-bold text-gray-900 mt-3 mb-2">{pillar.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{pillar.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -287,7 +374,7 @@ const Index = () => {
             Ready to Begin Your Home Care Journey?
           </h2>
           <p className="text-white/90 text-lg sm:text-xl max-w-2xl mx-auto font-medium">
-            Call our 24/7 helpline today or request a free, contract-free in-home assessment in Burlington, MA.
+            Call our 24/7 helpline today or request a free, contract-free in-home assessment in Bedford, MA.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <a
