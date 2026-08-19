@@ -18,6 +18,7 @@ interface SEOProps {
         section?: string;
     };
     noindex?: boolean;
+    googleSiteVerification?: string;
 }
 
 const localBusinessSchema = {
@@ -98,9 +99,11 @@ const SEO = ({
     type = "website",
     article,
     noindex = false,
+    googleSiteVerification,
 }: SEOProps) => {
     const pageTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
     const canonicalUrl = `${SITE_URL}${path}`;
+    const gscVerificationCode = googleSiteVerification || (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined);
 
     return (
         <Helmet>
@@ -109,6 +112,7 @@ const SEO = ({
             <meta name="description" content={description} />
             <link rel="canonical" href={canonicalUrl} />
             {noindex && <meta name="robots" content="noindex, nofollow" />}
+            {gscVerificationCode && <meta name="google-site-verification" content={gscVerificationCode} />}
 
             {/* Open Graph */}
             <meta property="og:type" content={type} />
