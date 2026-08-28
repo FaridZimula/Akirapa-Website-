@@ -50,7 +50,7 @@ const Navbar = () => {
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24 sm:h-28">
             {/* Brand Logo */}
-            <Link to="/" className="flex items-center overflow-visible py-2 pl-3">
+            <Link to="/" className="flex items-center overflow-visible py-2 pl-3 mr-16 sm:mr-24 lg:mr-32 xl:mr-40">
               <img
                 src="/akirapa-logo.png"
                 alt="Akirapa Home Care"
