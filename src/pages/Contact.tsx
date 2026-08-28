@@ -119,8 +119,8 @@ const Contact = () => {
   return (
     <Layout>
       <SEO
-        title="Contact Us | Free Care Assessment | Akirapa Home Care Burlington MA"
-        description="Contact Akirapa Home Care at 83 Cambridge Street, Burlington, MA 01803. Call our 24/7 helpline at 339 970 1214 or 781 472 9375 to schedule a free in-home assessment."
+        title="Contact Us | Free Care Assessment | Akirapa Home Care Bedford MA"
+        description="Contact Akirapa Home Care at 209 Burlington Rd, Bedford, MA 01730. Call our 24/7 helpline at 339 970 1214 or 781 472 9375 to schedule a free in-home assessment."
         path="/contact"
       />
 

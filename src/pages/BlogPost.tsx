@@ -190,14 +190,17 @@ const BlogPostPage = () => {
                 {/* CTA Box */}
                 <div className="p-6 rounded-2xl bg-[#76248a]/5 border border-[#76248a]/20 mt-8 text-left space-y-2">
                   <h3 className="font-bold text-[#76248a] text-lg text-left">
-                    Need Dedicated Care Support in Burlington, MA?
+                    Need Dedicated Care Support in Bedford, MA?
                   </h3>
                   <p className="text-gray-700 text-sm leading-relaxed text-left">
-                    At Akirapa Home Care in Burlington, MA, our certified nursing assistants and care managers work closely with families to implement these strategies seamlessly. Whether your family needs hourly support or continuous daily care, we are here to support your journey.
+                    At Akirapa Home Care headquartered at 209 Burlington Rd, Bedford, MA, our certified nursing assistants and care managers work closely with families across Greater Boston to implement these strategies seamlessly. Whether your family needs hourly support or continuous 24/7 care, we are here to support your journey.
                   </p>
                   <div className="pt-3 flex flex-col sm:flex-row gap-3">
                     <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-bold rounded-xl">
                       <Link to="/contact">Schedule Free Assessment</Link>
+                    </Button>
+                    <Button asChild variant="outline" className="border-[#76248a] text-[#76248a] rounded-xl">
+                      <Link to="/locations/bedford-ma">View Bedford Office</Link>
                     </Button>
                     <Button asChild variant="outline" className="border-[#76248a] text-[#76248a] rounded-xl">
                       <a href="tel:3399701214">Call 339 970 1214</a>
@@ -251,7 +254,7 @@ const BlogPostPage = () => {
                   Ready for a Free Care Assessment?
                 </h3>
                 <p className="text-white/80 text-sm">
-                  Our Burlington care team is available 24/7 to discuss your family's options.
+                  Our Bedford care team is available 24/7 to discuss your family's options.
                 </p>
                 <a
                   href="tel:3399701214"
