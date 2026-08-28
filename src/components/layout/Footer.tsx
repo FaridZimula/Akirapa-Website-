@@ -15,7 +15,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-white/80 text-base leading-relaxed max-w-sm">
-              Providing compassionate, high-quality, and personalized in-home senior care services tailored to your schedule. Headquartered at 209 Burlington Rd, Bedford, MA.
+              Providing compassionate, high-quality, and personalized home care services designed around your schedule. Care Your Way.
             </p>
           </div>
 
@@ -28,8 +28,8 @@ const Footer = () => {
               {[
                 { label: "Home", path: "/" },
                 { label: "About Us", path: "/about" },
-                { label: "Care Services Overview", path: "/services" },
-                { label: "Bedford Location Hub", path: "/locations/bedford-ma" },
+                { label: "Care Services", path: "/services" },
+                { label: "AkiVault Platform", path: "/akivault" },
                 { label: "Our Blog", path: "/blog" },
                 { label: "Careers", path: "/careers" },
                 { label: "Contact Us", path: "/contact" },
@@ -48,29 +48,27 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Core Services Links */}
+          {/* Core Services */}
           <div className="flex flex-col items-center sm:items-start">
             <h4 className="font-bold text-lg mb-6 text-[#40ddd3] uppercase tracking-wider text-sm">
-              Featured Care Services
+              Our Services
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "Companion Care", slug: "companion-care" },
-                { label: "Personal Care", slug: "personal-care" },
-                { label: "Dementia Care", slug: "dementia-care" },
-                { label: "Alzheimer's Care", slug: "alzheimers-care" },
-                { label: "Respite Care", slug: "respite-care" },
-                { label: "Skilled Nursing", slug: "skilled-nursing" },
-                { label: "24-Hour Home Care", slug: "24-hour-home-care" },
-                { label: "Post-Hospital Care", slug: "post-hospitalization-care" }
+                "Hourly Home Care",
+                "Daily & 24/7 Home Care",
+                "Hospital to Home Care",
+                "Respite Care Services",
+                "Alzheimer's & Dementia Care",
+                "Parkinson's & Stroke Support"
               ].map((service) => (
-                <li key={service.slug}>
+                <li key={service}>
                   <Link
-                    to={`/services/${service.slug}`}
+                    to="/services"
                     className="text-white/80 hover:text-[#40ddd3] transition-colors text-base flex items-center justify-center sm:justify-start gap-2"
                   >
                     <span className="text-[#40ddd3] text-xs">›</span>
-                    {service.label}
+                    {service}
                   </Link>
                 </li>
               ))}
@@ -80,15 +78,12 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="flex flex-col items-center sm:items-start">
             <h4 className="font-bold text-lg mb-6 text-[#40ddd3] uppercase tracking-wider text-sm">
-              Bedford Headquarters
+              Contact & Location
             </h4>
             <ul className="space-y-4 text-base text-white/90">
               <li className="flex items-center sm:items-start justify-center sm:justify-start gap-3">
                 <i className="fa-solid fa-location-dot text-[#40ddd3] text-lg shrink-0 mt-1"></i>
-                <div className="text-center sm:text-left">
-                  <span className="font-bold text-white block">209 Burlington Road</span>
-                  <span className="text-white/80 text-sm">Bedford, MA 01730</span>
-                </div>
+                <span className="text-center sm:text-left">209 Burlington Road, Bedford, MA</span>
               </li>
               <li className="flex items-center sm:items-start justify-center sm:justify-start gap-3">
                 <i className="fa-solid fa-phone text-[#40ddd3] text-lg shrink-0 mt-1"></i>
@@ -113,7 +108,7 @@ const Footer = () => {
           <div className="flex flex-wrap justify-center items-center gap-6">
             <Link to="/about" className="hover:text-[#40ddd3] transition-colors">Privacy Policy</Link>
             <Link to="/about" className="hover:text-[#40ddd3] transition-colors">Terms of Service</Link>
-            <Link to="/locations/bedford-ma" className="hover:text-[#40ddd3] transition-colors">Bedford Service Center</Link>
+            <Link to="/contact" className="hover:text-[#40ddd3] transition-colors">Consumer Rights</Link>
           </div>
         </div>
       </div>
