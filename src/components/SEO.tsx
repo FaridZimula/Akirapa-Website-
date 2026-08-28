@@ -8,7 +8,7 @@ interface SEOProps {
     title?: string;
     description?: string;
     image?: string;
-    /** Relative path like "/services" or "/blog/my-post-slug" */
+    /** Relative path like "/services" or "/locations/bedford-ma" */
     path?: string;
     type?: "website" | "article";
     /** For blog articles */
@@ -19,6 +19,8 @@ interface SEOProps {
     };
     noindex?: boolean;
     googleSiteVerification?: string;
+    /** Extra JSON-LD Schema.org objects for specific page types */
+    schemaExtra?: object[];
 }
 
 const localBusinessSchema = {
@@ -28,36 +30,37 @@ const localBusinessSchema = {
     "url": SITE_URL,
     "logo": `${SITE_URL}/akirapa-logo.png`,
     "image": DEFAULT_OG_IMAGE,
-    "description": "Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support.",
+    "description": "Compassionate in-home senior care headquartered in Bedford, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support.",
     "telephone": "+1-339-970-1214",
     "email": "info@akirapahomecareus.com",
     "priceRange": "$$",
     "areaServed": [
-        { "@type": "City", "name": "Burlington", "addressRegion": "MA" },
-        { "@type": "City", "name": "Woburn", "addressRegion": "MA" },
-        { "@type": "City", "name": "Lexington", "addressRegion": "MA" },
         { "@type": "City", "name": "Bedford", "addressRegion": "MA" },
-        { "@type": "City", "name": "Billerica", "addressRegion": "MA" }
+        { "@type": "City", "name": "Lexington", "addressRegion": "MA" },
+        { "@type": "City", "name": "Concord", "addressRegion": "MA" },
+        { "@type": "City", "name": "Billerica", "addressRegion": "MA" },
+        { "@type": "City", "name": "Burlington", "addressRegion": "MA" },
+        { "@type": "City", "name": "Woburn", "addressRegion": "MA" }
     ],
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "83 Cambridge Street",
-        "addressLocality": "Burlington",
+        "streetAddress": "209 Burlington Rd",
+        "addressLocality": "Bedford",
         "addressRegion": "MA",
-        "postalCode": "01803",
+        "postalCode": "01730",
         "addressCountry": "US"
     },
     "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 42.50289,
-        "longitude": -71.19694
+        "latitude": 42.4939,
+        "longitude": -71.2678
     },
     "openingHoursSpecification": [
         {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "08:00",
-            "closes": "18:00"
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
         }
     ],
     "contactPoint": [
@@ -76,34 +79,27 @@ const localBusinessSchema = {
     ],
     "sameAs": [
         "https://www.facebook.com/akirapahomecare",
-        "https://www.google.com/maps?q=83+Cambridge+Street+Burlington+MA+01803"
-    ],
-    "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Home Care Services",
-        "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hourly Home Care" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "24/7 Daily Home Care" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hospital to Home Recovery Care" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Respite Care" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alzheimer's & Dementia Care" } }
-        ]
-    }
+        "https://akirapahomecareus.com"
+    ]
 };
 
 const SEO = ({
-    title = `${SITE_NAME} | In-Home Senior Care & 24/7 Services`,
-    description = "Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Call 339-970-1214.",
+    title = `${SITE_NAME} | In-Home Senior Care & 24/7 Services — Bedford, MA`,
+    description = "Compassionate in-home senior care in Bedford, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Call 339-970-1214.",
     image = DEFAULT_OG_IMAGE,
     path = "/",
     type = "website",
     article,
     noindex = false,
     googleSiteVerification,
+    schemaExtra = []
 }: SEOProps) => {
     const pageTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
     const canonicalUrl = `${SITE_URL}${path}`;
     const gscVerificationCode = googleSiteVerification || (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined);
+
+    const isAdminPath = path.startsWith("/admin");
+    const shouldNoIndex = noindex || isAdminPath;
 
     return (
         <Helmet>
@@ -111,7 +107,11 @@ const SEO = ({
             <title>{pageTitle}</title>
             <meta name="description" content={description} />
             <link rel="canonical" href={canonicalUrl} />
-            {noindex && <meta name="robots" content="noindex, nofollow" />}
+            {shouldNoIndex ? (
+                <meta name="robots" content="noindex, nofollow" />
+            ) : (
+                <meta name="robots" content="index, follow" />
+            )}
             {gscVerificationCode && <meta name="google-site-verification" content={gscVerificationCode} />}
 
             {/* Open Graph */}
@@ -135,10 +135,17 @@ const SEO = ({
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content={image.startsWith("http") ? image : `${SITE_URL}${image}`} />
 
-            {/* LocalBusiness Structured Data (injected on every page for Google) */}
+            {/* Base LocalBusiness Structured Data */}
             <script type="application/ld+json">
                 {JSON.stringify(localBusinessSchema)}
             </script>
+
+            {/* Additional Page-Specific Schemas */}
+            {schemaExtra.map((schemaObj, index) => (
+                <script key={index} type="application/ld+json">
+                    {JSON.stringify(schemaObj)}
+                </script>
+            ))}
         </Helmet>
     );
 };

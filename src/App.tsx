@@ -8,7 +8,9 @@ import { DataProvider } from "./context/DataContext";
 import { AuthProvider } from "./context/AuthContext";
 import Index from "./pages/Index";
 import Leadership from "./pages/Leadership"; // About Us
-import Projects from "./pages/Projects"; // Care Services
+import Projects from "./pages/Projects"; // Care Services Directory
+import ServiceDetail from "./pages/ServiceDetail"; // Dedicated Service Pages
+import BedfordLocation from "./pages/BedfordLocation"; // Dedicated Bedford Location Page
 import Blog from "./pages/Blog"; // Our Blog
 import BlogPostPage from "./pages/BlogPost"; // Individual Blog Article
 import Contact from "./pages/Contact"; // Contact Us
@@ -64,6 +66,8 @@ const App = () => {
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<Leadership />} />
                   <Route path="/services" element={<Projects />} />
+                  <Route path="/services/:serviceSlug" element={<ServiceDetail />} />
+                  <Route path="/locations/bedford-ma" element={<BedfordLocation />} />
                   <Route path="/akivault" element={<AkiVault />} />
                   <Route path="/AkiVault.html" element={<AkiVault />} />
                   <Route path="/blog" element={<Blog />} />
