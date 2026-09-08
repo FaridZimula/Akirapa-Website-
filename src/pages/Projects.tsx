@@ -4,6 +4,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { careServices, CareService } from "@/data/careServices";
+import { detailedServices } from "@/data/detailedServicesData";
 import { CareQuoteCalculator } from "@/components/CareQuoteCalculator";
 
 const visualServices = [
@@ -37,17 +38,36 @@ const visualServices = [
 const Projects = () => {
   const [selectedService, setSelectedService] = useState<CareService>(careServices[0]);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://akirapahomecareus.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Care Services",
+        "item": "https://akirapahomecareus.com/services"
+      }
+    ]
+  };
+
   return (
     <Layout>
       <SEO
         title="Our Care Services | Akirapa Home Care Bedford MA"
-        description="Explore in-home care services by Akirapa Home Care: Hourly care, 24/7 daily care, hospital-to-home recovery, contract-free respite care, and specialized Alzheimer's support."
+        description="Explore 15 in-home care services by Akirapa Home Care: Hourly care, 24/7 daily care, hospital-to-home recovery, respite care, and specialized Alzheimer's support in Bedford, MA."
         path="/services"
+        schemaExtra={[breadcrumbSchema]}
       />
 
-      {/* Hero Header with 29% Opacity Background Image */}
+      {/* Hero Header */}
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-[#76248a] text-white overflow-hidden">
-        {/* Background Image at 29% Opacity */}
         <div className="absolute inset-0 z-0">
           <img
             src="/CARE GIVER  (2).jpg"
@@ -62,7 +82,7 @@ const Projects = () => {
             In-Home Care Services Designed for You
           </h1>
           <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium">
-            From flexible hourly visits to 24/7 around-the-clock specialized care, we come to your convenient location in Bedford, MA and surrounding areas.
+            From flexible hourly visits to 24/7 around-the-clock specialized care, we come to your convenient location in Bedford, MA and surrounding Middlesex County.
           </p>
         </div>
       </section>
@@ -70,7 +90,7 @@ const Projects = () => {
       {/* Service Selection Tabs & Detail Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-narrow mx-auto">
-          {/* 5 Services Images Grid (Horizontal Scroll on Mobile, 5-Col Grid on Desktop) */}
+          {/* 5 Services Images Grid */}
           <div className="mb-12">
             <div className="flex overflow-x-auto gap-5 sm:gap-6 pt-2 pb-4 snap-x snap-mandatory scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 lg:grid lg:grid-cols-5 lg:gap-8 lg:mx-0 lg:px-0 lg:overflow-visible">
               {visualServices.map((item) => {
@@ -192,9 +212,54 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Hotline Assistance Banner (Placed ABOVE Quote Calculator, 300px Height & 29% Opacity Image) */}
+      {/* Complete 15 Dedicated Services Directory */}
+      <section className="section-padding bg-white border-t border-gray-100">
+        <div className="container-narrow mx-auto space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1 rounded-full inline-block">
+              Dedicated Service Directory
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
+              All 15 Specialized Care Programs
+            </h2>
+            <p className="text-gray-600 text-base">
+              Click into any of our dedicated care programs below to read full service descriptions, eligibility criteria, family considerations, and FAQs.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {detailedServices.map((srv) => (
+              <div key={srv.slug} className="p-6 rounded-3xl bg-gray-50 border border-gray-100 hover:border-[#76248a]/30 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shadow-xs">
+                      <i className={`${srv.icon} text-lg`}></i>
+                    </div>
+                    <span className="text-[10px] font-bold text-[#76248a] bg-[#76248a]/10 px-2.5 py-1 rounded-full">
+                      {srv.category}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-lg">{srv.title}</h3>
+                  <p className="text-gray-600 text-xs leading-relaxed line-clamp-3">{srv.shortDescription}</p>
+                </div>
+
+                <div className="pt-3 border-t border-gray-200/60">
+                  <Link
+                    to={`/services/${srv.slug}`}
+                    className="text-[#76248a] font-bold text-xs uppercase tracking-wider hover:text-[#40ddd3] flex items-center justify-between transition-colors"
+                  >
+                    <span>Read Full Service Guide</span>
+                    <i className="fa-solid fa-arrow-right text-xs"></i>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hotline Assistance Banner */}
       <section className="relative min-h-[300px] py-10 md:py-12 bg-[#76248a] text-white overflow-hidden flex items-center justify-center">
-        {/* Background Image at 29% Opacity */}
         <div className="absolute inset-0 z-0">
           <img
             src="/CARE GIVER  (10).jpg"
