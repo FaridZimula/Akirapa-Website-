@@ -89,6 +89,7 @@ const DonatePay = () => {
                 setSelectedPreset(null);
             }
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [provider]);
 
     const totalDue = amount ? parseFloat(amount) : 0;

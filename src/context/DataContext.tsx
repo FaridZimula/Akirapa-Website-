@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { toast } from 'sonner';
 import { projects as initialProjects } from '@/data/projects';
@@ -246,7 +247,8 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
                 // Fetch Projects
                 const { data: dbProjects, error: prjErr } = await supabase.from('projects').select('*').order('order_index');
                 if (!prjErr && dbProjects && dbProjects.length > 0) {
-                    setProjects(dbProjects.map((p: any) => ({
+                    type DbProject = { id: string; title: string; category: string; description: string; short_description: string; impact: string; images: string[]; icon: string; order_index: number; };
+                    setProjects((dbProjects as DbProject[]).map((p) => ({
                         ...p,
                         shortDescription: p.short_description
                     })));
@@ -256,8 +258,10 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
                 // Fetch Leaders & Board Members
                 const { data: dbLeaders, error: leadErr } = await supabase.from('leaders').select('*').order('order_index');
                 if (!leadErr && dbLeaders && dbLeaders.length > 0) {
-                    setLeaders(dbLeaders.filter((l: any) => l.type === 'LEADER' || !l.type));
-                    setBoardMembers(dbLeaders.filter((l: any) => l.type === 'BOARD'));
+                    type DbLeader = { id: string; name: string; role: string; bio: string; image: string; type: string; order_index: number; };
+                    const typedLeaders = dbLeaders as DbLeader[];
+                    setLeaders(typedLeaders.filter((l) => l.type === 'LEADER' || !l.type));
+                    setBoardMembers(typedLeaders.filter((l) => l.type === 'BOARD'));
                     setIsSupabaseConnected(true);
                 }
 
@@ -278,7 +282,8 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
                 // Fetch Job Openings
                 const { data: dbJobs, error: jobErr } = await supabase.from('job_openings').select('*').order('created_at', { ascending: false });
                 if (!jobErr && dbJobs && dbJobs.length > 0) {
-                    setJobOpenings(dbJobs.map((j: any) => ({
+                    type DbJob = { id: string; title: string; city: string; state: string; employment_type: string; pay_rate: string; pay_type: "Hourly" | "Daily"; posted_date: string; description: string; requirements: string[]; active: boolean; };
+                    setJobOpenings((dbJobs as DbJob[]).map((j) => ({
                         id: j.id,
                         title: j.title,
                         city: j.city,

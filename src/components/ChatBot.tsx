@@ -7,8 +7,8 @@ declare global {
       close: () => void;
       show: () => void;
       hide: () => void;
-      on: (event: string, callback: (...args: any[]) => void) => void;
-      setVisitorData: (data: Record<string, any>) => void;
+      on: (event: string, callback: (...args: unknown[]) => void) => void;
+      setVisitorData: (data: Record<string, unknown>) => void;
       messageFromVisitor: (text: string) => void;
     };
   }

@@ -27,6 +27,7 @@ const ProjectCard = ({ title, description, images, icon, category, impact, layou
         }, 4000); // Change image every 4 seconds
 
         return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [images?.length]);
 
     const isHome = variant === "home";

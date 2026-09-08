@@ -233,7 +233,7 @@ const CareersEditor = () => {
           <div className="flex items-center gap-3">
             <select
               value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value as any)}
+              onChange={(e) => setStatusFilter(e.target.value as "ALL" | "ACTIVE" | "PAUSED")}
               className="h-11 px-4 rounded-xl bg-gray-50 border border-gray-200 text-xs font-semibold text-gray-700"
             >
               <option value="ALL">All Statuses</option>
@@ -429,7 +429,7 @@ const CareersEditor = () => {
                   <select
                     id="payType"
                     value={formState.payType}
-                    onChange={(e) => setFormState({ ...formState, payType: e.target.value as any })}
+                    onChange={(e) => setFormState({ ...formState, payType: e.target.value as "Hourly" | "Daily" })}
                     className="w-full h-11 px-3 rounded-xl bg-gray-50 border border-gray-200 text-xs font-medium text-gray-800"
                   >
                     <option value="Hourly">Hourly</option>

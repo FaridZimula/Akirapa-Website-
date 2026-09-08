@@ -14,28 +14,6 @@ const CountUp = ({ end, duration = 2000, suffix = "", prefix = "", className = "
     const startTimeRef = useRef<number | null>(null);
     const hasAnimatedRef = useRef(false);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                if (entries[0].isIntersecting && !hasAnimatedRef.current) {
-                    hasAnimatedRef.current = true;
-                    startAnimation();
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        if (elementRef.current) {
-            observer.observe(elementRef.current);
-        }
-
-        return () => {
-            if (elementRef.current) {
-                observer.unobserve(elementRef.current);
-            }
-        };
-    }, [end]);
-
     const startAnimation = () => {
         const step = (timestamp: number) => {
             if (!startTimeRef.current) startTimeRef.current = timestamp;
@@ -58,6 +36,30 @@ const CountUp = ({ end, duration = 2000, suffix = "", prefix = "", className = "
         };
         requestAnimationFrame(step);
     };
+
+    useEffect(() => {
+        const el = elementRef.current;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting && !hasAnimatedRef.current) {
+                    hasAnimatedRef.current = true;
+                    startAnimation();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (el) {
+            observer.observe(el);
+        }
+
+        return () => {
+            if (el) {
+                observer.unobserve(el);
+            }
+        };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [end]);
 
     return (
         <span ref={elementRef} className={className}>
