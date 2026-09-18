@@ -141,7 +141,9 @@ const Blog = () => {
       {/* Floating Draggable & Shrinkable Topics Widget */}
       <div
         ref={navCardRef}
-        className="fixed z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/30 bg-white shadow-2xl animate-pulse-glow transition-shadow duration-300"
+        className={`fixed z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/50 bg-white shadow-2xl ${
+          !isNavOpen && !isDragging ? "animate-vibrate-purple" : "animate-purple-glow"
+        } transition-shadow duration-300`}
         style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
       >
         <div
@@ -152,15 +154,15 @@ const Blog = () => {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           style={{ cursor: isDragging ? "grabbing" : "pointer" }}
-          className="flex items-center justify-between bg-gradient-to-r from-[#76248a] via-[#561868] to-[#40ddd3] px-4 py-3 text-white select-none button-shimmer"
+          className="flex items-center justify-between bg-gradient-to-r from-[#8e2ca7] via-[#76248a] to-[#561868] px-4 py-3 text-white select-none button-shimmer"
           title="Click anywhere to open/shrink topics, or drag to reposition"
         >
           <div className="flex items-center gap-2.5">
             <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#40ddd3]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d8b4fe] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#e9d5ff]"></span>
             </span>
-            <i className="fa-solid fa-folder-open text-[#40ddd3] text-sm"></i>
+            <i className="fa-solid fa-folder-open text-[#e9d5ff] text-sm"></i>
             <div>
               <span className="text-xs font-black uppercase tracking-wider block">Blog Topics (7)</span>
               <span className="text-[10px] text-white/80 block -mt-0.5">
@@ -193,7 +195,7 @@ const Blog = () => {
                   }`}
                 >
                   <div className="flex items-center gap-2.5 truncate">
-                    <i className={`fa-solid ${topic.icon} text-sm ${isSelected ? "text-[#40ddd3]" : "text-[#76248a]"}`}></i>
+                    <i className={`fa-solid ${topic.icon} text-sm ${isSelected ? "text-purple-200" : "text-[#76248a]"}`}></i>
                     <span className="truncate">{topic.label}</span>
                   </div>
                   <span

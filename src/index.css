@@ -219,6 +219,75 @@
     animation: pulseGlow 3s ease-in-out infinite;
   }
 
+  @keyframes vibrate {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    10% {
+      transform: translate3d(-1.5px, 1px, 0) rotate(-0.5deg);
+    }
+    20% {
+      transform: translate3d(1.5px, -1px, 0) rotate(0.5deg);
+    }
+    30% {
+      transform: translate3d(-1.5px, -1px, 0) rotate(-0.5deg);
+    }
+    40% {
+      transform: translate3d(1.5px, 1px, 0) rotate(0.5deg);
+    }
+    50% {
+      transform: translate3d(-1px, 1.5px, 0) rotate(-0.3deg);
+    }
+    60% {
+      transform: translate3d(1px, -1.5px, 0) rotate(0.3deg);
+    }
+    70% {
+      transform: translate3d(-1.5px, 0.5px, 0) rotate(-0.3deg);
+    }
+    80% {
+      transform: translate3d(1.5px, -0.5px, 0) rotate(0.3deg);
+    }
+    90% {
+      transform: translate3d(-0.5px, 0.5px, 0) rotate(0deg);
+    }
+  }
+
+  @keyframes purpleGlow {
+    0%, 100% {
+      box-shadow: 0 0 16px 2px rgba(118, 36, 138, 0.4), 0 0 28px 4px rgba(168, 85, 247, 0.25);
+    }
+    50% {
+      box-shadow: 0 0 28px 6px rgba(118, 36, 138, 0.65), 0 0 42px 8px rgba(168, 85, 247, 0.45);
+    }
+  }
+
+  .animate-vibrate {
+    animation: vibrate 0.4s linear infinite;
+  }
+
+  .animate-vibrate:hover {
+    animation-play-state: paused;
+  }
+
+  .animate-purple-glow {
+    animation: purpleGlow 2.5s ease-in-out infinite;
+  }
+
+  .animate-vibrate-purple {
+    animation: vibrate 0.4s linear infinite, purpleGlow 2.5s ease-in-out infinite;
+  }
+
+  .animate-vibrate-purple:hover {
+    animation-play-state: paused, running;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-vibrate,
+    .animate-vibrate-purple {
+      animation: none;
+    }
+  }
+
   @keyframes buttonShimmer {
     0% {
       transform: translateX(-150%) skewX(-20deg);
