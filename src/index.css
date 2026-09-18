@@ -219,36 +219,67 @@
     animation: pulseGlow 3s ease-in-out infinite;
   }
 
+  /* Vibrates for 2 seconds, then pauses/rests for 5 seconds in a 7-second loop */
   @keyframes vibrate {
-    0%, 100% {
+    0% {
       transform: translate3d(0, 0, 0) rotate(0deg);
     }
-    10% {
-      transform: translate3d(-1.5px, 1px, 0) rotate(-0.5deg);
+    1.5% {
+      transform: translate3d(-2px, 1px, 0) rotate(-0.6deg);
     }
-    20% {
-      transform: translate3d(1.5px, -1px, 0) rotate(0.5deg);
+    3% {
+      transform: translate3d(2px, -1px, 0) rotate(0.6deg);
     }
-    30% {
-      transform: translate3d(-1.5px, -1px, 0) rotate(-0.5deg);
+    4.5% {
+      transform: translate3d(-2px, -1px, 0) rotate(-0.6deg);
     }
-    40% {
-      transform: translate3d(1.5px, 1px, 0) rotate(0.5deg);
+    6% {
+      transform: translate3d(2px, 1px, 0) rotate(0.6deg);
     }
-    50% {
-      transform: translate3d(-1px, 1.5px, 0) rotate(-0.3deg);
+    7.5% {
+      transform: translate3d(-1.5px, 1.5px, 0) rotate(-0.4deg);
     }
-    60% {
-      transform: translate3d(1px, -1.5px, 0) rotate(0.3deg);
+    9% {
+      transform: translate3d(1.5px, -1.5px, 0) rotate(0.4deg);
     }
-    70% {
-      transform: translate3d(-1.5px, 0.5px, 0) rotate(-0.3deg);
+    10.5% {
+      transform: translate3d(-2px, 0.5px, 0) rotate(-0.5deg);
     }
-    80% {
-      transform: translate3d(1.5px, -0.5px, 0) rotate(0.3deg);
+    12% {
+      transform: translate3d(2px, -0.5px, 0) rotate(0.5deg);
     }
-    90% {
-      transform: translate3d(-0.5px, 0.5px, 0) rotate(0deg);
+    13.5% {
+      transform: translate3d(-1.5px, 1px, 0) rotate(-0.4deg);
+    }
+    15% {
+      transform: translate3d(1.5px, -1px, 0) rotate(0.4deg);
+    }
+    16.5% {
+      transform: translate3d(-2px, 1px, 0) rotate(-0.6deg);
+    }
+    18% {
+      transform: translate3d(2px, -1px, 0) rotate(0.6deg);
+    }
+    19.5% {
+      transform: translate3d(-2px, -1px, 0) rotate(-0.6deg);
+    }
+    21% {
+      transform: translate3d(2px, 1px, 0) rotate(0.6deg);
+    }
+    22.5% {
+      transform: translate3d(-1.5px, 1.5px, 0) rotate(-0.4deg);
+    }
+    24% {
+      transform: translate3d(1.5px, -1.5px, 0) rotate(0.4deg);
+    }
+    25.5% {
+      transform: translate3d(-1px, 0.5px, 0) rotate(-0.3deg);
+    }
+    27% {
+      transform: translate3d(1px, -0.5px, 0) rotate(0.3deg);
+    }
+    28.57%, 100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
     }
   }
 
@@ -262,7 +293,7 @@
   }
 
   .animate-vibrate {
-    animation: vibrate 0.4s linear infinite;
+    animation: vibrate 7s linear infinite;
   }
 
   .animate-vibrate:hover {
@@ -274,7 +305,7 @@
   }
 
   .animate-vibrate-purple {
-    animation: vibrate 0.4s linear infinite, purpleGlow 2.5s ease-in-out infinite;
+    animation: vibrate 7s linear infinite, purpleGlow 2.5s ease-in-out infinite;
   }
 
   .animate-vibrate-purple:hover {
