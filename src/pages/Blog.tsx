@@ -22,6 +22,28 @@ const Blog = () => {
   const [hasMoved, setHasMoved] = useState(false);
   const navCardRef = React.useRef<HTMLDivElement>(null);
 
+  // 6x Vibration pulse: vibrates for 2 seconds, then rests for 5 seconds
+  const [isVibrating, setIsVibrating] = useState(true);
+
+  useEffect(() => {
+    let stopTimer: ReturnType<typeof setTimeout>;
+    const interval = setInterval(() => {
+      setIsVibrating(true);
+      stopTimer = setTimeout(() => {
+        setIsVibrating(false);
+      }, 2000);
+    }, 7000);
+
+    stopTimer = setTimeout(() => {
+      setIsVibrating(false);
+    }, 2000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(stopTimer);
+    };
+  }, []);
+
   // Initialize and load views for each post
   useEffect(() => {
     const initialViews: Record<string, number> = {};
@@ -142,7 +164,7 @@ const Blog = () => {
       <div
         ref={navCardRef}
         className={`fixed z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/50 bg-white shadow-2xl ${
-          !isNavOpen && !isDragging ? "animate-vibrate-purple" : "animate-purple-glow"
+          isVibrating && !isNavOpen && !isDragging ? "animate-vibrate-fast" : "animate-purple-glow"
         } transition-shadow duration-300`}
         style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
       >
