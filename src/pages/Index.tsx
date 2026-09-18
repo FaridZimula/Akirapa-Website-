@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 import { careServices } from "@/data/careServices";
 import { testimonials } from "@/data/testimonials";
 import { leaders } from "@/data/leadership";
@@ -20,6 +24,57 @@ const heroSlides = [
     title: "Elite Private-Duty Care Management Powered by Secured Infrastructure.",
     subtitle: "Premium in-home care designed for discerning families and institutional payers. Advanced technology meets exceptional clinical expertise at your convenience.",
     bgImage: "/CARE GIVER  (16).jpg"
+  }
+];
+
+const whyChooseCards = [
+  {
+    icon: "fa-user-doctor",
+    bg: "bg-[#6b1d6f]",
+    title: "Daily care experts",
+    description: "We specialize in around the clock care to help seniors live well at home."
+  },
+  {
+    icon: "fa-headset",
+    bg: "bg-[#aa2a78]",
+    title: "Available 24/7",
+    description: "We are available 24 hours a day to provide your loved one with a caregiver."
+  },
+  {
+    icon: "fa-wheelchair",
+    bg: "bg-[#e03b4e]",
+    title: "Balanced care",
+    description: "Our unique approach to care promotes healthy mind, body and spirit."
+  },
+  {
+    icon: "fa-heart-pulse",
+    bg: "bg-[#f29807]",
+    title: "High caliber caregivers",
+    description: "We typically hire only 1 in 25 applicants and provide ongoing training."
+  },
+  {
+    icon: "fa-gem",
+    bg: "bg-[#65b741]",
+    title: "Peace of mind",
+    description: "Independent industry surveys place our client satisfaction rate at 97%."
+  },
+  {
+    icon: "fa-user-shield",
+    bg: "bg-[#23509e]",
+    title: "A trusted partner",
+    description: "Akirapa Home Care is the trusted referral choice for elder care professionals."
+  },
+  {
+    icon: "fa-flask",
+    bg: "bg-[#1b99a4]",
+    title: "Cognitive therapeutics",
+    description: "Fun yet effective activities designed by experts to keep aging minds sharp."
+  },
+  {
+    icon: "fa-file-contract",
+    bg: "bg-[#158d88]",
+    title: "No long term contract",
+    description: "Use our services only as long as you're 100% satisfied."
   }
 ];
 
@@ -69,8 +124,26 @@ const technologyPillars = [
 ];
 
 const Index = () => {
+  const { toast } = useToast();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+
+  // Testimonial submission form states
+  const [author, setAuthor] = useState("");
+  const [relation, setRelation] = useState("");
+  const [location, setLocation] = useState("");
+  const [reviewText, setReviewText] = useState("");
+  const [rating, setRating] = useState(5);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleTestimonialSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    toast({
+      title: "Testimonial Submitted!",
+      description: "Thank you for sharing your feedback with Akirapa Home Care.",
+    });
+  };
 
   useEffect(() => {
     if (isPaused) return;
@@ -80,14 +153,6 @@ const Index = () => {
 
     return () => clearInterval(timer);
   }, [isPaused]);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
 
   const slide = heroSlides[currentSlide];
 
@@ -99,13 +164,13 @@ const Index = () => {
         path="/"
       />
 
-      {/* Light Elegant Hero Section with Landscape Background & Strong White Gradient Overlay */}
+      {/* Light Elegant Hero Section with Landscape Background & Refined Gradient Mask */}
       <section
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-white text-gray-900 overflow-hidden border-b border-gray-100 min-h-[520px] md:min-h-[580px] flex items-center"
+        className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-white text-gray-900 overflow-hidden border-b border-gray-100 min-h-[520px] md:min-h-[600px] flex items-center"
       >
-        {/* Animated Background Landscape Images */}
+        {/* Animated Background Landscape Images with Smooth Zoom */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           {heroSlides.map((item, index) => (
             <img
@@ -114,15 +179,15 @@ const Index = () => {
               alt="Hero Caregiver Background"
               className={`absolute inset-0 w-full h-full object-cover object-right md:object-right-top transition-all duration-1000 ease-in-out transform ${
                 index === currentSlide
-                  ? "opacity-100 scale-100 z-0"
-                  : "opacity-0 scale-105 -z-10"
+                  ? "opacity-100 scale-105 z-0"
+                  : "opacity-0 scale-100 -z-10"
               }`}
             />
           ))}
 
-          {/* Strong White Gradient: 100% solid white across the text area (0-60%), smooth fade to transparent on the right */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-r from-white via-white via-55% sm:via-white sm:via-60% md:via-white md:via-65% lg:via-white/95 lg:via-60% to-transparent pointer-events-none" />
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-white via-white/80 via-30% to-transparent sm:hidden pointer-events-none" />
+          {/* Refined Smooth Gradient: clear readable text zone on the left while revealing the warm caregiver photos on the right/center */}
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-white/95 via-white/85 via-45% md:via-white/65 md:via-55% to-transparent pointer-events-none" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-white/90 via-white/40 to-transparent sm:hidden pointer-events-none" />
         </div>
 
         {/* Slide Indicators */}
@@ -142,27 +207,31 @@ const Index = () => {
         </div>
 
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-20">
-          <div className="max-w-3xl lg:max-w-4xl space-y-6 text-left pl-1 sm:pl-2">
-            <div key={slide.id} className="space-y-4 transition-all duration-700 ease-in-out animate-fadeIn">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#76248a] tracking-tight leading-[1.2] text-left">
+          <div className="max-w-2xl lg:max-w-3xl space-y-6 text-left bg-white/70 sm:bg-white/50 md:bg-transparent backdrop-blur-xs sm:backdrop-blur-sm md:backdrop-blur-none p-5 sm:p-7 md:p-0 rounded-3xl border border-white/60 md:border-none shadow-sm md:shadow-none">
+            <div key={slide.id} className="space-y-4 animate-fade-up">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#76248a]/10 text-[#76248a] text-xs font-black uppercase tracking-wider shadow-xs">
+                <i className="fa-solid fa-heart-pulse text-[#40ddd3]"></i>
+                Compassionate Concierge In-Home Care
+              </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-[1.2] text-left">
                 {slide.title}
               </h1>
 
-              <p className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed max-w-2xl text-left italic">
+              <p className="text-base sm:text-lg text-gray-800 font-medium leading-relaxed max-w-2xl text-left">
                 {slide.subtitle}
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-start items-stretch sm:items-center pt-8">
-              <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-bold text-base h-14 px-8 rounded-lg shadow-lg border-none transition-all hover:shadow-xl">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start items-stretch sm:items-center pt-4 sm:pt-6">
+              <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold text-base h-14 px-8 rounded-xl shadow-lg hover:shadow-cyan-400/30 transition-all duration-300 hover:scale-105 button-shimmer border-none">
                 <Link to="/contact">Explore Concierge Private Care</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="bg-white/95 hover:bg-white border-2 border-[#76248a] text-[#76248a] font-bold text-base h-14 px-8 rounded-lg shadow-md hover:shadow-lg transition-all">
-                <Link to="/insurance-partners">Insurance Partners & Clinical Payer Portal</Link>
+              <Button asChild variant="outline" size="lg" className="bg-white/95 hover:bg-white border-2 border-[#76248a] text-[#76248a] font-bold text-base h-14 px-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <Link to="/services">View Care Services</Link>
               </Button>
             </div>
 
-            <div className="pt-8 border-t border-gray-300/60 flex flex-wrap justify-start gap-8 text-xs sm:text-sm font-semibold text-gray-600">
+            <div className="pt-6 border-t border-gray-300/60 flex flex-wrap justify-start gap-8 text-xs sm:text-sm font-semibold text-gray-700">
               <div className="flex items-center gap-2">
                 <i className="fa-solid fa-circle-check text-[#40ddd3] text-base"></i>
                 <span>Licensed Caregivers</span>
@@ -202,7 +271,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto shrink-0">
               <a
                 href="tel:3399701214"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#76248a] hover:bg-[#561868] text-white font-extrabold px-6 py-3.5 rounded-2xl shadow-lg transition-all text-base"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#76248a] hover:bg-[#561868] text-white font-extrabold px-6 py-3.5 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 text-base button-shimmer"
               >
                 <i className="fa-solid fa-phone text-lg text-[#40ddd3]"></i>
                 <div className="text-left">
@@ -211,7 +280,7 @@ const Index = () => {
                 </div>
               </a>
 
-              <Button asChild size="lg" className="w-full sm:w-auto bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold text-base h-14 px-6 rounded-2xl shadow-md">
+              <Button asChild size="lg" className="w-full sm:w-auto bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold text-base h-14 px-6 rounded-2xl shadow-md button-shimmer transition-all duration-300 hover:scale-105">
                 <Link to="/contact">Request Immediate Callback</Link>
               </Button>
             </div>
@@ -227,16 +296,16 @@ const Index = () => {
               Advanced Technology
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
-              Powered by AkiVault
+              AkiVault Features
             </h2>
             <p className="text-gray-600 text-base sm:text-lg">
               Six technological pillars ensuring security, transparency, and clinical excellence in every shift.
             </p>
             <div className="pt-4">
-              <Button asChild size="lg" className="bg-[#76248a] hover:bg-[#561868] text-white font-bold text-base h-12 px-6 rounded-2xl shadow-md">
-                <a href="https://akirapa-home-care-system-ynmt.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  Explore AkiVault Platform →
-                </a>
+              <Button asChild size="lg" className="bg-[#76248a] hover:bg-[#561868] text-white font-bold text-base h-12 px-6 rounded-2xl shadow-md button-shimmer transition-all duration-300 hover:scale-105">
+                <Link to="/akivault">
+                  Explore AkiVault Features →
+                </Link>
               </Button>
             </div>
           </div>
@@ -380,20 +449,20 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <a
               href="tel:3399701214"
-              className="inline-flex items-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold text-xl px-8 py-4 rounded-2xl shadow-xl transition-all hover:scale-105"
+              className="inline-flex items-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold text-xl px-8 py-4 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105 button-shimmer animate-btn-pulse"
             >
               <i className="fa-solid fa-phone text-xl text-white"></i>
-              <span>Call 339 970 1214</span>
+              <span>Call Us Now</span>
             </a>
-            <Button asChild variant="outline" size="lg" className="border-2 border-white bg-transparent text-white hover:bg-white/10 font-bold text-lg h-14 px-8 rounded-2xl">
+            <Button asChild variant="outline" size="lg" className="border-2 border-white bg-transparent text-white hover:bg-white/10 font-bold text-lg h-14 px-8 rounded-2xl transition-all duration-300 hover:scale-105">
               <Link to="/contact">Book Free Consultation</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Akirapa Home Care Section matching screenshots */}
-      <section className="py-16 md:py-24 bg-white border-b border-gray-100">
+      {/* Why Choose Akirapa Home Care Section with Automatic Loop Scroll */}
+      <section className="py-16 md:py-24 bg-white border-b border-gray-100 overflow-hidden">
         <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-10">
           {/* Section Headline */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-tight text-left">
@@ -409,105 +478,37 @@ const Index = () => {
               </p>
             </div>
 
-            <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold uppercase text-sm h-14 px-8 rounded-none shadow-md border-none shrink-0">
-              <a href="#testimonials">READ TESTIMONIALS</a>
+            <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold uppercase text-sm h-14 px-8 rounded-xl shadow-md border-none shrink-0 button-shimmer transition-all duration-300 hover:scale-105">
+              <a href="#stories-of-care">READ TESTIMONIALS</a>
             </Button>
           </div>
 
-          {/* 8 Colorful Feature Cards Horizontal Scroll Row */}
-          <div className="flex overflow-x-auto gap-6 pt-4 pb-6 snap-x snap-mandatory -mx-6 px-6 sm:-mx-12 sm:px-12 lg:-mx-16 lg:px-16 scrollbar-thin scrollbar-thumb-[#76248a]/20">
-            {/* Card 1 - Dark Purple */}
-            <div className="bg-[#6b1d6f] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-user-doctor text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">Daily care experts</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  We specialize in around the clock care to help seniors live well at home.
-                </p>
-              </div>
+          {/* Automatic Infinite Scrolling Marquee Row with Seamless Loop */}
+          <div className="relative w-full overflow-hidden py-4 -mx-6 px-6 sm:-mx-12 sm:px-12 lg:-mx-16 lg:px-16 group">
+            <div className="animate-marquee gap-6 flex">
+              {[...whyChooseCards, ...whyChooseCards].map((card, idx) => (
+                <div
+                  key={idx}
+                  className={`${card.bg} text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0`}
+                >
+                  <div className="space-y-4">
+                    <i className={`fa-solid ${card.icon} text-4xl text-white`}></i>
+                    <h3 className="text-xl font-bold text-white leading-tight capitalize">{card.title}</h3>
+                    <p className="text-white/90 text-sm leading-relaxed">
+                      {card.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-
-            {/* Card 2 - Medium Magenta */}
-            <div className="bg-[#aa2a78] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-headset text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">Available 24/7</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  We are available 24 hours a day to provide your loved one with a caregiver.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3 - Coral Red */}
-            <div className="bg-[#e03b4e] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-wheelchair text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">Balanced care</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Our unique approach to care promotes healthy mind, body and spirit.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 4 - Golden Orange */}
-            <div className="bg-[#f29807] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-heart-pulse text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">high caliber caregivers</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  We typically hire only 1 in 25 applicants and provide ongoing training.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 5 - Vibrant Green */}
-            <div className="bg-[#65b741] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-gem text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">Peace of mind</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Independent industry surveys place our client satisfaction rate at 97%.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 6 - Deep Blue */}
-            <div className="bg-[#23509e] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-user-shield text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">A trusted partner</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Akirapa Home Care is the trusted referral choice for elder care professionals.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 7 - Teal */}
-            <div className="bg-[#1b99a4] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-flask text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">Cognitive therapeutics</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Fun yet effective activities designed by experts to keep aging minds sharp.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 8 - Dark Teal */}
-            <div className="bg-[#158d88] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-file-contract text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">No long term contract</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Use our services only as long as you're 100% satisfied.
-                </p>
-              </div>
-            </div>
+            {/* Subtle Gradient Overlays at left and right edges */}
+            <div className="absolute top-0 bottom-0 left-0 w-8 sm:w-16 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
+            <div className="absolute top-0 bottom-0 right-0 w-8 sm:w-16 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
           </div>
         </div>
       </section>
 
-      {/* Featured 99% Satisfaction & Client Review Highlight Section matching screenshot */}
+      {/* Featured 99% Satisfaction & Client Review Highlight Section */}
       <section className="py-16 md:py-24 bg-white border-b border-gray-100">
         <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-10">
           {/* Main Headline */}
@@ -524,13 +525,13 @@ const Index = () => {
               </p>
             </div>
 
-            <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold uppercase text-sm h-14 px-8 rounded-none shadow-md border-none shrink-0">
-              <Link to="/contact">WRITE REVIEW</Link>
+            <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold uppercase text-sm h-14 px-8 rounded-xl shadow-md border-none shrink-0 button-shimmer transition-all duration-300 hover:scale-105">
+              <a href="#submit-feedback">WRITE REVIEW</a>
             </Button>
           </div>
 
-          {/* Split Feature Box (Left: Theme Color Box with White Text, Right: Image from Public Folder) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 min-h-[380px]">
+          {/* Split Feature Box */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 min-h-[380px] group">
             {/* Left Card - Theme Color with White Text */}
             <div className="order-2 lg:order-1 lg:col-span-6 bg-[#218981] text-white p-8 sm:p-12 flex flex-col justify-between space-y-6">
               <div className="space-y-2">
@@ -550,45 +551,142 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right Card - Image from Public Folder */}
-            <div className="order-1 lg:order-2 lg:col-span-6 relative min-h-[300px] lg:min-h-full">
+            {/* Right Card - Image from Public Folder with smooth zoom */}
+            <div className="order-1 lg:order-2 lg:col-span-6 relative min-h-[300px] lg:min-h-full overflow-hidden">
               <img
                 src="/CARE GIVER  (13).jpg"
                 alt="Shara M. Caregiver and Mother"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover img-zoom-hover"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Client Testimonials Section */}
-      <section id="testimonials" className="py-16 md:py-24 bg-white">
-        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 items-start">
-            {testimonials.map((item) => (
-              <div key={item.id} className="space-y-4 text-center md:text-left">
-                {/* Cyan Quote Icon */}
-                <div className="text-center md:text-left">
-                  <i className="fa-solid fa-quote-left text-3xl sm:text-4xl text-[#40ddd3]"></i>
-                </div>
-
-                {/* Author Name and Subtitle */}
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#76248a] tracking-tight">
-                    {item.author}
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-500 font-normal pt-0.5">
-                    {item.location}
-                  </p>
-                </div>
-
-                {/* Remark Text */}
-                <p className="text-gray-600 text-base sm:text-lg font-normal leading-relaxed">
-                  {item.text}
+      {/* Stories of Care & Trust and Review Submission Form (Relocated from About Us) */}
+      <section id="stories-of-care" className="section-padding bg-gray-50 border-t border-gray-100">
+        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            {/* Left: Testimonials List */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="space-y-2">
+                <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1 rounded-full inline-block">
+                  Verified Family Testimonials
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
+                  Stories of Care & Trust
+                </h2>
+                <p className="text-gray-600 text-sm">
+                  Hear firsthand experiences from families who rely on Akirapa Home Care for compassionate, professional senior assistance.
                 </p>
               </div>
-            ))}
+
+              <div className="space-y-4">
+                {testimonials.map((item) => (
+                  <div key={item.id} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 space-y-3 group">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-1 text-amber-400">
+                        {[...Array(item.rating || 5)].map((_, i) => (
+                          <i key={i} className="fa-solid fa-star text-sm"></i>
+                        ))}
+                      </div>
+                      <i className="fa-solid fa-quote-right text-gray-200 group-hover:text-[#40ddd3] transition-colors text-xl"></i>
+                    </div>
+                    <p className="text-gray-700 italic text-sm leading-relaxed">"{item.text}"</p>
+                    <div className="text-xs font-bold text-gray-900 flex items-center justify-between border-t border-gray-50 pt-2">
+                      <span>{item.author}</span>
+                      <span className="font-normal text-gray-500">{item.relation ? `${item.relation} • ` : ""}{item.location}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Submit Your Review */}
+            <div id="submit-feedback" className="lg:col-span-5 scroll-mt-28">
+              <div className="bg-[#76248a] text-white p-8 rounded-3xl shadow-xl space-y-6 border border-[#561868]">
+                <div className="flex items-center gap-3">
+                  <i className="fa-solid fa-comment-dots text-2xl text-[#40ddd3]"></i>
+                  <h3 className="text-2xl font-black text-white">Share Your Feedback</h3>
+                </div>
+                <p className="text-white/80 text-xs">
+                  Has your family experienced care from Akirapa Home Care? Submit a testimonial to help other families make informed care decisions.
+                </p>
+
+                {!isSubmitted ? (
+                  <form onSubmit={handleTestimonialSubmit} className="space-y-4 text-gray-900">
+                    <div>
+                      <Label htmlFor="author" className="text-white text-xs font-semibold">Your Name</Label>
+                      <Input
+                        id="author"
+                        placeholder="e.g. Mary Higgins"
+                        value={author}
+                        onChange={(e) => setAuthor(e.target.value)}
+                        required
+                        className="bg-white text-gray-900 mt-1"
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <Label htmlFor="relation" className="text-white text-xs font-semibold">Relation</Label>
+                        <Input
+                          id="relation"
+                          placeholder="e.g. Daughter"
+                          value={relation}
+                          onChange={(e) => setRelation(e.target.value)}
+                          required
+                          className="bg-white text-gray-900 mt-1"
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="location" className="text-white text-xs font-semibold">Location</Label>
+                        <Input
+                          id="location"
+                          placeholder="e.g. Bedford, MA"
+                          value={location}
+                          onChange={(e) => setLocation(e.target.value)}
+                          required
+                          className="bg-white text-gray-900 mt-1"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <Label htmlFor="rating" className="text-white text-xs font-semibold">Rating (1 to 5 Stars)</Label>
+                      <select
+                        id="rating"
+                        value={rating}
+                        onChange={(e) => setRating(parseInt(e.target.value))}
+                        className="w-full h-10 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:outline-none mt-1"
+                      >
+                        <option value={5}>5 Stars - Exceptional Care</option>
+                        <option value={4}>4 Stars - Very Good</option>
+                        <option value={3}>3 Stars - Satisfactory</option>
+                      </select>
+                    </div>
+                    <div>
+                      <Label htmlFor="review" className="text-white text-xs font-semibold">Your Review / Comments</Label>
+                      <Textarea
+                        id="review"
+                        placeholder="Describe how Akirapa Home Care helped your family..."
+                        value={reviewText}
+                        onChange={(e) => setReviewText(e.target.value)}
+                        required
+                        className="bg-white h-24 text-gray-900 mt-1"
+                      />
+                    </div>
+                    <Button type="submit" className="w-full bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold text-base h-12 rounded-xl button-shimmer shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                      Submit Feedback
+                    </Button>
+                  </form>
+                ) : (
+                  <div className="bg-white/10 p-6 rounded-2xl text-center space-y-2">
+                    <i className="fa-solid fa-circle-check text-4xl text-[#40ddd3] mx-auto"></i>
+                    <h4 className="font-bold text-white text-lg">Thank You!</h4>
+                    <p className="text-white/80 text-xs">Your testimonial has been submitted for review.</p>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </section>

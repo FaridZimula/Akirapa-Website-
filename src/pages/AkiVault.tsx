@@ -95,11 +95,15 @@ export default function AkiVault() {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [cardPosition, setCardPosition] = useState({ x: 20, y: 120 });
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [dragStartPos, setDragStartPos] = useState<{ x: number; y: number } | null>(null);
+  const [hasMoved, setHasMoved] = useState(false);
   const navCardRef = React.useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (e: React.MouseEvent) => {
-    if ((e.target as HTMLElement).closest("button, a, nav")) return;
+    if ((e.target as HTMLElement).closest("nav")) return;
     setIsDragging(true);
+    setHasMoved(false);
+    setDragStartPos({ x: e.clientX, y: e.clientY });
     const rect = navCardRef.current?.getBoundingClientRect();
     if (rect) {
       setDragOffset({
@@ -110,14 +114,59 @@ export default function AkiVault() {
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
+    if (!isDragging || !dragStartPos) return;
+    const dx = Math.abs(e.clientX - dragStartPos.x);
+    const dy = Math.abs(e.clientY - dragStartPos.y);
+    if (dx > 5 || dy > 5) {
+      setHasMoved(true);
+    }
     const newX = e.clientX - dragOffset.x;
     const newY = e.clientY - dragOffset.y;
     setCardPosition({ x: Math.max(0, newX), y: Math.max(0, newY) });
   };
 
   const handleMouseUp = () => {
+    if (!hasMoved) {
+      setIsNavOpen((open) => !open);
+    }
     setIsDragging(false);
+    setDragStartPos(null);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if ((e.target as HTMLElement).closest("nav")) return;
+    const touch = e.touches[0];
+    setIsDragging(true);
+    setHasMoved(false);
+    setDragStartPos({ x: touch.clientX, y: touch.clientY });
+    const rect = navCardRef.current?.getBoundingClientRect();
+    if (rect) {
+      setDragOffset({
+        x: touch.clientX - rect.left,
+        y: touch.clientY - rect.top,
+      });
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || !dragStartPos) return;
+    const touch = e.touches[0];
+    const dx = Math.abs(touch.clientX - dragStartPos.x);
+    const dy = Math.abs(touch.clientY - dragStartPos.y);
+    if (dx > 5 || dy > 5) {
+      setHasMoved(true);
+    }
+    const newX = touch.clientX - dragOffset.x;
+    const newY = touch.clientY - dragOffset.y;
+    setCardPosition({ x: Math.max(0, newX), y: Math.max(0, newY) });
+  };
+
+  const handleTouchEnd = () => {
+    if (!hasMoved) {
+      setIsNavOpen((open) => !open);
+    }
+    setIsDragging(false);
+    setDragStartPos(null);
   };
 
   const navigationSections = [
@@ -145,34 +194,37 @@ export default function AkiVault() {
         description="Explore AkiVault, the proprietary technology engine behind Akirapa Home Care. Discover GPS EVV, 8-point welfare checks, Care Pod scheduling, and real-time family portals."
       />
 
-      {/* Compact Floating Navigation Card */}
+      {/* Compact Floating Navigation Card with Eye-Catching Glow Animation */}
       <div
         ref={navCardRef}
-        className="fixed z-50 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl"
+        className="fixed z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/30 bg-white shadow-2xl animate-pulse-glow transition-shadow duration-300"
         style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
       >
         <div
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          style={{ cursor: isDragging ? "grabbing" : "grab" }}
-          className="flex items-center justify-between bg-gradient-to-r from-[#76248a] to-[#561868] px-4 py-3 text-white select-none"
-          title="Drag to move navigation"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          style={{ cursor: isDragging ? "grabbing" : "pointer" }}
+          className="flex items-center justify-between bg-gradient-to-r from-[#76248a] via-[#651977] to-[#40ddd3] px-4 py-3 text-white select-none button-shimmer"
+          title="Click anywhere to open/close sections, or drag to move"
         >
-          <div className="flex items-center gap-2">
-            <i className="fa-solid fa-grip-vertical text-white/60"></i>
-            <i className="fa-solid fa-compass text-[#40ddd3]"></i>
-            <span className="text-xs font-black uppercase tracking-wider">AkiVault Sections</span>
+          <div className="flex items-center gap-2.5">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#40ddd3]"></span>
+            </span>
+            <i className="fa-solid fa-compass text-[#40ddd3] text-sm"></i>
+            <div>
+              <span className="text-xs font-black uppercase tracking-wider block">AkiVault Sections</span>
+              <span className="text-[10px] text-white/80 block -mt-0.5">Click anywhere to {isNavOpen ? "close" : "open"}</span>
+            </div>
           </div>
-          <button
-            type="button"
-            aria-label={isNavOpen ? "Collapse navigation" : "Expand navigation"}
-            onClick={() => setIsNavOpen((open) => !open)}
-            className="rounded-lg p-1.5 hover:bg-white/20"
-          >
-            <i className={`fa-solid fa-chevron-${isNavOpen ? "up" : "down"}`}></i>
-          </button>
+          <div className="rounded-lg p-1.5 bg-white/10 hover:bg-white/20 transition-colors">
+            <i className={`fa-solid fa-chevron-${isNavOpen ? "up" : "down"} text-sm transition-transform duration-300`}></i>
+          </div>
         </div>
 
         {isNavOpen && (

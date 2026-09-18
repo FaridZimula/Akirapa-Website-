@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/data/blogPosts";
+import { incrementBlogPostViews } from "@/lib/blogViews";
 
 const parseBoldText = (text: string) => {
   const parts = text.split(/(\*\*.*?\*\*)/g);
@@ -93,10 +94,15 @@ const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const post = blogPosts.find((p) => p.slug === slug);
+  const [views, setViews] = useState<number>(post?.views || 142);
 
   useEffect(() => {
     if (!post) {
       navigate("/blog", { replace: true });
+    } else {
+      // Increment and persist view count on visit / refresh
+      const nextViews = incrementBlogPostViews(post.slug, post.views);
+      setViews(nextViews);
     }
   }, [post, navigate]);
 
@@ -156,6 +162,10 @@ const BlogPostPage = () => {
             <span className="bg-white/20 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide">
               {post.category}
             </span>
+            <span className="flex items-center gap-1.5 bg-[#40ddd3] text-gray-950 font-extrabold px-3 py-1 rounded-full text-xs shadow-sm">
+              <i className="fa-solid fa-eye text-gray-950"></i>
+              <span>{views.toLocaleString()} Views</span>
+            </span>
           </div>
         </div>
       </section>
@@ -169,11 +179,11 @@ const BlogPostPage = () => {
             <article className="lg:col-span-8">
               <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 space-y-6">
                 {/* Featured Image */}
-                <div className="rounded-2xl overflow-hidden h-72 sm:h-96 -mx-2">
+                <div className="rounded-2xl overflow-hidden h-72 sm:h-96 -mx-2 shadow-md">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover img-zoom-hover"
                   />
                 </div>
 
@@ -188,21 +198,21 @@ const BlogPostPage = () => {
                 </div>
 
                 {/* CTA Box */}
-                <div className="p-6 rounded-2xl bg-[#76248a]/5 border border-[#76248a]/20 mt-8 text-left space-y-2">
-                  <h3 className="font-bold text-[#76248a] text-lg text-left">
+                <div className="p-6 sm:p-8 rounded-3xl bg-[#76248a]/5 border border-[#76248a]/20 mt-8 text-left space-y-3">
+                  <h3 className="font-bold text-[#76248a] text-lg sm:text-xl text-left">
                     Need Dedicated Care Support in Bedford, MA?
                   </h3>
                   <p className="text-gray-700 text-sm leading-relaxed text-left">
                     At Akirapa Home Care headquartered at 209 Burlington Rd, Bedford, MA, our certified nursing assistants and care managers work closely with families across Greater Boston to implement these strategies seamlessly. Whether your family needs hourly support or continuous 24/7 care, we are here to support your journey.
                   </p>
                   <div className="pt-3 flex flex-col sm:flex-row gap-3">
-                    <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-bold rounded-xl">
+                    <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-bold rounded-xl button-shimmer transition-all duration-300 hover:scale-105">
                       <Link to="/contact">Schedule Free Assessment</Link>
                     </Button>
-                    <Button asChild variant="outline" className="border-[#76248a] text-[#76248a] rounded-xl">
-                      <Link to="/locations/bedford-ma">View Bedford Office</Link>
+                    <Button asChild variant="outline" className="border-[#76248a] text-[#76248a] rounded-xl hover:bg-[#76248a]/10 transition-all duration-300 hover:scale-105">
+                      <Link to="/contact">Contact Our Office</Link>
                     </Button>
-                    <Button asChild variant="outline" className="border-[#76248a] text-[#76248a] rounded-xl">
+                    <Button asChild variant="outline" className="border-[#76248a] text-[#76248a] rounded-xl hover:bg-[#76248a] hover:text-white transition-all duration-300 hover:scale-105">
                       <a href="tel:3399701214">Call 339 970 1214</a>
                     </Button>
                   </div>

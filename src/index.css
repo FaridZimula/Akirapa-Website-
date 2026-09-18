@@ -184,4 +184,88 @@
       transform: translateX(0);
     }
   }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 16px 2px rgba(118, 36, 138, 0.35), 0 0 30px 4px rgba(64, 221, 211, 0.25);
+      transform: translateY(0);
+    }
+    50% {
+      box-shadow: 0 0 28px 6px rgba(118, 36, 138, 0.6), 0 0 45px 8px rgba(64, 221, 211, 0.45);
+      transform: translateY(-3px);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes buttonShimmer {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+    }
+    30%, 100% {
+      transform: translateX(250%) skewX(-20deg);
+    }
+  }
+
+  .button-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .button-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: translateX(-150%) skewX(-20deg);
+    animation: buttonShimmer 4s infinite;
+    pointer-events: none;
+  }
+
+  @keyframes buttonPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+  }
+
+  .animate-btn-pulse {
+    animation: buttonPulse 2.8s infinite ease-in-out;
+  }
+
+  .img-zoom-hover {
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  }
+
+  .img-zoom-hover:hover,
+  .group:hover .img-zoom-hover {
+    transform: scale(1.06);
+  }
 }
+

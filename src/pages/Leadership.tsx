@@ -3,30 +3,9 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { leaders } from "@/data/leadership";
-import { testimonials } from "@/data/testimonials";
-import { useToast } from "@/hooks/use-toast";
 
 const Leadership = () => {
-  const { toast } = useToast();
-  const [author, setAuthor] = useState("");
-  const [relation, setRelation] = useState("");
-  const [location, setLocation] = useState("");
-  const [reviewText, setReviewText] = useState("");
-  const [rating, setRating] = useState(5);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleTestimonialSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    toast({
-      title: "Testimonial Submitted!",
-      description: "Thank you for sharing your feedback with Akirapa Home Care.",
-    });
-  };
 
   return (
     <Layout>
@@ -137,123 +116,6 @@ const Leadership = () => {
         </div>
       </section>
 
-
-
-      {/* Testimonials & Review Submission Form */}
-      <section className="section-padding bg-white">
-        <div className="container-narrow mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12">
-            {/* Left: Testimonials List */}
-            <div className="lg:col-span-7 space-y-6">
-              <h2 className="text-3xl font-black text-gray-900">
-                Stories of Care & Trust
-              </h2>
-
-              <div className="space-y-6">
-                {testimonials.map((item) => (
-                  <div key={item.id} className="bg-gray-50 p-6 rounded-2xl border border-gray-100 space-y-3">
-                    <div className="flex items-center gap-1 text-amber-400">
-                      {[...Array(item.rating)].map((_, i) => (
-                        <i key={i} className="fa-solid fa-star text-sm"></i>
-                      ))}
-                    </div>
-                    <p className="text-gray-700 italic text-sm">"{item.text}"</p>
-                    <div className="text-xs font-bold text-gray-900">
-                      {item.author} — <span className="font-normal text-gray-500">{item.relation} ({item.location})</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right: Submit Your Review */}
-            <div className="lg:col-span-5">
-              <div className="bg-[#76248a] text-white p-8 rounded-3xl shadow-xl space-y-6">
-                <div className="flex items-center gap-3">
-                  <i className="fa-solid fa-comment-dots text-2xl text-white"></i>
-                  <h3 className="text-2xl font-black text-white">Share Your Feedback</h3>
-                </div>
-                <p className="text-white/80 text-xs">
-                  Has your family experienced care from Akirapa Home Care? Submit a testimonial.
-                </p>
-
-                {!isSubmitted ? (
-                  <form onSubmit={handleTestimonialSubmit} className="space-y-4 text-gray-900">
-                    <div>
-                      <Label htmlFor="author" className="text-white text-xs font-semibold">Your Name</Label>
-                      <Input
-                        id="author"
-                        placeholder="e.g. Mary Higgins"
-                        value={author}
-                        onChange={(e) => setAuthor(e.target.value)}
-                        required
-                        className="bg-white"
-                      />
-                    </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div>
-                        <Label htmlFor="relation" className="text-white text-xs font-semibold">Relation</Label>
-                        <Input
-                          id="relation"
-                          placeholder="e.g. Daughter of Client"
-                          value={relation}
-                          onChange={(e) => setRelation(e.target.value)}
-                          required
-                          className="bg-white"
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="location" className="text-white text-xs font-semibold">Location</Label>
-                        <Input
-                          id="location"
-                          placeholder="e.g. Bedford, MA"
-                          value={location}
-                          onChange={(e) => setLocation(e.target.value)}
-                          required
-                          className="bg-white"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <Label htmlFor="rating" className="text-white text-xs font-semibold">Rating (1 to 5 Stars)</Label>
-                      <select
-                        id="rating"
-                        value={rating}
-                        onChange={(e) => setRating(parseInt(e.target.value))}
-                        className="w-full h-10 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:outline-none"
-                      >
-                        <option value={5}>5 Stars - Excellent Care</option>
-                        <option value={4}>4 Stars - Very Good</option>
-                        <option value={3}>3 Stars - Satisfactory</option>
-                      </select>
-                    </div>
-                    <div>
-                      <Label htmlFor="review" className="text-white text-xs font-semibold">Your Review / Comments</Label>
-                      <Textarea
-                        id="review"
-                        placeholder="Describe how Akirapa Home Care helped your family..."
-                        value={reviewText}
-                        onChange={(e) => setReviewText(e.target.value)}
-                        required
-                        className="bg-white h-24"
-                      />
-                    </div>
-                    <Button type="submit" className="w-full bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-bold text-base h-12 rounded-xl">
-                      Submit Feedback
-                    </Button>
-                  </form>
-                ) : (
-                  <div className="bg-white/10 p-6 rounded-2xl text-center space-y-2">
-                    <i className="fa-solid fa-circle-check text-4xl text-[#40ddd3] mx-auto"></i>
-                    <h4 className="font-bold text-white text-lg">Thank You!</h4>
-                    <p className="text-white/80 text-xs">Your testimonial has been submitted for review.</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Free Senior Care Decision Guides & Downloadable Resources */}
       <section className="section-padding bg-gray-50 border-t border-gray-200">

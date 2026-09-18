@@ -50,21 +50,21 @@ const Navbar = () => {
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24 sm:h-28">
             {/* Brand Logo */}
-            <Link to="/" className="flex items-center overflow-visible py-2 pl-3">
+            <Link to="/" className="flex items-center py-2 shrink-0 group">
               <img
                 src="/akirapa-logo.png"
                 alt="Akirapa Home Care"
-                className="h-14 sm:h-16 w-auto object-contain scale-[2.2] sm:scale-[2.6] origin-left transition-transform hover:scale-[2.3] sm:hover:scale-[2.7]"
+                className="h-12 sm:h-14 md:h-16 w-auto max-w-[180px] sm:max-w-[210px] object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-0.5 xl:gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-4 py-2 rounded-lg text-base font-semibold transition-colors ${
+                  className={`px-3 xl:px-4 py-2 rounded-lg text-sm xl:text-base font-semibold transition-all duration-200 ${
                     location.pathname === link.path
                       ? "bg-[#76248a] text-white shadow-sm"
                       : "text-gray-700 hover:text-[#76248a] hover:bg-[#40ddd3]/10"
@@ -77,10 +77,10 @@ const Navbar = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-3">
-              <Button variant="outline" asChild className="border-[#76248a] text-[#76248a] hover:bg-[#76248a] hover:text-white font-semibold">
+              <Button variant="outline" asChild className="border-[#76248a] text-[#76248a] hover:bg-[#76248a] hover:text-white font-semibold transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
                 <Link to="/services">Get a Quote</Link>
               </Button>
-              <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-bold shadow-md">
+              <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-bold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 button-shimmer">
                 <Link to="/contact">Free Assessment</Link>
               </Button>
             </div>
