@@ -219,22 +219,22 @@
     animation: pulseGlow 3s ease-in-out infinite;
   }
 
-  /* High-frequency 6x vibrating buzz */
+  /* Ultra high-frequency 100x vibrating buzz */
   @keyframes vibrateFast {
     0%, 100% {
       transform: translate3d(0, 0, 0) rotate(0deg);
     }
     20% {
-      transform: translate3d(-2px, 1.5px, 0) rotate(-0.8deg);
+      transform: translate3d(-3px, 2px, 0) rotate(-1.2deg);
     }
     40% {
-      transform: translate3d(2px, -1.5px, 0) rotate(0.8deg);
+      transform: translate3d(3px, -2px, 0) rotate(1.2deg);
     }
     60% {
-      transform: translate3d(-2px, -1.5px, 0) rotate(-0.8deg);
+      transform: translate3d(-2.5px, -2px, 0) rotate(-1deg);
     }
     80% {
-      transform: translate3d(2px, 1.5px, 0) rotate(0.8deg);
+      transform: translate3d(2.5px, 2px, 0) rotate(1deg);
     }
   }
 
@@ -248,7 +248,7 @@
   }
 
   .animate-vibrate-fast {
-    animation: vibrateFast 0.065s linear infinite, purpleGlow 2.5s ease-in-out infinite;
+    animation: vibrateFast 0.015s linear infinite, purpleGlow 2.5s ease-in-out infinite;
   }
 
   .animate-vibrate-fast:hover {
@@ -260,7 +260,7 @@
   }
 
   .animate-vibrate-purple {
-    animation: vibrateFast 0.065s linear infinite, purpleGlow 2.5s ease-in-out infinite;
+    animation: vibrateFast 0.015s linear infinite, purpleGlow 2.5s ease-in-out infinite;
   }
 
   .animate-vibrate-purple:hover {
