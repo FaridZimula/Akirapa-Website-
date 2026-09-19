@@ -4,7 +4,10 @@ import { toast } from 'sonner';
 import { projects as initialProjects } from '@/data/projects';
 import { leaders as initialLeaders, boardMembers as initialBoardMembers } from '@/data/leadership';
 import { partners as initialPartners } from '@/data/partners';
+import { blogPosts as initialBlogPosts, BlogPost } from '@/data/blogPosts';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+
+export type { BlogPost };
 
 const initialVideos: Video[] = [
     { 
@@ -195,6 +198,8 @@ interface DataContextType {
     donations: Donation[];
     videos: Video[];
     jobOpenings: JobOpening[];
+    blogPosts: BlogPost[];
+    blogViews: Record<string, number>;
     isLoading: boolean;
     isSupabaseConnected: boolean;
 
@@ -207,6 +212,10 @@ interface DataContextType {
     updateJobOpening: (job: JobOpening) => Promise<void>;
     deleteJobOpening: (id: string) => Promise<void>;
     resetJobOpenings: () => void;
+    addBlogPost: (post: BlogPost) => Promise<void>;
+    updateBlogPost: (post: BlogPost) => Promise<void>;
+    deleteBlogPost: (id: string) => Promise<void>;
+    incrementBlogPostViews: (slug: string) => void;
     sendMessage: (msg: { full_name: string; email: string; subject: string; content: string }) => Promise<void>;
     markMessageRead: (id: string) => Promise<void>;
     deleteMessage: (id: string) => Promise<void>;
@@ -224,6 +233,26 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const [messages, setMessages] = useState<Message[]>([]);
     const [donations, setDonations] = useState<Donation[]>([]);
     const [videos, setVideos] = useState<Video[]>(initialVideos);
+    const [blogPosts, setBlogPosts] = useState<BlogPost[]>(initialBlogPosts);
+    const [blogViews, setBlogViews] = useState<Record<string, number>>(() => {
+        try {
+            const saved = localStorage.getItem('akirapa_blog_views');
+            const defaultSeed: Record<string, number> = {
+                "5-ways-to-regain-your-energy-after-caregiver-burnout": 342,
+                "how-family-caregivers-can-benefit-from-respite-care": 218,
+                "four-fall-prevention-strategies-for-seniors": 489,
+                "when-to-hire-senior-home-care-services": 175,
+            };
+            return saved ? { ...defaultSeed, ...JSON.parse(saved) } : defaultSeed;
+        } catch (e) {
+            return {
+                "5-ways-to-regain-your-energy-after-caregiver-burnout": 342,
+                "how-family-caregivers-can-benefit-from-respite-care": 218,
+                "four-fall-prevention-strategies-for-seniors": 489,
+                "when-to-hire-senior-home-care-services": 175,
+            };
+        }
+    });
     const [jobOpenings, setJobOpenings] = useState<JobOpening[]>(() => {
         try {
             const saved = localStorage.getItem('akirapa_job_openings');
@@ -295,6 +324,25 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
                         description: j.description,
                         requirements: j.requirements || [],
                         active: j.active
+                    })));
+                    setIsSupabaseConnected(true);
+                }
+
+                // Fetch Blog Posts
+                const { data: dbBlogPosts, error: blogErr } = await supabase.from('blog_posts').select('*').order('created_at', { ascending: false });
+                if (!blogErr && dbBlogPosts && dbBlogPosts.length > 0) {
+                    type DbBlogPost = { id: string; slug: string; title: string; excerpt: string; content: string; date: string; author: string; category: string; read_time: string; image: string; };
+                    setBlogPosts((dbBlogPosts as DbBlogPost[]).map((b) => ({
+                        id: b.id,
+                        slug: b.slug,
+                        title: b.title,
+                        excerpt: b.excerpt,
+                        content: b.content,
+                        date: b.date,
+                        author: b.author,
+                        category: b.category,
+                        readTime: b.read_time,
+                        image: b.image,
                     })));
                     setIsSupabaseConnected(true);
                 }
@@ -518,6 +566,83 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
         toast.info("Job openings reset to default positions");
     };
 
+    const addBlogPost = async (post: BlogPost) => {
+        setBlogPosts(prev => [post, ...prev]);
+        if (isSupabaseConfigured) {
+            try {
+                await supabase.from('blog_posts').insert([{
+                    id: post.id,
+                    slug: post.slug,
+                    title: post.title,
+                    excerpt: post.excerpt,
+                    content: post.content,
+                    date: post.date,
+                    author: post.author,
+                    category: post.category,
+                    read_time: post.readTime,
+                    image: post.image,
+                }]);
+                toast.success("Blog post published to Supabase & live website!");
+                return;
+            } catch (err) {
+                console.error("Failed to add blog post in Supabase", err);
+            }
+        }
+        toast.success("Blog post added successfully");
+    };
+
+    const updateBlogPost = async (updatedPost: BlogPost) => {
+        setBlogPosts(prev => prev.map(p => p.id === updatedPost.id ? updatedPost : p));
+        if (isSupabaseConfigured) {
+            try {
+                await supabase.from('blog_posts').upsert([{
+                    id: updatedPost.id,
+                    slug: updatedPost.slug,
+                    title: updatedPost.title,
+                    excerpt: updatedPost.excerpt,
+                    content: updatedPost.content,
+                    date: updatedPost.date,
+                    author: updatedPost.author,
+                    category: updatedPost.category,
+                    read_time: updatedPost.readTime,
+                    image: updatedPost.image,
+                }]);
+                toast.success("Blog post updated in Supabase!");
+                return;
+            } catch (err) {
+                console.error("Failed to update blog post in Supabase", err);
+            }
+        }
+        toast.success("Blog post updated successfully");
+    };
+
+    const deleteBlogPost = async (id: string) => {
+        setBlogPosts(prev => prev.filter(p => p.id !== id));
+        if (isSupabaseConfigured) {
+            try {
+                await supabase.from('blog_posts').delete().eq('id', id);
+                toast.success("Blog post deleted from Supabase!");
+                return;
+            } catch (err) {
+                console.error("Failed to delete blog post in Supabase", err);
+            }
+        }
+        toast.success("Blog post deleted");
+    };
+
+    const incrementBlogPostViews = (slug: string) => {
+        setBlogViews(prev => {
+            const currentViews = prev[slug] !== undefined ? prev[slug] : 120;
+            const updated = { ...prev, [slug]: currentViews + 1 };
+            try {
+                localStorage.setItem('akirapa_blog_views', JSON.stringify(updated));
+            } catch (e) {
+                console.error("Failed to persist blog views", e);
+            }
+            return updated;
+        });
+    };
+
     const sendMessage = async (msg: { full_name: string; email: string; subject: string; content: string }) => {
         const newMsg: Message = {
             id: `msg-${Date.now()}`,
@@ -600,6 +725,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setPartners(initialPartners);
         setVideos(initialVideos);
         setJobOpenings(initialJobOpenings);
+        setBlogPosts(initialBlogPosts);
         setMessages([]);
         setDonations([]);
         toast.info("Data reset to defaults");
@@ -615,6 +741,8 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
             donations,
             videos,
             jobOpenings,
+            blogPosts,
+            blogViews,
             isLoading,
             isSupabaseConnected,
             updateProjects,
@@ -626,6 +754,10 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
             updateJobOpening,
             deleteJobOpening,
             resetJobOpenings,
+            addBlogPost,
+            updateBlogPost,
+            deleteBlogPost,
+            incrementBlogPostViews,
             sendMessage,
             markMessageRead,
             deleteMessage,

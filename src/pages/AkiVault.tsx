@@ -95,11 +95,14 @@ export default function AkiVault() {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [cardPosition, setCardPosition] = useState({ x: 20, y: 120 });
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [hasMoved, setHasMoved] = useState(false);
+  const dragStartPos = React.useRef({ x: 0, y: 0 });
   const navCardRef = React.useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (e: React.MouseEvent) => {
-    if ((e.target as HTMLElement).closest("button, a, nav")) return;
     setIsDragging(true);
+    setHasMoved(false);
+    dragStartPos.current = { x: e.clientX, y: e.clientY };
     const rect = navCardRef.current?.getBoundingClientRect();
     if (rect) {
       setDragOffset({
@@ -111,12 +114,18 @@ export default function AkiVault() {
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging) return;
+    const distance = Math.hypot(e.clientX - dragStartPos.current.x, e.clientY - dragStartPos.current.y);
+    if (distance > 5) setHasMoved(true);
+
     const newX = e.clientX - dragOffset.x;
     const newY = e.clientY - dragOffset.y;
     setCardPosition({ x: Math.max(0, newX), y: Math.max(0, newY) });
   };
 
   const handleMouseUp = () => {
+    if (isDragging && !hasMoved) {
+      setIsNavOpen((open) => !open);
+    }
     setIsDragging(false);
   };
 
@@ -145,10 +154,10 @@ export default function AkiVault() {
         description="Explore AkiVault, the proprietary technology engine behind Akirapa Home Care. Discover GPS EVV, 8-point welfare checks, Care Pod scheduling, and real-time family portals."
       />
 
-      {/* Compact Floating Navigation Card */}
+      {/* Compact Floating Draggable Navigation Card with Glowing Eye-Catching Animation */}
       <div
         ref={navCardRef}
-        className="fixed z-50 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl"
+        className="fixed z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#40ddd3] bg-white shadow-2xl animate-pulse-glow"
         style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
       >
         <div
@@ -156,23 +165,28 @@ export default function AkiVault() {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
-          style={{ cursor: isDragging ? "grabbing" : "grab" }}
-          className="flex items-center justify-between bg-gradient-to-r from-[#76248a] to-[#561868] px-4 py-3 text-white select-none"
-          title="Drag to move navigation"
+          style={{ cursor: isDragging ? "grabbing" : "pointer" }}
+          className="flex items-center justify-between bg-gradient-to-r from-[#76248a] via-[#561868] to-[#76248a] px-4 py-3 text-white select-none transition-colors hover:brightness-110"
+          title="Click anywhere to toggle menu or drag to move"
         >
           <div className="flex items-center gap-2">
             <i className="fa-solid fa-grip-vertical text-white/60"></i>
-            <i className="fa-solid fa-compass text-[#40ddd3]"></i>
+            <i className="fa-solid fa-compass text-[#40ddd3] text-base animate-spin-slow"></i>
             <span className="text-xs font-black uppercase tracking-wider">AkiVault Sections</span>
           </div>
-          <button
-            type="button"
-            aria-label={isNavOpen ? "Collapse navigation" : "Expand navigation"}
-            onClick={() => setIsNavOpen((open) => !open)}
-            className="rounded-lg p-1.5 hover:bg-white/20"
-          >
-            <i className={`fa-solid fa-chevron-${isNavOpen ? "up" : "down"}`}></i>
-          </button>
+
+          <div className="flex items-center gap-2">
+            <span className="bg-[#40ddd3] text-[#561868] text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm animate-pulse">
+              Click Me
+            </span>
+            <button
+              type="button"
+              aria-label={isNavOpen ? "Collapse navigation" : "Expand navigation"}
+              className="rounded-lg p-1 hover:bg-white/20 text-white"
+            >
+              <i className={`fa-solid fa-chevron-${isNavOpen ? "up" : "down"}`}></i>
+            </button>
+          </div>
         </div>
 
         {isNavOpen && (
@@ -203,11 +217,6 @@ export default function AkiVault() {
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-[#76248a]/40 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-[#40ddd3] border border-[#40ddd3]/30 px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-6">
-            <i className="fa-solid fa-vault text-base text-[#40ddd3]"></i>
-            <span>Proprietary Care Engine</span>
-          </div>
-
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight max-w-4xl mx-auto mb-6">
             Inside <span className="text-[#40ddd3]">AkiVault</span>: Why Akirapa Redefines Senior In-Home Care
           </h1>
@@ -251,9 +260,6 @@ export default function AkiVault() {
       <section id="comparison" className="py-16 md:py-24 bg-gray-50 border-b border-gray-100">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-            <span className="text-[#76248a] font-extrabold text-sm uppercase tracking-wider bg-[#76248a]/10 px-3 py-1 rounded-full">
-              Head-to-Head Comparison
-            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
               Why Akirapa Outperforms Traditional Caregiving Companies
             </h2>
@@ -314,9 +320,6 @@ export default function AkiVault() {
       <section id="pillars" className="py-16 md:py-24 bg-white border-b border-gray-100">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-[#76248a] font-extrabold text-sm uppercase tracking-wider bg-[#76248a]/10 px-3 py-1 rounded-full">
-              System Architecture
-            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
               The 6 Technological Pillars of AkiVault
             </h2>
@@ -334,10 +337,7 @@ export default function AkiVault() {
                 <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-white flex items-center justify-center mb-6 shadow-md group-hover:bg-[#40ddd3] group-hover:text-gray-950 transition-colors">
                   <i className={`fa-solid ${pillar.icon} text-2xl`}></i>
                 </div>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#76248a] bg-[#76248a]/10 px-2.5 py-1 rounded-full">
-                  {pillar.badge}
-                </span>
-                <h3 className="text-xl font-bold text-gray-900 mt-3 mb-2">{pillar.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{pillar.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{pillar.description}</p>
               </div>
             ))}
@@ -349,9 +349,6 @@ export default function AkiVault() {
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-            <span className="text-[#76248a] font-extrabold text-sm uppercase tracking-wider bg-[#76248a]/10 px-3 py-1 rounded-full">
-              Tailored Experience
-            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
               Designed for Everyone in the Care Ecosystem
             </h2>
