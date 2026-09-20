@@ -252,7 +252,7 @@
     will-change: transform;
   }
 
-  /* High-Speed Vibration Cycle: 2s rapid buzz + 5s calm rest = 7s continuous loop */
+  /* High-Speed Vibration Cycle: 1s rapid buzz + 5s calm rest = 6s continuous loop */
   @keyframes highSpeedVibrate {
     0% { transform: translate(0px, 0px) rotate(0deg); }
     1% { transform: translate(-2px, 1.5px) rotate(-0.8deg); }

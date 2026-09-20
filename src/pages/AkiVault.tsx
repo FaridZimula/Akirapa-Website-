@@ -100,18 +100,18 @@ export default function AkiVault() {
   const startPosRef = React.useRef({ x: 0, y: 0 });
   const navCardRef = React.useRef<HTMLDivElement>(null);
 
-  // 100x Hyper-Speed Vibration: Buzzes for exactly 2 seconds, waits for 5 seconds, continuous loop
+  // 100x Hyper-Speed Vibration: Buzzes for exactly 1 second, waits for 5 seconds, continuous loop
   useEffect(() => {
     let stopTimer: ReturnType<typeof setTimeout>;
     const triggerVibration = () => {
       setIsVibrating(true);
       stopTimer = setTimeout(() => {
         setIsVibrating(false);
-      }, 2000);
+      }, 1000); // reduced to exactly 1 second of vibration
     };
 
     triggerVibration();
-    const interval = setInterval(triggerVibration, 7000);
+    const interval = setInterval(triggerVibration, 6000); // 1s vibrate + 5s wait = 6s cycle
 
     return () => {
       clearInterval(interval);
