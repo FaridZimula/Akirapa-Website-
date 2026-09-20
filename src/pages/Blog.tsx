@@ -37,9 +37,29 @@ const Blog = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [cardPosition, setCardPosition] = useState({ x: 24, y: 140 });
+  const [isVibrating, setIsVibrating] = useState(false);
   const dragDistanceRef = React.useRef(0);
   const startPosRef = React.useRef({ x: 0, y: 0 });
   const navCardRef = React.useRef<HTMLDivElement>(null);
+
+  // 100x Hyper-Speed Vibration: Buzzes for exactly 1 second, waits for 5 seconds, continuous loop
+  useEffect(() => {
+    let stopTimer: ReturnType<typeof setTimeout>;
+    const triggerVibration = () => {
+      setIsVibrating(true);
+      stopTimer = setTimeout(() => {
+        setIsVibrating(false);
+      }, 1000); // 1 second high-speed vibration
+    };
+
+    triggerVibration();
+    const interval = setInterval(triggerVibration, 6000); // 1s vibrate + 5s wait = 6s cycle
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(stopTimer);
+    };
+  }, []);
 
   // Load view counts on mount
   useEffect(() => {
@@ -142,7 +162,9 @@ const Blog = () => {
       {/* Floating Interactive & Draggable Topics Navigator Widget */}
       <div
         ref={navCardRef}
-        className="fixed z-50 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/35 bg-white shadow-2xl animate-pulse-glow transition-shadow duration-300"
+        className={`fixed z-50 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl animate-purple-glow transition-all duration-200 ${
+          isVibrating ? "animate-vibrate-hyper ring-2 ring-fuchsia-400/60 shadow-[0_0_35px_rgba(217,70,239,0.55)]" : ""
+        }`}
         style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
       >
         <div
@@ -155,24 +177,24 @@ const Blog = () => {
           onTouchEnd={handleTouchEnd}
           onClick={handleHeaderClick}
           style={{ cursor: isDragging ? "grabbing" : "pointer" }}
-          className="flex items-center justify-between bg-gradient-to-r from-[#76248a] via-[#561868] to-[#218981] px-4 py-3.5 text-white select-none button-shimmer shadow-md transition-all hover:brightness-105"
+          className="flex items-center justify-between bg-gradient-to-r from-[#8e24aa] via-[#76248a] to-[#4a1259] px-4 py-3.5 text-white select-none button-shimmer shadow-md transition-all hover:brightness-105"
           title="Click anywhere to shrink/expand topics, or drag to move"
         >
           <div className="flex items-center gap-3">
             <span className="relative flex h-3.5 w-3.5 shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#40ddd3]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d946ef] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#e879f9] shadow-[0_0_8px_rgba(217,70,239,0.8)]"></span>
             </span>
-            <i className="fa-solid fa-layer-group text-[#40ddd3] text-base"></i>
+            <i className="fa-solid fa-layer-group text-[#f0abfc] text-base"></i>
             <div>
               <span className="text-xs font-black uppercase tracking-wider block">Blog Topics Navigator</span>
-              <span className="text-[10px] text-white/85 block font-medium -mt-0.5">
+              <span className="text-[10px] text-purple-200 block font-medium -mt-0.5">
                 Click to {isTopicsOpen ? "shrink" : "explore 7 topics"} • Drag to move
               </span>
             </div>
           </div>
-          <div className="rounded-lg p-1.5 bg-white/15 hover:bg-white/25 transition-transform duration-300">
-            <i className={`fa-solid fa-chevron-down text-xs transition-transform duration-300 ${isTopicsOpen ? "rotate-180 text-[#40ddd3]" : "rotate-0 text-white"}`}></i>
+          <div className="rounded-lg p-1.5 bg-purple-950/40 hover:bg-purple-900/60 border border-purple-300/20 transition-transform duration-300">
+            <i className={`fa-solid fa-chevron-down text-xs transition-transform duration-300 ${isTopicsOpen ? "rotate-180 text-[#f0abfc]" : "rotate-0 text-white"}`}></i>
           </div>
         </div>
 
@@ -191,16 +213,16 @@ const Blog = () => {
                   onClick={() => handleTopicSelect(topic.id)}
                   className={`flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-left text-xs font-bold transition-all ${
                     isSelected
-                      ? "bg-[#76248a] text-white shadow-md scale-[1.02]"
-                      : "text-gray-700 hover:bg-gray-100 hover:text-[#76248a]"
+                      ? "bg-gradient-to-r from-[#76248a] to-[#561868] text-white shadow-md shadow-purple-950/20 scale-[1.02]"
+                      : "text-gray-700 hover:bg-purple-50 hover:text-[#76248a]"
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <i className={`fa-solid ${topic.icon} w-4 text-center ${isSelected ? "text-[#40ddd3]" : "text-[#76248a]"}`}></i>
+                    <i className={`fa-solid ${topic.icon} w-4 text-center ${isSelected ? "text-[#f0abfc]" : "text-[#76248a]"}`}></i>
                     <span>{topic.label}</span>
                   </div>
                   <span className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${
-                    isSelected ? "bg-[#40ddd3] text-gray-950" : "bg-gray-200 text-gray-700"
+                    isSelected ? "bg-fuchsia-200 text-purple-950 font-black shadow-sm" : "bg-purple-100/80 text-purple-900"
                   }`}>
                     {count}
                   </span>
