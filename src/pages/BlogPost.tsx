@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { useData } from "@/context/DataContext";
+import { blogPosts } from "@/data/blogPosts";
 
 const parseBoldText = (text: string) => {
   const parts = text.split(/(\*\*.*?\*\*)/g);
@@ -92,23 +92,17 @@ const renderArticleContent = (content: string) => {
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const { blogPosts, blogViews, incrementBlogPostViews } = useData();
   const post = blogPosts.find((p) => p.slug === slug);
 
   useEffect(() => {
     if (!post) {
       navigate("/blog", { replace: true });
-      return;
     }
-    if (slug) {
-      incrementBlogPostViews(slug);
-    }
-  }, [slug, post, navigate]);
+  }, [post, navigate]);
 
   if (!post) return null;
 
   const otherPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
-  const viewsCount = blogViews[post.slug] || 0;
 
   return (
     <Layout>
@@ -158,10 +152,6 @@ const BlogPostPage = () => {
             <span className="flex items-center gap-1.5">
               <i className="fa-solid fa-clock text-[#40ddd3]"></i>
               {post.readTime}
-            </span>
-            <span className="flex items-center gap-1.5 bg-[#40ddd3]/20 text-[#40ddd3] px-2.5 py-0.5 rounded-full font-bold">
-              <i className="fa-solid fa-eye text-xs"></i>
-              {viewsCount} views
             </span>
             <span className="bg-white/20 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide">
               {post.category}
