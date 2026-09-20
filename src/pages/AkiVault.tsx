@@ -148,18 +148,13 @@ export default function AkiVault() {
       {/* Compact Floating Navigation Card */}
       <div
         ref={navCardRef}
-<<<<<<< HEAD
         className="fixed z-50 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl"
-=======
-        className="fixed z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/30 bg-white shadow-2xl animate-pulse-glow transition-shadow duration-300"
->>>>>>> parent of 751d603 (AkiVault Navigation guide)
         style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
       >
         <div
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
-<<<<<<< HEAD
           onMouseLeave={handleMouseUp}
           style={{ cursor: isDragging ? "grabbing" : "grab" }}
           className="flex items-center justify-between bg-gradient-to-r from-[#76248a] to-[#561868] px-4 py-3 text-white select-none"
@@ -169,28 +164,6 @@ export default function AkiVault() {
             <i className="fa-solid fa-grip-vertical text-white/60"></i>
             <i className="fa-solid fa-compass text-[#40ddd3]"></i>
             <span className="text-xs font-black uppercase tracking-wider">AkiVault Sections</span>
-=======
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          style={{ cursor: isDragging ? "grabbing" : "pointer" }}
-          className="flex items-center justify-between bg-gradient-to-r from-[#76248a] via-[#651977] to-[#40ddd3] px-4 py-3 text-white select-none button-shimmer"
-          title="Click anywhere to open/close sections, or drag to move"
-        >
-          <div className="flex items-center gap-2.5">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#40ddd3]"></span>
-            </span>
-            <i className="fa-solid fa-compass text-[#40ddd3] text-sm"></i>
-            <div>
-              <span className="text-xs font-black uppercase tracking-wider block">AkiVault Sections</span>
-              <span className="text-[10px] text-white/80 block -mt-0.5">Click anywhere to {isNavOpen ? "close" : "open"}</span>
-            </div>
-          </div>
-          <div className="rounded-lg p-1.5 bg-white/10 hover:bg-white/20 transition-colors">
-            <i className={`fa-solid fa-chevron-${isNavOpen ? "up" : "down"} text-sm transition-transform duration-300`}></i>
->>>>>>> parent of 751d603 (AkiVault Navigation guide)
           </div>
           <button
             type="button"
