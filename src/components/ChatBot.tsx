@@ -120,7 +120,7 @@ export const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-24 right-6 sm:right-8 z-50 flex flex-col items-end pointer-events-auto">
+    <div className="fixed bottom-20 right-20 sm:right-24 z-50 flex flex-col items-end pointer-events-auto">
       {/* Floating Tooltip Bubble when unopened */}
       {!isOpen && showTooltip && (
         <div className="mb-3 bg-white/95 backdrop-blur-md text-[#76248a] font-bold text-xs py-2 px-4 rounded-2xl shadow-xl border border-[#76248a]/20 flex items-center gap-2 animate-bounce">

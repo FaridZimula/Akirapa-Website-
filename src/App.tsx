@@ -23,6 +23,7 @@ import "aos/dist/aos.css";
 import AdminLayout from "./pages/admin/AdminLayout";
 import Login from "./pages/admin/Login";
 import CareersEditor from "./pages/admin/CareersEditor";
+import BlogEditor from "./pages/admin/BlogEditor";
 import Messages from "./pages/admin/Messages";
 import Donations from "./pages/admin/Donations";
 import VideosEditor from "./pages/admin/VideosEditor";
@@ -30,8 +31,6 @@ import Members from "./pages/admin/Members";
 import ProjectsEditor from "./pages/admin/ProjectsEditor";
 import LeadershipEditor from "./pages/admin/LeadershipEditor";
 import PartnersEditor from "./pages/admin/PartnersEditor";
-
-import AkiVault from "./pages/AkiVault";
 
 const queryClient = new QueryClient();
 
@@ -64,8 +63,6 @@ const App = () => {
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<Leadership />} />
                   <Route path="/services" element={<Projects />} />
-                  <Route path="/akivault" element={<AkiVault />} />
-                  <Route path="/AkiVault.html" element={<AkiVault />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/:slug" element={<BlogPostPage />} />
                   <Route path="/careers" element={<Careers />} />
@@ -76,6 +73,7 @@ const App = () => {
                   <Route path="/admin" element={<AdminLayout />}>
                     <Route index element={<CareersEditor />} />
                     <Route path="careers" element={<CareersEditor />} />
+                    <Route path="blog" element={<BlogEditor />} />
                     <Route path="messages" element={<Messages />} />
                     <Route path="donations" element={<Donations />} />
                     <Route path="videos" element={<VideosEditor />} />

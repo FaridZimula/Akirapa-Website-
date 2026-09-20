@@ -9,7 +9,6 @@ const navLinks = [
   { name: "Our Blog", path: "/blog" },
   { name: "Careers", path: "/careers" },
   { name: "Contact Us", path: "/contact" },
-  { name: "AkiVault", path: "/akivault" },
 ];
 
 const Navbar = () => {
@@ -48,13 +47,13 @@ const Navbar = () => {
       {/* Main Navbar */}
       <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-24 sm:h-28">
+          <div className="flex items-center justify-between h-28 sm:h-32">
             {/* Brand Logo */}
-            <Link to="/" className="flex items-center overflow-visible py-2 pl-3">
+            <Link to="/" className="flex items-center py-2 shrink-0">
               <img
                 src="/akirapa-logo.png"
                 alt="Akirapa Home Care"
-                className="h-14 sm:h-16 w-auto object-contain scale-[2.2] sm:scale-[2.6] origin-left transition-transform hover:scale-[2.3] sm:hover:scale-[2.7]"
+                className="h-20 sm:h-28 w-auto max-w-[220px] sm:max-w-[280px] object-contain transition-transform hover:scale-105"
               />
             </Link>
 

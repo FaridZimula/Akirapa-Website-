@@ -12,7 +12,7 @@ const heroSlides = [
   {
     id: 1,
     title: "Concierge In-Home Care. Sophisticated Clinical Management.",
-    subtitle: "Managed securely via the AkiVault System—providing real-time documentation, automated Electronic Visit Verification (EVV), and an exclusive, fully encrypted 24/7 client family portal.",
+    subtitle: "Managed securely via AkiVault—providing real-time documentation, automated Electronic Visit Verification (EVV), and an exclusive 24/7 family care portal.",
     bgImage: "/CARE GIVER  (4).jpg"
   },
   {
@@ -66,6 +66,17 @@ const technologyPillars = [
       "Automated Electronic Visit Verification confirms caregivers are physically on site before clocking in, preventing shift fraud and ensuring punctuality.",
     badge: "Verification Engine",
   },
+];
+
+const whyChooseCards = [
+  { icon: "fa-user-doctor", title: "Daily care experts", desc: "We specialize in around the clock care to help seniors live well at home.", bg: "bg-[#6b1d6f]" },
+  { icon: "fa-headset", title: "Available 24/7", desc: "We are available 24 hours a day to provide your loved one with a caregiver.", bg: "bg-[#aa2a78]" },
+  { icon: "fa-wheelchair", title: "Balanced care", desc: "Our unique approach to care promotes healthy mind, body and spirit.", bg: "bg-[#e03b4e]" },
+  { icon: "fa-heart-pulse", title: "High caliber caregivers", desc: "We typically hire only 1 in 25 applicants and provide ongoing training.", bg: "bg-[#f29807]" },
+  { icon: "fa-gem", title: "Peace of mind", desc: "Independent industry surveys place our client satisfaction rate at 97%.", bg: "bg-[#65b741]" },
+  { icon: "fa-user-shield", title: "A trusted partner", desc: "Akirapa Home Care is the trusted referral choice for elder care professionals.", bg: "bg-[#23509e]" },
+  { icon: "fa-flask", title: "Cognitive therapeutics", desc: "Fun yet effective activities designed by experts to keep aging minds sharp.", bg: "bg-[#1b99a4]" },
+  { icon: "fa-file-contract", title: "No long term contract", desc: "Use our services only as long as you're 100% satisfied.", bg: "bg-[#158d88]" },
 ];
 
 const Index = () => {
@@ -202,61 +213,16 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto shrink-0">
               <a
                 href="tel:3399701214"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#76248a] hover:bg-[#561868] text-white font-extrabold px-6 py-3.5 rounded-2xl shadow-lg transition-all text-base"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#76248a] hover:bg-[#561868] text-white font-extrabold px-8 py-3.5 rounded-2xl shadow-lg transition-all hover:scale-105 btn-animated text-base"
               >
                 <i className="fa-solid fa-phone text-lg text-[#40ddd3]"></i>
-                <div className="text-left">
-                  <span className="text-[10px] text-white/70 block uppercase leading-none">Main Hotline</span>
-                  <span className="text-lg font-black text-[#40ddd3]">339 970 1214</span>
-                </div>
+                <span className="text-lg font-black text-white">Call Us Now</span>
               </a>
 
-              <Button asChild size="lg" className="w-full sm:w-auto bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold text-base h-14 px-6 rounded-2xl shadow-md">
+              <Button asChild size="lg" className="w-full sm:w-auto bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold text-base h-14 px-6 rounded-2xl shadow-md btn-animated">
                 <Link to="/contact">Request Immediate Callback</Link>
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6 Technology Pillars of AkiVault Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white border-b border-gray-100">
-        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-[#76248a] font-extrabold text-sm uppercase tracking-wider bg-[#76248a]/10 px-3 py-1 rounded-full inline-block">
-              Advanced Technology
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
-              Powered by AkiVault
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg">
-              Six technological pillars ensuring security, transparency, and clinical excellence in every shift.
-            </p>
-            <div className="pt-4">
-              <Button asChild size="lg" className="bg-[#76248a] hover:bg-[#561868] text-white font-bold text-base h-12 px-6 rounded-2xl shadow-md">
-                <a href="https://akirapa-home-care-system-ynmt.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  Explore AkiVault Platform →
-                </a>
-              </Button>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {technologyPillars.map((pillar, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-white flex items-center justify-center mb-6 shadow-md group-hover:bg-[#40ddd3] group-hover:text-gray-950 transition-colors">
-                  <i className={`fa-solid ${pillar.icon} text-2xl`}></i>
-                </div>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#76248a] bg-[#76248a]/10 px-2.5 py-1 rounded-full">
-                  {pillar.badge}
-                </span>
-                <h3 className="text-xl font-bold text-gray-900 mt-3 mb-2">{pillar.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{pillar.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -380,10 +346,10 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <a
               href="tel:3399701214"
-              className="inline-flex items-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold text-xl px-8 py-4 rounded-2xl shadow-xl transition-all hover:scale-105"
+              className="inline-flex items-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold text-xl px-8 py-4 rounded-2xl shadow-xl transition-all hover:scale-105 btn-animated"
             >
               <i className="fa-solid fa-phone text-xl text-white"></i>
-              <span>Call 339 970 1214</span>
+              <span>Call Us Now</span>
             </a>
             <Button asChild variant="outline" size="lg" className="border-2 border-white bg-transparent text-white hover:bg-white/10 font-bold text-lg h-14 px-8 rounded-2xl">
               <Link to="/contact">Book Free Consultation</Link>
@@ -414,94 +380,23 @@ const Index = () => {
             </Button>
           </div>
 
-          {/* 8 Colorful Feature Cards Horizontal Scroll Row */}
-          <div className="flex overflow-x-auto gap-6 pt-4 pb-6 snap-x snap-mandatory -mx-6 px-6 sm:-mx-12 sm:px-12 lg:-mx-16 lg:px-16 scrollbar-thin scrollbar-thumb-[#76248a]/20">
-            {/* Card 1 - Dark Purple */}
-            <div className="bg-[#6b1d6f] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-user-doctor text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">Daily care experts</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  We specialize in around the clock care to help seniors live well at home.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2 - Medium Magenta */}
-            <div className="bg-[#aa2a78] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-headset text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">Available 24/7</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  We are available 24 hours a day to provide your loved one with a caregiver.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3 - Coral Red */}
-            <div className="bg-[#e03b4e] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-wheelchair text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">Balanced care</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Our unique approach to care promotes healthy mind, body and spirit.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 4 - Golden Orange */}
-            <div className="bg-[#f29807] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-heart-pulse text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">high caliber caregivers</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  We typically hire only 1 in 25 applicants and provide ongoing training.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 5 - Vibrant Green */}
-            <div className="bg-[#65b741] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-gem text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">Peace of mind</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Independent industry surveys place our client satisfaction rate at 97%.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 6 - Deep Blue */}
-            <div className="bg-[#23509e] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-user-shield text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">A trusted partner</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Akirapa Home Care is the trusted referral choice for elder care professionals.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 7 - Teal */}
-            <div className="bg-[#1b99a4] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-flask text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">Cognitive therapeutics</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Fun yet effective activities designed by experts to keep aging minds sharp.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 8 - Dark Teal */}
-            <div className="bg-[#158d88] text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[250px] w-[280px] sm:w-[320px] shrink-0 snap-start">
-              <div className="space-y-4">
-                <i className="fa-solid fa-file-contract text-4xl text-white"></i>
-                <h3 className="text-xl font-bold text-white leading-tight">No long term contract</h3>
-                <p className="text-white/90 text-sm leading-relaxed">
-                  Use our services only as long as you're 100% satisfied.
-                </p>
-              </div>
+          {/* 8 Colorful Feature Cards Automatic Looping Marquee */}
+          <div className="overflow-hidden relative w-full py-4 -mx-6 px-6 sm:-mx-12 sm:px-12 lg:-mx-16 lg:px-16">
+            <div className="animate-marquee flex gap-6">
+              {[...whyChooseCards, ...whyChooseCards].map((card, idx) => (
+                <div
+                  key={idx}
+                  className={`${card.bg} text-white p-8 rounded-2xl space-y-4 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-center justify-center text-center min-h-[250px] w-[280px] sm:w-[320px] shrink-0`}
+                >
+                  <div className="space-y-4 flex flex-col items-center text-center">
+                    <i className={`fa-solid ${card.icon} text-4xl text-white mx-auto`}></i>
+                    <h3 className="text-xl font-bold text-white leading-tight capitalize text-center">{card.title}</h3>
+                    <p className="text-white/90 text-sm leading-relaxed text-center">
+                      {card.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -563,7 +458,7 @@ const Index = () => {
       </section>
 
       {/* Client Testimonials Section */}
-      <section id="testimonials" className="py-16 md:py-24 bg-white">
+      <section id="testimonials" className="py-16 md:py-24 bg-white border-b border-gray-100">
         <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 items-start">
             {testimonials.map((item) => (
@@ -587,6 +482,37 @@ const Index = () => {
                 <p className="text-gray-600 text-base sm:text-lg font-normal leading-relaxed">
                   {item.text}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stories of Care & Trust Section */}
+      <section className="py-16 md:py-24 bg-gray-50/80">
+        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-10">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
+              Stories of Care & Trust
+            </h2>
+            <p className="text-gray-600 text-base sm:text-lg">
+              Real experiences from families who rely on Akirapa Home Care across Bedford, MA and Middlesex County.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((item) => (
+              <div key={item.id} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-lg space-y-4 hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center gap-1 text-amber-400">
+                  {[...Array(item.rating || 5)].map((_, i) => (
+                    <i key={i} className="fa-solid fa-star text-base"></i>
+                  ))}
+                </div>
+                <p className="text-gray-700 italic text-base leading-relaxed">"{item.text}"</p>
+                <div className="pt-2 border-t border-gray-100 flex items-center justify-between">
+                  <span className="font-bold text-gray-900 text-sm">{item.author}</span>
+                  <span className="text-xs text-[#76248a] font-semibold">{item.relation}</span>
+                </div>
               </div>
             ))}
           </div>
