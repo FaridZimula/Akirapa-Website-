@@ -235,6 +235,9 @@ const Projects = () => {
                     <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shadow-xs">
                       <i className={`${srv.icon} text-lg`}></i>
                     </div>
+                    <span className="text-[10px] font-bold text-[#76248a] bg-[#76248a]/10 px-2.5 py-1 rounded-full">
+                      {srv.category}
+                    </span>
                   </div>
                   <h3 className="font-bold text-gray-900 text-lg">{srv.title}</h3>
                   <p className="text-gray-600 text-xs leading-relaxed line-clamp-3">{srv.shortDescription}</p>

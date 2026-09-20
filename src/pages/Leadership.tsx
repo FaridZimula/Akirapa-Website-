@@ -139,10 +139,36 @@ const Leadership = () => {
 
 
 
-      {/* Review Submission Form */}
-      <section className="section-padding bg-gray-50/70 border-t border-gray-100">
-        <div className="container-narrow mx-auto max-w-3xl">
-          <div className="bg-[#76248a] text-white p-8 md:p-12 rounded-3xl shadow-xl space-y-6">
+      {/* Testimonials & Review Submission Form */}
+      <section className="section-padding bg-white">
+        <div className="container-narrow mx-auto">
+          <div className="grid lg:grid-cols-12 gap-12">
+            {/* Left: Testimonials List */}
+            <div className="lg:col-span-7 space-y-6">
+              <h2 className="text-3xl font-black text-gray-900">
+                Stories of Care & Trust
+              </h2>
+
+              <div className="space-y-6">
+                {testimonials.map((item) => (
+                  <div key={item.id} className="bg-gray-50 p-6 rounded-2xl border border-gray-100 space-y-3">
+                    <div className="flex items-center gap-1 text-amber-400">
+                      {[...Array(item.rating)].map((_, i) => (
+                        <i key={i} className="fa-solid fa-star text-sm"></i>
+                      ))}
+                    </div>
+                    <p className="text-gray-700 italic text-sm">"{item.text}"</p>
+                    <div className="text-xs font-bold text-gray-900">
+                      {item.author} — <span className="font-normal text-gray-500">{item.relation} ({item.location})</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Submit Your Review */}
+            <div className="lg:col-span-5">
+              <div className="bg-[#76248a] text-white p-8 rounded-3xl shadow-xl space-y-6">
                 <div className="flex items-center gap-3">
                   <i className="fa-solid fa-comment-dots text-2xl text-white"></i>
                   <h3 className="text-2xl font-black text-white">Share Your Feedback</h3>
@@ -223,6 +249,8 @@ const Leadership = () => {
                     <p className="text-white/80 text-xs">Your testimonial has been submitted for review.</p>
                   </div>
                 )}
+              </div>
+            </div>
           </div>
         </div>
       </section>
