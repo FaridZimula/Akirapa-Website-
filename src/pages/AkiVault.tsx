@@ -150,6 +150,7 @@ export default function AkiVault() {
         ref={navCardRef}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         className="fixed z-50 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl"
 =======
         className="fixed z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/30 bg-white shadow-2xl animate-pulse-glow transition-shadow duration-300"
@@ -157,6 +158,9 @@ export default function AkiVault() {
 =======
         className="fixed z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/30 bg-white shadow-2xl animate-pulse-glow transition-shadow duration-300"
 >>>>>>> parent of 751d603 (AkiVault Navigation guide)
+=======
+        className="fixed z-50 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl"
+>>>>>>> parent of ce564e0 (Large U.I Changes)
         style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
       >
         <div
@@ -173,6 +177,7 @@ export default function AkiVault() {
             <i className="fa-solid fa-grip-vertical text-white/60"></i>
             <i className="fa-solid fa-compass text-[#40ddd3]"></i>
             <span className="text-xs font-black uppercase tracking-wider">AkiVault Sections</span>
+<<<<<<< HEAD
 =======
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -195,6 +200,8 @@ export default function AkiVault() {
           <div className="rounded-lg p-1.5 bg-white/10 hover:bg-white/20 transition-colors">
             <i className={`fa-solid fa-chevron-${isNavOpen ? "up" : "down"} text-sm transition-transform duration-300`}></i>
 >>>>>>> parent of 751d603 (AkiVault Navigation guide)
+=======
+>>>>>>> parent of ce564e0 (Large U.I Changes)
           </div>
           <button
             type="button"
