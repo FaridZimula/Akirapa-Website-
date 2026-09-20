@@ -93,12 +93,15 @@ export default function AkiVault() {
   const [activeSectionNav, setActiveSectionNav] = useState<string>("hero");
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
-  const [cardPosition, setCardPosition] = useState({ x: 20, y: 120 });
+  const [cardPosition, setCardPosition] = useState({ x: 24, y: 120 });
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const dragDistanceRef = React.useRef(0);
+  const startPosRef = React.useRef({ x: 0, y: 0 });
   const navCardRef = React.useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (e: React.MouseEvent) => {
-    if ((e.target as HTMLElement).closest("button, a, nav")) return;
+    startPosRef.current = { x: e.clientX, y: e.clientY };
+    dragDistanceRef.current = 0;
     setIsDragging(true);
     const rect = navCardRef.current?.getBoundingClientRect();
     if (rect) {
@@ -111,13 +114,49 @@ export default function AkiVault() {
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging) return;
+    const dist = Math.hypot(e.clientX - startPosRef.current.x, e.clientY - startPosRef.current.y);
+    dragDistanceRef.current = dist;
     const newX = e.clientX - dragOffset.x;
     const newY = e.clientY - dragOffset.y;
-    setCardPosition({ x: Math.max(0, newX), y: Math.max(0, newY) });
+    setCardPosition({ x: Math.max(8, Math.min(window.innerWidth - 280, newX)), y: Math.max(80, Math.min(window.innerHeight - 100, newY)) });
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    startPosRef.current = { x: touch.clientX, y: touch.clientY };
+    dragDistanceRef.current = 0;
+    setIsDragging(true);
+    const rect = navCardRef.current?.getBoundingClientRect();
+    if (rect) {
+      setDragOffset({
+        x: touch.clientX - rect.left,
+        y: touch.clientY - rect.top,
+      });
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    const touch = e.touches[0];
+    const dist = Math.hypot(touch.clientX - startPosRef.current.x, touch.clientY - startPosRef.current.y);
+    dragDistanceRef.current = dist;
+    const newX = touch.clientX - dragOffset.x;
+    const newY = touch.clientY - dragOffset.y;
+    setCardPosition({ x: Math.max(8, Math.min(window.innerWidth - 280, newX)), y: Math.max(80, Math.min(window.innerHeight - 100, newY)) });
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
+  const handleHeaderClick = () => {
+    if (dragDistanceRef.current < 8) {
+      setIsNavOpen((prev) => !prev);
+    }
   };
 
   const navigationSections = [
@@ -145,88 +184,57 @@ export default function AkiVault() {
         description="Explore AkiVault, the proprietary technology engine behind Akirapa Home Care. Discover GPS EVV, 8-point welfare checks, Care Pod scheduling, and real-time family portals."
       />
 
-      {/* Compact Floating Navigation Card */}
+      {/* Floating Interactive & Draggable Navigation Widget */}
       <div
         ref={navCardRef}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        className="fixed z-50 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl"
-=======
-        className="fixed z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/30 bg-white shadow-2xl animate-pulse-glow transition-shadow duration-300"
->>>>>>> parent of 751d603 (AkiVault Navigation guide)
-=======
-        className="fixed z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/30 bg-white shadow-2xl animate-pulse-glow transition-shadow duration-300"
->>>>>>> parent of 751d603 (AkiVault Navigation guide)
-=======
-        className="fixed z-50 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl"
->>>>>>> parent of ce564e0 (Large U.I Changes)
+        className="fixed z-50 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/30 bg-white shadow-2xl animate-pulse-glow transition-shadow duration-300"
         style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
       >
         <div
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
-<<<<<<< HEAD
           onMouseLeave={handleMouseUp}
-          style={{ cursor: isDragging ? "grabbing" : "grab" }}
-          className="flex items-center justify-between bg-gradient-to-r from-[#76248a] to-[#561868] px-4 py-3 text-white select-none"
-          title="Drag to move navigation"
-        >
-          <div className="flex items-center gap-2">
-            <i className="fa-solid fa-grip-vertical text-white/60"></i>
-            <i className="fa-solid fa-compass text-[#40ddd3]"></i>
-            <span className="text-xs font-black uppercase tracking-wider">AkiVault Sections</span>
-<<<<<<< HEAD
-=======
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          onClick={handleHeaderClick}
           style={{ cursor: isDragging ? "grabbing" : "pointer" }}
-          className="flex items-center justify-between bg-gradient-to-r from-[#76248a] via-[#651977] to-[#40ddd3] px-4 py-3 text-white select-none button-shimmer"
-          title="Click anywhere to open/close sections, or drag to move"
+          className="flex items-center justify-between bg-gradient-to-r from-[#76248a] via-[#561868] to-[#218981] px-4 py-3.5 text-white select-none button-shimmer shadow-md transition-all hover:brightness-105"
+          title="Click anywhere to open/close sections, or drag to reposition"
         >
-          <div className="flex items-center gap-2.5">
-            <span className="relative flex h-3 w-3">
+          <div className="flex items-center gap-3">
+            <span className="relative flex h-3.5 w-3.5 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#40ddd3]"></span>
+              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#40ddd3]"></span>
             </span>
-            <i className="fa-solid fa-compass text-[#40ddd3] text-sm"></i>
+            <i className="fa-solid fa-compass text-[#40ddd3] text-base"></i>
             <div>
-              <span className="text-xs font-black uppercase tracking-wider block">AkiVault Sections</span>
-              <span className="text-[10px] text-white/80 block -mt-0.5">Click anywhere to {isNavOpen ? "close" : "open"}</span>
+              <span className="text-xs font-black uppercase tracking-wider block">AkiVault Navigator</span>
+              <span className="text-[10px] text-white/85 block font-medium -mt-0.5">
+                Click anywhere to {isNavOpen ? "minimize" : "view 7 sections"}
+              </span>
             </div>
           </div>
-          <div className="rounded-lg p-1.5 bg-white/10 hover:bg-white/20 transition-colors">
-            <i className={`fa-solid fa-chevron-${isNavOpen ? "up" : "down"} text-sm transition-transform duration-300`}></i>
->>>>>>> parent of 751d603 (AkiVault Navigation guide)
-=======
->>>>>>> parent of ce564e0 (Large U.I Changes)
+          <div className="rounded-lg p-1.5 bg-white/15 hover:bg-white/25 transition-transform duration-300">
+            <i className={`fa-solid fa-chevron-down text-xs transition-transform duration-300 ${isNavOpen ? "rotate-180 text-[#40ddd3]" : "rotate-0 text-white"}`}></i>
           </div>
-          <button
-            type="button"
-            aria-label={isNavOpen ? "Collapse navigation" : "Expand navigation"}
-            onClick={() => setIsNavOpen((open) => !open)}
-            className="rounded-lg p-1.5 hover:bg-white/20"
-          >
-            <i className={`fa-solid fa-chevron-${isNavOpen ? "up" : "down"}`}></i>
-          </button>
         </div>
 
         {isNavOpen && (
-          <nav className="max-h-72 space-y-1 overflow-y-auto p-3" aria-label="AkiVault sections">
+          <nav className="max-h-72 space-y-1 overflow-y-auto p-3 bg-white animate-fadeIn" aria-label="AkiVault sections">
             {navigationSections.map((section) => (
               <button
                 key={section.id}
                 type="button"
                 onClick={() => scrollToSection(section.id)}
-                className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-xs font-semibold transition-all ${
+                className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-xs font-bold transition-all ${
                   activeSectionNav === section.id
-                    ? "bg-[#76248a] text-white shadow-md"
+                    ? "bg-[#76248a] text-white shadow-md scale-[1.02]"
                     : "text-gray-700 hover:bg-gray-100 hover:text-[#76248a]"
                 }`}
               >
-                <i className={`fa-solid ${section.icon} w-4 text-center`}></i>
+                <i className={`fa-solid ${section.icon} w-4 text-center ${activeSectionNav === section.id ? "text-[#40ddd3]" : "text-[#76248a]"}`}></i>
                 <span>{section.label}</span>
               </button>
             ))}

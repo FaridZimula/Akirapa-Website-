@@ -9,6 +9,7 @@ export interface BlogPost {
   category: string;
   readTime: string;
   image: string;
+  initialViews?: number;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -30,7 +31,8 @@ Here are 5 proven strategies to help you recharge your mind and body:
     author: "Cathy Akirapa, CNA",
     category: "Caregiver Support",
     readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800",
+    initialViews: 642
   },
   {
     id: "post-2",
@@ -47,7 +49,8 @@ Respite care provides temporary relief for primary family caregivers. Benefits i
     author: "Stuart Ssemwogerere",
     category: "Respite Care",
     readTime: "3 min read",
-    image: "/CARE GIVER  (13).jpg"
+    image: "/CARE GIVER  (13).jpg",
+    initialViews: 518
   },
   {
     id: "post-3",
@@ -64,7 +67,8 @@ Respite care provides temporary relief for primary family caregivers. Benefits i
     author: "Cathy Akirapa, CNA",
     category: "Senior Safety",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800",
+    initialViews: 835
   },
   {
     id: "post-4",
@@ -83,6 +87,82 @@ Early intervention with customized hourly or daily home care helps seniors maint
     author: "Stuart Ssemwogerere",
     category: "Senior Living",
     readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=800",
+    initialViews: 429
+  },
+  {
+    id: "post-5",
+    slug: "supporting-loved-ones-with-early-stage-dementia",
+    title: "Compassionate Strategies for Supporting Loved Ones with Early-Stage Dementia",
+    excerpt: "Practical techniques to foster calm, dignity, and cognitive engagement for seniors navigating memory loss and Alzheimer's disease.",
+    content: `Early-stage dementia introduces subtle behavioral shifts and moments of frustration for both seniors and their families. Empathy and consistent daily structure make a profound difference:
+
+1. **Establish Predictable Daily Routines**: Keeping wake-up times, meals, and activities at standard hours reduces anxiety and confusion.
+2. **Communicate with Simplicity & Warmth**: Make gentle eye contact, use direct sentences, and allow ample time for responses without interrupting.
+3. **Engage in Reminiscence & Cognitive Games**: Photo albums, favorite music from younger years, and structured memory activities stimulate neuro-pathways and spark joy.
+4. **Partner with Dementia-Trained Caregivers**: Certified professionals understand agitation de-escalation, sensory orientation, and safe wandering prevention.`,
+    date: "March 05, 2025",
+    author: "Cathy Akirapa, CNA",
+    category: "Memory & Dementia",
+    readTime: "6 min read",
+    image: "/CARE GIVER  (16).jpg",
+    initialViews: 712
+  },
+  {
+    id: "post-6",
+    slug: "safe-hospital-to-home-transition-guide",
+    title: "The Ultimate Hospital-to-Home Transition Guide for Seniors",
+    excerpt: "How dedicated post-discharge care prevents rehospitalization and speeds up physical recovery in the first 30 days after discharge.",
+    content: `Nearly 20% of elderly patients discharged from hospitals are readmitted within 30 days due to medication errors, missed follow-ups, or sudden falls. 
+
+Steps to ensure a smooth recovery at home:
+- **Medication Reconciliation**: Have a nurse or caregiver cross-verify new hospital prescriptions against previous home medications.
+- **Physical Home Preparation**: Set up first-floor sleeping arrangements, clear walking pathways, and prepare easy-prep nutrition.
+- **Scheduled Transportation & Escort**: Ensure a professional caregiver attends discharge consultations and handles pharmacy pick-ups.
+- **Continuous Monitoring via AkiVault**: Real-time shift welfare checks spot early signs of infection, fluid retention, or appetite decline before emergency room visits become necessary.`,
+    date: "February 28, 2025",
+    author: "Stuart Ssemwogerere",
+    category: "Post-Hospital Recovery",
+    readTime: "5 min read",
+    image: "/CARE GIVER  (8).jpg",
+    initialViews: 593
+  },
+  {
+    id: "post-7",
+    slug: "vital-nutrition-and-hydration-tips-for-seniors",
+    title: "Vital Nutrition and Hydration Guidelines for Aging Well at Home",
+    excerpt: "Healthy aging starts on the plate. Discover how balanced meal planning and proper hydration promote vitality and immune resilience.",
+    content: `As we age, natural thirst cues diminish and metabolism shifts, making seniors particularly vulnerable to subtle dehydration and nutrient deficiencies.
+
+Essential dietary guidelines:
+1. **Hydration Throughout the Day**: Do not wait for thirst. Encourage small sips of water, herbal teas, and electrolyte-rich broths every 90 minutes.
+2. **High-Density Protein Meals**: Incorporate eggs, lean poultry, Greek yogurt, or plant proteins to preserve muscle mass and prevent sarcopenia.
+3. **Fiber for Gut & Heart Health**: Colorful berries, steamed vegetables, and whole oats support cardiovascular health and digestion.
+4. **Assisted Meal Preparation**: Having a compassionate caregiver prepare fresh, flavorful meals restores the joy of dining for seniors with reduced appetite.`,
+    date: "February 20, 2025",
+    author: "Cathy Akirapa, CNA",
+    category: "Nutrition & Wellness",
+    readTime: "4 min read",
+    image: "/CARE GIVER  (5).jpg",
+    initialViews: 378
+  },
+  {
+    id: "post-8",
+    slug: "navigating-massachusetts-senior-care-options",
+    title: "Navigating Senior Care Options in Massachusetts: A Family Guide",
+    excerpt: "Understand private-duty home care, Medicaid waivers, and community resources available across Bedford, Middlesex County, and Greater Boston.",
+    content: `Massachusetts families have numerous care options, but navigating eligibility and services can feel overwhelming without clear guidance.
+
+Key care models explained:
+- **Private-Duty Non-Medical Home Care**: Comprehensive hourly or 24/7 assistance with activities of daily living (bathing, dressing, meal prep, companionship) with zero contract lock-in.
+- **Respite Programs for Primary Family Caregivers**: Flexible blocks of time allowing family members to rest, travel, and recharge without disrupting care routines.
+- **Skilled Clinical Services vs. Personal Care**: Understanding when certified nursing assistants (CNAs) vs visiting therapists are needed.
+- **AkiVault Verified Verification**: Ensuring your chosen agency provides automated GPS electronic visit verification for absolute punctuality and trust.`,
+    date: "February 12, 2025",
+    author: "Stuart Ssemwogerere",
+    category: "Senior Living",
+    readTime: "5 min read",
+    image: "/CARE GIVER  (2).jpg",
+    initialViews: 489
   }
 ];

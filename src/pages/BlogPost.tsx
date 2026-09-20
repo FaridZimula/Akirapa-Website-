@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
@@ -93,10 +93,23 @@ const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const post = blogPosts.find((p) => p.slug === slug);
+  const [views, setViews] = useState<number>(post?.initialViews || 350);
 
   useEffect(() => {
     if (!post) {
       navigate("/blog", { replace: true });
+      return;
+    }
+
+    try {
+      const storageKey = `akirapa_blog_views_${post.id}`;
+      const stored = localStorage.getItem(storageKey);
+      const currentCount = stored ? parseInt(stored, 10) : post.initialViews || 350;
+      const updatedCount = currentCount + 1;
+      localStorage.setItem(storageKey, updatedCount.toString());
+      setViews(updatedCount);
+    } catch {
+      setViews((prev) => prev + 1);
     }
   }, [post, navigate]);
 
@@ -155,6 +168,10 @@ const BlogPostPage = () => {
             </span>
             <span className="bg-white/20 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide">
               {post.category}
+            </span>
+            <span className="flex items-center gap-1.5 bg-[#40ddd3]/20 text-[#40ddd3] text-xs font-bold px-3 py-1 rounded-full border border-[#40ddd3]/40">
+              <i className="fa-regular fa-eye text-[#40ddd3]"></i>
+              <span>{views.toLocaleString()} views</span>
             </span>
           </div>
         </div>

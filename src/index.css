@@ -184,10 +184,6 @@
       transform: translateX(0);
     }
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
   @keyframes marquee {
     0% {
       transform: translateX(0%);
@@ -200,7 +196,7 @@
   .animate-marquee {
     display: flex;
     width: max-content;
-    animation: marquee 40s linear infinite;
+    animation: marquee 35s linear infinite;
   }
 
   .animate-marquee:hover {
@@ -213,7 +209,7 @@
       transform: translateY(0);
     }
     50% {
-      box-shadow: 0 0 28px 6px rgba(118, 36, 138, 0.6), 0 0 45px 8px rgba(64, 221, 211, 0.45);
+      box-shadow: 0 0 32px 8px rgba(118, 36, 138, 0.65), 0 0 45px 10px rgba(64, 221, 211, 0.5);
       transform: translateY(-3px);
     }
   }
@@ -222,59 +218,17 @@
     animation: pulseGlow 3s ease-in-out infinite;
   }
 
-  /* High-frequency 6x vibrating buzz */
-  @keyframes vibrateFast {
+  @keyframes floatSlow {
     0%, 100% {
-      transform: translate3d(0, 0, 0) rotate(0deg);
-    }
-    20% {
-      transform: translate3d(-2px, 1.5px, 0) rotate(-0.8deg);
-    }
-    40% {
-      transform: translate3d(2px, -1.5px, 0) rotate(0.8deg);
-    }
-    60% {
-      transform: translate3d(-2px, -1.5px, 0) rotate(-0.8deg);
-    }
-    80% {
-      transform: translate3d(2px, 1.5px, 0) rotate(0.8deg);
-    }
-  }
-
-  @keyframes purpleGlow {
-    0%, 100% {
-      box-shadow: 0 0 16px 2px rgba(118, 36, 138, 0.4), 0 0 28px 4px rgba(168, 85, 247, 0.25);
+      transform: translateY(0);
     }
     50% {
-      box-shadow: 0 0 28px 6px rgba(118, 36, 138, 0.65), 0 0 42px 8px rgba(168, 85, 247, 0.45);
+      transform: translateY(-6px);
     }
   }
 
-  .animate-vibrate-fast {
-    animation: vibrateFast 0.065s linear infinite, purpleGlow 2.5s ease-in-out infinite;
-  }
-
-  .animate-vibrate-fast:hover {
-    animation-play-state: paused, running;
-  }
-
-  .animate-purple-glow {
-    animation: purpleGlow 2.5s ease-in-out infinite;
-  }
-
-  .animate-vibrate-purple {
-    animation: vibrateFast 0.065s linear infinite, purpleGlow 2.5s ease-in-out infinite;
-  }
-
-  .animate-vibrate-purple:hover {
-    animation-play-state: paused, running;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .animate-vibrate-fast,
-    .animate-vibrate-purple {
-      animation: none;
-    }
+  .animate-float {
+    animation: floatSlow 4s ease-in-out infinite;
   }
 
   @keyframes buttonShimmer {
@@ -298,23 +252,25 @@
     left: 0;
     width: 60%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     transform: translateX(-150%) skewX(-20deg);
-    animation: buttonShimmer 4s infinite;
+    animation: buttonShimmer 3.5s infinite;
     pointer-events: none;
   }
 
   @keyframes buttonPulse {
     0%, 100% {
       transform: scale(1);
+      box-shadow: 0 4px 14px rgba(64, 221, 211, 0.35);
     }
     50% {
       transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(64, 221, 211, 0.6);
     }
   }
 
   .animate-btn-pulse {
-    animation: buttonPulse 2.8s infinite ease-in-out;
+    animation: buttonPulse 2.4s infinite ease-in-out;
   }
 
   .img-zoom-hover {
@@ -324,8 +280,15 @@
   .img-zoom-hover:hover,
   .group:hover .img-zoom-hover {
     transform: scale(1.06);
+    filter: brightness(1.03);
   }
->>>>>>> parent of 3c03a51 (vibration speed)
-=======
->>>>>>> parent of ce564e0 (Large U.I Changes)
+
+  .btn-hover-lift {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(118, 36, 138, 0.4);
+  }
 }
