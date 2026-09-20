@@ -177,7 +177,7 @@ const Index = () => {
         onMouseLeave={() => setIsPaused(false)}
         className="relative pt-24 pb-20 sm:pt-28 sm:pb-24 md:pt-32 md:pb-28 lg:pt-36 lg:pb-32 bg-white text-gray-900 overflow-hidden border-b border-gray-100 min-h-[580px] md:min-h-[660px] flex items-center"
       >
-        {/* Animated Background Landscape Images with Smooth Zoom Effect */}
+        {/* Animated Background Landscape Images with Smooth Zoom Effect & Living Canvas */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           {heroSlides.map((item, index) => (
             <img
@@ -186,11 +186,15 @@ const Index = () => {
               alt="Hero Caregiver Background"
               className={`absolute inset-0 w-full h-full object-cover object-[70%_center] md:object-right transition-all duration-1000 ease-in-out transform ${
                 index === currentSlide
-                  ? "opacity-100 scale-100 z-0"
+                  ? "opacity-100 scale-100 z-0 animate-ken-burns"
                   : "opacity-0 scale-105 -z-10"
               }`}
             />
           ))}
+
+          {/* Dynamic Living Aurora Ambient Glows */}
+          <div className="absolute top-1/4 -right-10 w-96 h-96 rounded-full bg-[#76248a]/20 blur-3xl pointer-events-none animate-aurora" />
+          <div className="absolute bottom-10 right-1/4 w-80 h-80 rounded-full bg-[#40ddd3]/20 blur-3xl pointer-events-none animate-aurora [animation-delay:4s]" />
 
           {/* Seamless directional gradient: crisp white backing on the left where typography sits, gently feathering into the natural image on the right */}
           <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-white via-white/95 via-35% md:via-white/90 md:via-48% lg:via-white/85 lg:via-52% to-transparent" />
@@ -198,6 +202,23 @@ const Index = () => {
           <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-white/95 via-white/85 to-white/40 md:hidden" />
           {/* Smooth bottom feathering to naturally transition into the helpline banner below */}
           <div className="absolute bottom-0 inset-x-0 h-24 z-10 pointer-events-none bg-gradient-to-t from-white via-white/60 to-transparent" />
+        </div>
+
+        {/* Floating Glassmorphic Verification Badge on Hero Caregiver */}
+        <div className="hidden lg:flex absolute right-12 bottom-28 z-20 items-center gap-3 floating-photo-badge py-2.5 px-4 rounded-2xl animate-float-bob">
+          <div className="w-10 h-10 rounded-xl bg-[#76248a] text-white flex items-center justify-center font-black text-sm shadow-md">
+            <i className="fa-solid fa-user-shield text-[#40ddd3] text-base"></i>
+          </div>
+          <div className="text-left">
+            <div className="flex items-center gap-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-gray-900">EVV-GPS Active</span>
+            </div>
+            <span className="text-[10px] text-gray-600 font-semibold">100% Background-Checked Care</span>
+          </div>
         </div>
 
         {/* Slide Indicators */}
@@ -378,92 +399,119 @@ const Index = () => {
           {/* 5 Services Images Grid (Horizontal Scroll on Mobile, 5-Col Grid on Desktop) */}
           <div className="flex overflow-x-auto gap-5 sm:gap-6 pt-4 pb-4 snap-x snap-mandatory scrollbar-none -mx-6 px-6 sm:-mx-12 sm:px-12 lg:grid lg:grid-cols-5 lg:gap-8 lg:mx-0 lg:px-0 lg:overflow-visible">
             {/* Service 1 */}
-            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink card-hover-pro">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-gray-50">
+            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
                 <img
                   src="/CARE GIVER  (1).jpg"
                   alt="Hourly home care"
-                  className="w-full h-full object-cover img-zoom-hover"
+                  className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                 />
+                <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
+                  Flexible Hours
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
-              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#40ddd3] transition-all duration-300 group-hover:translate-x-0.5">
-                Hourly home care
+              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
+                <span>Hourly home care</span>
+                <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>
 
             {/* Service 2 */}
-            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink card-hover-pro">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-gray-50">
+            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
                 <img
                   src="/CARE GIVER  (5).jpg"
                   alt="Daily home care"
-                  className="w-full h-full object-cover img-zoom-hover"
+                  className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                 />
+                <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
+                  24/7 Dedicated
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
-              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#40ddd3] transition-all duration-300 group-hover:translate-x-0.5">
-                Daily home care
+              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
+                <span>Daily home care</span>
+                <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>
 
             {/* Service 3 */}
-            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink card-hover-pro">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-gray-50">
+            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
                 <img
                   src="/CARE GIVER  (8).jpg"
                   alt="Hospital to home care"
-                  className="w-full h-full object-cover img-zoom-hover"
+                  className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                 />
+                <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
+                  RN Supervised
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
-              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#40ddd3] transition-all duration-300 group-hover:translate-x-0.5">
-                Hospital to home care
+              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
+                <span>Hospital to home care</span>
+                <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>
 
             {/* Service 4 */}
-            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink card-hover-pro">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-gray-50">
+            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
                 <img
                   src="/CARE GIVER  (14).jpg"
                   alt="Respite home care"
-                  className="w-full h-full object-cover img-zoom-hover"
+                  className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                 />
+                <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
+                  Family Relief
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
-              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#40ddd3] transition-all duration-300 group-hover:translate-x-0.5">
-                Respite home care
+              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
+                <span>Respite home care</span>
+                <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>
 
             {/* Service 5 */}
-            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink card-hover-pro">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-gray-50">
+            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
                 <img
                   src="/CARE GIVER  (16).jpg"
                   alt="Specialized care"
-                  className="w-full h-full object-cover img-zoom-hover"
+                  className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                 />
+                <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
+                  Clinical Care
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
-              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#40ddd3] transition-all duration-300 group-hover:translate-x-0.5">
-                Specialized care
+              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
+                <span>Specialized care</span>
+                <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 24/7 Helpline Purple CTA Banner with 27% Opacity Background Image */}
-      <section className="relative min-h-[300px] py-10 md:py-12 bg-[#76248a] text-white overflow-hidden flex items-center justify-center">
-        {/* Background Image with 27% Opacity */}
-        <div className="absolute inset-0 z-0">
+      {/* 24/7 Helpline Purple CTA Banner with 27% Opacity Background Image & Ken Burns Motion */}
+      <section className="relative min-h-[320px] py-12 md:py-16 bg-[#76248a] text-white overflow-hidden flex items-center justify-center">
+        {/* Background Image with Cinematic Ken Burns Motion */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/CARE GIVER  (10).jpg"
             alt="Akirapa Caregivers"
-            className="w-full h-full object-cover opacity-[0.27] mix-blend-luminosity scale-105"
+            className="w-full h-full object-cover opacity-[0.27] mix-blend-luminosity scale-105 animate-ken-burns"
           />
-          <div className="absolute inset-0 bg-[#76248a]/75" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#76248a]/90 via-[#76248a]/75 to-[#561868]/90" />
+          {/* Subtle Aurora orb */}
+          <div className="absolute -top-10 -right-10 w-72 h-72 rounded-full bg-[#40ddd3]/20 blur-3xl pointer-events-none animate-aurora" />
         </div>
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10 w-full">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight animate-word-fade">
             Ready to Begin Your Home Care Journey?
           </h2>
           <p className="text-white/90 text-lg sm:text-xl max-w-2xl mx-auto font-medium">
@@ -572,12 +620,22 @@ const Index = () => {
             </div>
 
             {/* Right Card */}
-            <div className="order-1 lg:order-2 lg:col-span-6 relative min-h-[300px] lg:min-h-full overflow-hidden">
+            <div className="order-1 lg:order-2 lg:col-span-6 relative min-h-[300px] lg:min-h-full overflow-hidden picture-glaze">
               <img
                 src="/CARE GIVER  (13).jpg"
                 alt="Shara M. Caregiver and Mother"
-                className="absolute inset-0 w-full h-full object-cover img-zoom-hover"
+                className="absolute inset-0 w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950/40 via-transparent to-transparent pointer-events-none" />
+              
+              {/* Floating Verified Family Badge */}
+              <div className="absolute bottom-4 right-4 floating-photo-badge py-2 px-3.5 rounded-2xl animate-float-reverse z-10 flex items-center gap-2">
+                <i className="fa-solid fa-circle-check text-emerald-500 text-sm"></i>
+                <div className="text-left">
+                  <span className="text-[11px] font-extrabold text-gray-900 block leading-tight">Verified Client Story</span>
+                  <span className="text-[9px] text-gray-500 font-medium">99% Satisfaction Benchmark</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

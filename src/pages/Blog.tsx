@@ -290,18 +290,19 @@ const Blog = () => {
               return (
                 <article
                   key={post.id}
-                  className="bg-white rounded-3xl overflow-hidden shadow-md border border-gray-100 flex flex-col justify-between hover:shadow-2xl transition-all duration-500 group hover:-translate-y-1.5"
+                  className="bg-white rounded-3xl overflow-hidden shadow-md border border-gray-100 flex flex-col justify-between picture-card-pro group"
                 >
                   <div>
-                    <Link to={`/blog/${post.slug}`} className="block h-52 overflow-hidden relative">
+                    <Link to={`/blog/${post.slug}`} className="block h-52 overflow-hidden relative picture-glaze">
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 img-zoom-hover"
+                        className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                       />
-                      <span className="absolute top-3 left-3 bg-[#76248a]/90 backdrop-blur-xs text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-xs">
+                      <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-sm z-10">
                         {post.category}
                       </span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                     </Link>
                     <div className="p-6 space-y-3">
                       <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-gray-500 font-medium">

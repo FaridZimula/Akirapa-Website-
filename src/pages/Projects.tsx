@@ -68,20 +68,21 @@ const Projects = () => {
 
       {/* Hero Header */}
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-[#76248a] text-white overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/CARE GIVER  (2).jpg"
             alt="Akirapa Care Services"
-            className="w-full h-full object-cover opacity-[0.29] mix-blend-luminosity scale-105"
+            className="w-full h-full object-cover opacity-[0.29] mix-blend-luminosity scale-105 animate-ken-burns"
           />
-          <div className="absolute inset-0 bg-[#76248a]/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#76248a]/90 via-[#76248a]/75 to-[#561868]/90" />
+          <div className="absolute -top-10 -right-10 w-72 h-72 rounded-full bg-[#40ddd3]/20 blur-3xl pointer-events-none animate-aurora" />
         </div>
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
-          <h1 className="text-4xl sm:text-5xl font-black text-white">
+          <h1 className="text-4xl sm:text-5xl font-black text-white animate-word-fade">
             In-Home Care Services Designed for You
           </h1>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium">
+          <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium animate-word-fade [animation-delay:150ms]">
             From flexible hourly visits to 24/7 around-the-clock specialized care, we come to your convenient location in Bedford, MA and surrounding Middlesex County.
           </p>
         </div>
@@ -103,26 +104,27 @@ const Projects = () => {
                     onClick={() => {
                       if (matched) setSelectedService(matched);
                     }}
-                    className={`group space-y-3.5 text-center w-[200px] sm:w-[230px] shrink-0 snap-start lg:w-auto lg:shrink transition-transform cursor-pointer focus:outline-none ${
-                      isSelected ? "scale-[1.03]" : "hover:scale-[1.02]"
+                    className={`group space-y-3.5 text-center w-[200px] sm:w-[230px] shrink-0 snap-start lg:w-auto lg:shrink transition-transform cursor-pointer focus:outline-none picture-card-pro ${
+                      isSelected ? "scale-[1.04]" : "hover:scale-[1.02]"
                     }`}
                   >
                     <div
-                      className={`aspect-[4/3] rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 border ${
+                      className={`aspect-[4/3] rounded-3xl overflow-hidden shadow-md group-hover:shadow-2xl transition-all duration-500 border relative picture-glaze ${
                         isSelected
-                          ? "border-4 border-[#76248a] shadow-lg ring-2 ring-[#40ddd3]"
+                          ? "border-4 border-[#76248a] shadow-xl ring-4 ring-[#40ddd3]/40"
                           : "border-gray-100 bg-gray-50"
                       }`}
                     >
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                     </div>
                     <h3
-                      className={`text-sm sm:text-base font-bold transition-colors ${
-                        isSelected ? "text-[#76248a] font-extrabold" : "text-[#76248a] group-hover:text-[#40ddd3]"
+                      className={`text-sm sm:text-base font-bold transition-all duration-300 ${
+                        isSelected ? "text-[#76248a] font-black scale-105" : "text-gray-800 group-hover:text-[#0d9488]"
                       }`}
                     >
                       {item.title}
