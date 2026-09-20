@@ -41,8 +41,8 @@ const ProjectCard = ({ title, description, images, icon, category, impact, layou
                         key={index}
                         src={img}
                         alt={`${title} - image ${index + 1}`}
-                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${index === currentImageIndex ? "opacity-100 scale-105" : "opacity-0 scale-100"
-                            }`}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentImageIndex ? "opacity-100" : "opacity-0"
+                            } ${index === currentImageIndex ? "scale-105" : "scale-100"} transform duration-[4000ms]`}
                     />
                 ))}
             </div>

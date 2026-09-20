@@ -26,8 +26,8 @@ const LaunchSlideshow = () => {
             key={num}
             src={`/Speaker ${num}.jpeg`}
             alt={`SUYEL Launch Event - Speaker ${num} discussing youth empowerment strategy`}
-            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${current === num ? "opacity-100 scale-105" : "opacity-0 scale-100"
-              }`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${current === num ? "opacity-100 scale-105" : "opacity-0 scale-100"
+              } duration-[4000ms]`}
           />
         );
       })}

@@ -229,21 +229,21 @@ const Projects = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {detailedServices.map((srv) => (
-              <div key={srv.slug} className="group p-6 rounded-3xl bg-gray-50 border border-gray-100 hover:border-[#76248a]/30 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between space-y-4">
+              <div key={srv.slug} className="p-6 rounded-3xl bg-gray-50 border border-gray-100 hover:border-[#76248a]/30 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4">
                 <div className="space-y-3">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shadow-xs group-hover:bg-[#40ddd3] group-hover:text-gray-900 transition-colors duration-300">
+                  <div className="flex items-center justify-between">
+                    <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shadow-xs">
                       <i className={`${srv.icon} text-lg`}></i>
                     </div>
                   </div>
-                  <h3 className="font-bold text-gray-900 text-lg group-hover:text-[#76248a] transition-colors">{srv.title}</h3>
+                  <h3 className="font-bold text-gray-900 text-lg">{srv.title}</h3>
                   <p className="text-gray-600 text-xs leading-relaxed line-clamp-3">{srv.shortDescription}</p>
                 </div>
 
                 <div className="pt-3 border-t border-gray-200/60">
                   <Link
                     to={`/services/${srv.slug}`}
-                    className="text-[#76248a] font-bold text-xs uppercase tracking-wider hover:text-[#40ddd3] flex items-center justify-between transition-colors group-hover:translate-x-1 duration-300"
+                    className="text-[#76248a] font-bold text-xs uppercase tracking-wider hover:text-[#40ddd3] flex items-center justify-between transition-colors"
                   >
                     <span>Read Full Service Guide</span>
                     <i className="fa-solid fa-arrow-right text-xs"></i>
@@ -276,7 +276,7 @@ const Projects = () => {
           <div className="pt-2">
             <a
               href="tel:3399701214"
-              className="inline-flex items-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold px-8 py-3.5 rounded-2xl shadow-xl transition-all hover:scale-105 text-base sm:text-lg button-shimmer hover:shadow-cyan-500/25"
+              className="inline-flex items-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold px-8 py-3.5 rounded-2xl shadow-xl transition-all hover:scale-105 text-base sm:text-lg"
             >
               <i className="fa-solid fa-phone text-lg text-white"></i>
               <span>Call Helpline: 339 970 1214</span>
