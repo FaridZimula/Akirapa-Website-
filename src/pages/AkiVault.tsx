@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
@@ -95,9 +95,29 @@ export default function AkiVault() {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [cardPosition, setCardPosition] = useState({ x: 24, y: 120 });
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isVibrating, setIsVibrating] = useState(false);
   const dragDistanceRef = React.useRef(0);
   const startPosRef = React.useRef({ x: 0, y: 0 });
   const navCardRef = React.useRef<HTMLDivElement>(null);
+
+  // 100x Hyper-Speed Vibration: Buzzes for exactly 2 seconds, waits for 5 seconds, continuous loop
+  useEffect(() => {
+    let stopTimer: ReturnType<typeof setTimeout>;
+    const triggerVibration = () => {
+      setIsVibrating(true);
+      stopTimer = setTimeout(() => {
+        setIsVibrating(false);
+      }, 2000);
+    };
+
+    triggerVibration();
+    const interval = setInterval(triggerVibration, 7000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(stopTimer);
+    };
+  }, []);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     startPosRef.current = { x: e.clientX, y: e.clientY };
@@ -187,7 +207,9 @@ export default function AkiVault() {
       {/* Floating Interactive & Draggable Navigation Widget */}
       <div
         ref={navCardRef}
-        className="fixed z-50 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl animate-purple-glow animate-vibrate-cycle transition-shadow duration-300"
+        className={`fixed z-50 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl animate-purple-glow transition-all duration-200 ${
+          isVibrating ? "animate-vibrate-hyper ring-2 ring-fuchsia-400/60 shadow-[0_0_35px_rgba(217,70,239,0.55)]" : ""
+        }`}
         style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
       >
         <div

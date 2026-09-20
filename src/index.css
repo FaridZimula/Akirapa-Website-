@@ -232,6 +232,26 @@
     animation: purplePulseGlow 3s ease-in-out infinite;
   }
 
+  /* 100x Hyper-Speed Vibration (Intense High-Frequency Electric Buzz at 50Hz) */
+  @keyframes hyperVibrate {
+    0% { transform: translate3d(0px, 0px, 0) rotate(0deg); }
+    10% { transform: translate3d(-3.5px, 2px, 0) rotate(-1.5deg); }
+    20% { transform: translate3d(3.5px, -2px, 0) rotate(1.5deg); }
+    30% { transform: translate3d(-3px, -2.5px, 0) rotate(-1.2deg); }
+    40% { transform: translate3d(3px, 2.5px, 0) rotate(1.2deg); }
+    50% { transform: translate3d(-4px, 1.5px, 0) rotate(-1.8deg); }
+    60% { transform: translate3d(4px, -1.5px, 0) rotate(1.8deg); }
+    70% { transform: translate3d(-2.5px, 3px, 0) rotate(-1deg); }
+    80% { transform: translate3d(2.5px, -3px, 0) rotate(1.2deg); }
+    90% { transform: translate3d(-3.5px, 1px, 0) rotate(-1.5deg); }
+    100% { transform: translate3d(0px, 0px, 0) rotate(0deg); }
+  }
+
+  .animate-vibrate-hyper {
+    animation: hyperVibrate 0.02s linear infinite !important;
+    will-change: transform;
+  }
+
   /* High-Speed Vibration Cycle: 2s rapid buzz + 5s calm rest = 7s continuous loop */
   @keyframes highSpeedVibrate {
     0% { transform: translate(0px, 0px) rotate(0deg); }
