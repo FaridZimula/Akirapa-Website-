@@ -27,6 +27,10 @@ const Navbar = () => {
               <span>209 Burlington Road, Bedford, MA</span>
             </div>
             <div className="flex items-center gap-2 shrink-0">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#40ddd3]"></span>
+              </span>
               <i className="fa-solid fa-phone text-[#40ddd3]"></i>
               <span className="font-bold text-[#40ddd3]">24/7 Helpline: 339 970 1214</span>
               <span className="text-white/70">/ 781 472 9375</span>
@@ -37,7 +41,7 @@ const Navbar = () => {
               <i className="fa-solid fa-envelope text-[#40ddd3]"></i>
               <span>info@akirapahomecareus.com</span>
             </div>
-            <div className="flex items-center gap-1.5 bg-[#40ddd3] text-white px-2.5 py-0.5 rounded-full font-semibold shrink-0 shadow-sm">
+            <div className="flex items-center gap-1.5 bg-[#40ddd3] text-white px-2.5 py-0.5 rounded-full font-semibold shrink-0 shadow-sm animate-pulse">
               <i className="fa-solid fa-clock text-xs text-white"></i>
               <span>Care Your Way</span>
             </div>
@@ -46,15 +50,15 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+      <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-shadow duration-300">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24 sm:h-28">
             {/* Brand Logo */}
-            <Link to="/" className="flex items-center py-2 shrink-0 pr-4">
+            <Link to="/" className="flex items-center py-2 shrink-0 pr-4 group">
               <img
                 src="/akirapa-logo.png"
                 alt="Akirapa Home Care"
-                className="h-16 sm:h-20 w-auto max-w-[200px] sm:max-w-[240px] object-contain transition-transform duration-300 hover:scale-105"
+                className="h-16 sm:h-20 w-auto max-w-[200px] sm:max-w-[240px] object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
@@ -64,10 +68,10 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-3 xl:px-4 py-2 rounded-lg text-sm xl:text-base font-semibold transition-all duration-200 ${
+                  className={`px-3 xl:px-4 py-2 rounded-lg text-sm xl:text-base font-semibold transition-all duration-300 ease-out ${
                     location.pathname === link.path
-                      ? "bg-[#76248a] text-white shadow-sm"
-                      : "text-gray-700 hover:text-[#76248a] hover:bg-[#40ddd3]/15 hover:scale-[1.02]"
+                      ? "bg-[#76248a] text-white shadow-md scale-105"
+                      : "text-gray-700 hover:text-[#76248a] hover:bg-[#76248a]/10 hover:scale-105 active:scale-95"
                   }`}
                 >
                   {link.name}
@@ -77,10 +81,10 @@ const Navbar = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-2.5">
-              <Button variant="outline" asChild className="border-[#76248a] text-[#76248a] hover:bg-[#76248a] hover:text-white font-semibold transition-all hover:scale-105">
+              <Button variant="outline" asChild className="border-[#76248a] text-[#76248a] hover:bg-[#76248a] hover:text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md active:scale-95">
                 <Link to="/services">Get a Quote</Link>
               </Button>
-              <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-bold shadow-md button-shimmer hover:scale-105 transition-all">
+              <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-bold shadow-md button-shimmer hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95">
                 <Link to="/contact">Free Assessment</Link>
               </Button>
             </div>
@@ -88,26 +92,26 @@ const Navbar = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100"
+              className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-transform active:scale-90"
             >
               {isOpen ? (
-                <i className="fa-solid fa-xmark text-2xl"></i>
+                <i className="fa-solid fa-xmark text-2xl transition-transform rotate-90 duration-300"></i>
               ) : (
-                <i className="fa-solid fa-bars text-2xl"></i>
+                <i className="fa-solid fa-bars text-2xl transition-transform duration-300"></i>
               )}
             </button>
           </div>
 
           {/* Mobile Navigation Drawer */}
           {isOpen && (
-            <div className="lg:hidden py-4 border-t border-gray-100 animate-fade-in bg-white">
+            <div className="lg:hidden py-4 border-t border-gray-100 animate-tab-slide bg-white">
               <div className="flex flex-col gap-2">
                 {navLinks.map((link) => (
                   <Link
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                    className={`px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
                       location.pathname === link.path
                         ? "bg-[#76248a] text-white"
                         : "text-gray-700 hover:text-[#76248a] hover:bg-[#40ddd3]/10"
@@ -127,12 +131,12 @@ const Navbar = () => {
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3 px-4 pt-2">
-                  <Button variant="outline" asChild className="w-full border-[#76248a] text-[#76248a]">
+                  <Button variant="outline" asChild className="w-full border-[#76248a] text-[#76248a] transition-transform active:scale-95">
                     <Link to="/services" onClick={() => setIsOpen(false)}>
                       Get a Quote
                     </Link>
                   </Button>
-                  <Button asChild className="w-full bg-[#76248a] text-white">
+                  <Button asChild className="w-full bg-[#76248a] text-white transition-transform active:scale-95">
                     <Link to="/contact" onClick={() => setIsOpen(false)}>
                       Free Consultation
                     </Link>

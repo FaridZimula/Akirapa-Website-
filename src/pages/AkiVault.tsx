@@ -375,15 +375,17 @@ export default function AkiVault() {
             {technologyPillars.map((pillar, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                className="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg card-hover-pro card-shine group relative overflow-hidden"
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-white flex items-center justify-center mb-6 shadow-md group-hover:bg-[#40ddd3] group-hover:text-gray-950 transition-colors">
+                <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-white flex items-center justify-center mb-6 shadow-md group-hover:bg-[#40ddd3] group-hover:text-gray-950 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                   <i className={`fa-solid ${pillar.icon} text-2xl`}></i>
                 </div>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#76248a] bg-[#76248a]/10 px-2.5 py-1 rounded-full">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#76248a] bg-[#76248a]/10 px-2.5 py-1 rounded-full transition-colors group-hover:bg-[#76248a] group-hover:text-white">
                   {pillar.badge}
                 </span>
-                <h3 className="text-xl font-bold text-gray-900 mt-3 mb-2">{pillar.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mt-3 mb-2 group-hover:text-[#76248a] transition-colors">{pillar.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{pillar.description}</p>
               </div>
             ))}
@@ -410,10 +412,10 @@ export default function AkiVault() {
           <div className="flex justify-center gap-3 mb-10">
             <button
               onClick={() => { setActiveRoleTab("family"); setActiveSectionNav("family"); }}
-              className={`px-6 py-3 rounded-2xl font-bold text-sm sm:text-base transition-all flex items-center gap-2 ${
+              className={`px-6 py-3 rounded-2xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center gap-2 cursor-pointer ${
                 activeRoleTab === "family"
-                  ? "bg-[#76248a] text-white shadow-lg"
-                  : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
+                  ? "bg-[#76248a] text-white shadow-xl scale-105"
+                  : "bg-white text-gray-700 hover:bg-[#76248a]/10 hover:text-[#76248a] hover:scale-105 active:scale-95 border border-gray-200"
               }`}
             >
               <i className="fa-solid fa-house-medical"></i>
@@ -421,10 +423,10 @@ export default function AkiVault() {
             </button>
             <button
               onClick={() => { setActiveRoleTab("caregiver"); setActiveSectionNav("caregivers"); }}
-              className={`px-6 py-3 rounded-2xl font-bold text-sm sm:text-base transition-all flex items-center gap-2 ${
+              className={`px-6 py-3 rounded-2xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center gap-2 cursor-pointer ${
                 activeRoleTab === "caregiver"
-                  ? "bg-[#76248a] text-white shadow-lg"
-                  : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
+                  ? "bg-[#76248a] text-white shadow-xl scale-105"
+                  : "bg-white text-gray-700 hover:bg-[#76248a]/10 hover:text-[#76248a] hover:scale-105 active:scale-95 border border-gray-200"
               }`}
             >
               <i className="fa-solid fa-user-nurse"></i>
@@ -432,10 +434,10 @@ export default function AkiVault() {
             </button>
             <button
               onClick={() => { setActiveRoleTab("coordinator"); setActiveSectionNav("coordinators"); }}
-              className={`px-6 py-3 rounded-2xl font-bold text-sm sm:text-base transition-all flex items-center gap-2 ${
+              className={`px-6 py-3 rounded-2xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center gap-2 cursor-pointer ${
                 activeRoleTab === "coordinator"
-                  ? "bg-[#76248a] text-white shadow-lg"
-                  : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
+                  ? "bg-[#76248a] text-white shadow-xl scale-105"
+                  : "bg-white text-gray-700 hover:bg-[#76248a]/10 hover:text-[#76248a] hover:scale-105 active:scale-95 border border-gray-200"
               }`}
             >
               <i className="fa-solid fa-clipboard-user"></i>
@@ -444,7 +446,7 @@ export default function AkiVault() {
           </div>
 
           {/* Role Content Card */}
-          <div id="family" className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-200/80 max-w-4xl mx-auto">
+          <div id="family" className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-200/80 max-w-4xl mx-auto card-hover-pro card-shine animate-tab-slide">
             {activeRoleTab === "family" && (
               <div className="space-y-6 animate-fade-in">
                 <div className="flex items-center gap-3">

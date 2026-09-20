@@ -291,4 +291,143 @@
     transform: translateY(-2px);
     box-shadow: 0 10px 25px -5px rgba(118, 36, 138, 0.4);
   }
+
+  /* Legendary Professional Animation Suite */
+  
+  /* 1. Words & Typography Animations */
+  @keyframes textShimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-text-shimmer {
+    background: linear-gradient(90deg, #76248a 0%, #a43bbd 25%, #40ddd3 50%, #a43bbd 75%, #76248a 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 6s ease-in-out infinite;
+  }
+
+  @keyframes wordFadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(16px);
+      filter: blur(4px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .animate-word-fade {
+    animation: wordFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* 2. Rectangles & Cards (Hover Lift, Glow, Gloss Reflection) */
+  .card-hover-pro {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease;
+    will-change: transform, box-shadow;
+  }
+
+  .card-hover-pro:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px -8px rgba(118, 36, 138, 0.16),
+                0 6px 12px -4px rgba(64, 221, 211, 0.12);
+    border-color: rgba(118, 36, 138, 0.25);
+  }
+
+  .card-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.15) 50%,
+      transparent 100%
+    );
+    transform: skewX(-20deg);
+    transition: left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .card-shine:hover::before {
+    left: 150%;
+  }
+
+  /* 3. Tabs Smooth Fluid Slide & Reveal */
+  @keyframes tabSlide {
+    0% {
+      opacity: 0;
+      transform: translateY(10px) scale(0.985);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-tab-slide {
+    animation: tabSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* 4. Live Beacon / Radar Ripple Effect */
+  @keyframes radarRipple {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(64, 221, 211, 0.7);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(64, 221, 211, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(64, 221, 211, 0);
+    }
+  }
+
+  .pulse-radar {
+    animation: radarRipple 2.2s infinite cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  /* 5. Smooth Icon Micro-Interactions inside Cards */
+  .icon-bounce-hover {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .group:hover .icon-bounce-hover {
+    transform: scale(1.15) rotate(6deg);
+  }
+
+  /* Respect User Reduced Motion Preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
+

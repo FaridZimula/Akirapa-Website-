@@ -68,12 +68,12 @@ export const CareQuoteCalculator: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#76248a] rounded-3xl p-8 md:p-12 lg:p-14 shadow-2xl text-white relative overflow-hidden border border-white/20">
+    <div className="bg-[#76248a] rounded-3xl p-8 md:p-12 lg:p-14 shadow-2xl text-white relative overflow-hidden border border-white/20 card-hover-pro card-shine">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
         
         {/* Left Column - Heading & Call to Action text */}
         <div className="lg:col-span-5 space-y-6 text-left">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight animate-word-fade">
             Quote calculator
           </h2>
           
@@ -87,8 +87,8 @@ export const CareQuoteCalculator: React.FC = () => {
 
           {/* Real-time Estimated Badge */}
           {duration && (
-            <div className="pt-2">
-              <div className="bg-[#40ddd3]/15 border border-[#40ddd3]/40 rounded-2xl p-4 inline-block">
+            <div className="pt-2 animate-tab-slide">
+              <div className="bg-[#40ddd3]/20 border border-[#40ddd3]/60 rounded-2xl p-4 inline-block shadow-lg transition-all duration-300">
                 <span className="text-xs uppercase font-extrabold text-[#40ddd3] block">Estimated Care Rate</span>
                 <span className="text-2xl font-black text-white">${estimatedWeekly.toLocaleString()} <span className="text-xs font-normal text-white/80">/ week</span></span>
                 <span className="text-xs text-[#40ddd3] block mt-0.5">(~${estimatedMonthly.toLocaleString()}/mo)</span>
@@ -107,7 +107,7 @@ export const CareQuoteCalculator: React.FC = () => {
                 <select
                   value={supportTime}
                   onChange={(e) => setSupportTime(e.target.value)}
-                  className="w-full h-14 px-5 pr-10 rounded-xl bg-white text-gray-800 font-semibold text-sm shadow-sm appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#40ddd3]"
+                  className="w-full h-14 px-5 pr-10 rounded-xl bg-white text-gray-800 font-semibold text-sm shadow-sm appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#40ddd3] transition-all duration-300 hover:border-[#40ddd3]"
                 >
                   <option value="" disabled>when would you like our support?</option>
                   <option value="As soon as possible">As soon as possible</option>
@@ -125,7 +125,7 @@ export const CareQuoteCalculator: React.FC = () => {
                 <select
                   value={arrivalTime}
                   onChange={(e) => setArrivalTime(e.target.value)}
-                  className="w-full h-14 px-5 pr-10 rounded-xl bg-white text-gray-800 font-semibold text-sm shadow-sm appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#40ddd3]"
+                  className="w-full h-14 px-5 pr-10 rounded-xl bg-white text-gray-800 font-semibold text-sm shadow-sm appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#40ddd3] transition-all duration-300 hover:border-[#40ddd3]"
                 >
                   <option value="" disabled>when would you like us to arrive?</option>
                   <option value="Morning (8:00 AM - 12:00 PM)">Morning (8:00 AM - 12:00 PM)</option>
@@ -138,35 +138,36 @@ export const CareQuoteCalculator: React.FC = () => {
                 </div>
               </div>
 
-              {/* Field 3: Duration (Cyan highlighted field as in screenshot) */}
+              {/* Field 3: Care Duration */}
               <div className="relative">
                 <select
                   value={duration}
                   onChange={(e) => setDuration(e.target.value)}
-                  className="w-full h-14 px-5 pr-10 rounded-xl bg-[#40ddd3] text-gray-900 font-bold text-sm shadow-sm appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-white"
+                  className="w-full h-14 px-5 pr-10 rounded-xl bg-white text-gray-800 font-semibold text-sm shadow-sm appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#40ddd3] transition-all duration-300 hover:border-[#40ddd3]"
                 >
-                  <option value="" disabled className="bg-white text-gray-800">how long should we stay?</option>
-                  <option value="3 to 4 hours per visit" className="bg-white text-gray-800">3 to 4 hours per visit</option>
-                  <option value="5 to 8 hours per visit" className="bg-white text-gray-800">5 to 8 hours per visit</option>
-                  <option value="9 to 12 hours per visit" className="bg-white text-gray-800">9 to 12 hours per visit</option>
-                  <option value="24 Hours / Live-in Care" className="bg-white text-gray-800">24 Hours / Live-in Care</option>
+                  <option value="" disabled>how long would you like our visit to be?</option>
+                  <option value="3 to 4 Hours">3 to 4 Hours / day</option>
+                  <option value="5 to 8 Hours">5 to 8 Hours / day</option>
+                  <option value="9 to 12 Hours">9 to 12 Hours / day</option>
+                  <option value="24 Hours / Live-in Care">24 Hours / Live-in Care</option>
                 </select>
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-900">
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-700">
                   <i className="fa-solid fa-chevron-down text-sm"></i>
                 </div>
               </div>
 
-              {/* Field 4: Location */}
+              {/* Field 4: Location Selection */}
               <div className="relative">
                 <select
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="w-full h-14 px-5 pr-10 rounded-xl bg-white text-gray-800 font-semibold text-sm shadow-sm appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#40ddd3]"
+                  className="w-full h-14 px-5 pr-10 rounded-xl bg-white text-gray-800 font-semibold text-sm shadow-sm appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#40ddd3] transition-all duration-300 hover:border-[#40ddd3]"
                 >
-                  <option value="" disabled>where are you located?</option>
+                  <option value="" disabled>location of required care</option>
                   <option value="Bedford, MA">Bedford, MA</option>
-                  <option value="Woburn, MA">Woburn, MA</option>
+                  <option value="Burlington, MA">Burlington, MA</option>
                   <option value="Lexington, MA">Lexington, MA</option>
+                  <option value="Concord, MA">Concord, MA</option>
                   <option value="Billerica, MA">Billerica, MA</option>
                   <option value="Waltham, MA">Waltham, MA</option>
                   <option value="Other MA Location">Other MA Location</option>
@@ -183,7 +184,7 @@ export const CareQuoteCalculator: React.FC = () => {
                   placeholder="your phone number if you'd like us to call"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full h-14 px-5 rounded-xl bg-white text-gray-800 font-semibold text-sm shadow-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#40ddd3]"
+                  className="w-full h-14 px-5 rounded-xl bg-white text-gray-800 font-semibold text-sm shadow-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#40ddd3] transition-all duration-300 hover:border-[#40ddd3]"
                 />
               </div>
 
@@ -191,7 +192,7 @@ export const CareQuoteCalculator: React.FC = () => {
               <div>
                 <button
                   type="submit"
-                  className="w-full h-14 bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold tracking-wider uppercase text-base rounded-xl shadow-md transition-all hover:scale-[1.02] flex items-center justify-center"
+                  className="w-full h-14 bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-black tracking-wider uppercase text-base rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] button-shimmer flex items-center justify-center cursor-pointer"
                 >
                   SUBMIT
                 </button>
