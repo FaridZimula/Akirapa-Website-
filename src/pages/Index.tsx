@@ -171,11 +171,11 @@ const Index = () => {
         path="/"
       />
 
-      {/* Enhanced Hero Section with Vivid Background Landscape & Frosted Text Card for Superb Visibility */}
+      {/* Enhanced Hero Section with Seamless Photographic Gradient Blend */}
       <section
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gray-950 text-gray-900 overflow-hidden border-b border-gray-100 min-h-[560px] md:min-h-[620px] flex items-center"
+        className="relative pt-24 pb-20 sm:pt-28 sm:pb-24 md:pt-32 md:pb-28 lg:pt-36 lg:pb-32 bg-white text-gray-900 overflow-hidden border-b border-gray-100 min-h-[580px] md:min-h-[660px] flex items-center"
       >
         {/* Animated Background Landscape Images with Smooth Zoom Effect */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -184,7 +184,7 @@ const Index = () => {
               key={item.id}
               src={item.bgImage}
               alt="Hero Caregiver Background"
-              className={`absolute inset-0 w-full h-full object-cover object-center md:object-right transition-all duration-1000 ease-in-out transform ${
+              className={`absolute inset-0 w-full h-full object-cover object-[70%_center] md:object-right transition-all duration-1000 ease-in-out transform ${
                 index === currentSlide
                   ? "opacity-100 scale-100 z-0"
                   : "opacity-0 scale-105 -z-10"
@@ -192,13 +192,16 @@ const Index = () => {
             />
           ))}
 
-          {/* Balanced gradient: smooth left-side backing for crisp text while keeping the right 60% of the image vividly visible */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-r from-white/95 via-white/80 via-45% to-white/10 lg:to-transparent pointer-events-none" />
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-white/90 via-transparent to-transparent sm:hidden pointer-events-none" />
+          {/* Seamless directional gradient: crisp white backing on the left where typography sits, gently feathering into the natural image on the right */}
+          <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-white via-white/95 via-35% md:via-white/90 md:via-48% lg:via-white/85 lg:via-52% to-transparent" />
+          {/* Subtle mobile overlay for crystal-clear readability on small portrait screens */}
+          <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-white/95 via-white/85 to-white/40 md:hidden" />
+          {/* Smooth bottom feathering to naturally transition into the helpline banner below */}
+          <div className="absolute bottom-0 inset-x-0 h-24 z-10 pointer-events-none bg-gradient-to-t from-white via-white/60 to-transparent" />
         </div>
 
         {/* Slide Indicators */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+        <div className="absolute bottom-20 sm:bottom-22 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
           {heroSlides.map((_, index) => (
             <button
               key={index}
@@ -207,49 +210,49 @@ const Index = () => {
               className={`h-2.5 rounded-full transition-all duration-500 ${
                 index === currentSlide
                   ? "w-8 bg-[#76248a]"
-                  : "w-2.5 bg-gray-400 hover:bg-[#76248a]/70"
+                  : "w-2.5 bg-gray-400/80 hover:bg-[#76248a]/70"
               }`}
             />
           ))}
         </div>
 
-        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-20">
-          <div className="max-w-2xl lg:max-w-3xl space-y-6 text-left pl-1 sm:pl-2 bg-white/75 backdrop-blur-md p-6 sm:p-10 rounded-3xl border border-white/60 shadow-xl">
+        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+          <div className="max-w-2xl lg:max-w-3xl space-y-6 text-left">
             <div key={slide.id} className="space-y-4 transition-all duration-700 ease-in-out animate-fadeIn">
-              <div className="inline-flex items-center gap-2 bg-[#76248a]/10 text-[#76248a] font-extrabold text-xs uppercase px-3 py-1 rounded-full">
-                <i className="fa-solid fa-star text-[#40ddd3]"></i>
-                <span>Premier Concierge Home Care</span>
+              <div className="inline-flex items-center gap-2.5 bg-purple-50/90 border border-[#76248a]/20 text-[#76248a] font-extrabold text-xs uppercase px-3.5 py-1.5 rounded-full shadow-sm backdrop-blur-sm">
+                <i className="fa-solid fa-star text-[#0d9488]"></i>
+                <span className="tracking-wide">Premier Concierge Home Care</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.2] text-left">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.18] text-left">
                 {slide.title}
               </h1>
 
-              <p className="text-base sm:text-lg text-gray-800 font-semibold leading-relaxed max-w-2xl text-left">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-700 font-medium leading-relaxed max-w-2xl text-left">
                 {slide.subtitle}
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start items-stretch sm:items-center pt-4">
-              <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold text-base h-14 px-8 rounded-xl shadow-lg border-none transition-all hover:scale-105 button-shimmer">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-start items-stretch sm:items-center pt-2">
+              <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold text-base h-14 px-8 rounded-xl shadow-lg shadow-[#40ddd3]/20 border-none transition-all hover:scale-105 button-shimmer">
                 <Link to="/contact">Explore Concierge Private Care</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="bg-white hover:bg-gray-50 border-2 border-[#76248a] text-[#76248a] font-bold text-base h-14 px-8 rounded-xl shadow-md hover:scale-105 transition-all">
+              <Button asChild variant="outline" size="lg" className="bg-white/90 hover:bg-white border-2 border-[#76248a] text-[#76248a] font-bold text-base h-14 px-8 rounded-xl shadow-sm hover:shadow-md hover:scale-105 transition-all backdrop-blur-sm">
                 <Link to="/services">View Care Services</Link>
               </Button>
             </div>
 
-            <div className="pt-6 border-t border-gray-300/70 flex flex-wrap justify-start gap-6 text-xs sm:text-sm font-bold text-gray-700">
+            <div className="pt-6 border-t border-gray-300/70 flex flex-wrap justify-start gap-5 sm:gap-7 text-xs sm:text-sm font-bold text-gray-700">
               <div className="flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-[#40ddd3] text-base"></i>
+                <i className="fa-solid fa-circle-check text-[#0d9488] text-base"></i>
                 <span>Licensed Caregivers</span>
               </div>
               <div className="flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-[#40ddd3] text-base"></i>
+                <i className="fa-solid fa-circle-check text-[#0d9488] text-base"></i>
                 <span>24/7 Premium Support</span>
               </div>
               <div className="flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-[#40ddd3] text-base"></i>
+                <i className="fa-solid fa-circle-check text-[#0d9488] text-base"></i>
                 <span>Bedford & Greater Boston</span>
               </div>
             </div>
