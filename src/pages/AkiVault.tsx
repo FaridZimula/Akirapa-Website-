@@ -149,7 +149,11 @@ export default function AkiVault() {
       <div
         ref={navCardRef}
 <<<<<<< HEAD
+<<<<<<< HEAD
         className="fixed z-50 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl"
+=======
+        className="fixed z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/30 bg-white shadow-2xl animate-pulse-glow transition-shadow duration-300"
+>>>>>>> parent of 751d603 (AkiVault Navigation guide)
 =======
         className="fixed z-50 w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-[#76248a]/30 bg-white shadow-2xl animate-pulse-glow transition-shadow duration-300"
 >>>>>>> parent of 751d603 (AkiVault Navigation guide)
