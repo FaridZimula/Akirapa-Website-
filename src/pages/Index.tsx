@@ -278,7 +278,7 @@ const Index = () => {
               </div>
               <div className="flex items-center gap-2 group transition-transform duration-200 hover:translate-x-1">
                 <i className="fa-solid fa-circle-check text-[#0d9488] text-base group-hover:scale-125 transition-transform"></i>
-                <span>Bedford & Greater Boston</span>
+                <span>Burlington & Greater Boston</span>
               </div>
             </div>
           </div>
@@ -305,7 +305,7 @@ const Index = () => {
                   <h3 className="text-xl sm:text-2xl font-black text-gray-900 group-hover:text-[#76248a] transition-colors">Need Care Right Away?</h3>
                 </div>
                 <p className="text-gray-600 text-sm">
-                  Speak directly with our senior care coordinator in Bedford, MA.
+                  Speak directly with our senior care coordinator in Burlington, MA.
                 </p>
               </div>
             </div>
@@ -515,7 +515,7 @@ const Index = () => {
             Ready to Begin Your Home Care Journey?
           </h2>
           <p className="text-white/90 text-lg sm:text-xl max-w-2xl mx-auto font-medium">
-            Call our 24/7 helpline today or request a free, contract-free in-home assessment in Bedford, MA.
+            Call our 24/7 helpline today or request a free, contract-free in-home assessment in Burlington, MA.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <a
@@ -655,7 +655,7 @@ const Index = () => {
                   Stories of Care & Trust
                 </h2>
                 <p className="text-gray-600 text-sm sm:text-base">
-                  Real feedback from family members across Bedford, Burlington, Lexington, and surrounding Massachusetts communities.
+                  Real feedback from family members across Burlington, Bedford, Lexington, and surrounding Massachusetts communities.
                 </p>
               </div>
 
@@ -718,7 +718,7 @@ const Index = () => {
                         <Label htmlFor="reviewLocation" className="text-white text-xs font-bold">Location</Label>
                         <Input
                           id="reviewLocation"
-                          placeholder="e.g. Bedford, MA"
+                          placeholder="e.g. Burlington, MA"
                           value={reviewLocation}
                           onChange={(e) => setReviewLocation(e.target.value)}
                           required

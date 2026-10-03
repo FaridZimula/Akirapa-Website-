@@ -150,7 +150,7 @@ Essential dietary guidelines:
     id: "post-8",
     slug: "navigating-massachusetts-senior-care-options",
     title: "Navigating Senior Care Options in Massachusetts: A Family Guide",
-    excerpt: "Understand private-duty home care, Medicaid waivers, and community resources available across Bedford, Middlesex County, and Greater Boston.",
+    excerpt: "Understand private-duty home care, Medicaid waivers, and community resources available across Burlington, Middlesex County, and Greater Boston.",
     content: `Massachusetts families have numerous care options, but navigating eligibility and services can feel overwhelming without clear guidance.
 
 Key care models explained:

@@ -41,7 +41,7 @@ const localBusinessSchema = {
     ],
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "83 Cambridge Street",
+        "streetAddress": "281 Cambridge Street",
         "addressLocality": "Burlington",
         "addressRegion": "MA",
         "postalCode": "01803",
@@ -75,8 +75,10 @@ const localBusinessSchema = {
         }
     ],
     "sameAs": [
-        "https://www.facebook.com/akirapahomecare",
-        "https://www.google.com/maps?q=83+Cambridge+Street+Burlington+MA+01803"
+        "https://www.facebook.com/profile.php?id=61593927368567",
+        "https://www.instagram.com/akirapahomecare/",
+        "https://x.com/akirapahomecare",
+        "https://www.google.com/maps?q=281+Cambridge+Street+Burlington+MA+01803"
     ],
     "hasOfferCatalog": {
         "@type": "OfferCatalog",

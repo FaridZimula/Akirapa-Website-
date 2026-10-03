@@ -60,8 +60,8 @@ const Projects = () => {
   return (
     <Layout>
       <SEO
-        title="Our Care Services | Akirapa Home Care Bedford MA"
-        description="Explore 15 in-home care services by Akirapa Home Care: Hourly care, 24/7 daily care, hospital-to-home recovery, respite care, and specialized Alzheimer's support in Bedford, MA."
+        title="Our Care Services | Akirapa Home Care Burlington MA"
+        description="Explore 15 in-home care services by Akirapa Home Care: Hourly care, 24/7 daily care, hospital-to-home recovery, respite care, and specialized Alzheimer's support in Burlington, MA."
         path="/services"
         schemaExtra={[breadcrumbSchema]}
       />
@@ -83,7 +83,7 @@ const Projects = () => {
             In-Home Care Services Designed for You
           </h1>
           <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium animate-word-fade [animation-delay:150ms]">
-            From flexible hourly visits to 24/7 around-the-clock specialized care, we come to your convenient location in Bedford, MA and surrounding Middlesex County.
+            From flexible hourly visits to 24/7 around-the-clock specialized care, we come to your convenient location in Burlington, MA and surrounding Middlesex County.
           </p>
         </div>
       </section>
@@ -273,7 +273,7 @@ const Projects = () => {
             Have Questions About Senior Care Coverage?
           </h3>
           <p className="text-white/90 text-base sm:text-lg max-w-xl mx-auto font-medium">
-            Our Bedford care managers are ready to walk you through options, schedule assessments, and answer questions 24/7.
+            Our Burlington care managers are ready to walk you through options, schedule assessments, and answer questions 24/7.
           </p>
           <div className="pt-2">
             <a

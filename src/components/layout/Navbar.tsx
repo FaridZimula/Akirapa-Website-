@@ -24,7 +24,7 @@ const Navbar = () => {
           <div className="flex items-center gap-6 flex-nowrap">
             <div className="flex items-center gap-2 shrink-0">
               <i className="fa-solid fa-location-dot text-[#40ddd3]"></i>
-              <span>209 Burlington Road, Bedford, MA</span>
+              <span>281 Cambridge Street, Burlington, MA 01803</span>
             </div>
             <div className="flex items-center gap-2 shrink-0">
               <span className="relative flex h-2.5 w-2.5">

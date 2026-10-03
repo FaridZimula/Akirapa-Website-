@@ -561,7 +561,7 @@ export default function AkiVault() {
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold">Ready for Better, Safer In-Home Care?</h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto font-medium">
-            Contact our Bedford, MA senior care team to learn how the Akirapa Home Care System provides unparalleled peace of mind.
+            Contact our Burlington, MA senior care team to learn how the Akirapa Home Care System provides unparalleled peace of mind.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#561868] font-extrabold text-base h-14 px-8 rounded-2xl shadow-xl border-none">

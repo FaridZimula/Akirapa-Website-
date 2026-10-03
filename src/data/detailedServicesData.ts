@@ -17,9 +17,9 @@ export const detailedServices: DetailedService[] = [
   {
     slug: "companion-care",
     title: "Companion Care Services",
-    tagline: "Heartfelt Social Connection & Daily Living Companionship in Bedford, MA",
+    tagline: "Heartfelt Social Connection & Daily Living Companionship in Burlington, MA",
     shortDescription: "Compassionate, engaging companion care designed to alleviate isolation, foster emotional wellbeing, and assist with daily home routines.",
-    fullDefinition: "Companion care provides non-medical emotional support, social interaction, and practical assistance with light everyday tasks for seniors and adults recovering from illness. At Akirapa Home Care, our companion caregivers offer friendly conversation, cognitive engagement, recreational hobbies, and gentle encouragement to help seniors thrive independently at home in Bedford and surrounding Middlesex County communities.",
+    fullDefinition: "Companion care provides non-medical emotional support, social interaction, and practical assistance with light everyday tasks for seniors and adults recovering from illness. At Akirapa Home Care, our companion caregivers offer friendly conversation, cognitive engagement, recreational hobbies, and gentle encouragement to help seniors thrive independently at home in Burlington and surrounding Middlesex County communities.",
     whoCanBenefit: [
       "Seniors living alone who desire social interaction and friendly companionship",
       "Older adults experiencing mild cognitive slowing or feelings of isolation",
@@ -28,7 +28,7 @@ export const detailedServices: DetailedService[] = [
     ],
     whatIsIncluded: [
       "Engaging conversation, memory sharing, and mental games/puzzles",
-      "Accompaniment on daily neighborhood walks and local outings in Bedford",
+      "Accompaniment on daily neighborhood walks and local outings in Burlington",
       "Assistance with recreational hobbies, reading aloud, and writing letters",
       "Light meal preparation and hydration encouragement",
       "Reminders for daily medication, appointments, and routines",
@@ -45,8 +45,8 @@ export const detailedServices: DetailedService[] = [
         answer: "Companion care focuses on social connection, emotional support, hobbies, and light household help without direct physical contact. Personal care includes hands-on assistance with activities of daily living such as bathing, dressing, grooming, and mobility."
       },
       {
-        question: "Can companion caregivers drive clients to local appointments in Bedford?",
-        answer: "Yes, our caregivers can accompany clients to appointments, grocery stores, and local community activities throughout Bedford and nearby towns."
+        question: "Can companion caregivers drive clients to local appointments in Burlington?",
+        answer: "Yes, our caregivers can accompany clients to appointments, grocery stores, and local community activities throughout Burlington, Bedford, and nearby towns."
       }
     ],
     relatedServiceSlugs: ["personal-care", "homemaker-services", "respite-care", "meal-preparation"],
@@ -56,7 +56,7 @@ export const detailedServices: DetailedService[] = [
   {
     slug: "skilled-nursing",
     title: "Skilled Nursing Services",
-    tagline: "Professional In-Home Clinical & Nursing Oversight in Bedford, MA",
+    tagline: "Professional In-Home Clinical & Nursing Oversight in Burlington, MA",
     shortDescription: "Certified nursing care delivered directly at home, including medication management, wound assessment, and post-clinical monitoring.",
     fullDefinition: "Skilled nursing at home delivers professional clinical assessment, medical treatment administration, and health monitoring under the supervision of licensed nurses. Akirapa Home Care connects families with qualified healthcare professionals to manage complex medical protocols, postoperative recovery, and chronic health condition management in the comfort of home.",
     whoCanBenefit: [
@@ -84,8 +84,8 @@ export const detailedServices: DetailedService[] = [
         answer: "While non-medical home care does not require a prescription, skilled clinical nursing procedures are coordinated in alignment with your physician's treatment plan."
       },
       {
-        question: "Are skilled nursing visits available in Bedford and nearby towns?",
-        answer: "Yes, Akirapa Home Care provides skilled clinical support throughout Bedford, Lexington, Concord, Billerica, Burlington, and neighboring communities."
+        question: "Are skilled nursing visits available in Burlington and nearby towns?",
+        answer: "Yes, Akirapa Home Care provides skilled clinical support throughout Burlington, Bedford, Lexington, Concord, Billerica, and neighboring communities."
       }
     ],
     relatedServiceSlugs: ["post-hospitalization-care", "medication-assistance", "24-hour-home-care"],
@@ -122,7 +122,7 @@ export const detailedServices: DetailedService[] = [
         answer: "Our caregivers provide continuous hands-on personal care, positioning, and family support, while the hospice agency manages clinical medications, medical equipment, and physician visits."
       },
       {
-        question: "Can hospice supportive care be provided 24/7 in Bedford?",
+        question: "Can hospice supportive care be provided 24/7 in Burlington?",
         answer: "Yes, we offer continuous 24-hour shifts so your loved one is never left unattended."
       }
     ],
@@ -133,7 +133,7 @@ export const detailedServices: DetailedService[] = [
   {
     slug: "personal-care",
     title: "Personal Care Services",
-    tagline: "Dignified Assistance with Activities of Daily Living in Bedford, MA",
+    tagline: "Dignified Assistance with Activities of Daily Living in Burlington, MA",
     shortDescription: "Respectful, hands-on personal assistance with bathing, dressing, mobility, grooming, and personal hygiene.",
     fullDefinition: "Personal care encompasses direct hands-on support for individuals who experience physical limitations, mobility challenges, or cognitive changes that impair their ability to perform daily self-care tasks. Akirapa Home Care certified caregivers treat every client with profound respect, ensuring privacy, physical safety, and personal dignity.",
     whoCanBenefit: [
@@ -161,7 +161,7 @@ export const detailedServices: DetailedService[] = [
         answer: "Caregivers utilize non-slip mats, shower chairs, grab bars, and steady two-person stability methods where needed to ensure 100% fall prevention during bathing."
       },
       {
-        question: "Is personal care available on weekends in Bedford?",
+        question: "Is personal care available on weekends in Burlington?",
         answer: "Yes, personal care services are available 7 days a week, 365 days a year."
       }
     ],
@@ -172,7 +172,7 @@ export const detailedServices: DetailedService[] = [
   {
     slug: "dementia-care",
     title: "Dementia Care Services",
-    tagline: "Specialized, Patient Memory Care & Cognitive Support in Bedford, MA",
+    tagline: "Specialized, Patient Memory Care & Cognitive Support in Burlington, MA",
     shortDescription: "Structured, calm, and reassuring in-home care tailored to the unique behavioral and cognitive needs of individuals with dementia.",
     fullDefinition: "Dementia care requires exceptional empathy, specialized communication skills, structured routines, and environmental safety management. Akirapa Home Care provides tailored dementia support that honors the client's past, reduces anxiety, manages wandering or agitation, and maintains cognitive engagement in comfortable surroundings.",
     whoCanBenefit: [
@@ -237,7 +237,7 @@ export const detailedServices: DetailedService[] = [
         answer: "In-home care preserves familiar surroundings, daily personal routines, and beloved memories, which reduces disorientation and emotional distress."
       },
       {
-        question: "How quickly can Alzheimer's care be established in Bedford?",
+        question: "How quickly can Alzheimer's care be established in Burlington?",
         answer: "We can perform a home safety assessment and start care within 24 to 48 hours."
       }
     ],
@@ -248,7 +248,7 @@ export const detailedServices: DetailedService[] = [
   {
     slug: "respite-care",
     title: "Respite Care Services",
-    tagline: "Contract-Free, Flexible Relief Care for Family Caregivers in Bedford, MA",
+    tagline: "Contract-Free, Flexible Relief Care for Family Caregivers in Burlington, MA",
     shortDescription: "Temporary, reliable in-home care giving primary family caregivers essential rest, peace of mind, and time to recharge.",
     fullDefinition: "Family caregiving is an act of deep love, but without periodic rest, it can lead to physical exhaustion and burnout. Respite care from Akirapa Home Care provides short-term, flexible caregiver relief—whether for a few hours, a weekend, or several weeks—ensuring your loved one receives seamless, high-quality care while you restore your own energy.",
     whoCanBenefit: [
@@ -275,7 +275,7 @@ export const detailedServices: DetailedService[] = [
         answer: "No, Akirapa Home Care offers flexible, contract-free respite care schedules tailored to your exact timeline."
       },
       {
-        question: "Can I request respite care on short notice in Bedford?",
+        question: "Can I request respite care on short notice in Burlington?",
         answer: "Yes, we accommodate short-notice requests whenever emergency caregiver coverage is required."
       }
     ],
@@ -286,7 +286,7 @@ export const detailedServices: DetailedService[] = [
   {
     slug: "live-in-care",
     title: "Live-In Care Services",
-    tagline: "Dedicated 24-Hour Residential Caregiver Presence in Bedford, MA",
+    tagline: "Dedicated 24-Hour Residential Caregiver Presence in Burlington, MA",
     shortDescription: "Continuous caregiver residence providing daytime personal care, overnight security, and constant peace of mind.",
     fullDefinition: "Live-in care provides a single primary caregiver (or dedicated pair) who resides in the client's home to provide comprehensive daytime assistance, meal preparation, personal care, and overnight peace of mind. This model offers high continuity of care and cost-efficiency for seniors requiring round-the-clock home presence.",
     whoCanBenefit: [
@@ -353,7 +353,7 @@ export const detailedServices: DetailedService[] = [
         answer: "Yes! In 24-hour shift care, caregivers work rotating awake shifts, ensuring someone is vigilant at all times."
       },
       {
-        question: "Can 24-hour care be established post-hospitalization in Bedford?",
+        question: "Can 24-hour care be established post-hospitalization in Burlington?",
         answer: "Yes, we frequently arrange immediate 24-hour home care for hospital discharges."
       }
     ],
@@ -364,7 +364,7 @@ export const detailedServices: DetailedService[] = [
   {
     slug: "medication-assistance",
     title: "Medication Assistance Services",
-    tagline: "Reliable In-Home Medication Reminders & Management in Bedford, MA",
+    tagline: "Reliable In-Home Medication Reminders & Management in Burlington, MA",
     shortDescription: "Ensuring timely, accurate prescription adherence and health safety oversight to prevent medication errors.",
     fullDefinition: "Managing multiple daily prescriptions, dosage schedules, and pharmacy refills can become overwhelming for aging seniors. Akirapa Home Care provides dependable medication reminders, pill organizer setup oversight, and compliance tracking to prevent missed doses, double dosing, and dangerous drug interactions.",
     whoCanBenefit: [
@@ -442,7 +442,7 @@ export const detailedServices: DetailedService[] = [
   {
     slug: "transportation",
     title: "Senior Transportation & Outing Services",
-    tagline: "Safe, Accompanied Rides to Medical Appointments & Shopping in Bedford",
+    tagline: "Safe, Accompanied Rides to Medical Appointments & Shopping in Burlington",
     shortDescription: "Door-through-door transportation assistance for medical visits, errands, religious services, and social events.",
     fullDefinition: "Losing the ability to drive can restrict a senior's independence and access to essential medical care. Akirapa Home Care provides safe, comfortable, accompanied transportation services. Our caregivers assist clients from inside the home into the vehicle, accompany them throughout their appointment or errand, and ensure safe return indoors.",
     whoCanBenefit: [
@@ -471,7 +471,7 @@ export const detailedServices: DetailedService[] = [
       },
       {
         question: "What areas are covered for senior transportation?",
-        answer: "We cover Bedford, Burlington, Lexington, Concord, Billerica, Woburn, and healthcare facilities throughout Greater Boston."
+        answer: "We cover Burlington, Bedford, Lexington, Concord, Billerica, Woburn, and healthcare facilities throughout Greater Boston."
       }
     ],
     relatedServiceSlugs: ["companion-care", "homemaker-services", "post-hospitalization-care"],
@@ -509,7 +509,7 @@ export const detailedServices: DetailedService[] = [
         answer: "Tasks include vacuuming, dusting, laundry, bed making, dishwashing, trash disposal, and light kitchen/bathroom cleaning."
       },
       {
-        question: "Can homemaker services be scheduled weekly in Bedford?",
+        question: "Can homemaker services be scheduled weekly in Burlington?",
         answer: "Yes, schedules can be set up for weekly, bi-weekly, or daily household visits."
       }
     ],
@@ -559,7 +559,7 @@ export const detailedServices: DetailedService[] = [
   {
     slug: "activities-of-daily-living",
     title: "Activities of Daily Living (ADL) Support",
-    tagline: "Comprehensive In-Home ADL & IADL Assistance in Bedford, MA",
+    tagline: "Comprehensive In-Home ADL & IADL Assistance in Burlington, MA",
     shortDescription: "Full-spectrum assistance with core daily self-care activities and instrumental home management tasks.",
     fullDefinition: "Activities of Daily Living (ADLs) and Instrumental Activities of Daily Living (IADLs) represent the core skills necessary for independent living. Akirapa Home Care provides comprehensive, structured ADL support, helping seniors maintain autonomy while receiving essential physical and operational assistance around the house.",
     whoCanBenefit: [
