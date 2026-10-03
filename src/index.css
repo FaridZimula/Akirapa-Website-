@@ -389,11 +389,97 @@
     animation: textShimmer 6s ease-in-out infinite;
   }
 
+  /* Lengthy and Visible Word Animations (Senior UI Suite) */
+  @keyframes wordRevealLong {
+    0% {
+      opacity: 0;
+      transform: translateY(42px) rotateX(25deg) scale(0.94);
+      filter: blur(8px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotateX(0deg) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  .word-reveal-lengthy {
+    animation: wordRevealLong 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: transform, opacity, filter;
+  }
+
+  @keyframes wordGlideLengthy {
+    0% {
+      opacity: 0;
+      transform: translateX(-24px) translateY(16px);
+      filter: blur(6px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .word-glide-lengthy {
+    animation: wordGlideLengthy 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: transform, opacity, filter;
+  }
+
+  @keyframes textShimmerSlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .word-shimmer-lengthy {
+    background: linear-gradient(110deg, #76248a 0%, #a855f7 25%, #40ddd3 50%, #a855f7 75%, #76248a 100%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmerSlow 7s linear infinite;
+    display: inline-block;
+  }
+
+  .word-shimmer-cyan {
+    background: linear-gradient(110deg, #40ddd3 0%, #ffffff 30%, #40ddd3 60%, #14b8a6 100%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmerSlow 6s linear infinite;
+    display: inline-block;
+  }
+
+  .word-shimmer-light {
+    background: linear-gradient(110deg, #ffffff 0%, #40ddd3 35%, #fdf4ff 70%, #ffffff 100%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmerSlow 8s linear infinite;
+    display: inline-block;
+  }
+
+  .word-interactive {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, text-shadow 0.4s ease;
+  }
+
+  .word-interactive:hover {
+    transform: translateY(-2px) scale(1.04);
+    text-shadow: 0 4px 14px rgba(64, 221, 211, 0.4);
+  }
+
   @keyframes wordFadeUp {
     0% {
       opacity: 0;
-      transform: translateY(16px);
-      filter: blur(4px);
+      transform: translateY(28px);
+      filter: blur(6px);
     }
     100% {
       opacity: 1;
@@ -403,8 +489,22 @@
   }
 
   .animate-word-fade {
-    animation: wordFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: wordFadeUp 1.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
+
+  /* Cascading word animation delay classes */
+  .word-delay-1 { animation-delay: 50ms; }
+  .word-delay-2 { animation-delay: 100ms; }
+  .word-delay-3 { animation-delay: 150ms; }
+  .word-delay-4 { animation-delay: 200ms; }
+  .word-delay-5 { animation-delay: 250ms; }
+  .word-delay-6 { animation-delay: 300ms; }
+  .word-delay-7 { animation-delay: 350ms; }
+  .word-delay-8 { animation-delay: 400ms; }
+  .word-delay-9 { animation-delay: 450ms; }
+  .word-delay-10 { animation-delay: 500ms; }
+  .word-delay-11 { animation-delay: 550ms; }
+  .word-delay-12 { animation-delay: 600ms; }
 
   /* 2. Rectangles & Cards (Hover Lift, Glow, Gloss Reflection) */
   .card-hover-pro {

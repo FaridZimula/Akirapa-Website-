@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useData, JobOpening } from "@/context/DataContext";
+import { AnimatedWords, AnimatedHeadline } from "@/components/ui/animated-words";
 
 interface JobOpening {
   id: string;
@@ -283,12 +284,19 @@ const Careers = () => {
         </div>
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
-          <h1 className="text-4xl sm:text-5xl font-black text-white">
-            Join the Akirapa Home Care Team
-          </h1>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium">
-            Build a rewarding career helping seniors live with dignity, comfort, and independence in Bedford, MA and surrounding communities.
-          </p>
+          <AnimatedHeadline
+            text="Join the Akirapa Home Care Team"
+            as="h1"
+            className="text-4xl sm:text-5xl font-black text-white"
+            highlightWords={["Akirapa", "Team"]}
+          />
+          <AnimatedWords
+            text="Build a rewarding career helping seniors live with dignity, comfort, and independence in Bedford, MA and surrounding communities."
+            as="p"
+            duration={1.25}
+            stagger={0.03}
+            className="text-white/90 text-lg max-w-2xl mx-auto font-medium"
+          />
         </div>
       </section>
 
@@ -297,12 +305,19 @@ const Careers = () => {
         <section className="py-12 bg-white border-b border-gray-100">
           <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-3xl font-extrabold text-[#76248a] tracking-tight">
-                Why Work With Akirapa Home Care?
-              </h2>
-              <p className="text-gray-600 text-sm">
-                We empower our care staff with competitive compensation, flexible schedules, and nurse-led training.
-              </p>
+              <AnimatedHeadline
+                text="Why Work With Akirapa Home Care?"
+                as="h2"
+                className="text-3xl font-extrabold text-[#76248a] tracking-tight"
+                highlightWords={["Work", "Akirapa"]}
+              />
+              <AnimatedWords
+                text="We empower our care staff with competitive compensation, flexible schedules, and nurse-led training."
+                as="p"
+                duration={1.2}
+                stagger={0.03}
+                className="text-gray-600 text-sm"
+              />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

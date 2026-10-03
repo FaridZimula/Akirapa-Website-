@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useData } from "@/context/DataContext";
+import { AnimatedWords, AnimatedHeadline } from "@/components/ui/animated-words";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -137,12 +138,19 @@ const Contact = () => {
         </div>
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
-          <h1 className="text-4xl sm:text-5xl font-black text-white">
-            Contact Akirapa Home Care
-          </h1>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium">
-            Have questions about senior care options or need immediate assistance? We are here to help 24/7.
-          </p>
+          <AnimatedHeadline
+            text="Contact Akirapa Home Care"
+            as="h1"
+            className="text-4xl sm:text-5xl font-black text-white"
+            highlightWords={["Contact", "Akirapa"]}
+          />
+          <AnimatedWords
+            text="Have questions about senior care options or need immediate assistance? We are here to help 24/7."
+            as="p"
+            duration={1.25}
+            stagger={0.03}
+            className="text-white/90 text-lg max-w-2xl mx-auto font-medium"
+          />
         </div>
       </section>
 
@@ -152,9 +160,12 @@ const Contact = () => {
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left: Contact Info Cards */}
             <div className="lg:col-span-6 space-y-6">
-              <h2 className="text-3xl font-black text-gray-900">
-                Bedford, MA Office & 24/7 Helpline
-              </h2>
+              <AnimatedHeadline
+                text="Bedford, MA Office & 24/7 Helpline"
+                as="h2"
+                className="text-3xl font-black text-gray-900"
+                highlightWords={["Bedford", "24/7"]}
+              />
 
               <div className="grid sm:grid-cols-2 gap-4">
                 {/* Address Card */}

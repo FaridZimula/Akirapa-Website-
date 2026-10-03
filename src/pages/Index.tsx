@@ -11,6 +11,7 @@ import { careServices } from "@/data/careServices";
 import { testimonials } from "@/data/testimonials";
 import { leaders } from "@/data/leadership";
 import { CareQuoteCalculator } from "@/components/CareQuoteCalculator";
+import { AnimatedWords, AnimatedHeadline, WordShimmer } from "@/components/ui/animated-words";
 
 const heroSlides = [
   {
@@ -249,13 +250,25 @@ const Index = () => {
                 <span className="tracking-wide">Premier Concierge Home Care</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.18] text-left animate-word-fade">
-                {slide.title}
-              </h1>
+              <AnimatedHeadline
+                key={`hero-title-${slide.id}`}
+                text={slide.title}
+                as="h1"
+                className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.18] text-left"
+                delay={0.1}
+                highlightWords={["AkiVault", "Concierge", "Elite", "Infrastructure", "Secured"]}
+                highlightClassName="text-[#76248a] word-shimmer-lengthy"
+              />
 
-              <p className="text-base sm:text-lg lg:text-xl text-gray-700 font-medium leading-relaxed max-w-2xl text-left animate-word-fade [animation-delay:150ms]">
-                {slide.subtitle}
-              </p>
+              <AnimatedWords
+                key={`hero-sub-${slide.id}`}
+                text={slide.subtitle}
+                as="p"
+                duration={1.25}
+                stagger={0.035}
+                delay={0.25}
+                className="text-base sm:text-lg lg:text-xl text-gray-700 font-medium leading-relaxed max-w-2xl text-left"
+              />
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-start items-stretch sm:items-center pt-2">
@@ -302,11 +315,21 @@ const Index = () => {
                     </span>
                     <span>24/7 Helpline</span>
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-900 group-hover:text-[#76248a] transition-colors">Need Care Right Away?</h3>
+                  <AnimatedWords
+                    text="Need Care Right Away?"
+                    as="h3"
+                    duration={1.2}
+                    stagger={0.06}
+                    className="text-xl sm:text-2xl font-black text-gray-900 group-hover:text-[#76248a] transition-colors"
+                  />
                 </div>
-                <p className="text-gray-600 text-sm">
-                  Speak directly with our senior care coordinator in Bedford, MA.
-                </p>
+                <AnimatedWords
+                  text="Speak directly with our senior care coordinator in Bedford, MA."
+                  as="p"
+                  duration={1.15}
+                  stagger={0.035}
+                  className="text-gray-600 text-sm"
+                />
               </div>
             </div>
 
@@ -337,12 +360,19 @@ const Index = () => {
             <span className="text-[#76248a] font-extrabold text-sm uppercase tracking-wider bg-[#76248a]/10 px-3 py-1 rounded-full inline-block">
               Advanced Technology
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
-              AkiVault Features
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg">
-              Six technological pillars ensuring security, transparency, and clinical excellence in every shift.
-            </p>
+            <AnimatedHeadline
+              text="AkiVault Features"
+              as="h2"
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight"
+              highlightWords={["AkiVault"]}
+            />
+            <AnimatedWords
+              text="Six technological pillars ensuring security, transparency, and clinical excellence in every shift."
+              as="p"
+              duration={1.25}
+              stagger={0.035}
+              className="text-gray-600 text-base sm:text-lg"
+            />
             <div className="pt-4">
               <Button asChild size="lg" className="bg-[#76248a] hover:bg-[#561868] text-white font-bold text-base h-12 px-6 rounded-2xl shadow-md button-shimmer hover:scale-105 active:scale-95 transition-all duration-300">
                 <Link to="/akivault">
@@ -366,8 +396,20 @@ const Index = () => {
                 <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#76248a] bg-[#76248a]/10 px-2.5 py-1 rounded-full transition-colors group-hover:bg-[#76248a] group-hover:text-white">
                   {pillar.badge}
                 </span>
-                <h3 className="text-xl font-bold text-gray-900 mt-3 mb-2 group-hover:text-[#76248a] transition-colors">{pillar.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{pillar.description}</p>
+                <AnimatedWords
+                  text={pillar.title}
+                  as="h3"
+                  duration={1.15}
+                  stagger={0.04}
+                  className="text-xl font-bold text-gray-900 mt-3 mb-2 group-hover:text-[#76248a] transition-colors"
+                />
+                <AnimatedWords
+                  text={pillar.description}
+                  as="p"
+                  duration={1.1}
+                  stagger={0.02}
+                  className="text-gray-600 text-sm leading-relaxed"
+                />
               </div>
             ))}
           </div>
@@ -378,17 +420,24 @@ const Index = () => {
       <section className="py-16 md:py-20 bg-white border-b border-gray-100">
         <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-10">
           {/* Main Headline */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-tight text-left">
-            Would you rather stay at home than go into a health care facility or nursing home?
-          </h2>
+          <AnimatedHeadline
+            text="Would you rather stay at home than go into a health care facility or nursing home?"
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-tight text-left"
+            highlightWords={["stay", "home", "health", "care"]}
+          />
 
           {/* Sub-row with Teal Line and Button */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex items-start gap-4 max-w-2xl">
               <div className="w-16 h-1 bg-[#40ddd3] rounded-full shrink-0 mt-3 hidden sm:block"></div>
-              <p className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed text-left">
-                Akirapa Home Care Inc provides the following home health care programs at flexible schedules and cost-friendly service rates.
-              </p>
+              <AnimatedWords
+                text="Akirapa Home Care Inc provides the following home health care programs at flexible schedules and cost-friendly service rates."
+                as="p"
+                duration={1.25}
+                stagger={0.03}
+                className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed text-left"
+              />
             </div>
 
             <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold uppercase text-sm h-14 px-8 rounded-none shadow-md border-none shrink-0 button-shimmer hover:scale-105 active:scale-95 transition-all duration-300">
@@ -511,12 +560,19 @@ const Index = () => {
         </div>
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10 w-full">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight animate-word-fade">
-            Ready to Begin Your Home Care Journey?
-          </h2>
-          <p className="text-white/90 text-lg sm:text-xl max-w-2xl mx-auto font-medium">
-            Call our 24/7 helpline today or request a free, contract-free in-home assessment in Bedford, MA.
-          </p>
+          <AnimatedHeadline
+            text="Ready to Begin Your Home Care Journey?"
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight"
+            highlightWords={["Home", "Care", "Journey"]}
+          />
+          <AnimatedWords
+            text="Call our 24/7 helpline today or request a free, contract-free in-home assessment in Bedford, MA."
+            as="p"
+            duration={1.25}
+            stagger={0.03}
+            className="text-white/90 text-lg sm:text-xl max-w-2xl mx-auto font-medium"
+          />
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <a
               href="tel:3399701214"
@@ -536,17 +592,24 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-white border-b border-gray-100 overflow-hidden">
         <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-10">
           {/* Section Headline */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-tight text-left">
-            Why choose akirapa home care?
-          </h2>
+          <AnimatedHeadline
+            text="Why choose akirapa home care?"
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-tight text-left"
+            highlightWords={["akirapa", "home", "care"]}
+          />
 
           {/* Sub-row with Teal Accent Line and Button */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex items-start gap-4 max-w-2xl">
               <div className="w-16 h-1 bg-[#40ddd3] rounded-full shrink-0 mt-3 hidden sm:block"></div>
-              <p className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed text-left">
-                We are committed to being your shoulder to lean on and providing honest advice for your loved one's situation during this delicate time.
-              </p>
+              <AnimatedWords
+                text="We are committed to being your shoulder to lean on and providing honest advice for your loved one's situation during this delicate time."
+                as="p"
+                duration={1.25}
+                stagger={0.03}
+                className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed text-left"
+              />
             </div>
 
             <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold uppercase text-sm h-14 px-8 rounded-xl shadow-md border-none shrink-0 button-shimmer hover:scale-105 active:scale-95 transition-all duration-300">
@@ -580,17 +643,24 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-white border-b border-gray-100">
         <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-10">
           {/* Main Headline */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-tight text-left">
-            Our 99% client satisfaction rate is unparalleled in our field.
-          </h2>
+          <AnimatedHeadline
+            text="Our 99% client satisfaction rate is unparalleled in our field."
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-tight text-left"
+            highlightWords={["99%", "satisfaction"]}
+          />
 
           {/* Sub-row with Teal Line and Button */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex items-start gap-4 max-w-2xl">
               <div className="w-16 h-1 bg-[#40ddd3] rounded-full shrink-0 mt-3 hidden sm:block"></div>
-              <p className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed text-left">
-                Read below what our clients have to say and learn more about what makes us the premier provider of in-home senior care.
-              </p>
+              <AnimatedWords
+                text="Read below what our clients have to say and learn more about what makes us the premier provider of in-home senior care."
+                as="p"
+                duration={1.2}
+                stagger={0.03}
+                className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed text-left"
+              />
             </div>
 
             <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold uppercase text-sm h-14 px-8 rounded-xl shadow-md border-none shrink-0 button-shimmer hover:scale-105 active:scale-95 transition-all duration-300">
@@ -613,9 +683,13 @@ const Index = () => {
 
               <div className="space-y-4">
                 <i className="fa-solid fa-quote-left text-3xl sm:text-4xl text-[#40ddd3] transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1"></i>
-                <p className="text-white text-base sm:text-lg font-medium leading-relaxed italic">
-                  "Your help and assistance in caring for my mother has been nothing short of extraordinary. The peace of mind your team provides is priceless."
-                </p>
+                <AnimatedWords
+                  text={'"Your help and assistance in caring for my mother has been nothing short of extraordinary. The peace of mind your team provides is priceless."'}
+                  as="p"
+                  duration={1.35}
+                  stagger={0.035}
+                  className="text-white text-base sm:text-lg font-medium leading-relaxed italic"
+                />
               </div>
             </div>
 
@@ -651,12 +725,19 @@ const Index = () => {
                 <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1 rounded-full inline-block">
                   Verified Family Experiences
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-                  Stories of Care & Trust
-                </h2>
-                <p className="text-gray-600 text-sm sm:text-base">
-                  Real feedback from family members across Bedford, Burlington, Lexington, and surrounding Massachusetts communities.
-                </p>
+                <AnimatedHeadline
+                  text="Stories of Care & Trust"
+                  as="h2"
+                  className="text-3xl sm:text-4xl font-black text-gray-900"
+                  highlightWords={["Care", "Trust"]}
+                />
+                <AnimatedWords
+                  text="Real feedback from family members across Bedford, Burlington, Lexington, and surrounding Massachusetts communities."
+                  as="p"
+                  duration={1.2}
+                  stagger={0.03}
+                  className="text-gray-600 text-sm sm:text-base"
+                />
               </div>
 
               <div className="space-y-4 pt-2">
@@ -667,7 +748,13 @@ const Index = () => {
                         <i key={i} className="fa-solid fa-star text-sm transition-transform duration-200 hover:scale-125"></i>
                       ))}
                     </div>
-                    <p className="text-gray-700 italic text-sm sm:text-base leading-relaxed">"{item.text}"</p>
+                    <AnimatedWords
+                      text={`"${item.text}"`}
+                      as="p"
+                      duration={1.15}
+                      stagger={0.025}
+                      className="text-gray-700 italic text-sm sm:text-base leading-relaxed"
+                    />
                     <div className="text-xs font-bold text-gray-900 flex items-center gap-2">
                       <span className="text-[#76248a]">{item.author}</span>
                       <span className="text-gray-400">•</span>

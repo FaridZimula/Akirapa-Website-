@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
+import { AnimatedWords, AnimatedHeadline } from "@/components/ui/animated-words";
 
 const comparisonData = [
   {
@@ -276,13 +277,20 @@ export default function AkiVault() {
             <span>Proprietary Care Engine</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight max-w-4xl mx-auto mb-6">
-            Inside <span className="text-[#40ddd3]">AkiVault</span>: Why Akirapa Redefines Senior In-Home Care
-          </h1>
+          <AnimatedHeadline
+            text="Inside AkiVault: Why Akirapa Redefines Senior In-Home Care"
+            as="h1"
+            className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight max-w-4xl mx-auto mb-6 text-white"
+            highlightWords={["AkiVault", "Redefines"]}
+          />
 
-          <p className="text-lg sm:text-xl text-gray-200 font-medium max-w-3xl mx-auto leading-relaxed mb-8">
-            Traditional caregiving relies on paper logs and guesswork. Akirapa’s proprietary system combines <span className="text-[#40ddd3] font-bold">GPS Geofencing</span>, <span className="text-[#40ddd3] font-bold">Automated 8-Point Welfare Checks</span>, and <span className="text-[#40ddd3] font-bold">Dedicated Care Pods</span> to guarantee safety and total transparency.
-          </p>
+          <AnimatedWords
+            text="Traditional caregiving relies on paper logs and guesswork. Akirapa’s proprietary system combines GPS Geofencing, Automated 8-Point Welfare Checks, and Dedicated Care Pods to guarantee safety and total transparency."
+            as="p"
+            duration={1.25}
+            stagger={0.025}
+            className="text-lg sm:text-xl text-gray-200 font-medium max-w-3xl mx-auto leading-relaxed mb-8"
+          />
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#561868] font-extrabold text-base h-14 px-8 rounded-2xl shadow-lg border-none">
@@ -322,12 +330,19 @@ export default function AkiVault() {
             <span className="text-[#76248a] font-extrabold text-sm uppercase tracking-wider bg-[#76248a]/10 px-3 py-1 rounded-full">
               Head-to-Head Comparison
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-              Why Akirapa Outperforms Traditional Caregiving Companies
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg">
-              See how our digital care infrastructure eliminates the uncertainties and risks of legacy home care agencies.
-            </p>
+            <AnimatedHeadline
+              text="Why Akirapa Outperforms Traditional Caregiving Companies"
+              as="h2"
+              className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight"
+              highlightWords={["Outperforms", "Caregiving"]}
+            />
+            <AnimatedWords
+              text="See how our digital care infrastructure eliminates the uncertainties and risks of legacy home care agencies."
+              as="p"
+              duration={1.2}
+              stagger={0.03}
+              className="text-gray-600 text-base sm:text-lg"
+            />
           </div>
 
           <div className="bg-white rounded-3xl shadow-xl border border-gray-200/80 overflow-hidden">

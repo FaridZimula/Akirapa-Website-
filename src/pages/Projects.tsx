@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { careServices, CareService } from "@/data/careServices";
 import { detailedServices } from "@/data/detailedServicesData";
 import { CareQuoteCalculator } from "@/components/CareQuoteCalculator";
+import { AnimatedWords, AnimatedHeadline } from "@/components/ui/animated-words";
 
 const visualServices = [
   {
@@ -79,12 +80,19 @@ const Projects = () => {
         </div>
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
-          <h1 className="text-4xl sm:text-5xl font-black text-white animate-word-fade">
-            In-Home Care Services Designed for You
-          </h1>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium animate-word-fade [animation-delay:150ms]">
-            From flexible hourly visits to 24/7 around-the-clock specialized care, we come to your convenient location in Bedford, MA and surrounding Middlesex County.
-          </p>
+          <AnimatedHeadline
+            text="In-Home Care Services Designed for You"
+            as="h1"
+            className="text-4xl sm:text-5xl font-black text-white"
+            highlightWords={["In-Home", "Care", "Services"]}
+          />
+          <AnimatedWords
+            text="From flexible hourly visits to 24/7 around-the-clock specialized care, we come to your convenient location in Bedford, MA and surrounding Middlesex County."
+            as="p"
+            duration={1.25}
+            stagger={0.03}
+            className="text-white/90 text-lg max-w-2xl mx-auto font-medium"
+          />
         </div>
       </section>
 
@@ -164,18 +172,28 @@ const Projects = () => {
                   <i className={`${selectedService.icon} text-2xl`}></i>
                 </div>
                 <div>
-                  <h2 className="text-2xl sm:text-3xl font-black text-gray-900">
-                    {selectedService.title}
-                  </h2>
+                  <AnimatedWords
+                    key={`srv-title-${selectedService.id}`}
+                    text={selectedService.title}
+                    as="h2"
+                    duration={1.15}
+                    stagger={0.04}
+                    className="text-2xl sm:text-3xl font-black text-gray-900"
+                  />
                   <p className="text-[#76248a] font-bold text-xs uppercase tracking-wider">
                     {selectedService.tagline}
                   </p>
                 </div>
               </div>
 
-              <p className="text-gray-700 text-base leading-relaxed">
-                {selectedService.detailedDescription}
-              </p>
+              <AnimatedWords
+                key={`srv-desc-${selectedService.id}`}
+                text={selectedService.detailedDescription}
+                as="p"
+                duration={1.25}
+                stagger={0.02}
+                className="text-gray-700 text-base leading-relaxed"
+              />
 
               <div className="space-y-3 pt-2">
                 <h4 className="font-bold text-gray-900 text-base">Key Program Features:</h4>
@@ -221,12 +239,19 @@ const Projects = () => {
             <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1 rounded-full inline-block">
               Dedicated Service Directory
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-              All 15 Specialized Care Programs
-            </h2>
-            <p className="text-gray-600 text-base">
-              Click into any of our dedicated care programs below to read full service descriptions, eligibility criteria, family considerations, and FAQs.
-            </p>
+            <AnimatedHeadline
+              text="All 15 Specialized Care Programs"
+              as="h2"
+              className="text-3xl sm:text-4xl font-black text-gray-900"
+              highlightWords={["Specialized", "Care"]}
+            />
+            <AnimatedWords
+              text="Click into any of our dedicated care programs below to read full service descriptions, eligibility criteria, family considerations, and FAQs."
+              as="p"
+              duration={1.2}
+              stagger={0.03}
+              className="text-gray-600 text-base"
+            />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
