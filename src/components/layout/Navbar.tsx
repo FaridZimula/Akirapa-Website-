@@ -41,6 +41,42 @@ const Navbar = () => {
               <i className="fa-solid fa-envelope text-[#40ddd3]"></i>
               <span>info@akirapahomecareus.com</span>
             </div>
+            
+            {/* Social Media Links Header */}
+            <div className="flex items-center gap-2 pl-3 border-l border-white/20 shrink-0">
+              <span className="text-[11px] text-white/70">Follow:</span>
+              <a
+                href="https://www.instagram.com/akirapahomecare/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram @akirapahomecare"
+                title="Follow Akirapa on Instagram"
+                className="w-6 h-6 rounded-md bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-300 hover:scale-110"
+              >
+                <i className="fa-brands fa-instagram text-xs"></i>
+              </a>
+              <a
+                href="https://x.com/akirapahomecare"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X @akirapahomecare"
+                title="Follow Akirapa on X"
+                className="w-6 h-6 rounded-md bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-300 hover:scale-110"
+              >
+                <i className="fa-brands fa-x-twitter text-xs"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61593927368567"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook Akirapa Home Care"
+                title="Follow Akirapa on Facebook"
+                className="w-6 h-6 rounded-md bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-300 hover:scale-110"
+              >
+                <i className="fa-brands fa-facebook-f text-xs"></i>
+              </a>
+            </div>
+
             <div className="flex items-center gap-1.5 bg-[#40ddd3] text-white px-2.5 py-0.5 rounded-full font-semibold shrink-0 shadow-sm animate-pulse">
               <i className="fa-solid fa-clock text-xs text-white"></i>
               <span>Care Your Way</span>
@@ -128,6 +164,36 @@ const Navbar = () => {
                   <div className="flex items-center gap-2">
                     <i className="fa-solid fa-envelope text-[#40ddd3]"></i>
                     <span>info@akirapahomecareus.com</span>
+                  </div>
+                  <div className="flex items-center gap-3 pt-2">
+                    <span className="text-xs font-bold text-gray-700">Follow Us:</span>
+                    <a
+                      href="https://www.instagram.com/akirapahomecare/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="w-8 h-8 rounded-lg bg-[#76248a]/10 hover:bg-[#76248a] text-[#76248a] hover:text-white flex items-center justify-center transition-all"
+                    >
+                      <i className="fa-brands fa-instagram text-sm"></i>
+                    </a>
+                    <a
+                      href="https://x.com/akirapahomecare"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="X (Twitter)"
+                      className="w-8 h-8 rounded-lg bg-[#76248a]/10 hover:bg-[#76248a] text-[#76248a] hover:text-white flex items-center justify-center transition-all"
+                    >
+                      <i className="fa-brands fa-x-twitter text-sm"></i>
+                    </a>
+                    <a
+                      href="https://www.facebook.com/profile.php?id=61593927368567"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      className="w-8 h-8 rounded-lg bg-[#76248a]/10 hover:bg-[#76248a] text-[#76248a] hover:text-white flex items-center justify-center transition-all"
+                    >
+                      <i className="fa-brands fa-facebook-f text-sm"></i>
+                    </a>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3 px-4 pt-2">

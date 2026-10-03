@@ -1,5 +1,29 @@
 import { Link } from "react-router-dom";
 
+export const socialMediaLinks = [
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/akirapahomecare/",
+    icon: "fa-brands fa-instagram",
+    hoverClass: "hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white hover:border-transparent",
+    label: "@akirapahomecare on Instagram",
+  },
+  {
+    name: "X (Twitter)",
+    url: "https://x.com/akirapahomecare",
+    icon: "fa-brands fa-x-twitter",
+    hoverClass: "hover:bg-black hover:text-white hover:border-black",
+    label: "@akirapahomecare on X",
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/profile.php?id=61593927368567",
+    icon: "fa-brands fa-facebook-f",
+    hoverClass: "hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2]",
+    label: "Akirapa Home Care on Facebook",
+  },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-[#76248a] text-white pt-16 pb-8 border-t-4 border-[#40ddd3]">
@@ -17,6 +41,28 @@ const Footer = () => {
             <p className="text-white/80 text-base leading-relaxed max-w-sm">
               Providing compassionate, high-quality, and personalized home care services designed around your schedule. Care Your Way.
             </p>
+
+            {/* Social Media Links */}
+            <div className="pt-2 w-full flex flex-col items-center sm:items-start">
+              <span className="text-[11px] uppercase font-extrabold tracking-wider text-[#40ddd3] block mb-2.5">
+                Connect With Us
+              </span>
+              <div className="flex items-center gap-3">
+                {socialMediaLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    title={social.label}
+                    className={`w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-md border border-white/15 ${social.hoverClass}`}
+                  >
+                    <i className={`${social.icon} text-lg`}></i>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -105,6 +151,25 @@ const Footer = () => {
         {/* Bottom Copyright */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70 text-center md:text-left">
           <p>© {new Date().getFullYear()} Akirapa Home Care. All rights reserved.</p>
+          
+          {/* Quick Social Connect Links */}
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-white/60 hidden sm:inline">Follow Us:</span>
+            {socialMediaLinks.map((social) => (
+              <a
+                key={`bottom-${social.name}`}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                title={social.label}
+                className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-300 hover:scale-110"
+              >
+                <i className={`${social.icon} text-sm`}></i>
+              </a>
+            ))}
+          </div>
+
           <div className="flex flex-wrap justify-center items-center gap-6">
             <Link to="/about" className="hover:text-[#40ddd3] transition-colors">Privacy Policy</Link>
             <Link to="/about" className="hover:text-[#40ddd3] transition-colors">Terms of Service</Link>

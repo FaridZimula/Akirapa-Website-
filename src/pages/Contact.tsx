@@ -199,6 +199,51 @@ const Contact = () => {
                   <p className="text-gray-600 text-xs">Office: Mon–Fri (8am - 6pm)</p>
                   <p className="text-[#76248a] font-bold text-xs">Care Services: 24/7 Available</p>
                 </div>
+
+                {/* Social Channels Card */}
+                <div className="sm:col-span-2 bg-gradient-to-r from-purple-50 via-white to-teal-50/50 p-6 rounded-2xl border border-[#76248a]/20 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-[#76248a] text-white flex items-center justify-center shadow-sm shrink-0">
+                      <i className="fa-solid fa-share-nodes text-xl text-[#40ddd3]"></i>
+                    </div>
+                    <div>
+                      <h4 className="font-black text-gray-900 text-base">Connect On Social Media</h4>
+                      <p className="text-gray-600 text-xs">Follow our community updates, caregiver stories, and eldercare tips.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 shrink-0">
+                    <a
+                      href="https://www.instagram.com/akirapahomecare/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      title="Follow Akirapa on Instagram"
+                      className="w-10 h-10 rounded-xl bg-white hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] text-[#76248a] hover:text-white flex items-center justify-center transition-all shadow-sm border border-gray-200 hover:scale-110"
+                    >
+                      <i className="fa-brands fa-instagram text-lg"></i>
+                    </a>
+                    <a
+                      href="https://x.com/akirapahomecare"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="X (Twitter)"
+                      title="Follow Akirapa on X"
+                      className="w-10 h-10 rounded-xl bg-white hover:bg-black text-[#76248a] hover:text-white flex items-center justify-center transition-all shadow-sm border border-gray-200 hover:scale-110"
+                    >
+                      <i className="fa-brands fa-x-twitter text-lg"></i>
+                    </a>
+                    <a
+                      href="https://www.facebook.com/profile.php?id=61593927368567"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      title="Follow Akirapa on Facebook"
+                      className="w-10 h-10 rounded-xl bg-white hover:bg-[#1877F2] text-[#76248a] hover:text-white flex items-center justify-center transition-all shadow-sm border border-gray-200 hover:scale-110"
+                    >
+                      <i className="fa-brands fa-facebook-f text-lg"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Trust Box */}
