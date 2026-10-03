@@ -4,7 +4,6 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { blogPosts, BlogPost } from "@/data/blogPosts";
-import { AnimatedWords, AnimatedHeadline } from "@/components/ui/animated-words";
 
 const TOPICS = [
   { id: "all", label: "All Topics", icon: "fa-newspaper" },
@@ -250,19 +249,12 @@ const Blog = () => {
           <div className="inline-flex items-center gap-2 bg-white/10 text-[#40ddd3] px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider border border-[#40ddd3]/30">
             <i className="fa-solid fa-book-open"></i> Senior Care Insights & Guides
           </div>
-          <AnimatedHeadline
-            text="Our Senior Care Blog"
-            as="h1"
-            className="text-4xl sm:text-5xl font-black text-white"
-            highlightWords={["Senior", "Care", "Blog"]}
-          />
-          <AnimatedWords
-            text="Expert insights, caregiver burnout strategies, fall prevention tips, and family guidance from Akirapa Home Care specialists."
-            as="p"
-            duration={1.25}
-            stagger={0.03}
-            className="text-white/90 text-lg max-w-2xl mx-auto font-medium"
-          />
+          <h1 className="text-4xl sm:text-5xl font-black text-white">
+            Our Senior Care Blog
+          </h1>
+          <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium">
+            Expert insights, caregiver burnout strategies, fall prevention tips, and family guidance from Akirapa Home Care specialists.
+          </p>
 
           {/* Inline Quick Topic Filter Chips */}
           <div className="flex flex-wrap items-center justify-center gap-2 pt-4">

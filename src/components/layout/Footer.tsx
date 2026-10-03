@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { AnimatedWords } from "@/components/ui/animated-words";
 
 const Footer = () => {
   return (
@@ -15,18 +14,14 @@ const Footer = () => {
                 className="h-16 sm:h-18 w-auto object-contain scale-[2] sm:scale-[2.4] origin-center sm:origin-left transition-transform hover:scale-[2.1] sm:hover:scale-[2.5]"
               />
             </Link>
-            <AnimatedWords
-              text="Providing compassionate, high-quality, and personalized home care services designed around your schedule. Care Your Way."
-              as="p"
-              duration={1.2}
-              stagger={0.03}
-              className="text-white/80 text-base leading-relaxed max-w-sm"
-            />
+            <p className="text-white/80 text-base leading-relaxed max-w-sm">
+              Providing compassionate, high-quality, and personalized home care services designed around your schedule. Care Your Way.
+            </p>
           </div>
 
           {/* Quick Links */}
           <div className="flex flex-col items-center sm:items-start">
-            <h4 className="font-bold text-lg mb-6 text-[#40ddd3] uppercase tracking-wider text-sm word-shimmer-cyan">
+            <h4 className="font-bold text-lg mb-6 text-[#40ddd3] uppercase tracking-wider text-sm">
               Quick Navigation
             </h4>
             <ul className="space-y-3">

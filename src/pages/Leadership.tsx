@@ -3,7 +3,6 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { leaders } from "@/data/leadership";
-import { AnimatedWords, AnimatedHeadline } from "@/components/ui/animated-words";
 
 const Leadership = () => {
 
@@ -29,19 +28,12 @@ const Leadership = () => {
         </div>
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
-          <AnimatedHeadline
-            text="About Akirapa Home Care"
-            as="h1"
-            className="text-4xl sm:text-5xl font-black text-white"
-            highlightWords={["Akirapa", "Care"]}
-          />
-          <AnimatedWords
-            text="Dedicated to providing dignified, personalized, and contract-free in-home care for seniors and individuals across Massachusetts."
-            as="p"
-            duration={1.25}
-            stagger={0.03}
-            className="text-white/90 text-lg max-w-2xl mx-auto font-medium"
-          />
+          <h1 className="text-4xl sm:text-5xl font-black text-white animate-word-fade">
+            About Akirapa Home Care
+          </h1>
+          <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium animate-word-fade [animation-delay:150ms]">
+            Dedicated to providing dignified, personalized, and contract-free in-home care for seniors and individuals across Massachusetts.
+          </p>
         </div>
       </section>
 
@@ -50,12 +42,9 @@ const Leadership = () => {
         <div className="container-narrow mx-auto">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <AnimatedHeadline
-                text="Over a Decade of Healthcare Compassion"
-                as="h2"
-                className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight"
-                highlightWords={["Decade", "Compassion"]}
-              />
+              <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight">
+                Over a Decade of Healthcare Compassion
+              </h2>
               <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
                 Founded in 2013 by <strong>Cathy Akirapa</strong> (CNA & Financial Professional) and <strong>Stuart Ssemwogerere</strong> (Executive Director), Akirapa Home Care was created out of a deep personal commitment to senior well-being and accessible healthcare management.
               </p>
@@ -102,13 +91,7 @@ const Leadership = () => {
                 <div className="w-14 h-14 rounded-2xl bg-[#40ddd3] text-white flex items-center justify-center shadow-md">
                   <i className="fa-solid fa-award text-2xl text-white"></i>
                 </div>
-                <AnimatedWords
-                  text="Our Mission & Promises"
-                  as="h3"
-                  duration={1.2}
-                  stagger={0.04}
-                  className="text-2xl font-black text-white"
-                />
+                <h3 className="text-2xl font-black text-white">Our Mission & Promises</h3>
                 <ul className="space-y-4 text-sm text-white/90">
                   <li className="flex items-start gap-3">
                     <i className="fa-solid fa-circle-check text-[#40ddd3] text-lg shrink-0 mt-0.5"></i>
@@ -139,19 +122,12 @@ const Leadership = () => {
       <section className="section-padding bg-gray-50 border-t border-gray-200">
         <div className="container-narrow mx-auto text-center space-y-8">
           <div className="max-w-2xl mx-auto space-y-3">
-            <AnimatedHeadline
-              text="Senior Care Decision Guides & Handbooks"
-              as="h2"
-              className="text-3xl font-black text-gray-900"
-              highlightWords={["Guides", "Handbooks"]}
-            />
-            <AnimatedWords
-              text="Download our complimentary resources to help navigate home care choices and consumer rights."
-              as="p"
-              duration={1.2}
-              stagger={0.03}
-              className="text-gray-600 text-sm"
-            />
+            <h2 className="text-3xl font-black text-gray-900">
+              Senior Care Decision Guides & Handbooks
+            </h2>
+            <p className="text-gray-600 text-sm">
+              Download our complimentary resources to help navigate home care choices and consumer rights.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 text-left">
