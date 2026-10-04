@@ -120,7 +120,7 @@ const Contact = () => {
     <Layout>
       <SEO
         title="Contact Us | Free Care Assessment | Akirapa Home Care Burlington MA"
-        description="Contact Akirapa Home Care at 281 Cambridge Street, Burlington, MA 01803. Call our 24/7 helpline at 339 970 1214 or 781 472 9375 to schedule a free in-home assessment."
+        description="Contact Akirapa Home Care at 281 Cambridge Street, Burlington, MA 01803. Call our 24/7 helpline at 339 970 1214 to schedule a free in-home assessment."
         path="/contact"
       />
 
@@ -178,7 +178,7 @@ const Contact = () => {
                   <a href="tel:3399701214" className="text-[#76248a] font-black text-lg block hover:underline">
                     339 970 1214
                   </a>
-                  <p className="text-gray-500 text-xs">Secondary: 781 472 9375</p>
+
                 </div>
 
                 {/* Email Card */}

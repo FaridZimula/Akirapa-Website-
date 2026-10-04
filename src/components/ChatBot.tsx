@@ -106,7 +106,7 @@ export const ChatBot = () => {
       } else if (lower.includes("location") || lower.includes("address") || lower.includes("where")) {
         replyText = "Our primary office is located at 281 Cambridge Street, Burlington, MA 01803, serving seniors across Massachusetts.";
       } else if (lower.includes("phone") || lower.includes("call") || lower.includes("number") || lower.includes("contact")) {
-        replyText = "Our 24/7 Helpline Support numbers are: 339 970 1214 and 781 472 9375. We are ready to assist you any time day or night!";
+        replyText = "Our 24/7 Helpline Support number is: 339 970 1214. We are ready to assist you any time day or night!";
       }
 
       const botMsg: Message = {
