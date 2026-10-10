@@ -32,6 +32,7 @@ import LeadershipEditor from "./pages/admin/LeadershipEditor";
 import PartnersEditor from "./pages/admin/PartnersEditor";
 
 import AkiVault from "./pages/AkiVault";
+import MAHomeCareDirectory from "./pages/MAHomeCareDirectory";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +70,7 @@ const App = () => {
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/:slug" element={<BlogPostPage />} />
                   <Route path="/careers" element={<Careers />} />
+                  <Route path="/ma-home-care-directory" element={<MAHomeCareDirectory />} />
                   <Route path="/contact" element={<Contact />} />
 
                   {/* Admin Portal Routes */}

@@ -310,9 +310,9 @@ const Careers = () => {
                 <div className="w-10 h-10 rounded-xl bg-[#76248a] text-white flex items-center justify-center font-bold text-lg mb-2 shadow-xs">
                   <i className="fa-solid fa-dollar-sign"></i>
                 </div>
-                <h3 className="font-bold text-gray-900 text-base">Top Hourly Rates</h3>
+                <h3 className="font-bold text-gray-900 text-base">Competitive Rates</h3>
                 <p className="text-gray-600 text-xs leading-relaxed">
-                  Industry-leading pay rates ($20–$52/hr) with direct weekly deposits.
+                  Industry-leading competitive pay rates with direct weekly deposits.
                 </p>
               </div>
 
@@ -395,7 +395,7 @@ const Careers = () => {
                   <span className="text-gray-300">|</span>
                   <span className="flex items-center gap-1.5 text-gray-800 font-bold">
                     <i className="fa-solid fa-money-bill-wave text-[#76248a]"></i>
-                    {activeDetailJob.payRate} plus overtime opportunities
+                    Competitive pay plus overtime opportunities
                   </span>
                   <span className="text-gray-300">|</span>
                   <span className="flex items-center gap-1.5">
@@ -444,7 +444,7 @@ const Careers = () => {
                     <ul className="space-y-2 text-sm text-gray-700">
                       <li className="flex items-start gap-2">
                         <i className="fa-solid fa-circle-check text-[#76248a] mt-1 shrink-0"></i>
-                        <span><strong>{activeDetailJob.payRate}</strong> with overtime opportunities</span>
+                        <span><strong>Competitive pay</strong> with overtime opportunities</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <i className="fa-solid fa-circle-check text-[#76248a] mt-1 shrink-0"></i>
@@ -872,7 +872,7 @@ const Careers = () => {
                                 {job.title}
                               </h3>
                               <p className="text-xs text-gray-500 font-medium">
-                                {job.city}, {job.state}, USA &nbsp;|&nbsp; {job.employmentType} &nbsp;|&nbsp; <span className="text-gray-700 font-bold">{job.payRate}</span>
+                                {job.city}, {job.state}, USA &nbsp;|&nbsp; {job.employmentType}
                               </p>
                               <p className="text-[11px] text-gray-400">
                                 Posted: {job.postedDate}

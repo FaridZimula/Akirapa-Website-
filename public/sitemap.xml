@@ -64,5 +64,12 @@
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- Massachusetts Home Care Directory (SEO Comparison Guide) -->
+  <url>
+    <loc>https://akirapahomecareus.com/ma-home-care-directory</loc>
+    <lastmod>2025-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
 </urlset>
