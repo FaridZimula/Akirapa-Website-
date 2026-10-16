@@ -236,6 +236,24 @@ export const maCompetitors: MACompetitor[] = [
   },
   {
     id: 13,
+    name: "Care Remedy Inc. - Woburn",
+    slug: "care-remedy-woburn-ma",
+    city: "Woburn",
+    region: "Middlesex County",
+    county: "Middlesex County",
+    rating: 4.8,
+    reviewCount: 142,
+    searchRank: 13,
+    hourlyRate: "$35 - $44/hr",
+    services: ["24-Hour Live-In Care","Companion Care","Specialized Transportation","Assistive Technology","Personal Care"],
+    description: "Care Remedy Inc. is a Woburn-based home care provider offering companion care, 24-hour live-in support, and specialized wheelchair-accessible transit for seniors across Middlesex County.",
+    pros: ["Specialized wheelchair-accessible transportation options","Experienced 24-hour live-in caregiver roster","Supportive assistive technology guidance for aging in place"],
+    considerations: ["Requires standard 4-hour shift minimums","No client-facing GPS live verification tool like AkiVault","Transportation services subject to mileage and driver scheduling"],
+    phone: "(781) 404-5103",
+    address: "100 Tradecenter Dr, Suite G-700, Woburn, MA 01801"
+  },
+  {
+    id: 14,
     name: "Associated Home Care (Amedisys) - Beverly & Statewide",
     slug: "associated-home-care-beverly-ma",
     city: "Beverly",
@@ -253,7 +271,7 @@ export const maCompetitors: MACompetitor[] = [
     address: "50 Dunham Rd, Beverly, MA 01915"
   },
   {
-    id: 14,
+    id: 15,
     name: "Care Dimensions - Danvers & Waltham",
     slug: "care-dimensions-danvers-ma",
     city: "Danvers",
@@ -271,7 +289,7 @@ export const maCompetitors: MACompetitor[] = [
     address: "75 Sylvan St, Danvers, MA 01923"
   },
   {
-    id: 15,
+    id: 16,
     name: "VNA Care Network - Worcester & Eastern MA",
     slug: "vna-care-network-worcester-ma",
     city: "Worcester",
@@ -289,7 +307,7 @@ export const maCompetitors: MACompetitor[] = [
     address: "120 Thomas St, Worcester, MA 01608"
   },
   {
-    id: 16,
+    id: 17,
     name: "FirstLight Home Care - Needham & Metro West",
     slug: "firstlight-home-care-needham-ma",
     city: "Needham",
@@ -307,7 +325,7 @@ export const maCompetitors: MACompetitor[] = [
     address: "140 Gould St, Needham, MA 02494"
   },
   {
-    id: 17,
+    id: 18,
     name: "ABC Home Healthcare Professionals - Wakefield",
     slug: "abc-home-healthcare-wakefield-ma",
     city: "Wakefield",
@@ -325,7 +343,7 @@ export const maCompetitors: MACompetitor[] = [
     address: "233 Albion St, Wakefield, MA 01880"
   },
   {
-    id: 18,
+    id: 19,
     name: "Hebrew SeniorLife Home Care - Boston & Dedham",
     slug: "hebrew-seniorlife-home-care-boston-ma",
     city: "Boston",
@@ -343,7 +361,7 @@ export const maCompetitors: MACompetitor[] = [
     address: "1200 Centre St, Boston, MA 02131"
   },
   {
-    id: 19,
+    id: 20,
     name: "Springwell Senior Services - Waltham",
     slug: "springwell-senior-services-waltham-ma",
     city: "Waltham",
@@ -361,7 +379,7 @@ export const maCompetitors: MACompetitor[] = [
     address: "307 Waverley Oaks Rd, Waltham, MA 02452"
   },
   {
-    id: 20,
+    id: 21,
     name: "Minuteman Senior Services - Bedford",
     slug: "minuteman-senior-services-bedford-ma",
     city: "Bedford",
@@ -377,24 +395,6 @@ export const maCompetitors: MACompetitor[] = [
     considerations: ["Subcontracts daily care to third-party home care agencies","Strict state qualification criteria for maximum care hours","Cannot guarantee consistent single-caregiver assignments"],
     phone: "(781) 272-7177",
     address: "26 Crosby Dr, Bedford, MA 01730"
-  },
-  {
-    id: 21,
-    name: "Dignity Senior Home Care - Taunton",
-    slug: "dignity-senior-home-care-taunton-ma",
-    city: "Taunton",
-    region: "Bristol County",
-    county: "Bristol County",
-    rating: 4.6,
-    reviewCount: 143,
-    searchRank: 21,
-    hourlyRate: "$39 - $47/hr",
-    services: ["Post-Surgical Care","Mobility Assistance","Personal Care","Respite Care"],
-    description: "Dignity Senior Home Care - Taunton provides dedicated senior care, companion services, and personalized personal care assistance to aging adults and families throughout Taunton and Bristol County.",
-    pros: ["Specialized memory care and fall prevention programs","Responsive weekend and holiday care coverage","Transparent billing and care plan updates"],
-    considerations: ["Cancellation policy requires 24-48 hours advance notice","Lacks real-time caregiver check-in notifications","Ongoing service agreement required"],
-    phone: "(781) 221-1357",
-    address: "73 Main St, Taunton, MA"
   },
   {
     id: 22,
