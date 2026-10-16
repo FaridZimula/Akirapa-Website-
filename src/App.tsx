@@ -33,6 +33,7 @@ import PartnersEditor from "./pages/admin/PartnersEditor";
 
 import AkiVault from "./pages/AkiVault";
 import MAHomeCareDirectory from "./pages/MAHomeCareDirectory";
+import MACompetitorDetail from "./pages/MACompetitorDetail";
 
 const queryClient = new QueryClient();
 
@@ -71,6 +72,7 @@ const App = () => {
                   <Route path="/blog/:slug" element={<BlogPostPage />} />
                   <Route path="/careers" element={<Careers />} />
                   <Route path="/ma-home-care-directory" element={<MAHomeCareDirectory />} />
+                  <Route path="/ma-home-care-directory/:slug" element={<MACompetitorDetail />} />
                   <Route path="/contact" element={<Contact />} />
 
                   {/* Admin Portal Routes */}
