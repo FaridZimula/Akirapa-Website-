@@ -149,9 +149,9 @@ export default function MAHomeCareDirectory() {
                 </h2>
               </div>
               <div className="shrink-0 flex items-center gap-3">
-                <a href="tel:339-970-1214">
+                <a href="tel:+17812269910">
                   <Button className="bg-[#76248a] hover:bg-[#561868] text-white font-bold rounded-full px-6 py-5 shadow-md">
-                    <i className="fa-solid fa-phone mr-2"></i> Free Care Advice: 339-970-1214
+                    <i className="fa-solid fa-phone mr-2"></i> Free Care Advice: +1 781-226-9910
                   </Button>
                 </a>
               </div>
@@ -346,9 +346,9 @@ export default function MAHomeCareDirectory() {
                             Schedule Free Assessment
                           </Button>
                         </Link>
-                        <a href="tel:339-970-1214">
+                        <a href="tel:+17812269910">
                           <Button variant="outline" className="w-full border-2 border-white/40 text-white hover:bg-white/10 hover:text-white font-bold rounded-full py-6 text-base">
-                            <i className="fa-solid fa-phone mr-2"></i> Call 339-970-1214
+                            <i className="fa-solid fa-phone mr-2"></i> Call +1 781-226-9910
                           </Button>
                         </a>
                       </div>
@@ -475,7 +475,7 @@ export default function MAHomeCareDirectory() {
             <div className="mt-10 p-6 bg-[#76248a]/5 border border-[#76248a]/10 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h4 className="text-xl font-bold text-[#561868] mb-2">Ready for transparent, reliable Massachusetts home care?</h4>
-                <p className="text-gray-600 mb-0">Call us today at 339-970-1214 for a free, personalized care evaluation.</p>
+                <p className="text-gray-600 mb-0">Call us today at +1 781-226-9910 for a free, personalized care evaluation.</p>
               </div>
               <Link to="/contact" className="shrink-0">
                 <Button className="bg-[#76248a] hover:bg-[#561868] text-white button-shimmer font-bold rounded-full px-8 py-6 shadow-md">

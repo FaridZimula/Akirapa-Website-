@@ -220,7 +220,7 @@ const BlogPostPage = () => {
                       <Link to="/contact">View Burlington Office</Link>
                     </Button>
                     <Button asChild variant="outline" className="border-[#76248a] text-[#76248a] rounded-xl">
-                      <a href="tel:3399701214">Call 339 970 1214</a>
+                      <a href="tel:+17812269910">Call +1 781-226-9910</a>
                     </Button>
                   </div>
                 </div>
@@ -274,11 +274,11 @@ const BlogPostPage = () => {
                   Our Burlington care team is available 24/7 to discuss your family's options.
                 </p>
                 <a
-                  href="tel:3399701214"
+                  href="tel:+17812269910"
                   className="flex items-center gap-2 bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold px-5 py-3 rounded-xl transition-all hover:scale-105 text-sm"
                 >
                   <i className="fa-solid fa-phone"></i>
-                  Call 339 970 1214
+                  Call +1 781-226-9910
                 </a>
               </div>
             </aside>

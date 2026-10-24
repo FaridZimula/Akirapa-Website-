@@ -568,11 +568,11 @@ export default function AkiVault() {
               <Link to="/contact">Schedule Free Consultation</Link>
             </Button>
             <a
-              href="tel:3399701214"
+              href="tel:+17812269910"
               className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white font-extrabold text-base h-14 px-8 rounded-2xl backdrop-blur-md border border-white/20"
             >
               <i className="fa-solid fa-phone text-[#40ddd3]"></i>
-              <span>Call 24/7: (339) 970-1214</span>
+              <span>Call 24/7: +1 781-226-9910</span>
             </a>
           </div>
         </div>

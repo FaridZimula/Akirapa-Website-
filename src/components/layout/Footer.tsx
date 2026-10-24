@@ -134,8 +134,9 @@ const Footer = () => {
               <li className="flex items-center sm:items-start justify-center sm:justify-start gap-3">
                 <i className="fa-solid fa-phone text-[#40ddd3] text-lg shrink-0 mt-1"></i>
                 <div className="text-center sm:text-left">
-                  <p className="font-bold text-white">339 970 1214 <span className="text-[#40ddd3] text-xs font-normal">(24/7 Service)</span></p>
-
+                  <p className="font-bold text-white">
+                    <a href="tel:+17812269910" className="hover:underline hover:text-[#40ddd3] transition-colors">+1 781-226-9910</a> <span className="text-[#40ddd3] text-xs font-normal">(24/7 Service)</span>
+                  </p>
                 </div>
               </li>
               <li className="flex items-center sm:items-start justify-center sm:justify-start gap-3">

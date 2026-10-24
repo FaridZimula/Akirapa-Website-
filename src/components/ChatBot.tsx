@@ -94,19 +94,19 @@ export const ChatBot = () => {
     if (!textToSend) setInputMessage("");
 
     setTimeout(() => {
-      let replyText = "Thank you for reaching out! Our team in Burlington, MA is available 24/7. You can also call us directly at 339 970 1214 for immediate assistance.";
+      let replyText = "Thank you for reaching out! Our team in Burlington, MA is available 24/7. You can also call us directly at +1 781-226-9910 for immediate assistance.";
       const lower = text.toLowerCase();
 
       if (lower.includes("cost") || lower.includes("price") || lower.includes("rate") || lower.includes("quote")) {
         replyText = "We offer flexible hourly, daily, and 24/7 care plans tailored to your needs. You can use our Free Care Cost Estimator on the homepage or schedule a free assessment!";
       } else if (lower.includes("assessment") || lower.includes("schedule") || lower.includes("book") || lower.includes("appointment")) {
-        replyText = "We would love to arrange a free, no-obligation in-home assessment! Click the 'Schedule Free Assessment' button or call 339 970 1214.";
+        replyText = "We would love to arrange a free, no-obligation in-home assessment! Click the 'Schedule Free Assessment' button or call +1 781-226-9910.";
       } else if (lower.includes("services") || lower.includes("alzheimer") || lower.includes("dementia") || lower.includes("respite")) {
         replyText = "Akirapa Home Care provides Personal Care, 24/7 Companion Care, Respite Support, Post-Hospital Recovery, and Specialized Alzheimer's & Dementia Care.";
       } else if (lower.includes("location") || lower.includes("address") || lower.includes("where")) {
         replyText = "Our primary office is located at 281 Cambridge Street, Burlington, MA 01803, serving seniors across Massachusetts.";
       } else if (lower.includes("phone") || lower.includes("call") || lower.includes("number") || lower.includes("contact")) {
-        replyText = "Our 24/7 Helpline Support number is: 339 970 1214. We are ready to assist you any time day or night!";
+        replyText = "Our 24/7 Helpline Support number is: +1 781-226-9910. We are ready to assist you any time day or night!";
       }
 
       const botMsg: Message = {
@@ -167,7 +167,7 @@ export const ChatBot = () => {
 
             <div className="flex items-center gap-1.5">
               <a
-                href="tel:3399701214"
+                href="tel:+17812269910"
                 title="Call 24/7 Helpline"
                 className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
               >

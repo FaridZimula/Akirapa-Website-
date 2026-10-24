@@ -277,11 +277,11 @@ const Projects = () => {
           </p>
           <div className="pt-2">
             <a
-              href="tel:3399701214"
+              href="tel:+17812269910"
               className="inline-flex items-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-white font-extrabold px-8 py-3.5 rounded-2xl shadow-xl transition-all hover:scale-105 text-base sm:text-lg"
             >
               <i className="fa-solid fa-phone text-lg text-white"></i>
-              <span>Call Helpline: 339 970 1214</span>
+              <span>Call Helpline: +1 781-226-9910</span>
             </a>
           </div>
         </div>

@@ -79,8 +79,8 @@ export const CareQuoteCalculator: React.FC = () => {
           
           <p className="text-[#40ddd3] text-base md:text-lg leading-relaxed font-medium">
             If you require services on a public holiday, overnight services or live-in services, please call{" "}
-            <a href="tel:3399701214" className="font-bold underline hover:opacity-80 transition-opacity text-[#40ddd3]">
-              339 970 1214
+            <a href="tel:+17812269910" className="font-bold underline hover:opacity-80 transition-opacity text-[#40ddd3]">
+              +1 781-226-9910
             </a>{" "}
             so we can discuss prices with you.
           </p>

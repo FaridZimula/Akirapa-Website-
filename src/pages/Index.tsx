@@ -167,7 +167,7 @@ const Index = () => {
     <Layout>
       <SEO
         title="Akirapa Home Care | In-Home Senior Care & 24/7 Services — Burlington, MA"
-        description="Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Call 339-970-1214."
+        description="Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Call +1 781-226-9910."
         path="/"
       />
 
@@ -312,13 +312,13 @@ const Index = () => {
 
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto shrink-0">
               <a
-                href="tel:3399701214"
+                href="tel:+17812269910"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#76248a] hover:bg-[#561868] text-white font-extrabold px-6 py-3.5 rounded-2xl shadow-lg transition-all duration-300 text-base hover:scale-105 active:scale-95 button-shimmer"
               >
                 <i className="fa-solid fa-phone text-lg text-[#40ddd3] animate-pulse"></i>
                 <div className="text-left">
                   <span className="text-[10px] text-white/70 block uppercase leading-none">Main Hotline</span>
-                  <span className="text-lg font-black text-[#40ddd3]">339 970 1214</span>
+                  <span className="text-lg font-black text-[#40ddd3]">+1 781-226-9910</span>
                 </div>
               </a>
 
@@ -519,7 +519,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <a
-              href="tel:3399701214"
+              href="tel:+17812269910"
               className="inline-flex items-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-black text-xl px-8 py-4 rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 button-shimmer animate-btn-pulse"
             >
               <i className="fa-solid fa-phone text-xl text-gray-950"></i>

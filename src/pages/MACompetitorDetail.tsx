@@ -188,8 +188,8 @@ export default function MACompetitorDetail() {
             </span>
           </div>
           <div className="flex items-center gap-3 shrink-0">
-            <a href="tel:339-970-1214" className="font-bold text-[#76248a] hover:text-[#561868] flex items-center gap-1.5">
-              <i className="fa-solid fa-phone"></i> 339-970-1214
+            <a href="tel:+17812269910" className="font-bold text-[#76248a] hover:text-[#561868] flex items-center gap-1.5">
+              <i className="fa-solid fa-phone"></i> +1 781-226-9910
             </a>
             <Link to="/contact">
               <Button size="sm" className="bg-[#76248a] hover:bg-[#561868] text-white rounded-full px-4 text-xs font-bold">
@@ -524,9 +524,9 @@ export default function MACompetitorDetail() {
                   </div>
 
                   <div className="flex flex-col gap-3">
-                    <a href="tel:339-970-1214">
+                    <a href="tel:+17812269910">
                       <Button className="w-full bg-[#40ddd3] text-[#561868] hover:bg-white font-bold py-6 rounded-full text-base shadow-lg">
-                        <i className="fa-solid fa-phone mr-2"></i> Call 339-970-1214
+                        <i className="fa-solid fa-phone mr-2"></i> Call +1 781-226-9910
                       </Button>
                     </a>
                     <Link to="/contact">

@@ -32,7 +32,9 @@ const Navbar = () => {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#40ddd3]"></span>
               </span>
               <i className="fa-solid fa-phone text-[#40ddd3]"></i>
-              <span className="font-bold text-[#40ddd3]">24/7 Helpline: 339 970 1214</span>
+              <a href="tel:+17812269910" className="font-bold text-[#40ddd3] hover:underline">
+                24/7 Helpline: +1 781-226-9910
+              </a>
 
             </div>
           </div>
@@ -159,7 +161,9 @@ const Navbar = () => {
                 <div className="px-4 py-3 border-t border-gray-100 mt-2 space-y-2 text-sm text-gray-600">
                   <div className="flex items-center gap-2 font-semibold text-[#76248a]">
                     <i className="fa-solid fa-phone text-[#40ddd3]"></i>
-                    <span>24/7 Hotline: 339 970 1214</span>
+                    <a href="tel:+17812269910" className="hover:underline">
+                      24/7 Hotline: +1 781-226-9910
+                    </a>
                   </div>
                   <div className="flex items-center gap-2">
                     <i className="fa-solid fa-envelope text-[#40ddd3]"></i>

@@ -29,7 +29,7 @@ const localBusinessSchema = {
     "logo": `${SITE_URL}/akirapa-logo.png`,
     "image": DEFAULT_OG_IMAGE,
     "description": "Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support.",
-    "telephone": "+1-339-970-1214",
+    "telephone": "+1 781-226-9910",
     "email": "info@akirapahomecareus.com",
     "priceRange": "$$",
     "areaServed": [
@@ -63,7 +63,7 @@ const localBusinessSchema = {
     "contactPoint": [
         {
             "@type": "ContactPoint",
-            "telephone": "+1-339-970-1214",
+            "telephone": "+1 781-226-9910",
             "contactType": "Customer Service",
             "availLanguage": "English",
             "hoursAvailable": {
@@ -95,7 +95,7 @@ const localBusinessSchema = {
 
 const SEO = ({
     title = `${SITE_NAME} | In-Home Senior Care & 24/7 Services`,
-    description = "Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Call 339-970-1214.",
+    description = "Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Call +1 781-226-9910.",
     image = DEFAULT_OG_IMAGE,
     path = "/",
     type = "website",
