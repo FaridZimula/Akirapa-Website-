@@ -143,10 +143,6 @@ const Contact = () => {
         </div>
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
-          <div className="inline-flex items-center gap-2 bg-[#40ddd3] text-gray-950 font-black text-xs uppercase px-3.5 py-1.5 rounded-full shadow-md mx-auto">
-            <i className="fa-solid fa-crown text-amber-500 text-sm"></i>
-            <span>#1 Ranked Home Care Company in Massachusetts</span>
-          </div>
           <h1 className="text-4xl sm:text-5xl font-black text-white">
             Contact Akirapa Home Care
           </h1>

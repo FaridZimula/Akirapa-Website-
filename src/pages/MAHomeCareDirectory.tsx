@@ -123,15 +123,15 @@ export default function MAHomeCareDirectory() {
         </div>
         
         <div className="container-narrow relative z-10 text-center text-white px-4">
-          <div className="inline-flex items-center gap-2 bg-[#40ddd3] text-gray-950 font-black px-4 py-1.5 rounded-full text-xs md:text-sm mb-6 uppercase tracking-wider shadow-md">
-            <i className="fa-solid fa-crown text-amber-500"></i>
-            <span>Massachusetts Directory • Akirapa Home Care Ranked #1</span>
+          <div className="inline-flex items-center gap-2 bg-[#40ddd3] text-[#561868] font-black px-4 py-1.5 rounded-full text-xs md:text-sm mb-6 uppercase tracking-wider">
+            <i className="fa-solid fa-ranking-star"></i>
+            Massachusetts Senior Care Directory • 500 Verified Agencies
           </div>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-            Top Home Care Agencies in Massachusetts
+            Top 500 Home Care Agencies in Massachusetts
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto font-medium leading-relaxed">
-            Comparing 500 agencies across Middlesex County, Greater Boston, and statewide — with <strong>Akirapa Home Care</strong> ranked the <strong>#1 Best Home Care Company in Massachusetts</strong>.
+            Ranked by search volume and customer ratings across Middlesex County, Greater Boston, Worcester County, North Shore, South Shore, and Cape Cod.
           </p>
         </div>
       </section>

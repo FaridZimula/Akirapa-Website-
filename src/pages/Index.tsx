@@ -15,14 +15,14 @@ import { CareQuoteCalculator } from "@/components/CareQuoteCalculator";
 const heroSlides = [
   {
     id: 1,
-    title: "#1 Ranked In-Home Care in Massachusetts. Sophisticated Clinical Management.",
-    subtitle: "Recognized as the #1 best home care company in Massachusetts. Managed securely via the AkiVault System—providing GPS-verified EVV, zero contracts, and a 24/7 encrypted family portal.",
+    title: "Concierge In-Home Care. Sophisticated Clinical Management.",
+    subtitle: "Managed securely via the AkiVault System—providing real-time documentation, automated Electronic Visit Verification (EVV), and an exclusive, fully encrypted 24/7 client family portal.",
     bgImage: "/CARE GIVER  (4).jpg"
   },
   {
     id: 2,
-    title: "Massachusetts' #1 Private-Duty Care Management & Senior Support.",
-    subtitle: "Premium in-home care across Middlesex County, Greater Boston, and statewide. Advanced technology meets certified CNAs, zero contract lock-ins, and 99% verified family satisfaction.",
+    title: "Elite Private-Duty Care Management Powered by Secured Infrastructure.",
+    subtitle: "Premium in-home care designed for discerning families and institutional payers. Advanced technology meets exceptional clinical expertise at your convenience.",
     bgImage: "/CARE GIVER  (16).jpg"
   }
 ];
@@ -270,9 +270,13 @@ const Index = () => {
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="max-w-2xl lg:max-w-3xl space-y-6 text-left">
             <div key={slide.id} className="space-y-4 transition-all duration-700 ease-in-out animate-fadeIn">
-              <div className="inline-flex items-center gap-2 bg-[#40ddd3] text-gray-950 font-black text-xs uppercase px-3.5 py-1.5 rounded-full shadow-md backdrop-blur-sm animate-float">
-                <i className="fa-solid fa-crown text-amber-500 text-sm"></i>
-                <span className="tracking-wide">#1 Best Home Care Company in Massachusetts</span>
+              <div className="inline-flex items-center gap-2.5 bg-purple-50/90 border border-[#76248a]/20 text-[#76248a] font-extrabold text-xs uppercase px-3.5 py-1.5 rounded-full shadow-sm backdrop-blur-sm animate-float">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0d9488] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0d9488]"></span>
+                </span>
+                <i className="fa-solid fa-star text-[#0d9488]"></i>
+                <span className="tracking-wide">Premier Concierge Home Care</span>
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.18] text-left animate-word-fade">
