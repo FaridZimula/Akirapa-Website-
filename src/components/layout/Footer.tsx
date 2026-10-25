@@ -148,6 +148,25 @@ const Footer = () => {
                 </div>
               </li>
             </ul>
+
+            {/* AkiVault System Portal Link */}
+            <div className="pt-5 w-full flex flex-col items-center sm:items-start">
+              <span className="text-[11px] uppercase font-extrabold tracking-wider text-[#40ddd3] block mb-2">
+                AkiVault™ System
+              </span>
+              <a
+                href="https://akirapa-home-care-system-ynmt.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="AkiVault Home Care System"
+                title="Open AkiVault Home Care System"
+                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 font-bold text-sm transition-all duration-300 shadow-md border border-white/15 hover:border-[#40ddd3] hover:scale-105 group"
+              >
+                <i className="fa-solid fa-shield-halved text-[#40ddd3] group-hover:text-gray-950 transition-colors text-base"></i>
+                <span>AkiVault System</span>
+                <i className="fa-solid fa-arrow-up-right-from-square text-xs text-[#40ddd3] group-hover:text-gray-950 transition-colors"></i>
+              </a>
+            </div>
           </div>
         </div>
 
