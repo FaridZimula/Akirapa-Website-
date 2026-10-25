@@ -119,9 +119,15 @@ const Contact = () => {
   return (
     <Layout>
       <SEO
-        title="Contact Us | Free Care Assessment | Akirapa Home Care Burlington MA"
-        description="Contact Akirapa Home Care at 281 Cambridge Street, Burlington, MA 01803. Call our 24/7 helpline at +1 781-226-9910 to schedule a free in-home assessment."
+        title="Contact Us & Free In-Home Assessment | Burlington & Massachusetts | Akirapa"
+        description="Contact Akirapa Home Care at 281 Cambridge Street, Burlington, MA 01803. Call our 24/7 hotline at +1 781-226-9910 to schedule a complimentary, contract-free senior care assessment anywhere in Massachusetts."
+        keywords="contact home care Burlington MA, free senior care assessment Massachusetts, hire caregiver Burlington, home health helpline MA, 781-226-9910"
         path="/contact"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Contact & Free Assessment", path: "/contact" }
+        ]}
+        faqs={faqs}
       />
 
       {/* Hero Header with 29% Opacity Background Image */}

@@ -62,8 +62,10 @@ const Profile = () => {
   return (
     <Layout>
       <SEO
-        title="Our Profile | Vision, Mission & Values of SUYEL"
-        description="Learn about SUYEL's history, mission to build tomorrow's leaders, and our core values of integrity and inclusion."
+        title="Our Profile | Akirapa Home Care"
+        description="Learn about Akirapa Home Care's mission to provide dignified in-home care for seniors in Massachusetts."
+        path="/profile"
+        noindex={true}
       />
       {/* Hero Section */}
       <section className="hero-gradient section-padding relative overflow-hidden">

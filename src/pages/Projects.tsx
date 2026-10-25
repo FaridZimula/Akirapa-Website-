@@ -38,32 +38,17 @@ const visualServices = [
 const Projects = () => {
   const [selectedService, setSelectedService] = useState<CareService>(careServices[0]);
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://akirapahomecareus.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Care Services",
-        "item": "https://akirapahomecareus.com/services"
-      }
-    ]
-  };
-
   return (
     <Layout>
       <SEO
-        title="Our Care Services | Akirapa Home Care Burlington MA"
-        description="Explore 15 in-home care services by Akirapa Home Care: Hourly care, 24/7 daily care, hospital-to-home recovery, respite care, and specialized Alzheimer's support in Burlington, MA."
+        title="Our Care Services | In-Home Senior Care in Massachusetts | Akirapa"
+        description="Explore 15 specialized in-home care services by Akirapa Home Care: Hourly care, 24/7 daily & live-in care, hospital-to-home recovery, respite care, and Alzheimer's support in Burlington and across Massachusetts."
+        keywords="home care services Massachusetts, senior care Burlington MA, in-home care Middlesex County, 24 hour home care MA, dementia care Massachusetts, companion care Burlington MA"
         path="/services"
-        schemaExtra={[breadcrumbSchema]}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Care Services", path: "/services" }
+        ]}
       />
 
       {/* Hero Header */}

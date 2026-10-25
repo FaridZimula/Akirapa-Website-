@@ -265,9 +265,14 @@ const Careers = () => {
   return (
     <Layout>
       <SEO
-        title="Careers & Caregiver Opportunities | Akirapa Home Care Burlington MA"
-        description="Search current caregiver job listings at Akirapa Home Care. Apply online for CNA, HHA, LPN, RN, and 24/7 live-in care positions in Burlington MA."
+        title="Caregiver Careers & Nursing Jobs in Massachusetts | Akirapa Home Care"
+        description="Join Akirapa Home Care's elite caregiving team in Burlington and Middlesex County, MA. Competitive pay, flexible shifts, and career advancement for CNAs, HHAs, LPNs, and RNs."
+        keywords="caregiver jobs Massachusetts, CNA jobs Burlington MA, HHA openings Middlesex County, home health aide careers, nursing jobs MA"
         path="/careers"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Careers & Job Opportunities", path: "/careers" }
+        ]}
       />
 
       {/* Hero Header with 29% Opacity Background Image */}

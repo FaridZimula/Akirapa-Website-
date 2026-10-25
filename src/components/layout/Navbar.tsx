@@ -6,10 +6,11 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Care Services", path: "/services" },
+  { name: "AkiVault", path: "/akivault" },
+  { name: "MA Directory", path: "/ma-home-care-directory" },
   { name: "Our Blog", path: "/blog" },
   { name: "Careers", path: "/careers" },
   { name: "Contact Us", path: "/contact" },
-  { name: "AkiVault", path: "/akivault" },
 ];
 
 const Navbar = () => {

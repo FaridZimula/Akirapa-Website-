@@ -123,8 +123,36 @@ const technologyPillars = [
   },
 ];
 
+const homepageFaqs = [
+  {
+    question: "How much does in-home senior care cost in Massachusetts?",
+    answer: "In Massachusetts, private-duty in-home care rates typically range between $32 to $42 per hour depending on whether care is companion support, certified personal care (ADLs), or specialized dementia care. Akirapa Home Care provides transparent rates with zero long-term contracts, zero hidden cancellation fees, and flexible hourly or 24/7 packages."
+  },
+  {
+    question: "What Massachusetts cities and communities does Akirapa Home Care serve?",
+    answer: "Akirapa Home Care is headquartered at 281 Cambridge Street in Burlington, MA and serves families throughout Middlesex County (Burlington, Lexington, Bedford, Woburn, Billerica, Winchester, Arlington, Belmont, Concord, Waltham, Newton), Greater Boston, the North Shore, and MetroWest Massachusetts."
+  },
+  {
+    question: "How does Akirapa Home Care guarantee caregiver reliability and safety?",
+    answer: "Every caregiver at Akirapa Home Care undergoes rigorous multi-state criminal background checks, reference verifications, and clinical assessments—we hire only 1 in 25 applicants. Every shift is tracked through our proprietary AkiVault™ system with GPS-verified Electronic Visit Verification (EVV), mandatory 8-point welfare checks, and real-time alerts to families."
+  },
+  {
+    question: "Does Akirapa Home Care require long-term contracts?",
+    answer: "No. We believe families should remain in total control of their care. Akirapa Home Care operates on a strict zero-contract model—you can start, adjust, pause, or end services anytime with zero financial lock-in or cancellation penalties."
+  },
+  {
+    question: "How quickly can home care services begin for an urgent hospital discharge in MA?",
+    answer: "Our clinical care coordinators are available 24/7 at +1 781-226-9910. In urgent situations—such as a hospital or rehab discharge from Lahey Hospital & Medical Center, Winchester Hospital, or Boston-area medical centers—we can initiate care within 24 to 48 hours."
+  },
+  {
+    question: "What is the difference between companion care and personal care?",
+    answer: "Companion care provides friendly social engagement, light housekeeping, meal preparation, and transportation without hands-on physical contact. Personal care involves certified nursing assistants (CNAs) or home health aides providing hands-on assistance with activities of daily living (ADLs) such as bathing, dressing, grooming, incontinence care, and mobility transfer."
+  }
+];
+
 const Index = () => {
   const { toast } = useToast();
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [reviewAuthor, setReviewAuthor] = useState("");
   const [reviewRelation, setReviewRelation] = useState("");
   const [reviewLocation, setReviewLocation] = useState("");
@@ -166,9 +194,11 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="Akirapa Home Care | In-Home Senior Care & 24/7 Services — Burlington, MA"
-        description="Compassionate in-home senior care in Burlington, MA. Hourly care, 24/7 daily care, hospital to home recovery, respite care, and specialized Alzheimer's support. Call +1 781-226-9910."
+        title="Akirapa Home Care | Premier In-Home Senior Care — Burlington & Massachusetts"
+        description="Compassionate in-home senior care headquartered at 281 Cambridge Street, Burlington, MA. Hourly care, 24/7 daily & live-in care, hospital-to-home recovery, respite, and Alzheimer's support across Massachusetts. Call +1 781-226-9910."
+        keywords="home care Massachusetts, senior care Burlington MA, in-home care MA, 24-hour home care Massachusetts, Alzheimer's care MA, dementia home care, respite care Burlington MA, caregiver Burlington MA, elder care Middlesex County, home health aide MA"
         path="/"
+        faqs={homepageFaqs}
       />
 
       {/* Enhanced Hero Section with Seamless Photographic Gradient Blend */}
@@ -762,6 +792,185 @@ const Index = () => {
                   </div>
                 )}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Massachusetts Service Areas & Regional Coverage Hub */}
+      <section className="py-16 md:py-24 bg-white border-b border-gray-100">
+        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1 rounded-full inline-block">
+              Massachusetts Coverage
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
+              Proudly Serving Massachusetts Families
+            </h2>
+            <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+              Headquartered at 281 Cambridge Street in Burlington, MA, Akirapa Home Care deploys licensed, background-checked caregivers to private residences, senior communities, and healthcare facilities across the Commonwealth.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Region 1 */}
+            <div className="p-6 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm space-y-4 hover:border-[#76248a]/30 transition-all card-hover-pro">
+              <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                <i className="fa-solid fa-map-location-dot text-[#40ddd3]"></i>
+              </div>
+              <h3 className="text-lg font-black text-gray-900">Middlesex County (HQ)</h3>
+              <p className="text-xs text-gray-500 font-medium">Immediate Same-Day Assessment</p>
+              <ul className="text-xs text-gray-700 space-y-2 pt-1 border-t border-gray-200/60">
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i><strong>Burlington</strong> (Headquarters)</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Woburn & Lexington</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Bedford & Billerica</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Winchester & Arlington</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Concord, Waltham & Newton</li>
+              </ul>
+              <Link to="/contact" className="text-xs font-bold text-[#76248a] hover:text-[#0d9488] flex items-center gap-1.5 pt-2">
+                <span>Request Middlesex Care</span>
+                <i className="fa-solid fa-arrow-right text-[10px]"></i>
+              </Link>
+            </div>
+
+            {/* Region 2 */}
+            <div className="p-6 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm space-y-4 hover:border-[#76248a]/30 transition-all card-hover-pro">
+              <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                <i className="fa-solid fa-city text-[#40ddd3]"></i>
+              </div>
+              <h3 className="text-lg font-black text-gray-900">Greater Boston</h3>
+              <p className="text-xs text-gray-500 font-medium">Urban & Inner Suburban Hub</p>
+              <ul className="text-xs text-gray-700 space-y-2 pt-1 border-t border-gray-200/60">
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Boston & Cambridge</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Brookline & Somerville</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Medford & Malden</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Melrose & Everett</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Belmont & Watertown</li>
+              </ul>
+              <Link to="/contact" className="text-xs font-bold text-[#76248a] hover:text-[#0d9488] flex items-center gap-1.5 pt-2">
+                <span>Request Boston Care</span>
+                <i className="fa-solid fa-arrow-right text-[10px]"></i>
+              </Link>
+            </div>
+
+            {/* Region 3 */}
+            <div className="p-6 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm space-y-4 hover:border-[#76248a]/30 transition-all card-hover-pro">
+              <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                <i className="fa-solid fa-compass text-[#40ddd3]"></i>
+              </div>
+              <h3 className="text-lg font-black text-gray-900">North Shore & Essex</h3>
+              <p className="text-xs text-gray-500 font-medium">Coastal & Northern Route 128</p>
+              <ul className="text-xs text-gray-700 space-y-2 pt-1 border-t border-gray-200/60">
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Reading & North Reading</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Wakefield & Stoneham</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Lynnfield & Peabody</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Danvers & Beverly</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Salem & Swampscott</li>
+              </ul>
+              <Link to="/contact" className="text-xs font-bold text-[#76248a] hover:text-[#0d9488] flex items-center gap-1.5 pt-2">
+                <span>Request North Shore Care</span>
+                <i className="fa-solid fa-arrow-right text-[10px]"></i>
+              </Link>
+            </div>
+
+            {/* Region 4 */}
+            <div className="p-6 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm space-y-4 hover:border-[#76248a]/30 transition-all card-hover-pro">
+              <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                <i className="fa-solid fa-tree text-[#40ddd3]"></i>
+              </div>
+              <h3 className="text-lg font-black text-gray-900">MetroWest & Central MA</h3>
+              <p className="text-xs text-gray-500 font-medium">Route 9 & I-90 Corridor</p>
+              <ul className="text-xs text-gray-700 space-y-2 pt-1 border-t border-gray-200/60">
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Wellesley & Needham</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Natick & Framingham</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Wayland & Sudbury</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Marlborough & Westborough</li>
+                <li className="flex items-center gap-2"><i className="fa-solid fa-check text-xs text-[#0d9488]"></i>Greater Worcester</li>
+              </ul>
+              <Link to="/contact" className="text-xs font-bold text-[#76248a] hover:text-[#0d9488] flex items-center gap-1.5 pt-2">
+                <span>Request MetroWest Care</span>
+                <i className="fa-solid fa-arrow-right text-[10px]"></i>
+              </Link>
+            </div>
+          </div>
+
+          {/* Directory Comparison Banner */}
+          <div className="bg-gradient-to-r from-[#76248a] to-[#561868] text-white p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+            <div className="space-y-1 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 bg-[#40ddd3] text-gray-950 font-black px-3 py-0.5 rounded-full text-xs uppercase mb-1">
+                <span>Massachusetts Industry Index</span>
+              </div>
+              <h3 className="text-2xl font-black text-white">Compare 500 Home Care Agencies Across Massachusetts</h3>
+              <p className="text-white/80 text-sm max-w-2xl">
+                Research estimated costs, ratings, and service options for every licensed agency in MA in our comprehensive directory.
+              </p>
+            </div>
+            <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold rounded-2xl h-12 px-6 shrink-0 button-shimmer hover:scale-105 transition-all">
+              <Link to="/ma-home-care-directory">Open MA Directory →</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions Section with Interactive Accordion */}
+      <section className="py-16 md:py-24 bg-gray-50/70 border-b border-gray-100">
+        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1 rounded-full inline-block">
+              Frequently Asked Questions
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
+              Common Questions About Home Care in Massachusetts
+            </h2>
+            <p className="text-gray-600 text-base sm:text-lg">
+              Clear, transparent answers from our Burlington clinical coordination team to help you make informed decisions.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-4">
+            {homepageFaqs.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-2xl border border-gray-200/80 shadow-xs overflow-hidden transition-all duration-200 hover:border-[#76248a]/30"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-gray-900 hover:text-[#76248a] transition-colors focus:outline-none"
+                  >
+                    <span className="text-base sm:text-lg">{faq.question}</span>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${isOpen ? "bg-[#76248a] text-white" : "bg-gray-100 text-gray-600"}`}>
+                      <i className={`fa-solid ${isOpen ? "fa-minus" : "fa-plus"} text-xs`}></i>
+                    </div>
+                  </button>
+                  {isOpen && (
+                    <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-gray-600 leading-relaxed border-t border-gray-100">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="text-center pt-4">
+            <p className="text-gray-600 text-sm mb-3">
+              Have a question specific to your family's care situation?
+            </p>
+            <div className="inline-flex flex-wrap gap-4 justify-center">
+              <a
+                href="tel:+17812269910"
+                className="inline-flex items-center gap-2 text-[#76248a] font-black hover:text-[#0d9488] text-base"
+              >
+                <i className="fa-solid fa-phone"></i>
+                <span>Call +1 781-226-9910</span>
+              </a>
+              <span className="text-gray-400">•</span>
+              <Link to="/contact" className="text-[#76248a] font-bold hover:underline text-base">
+                Request Free Care Consultation
+              </Link>
             </div>
           </div>
         </div>

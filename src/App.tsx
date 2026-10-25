@@ -32,6 +32,7 @@ import LeadershipEditor from "./pages/admin/LeadershipEditor";
 import PartnersEditor from "./pages/admin/PartnersEditor";
 
 import AkiVault from "./pages/AkiVault";
+import ServiceDetail from "./pages/ServiceDetail";
 import MAHomeCareDirectory from "./pages/MAHomeCareDirectory";
 import MACompetitorDetail from "./pages/MACompetitorDetail";
 
@@ -66,6 +67,7 @@ const App = () => {
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<Leadership />} />
                   <Route path="/services" element={<Projects />} />
+                  <Route path="/services/:slug" element={<ServiceDetail />} />
                   <Route path="/akivault" element={<AkiVault />} />
                   <Route path="/AkiVault.html" element={<AkiVault />} />
                   <Route path="/blog" element={<Blog />} />

@@ -200,8 +200,13 @@ export default function AkiVault() {
   return (
     <Layout>
       <SEO
-        title="AkiVault Technology Platform | Why Akirapa Leads In-Home Care"
-        description="Explore AkiVault, the proprietary technology engine behind Akirapa Home Care. Discover GPS EVV, 8-point welfare checks, Care Pod scheduling, and real-time family portals."
+        title="AkiVault Technology Platform | Secured In-Home Care Infrastructure | Akirapa"
+        description="Discover AkiVault, Akirapa Home Care's proprietary technology engine: GPS geofenced EVV verification, 8-point shift welfare checks, Care Pod allocation, and 24/7 HIPAA family portal in Massachusetts."
+        path="/akivault"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "AkiVault Technology", path: "/akivault" }
+        ]}
       />
 
       {/* Floating Interactive & Draggable Navigation Widget */}

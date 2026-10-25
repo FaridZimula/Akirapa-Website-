@@ -102,13 +102,14 @@ export default function MAHomeCareDirectory() {
       <SEO 
         title="Top 500 Home Care Agencies in Massachusetts | 2025/2026 Directory | Akirapa Home Care"
         description="Search and compare 500 home care agencies across Massachusetts, including Burlington, Lexington, Boston, Worcester, and Cape Cod. Filter by popularity, ratings, and rates."
+        keywords="home care agencies Massachusetts, Massachusetts home care directory, senior care providers MA, Burlington home care, Boston home health care"
         path="/ma-home-care-directory"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Massachusetts Home Care Directory", path: "/ma-home-care-directory" }
+        ]}
+        schemaExtra={[jsonLd]}
       />
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
-        </script>
-      </Helmet>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#76248a] pt-32 pb-20 lg:pt-40 lg:pb-28">

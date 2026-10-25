@@ -73,12 +73,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { label: "Home", path: "/" },
-                { label: "About Us", path: "/about" },
-                { label: "Care Services", path: "/services" },
+                { label: "About Us & Leadership", path: "/about" },
+                { label: "All Care Services", path: "/services" },
                 { label: "AkiVault Platform", path: "/akivault" },
-                { label: "Our Blog", path: "/blog" },
-                { label: "Careers", path: "/careers" },
-                { label: "Contact Us", path: "/contact" },
+                { label: "MA Home Care Directory", path: "/ma-home-care-directory" },
+                { label: "Senior Care Blog", path: "/blog" },
+                { label: "Caregiver Careers", path: "/careers" },
                 { label: "Free Care Assessment", path: "/contact" }
               ].map((link) => (
                 <li key={link.label}>
@@ -97,24 +97,25 @@ const Footer = () => {
           {/* Core Services */}
           <div className="flex flex-col items-center sm:items-start">
             <h4 className="font-bold text-lg mb-6 text-[#40ddd3] uppercase tracking-wider text-sm">
-              Our Services
+              Specialized Care
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {[
-                "Hourly Home Care",
-                "Daily & 24/7 Home Care",
-                "Hospital to Home Care",
-                "Respite Care Services",
-                "Alzheimer's & Dementia Care",
-                "Parkinson's & Stroke Support"
+                { label: "24/7 Daily & Live-In Care", path: "/services/24-hour-home-care" },
+                { label: "Alzheimer's & Dementia Care", path: "/services/alzheimers-care" },
+                { label: "Hospital-to-Home Recovery", path: "/services/post-hospitalization-care" },
+                { label: "Respite Care for Families", path: "/services/respite-care" },
+                { label: "Companion Care Services", path: "/services/companion-care" },
+                { label: "Personal Care & ADLs", path: "/services/personal-care" },
+                { label: "Skilled Nursing Oversight", path: "/services/skilled-nursing" },
               ].map((service) => (
-                <li key={service}>
+                <li key={service.label}>
                   <Link
-                    to="/services"
-                    className="text-white/80 hover:text-[#40ddd3] transition-colors text-base flex items-center justify-center sm:justify-start gap-2"
+                    to={service.path}
+                    className="text-white/80 hover:text-[#40ddd3] transition-colors text-sm sm:text-base flex items-center justify-center sm:justify-start gap-2"
                   >
                     <span className="text-[#40ddd3] text-xs">›</span>
-                    {service}
+                    {service.label}
                   </Link>
                 </li>
               ))}

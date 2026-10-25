@@ -33,8 +33,10 @@ const Donate = () => {
     return (
         <Layout>
             <SEO
-                title="Support Our Mission | Donate to SUYEL"
-                description="Your contribution helps us empower more Ugandan youth. Support our education, health, and leadership programs today."
+                title="Support Our Mission | Akirapa Home Care"
+                description="Support dignified senior care and compassionate community in-home assistance with Akirapa Home Care."
+                path="/donate"
+                noindex={true}
             />
             {/* Hero Section */}
             <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-background">

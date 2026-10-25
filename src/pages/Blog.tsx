@@ -154,9 +154,14 @@ const Blog = () => {
   return (
     <Layout>
       <SEO
-        title="Our Blog | Senior Care Advice & Guides | Akirapa Home Care"
-        description="Read senior care guides, caregiver burnout tips, fall prevention strategies, and in-home care advice from Akirapa Home Care."
+        title="Senior Care Insights, Guides & Family Resources in Massachusetts | Akirapa Blog"
+        description="Expert senior home care guides, caregiver burnout tips, fall prevention, Alzheimer's support, and elder care advice from certified healthcare professionals at Akirapa Home Care."
+        keywords="senior care blog Massachusetts, caregiver resources Burlington MA, elder care advice MA, Alzheimer's care guides, in-home care tips"
         path="/blog"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Senior Care Blog", path: "/blog" }
+        ]}
       />
 
       {/* Floating Interactive & Draggable Topics Navigator Widget */}

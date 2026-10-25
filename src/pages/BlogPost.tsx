@@ -130,6 +130,11 @@ const BlogPostPage = () => {
           author: post.author,
           section: post.category,
         }}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Our Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` }
+        ]}
       />
 
       {/* Hero */}
