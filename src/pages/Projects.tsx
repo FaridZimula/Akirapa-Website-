@@ -41,9 +41,9 @@ const Projects = () => {
   return (
     <Layout>
       <SEO
-        title="Our Care Services | In-Home Senior Care in Massachusetts | Akirapa"
-        description="Explore 15 specialized in-home care services by Akirapa Home Care: Hourly care, 24/7 daily & live-in care, hospital-to-home recovery, respite care, and Alzheimer's support in Burlington and across Massachusetts."
-        keywords="home care services Massachusetts, senior care Burlington MA, in-home care Middlesex County, 24 hour home care MA, dementia care Massachusetts, companion care Burlington MA"
+        title="#1 Home Care Services in Massachusetts | Akirapa Home Care"
+        description="Ranked #1 best home care company in Massachusetts. Explore 15 specialized services: hourly visits, 24/7 live-in care, hospital-to-home recovery, respite, and dementia support with GPS-verified AkiVault™ tracking."
+        keywords="home care services Massachusetts, best home care company Massachusetts, senior care Burlington MA, in-home care Middlesex County, 24 hour home care MA, dementia care Massachusetts, companion care Burlington MA"
         path="/services"
         breadcrumbs={[
           { name: "Home", path: "/" },
@@ -64,6 +64,10 @@ const Projects = () => {
         </div>
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
+          <div className="inline-flex items-center gap-2 bg-[#40ddd3] text-gray-950 font-black text-xs uppercase px-3.5 py-1.5 rounded-full shadow-md mx-auto">
+            <i className="fa-solid fa-crown text-amber-500 text-sm"></i>
+            <span>#1 Ranked Home Care Services in Massachusetts</span>
+          </div>
           <h1 className="text-4xl sm:text-5xl font-black text-white animate-word-fade">
             In-Home Care Services Designed for You
           </h1>

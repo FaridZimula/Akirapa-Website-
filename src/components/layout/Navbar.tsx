@@ -6,11 +6,10 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Care Services", path: "/services" },
-  { name: "AkiVault", path: "/akivault" },
-  { name: "MA Directory", path: "/ma-home-care-directory" },
   { name: "Our Blog", path: "/blog" },
   { name: "Careers", path: "/careers" },
   { name: "Contact Us", path: "/contact" },
+  { name: "AkiVault", path: "/akivault" },
 ];
 
 const Navbar = () => {
@@ -36,7 +35,6 @@ const Navbar = () => {
               <a href="tel:+17812269910" className="font-bold text-[#40ddd3] hover:underline">
                 24/7 Helpline: +1 781-226-9910
               </a>
-
             </div>
           </div>
           <div className="flex items-center gap-4 flex-nowrap shrink-0">
@@ -80,9 +78,9 @@ const Navbar = () => {
               </a>
             </div>
 
-            <div className="flex items-center gap-1.5 bg-[#40ddd3] text-white px-2.5 py-0.5 rounded-full font-semibold shrink-0 shadow-sm animate-pulse">
-              <i className="fa-solid fa-clock text-xs text-white"></i>
-              <span>Care Your Way</span>
+            <div className="flex items-center gap-1.5 bg-[#40ddd3] text-gray-950 px-2.5 py-0.5 rounded-full font-bold text-xs shrink-0 shadow-sm">
+              <i className="fa-solid fa-award text-xs text-[#76248a]"></i>
+              <span>#1 in Massachusetts</span>
             </div>
           </div>
         </div>
@@ -90,40 +88,47 @@ const Navbar = () => {
 
       {/* Main Navbar */}
       <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-shadow duration-300">
-        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-24 sm:h-28">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20 sm:h-24">
             {/* Brand Logo */}
-            <Link to="/" className="flex items-center py-2 shrink-0 pr-4 group">
+            <Link to="/" className="flex items-center py-2 shrink-0 pr-3 xl:pr-6 group">
               <img
                 src="/akirapa-logo.png"
-                alt="Akirapa Home Care"
-                className="h-16 sm:h-20 w-auto max-w-[200px] sm:max-w-[240px] object-contain transition-transform duration-300 group-hover:scale-105"
+                alt="Akirapa Home Care - #1 Home Care in Massachusetts"
+                className="h-14 sm:h-16 xl:h-18 w-auto max-w-[180px] sm:max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1 xl:gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`px-3 xl:px-4 py-2 rounded-lg text-sm xl:text-base font-semibold transition-all duration-300 ease-out ${
-                    location.pathname === link.path
-                      ? "bg-[#76248a] text-white shadow-md scale-105"
-                      : "text-gray-700 hover:text-[#76248a] hover:bg-[#76248a]/10 hover:scale-105 active:scale-95"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = location.pathname === link.path;
+                const isAkiVault = link.name === "AkiVault";
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`px-3 xl:px-3.5 py-2 rounded-xl text-sm xl:text-[15px] font-bold transition-all duration-300 ease-out whitespace-nowrap flex items-center gap-1.5 ${
+                      isActive
+                        ? "bg-[#76248a] text-white shadow-md scale-105"
+                        : isAkiVault
+                        ? "text-[#76248a] bg-purple-50/90 hover:bg-[#76248a] hover:text-white border border-[#76248a]/20 shadow-xs"
+                        : "text-gray-700 hover:text-[#76248a] hover:bg-gray-100 hover:scale-105 active:scale-95"
+                    }`}
+                  >
+                    {isAkiVault && <i className="fa-solid fa-shield-halved text-xs text-[#40ddd3]"></i>}
+                    <span>{link.name}</span>
+                  </Link>
+                );
+              })}
             </div>
 
             {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center gap-2.5">
-              <Button variant="outline" asChild className="border-[#76248a] text-[#76248a] hover:bg-[#76248a] hover:text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md active:scale-95">
+            <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
+              <Button variant="outline" asChild className="border-2 border-[#76248a] text-[#76248a] hover:bg-[#76248a] hover:text-white font-bold h-11 px-4 xl:px-5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-md text-xs xl:text-sm">
                 <Link to="/services">Get a Quote</Link>
               </Button>
-              <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-bold shadow-md button-shimmer hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95">
+              <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-black h-11 px-4 xl:px-5 rounded-xl shadow-md button-shimmer hover:scale-105 transition-all text-xs xl:text-sm">
                 <Link to="/contact">Free Assessment</Link>
               </Button>
             </div>

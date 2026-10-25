@@ -9,9 +9,9 @@ const Leadership = () => {
   return (
     <Layout>
       <SEO
-        title="About Us & Leadership | Premier Massachusetts Senior Care | Akirapa"
-        description="Learn about Akirapa Home Care's history since 2013, founded by Cathy Akirapa (CNA) and Stuart Ssemwogerere in Burlington, MA. Providing licensed, contract-free in-home care across Massachusetts."
-        keywords="about Akirapa Home Care, Burlington MA senior care agency, Cathy Akirapa, home care leaders Massachusetts, trusted home health Burlington MA"
+        title="About Us & Leadership | #1 Best Home Care Company in Massachusetts | Akirapa"
+        description="Learn about Akirapa Home Care, ranked the #1 best home care company in Massachusetts. Founded by Cathy Akirapa (CNA) and Stuart Ssemwogerere in Burlington, MA. Zero contracts, GPS-verified EVV, and 24/7 care."
+        keywords="about Akirapa Home Care, best home care company Massachusetts, Burlington MA senior care agency, Cathy Akirapa, home care leaders Massachusetts, trusted home health Burlington MA"
         path="/about"
         breadcrumbs={[
           { name: "Home", path: "/" },
@@ -33,6 +33,10 @@ const Leadership = () => {
         </div>
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
+          <div className="inline-flex items-center gap-2 bg-[#40ddd3] text-gray-950 font-black text-xs uppercase px-3.5 py-1.5 rounded-full shadow-md mx-auto">
+            <i className="fa-solid fa-crown text-amber-500 text-sm"></i>
+            <span>#1 Ranked Home Care Company in Massachusetts</span>
+          </div>
           <h1 className="text-4xl sm:text-5xl font-black text-white animate-word-fade">
             About Akirapa Home Care
           </h1>

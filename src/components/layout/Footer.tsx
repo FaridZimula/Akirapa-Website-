@@ -38,8 +38,9 @@ const Footer = () => {
                 className="h-16 sm:h-18 w-auto object-contain scale-[2] sm:scale-[2.4] origin-center sm:origin-left transition-transform hover:scale-[2.1] sm:hover:scale-[2.5]"
               />
             </Link>
-            <p className="text-white/80 text-base leading-relaxed max-w-sm">
-              Providing compassionate, high-quality, and personalized home care services designed around your schedule. Care Your Way.
+            <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-sm">
+              <strong className="text-[#40ddd3] font-bold block mb-1">#1 Best Home Care Company in Massachusetts</strong>
+              Providing compassionate, licensed in-home care tailored around your schedule. 24/7 peace of mind with AkiVault™ GPS verification.
             </p>
 
             {/* Social Media Links */}
@@ -173,6 +174,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-wrap justify-center items-center gap-6">
+            <Link to="/ma-home-care-directory" className="hover:text-[#40ddd3] transition-colors font-semibold">MA Care Directory</Link>
             <Link to="/about" className="hover:text-[#40ddd3] transition-colors">Privacy Policy</Link>
             <Link to="/about" className="hover:text-[#40ddd3] transition-colors">Terms of Service</Link>
             <Link to="/contact" className="hover:text-[#40ddd3] transition-colors">Consumer Rights</Link>

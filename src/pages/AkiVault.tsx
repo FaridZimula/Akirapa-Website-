@@ -93,7 +93,12 @@ export default function AkiVault() {
   const [activeSectionNav, setActiveSectionNav] = useState<string>("hero");
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
-  const [cardPosition, setCardPosition] = useState({ x: 24, y: 120 });
+  const [cardPosition, setCardPosition] = useState(() => {
+    if (typeof window !== "undefined") {
+      return { x: Math.max(16, window.innerWidth - 330), y: 220 };
+    }
+    return { x: 24, y: 220 };
+  });
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isVibrating, setIsVibrating] = useState(false);
   const dragDistanceRef = React.useRef(0);
@@ -138,7 +143,7 @@ export default function AkiVault() {
     dragDistanceRef.current = dist;
     const newX = e.clientX - dragOffset.x;
     const newY = e.clientY - dragOffset.y;
-    setCardPosition({ x: Math.max(8, Math.min(window.innerWidth - 280, newX)), y: Math.max(80, Math.min(window.innerHeight - 100, newY)) });
+    setCardPosition({ x: Math.max(8, Math.min(window.innerWidth - 280, newX)), y: Math.max(120, Math.min(window.innerHeight - 100, newY)) });
   };
 
   const handleMouseUp = () => {
@@ -166,7 +171,7 @@ export default function AkiVault() {
     dragDistanceRef.current = dist;
     const newX = touch.clientX - dragOffset.x;
     const newY = touch.clientY - dragOffset.y;
-    setCardPosition({ x: Math.max(8, Math.min(window.innerWidth - 280, newX)), y: Math.max(80, Math.min(window.innerHeight - 100, newY)) });
+    setCardPosition({ x: Math.max(8, Math.min(window.innerWidth - 280, newX)), y: Math.max(120, Math.min(window.innerHeight - 100, newY)) });
   };
 
   const handleTouchEnd = () => {
@@ -212,7 +217,7 @@ export default function AkiVault() {
       {/* Floating Interactive & Draggable Navigation Widget */}
       <div
         ref={navCardRef}
-        className={`fixed z-50 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl animate-purple-glow transition-all duration-200 ${
+        className={`fixed z-40 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl animate-purple-glow transition-all duration-200 ${
           isVibrating ? "animate-vibrate-hyper ring-2 ring-fuchsia-400/60 shadow-[0_0_35px_rgba(217,70,239,0.55)]" : ""
         }`}
         style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}

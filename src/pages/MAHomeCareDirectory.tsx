@@ -123,15 +123,15 @@ export default function MAHomeCareDirectory() {
         </div>
         
         <div className="container-narrow relative z-10 text-center text-white px-4">
-          <div className="inline-flex items-center gap-2 bg-[#40ddd3] text-[#561868] font-black px-4 py-1.5 rounded-full text-xs md:text-sm mb-6 uppercase tracking-wider">
-            <i className="fa-solid fa-ranking-star"></i>
-            Massachusetts Senior Care Directory • 500 Verified Agencies
+          <div className="inline-flex items-center gap-2 bg-[#40ddd3] text-gray-950 font-black px-4 py-1.5 rounded-full text-xs md:text-sm mb-6 uppercase tracking-wider shadow-md">
+            <i className="fa-solid fa-crown text-amber-500"></i>
+            <span>Massachusetts Directory • Akirapa Home Care Ranked #1</span>
           </div>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-            Top 500 Home Care Agencies in Massachusetts
+            Top Home Care Agencies in Massachusetts
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto font-medium leading-relaxed">
-            Ranked by search volume and customer ratings across Middlesex County, Greater Boston, Worcester County, North Shore, South Shore, and Cape Cod.
+            Comparing 500 agencies across Middlesex County, Greater Boston, and statewide — with <strong>Akirapa Home Care</strong> ranked the <strong>#1 Best Home Care Company in Massachusetts</strong>.
           </p>
         </div>
       </section>
@@ -258,6 +258,74 @@ export default function MAHomeCareDirectory() {
               </div>
             )}
           </div>
+
+          {/* #1 Ranked Agency in Massachusetts Spotlight Banner */}
+          {currentPage === 1 && activeRegion === 'All' && !searchTerm && (
+            <div className="mb-10 bg-gradient-to-r from-purple-950 via-[#76248a] to-[#561868] text-white rounded-3xl p-8 lg:p-10 shadow-2xl border-2 border-[#40ddd3]/40 relative overflow-hidden card-shine">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-[#40ddd3]/20 rounded-full blur-3xl pointer-events-none"></div>
+              <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+                <div className="space-y-4 max-w-3xl">
+                  <div className="inline-flex items-center gap-2 bg-[#40ddd3] text-gray-950 font-black px-3.5 py-1 rounded-full text-xs uppercase tracking-wider shadow-sm">
+                    <i className="fa-solid fa-crown text-amber-500 text-sm"></i>
+                    <span>Rank #1 in Massachusetts • Official Directory Leader</span>
+                  </div>
+
+                  <div>
+                    <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight flex items-center gap-3 flex-wrap">
+                      <span>Akirapa Home Care</span>
+                      <span className="text-xs font-black bg-amber-400 text-gray-950 px-3 py-1 rounded-full uppercase tracking-wider">
+                        #1 Best Overall
+                      </span>
+                    </h2>
+                    <p className="text-white/80 text-xs sm:text-sm mt-1 flex items-center gap-2">
+                      <i className="fa-solid fa-location-dot text-[#40ddd3]"></i>
+                      <span>281 Cambridge Street, Burlington, MA 01803 • Serving All Massachusetts Communities</span>
+                    </p>
+                  </div>
+
+                  <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+                    Evaluated as Massachusetts’ <strong>#1 home care company</strong> across safety audits, client satisfaction (99%), certified caregiver staffing (100% CNAs), and proprietary AkiVault™ GPS real-time Electronic Visit Verification with absolute zero contract lock-in.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <span className="bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/15">
+                      ✓ GPS-Verified EVV Clock-In
+                    </span>
+                    <span className="bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/15">
+                      ✓ Zero Long-Term Contracts
+                    </span>
+                    <span className="bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/15">
+                      ✓ 100% Certified Nursing Assistants (CNAs)
+                    </span>
+                    <span className="bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/15">
+                      ✓ 24/7 Live Family Portal
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full lg:w-auto shrink-0">
+                  <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 text-center mb-1">
+                    <div className="text-amber-300 font-black text-xl flex items-center justify-center gap-1">
+                      <span>★ 5.0</span>
+                      <span className="text-xs text-white/80 font-normal">/ 5.0 Rating</span>
+                    </div>
+                    <span className="text-[11px] text-[#40ddd3] font-bold block mt-0.5">100% Verified Caregivers</span>
+                  </div>
+
+                  <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-black rounded-xl button-shimmer shadow-lg text-sm h-12">
+                    <Link to="/contact">Schedule Free Assessment</Link>
+                  </Button>
+                  <a
+                    href="tel:+17812269910"
+                    className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-5 rounded-xl border border-white/30 text-xs text-center transition-all"
+                  >
+                    <i className="fa-solid fa-phone text-[#40ddd3]"></i>
+                    <span>Hotline: +1 781-226-9910</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* 500 Agencies Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
