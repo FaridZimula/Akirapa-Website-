@@ -110,8 +110,8 @@ export default function MACompetitorDetail() {
   return (
     <Layout>
       <SEO
-        title={`${competitor.name} Reviews, Costs & Alternatives in MA (2025/2026) | Akirapa Home Care`}
-        description={`Researching ${competitor.name} in ${competitor.city}, MA? Review their services, estimated rates (${competitor.hourlyRate}), customer ratings (${competitor.rating}/5), and compare with Akirapa Home Care.`}
+        title={`${competitor.name} - ${competitor.city}, MA | Care Reviews & Alternatives — Akirapa Home Care`}
+        description={`Services Offered: ${competitor.services.join(' · ')}. Researching ${competitor.name} in ${competitor.city}, MA? Review estimated rates (${competitor.hourlyRate}), customer ratings (${competitor.rating}/5), and compare with 24/7 CNA care from Akirapa Home Care.`}
         path={`/ma-home-care-directory/${competitor.slug}`}
       />
       <Helmet>
@@ -602,8 +602,14 @@ export default function MACompetitorDetail() {
               </Button>
             </Link>
           </div>
+          <div className="mt-8 pt-6 border-t border-gray-200 text-center">
+            <p className="text-[11px] text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              Disclaimer: Akirapa Home Care is an independent care provider headquartered in Burlington, MA. All trademarks, service marks, and trade names referenced in this directory belong to their respective owners. Information presented is for consumer educational and comparative purposes.
+            </p>
+          </div>
         </div>
       </section>
     </Layout>
   );
 }
+

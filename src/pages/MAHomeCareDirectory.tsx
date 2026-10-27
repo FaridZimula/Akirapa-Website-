@@ -555,6 +555,55 @@ export default function MAHomeCareDirectory() {
           </div>
         </div>
       </section>
+
+      {/* Complete Massachusetts Regional Directory Crawl Hub */}
+      <section className="py-16 bg-white border-t border-gray-200 px-4">
+        <div className="container-narrow">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#76248a] bg-[#76248a]/10 px-3 py-1 rounded-full">
+              Statewide Coverage Index
+            </span>
+            <h2 className="text-3xl font-black text-[#561868] mt-3">
+              Browse All 500+ Massachusetts Home Care Providers by Region
+            </h2>
+            <p className="text-gray-600 text-sm mt-2">
+              Explore local agency reviews, estimated hourly costs, and service comparisons across all Massachusetts counties.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {REGIONS.filter(r => r !== 'All').map((region) => {
+              const regionAgencies = maCompetitors.filter(c => c.region === region);
+              return (
+                <div key={region} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                  <div className="flex items-center justify-between mb-4 border-b border-gray-200 pb-3">
+                    <h3 className="text-lg font-bold text-[#561868] flex items-center">
+                      <i className="fa-solid fa-map-location-dot text-[#40ddd3] mr-2"></i>
+                      {region} ({regionAgencies.length} Agencies)
+                    </h3>
+                    <span className="text-xs text-gray-500 font-medium">
+                      Serving Middlesex, Boston & Massachusetts
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
+                    {regionAgencies.map((agency) => (
+                      <Link
+                        key={agency.slug}
+                        to={`/ma-home-care-directory/${agency.slug}`}
+                        className="text-xs text-gray-700 hover:text-[#76248a] hover:font-bold truncate p-1.5 rounded transition-colors block"
+                        title={`${agency.name} in ${agency.city}, MA`}
+                      >
+                        • {agency.name} ({agency.city})
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }
