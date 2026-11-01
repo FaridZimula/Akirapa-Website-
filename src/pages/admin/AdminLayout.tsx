@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useData } from "@/context/DataContext";
 import { Navigate, Outlet, Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, MessageSquare, Briefcase, Users, LogOut, Settings, Menu, X, Globe, Database } from "lucide-react";
+import { LayoutDashboard, MessageSquare, Briefcase, Users, LogOut, Settings, Menu, X, Globe, Database, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AdminSplashScreen from "@/components/AdminSplashScreen";
 
@@ -29,6 +29,7 @@ const AdminLayout = () => {
     }
 
     const navItems = [
+        { label: "Blog & FB Posts", path: "/admin/blog", icon: BookOpen },
         { label: "Careers & Jobs", path: "/admin/careers", icon: Briefcase },
         { label: "Client Messages", path: "/admin", icon: MessageSquare },
         { label: "Donations", path: "/admin/donations", icon: LayoutDashboard },

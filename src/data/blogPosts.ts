@@ -10,6 +10,11 @@ export interface BlogPost {
   readTime: string;
   image: string;
   initialViews?: number;
+  status?: "published" | "draft";
+  source?: "manual" | "facebook";
+  facebookPostId?: string;
+  facebookUrl?: string;
+  created_at?: string;
 }
 
 export const blogPosts: BlogPost[] = [

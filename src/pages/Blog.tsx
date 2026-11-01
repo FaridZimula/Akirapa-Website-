@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { blogPosts, BlogPost } from "@/data/blogPosts";
+import { useData } from "@/context/DataContext";
+import { BlogPost } from "@/data/blogPosts";
 
 const TOPICS = [
   { id: "all", label: "All Topics", icon: "fa-newspaper" },
@@ -28,6 +29,8 @@ const getPostViews = (post: BlogPost): number => {
 };
 
 const Blog = () => {
+  const { blogPosts } = useData();
+  const publishedPosts = blogPosts.filter((post) => post.status !== "draft");
   const [selectedTopic, setSelectedTopic] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [viewsMap, setViewsMap] = useState<Record<string, number>>({});
@@ -69,7 +72,7 @@ const Blog = () => {
   // Load view counts on mount
   useEffect(() => {
     const map: Record<string, number> = {};
-    blogPosts.forEach((post) => {
+    publishedPosts.forEach((post) => {
       map[post.id] = getPostViews(post);
     });
     setViewsMap(map);
@@ -77,8 +80,8 @@ const Blog = () => {
 
   // Filter posts by topic
   const filteredPosts = selectedTopic === "all"
-    ? blogPosts
-    : blogPosts.filter((post) => post.category === selectedTopic);
+    ? publishedPosts
+    : publishedPosts.filter((post) => post.category === selectedTopic);
 
   // Pagination calculation
   const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
@@ -213,8 +216,8 @@ const Blog = () => {
             {TOPICS.map((topic) => {
               const isSelected = selectedTopic === topic.id;
               const count = topic.id === "all"
-                ? blogPosts.length
-                : blogPosts.filter((p) => p.category === topic.id).length;
+                ? publishedPosts.length
+                : publishedPosts.filter((p) => p.category === topic.id).length;
 
               return (
                 <button

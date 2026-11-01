@@ -83,6 +83,26 @@ CREATE TABLE IF NOT EXISTS public.donations (
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- 8. Blog Posts & Facebook Post Ingestion
+CREATE TABLE IF NOT EXISTS public.blog_posts (
+    id TEXT PRIMARY KEY,
+    slug TEXT UNIQUE NOT NULL,
+    title TEXT NOT NULL,
+    excerpt TEXT,
+    content TEXT NOT NULL,
+    date TEXT NOT NULL,
+    author TEXT DEFAULT 'Akirapa Home Care',
+    category TEXT DEFAULT 'Caregiver Support',
+    read_time TEXT DEFAULT '4 min read',
+    image TEXT,
+    views INT DEFAULT 350,
+    status TEXT DEFAULT 'published', -- 'published' or 'draft'
+    source TEXT DEFAULT 'manual', -- 'manual' or 'facebook'
+    facebook_post_id TEXT,
+    facebook_url TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- Enable Row Level Security (RLS) & Grant Policies
 ALTER TABLE public.projects ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.leaders ENABLE ROW LEVEL SECURITY;
@@ -91,6 +111,7 @@ ALTER TABLE public.videos ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.job_openings ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.messages ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.donations ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.blog_posts ENABLE ROW LEVEL SECURITY;
 
 -- Create policies for public access (Read & Write)
 DO $$
@@ -128,5 +149,10 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Public select donations') THEN
         CREATE POLICY "Public select donations" ON public.donations FOR SELECT USING (true);
         CREATE POLICY "Public modify donations" ON public.donations FOR ALL USING (true);
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Public select blog_posts') THEN
+        CREATE POLICY "Public select blog_posts" ON public.blog_posts FOR SELECT USING (true);
+        CREATE POLICY "Public modify blog_posts" ON public.blog_posts FOR ALL USING (true);
     END IF;
 END $$;

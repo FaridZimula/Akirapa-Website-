@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { blogPosts } from "@/data/blogPosts";
+import { useData } from "@/context/DataContext";
 
 const parseBoldText = (text: string) => {
   const parts = text.split(/(\*\*.*?\*\*)/g);
@@ -92,6 +92,7 @@ const renderArticleContent = (content: string) => {
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { blogPosts } = useData();
   const post = blogPosts.find((p) => p.slug === slug);
   const [views, setViews] = useState<number>(post?.initialViews || 350);
 
@@ -115,7 +116,7 @@ const BlogPostPage = () => {
 
   if (!post) return null;
 
-  const otherPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
+  const otherPosts = blogPosts.filter((p) => p.slug !== slug && p.status !== "draft").slice(0, 3);
 
   return (
     <Layout>
@@ -136,6 +137,15 @@ const BlogPostPage = () => {
           { name: post.title, path: `/blog/${post.slug}` }
         ]}
       />
+
+      {post.status === "draft" && (
+        <div className="bg-amber-500 text-white font-bold text-xs py-2.5 px-4 text-center sticky top-20 z-40 shadow-md flex items-center justify-center gap-2">
+          <span className="bg-white text-amber-900 text-[10px] uppercase font-black px-2 py-0.5 rounded-full">
+            Draft Post Preview
+          </span>
+          <span>This post is in Draft review mode and is not visible to public visitors yet.</span>
+        </div>
+      )}
 
       {/* Hero */}
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-[#76248a] text-white overflow-hidden">

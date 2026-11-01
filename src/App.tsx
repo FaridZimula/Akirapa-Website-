@@ -30,6 +30,7 @@ import Members from "./pages/admin/Members";
 import ProjectsEditor from "./pages/admin/ProjectsEditor";
 import LeadershipEditor from "./pages/admin/LeadershipEditor";
 import PartnersEditor from "./pages/admin/PartnersEditor";
+import BlogEditor from "./pages/admin/BlogEditor";
 
 import AkiVault from "./pages/AkiVault";
 import ServiceDetail from "./pages/ServiceDetail";
@@ -89,6 +90,7 @@ const App = () => {
                     <Route path="projects" element={<ProjectsEditor />} />
                     <Route path="leadership" element={<LeadershipEditor />} />
                     <Route path="partners" element={<PartnersEditor />} />
+                    <Route path="blog" element={<BlogEditor />} />
                   </Route>
 
                   {/* Backward Compatibility Aliases */}

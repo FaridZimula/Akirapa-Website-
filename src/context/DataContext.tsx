@@ -4,6 +4,7 @@ import { toast } from 'sonner';
 import { projects as initialProjects } from '@/data/projects';
 import { leaders as initialLeaders, boardMembers as initialBoardMembers } from '@/data/leadership';
 import { partners as initialPartners } from '@/data/partners';
+import { blogPosts as initialBlogPosts, BlogPost } from '@/data/blogPosts';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
 const initialVideos: Video[] = [
@@ -17,7 +18,8 @@ const initialVideos: Video[] = [
     }
 ];
 
-export { initialProjects, initialLeaders, initialBoardMembers, initialPartners };
+export { initialProjects, initialLeaders, initialBoardMembers, initialPartners, initialBlogPosts };
+export type { BlogPost };
 
 export interface Project {
     id?: string;
@@ -195,6 +197,7 @@ interface DataContextType {
     donations: Donation[];
     videos: Video[];
     jobOpenings: JobOpening[];
+    blogPosts: BlogPost[];
     isLoading: boolean;
     isSupabaseConnected: boolean;
 
@@ -207,6 +210,12 @@ interface DataContextType {
     updateJobOpening: (job: JobOpening) => Promise<void>;
     deleteJobOpening: (id: string) => Promise<void>;
     resetJobOpenings: () => void;
+    addBlogPost: (post: BlogPost) => Promise<void>;
+    updateBlogPost: (post: BlogPost) => Promise<void>;
+    publishBlogPost: (id: string) => Promise<void>;
+    unpublishBlogPost: (id: string) => Promise<void>;
+    deleteBlogPost: (id: string) => Promise<void>;
+    resetBlogPosts: () => void;
     sendMessage: (msg: { full_name: string; email: string; subject: string; content: string }) => Promise<void>;
     markMessageRead: (id: string) => Promise<void>;
     deleteMessage: (id: string) => Promise<void>;
@@ -230,6 +239,21 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
             return saved ? JSON.parse(saved) : initialJobOpenings;
         } catch (e) {
             return initialJobOpenings;
+        }
+    });
+    const [blogPosts, setBlogPosts] = useState<BlogPost[]>(() => {
+        try {
+            const saved = localStorage.getItem('akirapa_blog_posts');
+            if (saved) {
+                return JSON.parse(saved);
+            }
+            return initialBlogPosts.map(p => ({
+                ...p,
+                status: p.status || 'published',
+                source: p.source || 'manual'
+            }));
+        } catch (e) {
+            return initialBlogPosts;
         }
     });
     const [isLoading, setIsLoading] = useState(true);
@@ -313,6 +337,48 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
                     setIsSupabaseConnected(true);
                 }
 
+                // Fetch Blog Posts
+                const { data: dbPosts, error: postErr } = await supabase.from('blog_posts').select('*').order('created_at', { ascending: false });
+                if (!postErr && dbPosts && dbPosts.length > 0) {
+                    type DbBlogPost = {
+                        id: string;
+                        slug: string;
+                        title: string;
+                        excerpt: string;
+                        content: string;
+                        date: string;
+                        author: string;
+                        category: string;
+                        read_time: string;
+                        image: string;
+                        views: number;
+                        status: 'published' | 'draft';
+                        source: 'manual' | 'facebook';
+                        facebook_post_id?: string;
+                        facebook_url?: string;
+                        created_at?: string;
+                    };
+                    setBlogPosts((dbPosts as DbBlogPost[]).map((p) => ({
+                        id: p.id,
+                        slug: p.slug,
+                        title: p.title,
+                        excerpt: p.excerpt || '',
+                        content: p.content,
+                        date: p.date,
+                        author: p.author,
+                        category: p.category,
+                        readTime: p.read_time,
+                        image: p.image,
+                        initialViews: p.views,
+                        status: p.status || 'published',
+                        source: p.source || 'manual',
+                        facebookPostId: p.facebook_post_id,
+                        facebookUrl: p.facebook_url,
+                        created_at: p.created_at
+                    })));
+                    setIsSupabaseConnected(true);
+                }
+
             } catch (error) {
                 console.warn("Supabase fetch notice: Operating with local fallback.", error);
             } finally {
@@ -331,6 +397,15 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
             console.error("Failed to persist job openings", e);
         }
     }, [jobOpenings]);
+
+    // Persist Blog Posts locally as fallback
+    useEffect(() => {
+        try {
+            localStorage.setItem('akirapa_blog_posts', JSON.stringify(blogPosts));
+        } catch (e) {
+            console.error("Failed to persist blog posts", e);
+        }
+    }, [blogPosts]);
 
     // Mutation Handlers
     const updateProjects = async (newProjects: Project[]) => {
@@ -518,6 +593,114 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
         toast.info("Job openings reset to default positions");
     };
 
+    const addBlogPost = async (post: BlogPost) => {
+        setBlogPosts(prev => [post, ...prev]);
+        if (isSupabaseConfigured) {
+            try {
+                await supabase.from('blog_posts').insert([{
+                    id: post.id,
+                    slug: post.slug,
+                    title: post.title,
+                    excerpt: post.excerpt,
+                    content: post.content,
+                    date: post.date,
+                    author: post.author,
+                    category: post.category,
+                    read_time: post.readTime,
+                    image: post.image,
+                    views: post.initialViews || 350,
+                    status: post.status || 'published',
+                    source: post.source || 'manual',
+                    facebook_post_id: post.facebookPostId || null,
+                    facebook_url: post.facebookUrl || null,
+                }]);
+                toast.success(post.status === 'draft' ? "Post saved as draft for review!" : "Post published to Supabase & live website!");
+                return;
+            } catch (err) {
+                console.error("Failed to add blog post to Supabase", err);
+            }
+        }
+        toast.success(post.status === 'draft' ? "Draft post saved locally" : "Post published locally");
+    };
+
+    const updateBlogPost = async (updatedPost: BlogPost) => {
+        setBlogPosts(prev => prev.map(p => p.id === updatedPost.id ? updatedPost : p));
+        if (isSupabaseConfigured) {
+            try {
+                await supabase.from('blog_posts').upsert([{
+                    id: updatedPost.id,
+                    slug: updatedPost.slug,
+                    title: updatedPost.title,
+                    excerpt: updatedPost.excerpt,
+                    content: updatedPost.content,
+                    date: updatedPost.date,
+                    author: updatedPost.author,
+                    category: updatedPost.category,
+                    read_time: updatedPost.readTime,
+                    image: updatedPost.image,
+                    views: updatedPost.initialViews || 350,
+                    status: updatedPost.status || 'published',
+                    source: updatedPost.source || 'manual',
+                    facebook_post_id: updatedPost.facebookPostId || null,
+                    facebook_url: updatedPost.facebookUrl || null,
+                }]);
+                toast.success("Blog post updated in Supabase!");
+                return;
+            } catch (err) {
+                console.error("Failed to update blog post in Supabase", err);
+            }
+        }
+        toast.success("Blog post updated locally");
+    };
+
+    const publishBlogPost = async (id: string) => {
+        setBlogPosts(prev => prev.map(p => p.id === id ? { ...p, status: 'published' } : p));
+        if (isSupabaseConfigured) {
+            try {
+                await supabase.from('blog_posts').update({ status: 'published' }).eq('id', id);
+                toast.success("Post published live to the blog!");
+                return;
+            } catch (err) {
+                console.error("Failed to publish blog post in Supabase", err);
+            }
+        }
+        toast.success("Post published live to the blog!");
+    };
+
+    const unpublishBlogPost = async (id: string) => {
+        setBlogPosts(prev => prev.map(p => p.id === id ? { ...p, status: 'draft' } : p));
+        if (isSupabaseConfigured) {
+            try {
+                await supabase.from('blog_posts').update({ status: 'draft' }).eq('id', id);
+                toast.success("Post moved to drafts");
+                return;
+            } catch (err) {
+                console.error("Failed to move blog post to drafts", err);
+            }
+        }
+        toast.success("Post moved to drafts");
+    };
+
+    const deleteBlogPost = async (id: string) => {
+        setBlogPosts(prev => prev.filter(p => p.id !== id));
+        if (isSupabaseConfigured) {
+            try {
+                await supabase.from('blog_posts').delete().eq('id', id);
+                toast.success("Blog post deleted from Supabase!");
+                return;
+            } catch (err) {
+                console.error("Failed to delete blog post in Supabase", err);
+            }
+        }
+        toast.success("Blog post deleted");
+    };
+
+    const resetBlogPosts = () => {
+        setBlogPosts(initialBlogPosts.map(p => ({ ...p, status: 'published' as const, source: 'manual' as const })));
+        localStorage.removeItem('akirapa_blog_posts');
+        toast.info("Blog posts reset to default articles");
+    };
+
     const sendMessage = async (msg: { full_name: string; email: string; subject: string; content: string }) => {
         const newMsg: Message = {
             id: `msg-${Date.now()}`,
@@ -602,6 +785,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setJobOpenings(initialJobOpenings);
         setMessages([]);
         setDonations([]);
+        setBlogPosts(initialBlogPosts.map(p => ({ ...p, status: 'published' as const, source: 'manual' as const })));
         toast.info("Data reset to defaults");
     };
 
@@ -615,6 +799,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
             donations,
             videos,
             jobOpenings,
+            blogPosts,
             isLoading,
             isSupabaseConnected,
             updateProjects,
@@ -626,6 +811,12 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
             updateJobOpening,
             deleteJobOpening,
             resetJobOpenings,
+            addBlogPost,
+            updateBlogPost,
+            publishBlogPost,
+            unpublishBlogPost,
+            deleteBlogPost,
+            resetBlogPosts,
             sendMessage,
             markMessageRead,
             deleteMessage,
