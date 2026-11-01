@@ -33,7 +33,7 @@ const Leadership = () => {
         </div>
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
-          <h1 className="text-4xl sm:text-5xl font-black text-white animate-word-fade">
+          <h1 className="text-3xl sm:text-5xl font-black text-white animate-word-fade">
             About Akirapa Home Care
           </h1>
           <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium animate-word-fade [animation-delay:150ms]">
@@ -92,7 +92,7 @@ const Leadership = () => {
             </div>
 
             <div className="lg:col-span-6 space-y-6">
-              <div className="bg-[#76248a] text-white p-8 md:p-10 rounded-3xl shadow-xl space-y-6 border border-white/20">
+              <div className="bg-[#76248a] text-white p-5 sm:p-8 md:p-10 rounded-3xl shadow-xl space-y-6 border border-white/20">
                 <div className="w-14 h-14 rounded-2xl bg-[#40ddd3] text-white flex items-center justify-center shadow-md">
                   <i className="fa-solid fa-award text-2xl text-white"></i>
                 </div>

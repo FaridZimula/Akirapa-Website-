@@ -43,7 +43,7 @@ const Login = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4 font-sans text-left">
-            <div className="bg-white p-8 sm:p-10 rounded-3xl shadow-xl w-full max-w-md border border-gray-100 space-y-6">
+            <div className="bg-white p-5 sm:p-10 rounded-2xl sm:rounded-3xl shadow-xl w-full max-w-md border border-gray-100 space-y-6">
                 
                 {/* Brand Logo & Title Header */}
                 <div className="text-center space-y-3">

@@ -31,11 +31,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12 text-center sm:text-left">
           {/* Brand Column */}
           <div className="space-y-4 flex flex-col items-center sm:items-start">
-            <Link to="/" className="inline-block overflow-visible py-2">
+            <Link to="/" className="inline-block py-2 max-w-[280px]">
               <img
                 src="/footer-logo.png"
                 alt="Akirapa Home Care"
-                className="h-16 sm:h-18 w-auto object-contain scale-[2] sm:scale-[2.4] origin-center sm:origin-left transition-transform hover:scale-[2.1] sm:hover:scale-[2.5]"
+                className="h-16 sm:h-20 w-auto max-w-[240px] sm:max-w-[280px] object-contain transition-transform hover:scale-105"
               />
             </Link>
             <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-sm">

@@ -279,20 +279,20 @@ const Index = () => {
                 <span className="tracking-wide">Premier Concierge Home Care</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.18] text-left animate-word-fade">
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.18] text-left animate-word-fade">
                 {slide.title}
               </h1>
 
-              <p className="text-base sm:text-lg lg:text-xl text-gray-700 font-medium leading-relaxed max-w-2xl text-left animate-word-fade [animation-delay:150ms]">
+              <p className="text-sm sm:text-lg lg:text-xl text-gray-700 font-medium leading-relaxed max-w-2xl text-left animate-word-fade [animation-delay:150ms]">
                 {slide.subtitle}
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-start items-stretch sm:items-center pt-2">
-              <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold text-base h-14 px-8 rounded-xl shadow-lg shadow-[#40ddd3]/20 border-none transition-all duration-300 hover:scale-105 active:scale-95 button-shimmer">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-start items-stretch sm:items-center pt-2">
+              <Button asChild size="lg" className="w-full sm:w-auto bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold text-sm sm:text-base h-12 sm:h-14 px-6 sm:px-8 rounded-xl shadow-lg shadow-[#40ddd3]/20 border-none transition-all duration-300 hover:scale-105 active:scale-95 button-shimmer">
                 <Link to="/contact">Explore Concierge Private Care</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="bg-white/90 hover:bg-white border-2 border-[#76248a] text-[#76248a] font-bold text-base h-14 px-8 rounded-xl shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-300 backdrop-blur-sm">
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/90 hover:bg-white border-2 border-[#76248a] text-[#76248a] font-bold text-sm sm:text-base h-12 sm:h-14 px-6 sm:px-8 rounded-xl shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-300 backdrop-blur-sm">
                 <Link to="/services">View Care Services</Link>
               </Button>
             </div>
@@ -318,7 +318,7 @@ const Index = () => {
       {/* High Impact Helpline Callout Banner */}
       <section className="bg-gray-50/80 pt-6 pb-4">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100 flex flex-col lg:flex-row items-center justify-between gap-6 -mt-14 sm:-mt-16 relative z-20 card-hover-pro card-shine group">
+          <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-xl border border-gray-100 flex flex-col lg:flex-row items-center justify-between gap-6 -mt-8 sm:-mt-14 lg:-mt-16 relative z-20 card-hover-pro card-shine group">
             <div className="flex items-center gap-4 text-center sm:text-left flex-col sm:flex-row">
               <div className="w-16 h-16 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                 <i className="fa-solid fa-phone-volume text-2xl text-white"></i>
@@ -408,7 +408,7 @@ const Index = () => {
       <section className="py-16 md:py-20 bg-white border-b border-gray-100">
         <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-10">
           {/* Main Headline */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-tight text-left">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-tight text-left">
             Would you rather stay at home than go into a health care facility or nursing home?
           </h2>
 
@@ -416,18 +416,27 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex items-start gap-4 max-w-2xl">
               <div className="w-16 h-1 bg-[#40ddd3] rounded-full shrink-0 mt-3 hidden sm:block"></div>
-              <p className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed text-left">
+              <p className="text-sm sm:text-lg text-gray-700 font-medium leading-relaxed text-left">
                 Akirapa Home Care Inc provides the following home health care programs at flexible schedules and cost-friendly service rates.
               </p>
             </div>
 
-            <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold uppercase text-sm h-14 px-8 rounded-none shadow-md border-none shrink-0 button-shimmer hover:scale-105 active:scale-95 transition-all duration-300">
+            <Button asChild size="lg" className="w-full sm:w-auto bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold uppercase text-xs sm:text-sm h-12 sm:h-14 px-6 sm:px-8 rounded-xl shadow-md border-none shrink-0 button-shimmer hover:scale-105 active:scale-95 transition-all duration-300">
               <Link to="/services">View Care Services</Link>
             </Button>
           </div>
 
+          {/* Mobile Swipe Cue */}
+          <div className="lg:hidden flex items-center justify-between text-xs text-[#76248a] font-bold px-1 pt-1 -mb-2">
+            <span className="flex items-center gap-1.5">
+              <i className="fa-solid fa-arrows-left-right text-[#40ddd3] animate-pulse"></i>
+              <span>Swipe horizontally to view all 5 care services</span>
+            </span>
+            <span className="text-[10px] bg-purple-100 text-[#76248a] px-2 py-0.5 rounded-full font-black">5 Services</span>
+          </div>
+
           {/* 5 Services Images Grid (Horizontal Scroll on Mobile, 5-Col Grid on Desktop) */}
-          <div className="flex overflow-x-auto gap-5 sm:gap-6 pt-4 pb-4 snap-x snap-mandatory scrollbar-none -mx-6 px-6 sm:-mx-12 sm:px-12 lg:grid lg:grid-cols-5 lg:gap-8 lg:mx-0 lg:px-0 lg:overflow-visible">
+          <div className="flex overflow-x-auto gap-4 sm:gap-6 pt-2 pb-4 snap-x snap-mandatory scrollbar-none no-scrollbar touch-scroll-x -mx-4 px-4 sm:-mx-12 sm:px-12 lg:grid lg:grid-cols-5 lg:gap-8 lg:mx-0 lg:px-0 lg:overflow-visible">
             {/* Service 1 */}
             <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
@@ -610,7 +619,7 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-white border-b border-gray-100">
         <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-10">
           {/* Main Headline */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-tight text-left">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#76248a] tracking-tight leading-tight text-left">
             Our 99% client satisfaction rate is unparalleled in our field.
           </h2>
 
@@ -618,39 +627,39 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex items-start gap-4 max-w-2xl">
               <div className="w-16 h-1 bg-[#40ddd3] rounded-full shrink-0 mt-3 hidden sm:block"></div>
-              <p className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed text-left">
+              <p className="text-sm sm:text-lg text-gray-700 font-medium leading-relaxed text-left">
                 Read below what our clients have to say and learn more about what makes us the premier provider of in-home senior care.
               </p>
             </div>
 
-            <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold uppercase text-sm h-14 px-8 rounded-xl shadow-md border-none shrink-0 button-shimmer hover:scale-105 active:scale-95 transition-all duration-300">
+            <Button asChild size="lg" className="w-full sm:w-auto bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold uppercase text-xs sm:text-sm h-12 sm:h-14 px-6 sm:px-8 rounded-xl shadow-md border-none shrink-0 button-shimmer hover:scale-105 active:scale-95 transition-all duration-300">
               <a href="#submit-testimonial">WRITE REVIEW</a>
             </Button>
           </div>
 
           {/* Split Feature Box */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 min-h-[380px] card-hover-pro group">
+          <div className="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 min-h-[340px] sm:min-h-[380px] card-hover-pro group">
             {/* Left Card */}
-            <div className="order-2 lg:order-1 lg:col-span-6 bg-[#218981] text-white p-8 sm:p-12 flex flex-col justify-between space-y-6">
+            <div className="order-2 lg:order-1 lg:col-span-6 bg-[#218981] text-white p-6 sm:p-10 md:p-12 flex flex-col justify-between space-y-6">
               <div className="space-y-2">
-                <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
                   Shara M.
                 </h3>
-                <p className="text-white/80 text-base sm:text-lg font-normal">
+                <p className="text-white/80 text-sm sm:text-lg font-normal">
                   caregiving daughter
                 </p>
               </div>
 
               <div className="space-y-4">
-                <i className="fa-solid fa-quote-left text-3xl sm:text-4xl text-[#40ddd3] transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1"></i>
-                <p className="text-white text-base sm:text-lg font-medium leading-relaxed italic">
+                <i className="fa-solid fa-quote-left text-2xl sm:text-4xl text-[#40ddd3] transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1"></i>
+                <p className="text-white text-sm sm:text-lg font-medium leading-relaxed italic">
                   "Your help and assistance in caring for my mother has been nothing short of extraordinary. The peace of mind your team provides is priceless."
                 </p>
               </div>
             </div>
 
             {/* Right Card */}
-            <div className="order-1 lg:order-2 lg:col-span-6 relative min-h-[300px] lg:min-h-full overflow-hidden picture-glaze">
+            <div className="order-1 lg:order-2 lg:col-span-6 relative min-h-[250px] sm:min-h-[320px] lg:min-h-full overflow-hidden picture-glaze">
               <img
                 src="/CARE GIVER  (13).jpg"
                 alt="Shara M. Caregiver and Mother"
@@ -659,11 +668,11 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950/40 via-transparent to-transparent pointer-events-none" />
               
               {/* Floating Verified Family Badge */}
-              <div className="absolute bottom-4 right-4 floating-photo-badge py-2 px-3.5 rounded-2xl animate-float-reverse z-10 flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-emerald-500 text-sm"></i>
+              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 floating-photo-badge py-1.5 px-3 sm:py-2 sm:px-3.5 rounded-2xl animate-float-reverse z-10 flex items-center gap-2">
+                <i className="fa-solid fa-circle-check text-emerald-500 text-xs sm:text-sm"></i>
                 <div className="text-left">
-                  <span className="text-[11px] font-extrabold text-gray-900 block leading-tight">Verified Client Story</span>
-                  <span className="text-[9px] text-gray-500 font-medium">99% Satisfaction Benchmark</span>
+                  <span className="text-[10px] sm:text-[11px] font-extrabold text-gray-900 block leading-tight">Verified Client Story</span>
+                  <span className="text-[8px] sm:text-[9px] text-gray-500 font-medium">99% Satisfaction Benchmark</span>
                 </div>
               </div>
             </div>

@@ -172,10 +172,10 @@ const CareersEditor = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <Button
             onClick={handleOpenAddModal}
-            className="bg-[#76248a] hover:bg-[#561868] text-white font-extrabold text-xs px-5 py-3 rounded-xl shadow-md transition-all hover:scale-105"
+            className="w-full sm:w-auto bg-[#76248a] hover:bg-[#561868] text-white font-extrabold text-xs px-5 py-3 rounded-xl shadow-md transition-all hover:scale-105"
           >
             <Plus className="w-4 h-4 mr-1 text-white" />
             <span>Add New Job Listing</span>
@@ -254,7 +254,7 @@ const CareersEditor = () => {
       </div>
 
       {/* Job Listings Management Grid */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100 space-y-6">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-sm border border-gray-100 space-y-6">
         <div className="flex items-center justify-between border-b border-gray-100 pb-4">
           <h2 className="text-lg font-bold text-gray-900">Active Careers Database</h2>
           <span className="text-xs font-semibold text-gray-500">Showing {filteredJobs.length} listing(s)</span>
@@ -339,11 +339,11 @@ const CareersEditor = () => {
 
       {/* Add / Edit Job Listing Modal Dialog */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto border border-gray-100 my-auto text-left">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 max-w-2xl w-full shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto border border-gray-100 my-auto text-left">
             <div className="flex items-center justify-between border-b border-gray-100 pb-4">
               <div>
-                <h3 className="text-2xl font-extrabold text-[#76248a]">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-[#76248a]">
                   {editingJob ? "Edit Job Listing" : "Create New Job Listing"}
                 </h3>
                 <p className="text-xs text-gray-500 mt-0.5">
@@ -374,7 +374,7 @@ const CareersEditor = () => {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="city" className="text-xs font-bold text-gray-800 mb-1 block">
                     City in MA *
@@ -407,7 +407,7 @@ const CareersEditor = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="payRate" className="text-xs font-bold text-gray-800 mb-1 block">
                     Pay Rate *

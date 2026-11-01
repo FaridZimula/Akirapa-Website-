@@ -24,17 +24,17 @@ const Donations = () => {
 
     return (
         <div className="space-y-6">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
                         <DollarSign className="w-6 h-6" />
                     </div>
                     <div>
-                        <h1 className="text-3xl font-bold tracking-tight">Donations</h1>
-                        <p className="text-gray-500">Track real-time mobile money and card donations.</p>
+                        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Donations</h1>
+                        <p className="text-xs sm:text-sm text-gray-500">Track real-time mobile money and card donations.</p>
                     </div>
                 </div>
-                <div className="text-right">
+                <div className="text-left sm:text-right">
                     <div className="text-2xl font-bold text-blue-600">
                         UGX {donations.filter(d => d.status === 'SUCCESSFUL').reduce((acc, d) => acc + d.amount, 0).toLocaleString()}
                     </div>

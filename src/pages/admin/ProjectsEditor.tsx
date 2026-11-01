@@ -97,9 +97,9 @@ const ProjectsEditor = () => {
 
     return (
         <div className="space-y-6">
-            <div className="flex justify-between items-center">
-                <h1 className="text-3xl font-bold tracking-tight">Projects</h1>
-                <Button onClick={openNew}>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Projects</h1>
+                <Button onClick={openNew} className="w-full sm:w-auto">
                     <Plus className="w-4 h-4 mr-2" />
                     Add Project
                 </Button>
@@ -139,7 +139,7 @@ const ProjectsEditor = () => {
                     </DialogHeader>
                     {formData && (
                         <form onSubmit={handleFormSubmit} className="space-y-4">
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <Label>Title</Label>
                                     <Input value={formData.title} onChange={e => setFormData({ ...formData, title: e.target.value })} required />
@@ -149,7 +149,7 @@ const ProjectsEditor = () => {
                                     <Input value={formData.category} onChange={e => setFormData({ ...formData, category: e.target.value })} required />
                                 </div>
                             </div>
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <Label>Icon</Label>
                                     <Select value={formData.icon} onValueChange={val => setFormData({ ...formData, icon: val })}>
@@ -183,7 +183,7 @@ const ProjectsEditor = () => {
                             
                             <div className="space-y-4">
                                 <Label>Project Images (Auto-compressed)</Label>
-                                <div className="grid grid-cols-3 gap-2 mb-2">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-2">
                                     {formData.images.map((img, idx) => (
                                         <div key={idx} className="relative aspect-video group">
                                             <img src={img} alt={`Preview ${idx}`} className="w-full h-full object-cover rounded-md border" />

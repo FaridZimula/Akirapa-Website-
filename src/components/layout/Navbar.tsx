@@ -134,56 +134,86 @@ const Navbar = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-transform active:scale-90"
-            >
-              {isOpen ? (
-                <i className="fa-solid fa-xmark text-2xl transition-transform rotate-90 duration-300"></i>
-              ) : (
-                <i className="fa-solid fa-bars text-2xl transition-transform duration-300"></i>
-              )}
-            </button>
+            {/* Mobile Actions: 1-Tap Helpline + Menu Toggle */}
+            <div className="lg:hidden flex items-center gap-2">
+              <a
+                href="tel:+17812269910"
+                className="flex items-center gap-1.5 bg-[#76248a] hover:bg-[#561868] text-white px-3 py-2 rounded-xl text-xs font-black shadow-sm transition-all active:scale-95"
+                aria-label="Call 24/7 Helpline +1 781-226-9910"
+                title="Call 24/7 Helpline"
+              >
+                <i className="fa-solid fa-phone text-xs text-[#40ddd3] animate-pulse"></i>
+                <span className="hidden xs:inline">Call 24/7</span>
+              </a>
+
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={isOpen}
+                className="p-2.5 rounded-xl text-gray-700 hover:bg-gray-100 hover:text-[#76248a] transition-all active:scale-90 min-h-[44px] min-w-[44px] flex items-center justify-center border border-gray-100"
+              >
+                {isOpen ? (
+                  <i className="fa-solid fa-xmark text-2xl transition-transform rotate-90 duration-300"></i>
+                ) : (
+                  <i className="fa-solid fa-bars text-2xl transition-transform duration-300"></i>
+                )}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Navigation Drawer */}
           {isOpen && (
-            <div className="lg:hidden py-4 border-t border-gray-100 animate-tab-slide bg-white">
-              <div className="flex flex-col gap-2">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
-                      location.pathname === link.path
-                        ? "bg-[#76248a] text-white"
-                        : "text-gray-700 hover:text-[#76248a] hover:bg-[#40ddd3]/10"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-                <div className="px-4 py-3 border-t border-gray-100 mt-2 space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center gap-2 font-semibold text-[#76248a]">
+            <div className="lg:hidden py-4 border-t border-gray-100 animate-tab-slide bg-white max-h-[calc(100vh-5.5rem)] overflow-y-auto overscroll-contain shadow-2xl px-1">
+              <div className="flex flex-col gap-1.5">
+                {navLinks.map((link) => {
+                  const isActive = location.pathname === link.path;
+                  const isAkiVault = link.name === "AkiVault";
+
+                  return (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`px-4 py-3 rounded-xl text-base font-bold transition-all duration-200 flex items-center justify-between ${
+                        isActive
+                          ? "bg-[#76248a] text-white shadow-sm"
+                          : isAkiVault
+                          ? "text-[#76248a] bg-purple-50 hover:bg-[#76248a] hover:text-white border border-[#76248a]/20"
+                          : "text-gray-700 hover:text-[#76248a] hover:bg-gray-100"
+                      }`}
+                    >
+                      <span className="flex items-center gap-2">
+                        {isAkiVault && <i className="fa-solid fa-shield-halved text-sm text-[#40ddd3]"></i>}
+                        {link.name}
+                      </span>
+                      {isActive && <i className="fa-solid fa-check text-xs text-[#40ddd3]"></i>}
+                    </Link>
+                  );
+                })}
+
+                <div className="px-4 py-3 border-t border-gray-100 mt-2 space-y-2.5 text-sm text-gray-600 bg-gray-50/70 rounded-2xl mx-1">
+                  <div className="flex items-center gap-2 font-bold text-[#76248a]">
                     <i className="fa-solid fa-phone text-[#40ddd3]"></i>
                     <a href="tel:+17812269910" className="hover:underline">
-                      24/7 Hotline: +1 781-226-9910
+                      24/7 Helpline: +1 781-226-9910
                     </a>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 text-xs text-gray-600">
                     <i className="fa-solid fa-envelope text-[#40ddd3]"></i>
                     <span>info@akirapahomecareus.com</span>
                   </div>
+                  <div className="flex items-center gap-2 text-xs text-gray-600">
+                    <i className="fa-solid fa-location-dot text-[#40ddd3]"></i>
+                    <span>281 Cambridge Street, Burlington, MA</span>
+                  </div>
                   <div className="flex items-center gap-3 pt-2">
-                    <span className="text-xs font-bold text-gray-700">Follow Us:</span>
+                    <span className="text-xs font-bold text-gray-700">Follow:</span>
                     <a
                       href="https://www.instagram.com/akirapahomecare/"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Instagram"
-                      className="w-8 h-8 rounded-lg bg-[#76248a]/10 hover:bg-[#76248a] text-[#76248a] hover:text-white flex items-center justify-center transition-all"
+                      className="w-9 h-9 rounded-xl bg-white shadow-xs border border-gray-200 hover:bg-[#76248a] text-[#76248a] hover:text-white flex items-center justify-center transition-all"
                     >
                       <i className="fa-brands fa-instagram text-sm"></i>
                     </a>
@@ -192,7 +222,7 @@ const Navbar = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="X (Twitter)"
-                      className="w-8 h-8 rounded-lg bg-[#76248a]/10 hover:bg-[#76248a] text-[#76248a] hover:text-white flex items-center justify-center transition-all"
+                      className="w-9 h-9 rounded-xl bg-white shadow-xs border border-gray-200 hover:bg-[#76248a] text-[#76248a] hover:text-white flex items-center justify-center transition-all"
                     >
                       <i className="fa-brands fa-x-twitter text-sm"></i>
                     </a>
@@ -201,19 +231,20 @@ const Navbar = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Facebook"
-                      className="w-8 h-8 rounded-lg bg-[#76248a]/10 hover:bg-[#76248a] text-[#76248a] hover:text-white flex items-center justify-center transition-all"
+                      className="w-9 h-9 rounded-xl bg-white shadow-xs border border-gray-200 hover:bg-[#76248a] text-[#76248a] hover:text-white flex items-center justify-center transition-all"
                     >
                       <i className="fa-brands fa-facebook-f text-sm"></i>
                     </a>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-3 px-4 pt-2">
-                  <Button variant="outline" asChild className="w-full border-[#76248a] text-[#76248a] transition-transform active:scale-95">
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 px-2 pt-2">
+                  <Button variant="outline" asChild className="w-full h-11 border-2 border-[#76248a] text-[#76248a] font-bold rounded-xl transition-transform active:scale-95">
                     <Link to="/services" onClick={() => setIsOpen(false)}>
                       Get a Quote
                     </Link>
                   </Button>
-                  <Button asChild className="w-full bg-[#76248a] text-white transition-transform active:scale-95">
+                  <Button asChild className="w-full h-11 bg-[#76248a] text-white font-extrabold rounded-xl shadow-md transition-transform active:scale-95 button-shimmer">
                     <Link to="/contact" onClick={() => setIsOpen(false)}>
                       Free Consultation
                     </Link>

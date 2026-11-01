@@ -34,23 +34,25 @@ const Layout = ({ children }: LayoutProps) => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-clip w-full">
       <SEO />
       <Navbar />
-      <main className="flex-1 pt-20 md:pt-32">{children}</main>
+      <main className="flex-1 pt-20 md:pt-32 w-full overflow-x-clip">{children}</main>
       <Footer />
-
-
 
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 z-50 p-4 rounded-full bg-primary text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 ${showScrollTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16 pointer-events-none"
-          }`}
+        className={`fixed bottom-5 right-4 sm:bottom-8 sm:right-8 z-40 p-3 sm:p-4 rounded-full bg-primary text-white shadow-xl transition-all duration-300 hover:scale-110 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 min-h-[44px] min-w-[44px] flex items-center justify-center ${
+          showScrollTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16 pointer-events-none"
+        }`}
         aria-label="Scroll to top"
       >
-        <ArrowUp className="w-6 h-6" />
+        <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
+
+      {/* Floating 24/7 AI / Live Chat Widget */}
+      <ChatBot />
     </div>
   );
 };

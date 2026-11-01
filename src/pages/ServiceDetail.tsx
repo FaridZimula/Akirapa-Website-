@@ -101,7 +101,7 @@ export default function ServiceDetail() {
             <span>{service.category} • Massachusetts</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight max-w-4xl mx-auto">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight max-w-4xl mx-auto">
             {service.title} in Massachusetts
           </h1>
 
@@ -141,9 +141,9 @@ export default function ServiceDetail() {
           </div>
 
           {/* 2-Column Benefits & Included Grid */}
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto items-stretch">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-5xl mx-auto items-stretch">
             {/* Who Can Benefit */}
-            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm space-y-6 flex flex-col justify-between">
+            <div className="bg-gray-50 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-gray-100 shadow-sm space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shadow-xs">
                   <i className="fa-solid fa-users text-xl"></i>
@@ -164,7 +164,7 @@ export default function ServiceDetail() {
             </div>
 
             {/* What is Included */}
-            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm space-y-6 flex flex-col justify-between">
+            <div className="bg-gray-50 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-gray-100 shadow-sm space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-[#40ddd3] text-gray-950 flex items-center justify-center shadow-xs">
                   <i className="fa-solid fa-list-check text-xl"></i>
@@ -187,7 +187,7 @@ export default function ServiceDetail() {
 
           {/* Family Planning Considerations */}
           {service.familyConsiderations && service.familyConsiderations.length > 0 && (
-            <div className="max-w-4xl mx-auto bg-purple-50/70 rounded-3xl p-8 md:p-10 border border-[#76248a]/20 shadow-sm space-y-4">
+            <div className="max-w-4xl mx-auto bg-purple-50/70 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#76248a]/20 shadow-sm space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-[#76248a] text-white flex items-center justify-center shadow-xs">
                   <i className="fa-solid fa-lightbulb text-lg text-[#40ddd3]"></i>
@@ -206,7 +206,7 @@ export default function ServiceDetail() {
           )}
 
           {/* Massachusetts Service Areas Callout */}
-          <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 border border-gray-200 shadow-sm text-center md:text-left space-y-4">
+          <div className="max-w-4xl mx-auto bg-white rounded-3xl p-5 sm:p-8 border border-gray-200 shadow-sm text-center md:text-left space-y-4">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="space-y-2">
                 <span className="text-xs uppercase font-extrabold text-[#76248a] tracking-wider bg-[#76248a]/10 px-3 py-1 rounded-full">
@@ -219,7 +219,7 @@ export default function ServiceDetail() {
                   Akirapa Home Care provides {service.title.toLowerCase()} across Middlesex County including Burlington, Woburn, Lexington, Bedford, Billerica, Winchester, Arlington, Concord, and throughout Greater Boston and Massachusetts.
                 </p>
               </div>
-              <Button asChild size="lg" className="bg-[#76248a] hover:bg-[#561868] text-white font-extrabold rounded-2xl shrink-0">
+              <Button asChild size="lg" className="w-full md:w-auto bg-[#76248a] hover:bg-[#561868] text-white font-extrabold rounded-2xl shrink-0">
                 <Link to="/ma-home-care-directory">Compare MA Agencies</Link>
               </Button>
             </div>
@@ -305,21 +305,21 @@ export default function ServiceDetail() {
       {/* Immediate Helpline CTA */}
       <section className="relative min-h-[300px] py-12 md:py-16 bg-[#76248a] text-white overflow-hidden flex items-center justify-center">
         <div className="container-narrow mx-auto px-4 text-center space-y-4 relative z-10 w-full">
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
             Ready to Arrange {service.title} in Massachusetts?
           </h2>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium">
+          <p className="text-white/90 text-base sm:text-lg max-w-2xl mx-auto font-medium">
             No long-term contracts. Start with a free in-home clinical consultation tailored to your family's schedule.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <a
               href="tel:+17812269910"
-              className="inline-flex items-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-black text-lg px-8 py-4 rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 button-shimmer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-black text-base sm:text-lg px-8 py-4 rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 button-shimmer"
             >
               <i className="fa-solid fa-phone text-lg"></i>
               <span>Call +1 781-226-9910</span>
             </a>
-            <Button asChild variant="outline" size="lg" className="border-2 border-white bg-transparent text-white hover:bg-white/10 font-bold text-lg h-14 px-8 rounded-2xl transition-all duration-300 hover:scale-105">
+            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto border-2 border-white bg-transparent text-white hover:bg-white/10 font-bold text-base sm:text-lg h-14 px-8 rounded-2xl transition-all duration-300 hover:scale-105">
               <Link to="/contact">Book Free Consultation</Link>
             </Button>
           </div>

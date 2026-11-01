@@ -153,26 +153,26 @@ export default function MACompetitorDetail() {
           </p>
 
           {/* Quick Metrics Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/15 max-w-4xl">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 bg-white/10 backdrop-blur-md rounded-2xl p-3.5 sm:p-5 border border-white/15 max-w-4xl">
             <div>
-              <div className="text-xs uppercase tracking-wider text-white/70 font-semibold mb-1">Customer Rating</div>
-              <div className="text-2xl font-black text-[#40ddd3] flex items-center">
+              <div className="text-[11px] sm:text-xs uppercase tracking-wider text-white/70 font-semibold mb-0.5 sm:mb-1">Customer Rating</div>
+              <div className="text-xl sm:text-2xl font-black text-[#40ddd3] flex items-center">
                 <span>{competitor.rating}</span>
-                <span className="text-yellow-400 ml-1.5 text-lg">★</span>
-                <span className="text-xs text-white/70 ml-1">({competitor.reviewCount})</span>
+                <span className="text-yellow-400 ml-1 text-base sm:text-lg">★</span>
+                <span className="text-[10px] sm:text-xs text-white/70 ml-1">({competitor.reviewCount})</span>
               </div>
             </div>
             <div>
-              <div className="text-xs uppercase tracking-wider text-white/70 font-semibold mb-1">Service Area</div>
-              <div className="text-lg font-bold text-white truncate">{competitor.city}, MA</div>
+              <div className="text-[11px] sm:text-xs uppercase tracking-wider text-white/70 font-semibold mb-0.5 sm:mb-1">Service Area</div>
+              <div className="text-sm sm:text-lg font-bold text-white truncate">{competitor.city}, MA</div>
             </div>
             <div>
-              <div className="text-xs uppercase tracking-wider text-white/70 font-semibold mb-1">Estimated Rates</div>
-              <div className="text-lg font-bold text-[#40ddd3] truncate">{competitor.hourlyRate}</div>
+              <div className="text-[11px] sm:text-xs uppercase tracking-wider text-white/70 font-semibold mb-0.5 sm:mb-1">Estimated Rates</div>
+              <div className="text-sm sm:text-lg font-bold text-[#40ddd3] truncate">{competitor.hourlyRate}</div>
             </div>
             <div>
-              <div className="text-xs uppercase tracking-wider text-white/70 font-semibold mb-1">Akirapa Advantage</div>
-              <div className="text-lg font-bold text-white">0 Contracts + GPS</div>
+              <div className="text-[11px] sm:text-xs uppercase tracking-wider text-white/70 font-semibold mb-0.5 sm:mb-1">Akirapa Advantage</div>
+              <div className="text-sm sm:text-lg font-bold text-white truncate">0 Contracts + GPS</div>
             </div>
           </div>
         </div>
@@ -285,8 +285,12 @@ export default function MACompetitorDetail() {
                   </p>
                 </div>
 
-                <div className="overflow-x-auto">
-                  <table className="w-full text-left text-sm border-collapse">
+                <div className="md:hidden flex items-center gap-1.5 text-xs text-[#76248a] font-bold mb-2">
+                  <i className="fa-solid fa-arrows-left-right text-[#40ddd3] animate-pulse"></i>
+                  <span>Scroll table sideways to compare standards</span>
+                </div>
+                <div className="overflow-x-auto no-scrollbar touch-scroll-x -mx-2 px-2">
+                  <table className="w-full min-w-[500px] text-left text-sm border-collapse">
                     <thead>
                       <tr className="border-b border-gray-200">
                         <th className="py-3 px-4 font-bold text-gray-700">Care Standard</th>

@@ -207,7 +207,7 @@ const Contact = () => {
                 </div>
 
                 {/* Social Channels Card */}
-                <div className="sm:col-span-2 bg-gradient-to-r from-purple-50 via-white to-teal-50/50 p-6 rounded-2xl border border-[#76248a]/20 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="sm:col-span-2 bg-gradient-to-r from-purple-50 via-white to-teal-50/50 p-4 sm:p-6 rounded-2xl border border-[#76248a]/20 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-xl bg-[#76248a] text-white flex items-center justify-center shadow-sm shrink-0">
                       <i className="fa-solid fa-share-nodes text-xl text-[#40ddd3]"></i>
@@ -264,7 +264,7 @@ const Contact = () => {
 
             {/* Right: Consultation Request Form */}
             <div className="lg:col-span-6">
-              <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100 space-y-6">
+              <div className="bg-white rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border border-gray-100 space-y-6">
                 <div>
                   <h3 className="text-2xl font-black text-gray-900">Request a Free In-Home Assessment</h3>
                   <p className="text-gray-600 text-sm mt-1">
@@ -497,7 +497,7 @@ const Contact = () => {
             <p className="text-gray-600 text-sm">281 Cambridge Street, Burlington, MA 01803</p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 h-[400px]">
+          <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 h-[280px] sm:h-[400px]">
             <iframe
               title="Akirapa Home Care Burlington MA Location"
               width="100%"

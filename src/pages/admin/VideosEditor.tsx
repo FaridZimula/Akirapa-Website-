@@ -61,14 +61,14 @@ const VideosEditor = () => {
 
     return (
         <div className="space-y-6">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600">
+                    <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 shrink-0">
                         <VideoIcon className="w-6 h-6" />
                     </div>
-                    <h1 className="text-3xl font-bold tracking-tight">Video Gallery</h1>
+                    <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Video Gallery</h1>
                 </div>
-                <Button onClick={openNew}>
+                <Button onClick={openNew} className="w-full sm:w-auto">
                     <Plus className="w-4 h-4 mr-2" />
                     Add Video
                 </Button>

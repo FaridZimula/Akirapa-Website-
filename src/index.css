@@ -102,9 +102,17 @@
     @apply border-border;
   }
 
+  html {
+    overflow-x: hidden;
+    max-width: 100vw;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -609,6 +617,33 @@
   .floating-photo-badge:hover {
     transform: scale(1.05);
     box-shadow: 0 14px 30px -4px rgba(118, 36, 138, 0.25);
+  }
+
+  /* Mobile Touch & Scroll Utilities */
+  .no-scrollbar::-webkit-scrollbar,
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  .no-scrollbar,
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Smooth touch scrolling for iOS */
+  .touch-scroll-x {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+  }
+
+  /* Prevent Safari input auto-zoom on mobile */
+  @media screen and (max-width: 767px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
   }
 
   /* Respect User Reduced Motion Preferences */

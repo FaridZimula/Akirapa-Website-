@@ -381,8 +381,8 @@ const Careers = () => {
               </div>
 
               {/* Job Header Card */}
-              <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-200 space-y-4">
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#76248a] tracking-tight leading-tight">
+              <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-sm border border-gray-200 space-y-4">
+                <h2 className="text-2xl sm:text-4xl font-extrabold text-[#76248a] tracking-tight leading-tight">
                   {activeDetailJob.title}
                 </h2>
 
@@ -414,7 +414,7 @@ const Careers = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 {/* Left Column: Comprehensive Job Description & Culture */}
-                <div className="lg:col-span-7 bg-white rounded-3xl p-8 shadow-sm border border-gray-200 space-y-8 text-left">
+                <div className="lg:col-span-7 bg-white rounded-3xl p-5 sm:p-8 shadow-sm border border-gray-200 space-y-6 sm:space-y-8 text-left">
                   
                   {/* Culture Headline */}
                   <div className="space-y-3 border-b border-gray-100 pb-6">
@@ -884,10 +884,10 @@ const Careers = () => {
                               </p>
                             </div>
 
-                            <div className="shrink-0 flex items-center gap-2">
+                            <div className="w-full sm:w-auto shrink-0 flex items-center justify-end sm:justify-start">
                               <Button
                                 onClick={() => handleSelectJobForDetail(job)}
-                                className="bg-[#76248a] hover:bg-[#561868] text-white font-extrabold text-xs px-5 py-2.5 rounded-xl shadow-xs transition-all hover:scale-105"
+                                className="w-full sm:w-auto bg-[#76248a] hover:bg-[#561868] text-white font-extrabold text-xs px-5 py-2.5 rounded-xl shadow-xs transition-all hover:scale-105"
                               >
                                 Apply Now
                               </Button>

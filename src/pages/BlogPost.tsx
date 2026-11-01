@@ -165,7 +165,7 @@ const BlogPostPage = () => {
             <span>›</span>
             <span className="text-white/90">{post.category}</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight max-w-3xl">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-tight max-w-3xl">
             {post.title}
           </h1>
           <div className="flex flex-wrap items-center gap-4 text-xs text-white/80 font-medium pt-1">
@@ -199,9 +199,9 @@ const BlogPostPage = () => {
 
             {/* Main Content */}
             <article className="lg:col-span-8">
-              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 space-y-6">
+              <div className="bg-white rounded-3xl p-5 sm:p-8 md:p-12 shadow-xl border border-gray-100 space-y-6">
                 {/* Featured Image */}
-                <div className="rounded-2xl overflow-hidden h-72 sm:h-96 -mx-2">
+                <div className="rounded-2xl overflow-hidden h-52 sm:h-80 md:h-96 w-full shadow-md">
                   <img
                     src={post.image}
                     alt={post.title}

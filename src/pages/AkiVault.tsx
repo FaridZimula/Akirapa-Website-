@@ -196,6 +196,7 @@ export default function AkiVault() {
 
   const scrollToSection = (sectionId: string) => {
     setActiveSectionNav(sectionId);
+    setIsNavOpen(false);
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -214,10 +215,10 @@ export default function AkiVault() {
         ]}
       />
 
-      {/* Floating Interactive & Draggable Navigation Widget */}
+      {/* Desktop Floating Interactive & Draggable Navigation Widget */}
       <div
         ref={navCardRef}
-        className={`fixed z-40 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl animate-purple-glow transition-all duration-200 ${
+        className={`hidden md:block fixed z-40 w-80 overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl animate-purple-glow transition-all duration-200 ${
           isVibrating ? "animate-vibrate-hyper ring-2 ring-fuchsia-400/60 shadow-[0_0_35px_rgba(217,70,239,0.55)]" : ""
         }`}
         style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
@@ -272,6 +273,59 @@ export default function AkiVault() {
             ))}
           </nav>
         )}
+      </div>
+
+      {/* Mobile Floating Navigator Action Button & Bottom Sheet */}
+      <div className="md:hidden fixed bottom-20 right-4 z-40 flex flex-col items-end">
+        {isNavOpen && (
+          <div className="mb-2 w-72 max-w-[calc(100vw-2rem)] rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl p-2.5 space-y-1 animate-tab-slide">
+            <div className="flex items-center justify-between px-2 py-1.5 border-b border-gray-100 text-xs font-extrabold text-[#76248a]">
+              <span className="flex items-center gap-1.5">
+                <i className="fa-solid fa-compass text-[#40ddd3]"></i>
+                Jump to Section
+              </span>
+              <button
+                type="button"
+                onClick={() => setIsNavOpen(false)}
+                className="text-gray-400 hover:text-gray-700 text-sm font-bold p-1"
+                aria-label="Close section menu"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="max-h-60 overflow-y-auto space-y-1 pt-1">
+              {navigationSections.map((section) => (
+                <button
+                  key={section.id}
+                  type="button"
+                  onClick={() => scrollToSection(section.id)}
+                  className={`flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-left text-xs font-bold transition-all ${
+                    activeSectionNav === section.id
+                      ? "bg-[#76248a] text-white"
+                      : "text-gray-700 hover:bg-purple-50"
+                  }`}
+                >
+                  <i className={`fa-solid ${section.icon} w-4 text-center ${activeSectionNav === section.id ? "text-[#40ddd3]" : "text-[#76248a]"}`}></i>
+                  <span>{section.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <button
+          type="button"
+          onClick={() => setIsNavOpen(!isNavOpen)}
+          className="flex items-center gap-2 bg-[#76248a] hover:bg-[#561868] text-white px-3.5 py-2.5 rounded-full shadow-2xl border-2 border-[#40ddd3]/40 font-black text-xs transition-transform active:scale-95"
+          aria-label="Toggle AkiVault section menu"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#40ddd3]"></span>
+          </span>
+          <i className="fa-solid fa-compass text-[#40ddd3] text-sm"></i>
+          <span>Sections</span>
+        </button>
       </div>
 
       {/* Hero Header matching main site aesthetic */}
@@ -441,44 +495,44 @@ export default function AkiVault() {
           </div>
 
           {/* Role Tabs */}
-          <div className="flex justify-center gap-3 mb-10">
+          <div className="flex flex-wrap sm:flex-nowrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10 w-full max-w-xl mx-auto">
             <button
               onClick={() => { setActiveRoleTab("family"); setActiveSectionNav("family"); }}
-              className={`px-6 py-3 rounded-2xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center gap-2 cursor-pointer ${
+              className={`flex-1 min-w-[100px] py-2.5 sm:py-3 px-2 sm:px-6 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-base transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer ${
                 activeRoleTab === "family"
-                  ? "bg-[#76248a] text-white shadow-xl scale-105"
-                  : "bg-white text-gray-700 hover:bg-[#76248a]/10 hover:text-[#76248a] hover:scale-105 active:scale-95 border border-gray-200"
+                  ? "bg-[#76248a] text-white shadow-xl scale-[1.02]"
+                  : "bg-white text-gray-700 hover:bg-[#76248a]/10 hover:text-[#76248a] active:scale-95 border border-gray-200"
               }`}
             >
-              <i className="fa-solid fa-house-medical"></i>
+              <i className="fa-solid fa-house-medical text-xs sm:text-sm"></i>
               <span>For Families</span>
             </button>
             <button
               onClick={() => { setActiveRoleTab("caregiver"); setActiveSectionNav("caregivers"); }}
-              className={`px-6 py-3 rounded-2xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center gap-2 cursor-pointer ${
+              className={`flex-1 min-w-[100px] py-2.5 sm:py-3 px-2 sm:px-6 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-base transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer ${
                 activeRoleTab === "caregiver"
-                  ? "bg-[#76248a] text-white shadow-xl scale-105"
-                  : "bg-white text-gray-700 hover:bg-[#76248a]/10 hover:text-[#76248a] hover:scale-105 active:scale-95 border border-gray-200"
+                  ? "bg-[#76248a] text-white shadow-xl scale-[1.02]"
+                  : "bg-white text-gray-700 hover:bg-[#76248a]/10 hover:text-[#76248a] active:scale-95 border border-gray-200"
               }`}
             >
-              <i className="fa-solid fa-user-nurse"></i>
+              <i className="fa-solid fa-user-nurse text-xs sm:text-sm"></i>
               <span>For Caregivers</span>
             </button>
             <button
               onClick={() => { setActiveRoleTab("coordinator"); setActiveSectionNav("coordinators"); }}
-              className={`px-6 py-3 rounded-2xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center gap-2 cursor-pointer ${
+              className={`flex-1 min-w-[100px] py-2.5 sm:py-3 px-2 sm:px-6 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-base transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer ${
                 activeRoleTab === "coordinator"
-                  ? "bg-[#76248a] text-white shadow-xl scale-105"
-                  : "bg-white text-gray-700 hover:bg-[#76248a]/10 hover:text-[#76248a] hover:scale-105 active:scale-95 border border-gray-200"
+                  ? "bg-[#76248a] text-white shadow-xl scale-[1.02]"
+                  : "bg-white text-gray-700 hover:bg-[#76248a]/10 hover:text-[#76248a] active:scale-95 border border-gray-200"
               }`}
             >
-              <i className="fa-solid fa-clipboard-user"></i>
+              <i className="fa-solid fa-clipboard-user text-xs sm:text-sm"></i>
               <span>For Coordinators</span>
             </button>
           </div>
 
           {/* Role Content Card */}
-          <div id="family" className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-200/80 max-w-4xl mx-auto card-hover-pro card-shine animate-tab-slide">
+          <div id="family" className="bg-white rounded-3xl p-5 sm:p-8 md:p-12 shadow-xl border border-gray-200/80 max-w-4xl mx-auto card-hover-pro card-shine animate-tab-slide">
             {activeRoleTab === "family" && (
               <div className="space-y-6 animate-fade-in">
                 <div className="flex items-center gap-3">

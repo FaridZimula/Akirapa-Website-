@@ -194,7 +194,7 @@ export default function MAHomeCareDirectory() {
             </div>
 
             {/* Sort Toggle Controls */}
-            <div className="flex items-center gap-2 w-full lg:w-auto overflow-x-auto pb-1">
+            <div className="flex items-center gap-2 w-full lg:w-auto overflow-x-auto pb-1 no-scrollbar touch-scroll-x">
               <span className="text-xs uppercase font-bold text-gray-400 mr-2 shrink-0">Sort By:</span>
               <button
                 onClick={() => setSortBy('search')}
@@ -230,12 +230,12 @@ export default function MAHomeCareDirectory() {
           </div>
           
           {/* Region Tabs */}
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="flex overflow-x-auto no-scrollbar touch-scroll-x sm:flex-wrap gap-2 mb-6 sm:mb-8 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
             {REGIONS.map((region) => (
               <button
                 key={region}
-                onClick={() => setActiveRegion(region)}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                onClick={() => { setActiveRegion(region); setCurrentPage(1); }}
+                className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all shrink-0 cursor-pointer ${
                   activeRegion === region 
                     ? 'bg-[#561868] text-white shadow-md scale-105' 
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -261,7 +261,7 @@ export default function MAHomeCareDirectory() {
 
           {/* #1 Ranked Agency in Massachusetts Spotlight Banner */}
           {currentPage === 1 && activeRegion === 'All' && !searchTerm && (
-            <div className="mb-10 bg-gradient-to-r from-purple-950 via-[#76248a] to-[#561868] text-white rounded-3xl p-8 lg:p-10 shadow-2xl border-2 border-[#40ddd3]/40 relative overflow-hidden card-shine">
+            <div className="mb-10 bg-gradient-to-r from-purple-950 via-[#76248a] to-[#561868] text-white rounded-3xl p-5 sm:p-8 lg:p-10 shadow-2xl border-2 border-[#40ddd3]/40 relative overflow-hidden card-shine">
               <div className="absolute top-0 right-0 w-96 h-96 bg-[#40ddd3]/20 rounded-full blur-3xl pointer-events-none"></div>
               <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
                 <div className="space-y-4 max-w-3xl">

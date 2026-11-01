@@ -172,10 +172,10 @@ const Blog = () => {
         ]}
       />
 
-      {/* Floating Interactive & Draggable Topics Navigator Widget */}
+      {/* Desktop Floating Interactive & Draggable Topics Navigator Widget */}
       <div
         ref={navCardRef}
-        className={`fixed z-40 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl animate-purple-glow transition-all duration-200 ${
+        className={`hidden md:block fixed z-40 w-80 overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl animate-purple-glow transition-all duration-200 ${
           isVibrating ? "animate-vibrate-hyper ring-2 ring-fuchsia-400/60 shadow-[0_0_35px_rgba(217,70,239,0.55)]" : ""
         }`}
         style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
@@ -246,6 +246,71 @@ const Blog = () => {
         )}
       </div>
 
+      {/* Mobile Floating Topics Action Button & Drawer */}
+      <div className="md:hidden fixed bottom-20 right-4 z-40 flex flex-col items-end">
+        {isTopicsOpen && (
+          <div className="mb-2 w-72 max-w-[calc(100vw-2rem)] rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl p-2.5 space-y-1 animate-tab-slide">
+            <div className="flex items-center justify-between px-2 py-1.5 border-b border-gray-100 text-xs font-extrabold text-[#76248a]">
+              <span className="flex items-center gap-1.5">
+                <i className="fa-solid fa-layer-group text-[#40ddd3]"></i>
+                Filter by Topic
+              </span>
+              <button
+                type="button"
+                onClick={() => setIsTopicsOpen(false)}
+                className="text-gray-400 hover:text-gray-700 text-sm font-bold p-1"
+                aria-label="Close topics menu"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="max-h-64 overflow-y-auto space-y-1 pt-1">
+              {TOPICS.map((topic) => {
+                const isSelected = selectedTopic === topic.id;
+                const count = topic.id === "all"
+                  ? publishedPosts.length
+                  : publishedPosts.filter((p) => p.category === topic.id).length;
+
+                return (
+                  <button
+                    key={topic.id}
+                    type="button"
+                    onClick={() => { handleTopicSelect(topic.id); setIsTopicsOpen(false); }}
+                    className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-xs font-bold transition-all ${
+                      isSelected
+                        ? "bg-[#76248a] text-white"
+                        : "text-gray-700 hover:bg-purple-50"
+                    }`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <i className={`fa-solid ${topic.icon} w-4 text-center ${isSelected ? "text-[#40ddd3]" : "text-[#76248a]"}`}></i>
+                      <span>{topic.label}</span>
+                    </div>
+                    <span className="text-[10px] font-extrabold bg-purple-100 text-purple-900 px-1.5 py-0.5 rounded-full">
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        <button
+          type="button"
+          onClick={() => setIsTopicsOpen(!isTopicsOpen)}
+          className="flex items-center gap-2 bg-[#76248a] hover:bg-[#561868] text-white px-3.5 py-2.5 rounded-full shadow-2xl border-2 border-[#40ddd3]/40 font-black text-xs transition-transform active:scale-95"
+          aria-label="Toggle blog topics filter"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#40ddd3]"></span>
+          </span>
+          <i className="fa-solid fa-layer-group text-[#40ddd3] text-sm"></i>
+          <span>Topics</span>
+        </button>
+      </div>
+
       {/* Hero Header with 29% Opacity Background Image */}
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-[#76248a] text-white overflow-hidden">
         {/* Background Image at 29% Opacity */}
@@ -270,12 +335,12 @@ const Blog = () => {
           </p>
 
           {/* Inline Quick Topic Filter Chips */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
+          <div className="flex overflow-x-auto no-scrollbar touch-scroll-x sm:flex-wrap items-center justify-start sm:justify-center gap-2 pt-4 pb-1 -mx-4 px-4 sm:mx-0 sm:px-0">
             {TOPICS.map((topic) => (
               <button
                 key={topic.id}
                 onClick={() => handleTopicSelect(topic.id)}
-                className={`text-xs font-bold px-3.5 py-1.5 rounded-full transition-all ${
+                className={`text-xs font-bold px-3.5 py-1.5 rounded-full transition-all shrink-0 cursor-pointer ${
                   selectedTopic === topic.id
                     ? "bg-[#40ddd3] text-gray-950 shadow-md scale-105"
                     : "bg-white/15 text-white hover:bg-white/25"

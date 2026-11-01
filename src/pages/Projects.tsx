@@ -77,8 +77,19 @@ const Projects = () => {
       <section className="section-padding bg-gray-50">
         <div className="container-narrow mx-auto">
           {/* 5 Services Images Grid */}
-          <div className="mb-12">
-            <div className="flex overflow-x-auto gap-5 sm:gap-6 pt-2 pb-4 snap-x snap-mandatory scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 lg:grid lg:grid-cols-5 lg:gap-8 lg:mx-0 lg:px-0 lg:overflow-visible">
+          <div className="mb-8 sm:mb-12">
+            {/* Mobile Swipe Cue */}
+            <div className="lg:hidden flex items-center justify-between text-xs text-[#76248a] font-bold px-1 mb-2.5">
+              <span className="flex items-center gap-1.5">
+                <i className="fa-solid fa-arrows-left-right text-[#40ddd3] animate-pulse"></i>
+                <span>Tap or swipe to select a care service</span>
+              </span>
+              <span className="text-[10px] bg-purple-100 text-[#76248a] px-2 py-0.5 rounded-full font-black">
+                {selectedService.title.split(' ')[0]} Active
+              </span>
+            </div>
+
+            <div className="flex overflow-x-auto gap-4 sm:gap-6 pt-2 pb-4 snap-x snap-mandatory scrollbar-none no-scrollbar touch-scroll-x -mx-4 px-4 sm:-mx-6 sm:px-6 lg:grid lg:grid-cols-5 lg:gap-8 lg:mx-0 lg:px-0 lg:overflow-visible">
               {visualServices.map((item) => {
                 const matched = careServices.find((s) => s.id === item.id);
                 const isSelected = selectedService.id === item.id;
@@ -89,14 +100,14 @@ const Projects = () => {
                     onClick={() => {
                       if (matched) setSelectedService(matched);
                     }}
-                    className={`group space-y-3.5 text-center w-[200px] sm:w-[230px] shrink-0 snap-start lg:w-auto lg:shrink transition-transform cursor-pointer focus:outline-none picture-card-pro ${
-                      isSelected ? "scale-[1.04]" : "hover:scale-[1.02]"
+                    className={`group space-y-2.5 sm:space-y-3.5 text-center w-[180px] xs:w-[200px] sm:w-[230px] shrink-0 snap-start lg:w-auto lg:shrink transition-transform cursor-pointer focus:outline-none picture-card-pro ${
+                      isSelected ? "scale-[1.03]" : "hover:scale-[1.02]"
                     }`}
                   >
                     <div
-                      className={`aspect-[4/3] rounded-3xl overflow-hidden shadow-md group-hover:shadow-2xl transition-all duration-500 border relative picture-glaze ${
+                      className={`aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md group-hover:shadow-2xl transition-all duration-500 border relative picture-glaze ${
                         isSelected
-                          ? "border-4 border-[#76248a] shadow-xl ring-4 ring-[#40ddd3]/40"
+                          ? "border-3 sm:border-4 border-[#76248a] shadow-xl ring-2 sm:ring-4 ring-[#40ddd3]/40"
                           : "border-gray-100 bg-gray-50"
                       }`}
                     >
@@ -108,7 +119,7 @@ const Projects = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                     </div>
                     <h3
-                      className={`text-sm sm:text-base font-bold transition-all duration-300 ${
+                      className={`text-xs sm:text-base font-bold transition-all duration-300 ${
                         isSelected ? "text-[#76248a] font-black scale-105" : "text-gray-800 group-hover:text-[#0d9488]"
                       }`}
                     >
@@ -121,20 +132,20 @@ const Projects = () => {
           </div>
 
           {/* Navigation Pills */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex overflow-x-auto no-scrollbar touch-scroll-x sm:flex-wrap justify-start sm:justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
             {careServices.map((service) => {
               const isSelected = selectedService.id === service.id;
               return (
                 <button
                   key={service.id}
                   onClick={() => setSelectedService(service)}
-                  className={`px-5 py-3 rounded-2xl font-bold text-sm transition-all flex items-center gap-2 ${
+                  className={`px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all flex items-center gap-2 shrink-0 sm:shrink cursor-pointer ${
                     isSelected
-                      ? "bg-[#76248a] text-white shadow-lg"
+                      ? "bg-[#76248a] text-white shadow-lg scale-105"
                       : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
                   }`}
                 >
-                  <i className={`${service.icon} text-base ${isSelected ? "text-white" : "text-[#76248a]"}`}></i>
+                  <i className={`${service.icon} text-sm sm:text-base ${isSelected ? "text-white" : "text-[#76248a]"}`}></i>
                   <span>{service.title}</span>
                 </button>
               );
@@ -142,32 +153,32 @@ const Projects = () => {
           </div>
 
           {/* Active Service Showcase Card */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 grid lg:grid-cols-12 gap-10 items-start">
+          <div className="bg-white rounded-3xl p-5 sm:p-8 md:p-12 shadow-xl border border-gray-100 grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-3">
-                <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shadow-md">
-                  <i className={`${selectedService.icon} text-2xl`}></i>
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shadow-md shrink-0">
+                  <i className={`${selectedService.icon} text-xl sm:text-2xl`}></i>
                 </div>
                 <div>
-                  <h2 className="text-2xl sm:text-3xl font-black text-gray-900">
+                  <h2 className="text-xl sm:text-3xl font-black text-gray-900 leading-tight">
                     {selectedService.title}
                   </h2>
-                  <p className="text-[#76248a] font-bold text-xs uppercase tracking-wider">
+                  <p className="text-[#76248a] font-bold text-[11px] sm:text-xs uppercase tracking-wider">
                     {selectedService.tagline}
                   </p>
                 </div>
               </div>
 
-              <p className="text-gray-700 text-base leading-relaxed">
+              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                 {selectedService.detailedDescription}
               </p>
 
               <div className="space-y-3 pt-2">
-                <h4 className="font-bold text-gray-900 text-base">Key Program Features:</h4>
-                <div className="grid sm:grid-cols-2 gap-3 text-sm text-gray-700">
+                <h4 className="font-bold text-gray-900 text-sm sm:text-base">Key Program Features:</h4>
+                <div className="grid sm:grid-cols-2 gap-2.5 sm:gap-3 text-xs sm:text-sm text-gray-700">
                   {selectedService.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <i className="fa-solid fa-circle-check text-[#76248a] text-base shrink-0 mt-0.5"></i>
+                      <i className="fa-solid fa-circle-check text-[#76248a] text-sm sm:text-base shrink-0 mt-0.5"></i>
                       <span>{feature}</span>
                     </div>
                   ))}
@@ -175,7 +186,7 @@ const Projects = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-[#76248a] text-white p-8 rounded-3xl space-y-6 shadow-lg border border-[#40ddd3]/30">
+            <div className="lg:col-span-5 bg-[#76248a] text-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl space-y-6 shadow-lg border border-[#40ddd3]/30">
               <h3 className="text-xl font-bold text-white">Ideal For:</h3>
               <ul className="space-y-3 text-sm text-white/90">
                 {selectedService.idealFor.map((item, idx) => (

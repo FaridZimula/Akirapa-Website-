@@ -120,15 +120,16 @@ export const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-24 right-6 sm:right-8 z-50 flex flex-col items-end pointer-events-auto">
+    <div className="fixed bottom-20 right-4 sm:bottom-24 sm:right-8 z-50 flex flex-col items-end pointer-events-auto">
       {/* Floating Tooltip Bubble when unopened */}
       {!isOpen && showTooltip && (
-        <div className="mb-3 bg-white/95 backdrop-blur-md text-[#76248a] font-bold text-xs py-2 px-4 rounded-2xl shadow-xl border border-[#76248a]/20 flex items-center gap-2 animate-bounce">
-          <i className="fa-solid fa-comments text-[#76248a]"></i>
-          <span>Chat with Akirapa Assistant</span>
+        <div className="mb-3 max-w-[calc(100vw-3rem)] bg-white/95 backdrop-blur-md text-[#76248a] font-bold text-xs py-2 px-3.5 sm:px-4 rounded-2xl shadow-xl border border-[#76248a]/20 flex items-center gap-2 animate-bounce">
+          <i className="fa-solid fa-comments text-[#76248a] shrink-0"></i>
+          <span className="truncate">Chat with Akirapa Assistant</span>
           <button
             onClick={(e) => { e.stopPropagation(); setShowTooltip(false); }}
-            className="ml-1 text-gray-400 hover:text-gray-600"
+            className="ml-1 text-gray-400 hover:text-gray-600 shrink-0 p-1"
+            aria-label="Close tooltip"
           >
             <i className="fa-solid fa-xmark text-xs text-gray-400"></i>
           </button>
@@ -139,17 +140,17 @@ export const ChatBot = () => {
       {!isOpen && (
         <button
           onClick={toggleChat}
-          className="relative w-14 h-14 rounded-full bg-[#76248a] hover:bg-[#561868] text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group border-2 border-white"
+          className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#76248a] hover:bg-[#561868] text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group border-2 border-white focus:outline-none focus:ring-2 focus:ring-[#76248a]/50"
           aria-label="Open Live Chatbot"
         >
-          <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#40ddd3] border-2 border-white animate-pulse" />
-          <i className="fa-solid fa-robot text-2xl text-white transition-transform group-hover:rotate-12"></i>
+          <div className="absolute -top-1 -right-1 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-[#40ddd3] border-2 border-white animate-pulse" />
+          <i className="fa-solid fa-robot text-xl sm:text-2xl text-white transition-transform group-hover:rotate-12"></i>
         </button>
       )}
 
       {/* Interactive Floating Chat Window */}
       {isOpen && (
-        <div className="w-[92vw] sm:w-[380px] h-[520px] max-h-[80vh] bg-white rounded-3xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
+        <div className="w-[calc(100vw-2rem)] sm:w-[380px] max-w-[380px] h-[520px] max-h-[75vh] bg-white rounded-3xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
           {/* Header */}
           <div className="bg-[#76248a] text-white p-4 flex items-center justify-between shadow-md">
             <div className="flex items-center gap-3">
