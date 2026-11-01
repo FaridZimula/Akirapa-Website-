@@ -17,7 +17,7 @@ export const socialMediaLinks = [
   },
   {
     name: "Facebook",
-    url: "https://www.facebook.com/profile.php?id=61593927368567",
+    url: "https://www.facebook.com/profile.php?id=61593883607014",
     icon: "fa-brands fa-facebook-f",
     hoverClass: "hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2]",
     label: "Akirapa Home Care on Facebook",

@@ -151,7 +151,7 @@ export const localBusinessSchema = {
     }
   ],
   "sameAs": [
-    "https://www.facebook.com/profile.php?id=61593927368567",
+    "https://www.facebook.com/profile.php?id=61593883607014",
     "https://www.instagram.com/akirapahomecare/",
     "https://x.com/akirapahomecare",
     "https://www.google.com/maps?q=281+Cambridge+Street+Burlington+MA+01803"

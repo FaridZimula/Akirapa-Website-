@@ -239,7 +239,7 @@ const Contact = () => {
                       <i className="fa-brands fa-x-twitter text-lg"></i>
                     </a>
                     <a
-                      href="https://www.facebook.com/profile.php?id=61593927368567"
+                      href="https://www.facebook.com/profile.php?id=61593883607014"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Facebook"

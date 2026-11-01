@@ -68,7 +68,7 @@ const Navbar = () => {
                 <i className="fa-brands fa-x-twitter text-xs"></i>
               </a>
               <a
-                href="https://www.facebook.com/profile.php?id=61593927368567"
+                href="https://www.facebook.com/profile.php?id=61593883607014"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook Akirapa Home Care"
@@ -197,7 +197,7 @@ const Navbar = () => {
                       <i className="fa-brands fa-x-twitter text-sm"></i>
                     </a>
                     <a
-                      href="https://www.facebook.com/profile.php?id=61593927368567"
+                      href="https://www.facebook.com/profile.php?id=61593883607014"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Facebook"
