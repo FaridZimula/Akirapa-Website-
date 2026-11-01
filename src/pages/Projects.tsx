@@ -33,6 +33,16 @@ const visualServices = [
     title: "Specialized care",
     image: "/CARE GIVER  (16).jpg",
   },
+  {
+    id: "transportation",
+    title: "Transportation",
+    image: "/CARE GIVER  (7).jpg",
+  },
+  {
+    id: "consultancy",
+    title: "Consultancy",
+    image: "/CARE GIVER  (9).jpg",
+  },
 ];
 
 const Projects = () => {
@@ -42,8 +52,8 @@ const Projects = () => {
     <Layout>
       <SEO
         title="#1 Home Care Services in Massachusetts | Akirapa Home Care"
-        description="Ranked #1 best home care company in Massachusetts. Explore 15 specialized services: hourly visits, 24/7 live-in care, hospital-to-home recovery, respite, and dementia support with GPS-verified AkiVault™ tracking."
-        keywords="home care services Massachusetts, best home care company Massachusetts, senior care Burlington MA, in-home care Middlesex County, 24 hour home care MA, dementia care Massachusetts, companion care Burlington MA"
+        description="Ranked #1 best home care company in Massachusetts. Explore 16 specialized care programs: hourly visits, 24/7 live-in care, hospital-to-home recovery, senior transportation, care consultancy, respite, and dementia support with GPS-verified AkiVault™ tracking."
+        keywords="home care services Massachusetts, best home care company Massachusetts, senior care Burlington MA, in-home care Middlesex County, 24 hour home care MA, dementia care Massachusetts, senior transportation Massachusetts, geriatric care consultancy MA, companion care Burlington MA"
         path="/services"
         breadcrumbs={[
           { name: "Home", path: "/" },
@@ -89,7 +99,7 @@ const Projects = () => {
               </span>
             </div>
 
-            <div className="flex overflow-x-auto gap-4 sm:gap-6 pt-2 pb-4 snap-x snap-mandatory scrollbar-none no-scrollbar touch-scroll-x -mx-4 px-4 sm:-mx-6 sm:px-6 lg:grid lg:grid-cols-5 lg:gap-8 lg:mx-0 lg:px-0 lg:overflow-visible">
+            <div className="flex overflow-x-auto gap-3 sm:gap-4 lg:gap-3 xl:gap-4 pt-2 pb-4 snap-x snap-mandatory scrollbar-none no-scrollbar touch-scroll-x -mx-4 px-4 sm:-mx-6 sm:px-6 lg:grid lg:grid-cols-7 lg:mx-0 lg:px-0 lg:overflow-visible">
               {visualServices.map((item) => {
                 const matched = careServices.find((s) => s.id === item.id);
                 const isSelected = selectedService.id === item.id;
@@ -218,7 +228,7 @@ const Projects = () => {
               Dedicated Service Directory
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-              All 15 Specialized Care Programs
+              All 16 Specialized Care Programs
             </h2>
             <p className="text-gray-600 text-base">
               Click into any of our dedicated care programs below to read full service descriptions, eligibility criteria, family considerations, and FAQs.

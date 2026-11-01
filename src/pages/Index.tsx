@@ -432,11 +432,11 @@ const Index = () => {
               <i className="fa-solid fa-arrows-left-right text-[#40ddd3] animate-pulse"></i>
               <span>Swipe horizontally to view all 5 care services</span>
             </span>
-            <span className="text-[10px] bg-purple-100 text-[#76248a] px-2 py-0.5 rounded-full font-black">5 Services</span>
+            <span className="text-[10px] bg-purple-100 text-[#76248a] px-2 py-0.5 rounded-full font-black">7 Services</span>
           </div>
 
-          {/* 5 Services Images Grid (Horizontal Scroll on Mobile, 5-Col Grid on Desktop) */}
-          <div className="flex overflow-x-auto gap-4 sm:gap-6 pt-2 pb-4 snap-x snap-mandatory scrollbar-none no-scrollbar touch-scroll-x -mx-4 px-4 sm:-mx-12 sm:px-12 lg:grid lg:grid-cols-5 lg:gap-8 lg:mx-0 lg:px-0 lg:overflow-visible">
+          {/* 7 Services Images Grid (Horizontal Scroll on Mobile, 7-Col Grid on Desktop) */}
+          <div className="flex overflow-x-auto gap-4 sm:gap-6 pt-2 pb-4 snap-x snap-mandatory scrollbar-none no-scrollbar touch-scroll-x -mx-4 px-4 sm:-mx-12 sm:px-12 lg:grid lg:grid-cols-7 lg:gap-4 xl:gap-6 lg:mx-0 lg:px-0 lg:overflow-visible">
             {/* Service 1 */}
             <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
@@ -528,6 +528,44 @@ const Index = () => {
               </div>
               <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
                 <span>Specialized care</span>
+                <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
+              </h3>
+            </Link>
+
+            {/* Service 6 */}
+            <Link to="/services/transportation" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
+                <img
+                  src="/CARE GIVER  (7).jpg"
+                  alt="Senior transportation"
+                  className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
+                />
+                <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
+                  Door-Through-Door
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
+                <span>Transportation</span>
+                <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
+              </h3>
+            </Link>
+
+            {/* Service 7 */}
+            <Link to="/services/consultancy" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
+                <img
+                  src="/CARE GIVER  (9).jpg"
+                  alt="Care Consultancy"
+                  className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
+                />
+                <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
+                  Care Advisory
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
+                <span>Consultancy</span>
                 <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>

@@ -362,8 +362,9 @@ async function run() {
   // ==========================================
   // 4. Generate Service Detail Pages (/services/:slug)
   // ==========================================
-  console.log(`⚡ Generating ${Object.keys(detailedServices).length} service detail pages...`);
-  for (const [slug, service] of Object.entries(detailedServices)) {
+  console.log(`⚡ Generating ${detailedServices.length} service detail pages...`);
+  for (const service of detailedServices) {
+    const slug = service.slug;
     const serviceUrl = `https://akirapahomecareus.com/services/${slug}`;
     const serviceTitle = `${service.title} in Massachusetts | Akirapa Home Care`;
     const serviceDesc = service.shortDescription || `${service.title} provided by Akirapa Home Care across Burlington, Middlesex County, and Massachusetts. Call +1 781-226-9910.`;

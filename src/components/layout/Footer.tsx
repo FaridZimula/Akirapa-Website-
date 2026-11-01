@@ -106,6 +106,8 @@ const Footer = () => {
                 { label: "Alzheimer's & Dementia Care", path: "/services/alzheimers-care" },
                 { label: "Hospital-to-Home Recovery", path: "/services/post-hospitalization-care" },
                 { label: "Respite Care for Families", path: "/services/respite-care" },
+                { label: "Senior Transportation & Outings", path: "/services/transportation" },
+                { label: "Care Consultancy & Advisory", path: "/services/consultancy" },
                 { label: "Companion Care Services", path: "/services/companion-care" },
                 { label: "Personal Care & ADLs", path: "/services/personal-care" },
                 { label: "Skilled Nursing Oversight", path: "/services/skilled-nursing" },

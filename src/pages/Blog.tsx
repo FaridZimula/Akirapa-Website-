@@ -8,12 +8,15 @@ import { BlogPost } from "@/data/blogPosts";
 
 const TOPICS = [
   { id: "all", label: "All Topics", icon: "fa-newspaper" },
+  { id: "Senior Transportation", label: "Senior Transportation", icon: "fa-car-side" },
+  { id: "Care Advisory & Planning", label: "Care Advisory & Planning", icon: "fa-clipboard-user" },
   { id: "Caregiver Support", label: "Caregiver Support", icon: "fa-heart-pulse" },
   { id: "Respite Care", label: "Respite Care", icon: "fa-couch" },
   { id: "Senior Safety", label: "Senior Safety", icon: "fa-shield-halved" },
   { id: "Senior Living", label: "Senior Living", icon: "fa-house-user" },
   { id: "Memory & Dementia", label: "Memory & Dementia", icon: "fa-brain" },
   { id: "Post-Hospital Recovery", label: "Post-Hospital Recovery", icon: "fa-hospital-user" },
+  { id: "Nutrition & Wellness", label: "Nutrition & Wellness", icon: "fa-apple-whole" },
 ];
 
 const POSTS_PER_PAGE = 6; // 6 posts per page (2 rows of 3 columns, or 3 rows of 2 columns)

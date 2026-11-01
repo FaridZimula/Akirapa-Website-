@@ -9,7 +9,7 @@ export interface DetailedService {
   familyConsiderations: string[];
   faqs: { question: string; answer: string }[];
   relatedServiceSlugs: string[];
-  category: "Companion & Daily Care" | "Specialized Care" | "Clinical & Recovery Support";
+  category: "Companion & Daily Care" | "Specialized Care" | "Clinical & Recovery Support" | "Care Advisory & Management";
   icon: string;
 }
 
@@ -593,5 +593,55 @@ export const detailedServices: DetailedService[] = [
     relatedServiceSlugs: ["personal-care", "companion-care", "homemaker-services"],
     category: "Companion & Daily Care",
     icon: "fa-solid fa-person-shelter"
+  },
+  {
+    slug: "consultancy",
+    title: "Senior Care Consultancy & Care Advisory",
+    tagline: "Expert Eldercare Navigation, In-Home Assessments & Family Guidance in MA",
+    shortDescription: "Professional geriatric care consultation, healthcare advocacy, comprehensive assessments, and personalized aging-in-place care plans.",
+    fullDefinition: "Navigating senior care options, progressive diagnoses, and community resources can be one of the most overwhelming challenges a family ever faces. Akirapa Home Care's Senior Care Consultancy & Advisory Services provide families with seasoned geriatric care advisors who cut through confusion with clinical insight and deep local knowledge. From conducting rigorous in-home safety and functional ADL evaluations to demystifying long-term care insurance benefits, coordinating multi-disciplinary healthcare teams, and helping families resolve disagreements over living arrangements, our eldercare consultants create clear, compassionate, and actionable roadmaps that preserve client dignity and protect family peace of mind.",
+    whoCanBenefit: [
+      "Families facing sudden hospital or rehabilitation discharges without a clear care plan",
+      "Adult children caring for aging parents who feel overwhelmed, confused, or burned out",
+      "Seniors diagnosed with progressive memory loss, dementia, Parkinson's, or chronic illness",
+      "Families needing professional guidance on long-term care insurance (LTCI) benefits and claim filing",
+      "Long-distance family members seeking an experienced local care manager in Greater Boston"
+    ],
+    whatIsIncluded: [
+      "Holistic in-home assessment covering physical safety, cognition, functional ADLs, and nutrition",
+      "Development of an individualized, step-by-step aging-in-place care roadmap",
+      "Healthcare advocacy: attending physician appointments and facilitating hospital-to-home transitions",
+      "Review and navigation of long-term care insurance policies and private-duty benefit qualification",
+      "Environmental home hazard inspection with specific equipment and modification recommendations",
+      "Objective family mediation and guidance on in-home care vs. assisted living or memory care facilities",
+      "Crisis intervention and immediate care team deployment during acute medical emergencies"
+    ],
+    familyConsiderations: [
+      "Care consultations are tailored to each family's specific medical, emotional, and financial circumstances.",
+      "Our advisors serve as objective advocates solely focused on the health, safety, and dignity of the senior.",
+      "Consultancy can be engaged as a one-time comprehensive assessment or ongoing care management.",
+      "Consultation sessions can be conducted in person at your home or via video conference for long-distance family."
+    ],
+    faqs: [
+      {
+        question: "What is the difference between a care consultant and a home caregiver?",
+        answer: "A home caregiver provides hands-on personal support, companionship, and daily assistance. A care consultant (or geriatric care manager) provides strategic oversight, clinical assessments, healthcare system navigation, insurance guidance, and ongoing care plan coordination."
+      },
+      {
+        question: "When is the right time to engage a senior care consultant?",
+        answer: "The best time is before a crisis occurs—such as when you first notice memory changes, frequent balance stumbles, or increasing caregiver stress. However, we also provide rapid crisis intervention following acute hospitalizations or sudden health declines."
+      },
+      {
+        question: "Can you help our family navigate Long-Term Care Insurance (LTCI)?",
+        answer: "Yes, our advisors routinely review long-term care insurance policies, verify elimination periods and benefit triggers (such as ADL limitations), and assist families in submitting necessary care logs and documentation."
+      },
+      {
+        question: "Does Akirapa provide consultancy throughout Massachusetts?",
+        answer: "Yes, our senior care consultants serve families in Burlington, Bedford, Lexington, Woburn, Winchester, Concord, Greater Boston, and surrounding Massachusetts communities."
+      }
+    ],
+    relatedServiceSlugs: ["24-hour-home-care", "post-hospitalization-care", "respite-care", "alzheimers-care", "skilled-nursing"],
+    category: "Care Advisory & Management",
+    icon: "fa-solid fa-clipboard-user"
   }
 ];

@@ -245,7 +245,20 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
         try {
             const saved = localStorage.getItem('akirapa_blog_posts');
             if (saved) {
-                return JSON.parse(saved);
+                const parsed = JSON.parse(saved) as BlogPost[];
+                const existingSlugs = new Set(parsed.map(p => p.slug || p.id));
+                const missingInitial = initialBlogPosts.filter(p => !existingSlugs.has(p.slug) && !existingSlugs.has(p.id));
+                if (missingInitial.length > 0) {
+                    const formattedMissing = missingInitial.map(p => ({
+                        ...p,
+                        status: p.status || ('published' as const),
+                        source: p.source || ('manual' as const)
+                    }));
+                    const merged = [...formattedMissing, ...parsed];
+                    localStorage.setItem('akirapa_blog_posts', JSON.stringify(merged));
+                    return merged;
+                }
+                return parsed;
             }
             return initialBlogPosts.map(p => ({
                 ...p,

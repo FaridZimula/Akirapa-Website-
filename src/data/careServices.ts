@@ -119,5 +119,49 @@ export const careServices: CareService[] = [
       "Families seeking compassionate end-of-life care at home"
     ],
     callToAction: "Consult a Specialized Care Advisor"
+  },
+  {
+    id: "transportation",
+    title: "Transportation Services",
+    tagline: "Accompanied Door-Through-Door Senior Rides & Errands",
+    description: "Safe, dignified escorted transportation for medical appointments, therapy visits, pharmacy runs, and social outings.",
+    detailedDescription: "Maintaining personal freedom and community connections requires dependable, assisted travel. Our Senior Transportation Services go far beyond typical curb-to-curb rides: dedicated, insured caregivers assist clients from inside their homes, assist with walkers or wheelchairs, accompany them throughout their appointments or grocery visits, and ensure they are safely settled back home.",
+    icon: "fa-solid fa-car-side",
+    features: [
+      "Full door-through-door escort from home to vehicle and inside clinics",
+      "Safe transportation to physician checkups, dialysis, and rehab therapy",
+      "Accompaniment inside grocery markets, pharmacies, and shopping centers",
+      "Wheelchair and rolling walker folding, lifting, and secure vehicle stowage",
+      "Assistance with prescription pickups, lab paperwork, and errand handling",
+      "Fully insured, background-checked caregiver drivers with clean driving records"
+    ],
+    idealFor: [
+      "Seniors who no longer drive or feel unsafe navigating Massachusetts traffic",
+      "Patients needing physical assistance entering clinics or medical buildings",
+      "Families unable to leave work during business hours for routine appointments"
+    ],
+    callToAction: "Schedule Senior Transportation"
+  },
+  {
+    id: "consultancy",
+    title: "Consultancy & Care Advisory",
+    tagline: "Strategic Elder Care Planning & Geriatric Care Management",
+    description: "Professional family guidance, comprehensive home safety evaluations, clinical care navigation, and long-term care roadmaps.",
+    detailedDescription: "Making senior care decisions can feel overwhelming when balancing medical diagnoses, memory concerns, insurance policies, and family emotions. Akirapa Home Care provides comprehensive care consultancy and eldercare advisory led by senior care managers. We perform holistic assessments, advocate during physician consultations, navigate benefits, and design tailored care plans.",
+    icon: "fa-solid fa-clipboard-user",
+    features: [
+      "Comprehensive in-home functional ADL assessments & safety audits",
+      "Personalized eldercare roadmaps & crisis prevention strategies",
+      "Long-term care insurance (LTCI) review & benefits optimization",
+      "Care coordination with primary care physicians, rehab specialists & hospitals",
+      "Dementia & memory care guidance for families experiencing cognitive decline",
+      "Objective eldercare mediation & assisted living vs. aging-in-place analysis"
+    ],
+    idealFor: [
+      "Families facing sudden health changes or difficult eldercare transitions",
+      "Adult children seeking professional guidance on care options and costs",
+      "Seniors needing long-term care advocacy and personalized care roadmaps"
+    ],
+    callToAction: "Book a Care Consultation"
   }
 ];

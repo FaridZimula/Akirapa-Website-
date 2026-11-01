@@ -8,6 +8,8 @@ export const AKIRAPA_CATEGORIES = [
   "Memory & Dementia",
   "Post-Hospital Recovery",
   "Nutrition & Wellness",
+  "Senior Transportation",
+  "Care Advisory & Planning",
 ] as const;
 
 export type AkirapaCategory = typeof AKIRAPA_CATEGORIES[number];
@@ -48,6 +50,12 @@ export function detectCategory(text: string): AkirapaCategory {
   }
   if (/\b(burnout|caregiver|family caregiver|exhaustion|stress|cna|compassion fatigue)\b/.test(lower)) {
     return "Caregiver Support";
+  }
+  if (/\b(transportation|drive|driving|ride|rides|escort|wheelchair van|errands)\b/.test(lower)) {
+    return "Senior Transportation";
+  }
+  if (/\b(consultancy|consultant|advisory|advisor|geriatric care manager|care management|assessment|roadmap)\b/.test(lower)) {
+    return "Care Advisory & Planning";
   }
 
   return "Senior Living";
