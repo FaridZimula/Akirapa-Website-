@@ -71,6 +71,23 @@ export const localBusinessSchema = {
     "Massachusetts Senior Care Services"
   ],
   "medicalSpecialty": ["Geriatrics", "PrimaryCare"],
+  "isAcceptingNewPatients": true,
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Cathy Akirapa",
+      "jobTitle": "Co-Founder & Clinical Director (CNA)"
+    },
+    {
+      "@type": "Person",
+      "name": "Stuart Ssemwogerere",
+      "jobTitle": "Co-Founder & Managing Director"
+    }
+  ],
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Burlington, Massachusetts, USA"
+  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "281 Cambridge Street",
@@ -253,6 +270,49 @@ const SEO = ({
     "inLanguage": "en-US"
   } : null;
 
+  // WebSite Schema with Sitelinks SearchBox
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    "url": SITE_URL,
+    "name": SITE_NAME,
+    "description": "Premier Massachusetts In-Home Senior Care & 24/7 Services",
+    "publisher": {
+      "@id": `${SITE_URL}/#organization`
+    },
+    "inLanguage": "en-US",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${SITE_URL}/ma-home-care-directory?search={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  // WebPage Schema with Speakable specification for Voice Search & AI Assistants
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${canonicalUrl}#webpage`,
+    "url": canonicalUrl,
+    "name": pageTitle,
+    "description": description,
+    "isPartOf": {
+      "@id": `${SITE_URL}/#website`
+    },
+    "about": {
+      "@id": `${SITE_URL}/#organization`
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", ".hero-subtitle", "p"]
+    },
+    "inLanguage": "en-US"
+  };
+
   return (
     <Helmet>
       {/* Standard Meta */}
@@ -266,6 +326,15 @@ const SEO = ({
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       )}
       {gscVerificationCode && <meta name="google-site-verification" content={gscVerificationCode} />}
+
+      {/* Theme & Mobile App Branding */}
+      <meta name="theme-color" content="#561868" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-title" content="Akirapa" />
+      <meta name="application-name" content="Akirapa Home Care" />
+      <meta name="thumbnail" content={fullImageUrl} />
+      <link rel="image_src" href={fullImageUrl} />
 
       {/* Local & Geographic Targeting for Massachusetts */}
       <meta name="geo.region" content="US-MA" />
@@ -297,6 +366,16 @@ const SEO = ({
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullImageUrl} />
+
+      {/* WebSite Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(websiteSchema)}
+      </script>
+
+      {/* WebPage & Voice Assistant Speakable Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify(webPageSchema)}
+      </script>
 
       {/* LocalBusiness Structured Data */}
       <script type="application/ld+json">

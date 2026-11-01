@@ -263,6 +263,61 @@ const Careers = () => {
     }
   };
 
+  // Schema.org JobPosting structured data for Google for Jobs
+  const currentJobs = (jobOpenings && jobOpenings.length > 0 ? jobOpenings : initialJobOpenings);
+  const jobPostingSchemas = currentJobs.map((job) => {
+    const payMatch = job.payRate.match(/\$?(\d+(\.\d+)?)\s*-\s*\$?(\d+(\.\d+)?)/);
+    const minVal = payMatch ? parseFloat(payMatch[1]) : 22;
+    const maxVal = payMatch ? parseFloat(payMatch[3]) : 30;
+    const isDaily = job.payType === "Daily" || job.payRate.toLowerCase().includes("day");
+    
+    return {
+      "@context": "https://schema.org",
+      "@type": "JobPosting",
+      "title": job.title,
+      "description": `<h3>Job Overview</h3><p>${job.description}</p><h3>Key Requirements</h3><ul>${job.requirements.map((r: string) => `<li>${r}</li>`).join('')}</ul><p>Join Akirapa Home Care in ${job.city}, Massachusetts. We offer competitive compensation, zero-contract flexibility, and comprehensive professional support.</p>`,
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Akirapa Home Care",
+        "value": job.id
+      },
+      "datePosted": "2026-08-01",
+      "validThrough": "2027-12-31T23:59:59Z",
+      "employmentType": job.employmentType.toLowerCase().includes("part") ? "PART_TIME" : "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Akirapa Home Care Inc.",
+        "sameAs": "https://akirapahomecareus.com",
+        "logo": "https://akirapahomecareus.com/akirapa-logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "281 Cambridge Street",
+          "addressLocality": job.city,
+          "addressRegion": "MA",
+          "postalCode": "01803",
+          "addressCountry": "US"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": minVal,
+          "maxValue": maxVal,
+          "unitText": isDaily ? "DAY" : "HOUR"
+        }
+      },
+      "applicantLocationRequirements": {
+        "@type": "Country",
+        "name": "US"
+      }
+    };
+  });
+
   return (
     <Layout>
       <SEO
@@ -274,6 +329,7 @@ const Careers = () => {
           { name: "Home", path: "/" },
           { name: "Careers & Job Opportunities", path: "/careers" }
         ]}
+        schemaExtra={jobPostingSchemas}
       />
 
       {/* Hero Header with 29% Opacity Background Image */}

@@ -1,12 +1,12 @@
 # Robots.txt for Akirapa Home Care (https://akirapahomecareus.com)
-# Optimized for Google, Bing, Apple, and AI search engines
+# Optimized for Google, Bing, Apple, and AI search engines (SearchGPT, Perplexity, Claude, Gemini)
 
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /admin
 
-# Dedicated search engines
+# Dedicated Search Engines
 User-agent: Googlebot
 Allow: /
 Disallow: /admin/
@@ -25,7 +25,13 @@ Allow: /
 Disallow: /admin/
 Disallow: /admin
 
-# AI Search Crawlers (ChatGPT, Perplexity, Claude, SearchGPT)
+User-agent: Applebot-Extended
+Allow: /
+
+# AI Search & Retrieval Crawlers (SearchGPT, ChatGPT, Perplexity, Claude, Google Gemini)
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
@@ -38,5 +44,27 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
 Host: https://akirapahomecareus.com
 Sitemap: https://akirapahomecareus.com/sitemap.xml
+
+# LLM & AI Agents Clean Markdown Reference:
+# https://akirapahomecareus.com/llms.txt
+# https://akirapahomecareus.com/llms-full.txt
