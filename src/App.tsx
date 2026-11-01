@@ -36,6 +36,9 @@ import AkiVault from "./pages/AkiVault";
 import ServiceDetail from "./pages/ServiceDetail";
 import MAHomeCareDirectory from "./pages/MAHomeCareDirectory";
 import MACompetitorDetail from "./pages/MACompetitorDetail";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import ConsumerRights from "./pages/ConsumerRights";
 
 const queryClient = new QueryClient();
 
@@ -77,6 +80,15 @@ const App = () => {
                   <Route path="/ma-home-care-directory" element={<MAHomeCareDirectory />} />
                   <Route path="/ma-home-care-directory/:slug" element={<MACompetitorDetail />} />
                   <Route path="/contact" element={<Contact />} />
+
+                  {/* Privacy, Terms & Legal Compliance Routes */}
+                  <Route path="/privacy" element={<PrivacyPolicy />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms" element={<TermsOfService />} />
+                  <Route path="/terms-of-service" element={<TermsOfService />} />
+                  <Route path="/terms-and-conditions" element={<TermsOfService />} />
+                  <Route path="/consumer-rights" element={<ConsumerRights />} />
+                  <Route path="/client-rights" element={<ConsumerRights />} />
 
                   {/* Admin Portal Routes */}
                   <Route path="/admin/login" element={<Login />} />

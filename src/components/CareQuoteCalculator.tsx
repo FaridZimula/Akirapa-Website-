@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 
 export const CareQuoteCalculator: React.FC = () => {
@@ -196,6 +197,13 @@ export const CareQuoteCalculator: React.FC = () => {
                 >
                   SUBMIT
                 </button>
+                <p className="text-[11px] text-white/70 text-center mt-2.5">
+                  <i className="fa-solid fa-lock text-[#40ddd3] mr-1"></i>
+                  Confidential & Secure. By submitting, you agree to our{" "}
+                  <Link to="/privacy" className="text-[#40ddd3] underline font-bold hover:text-white">Privacy Policy</Link>{" "}
+                  and{" "}
+                  <Link to="/terms" className="text-[#40ddd3] underline font-bold hover:text-white">Terms</Link>.
+                </p>
               </div>
 
             </form>

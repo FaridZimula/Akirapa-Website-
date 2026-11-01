@@ -107,6 +107,12 @@ export const ChatBot = () => {
         replyText = "Our primary office is located at 281 Cambridge Street, Burlington, MA 01803, serving seniors across Massachusetts.";
       } else if (lower.includes("phone") || lower.includes("call") || lower.includes("number") || lower.includes("contact")) {
         replyText = "Our 24/7 Helpline Support number is: +1 781-226-9910. We are ready to assist you any time day or night!";
+      } else if (lower.includes("privacy") || lower.includes("hipaa") || lower.includes("confidential") || lower.includes("phi")) {
+        replyText = "Akirapa Home Care is fully HIPAA compliant and adheres to Massachusetts 201 CMR 17.00 data privacy standards. All client health records and AkiVault™ EVV logs are securely encrypted. You can review our full Privacy Policy at /privacy.";
+      } else if (lower.includes("terms") || lower.includes("agreement") || lower.includes("conditions") || lower.includes("contract")) {
+        replyText = "Our in-home care is contract-free and flexible. We provide transparent billing with no hidden fees and clear shift minimums. You can view our Terms of Service at /terms.";
+      } else if (lower.includes("rights") || lower.includes("complaint") || lower.includes("grievance")) {
+        replyText = "We strictly protect every client's dignity and autonomy. Review our Massachusetts Client Bill of Rights and grievance escalation procedure at /consumer-rights.";
       }
 
       const botMsg: Message = {

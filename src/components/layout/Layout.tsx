@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import SEO from "../SEO";
 import ChatBot from "../ChatBot";
+import CookieConsent from "../CookieConsent";
 
 interface LayoutProps {
   children: ReactNode;
@@ -53,6 +54,9 @@ const Layout = ({ children }: LayoutProps) => {
 
       {/* Floating 24/7 AI / Live Chat Widget */}
       <ChatBot />
+
+      {/* Interactive Cookie, Privacy & HIPAA Compliance Banner */}
+      <CookieConsent />
     </div>
   );
 };

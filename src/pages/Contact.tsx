@@ -372,6 +372,14 @@ const Contact = () => {
                         "Request Free Assessment"
                       )}
                     </Button>
+
+                    <p className="text-[11px] text-gray-500 text-center pt-2 leading-relaxed">
+                      <i className="fa-solid fa-shield-halved text-[#76248a] mr-1"></i>
+                      Your health information is strictly confidential. By submitting, you agree to our{" "}
+                      <Link to="/terms" className="text-[#76248a] font-bold underline hover:text-[#561868]">Terms of Service</Link>{" "}
+                      and acknowledge our{" "}
+                      <Link to="/privacy" className="text-[#76248a] font-bold underline hover:text-[#561868]">Privacy Policy & HIPAA Notice</Link>.
+                    </p>
                   </form>
                 ) : (
                   <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center space-y-3">

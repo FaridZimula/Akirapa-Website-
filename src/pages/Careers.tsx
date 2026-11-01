@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -661,7 +662,14 @@ const Careers = () => {
                               className="mt-0.5 rounded text-[#76248a] focus:ring-[#40ddd3]"
                             />
                             <label htmlFor="quickAgreed" className="text-[11px] text-gray-600 leading-snug cursor-pointer">
-                              I agree to Akirapa Home Care's <strong className="text-[#76248a]">Privacy Policy</strong> and <strong className="text-[#76248a]">Terms of Service</strong>.*
+                              I agree to Akirapa Home Care's{" "}
+                              <Link to="/privacy" target="_blank" className="text-[#76248a] font-bold underline hover:text-[#40ddd3]">
+                                Privacy Policy
+                              </Link>{" "}
+                              and{" "}
+                              <Link to="/terms" target="_blank" className="text-[#76248a] font-bold underline hover:text-[#40ddd3]">
+                                Terms of Service
+                              </Link>.*
                             </label>
                           </div>
 

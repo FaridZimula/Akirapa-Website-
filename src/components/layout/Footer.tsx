@@ -80,7 +80,9 @@ const Footer = () => {
                 { label: "MA Home Care Directory", path: "/ma-home-care-directory" },
                 { label: "Senior Care Blog", path: "/blog" },
                 { label: "Caregiver Careers", path: "/careers" },
-                { label: "Free Care Assessment", path: "/contact" }
+                { label: "Free Care Assessment", path: "/contact" },
+                { label: "Privacy & HIPAA Policy", path: "/privacy" },
+                { label: "Terms & Conditions", path: "/terms" }
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -194,11 +196,12 @@ const Footer = () => {
             ))}
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-6">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm">
             <Link to="/ma-home-care-directory" className="hover:text-[#40ddd3] transition-colors font-semibold">MA Care Directory</Link>
-            <Link to="/about" className="hover:text-[#40ddd3] transition-colors">Privacy Policy</Link>
-            <Link to="/about" className="hover:text-[#40ddd3] transition-colors">Terms of Service</Link>
-            <Link to="/contact" className="hover:text-[#40ddd3] transition-colors">Consumer Rights</Link>
+            <Link to="/privacy" className="hover:text-[#40ddd3] transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-[#40ddd3] transition-colors">Terms of Service</Link>
+            <Link to="/consumer-rights" className="hover:text-[#40ddd3] transition-colors">Consumer Rights</Link>
+            <Link to="/privacy#hipaa-notice" className="hover:text-[#40ddd3] transition-colors text-white/60">HIPAA Notice</Link>
           </div>
         </div>
       </div>

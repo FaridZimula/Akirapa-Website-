@@ -434,6 +434,24 @@ async function run() {
       title: 'AkiVault™ Real-Time GPS EVV Caregiver Verification | Akirapa Home Care',
       description: 'Discover AkiVault™, Akirapa Home Care\'s proprietary electronic visit verification technology providing real-time GPS clock-in transparency for families.',
       canonical: 'https://akirapahomecareus.com/akivault'
+    },
+    {
+      path: 'privacy',
+      title: 'Privacy Policy & HIPAA Notice of Privacy Practices | Akirapa Home Care',
+      description: 'Official Privacy Policy and HIPAA Notice of Privacy Practices for Akirapa Home Care. Learn how we safeguard Protected Health Information (PHI), EVV data, and client confidentiality under Massachusetts and federal laws.',
+      canonical: 'https://akirapahomecareus.com/privacy'
+    },
+    {
+      path: 'terms',
+      title: 'Terms of Service & Care Agreements | Akirapa Home Care Massachusetts',
+      description: 'Official Terms of Service and Client Agreement Conditions for Akirapa Home Care. Review our service scope, medical disclaimer, caregiver employment protections, and Massachusetts governing law.',
+      canonical: 'https://akirapahomecareus.com/terms'
+    },
+    {
+      path: 'consumer-rights',
+      title: 'Massachusetts Home Care Client Bill of Rights & Consumer Protections | Akirapa',
+      description: 'Review the Akirapa Home Care Client Bill of Rights and Massachusetts Executive Office of Elder Affairs (EOEA) consumer protections, grievance procedures, and non-discrimination notice.',
+      canonical: 'https://akirapahomecareus.com/consumer-rights'
     }
   ];
 
