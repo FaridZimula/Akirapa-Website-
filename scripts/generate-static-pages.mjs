@@ -102,7 +102,7 @@ async function run() {
     // LocalBusiness Schema
     const localBusinessSchema = {
       "@context": "https://schema.org",
-      "@type": ["HomeHealthCareService", "LocalBusiness"],
+      "@type": ["MedicalBusiness", "LocalBusiness"],
       "name": comp.name,
       "image": "https://akirapahomecareus.com/akirapa-og-image.jpg",
       "address": {
@@ -119,7 +119,18 @@ async function run() {
         "ratingValue": comp.rating.toString(),
         "reviewCount": comp.reviewCount.toString(),
         "bestRating": "5",
-        "worstRating": "1"
+        "worstRating": "1",
+        "itemReviewed": {
+          "@type": "LocalBusiness",
+          "name": comp.name,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": comp.address,
+            "addressLocality": comp.city,
+            "addressRegion": "MA",
+            "addressCountry": "US"
+          }
+        }
       }
     };
 
@@ -440,9 +451,12 @@ async function run() {
     const serviceSchema = {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": service.title,
+      "@id": `${serviceUrl}#service`,
+      "name": `${service.title} in Massachusetts`,
+      "serviceType": service.title,
       "provider": {
-        "@type": "HomeHealthCareService",
+        "@type": ["MedicalBusiness", "MedicalOrganization", "LocalBusiness"],
+        "@id": "https://akirapahomecareus.com/#organization",
         "name": "Akirapa Home Care",
         "telephone": "+1 781-226-9910",
         "url": "https://akirapahomecareus.com",

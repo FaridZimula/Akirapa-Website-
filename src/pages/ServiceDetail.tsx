@@ -29,7 +29,8 @@ export default function ServiceDetail() {
     "serviceType": service.title,
     "description": service.shortDescription,
     "provider": {
-      "@type": "HomeHealthCareService",
+      "@type": ["MedicalBusiness", "MedicalOrganization", "LocalBusiness"],
+      "@id": "https://akirapahomecareus.com/#organization",
       "name": "Akirapa Home Care",
       "url": "https://akirapahomecareus.com",
       "telephone": "+1 781-226-9910",
@@ -44,15 +45,15 @@ export default function ServiceDetail() {
     },
     "areaServed": [
       { "@type": "AdministrativeArea", "name": "Massachusetts" },
-      { "@type": "City", "name": "Burlington", "addressRegion": "MA" },
-      { "@type": "City", "name": "Woburn", "addressRegion": "MA" },
-      { "@type": "City", "name": "Lexington", "addressRegion": "MA" },
-      { "@type": "City", "name": "Bedford", "addressRegion": "MA" },
-      { "@type": "City", "name": "Billerica", "addressRegion": "MA" },
-      { "@type": "City", "name": "Winchester", "addressRegion": "MA" },
-      { "@type": "City", "name": "Arlington", "addressRegion": "MA" },
-      { "@type": "City", "name": "Boston", "addressRegion": "MA" },
-      { "@type": "City", "name": "Cambridge", "addressRegion": "MA" }
+      { "@type": "City", "name": "Burlington" },
+      { "@type": "City", "name": "Woburn" },
+      { "@type": "City", "name": "Lexington" },
+      { "@type": "City", "name": "Bedford" },
+      { "@type": "City", "name": "Billerica" },
+      { "@type": "City", "name": "Winchester" },
+      { "@type": "City", "name": "Arlington" },
+      { "@type": "City", "name": "Boston" },
+      { "@type": "City", "name": "Cambridge" }
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",

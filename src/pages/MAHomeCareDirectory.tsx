@@ -91,7 +91,13 @@ export default function MAHomeCareDirectory() {
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": comp.rating.toString(),
-          "reviewCount": comp.reviewCount.toString()
+          "reviewCount": comp.reviewCount.toString(),
+          "bestRating": "5",
+          "worstRating": "1",
+          "itemReviewed": {
+            "@type": "LocalBusiness",
+            "name": comp.name
+          }
         }
       }
     }))

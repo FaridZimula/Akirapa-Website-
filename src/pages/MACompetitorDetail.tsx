@@ -78,7 +78,18 @@ export default function MACompetitorDetail() {
       "ratingValue": competitor.rating.toString(),
       "reviewCount": competitor.reviewCount.toString(),
       "bestRating": "5",
-      "worstRating": "1"
+      "worstRating": "1",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": competitor.name,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": competitor.address,
+          "addressLocality": competitor.city,
+          "addressRegion": "MA",
+          "addressCountry": "US"
+        }
+      }
     }
   };
 
