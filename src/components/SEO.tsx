@@ -43,7 +43,7 @@ export const localBusinessSchema = {
   "@id": `${SITE_URL}/#organization`,
   "name": SITE_NAME,
   "legalName": "Akirapa Home Care Inc.",
-  "url": SITE_URL,
+  "url": `${SITE_URL}/`,
   "logo": {
     "@type": "ImageObject",
     "url": `${SITE_URL}/akirapa-logo.png`,
@@ -199,7 +199,12 @@ const SEO = ({
 }: SEOProps) => {
   const pageTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  const canonicalUrl = `${SITE_URL}${normalizedPath === "/" ? "" : normalizedPath}`;
+  // Ensure homepage canonical is exactly SITE_URL + "/" to strictly match sitemap.xml,
+  // and all other pages have no trailing slash to strictly match sitemap.xml.
+  const canonicalUrl =
+    normalizedPath === "/" || normalizedPath === ""
+      ? `${SITE_URL}/`
+      : `${SITE_URL}${normalizedPath.replace(/\/+$/, "")}`;
   const fullImageUrl = image.startsWith("http") ? image : `${SITE_URL}${image.startsWith("/") ? image : `/${image}`}`;
   const gscVerificationCode = googleSiteVerification || (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined);
 
@@ -268,11 +273,13 @@ const SEO = ({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
-    "url": SITE_URL,
+    "url": `${SITE_URL}/`,
     "name": SITE_NAME,
     "description": "Premier Massachusetts In-Home Senior Care & 24/7 Services",
     "publisher": {
-      "@id": `${SITE_URL}/#organization`
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      "name": SITE_NAME
     },
     "inLanguage": "en-US",
     "potentialAction": {
@@ -297,7 +304,9 @@ const SEO = ({
       "@id": `${SITE_URL}/#website`
     },
     "about": {
-      "@id": `${SITE_URL}/#organization`
+      "@type": "MedicalBusiness",
+      "@id": `${SITE_URL}/#organization`,
+      "name": SITE_NAME
     },
     "speakable": {
       "@type": "SpeakableSpecification",

@@ -53,6 +53,11 @@ const Register = () => {
     if (isSuccess) {
         return (
             <Layout>
+                <SEO
+                    title="Registration Successful | Akirapa Home Care"
+                    path="/register"
+                    noindex={true}
+                />
                 <section className="px-4 py-20 bg-background min-h-[70vh] flex items-center justify-center">
                     <div className="w-full max-w-md bg-white rounded-[2.5rem] shadow-xl p-10 text-center animate-in fade-in zoom-in duration-500">
                         <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -77,6 +82,12 @@ const Register = () => {
 
     return (
         <Layout>
+            <SEO
+                title="Register for Membership | Akirapa Home Care"
+                description="Register for Akirapa Home Care."
+                path="/register"
+                noindex={true}
+            />
             <section className="px-4 sm:px-6 lg:px-8 py-12 bg-background min-h-[80vh] flex items-center justify-center">
                 <div className="w-full max-w-2xl bg-white rounded-[2.5rem] shadow-xl p-8 sm:p-12 border border-gray-100">
                     <div className="text-center mb-10">

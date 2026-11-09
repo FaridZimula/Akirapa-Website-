@@ -343,13 +343,17 @@ async function run() {
     const postUrl = `https://akirapahomecareus.com/blog/${post.slug}`;
     const postTitle = `${post.title} | Akirapa Home Care Blog`;
     const postDesc = post.excerpt || `Read ${post.title} on the Akirapa Home Care blog. Expert insights on Massachusetts senior care, dementia support, and caregiver guidance.`;
+    const isoDate = new Date(post.date).toISOString().split('T')[0];
+    const postImageUrl = post.image ? (post.image.startsWith('http') ? post.image : `https://akirapahomecareus.com${post.image}`) : 'https://akirapahomecareus.com/akirapa-og-image.jpg';
 
     const blogPostingSchema = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "headline": post.title,
       "description": postDesc,
-      "datePublished": post.date,
+      "image": [postImageUrl],
+      "datePublished": isoDate,
+      "dateModified": isoDate,
       "author": {
         "@type": "Person",
         "name": post.author || "Akirapa Home Care Team"
@@ -459,7 +463,7 @@ async function run() {
         "@id": "https://akirapahomecareus.com/#organization",
         "name": "Akirapa Home Care",
         "telephone": "+1 781-226-9910",
-        "url": "https://akirapahomecareus.com",
+        "url": "https://akirapahomecareus.com/",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "281 Cambridge Street",
@@ -602,6 +606,48 @@ async function run() {
   // ==========================================
   console.log('⚡ Generating core pages with rich semantic pre-rendering...');
   const corePages = [
+    {
+      path: '',
+      title: 'Akirapa Home Care | Premier In-Home Senior Care — Burlington & Massachusetts',
+      description: 'Compassionate in-home senior care headquartered at 281 Cambridge Street, Burlington, MA 01803. Hourly care, 24/7 daily & live-in care, hospital-to-home recovery, respite care, and specialized Alzheimer\'s support across Massachusetts. Call +1 781-226-9910.',
+      canonical: 'https://akirapahomecareus.com/',
+      bodyHtml: `
+        <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 1000px; margin: 0 auto; padding: 32px 16px;">
+          <header style="background: #561868; color: white; padding: 36px 16px; text-align: center; border-radius: 12px; margin-bottom: 32px;">
+            <h1 style="font-size: 36px; font-weight: 900; margin: 0 0 12px; color: #ffffff;">Akirapa Home Care — Massachusetts Premier Senior Care</h1>
+            <p style="font-size: 18px; color: #e9d5ff; max-width: 800px; margin: 0 auto 16px;">
+              Compassionate in-home senior care headquartered at 281 Cambridge Street, Burlington, MA 01803.
+            </p>
+            <p style="margin: 0; font-size: 16px; font-weight: bold; color: #40ddd3;">
+              24/7 Care Helpline: +1 781-226-9910
+            </p>
+          </header>
+
+          <section style="margin-bottom: 36px;">
+            <h2 style="font-size: 26px; font-weight: bold; color: #561868;">16 Specialized In-Home Care Programs</h2>
+            <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; list-style: none; padding: 0;">
+              ${detailedServices.map(s => `
+                <li style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; background: #fafafa;">
+                  <h3 style="font-size: 17px; font-weight: bold; color: #561868; margin-top: 0;"><a href="/services/${s.slug}" style="color: #561868; text-decoration: none;">${esc(s.title)}</a></h3>
+                  <p style="font-size: 14px; color: #4b5563; margin-bottom: 8px;">${esc(s.shortDescription)}</p>
+                  <a href="/services/${s.slug}" style="color: #76248a; font-weight: bold; font-size: 13px;">Learn More →</a>
+                </li>
+              `).join('')}
+            </ul>
+          </section>
+
+          <section style="background: #fdf2f8; border: 1px solid #fbcfe8; border-radius: 12px; padding: 24px; margin-bottom: 36px;">
+            <h2 style="font-size: 22px; font-weight: bold; color: #831843; margin-top: 0;">Why Choose Akirapa Home Care?</h2>
+            <ul style="color: #9d174d; padding-left: 20px;">
+              <li><strong>Zero Long-Term Contracts:</strong> Start, adjust, or pause care anytime without binding commitments.</li>
+              <li><strong>100% Certified Nursing Assistants (CNAs):</strong> High-caliber, compassionate caregivers.</li>
+              <li><strong>AkiVault™ Real-Time GPS EVV:</strong> Geofenced clock-in proof and 8-point daily welfare checks for family peace of mind.</li>
+              <li><strong>24/7 Local Support:</strong> Available 24 hours a day, 365 days a year across Massachusetts.</li>
+            </ul>
+          </section>
+        </div>
+      `
+    },
     {
       path: 'services',
       title: 'Senior In-Home Care Services in Massachusetts | Akirapa Home Care',

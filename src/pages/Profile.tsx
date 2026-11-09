@@ -161,7 +161,7 @@ const Profile = () => {
                 Our holistic approach addresses the unique challenges facing youth today, from access to quality education to employment opportunities and civic participation.
               </p>
               <Button asChild size="lg" className="text-lg">
-                <Link to="/projects">
+                <Link to="/services">
                   Learn More About Us
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>

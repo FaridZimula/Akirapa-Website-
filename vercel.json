@@ -1,5 +1,63 @@
 {
   "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/AkiVault.html",
+      "destination": "/akivault",
+      "permanent": true
+    },
+    {
+      "source": "/akivault.html",
+      "destination": "/akivault",
+      "permanent": true
+    },
+    {
+      "source": "/leadership",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/profile",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/projects",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/client-rights",
+      "destination": "/consumer-rights",
+      "permanent": true
+    },
+    {
+      "source": "/donate",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/register",
+      "destination": "/contact",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

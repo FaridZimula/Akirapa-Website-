@@ -32,7 +32,7 @@ export default function ServiceDetail() {
       "@type": ["MedicalBusiness", "MedicalOrganization", "LocalBusiness"],
       "@id": "https://akirapahomecareus.com/#organization",
       "name": "Akirapa Home Care",
-      "url": "https://akirapahomecareus.com",
+      "url": "https://akirapahomecareus.com/",
       "telephone": "+1 781-226-9910",
       "address": {
         "@type": "PostalAddress",

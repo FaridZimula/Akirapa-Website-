@@ -2,7 +2,6 @@ import { ReactNode, useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import SEO from "../SEO";
 import ChatBot from "../ChatBot";
 import CookieConsent from "../CookieConsent";
 
@@ -36,7 +35,6 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-clip w-full">
-      <SEO />
       <Navbar />
       <main className="flex-1 pt-20 md:pt-32 w-full overflow-x-clip">{children}</main>
       <Footer />
