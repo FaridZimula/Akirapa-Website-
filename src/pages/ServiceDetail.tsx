@@ -4,9 +4,15 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { detailedServices, DetailedService } from "@/data/detailedServicesData";
+import { BurlingtonCareQuestions } from "@/components/BurlingtonCareQuestions";
 
-export default function ServiceDetail() {
-  const { slug } = useParams<{ slug: string }>();
+interface ServiceDetailProps {
+  customSlug?: string;
+}
+
+export default function ServiceDetail({ customSlug }: ServiceDetailProps = {}) {
+  const { slug: routeSlug } = useParams<{ slug: string }>();
+  const slug = customSlug || routeSlug;
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const service = detailedServices.find((s) => s.slug === slug);
@@ -14,6 +20,15 @@ export default function ServiceDetail() {
   if (!service) {
     return <Navigate to="/services" replace />;
   }
+
+  const conditionFocus: "general" | "dementia" | "post-hospital" | "24-hour" =
+    service.slug.includes("dementia") || service.slug.includes("alzheimers")
+      ? "dementia"
+      : service.slug.includes("hospital") || service.slug.includes("recovery")
+      ? "post-hospital"
+      : service.slug.includes("24-hour") || service.slug.includes("live-in")
+      ? "24-hour"
+      : "general";
 
   // Related services
   const related = detailedServices
@@ -224,6 +239,52 @@ export default function ServiceDetail() {
                 <Link to="/ma-home-care-directory">Compare MA Agencies</Link>
               </Button>
             </div>
+          </div>
+
+          {/* Proof Where Families Look Callout Banner */}
+          <div className="max-w-4xl mx-auto bg-gradient-to-r from-purple-900 to-[#561868] text-white rounded-3xl p-6 sm:p-8 shadow-lg">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="space-y-2 text-center md:text-left">
+                <span className="text-xs font-bold text-[#40ddd3] uppercase tracking-wider block">
+                  Transparency & Proof
+                </span>
+                <h3 className="text-xl sm:text-2xl font-black">
+                  See Real Proof Before You Decide
+                </h3>
+                <p className="text-white/80 text-xs sm:text-sm max-w-xl leading-relaxed">
+                  Explore an authentic dummy AkiVault shift report, review our CNA verification standards, or read our transparent pricing guide for Burlington.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center justify-center gap-2.5 shrink-0">
+                <Link
+                  to="/sample-shift-report"
+                  className="px-4 py-2 rounded-xl bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-bold text-xs shadow-sm transition-all"
+                >
+                  <i className="fa-solid fa-file-waveform mr-1.5"></i>
+                  Real Shift Report
+                </Link>
+                <Link
+                  to="/standards"
+                  className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition-all"
+                >
+                  <i className="fa-solid fa-shield-check mr-1.5 text-[#40ddd3]"></i>
+                  Our Standards
+                </Link>
+                <Link
+                  to="/pricing"
+                  className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition-all"
+                >
+                  <i className="fa-solid fa-tag mr-1.5 text-[#40ddd3]"></i>
+                  Pricing Guide
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Plain-Language Burlington Answers Component */}
+          <div className="max-w-4xl mx-auto">
+            <BurlingtonCareQuestions conditionFocus={conditionFocus} />
           </div>
 
           {/* Frequently Asked Questions */}

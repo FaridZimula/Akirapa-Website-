@@ -11,6 +11,7 @@ import { careServices } from "@/data/careServices";
 import { testimonials } from "@/data/testimonials";
 import { leaders } from "@/data/leadership";
 import { CareQuoteCalculator } from "@/components/CareQuoteCalculator";
+import { BurlingtonCareQuestions } from "@/components/BurlingtonCareQuestions";
 
 const heroSlides = [
   {
@@ -355,6 +356,110 @@ const Index = () => {
               <Button asChild size="lg" className="w-full sm:w-auto bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold text-base h-14 px-6 rounded-2xl shadow-md button-shimmer hover:scale-105 active:scale-95 transition-all duration-300">
                 <Link to="/contact">Request Immediate Callback</Link>
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Put Proof Where Families Look Section */}
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1.5 rounded-full inline-block">
+              <i className="fa-solid fa-shield-check text-[#40ddd3] mr-1.5"></i>
+              Proof Where Families Look
+            </span>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
+              Verifiable Proof, Not Empty Promises
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              When an adult daughter is in crisis, she needs three things: reassurance, transparent pricing, and rapid availability. We document everything we claim.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Card 1: See a Real Shift Report */}
+            <div className="bg-gradient-to-br from-purple-900 to-[#561868] text-white rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col justify-between group hover:scale-[1.02] transition-all">
+              <div className="space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#40ddd3] text-gray-950 flex items-center justify-center font-bold text-lg shadow-sm">
+                  <i className="fa-solid fa-file-waveform"></i>
+                </div>
+                <div className="inline-block bg-white/20 text-[#40ddd3] text-[10px] font-black uppercase px-2 py-0.5 rounded-md">
+                  Strongest Asset
+                </div>
+                <h3 className="text-xl font-black text-white">See a Real Shift Report</h3>
+                <p className="text-white/80 text-xs sm:text-sm leading-relaxed">
+                  Interactive dummy AkiVault report featuring GPS-verified clock-in, 8-point welfare check, and CNA shift notes. Never real client data.
+                </p>
+              </div>
+              <div className="pt-6">
+                <Button asChild size="sm" className="w-full bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-black text-xs h-10 rounded-xl">
+                  <Link to="/sample-shift-report">Explore Sample Report</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Card 2: Transparent Pricing */}
+            <div className="bg-gray-50 rounded-3xl p-6 sm:p-7 border border-gray-200/80 shadow-sm flex flex-col justify-between group hover:border-[#76248a]/30 hover:shadow-md transition-all">
+              <div className="space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-purple-100 text-[#76248a] flex items-center justify-center font-bold text-lg">
+                  <i className="fa-solid fa-tag"></i>
+                </div>
+                <div className="inline-block bg-purple-100 text-[#76248a] text-[10px] font-black uppercase px-2 py-0.5 rounded-md">
+                  No Hidden Fees
+                </div>
+                <h3 className="text-xl font-black text-gray-900">Transparent Pricing</h3>
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                  $36 – $44/hr for licensed CNAs in Burlington. No long-term contracts. Rapid same-day and 24-hr crisis intake.
+                </p>
+              </div>
+              <div className="pt-6">
+                <Button asChild variant="outline" size="sm" className="w-full border-2 border-[#76248a] text-[#76248a] font-bold text-xs h-10 rounded-xl hover:bg-[#76248a] hover:text-white">
+                  <Link to="/pricing">Review Rate Guide</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Card 3: Our Standards */}
+            <div className="bg-gray-50 rounded-3xl p-6 sm:p-7 border border-gray-200/80 shadow-sm flex flex-col justify-between group hover:border-[#76248a]/30 hover:shadow-md transition-all">
+              <div className="space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-purple-100 text-[#76248a] flex items-center justify-center font-bold text-lg">
+                  <i className="fa-solid fa-shield-check"></i>
+                </div>
+                <div className="inline-block bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase px-2 py-0.5 rounded-md">
+                  State-Verified CNAs
+                </div>
+                <h3 className="text-xl font-black text-gray-900">Documented Standards</h3>
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                  How caregivers are verified with the MA registry, what a red flag triggers in 60s, and what GPS EVV does and does not do.
+                </p>
+              </div>
+              <div className="pt-6">
+                <Button asChild variant="outline" size="sm" className="w-full border-2 border-[#76248a] text-[#76248a] font-bold text-xs h-10 rounded-xl hover:bg-[#76248a] hover:text-white">
+                  <Link to="/standards">Review Standards</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Card 4: Questions to Ask */}
+            <div className="bg-gray-50 rounded-3xl p-6 sm:p-7 border border-gray-200/80 shadow-sm flex flex-col justify-between group hover:border-[#76248a]/30 hover:shadow-md transition-all">
+              <div className="space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-purple-100 text-[#76248a] flex items-center justify-center font-bold text-lg">
+                  <i className="fa-solid fa-list-check"></i>
+                </div>
+                <div className="inline-block bg-blue-100 text-blue-800 text-[10px] font-black uppercase px-2 py-0.5 rounded-md">
+                  Consumer Checklist
+                </div>
+                <h3 className="text-xl font-black text-gray-900">10 Questions to Ask</h3>
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                  Fair trap questions families should ask any home care agency before signing anything, with plain-language facts.
+                </p>
+              </div>
+              <div className="pt-6">
+                <Button asChild variant="outline" size="sm" className="w-full border-2 border-[#76248a] text-[#76248a] font-bold text-xs h-10 rounded-xl hover:bg-[#76248a] hover:text-white">
+                  <Link to="/questions-to-ask-a-home-care-agency">Read 10 Questions</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -972,6 +1077,11 @@ const Index = () => {
             <p className="text-gray-600 text-base sm:text-lg">
               Clear, transparent answers from our Burlington clinical coordination team to help you make informed decisions.
             </p>
+          </div>
+
+          {/* High-Intent Burlington Plain Language Answers */}
+          <div className="max-w-4xl mx-auto">
+            <BurlingtonCareQuestions />
           </div>
 
           <div className="max-w-4xl mx-auto space-y-4">

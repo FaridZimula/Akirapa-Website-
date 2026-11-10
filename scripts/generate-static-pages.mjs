@@ -827,6 +827,127 @@ async function run() {
           </ul>
         </div>
       `
+    },
+    {
+      path: 'sample-shift-report',
+      title: 'See a Real Shift Report | Realistic Dummy AkiVault Report | Akirapa Home Care',
+      description: 'Experience real-time family transparency. View a realistic dummy AkiVault shift report featuring GPS EVV arrival verification, 8-point welfare diagnostics, and instant red-flag alerts. Never real client data.',
+      canonical: 'https://akirapahomecareus.com/sample-shift-report',
+      bodyHtml: `
+        <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 32px 16px;">
+          <h1 style="font-size: 36px; font-weight: 900; color: #561868; margin-bottom: 12px;">See a Real AkiVault™ Shift Report</h1>
+          <p style="font-size: 16px; color: #4b5563; margin-bottom: 24px;">A realistic dummy shift report demonstrating how Akirapa Home Care keeps families informed in real time. Never real client data.</p>
+          <h2 style="font-size: 20px; font-weight: bold; color: #561868;">Documented Shift Highlights</h2>
+          <ul style="color: #374151; padding-left: 20px;">
+            <li><strong>GPS-Verified EVV Clock-In:</strong> Verified arrival at 8:02 AM (32 feet from residence).</li>
+            <li><strong>8-Point Welfare Diagnostics:</strong> Appetite, hydration, pain (2/10), mobility, and medication adherence.</li>
+            <li><strong>Automated Red-Flag Escalation:</strong> Automated alerts to on-call Nurse Supervisors within 60 seconds.</li>
+          </ul>
+        </div>
+      `
+    },
+    {
+      path: 'standards',
+      title: 'Our Standards | CNA Verification, Red-Flag Alerts & GPS Proof | Akirapa Home Care',
+      description: 'Transparent, documented standards for families in Burlington and Massachusetts: How caregivers are verified as CNAs, what red-flag alerts trigger, and how GPS EVV protects your loved one.',
+      canonical: 'https://akirapahomecareus.com/standards',
+      bodyHtml: `
+        <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 32px 16px;">
+          <h1 style="font-size: 36px; font-weight: 900; color: #561868; margin-bottom: 12px;">Our Documented Care Standards</h1>
+          <p style="font-size: 16px; color: #4b5563; margin-bottom: 24px;">State only what you can document. Verifiable standards for in-home senior care in Burlington and Massachusetts.</p>
+          <h2 style="font-size: 20px; font-weight: bold; color: #561868;">Three Pillars of Documented Quality</h2>
+          <ul style="color: #374151; padding-left: 20px;">
+            <li><strong>Massachusetts CNA Registry Verification:</strong> Active license check with zero adverse findings.</li>
+            <li><strong>60-Second Red-Flag Response:</strong> Automated clinical escalation to on-call Nurse Coordinators.</li>
+            <li><strong>GPS Electronic Visit Verification (EVV):</strong> Physical presence verified within 50 feet of home.</li>
+          </ul>
+        </div>
+      `
+    },
+    {
+      path: 'pricing',
+      title: 'Transparent Home Care Pricing in Burlington, MA | Hourly Rates & Costs | Akirapa',
+      description: 'Transparent home care costs in Burlington & Middlesex County, MA. Licensed CNA care from $36-$44/hour. Zero long-term contracts, zero hidden fees, and rapid same-day availability.',
+      canonical: 'https://akirapahomecareus.com/pricing',
+      bodyHtml: `
+        <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 32px 16px;">
+          <h1 style="font-size: 36px; font-weight: 900; color: #561868; margin-bottom: 12px;">Transparent Home Care Pricing in Burlington, MA</h1>
+          <p style="font-size: 16px; color: #4b5563; margin-bottom: 24px;">Predictable, honest hourly rates for families in crisis. No long-term contracts, zero hidden intake fees.</p>
+          <h2 style="font-size: 20px; font-weight: bold; color: #561868;">Burlington Rate Ranges</h2>
+          <ul style="color: #374151; padding-left: 20px;">
+            <li><strong>Hourly CNA Care:</strong> $36 – $44 per hour (4-hour visit minimum).</li>
+            <li><strong>12-Hour Awake Shifts:</strong> $420 – $500 per shift.</li>
+            <li><strong>24/7 Around-the-Clock Care:</strong> $800 – $960 per 24-hour cycle.</li>
+            <li><strong>Live-In Care:</strong> $450 – $550 per day flat rate.</li>
+          </ul>
+        </div>
+      `
+    },
+    {
+      path: 'case-studies',
+      title: 'Case Studies & Video Testimonials | Anonymized Recovery Stories | Akirapa',
+      description: 'Real recovery stories and consented video testimonials from client families in Burlington, Bedford, Lexington, and Woburn. Explore proven outcomes for dementia and post-hospital care.',
+      canonical: 'https://akirapahomecareus.com/case-studies',
+      bodyHtml: `
+        <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 32px 16px;">
+          <h1 style="font-size: 36px; font-weight: 900; color: #561868; margin-bottom: 12px;">Case Studies & Consented Video Testimonials</h1>
+          <p style="font-size: 16px; color: #4b5563; margin-bottom: 24px;">Anonymized clinical recovery trajectories and HIPAA-consented family testimonials.</p>
+        </div>
+      `
+    },
+    {
+      path: 'questions-to-ask-a-home-care-agency',
+      title: '10 Questions to Ask Any Home Care Agency (Before Signing) | Akirapa',
+      description: 'A fair, objective guide for families in Burlington & Massachusetts. Use these 10 questions to evaluate caregiver credentials, GPS proof, contracts, and hidden costs.',
+      canonical: 'https://akirapahomecareus.com/questions-to-ask-a-home-care-agency',
+      bodyHtml: `
+        <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 32px 16px;">
+          <h1 style="font-size: 36px; font-weight: 900; color: #561868; margin-bottom: 12px;">10 Questions to Ask Any Home Care Agency Before Signing Anything</h1>
+          <p style="font-size: 16px; color: #4b5563; margin-bottom: 24px;">Use this objective checklist to evaluate agencies on CNA vetting, GPS proof, contracts, and hidden fees.</p>
+          <h2 style="font-size: 20px; font-weight: bold; color: #561868;">Key Plain-Language Facts</h2>
+          <ul style="color: #374151; padding-left: 20px;">
+            <li><strong>No long-term contracts:</strong> Pause or cancel with 24–48 hours notice.</li>
+            <li><strong>Burlington hourly rates:</strong> $36 – $44 per hour for licensed CNAs.</li>
+            <li><strong>Medicare coverage:</strong> Traditional Medicare does not pay for non-medical care.</li>
+          </ul>
+        </div>
+      `
+    },
+    {
+      path: 'dementia-care',
+      title: 'Dementia Care in Burlington, MA | Memory Care & Cognitive Support | Akirapa',
+      description: 'Specialized dementia and Alzheimer\'s memory care in Burlington, MA. Verified CNAs, calm sensory routines, wandering prevention, and transparent pricing ($38-$44/hr).',
+      canonical: 'https://akirapahomecareus.com/dementia-care',
+      bodyHtml: `
+        <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 32px 16px;">
+          <h1 style="font-size: 36px; font-weight: 900; color: #561868; margin-bottom: 12px;">Dementia & Memory Care in Burlington, MA</h1>
+          <p style="font-size: 16px; color: #4b5563; margin-bottom: 24px;">Specialized, patient memory care tailored to every stage of dementia and Alzheimer's disease.</p>
+        </div>
+      `
+    },
+    {
+      path: 'post-hospital-recovery',
+      title: 'Post-Hospital Recovery Care in Burlington, MA | Readmission Prevention | Akirapa',
+      description: 'Smooth hospital-to-home recovery care in Burlington, MA. Discharge coordination from Lahey Hospital, surgical transfer assistance, and readmission prevention.',
+      canonical: 'https://akirapahomecareus.com/post-hospital-recovery',
+      bodyHtml: `
+        <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 32px 16px;">
+          <h1 style="font-size: 36px; font-weight: 900; color: #561868; margin-bottom: 12px;">Post-Hospital Recovery Care in Burlington, MA</h1>
+          <p style="font-size: 16px; color: #4b5563; margin-bottom: 24px;">Prevent readmissions and ensure safe recovery after discharge from Lahey Hospital and area facilities.</p>
+        </div>
+      `
+    },
+    {
+      path: '24-hour-care',
+      title: '24-Hour Home Care in Burlington, MA | Continuous Awake Care | Akirapa',
+      description: 'Around-the-clock 24/7 awake home care in Burlington & Middlesex County. Rotating CNA Care Pods, nighttime safety, and live-in alternatives.',
+      canonical: 'https://akirapahomecareus.com/24-hour-care',
+      bodyHtml: `
+        <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 32px 16px;">
+          <h1 style="font-size: 36px; font-weight: 900; color: #561868; margin-bottom: 12px;">24-Hour Home Care in Burlington, MA</h1>
+          <p style="font-size: 16px; color: #4b5563; margin-bottom: 24px;">Continuous, awake round-the-clock CNA shift care for maximum safety day and night.</p>
+        </div>
+      `
     }
   ];
 
@@ -888,6 +1009,54 @@ async function run() {
     <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://akirapahomecareus.com/pricing</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://akirapahomecareus.com/sample-shift-report</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://akirapahomecareus.com/standards</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://akirapahomecareus.com/case-studies</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://akirapahomecareus.com/questions-to-ask-a-home-care-agency</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://akirapahomecareus.com/dementia-care</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://akirapahomecareus.com/post-hospital-recovery</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://akirapahomecareus.com/24-hour-care</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/akivault</loc>

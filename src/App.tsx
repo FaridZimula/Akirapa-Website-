@@ -40,6 +40,13 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import ConsumerRights from "./pages/ConsumerRights";
 
+// Proof Where Families Look & High-Intent Question Pages
+import SampleShiftReport from "./pages/SampleShiftReport";
+import Standards from "./pages/Standards";
+import Pricing from "./pages/Pricing";
+import CaseStudiesAndTestimonials from "./pages/CaseStudiesAndTestimonials";
+import QuestionsToAsk from "./pages/QuestionsToAsk";
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -72,6 +79,26 @@ const App = () => {
                   <Route path="/about" element={<Leadership />} />
                   <Route path="/services" element={<Projects />} />
                   <Route path="/services/:slug" element={<ServiceDetail />} />
+
+                  {/* Dedicated Condition & Service Landing Routes */}
+                  <Route path="/dementia-care" element={<ServiceDetail customSlug="dementia-care" />} />
+                  <Route path="/post-hospital-recovery" element={<ServiceDetail customSlug="post-hospitalization-care" />} />
+                  <Route path="/post-hospitalization-care" element={<ServiceDetail customSlug="post-hospitalization-care" />} />
+                  <Route path="/24-hour-care" element={<ServiceDetail customSlug="24-hour-home-care" />} />
+                  <Route path="/24-hour-home-care" element={<ServiceDetail customSlug="24-hour-home-care" />} />
+
+                  {/* Proof Where Families Look & High-Intent Strategy Routes */}
+                  <Route path="/sample-shift-report" element={<SampleShiftReport />} />
+                  <Route path="/shift-report" element={<SampleShiftReport />} />
+                  <Route path="/standards" element={<Standards />} />
+                  <Route path="/our-standards" element={<Standards />} />
+                  <Route path="/pricing" element={<Pricing />} />
+                  <Route path="/pricing-guide" element={<Pricing />} />
+                  <Route path="/case-studies" element={<CaseStudiesAndTestimonials />} />
+                  <Route path="/case-studies-and-testimonials" element={<CaseStudiesAndTestimonials />} />
+                  <Route path="/testimonials" element={<CaseStudiesAndTestimonials />} />
+                  <Route path="/questions-to-ask-a-home-care-agency" element={<QuestionsToAsk />} />
+                  <Route path="/questions-to-ask" element={<QuestionsToAsk />} />
                   <Route path="/akivault" element={<AkiVault />} />
                   <Route path="/AkiVault.html" element={<AkiVault />} />
                   <Route path="/blog" element={<Blog />} />

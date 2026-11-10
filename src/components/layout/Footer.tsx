@@ -69,25 +69,23 @@ const Footer = () => {
           {/* Quick Links */}
           <div className="flex flex-col items-center sm:items-start">
             <h4 className="font-bold text-lg mb-6 text-[#40ddd3] uppercase tracking-wider text-sm">
-              Quick Navigation
+              Proof & Transparency
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "Home", path: "/" },
-                { label: "About Us & Leadership", path: "/about" },
-                { label: "All Care Services", path: "/services" },
-                { label: "AkiVault Platform", path: "/akivault" },
+                { label: "Transparent Pricing Guide", path: "/pricing" },
+                { label: "See a Real Shift Report", path: "/sample-shift-report" },
+                { label: "Our Standards & CNA Vetting", path: "/standards" },
+                { label: "10 Questions to Ask Any Agency", path: "/questions-to-ask-a-home-care-agency" },
+                { label: "Case Studies & Videos", path: "/case-studies" },
+                { label: "AkiVault™ System", path: "/akivault" },
                 { label: "MA Home Care Directory", path: "/ma-home-care-directory" },
-                { label: "Senior Care Blog", path: "/blog" },
-                { label: "Caregiver Careers", path: "/careers" },
-                { label: "Free Care Assessment", path: "/contact" },
-                { label: "Privacy & HIPAA Policy", path: "/privacy" },
-                { label: "Terms & Conditions", path: "/terms" }
+                { label: "Free Care Assessment", path: "/contact" }
               ].map((link) => (
                 <li key={link.label}>
                   <Link
                     to={link.path}
-                    className="text-white/80 hover:text-[#40ddd3] transition-colors text-base flex items-center justify-center sm:justify-start gap-2"
+                    className="text-white/80 hover:text-[#40ddd3] transition-colors text-sm sm:text-base flex items-center justify-center sm:justify-start gap-2"
                   >
                     <span className="text-[#40ddd3] text-xs">›</span>
                     {link.label}

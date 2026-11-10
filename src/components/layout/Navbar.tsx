@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "About Us", path: "/about" },
   { name: "Care Services", path: "/services" },
-  { name: "MA Care Directory", path: "/ma-home-care-directory" },
-  { name: "Our Blog", path: "/blog" },
+  { name: "Pricing", path: "/pricing" },
+  { name: "Standards", path: "/standards" },
+  { name: "Shift Report", path: "/sample-shift-report" },
+  { name: "About", path: "/about" },
+  { name: "Blog", path: "/blog" },
   { name: "Careers", path: "/careers" },
-  { name: "Contact Us", path: "/contact" },
+  { name: "Contact", path: "/contact" },
   { name: "AkiVault", path: "/akivault" },
 ];
 
@@ -126,8 +128,8 @@ const Navbar = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
-              <Button variant="outline" asChild className="border-2 border-[#76248a] text-[#76248a] hover:bg-[#76248a] hover:text-white font-bold h-11 px-4 xl:px-5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-md text-xs xl:text-sm">
-                <Link to="/services">Get a Quote</Link>
+              <Button variant="outline" asChild className="border-2 border-[#76248a] text-[#76248a] hover:bg-[#76248a] hover:text-white font-bold h-11 px-3.5 xl:px-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-md text-xs xl:text-sm">
+                <Link to="/pricing">Pricing & Rates</Link>
               </Button>
               <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-black h-11 px-4 xl:px-5 rounded-xl shadow-md button-shimmer hover:scale-105 transition-all text-xs xl:text-sm">
                 <Link to="/contact">Free Assessment</Link>
@@ -238,10 +240,30 @@ const Navbar = () => {
                   </div>
                 </div>
 
+                {/* Quick Strategy Links for Families */}
+                <div className="grid grid-cols-2 gap-2 px-2 pt-2">
+                  <Link
+                    to="/questions-to-ask-a-home-care-agency"
+                    onClick={() => setIsOpen(false)}
+                    className="p-2.5 rounded-xl bg-purple-50 hover:bg-[#76248a] text-[#76248a] hover:text-white font-bold text-xs text-center border border-[#76248a]/20 transition-all"
+                  >
+                    <i className="fa-solid fa-list-check block mb-1 text-sm text-[#40ddd3]"></i>
+                    10 Questions to Ask
+                  </Link>
+                  <Link
+                    to="/case-studies"
+                    onClick={() => setIsOpen(false)}
+                    className="p-2.5 rounded-xl bg-purple-50 hover:bg-[#76248a] text-[#76248a] hover:text-white font-bold text-xs text-center border border-[#76248a]/20 transition-all"
+                  >
+                    <i className="fa-solid fa-video block mb-1 text-sm text-[#40ddd3]"></i>
+                    Case Studies & Videos
+                  </Link>
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 px-2 pt-2">
                   <Button variant="outline" asChild className="w-full h-11 border-2 border-[#76248a] text-[#76248a] font-bold rounded-xl transition-transform active:scale-95">
-                    <Link to="/services" onClick={() => setIsOpen(false)}>
-                      Get a Quote
+                    <Link to="/pricing" onClick={() => setIsOpen(false)}>
+                      Pricing & Rates
                     </Link>
                   </Button>
                   <Button asChild className="w-full h-11 bg-[#76248a] text-white font-extrabold rounded-xl shadow-md transition-transform active:scale-95 button-shimmer">

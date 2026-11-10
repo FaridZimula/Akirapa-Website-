@@ -195,6 +195,22 @@ export const detailedServices: DetailedService[] = [
     ],
     faqs: [
       {
+        question: "What does dementia care cost in Burlington?",
+        answer: "Dementia and memory care in Burlington typically ranges between $38 and $44 per hour for certified CNAs with specialized cognitive engagement training. There are zero intake fees, zero assessment charges, and zero weekend surge fees."
+      },
+      {
+        question: "Is there a minimum number of hours for dementia care?",
+        answer: "Yes, Akirapa Home Care maintains a 4-hour minimum per visit. Routine and predictability are vital for individuals with dementia; 4-hour blocks allow our caregivers to establish calming routines, prepare balanced meals, and safely assist with hygiene without rushing."
+      },
+      {
+        question: "Do I have to sign a long-term contract for dementia care?",
+        answer: "No long-term contracts. You only sign a straightforward service agreement. You can adjust hours, increase supervision, or pause visits anytime with 24 to 48 hours notice without cancellation fees."
+      },
+      {
+        question: "Does Medicare pay for dementia home care?",
+        answer: "Traditional Medicare does not cover non-medical in-home dementia supervision or daily living assistance. However, Long-Term Care Insurance (LTCI) and Veterans Aid & Attendance benefits (up to $2,431+/month) do cover our certified CNA care, and we provide all necessary claim documentation."
+      },
+      {
         question: "How do caregivers manage 'sundowning' in dementia clients?",
         answer: "Caregivers establish calming late-afternoon routines, adjust indoor lighting, minimize noise, and engage clients in reassuring activities to ease evening confusion."
       },
@@ -348,6 +364,22 @@ export const detailedServices: DetailedService[] = [
       "Care team shifts are managed seamlessly by Akirapa coordinators so families never worry about coverage."
     ],
     faqs: [
+      {
+        question: "What does 24-hour home care cost in Burlington?",
+        answer: "In Burlington and Middlesex County, continuous 24-hour care ranges from $800 to $960 per 24-hour day for rotating 100% awake CNA shifts (two 12-hour or three 8-hour shifts). For stable clients where the caregiver receives private sleeping quarters and 8 hours of uninterrupted rest, live-in care flat rates range from $450 to $550 per day."
+      },
+      {
+        question: "Is there a minimum number of hours for 24-hour care?",
+        answer: "24-hour shift care is arranged in 8-hour or 12-hour continuous shifts to guarantee continuous, vigilant awake monitoring day and night, 365 days a year."
+      },
+      {
+        question: "Do I have to sign a long-term contract for 24-hour care?",
+        answer: "No long-term contracts. Families can establish 24-hour care temporarily during a post-hospital crisis or for ongoing months, with total freedom to adjust or pause care with 24 to 48 hours notice."
+      },
+      {
+        question: "Does Medicare pay for 24-hour home care?",
+        answer: "Traditional Medicare does not pay for 24-hour non-medical home care or around-the-clock companionship. Most families fund 24-hour care through private pay, Long-Term Care Insurance (LTCI), or Veterans Aid & Attendance benefits."
+      },
       {
         question: "Are 24-hour caregivers awake during the night?",
         answer: "Yes! In 24-hour shift care, caregivers work rotating awake shifts, ensuring someone is vigilant at all times."
@@ -543,6 +575,22 @@ export const detailedServices: DetailedService[] = [
       "Shift length can start at 24/7 coverage and gradually step down as health improves."
     ],
     faqs: [
+      {
+        question: "What does post-hospital recovery care cost in Burlington?",
+        answer: "Post-hospitalization recovery care in Burlington typically ranges from $36 to $42 per hour for certified CNAs assisting with surgical transfers, mobility, and medication reminders. Akirapa has zero intake fees and zero cancellation penalties."
+      },
+      {
+        question: "Is there a minimum number of hours for post-hospital care?",
+        answer: "Yes, our visit minimum is 4 hours per shift. For the immediate post-discharge window, we frequently provide 8-hour, 12-hour, or 24/7 care for the initial 1 to 2 weeks, stepping down hours as strength returns."
+      },
+      {
+        question: "Do I have to sign a long-term contract for post-hospital care?",
+        answer: "No long-term contracts. Post-hospital recovery is naturally short-term. As your loved one regains strength and independent mobility, you can reduce visit hours or conclude care with 24 to 48 hours notice without penalty."
+      },
+      {
+        question: "Does Medicare pay for post-hospital home care?",
+        answer: "Medicare covers short, intermittent visits from physical therapists or visiting home health nurses (often 30–45 minutes, 2–3 times a week under a doctor's order), but Medicare does NOT pay for daily personal hygiene, meal preparation, or continuous safety supervision. Our private-duty CNA care fills this critical gap to prevent hospital readmissions."
+      },
       {
         question: "How far in advance should we arrange post-hospitalization care?",
         answer: "We recommend contacting us 24 to 48 hours prior to expected discharge, but we can also handle urgent same-day discharge requests."
