@@ -17,7 +17,114 @@ interface NavLinkItem {
 
 const navLinks: NavLinkItem[] = [
   { name: "Home", path: "/" },
-  { name: "Care Services", path: "/services" },
+  {
+    name: "Care Services",
+    path: "/services",
+    subLinks: [
+      {
+        name: "All Care Services Overview",
+        path: "/services",
+        description: "Explore all 16 personalized home care programs",
+        icon: "fa-solid fa-briefcase-medical",
+      },
+      {
+        name: "Dementia Care",
+        path: "/services/dementia-care",
+        description: "Specialized memory support & gentle guidance",
+        icon: "fa-solid fa-brain",
+      },
+      {
+        name: "Alzheimer's Care",
+        path: "/services/alzheimers-care",
+        description: "Cognitive safety & certified memory aides",
+        icon: "fa-solid fa-head-side-virus",
+      },
+      {
+        name: "24-Hour Home Care",
+        path: "/services/24-hour-home-care",
+        description: "Continuous awake oversight & rotational shifts",
+        icon: "fa-solid fa-clock",
+      },
+      {
+        name: "Live-In Care",
+        path: "/services/live-in-care",
+        description: "Dedicated primary caregiver residing in the home",
+        icon: "fa-solid fa-house-user",
+      },
+      {
+        name: "Respite Care",
+        path: "/services/respite-care",
+        description: "Temporary contract-free relief for family caregivers",
+        icon: "fa-solid fa-person-shelter",
+      },
+      {
+        name: "Companion Care",
+        path: "/services/companion-care",
+        description: "Social engagement, walks, hobbies & conversation",
+        icon: "fa-solid fa-user-group",
+      },
+      {
+        name: "Personal Care (ADLs)",
+        path: "/services/personal-care",
+        description: "Bathing, dressing, grooming & hygiene support",
+        icon: "fa-solid fa-hand-holding-heart",
+      },
+      {
+        name: "Post-Hospitalization Care",
+        path: "/services/post-hospitalization-care",
+        description: "Safe surgical transition & readmission prevention",
+        icon: "fa-solid fa-hospital-user",
+      },
+      {
+        name: "Skilled Nursing",
+        path: "/services/skilled-nursing",
+        description: "Clinical medication management & wound assessment",
+        icon: "fa-solid fa-user-nurse",
+      },
+      {
+        name: "Hospice Supportive Care",
+        path: "/services/hospice-supportive-care",
+        description: "Comfort, dignity & compassionate palliative care",
+        icon: "fa-solid fa-dove",
+      },
+      {
+        name: "Medication Assistance",
+        path: "/services/medication-assistance",
+        description: "Prescription compliance, tracking & administration",
+        icon: "fa-solid fa-pills",
+      },
+      {
+        name: "Meal Preparation",
+        path: "/services/meal-preparation",
+        description: "Fresh home-cooked nutrition & hydration monitoring",
+        icon: "fa-solid fa-utensils",
+      },
+      {
+        name: "Senior Transportation",
+        path: "/services/transportation",
+        description: "Safe rides to doctor appointments & local errands",
+        icon: "fa-solid fa-car",
+      },
+      {
+        name: "Homemaker Services",
+        path: "/services/homemaker-services",
+        description: "Light housekeeping, fresh linens & tidy living",
+        icon: "fa-solid fa-broom",
+      },
+      {
+        name: "Activities of Daily Living",
+        path: "/services/activities-of-daily-living",
+        description: "Safe transfers, mobility encouragement & toileting",
+        icon: "fa-solid fa-person-walking",
+      },
+      {
+        name: "Care Advisory & Consultancy",
+        path: "/services/consultancy",
+        description: "Expert family guidance & senior care navigation",
+        icon: "fa-solid fa-clipboard-list",
+      },
+    ],
+  },
   {
     name: "About",
     path: "/about",
@@ -57,17 +164,22 @@ const navLinks: NavLinkItem[] = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
-  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
-  const aboutDropdownRef = useRef<HTMLDivElement>(null);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileOpenMenus, setMobileOpenMenus] = useState<Record<string, boolean>>({});
+  const navDockRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
+
+  const toggleMobileMenu = (name: string) => {
+    setMobileOpenMenus((prev) => ({ ...prev, [name]: !prev[name] }));
+  };
 
   const isPathActive = (targetPath: string) => {
     if (location.pathname === targetPath) return true;
     if (targetPath === "/sample-shift-report" && location.pathname === "/shift-report") return true;
     if (targetPath === "/standards" && (location.pathname === "/our-standards" || location.pathname === "/standards")) return true;
     if (targetPath === "/pricing" && (location.pathname === "/pricing-guide" || location.pathname === "/pricing")) return true;
+    if (targetPath === "/services" && location.pathname.startsWith("/services/")) return true;
     return false;
   };
 
@@ -79,42 +191,42 @@ const Navbar = () => {
     return false;
   };
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (name: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setAboutDropdownOpen(true);
+    setOpenDropdown(name);
   };
 
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
-      setAboutDropdownOpen(false);
+      setOpenDropdown(null);
     }, 180);
   };
 
   // Close desktop dropdown on route change
   useEffect(() => {
-    setAboutDropdownOpen(false);
+    setOpenDropdown(null);
   }, [location.pathname]);
 
-  // Keep mobile About accordion expanded if an inner route is active
+  // Keep mobile menu expanded if an inner route is active
   useEffect(() => {
-    const isAboutActive = navLinks
-      .find((l) => l.name === "About")
-      ?.subLinks?.some((sub) => isPathActive(sub.path));
-    if (isAboutActive) {
-      setMobileAboutOpen(true);
+    const activeParent = navLinks.find(
+      (l) => l.subLinks && l.subLinks.some((sub) => isPathActive(sub.path))
+    );
+    if (activeParent) {
+      setMobileOpenMenus((prev) => ({ ...prev, [activeParent.name]: true }));
     }
   }, [location.pathname]);
 
   // Close desktop dropdown on outside click or Escape key
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (aboutDropdownRef.current && !aboutDropdownRef.current.contains(event.target as Node)) {
-        setAboutDropdownOpen(false);
+      if (navDockRef.current && !navDockRef.current.contains(event.target as Node)) {
+        setOpenDropdown(null);
       }
     };
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setAboutDropdownOpen(false);
+        setOpenDropdown(null);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -294,24 +406,29 @@ const Navbar = () => {
 
       {/* Centered Floating Nav Dock (Spans only up to where tabs end, rounded bottom corners, premium shadow) */}
       <div className="hidden lg:flex justify-center w-full px-4 pointer-events-none">
-        <nav className="pointer-events-auto bg-white/95 backdrop-blur-md rounded-b-2xl xl:rounded-b-3xl border border-t-0 border-gray-200/90 shadow-[0_14px_36px_rgba(0,0,0,0.14),0_4px_12px_rgba(118,36,138,0.08)] px-3.5 xl:px-5 py-2 inline-flex items-center justify-center gap-1 xl:gap-2 transition-all duration-300 hover:shadow-[0_18px_44px_rgba(0,0,0,0.18),0_6px_16px_rgba(118,36,138,0.12)]">
+        <nav
+          ref={navDockRef}
+          className="pointer-events-auto bg-white/95 backdrop-blur-md rounded-b-2xl xl:rounded-b-3xl border border-t-0 border-gray-200/90 shadow-[0_14px_36px_rgba(0,0,0,0.14),0_4px_12px_rgba(118,36,138,0.08)] px-3.5 xl:px-5 py-2 inline-flex items-center justify-center gap-1 xl:gap-2 transition-all duration-300 hover:shadow-[0_18px_44px_rgba(0,0,0,0.18),0_6px_16px_rgba(118,36,138,0.12)]"
+        >
           {navLinks.map((link) => {
             const isActive = isItemActive(link);
             const isAkiVault = link.name === "AkiVault";
+            const hasSubLinks = Boolean(link.subLinks && link.subLinks.length > 0);
+            const isCareServices = link.name === "Care Services";
+            const isDropdownOpen = openDropdown === link.name;
 
-            if (link.subLinks && link.subLinks.length > 0) {
+            if (hasSubLinks && link.subLinks) {
               return (
                 <div
                   key={link.name}
-                  ref={aboutDropdownRef}
                   className="relative"
-                  onMouseEnter={handleMouseEnter}
+                  onMouseEnter={() => handleMouseEnter(link.name)}
                   onMouseLeave={handleMouseLeave}
                 >
                   <button
                     type="button"
-                    onClick={() => setAboutDropdownOpen((prev) => !prev)}
-                    aria-expanded={aboutDropdownOpen}
+                    onClick={() => setOpenDropdown((prev) => (prev === link.name ? null : link.name))}
+                    aria-expanded={isDropdownOpen}
                     aria-haspopup="true"
                     className={`px-3 xl:px-3.5 py-1.5 rounded-xl text-xs xl:text-[13.5px] font-bold transition-all duration-300 ease-out whitespace-nowrap flex items-center gap-1.5 cursor-pointer ${
                       isActive
@@ -322,62 +439,92 @@ const Navbar = () => {
                     <span>{link.name}</span>
                     <i
                       className={`fa-solid fa-chevron-down text-[9px] transition-transform duration-200 ${
-                        aboutDropdownOpen ? "rotate-180" : ""
+                        isDropdownOpen ? "rotate-180" : ""
                       } ${isActive ? "text-white" : "text-gray-400 group-hover:text-[#76248a]"}`}
                     ></i>
                   </button>
 
                   {/* Dropdown Menu Card */}
                   <div
-                    className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-80 z-50 transition-all duration-200 ease-out ${
-                      aboutDropdownOpen
+                    className={`absolute top-full pt-2 z-50 transition-all duration-200 ease-out ${
+                      isCareServices
+                        ? "-left-16 xl:left-1/2 xl:-translate-x-1/3 w-[580px] xl:w-[680px] max-w-[calc(100vw-2rem)]"
+                        : "left-1/2 -translate-x-1/2 w-80"
+                    } ${
+                      isDropdownOpen
                         ? "opacity-100 translate-y-0 pointer-events-auto visible"
                         : "opacity-0 -translate-y-2 pointer-events-none invisible"
                     }`}
                   >
-                    <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-2.5 overflow-hidden ring-1 ring-black/5">
-                      <div className="px-3 py-2 mb-1 border-b border-gray-100 flex items-center justify-between">
-                        <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#76248a]">
-                          About Akirapa
-                        </span>
-                        <span className="text-[10px] bg-[#40ddd3]/20 text-[#0f5c56] font-bold px-2 py-0.5 rounded-full">
-                          Proof &amp; Standards
-                        </span>
+                    <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-3 overflow-hidden ring-1 ring-black/5">
+                      {/* Dropdown Header */}
+                      <div className="px-3 py-2 mb-1.5 border-b border-gray-100 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <i
+                            className={`${
+                              isCareServices ? "fa-solid fa-hand-holding-heart" : "fa-solid fa-users"
+                            } text-[#76248a] text-xs`}
+                          ></i>
+                          <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#76248a]">
+                            {isCareServices ? "Care Services Directory" : "About Akirapa"}
+                          </span>
+                        </div>
+                        {isCareServices ? (
+                          <Link
+                            to="/services"
+                            onClick={() => setOpenDropdown(null)}
+                            className="text-[10px] bg-[#40ddd3]/20 hover:bg-[#40ddd3] text-[#0f5c56] hover:text-gray-950 font-bold px-2.5 py-0.5 rounded-full transition-colors flex items-center gap-1"
+                          >
+                            <span>All 16 Programs</span>
+                            <i className="fa-solid fa-arrow-right text-[8px]"></i>
+                          </Link>
+                        ) : (
+                          <span className="text-[10px] bg-[#40ddd3]/20 text-[#0f5c56] font-bold px-2 py-0.5 rounded-full">
+                            Proof &amp; Standards
+                          </span>
+                        )}
                       </div>
 
-                      <div className="flex flex-col gap-1">
+                      {/* Dropdown Links List / 2-Column Grid for Services */}
+                      <div
+                        className={
+                          isCareServices
+                            ? "grid grid-cols-1 sm:grid-cols-2 gap-1 max-h-[440px] overflow-y-auto overscroll-contain pr-1 custom-scrollbar"
+                            : "flex flex-col gap-1"
+                        }
+                      >
                         {link.subLinks.map((sub) => {
                           const isSubActive = isPathActive(sub.path);
                           return (
                             <Link
                               key={sub.path}
                               to={sub.path}
-                              onClick={() => setAboutDropdownOpen(false)}
-                              className={`group/sub flex items-center gap-3 p-2.5 rounded-xl transition-all duration-200 ${
+                              onClick={() => setOpenDropdown(null)}
+                              className={`group/sub flex items-center gap-2.5 p-2 rounded-xl transition-all duration-200 ${
                                 isSubActive
                                   ? "bg-purple-50 text-[#76248a] font-bold"
                                   : "text-gray-700 hover:text-[#76248a] hover:bg-gray-50"
                               }`}
                             >
                               <div
-                                className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all duration-200 ${
+                                className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-200 ${
                                   isSubActive
-                                    ? "bg-[#76248a] text-white shadow-sm"
+                                    ? "bg-[#76248a] text-white shadow-xs"
                                     : "bg-purple-50 text-[#76248a] group-hover/sub:bg-[#76248a] group-hover/sub:text-white"
                                 }`}
                               >
-                                <i className={`${sub.icon} text-sm`}></i>
+                                <i className={`${sub.icon} text-xs`}></i>
                               </div>
                               <div className="flex-1 min-w-0">
                                 <div className="flex items-center justify-between">
-                                  <span className="text-sm font-bold block leading-tight">
+                                  <span className="text-xs font-bold block leading-tight truncate">
                                     {sub.name}
                                   </span>
                                   {isSubActive && (
-                                    <i className="fa-solid fa-check text-xs text-[#76248a]"></i>
+                                    <i className="fa-solid fa-check text-[10px] text-[#76248a] shrink-0 ml-1"></i>
                                   )}
                                 </div>
-                                <p className="text-[12px] text-gray-500 font-normal leading-snug line-clamp-1 group-hover/sub:text-gray-600">
+                                <p className="text-[11px] text-gray-500 font-normal leading-tight line-clamp-1 group-hover/sub:text-gray-600">
                                   {sub.description}
                                 </p>
                               </div>
@@ -385,6 +532,23 @@ const Navbar = () => {
                           );
                         })}
                       </div>
+
+                      {/* Quick Consultation Footer Bar */}
+                      {isCareServices && (
+                        <div className="mt-2 pt-2 border-t border-gray-100 px-3 py-1.5 bg-gray-50/70 rounded-xl flex items-center justify-between text-xs">
+                          <span className="text-gray-600 font-medium text-[11px]">
+                            Need help choosing the right care plan?
+                          </span>
+                          <Link
+                            to="/contact"
+                            onClick={() => setOpenDropdown(null)}
+                            className="text-[#76248a] hover:text-[#561868] font-bold text-[11px] underline flex items-center gap-1"
+                          >
+                            <span>Free Assessment</span>
+                            <i className="fa-solid fa-chevron-right text-[8px]"></i>
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -432,13 +596,15 @@ const Navbar = () => {
             {navLinks.map((link) => {
               const isActive = isItemActive(link);
               const isAkiVault = link.name === "AkiVault";
+              const hasSubLinks = Boolean(link.subLinks && link.subLinks.length > 0);
+              const isMenuOpen = Boolean(mobileOpenMenus[link.name]);
 
-              if (link.subLinks && link.subLinks.length > 0) {
+              if (hasSubLinks && link.subLinks) {
                 return (
                   <div key={link.name} className="flex flex-col">
                     <button
                       type="button"
-                      onClick={() => setMobileAboutOpen((prev) => !prev)}
+                      onClick={() => toggleMobileMenu(link.name)}
                       className={`px-4 py-3 rounded-xl text-base font-bold transition-all duration-200 flex items-center justify-between ${
                         isActive
                           ? "bg-[#76248a] text-white shadow-sm"
@@ -455,14 +621,14 @@ const Navbar = () => {
                       </span>
                       <i
                         className={`fa-solid fa-chevron-down text-xs transition-transform duration-200 ${
-                          mobileAboutOpen ? "rotate-180" : ""
+                          isMenuOpen ? "rotate-180" : ""
                         } ${isActive ? "text-[#40ddd3]" : "text-gray-400"}`}
                       ></i>
                     </button>
 
                     {/* Collapsible Sub-menu for Mobile */}
-                    {mobileAboutOpen && (
-                      <div className="pl-3 pr-1 pt-1.5 pb-2 flex flex-col gap-1 bg-purple-50/50 rounded-xl mt-1 border border-[#76248a]/10">
+                    {isMenuOpen && (
+                      <div className="pl-3 pr-1 pt-1.5 pb-2 flex flex-col gap-1 bg-purple-50/50 rounded-xl mt-1 border border-[#76248a]/10 max-h-72 overflow-y-auto overscroll-contain">
                         {link.subLinks.map((sub) => {
                           const isSubActive = isPathActive(sub.path);
                           return (
@@ -471,7 +637,7 @@ const Navbar = () => {
                               to={sub.path}
                               onClick={() => {
                                 setIsOpen(false);
-                                setMobileAboutOpen(false);
+                                setMobileOpenMenus({});
                               }}
                               className={`px-3 py-2.5 rounded-lg text-sm font-bold transition-all duration-150 flex items-center justify-between ${
                                 isSubActive
