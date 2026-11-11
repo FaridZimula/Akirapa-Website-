@@ -127,43 +127,70 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Top Info Bar */}
-      <div className="bg-[#76248a] text-white py-2 px-4 sm:px-6 lg:px-8 hidden md:block border-b border-white/10">
-        <div className="container-narrow mx-auto flex justify-between items-center text-xs sm:text-sm font-medium whitespace-nowrap">
-          <div className="flex items-center gap-6 flex-nowrap">
-            <div className="flex items-center gap-2 shrink-0">
-              <i className="fa-solid fa-location-dot text-[#40ddd3]"></i>
-              <span>281 Cambridge Street, Burlington, MA 01803</span>
+      {/* Mobile Top Bar (Sleek Helpline & Award) */}
+      <div className="bg-[#76248a] text-white py-2 px-3 block md:hidden border-b border-white/10 shadow-xs">
+        <div className="flex justify-between items-center text-xs">
+          <a href="tel:+17812269910" className="flex items-center gap-1.5 font-bold text-[#40ddd3] active:scale-95 transition-transform">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#40ddd3]"></span>
+            </span>
+            <i className="fa-solid fa-phone text-xs"></i>
+            <span>24/7 Helpline: +1 781-226-9910</span>
+          </a>
+          <span className="bg-[#40ddd3] text-gray-950 text-[10px] font-black px-2 py-0.5 rounded-full shadow-xs">
+            #1 in MA
+          </span>
+        </div>
+      </div>
+
+      {/* Prominent Desktop Purple Header Bar (Generous Size with Contacts & Socials) */}
+      <div className="bg-[#76248a] text-white hidden md:block border-b border-white/15 shadow-sm">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-3.5 lg:py-4 flex justify-between items-center whitespace-nowrap min-h-[64px] lg:min-h-[70px]">
+          {/* Left: Office Address & 24/7 Helpline */}
+          <div className="flex items-center gap-5 lg:gap-7 flex-nowrap">
+            <div className="flex items-center gap-2.5 shrink-0 text-xs sm:text-[13px] font-medium text-white/95">
+              <span className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center shrink-0 shadow-xs">
+                <i className="fa-solid fa-location-dot text-[#40ddd3] text-sm"></i>
+              </span>
+              <span className="font-semibold tracking-tight">281 Cambridge Street, Burlington, MA 01803</span>
             </div>
-            <div className="flex items-center gap-2 shrink-0">
+
+            <div className="flex items-center gap-2.5 shrink-0 bg-white/10 hover:bg-white/15 px-3.5 py-1.5 rounded-xl border border-white/20 transition-all shadow-xs group">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#40ddd3]"></span>
               </span>
-              <i className="fa-solid fa-phone text-[#40ddd3]"></i>
-              <a href="tel:+17812269910" className="font-bold text-[#40ddd3] hover:underline">
+              <i className="fa-solid fa-phone text-[#40ddd3] text-sm group-hover:scale-110 transition-transform"></i>
+              <a href="tel:+17812269910" className="font-extrabold text-[#40ddd3] text-xs sm:text-[13px] tracking-wide hover:underline">
                 24/7 Helpline: +1 781-226-9910
               </a>
             </div>
           </div>
-          <div className="flex items-center gap-4 flex-nowrap shrink-0">
-            <div className="flex items-center gap-2 shrink-0">
-              <i className="fa-solid fa-envelope text-[#40ddd3]"></i>
-              <span>info@akirapahomecareus.com</span>
+
+          {/* Right: Email, Social Media & Award Badge */}
+          <div className="flex items-center gap-4 lg:gap-5 flex-nowrap shrink-0">
+            <div className="flex items-center gap-2.5 shrink-0 text-xs sm:text-[13px] text-white/95">
+              <span className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center shrink-0 shadow-xs">
+                <i className="fa-solid fa-envelope text-[#40ddd3] text-sm"></i>
+              </span>
+              <a href="mailto:info@akirapahomecareus.com" className="font-semibold hover:text-[#40ddd3] transition-colors">
+                info@akirapahomecareus.com
+              </a>
             </div>
             
-            {/* Social Media Links Header */}
+            {/* Social Media Links */}
             <div className="flex items-center gap-2 pl-3 border-l border-white/20 shrink-0">
-              <span className="text-[11px] text-white/70">Follow:</span>
+              <span className="text-xs font-semibold text-white/80 hidden xl:inline">Follow:</span>
               <a
                 href="https://www.instagram.com/akirapahomecare/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram @akirapahomecare"
                 title="Follow Akirapa on Instagram"
-                className="w-6 h-6 rounded-md bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 border border-white/15 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xs"
               >
-                <i className="fa-brands fa-instagram text-xs"></i>
+                <i className="fa-brands fa-instagram text-sm"></i>
               </a>
               <a
                 href="https://x.com/akirapahomecare"
@@ -171,9 +198,9 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 aria-label="X @akirapahomecare"
                 title="Follow Akirapa on X"
-                className="w-6 h-6 rounded-md bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 border border-white/15 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xs"
               >
-                <i className="fa-brands fa-x-twitter text-xs"></i>
+                <i className="fa-brands fa-x-twitter text-sm"></i>
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=61593883607014"
@@ -181,13 +208,14 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 aria-label="Facebook Akirapa Home Care"
                 title="Follow Akirapa on Facebook"
-                className="w-6 h-6 rounded-md bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 border border-white/15 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xs"
               >
-                <i className="fa-brands fa-facebook-f text-xs"></i>
+                <i className="fa-brands fa-facebook-f text-sm"></i>
               </a>
             </div>
 
-            <div className="flex items-center gap-1.5 bg-[#40ddd3] text-gray-950 px-2.5 py-0.5 rounded-full font-bold text-xs shrink-0 shadow-sm">
+            {/* Official Accreditation / Ranking Badge */}
+            <div className="flex items-center gap-1.5 bg-[#40ddd3] text-gray-950 px-3 py-1.5 rounded-full font-black text-xs shrink-0 shadow-sm hover:scale-105 transition-transform">
               <i className="fa-solid fa-award text-xs text-[#76248a]"></i>
               <span>#1 in Massachusetts</span>
             </div>
@@ -195,21 +223,21 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Main Navbar */}
+      {/* Main Navbar (Compact & Streamlined — Sized Not to Exceed the Purple Header) */}
       <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-shadow duration-300">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20 sm:h-24">
+          <div className="flex items-center justify-between h-14 sm:h-[58px] lg:h-[60px]">
             {/* Brand Logo */}
-            <Link to="/" className="flex items-center py-2 shrink-0 pr-3 xl:pr-6 group">
+            <Link to="/" className="flex items-center py-1.5 shrink-0 pr-3 xl:pr-6 group">
               <img
                 src="/akirapa-logo.png"
                 alt="Akirapa Home Care - #1 Home Care in Massachusetts"
-                className="h-14 sm:h-16 xl:h-18 w-auto max-w-[180px] sm:max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-9 sm:h-10 xl:h-11 w-auto max-w-[150px] sm:max-w-[185px] object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+            <div className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
               {navLinks.map((link) => {
                 const isActive = isItemActive(link);
                 const isAkiVault = link.name === "AkiVault";
@@ -228,15 +256,15 @@ const Navbar = () => {
                         onClick={() => setAboutDropdownOpen((prev) => !prev)}
                         aria-expanded={aboutDropdownOpen}
                         aria-haspopup="true"
-                        className={`px-3 xl:px-3.5 py-2 rounded-xl text-sm xl:text-[15px] font-bold transition-all duration-300 ease-out whitespace-nowrap flex items-center gap-1.5 cursor-pointer ${
+                        className={`px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-[13.5px] font-bold transition-all duration-300 ease-out whitespace-nowrap flex items-center gap-1.5 cursor-pointer ${
                           isActive
-                            ? "bg-[#76248a] text-white shadow-md scale-105"
+                            ? "bg-[#76248a] text-white shadow-xs scale-105"
                             : "text-gray-700 hover:text-[#76248a] hover:bg-gray-100 hover:scale-105 active:scale-95"
                         }`}
                       >
                         <span>{link.name}</span>
                         <i
-                          className={`fa-solid fa-chevron-down text-[10px] transition-transform duration-200 ${
+                          className={`fa-solid fa-chevron-down text-[9px] transition-transform duration-200 ${
                             aboutDropdownOpen ? "rotate-180" : ""
                           } ${isActive ? "text-white" : "text-gray-400 group-hover:text-[#76248a]"}`}
                         ></i>
@@ -310,9 +338,9 @@ const Navbar = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`px-3 xl:px-3.5 py-2 rounded-xl text-sm xl:text-[15px] font-bold transition-all duration-300 ease-out whitespace-nowrap flex items-center gap-1.5 ${
+                    className={`px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-[13.5px] font-bold transition-all duration-300 ease-out whitespace-nowrap flex items-center gap-1.5 ${
                       isActive
-                        ? "bg-[#76248a] text-white shadow-md scale-105"
+                        ? "bg-[#76248a] text-white shadow-xs scale-105"
                         : isAkiVault
                         ? "text-[#76248a] bg-purple-50/90 hover:bg-[#76248a] hover:text-white border border-[#76248a]/20 shadow-xs"
                         : "text-gray-700 hover:text-[#76248a] hover:bg-gray-100 hover:scale-105 active:scale-95"
@@ -326,11 +354,11 @@ const Navbar = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
-              <Button variant="outline" asChild className="border-2 border-[#76248a] text-[#76248a] hover:bg-[#76248a] hover:text-white font-bold h-11 px-3.5 xl:px-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-md text-xs xl:text-sm">
+            <div className="hidden lg:flex items-center gap-2 xl:gap-2.5 shrink-0">
+              <Button variant="outline" asChild className="border-2 border-[#76248a] text-[#76248a] hover:bg-[#76248a] hover:text-white font-bold h-9 px-3 xl:px-3.5 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xs text-xs">
                 <Link to="/pricing">Pricing & Rates</Link>
               </Button>
-              <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-black h-11 px-4 xl:px-5 rounded-xl shadow-md button-shimmer hover:scale-105 transition-all text-xs xl:text-sm">
+              <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-black h-9 px-3.5 xl:px-4 rounded-lg shadow-xs button-shimmer hover:scale-105 transition-all text-xs">
                 <Link to="/contact">Free Assessment</Link>
               </Button>
             </div>
@@ -339,7 +367,7 @@ const Navbar = () => {
             <div className="lg:hidden flex items-center gap-2">
               <a
                 href="tel:+17812269910"
-                className="flex items-center gap-1.5 bg-[#76248a] hover:bg-[#561868] text-white px-3 py-2 rounded-xl text-xs font-black shadow-sm transition-all active:scale-95"
+                className="flex items-center gap-1.5 bg-[#76248a] hover:bg-[#561868] text-white px-2.5 py-1.5 rounded-lg text-xs font-black shadow-xs transition-all active:scale-95"
                 aria-label="Call 24/7 Helpline +1 781-226-9910"
                 title="Call 24/7 Helpline"
               >
