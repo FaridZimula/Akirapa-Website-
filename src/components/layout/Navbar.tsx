@@ -173,9 +173,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Prominent Desktop Purple Header Bar */}
+      {/* Prominent Desktop Purple Header Bar (Expanded Height to Reach Image) */}
       <div className="bg-[#76248a] text-white hidden lg:block border-b border-white/15 shadow-sm">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-6 whitespace-nowrap">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-7 xl:py-8 min-h-[120px] lg:min-h-[132px] xl:min-h-[140px] flex items-center justify-between gap-6 whitespace-nowrap">
           {/* Left: Akirapa Logo in White Circle Border with "Akirapa Home Care" text underneath */}
           <Link to="/" className="flex flex-col items-center group shrink-0" title="Akirapa Home Care - Massachusetts">
             <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-full bg-white border-2 xl:border-[3px] border-white shadow-md flex items-center justify-center p-1.5 overflow-hidden transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg">
@@ -271,18 +271,18 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Buttons scaled x1.5 in the purple header */}
-            <div className="flex items-center gap-2.5">
+            {/* Buttons reduced by half (compact, sleek & elegant) */}
+            <div className="flex items-center gap-2">
               <Button
                 variant="outline"
                 asChild
-                className="border-2 border-[#40ddd3] text-white hover:bg-[#40ddd3] hover:text-gray-950 font-bold h-12 xl:h-[50px] px-5 xl:px-6 rounded-xl transition-all duration-300 hover:scale-105 shadow-sm text-xs xl:text-sm bg-transparent"
+                className="border border-[#40ddd3] text-white hover:bg-[#40ddd3] hover:text-gray-950 font-bold h-8 px-3 xl:px-3.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-xs text-[11px] xl:text-xs bg-transparent"
               >
                 <Link to="/pricing">Pricing &amp; Rates</Link>
               </Button>
               <Button
                 asChild
-                className="bg-[#40ddd3] hover:bg-white text-gray-950 hover:text-[#76248a] font-black h-12 xl:h-[50px] px-5 xl:px-7 rounded-xl shadow-md button-shimmer hover:scale-105 transition-all text-xs xl:text-sm"
+                className="bg-[#40ddd3] hover:bg-white text-gray-950 hover:text-[#76248a] font-extrabold h-8 px-3.5 xl:px-4 rounded-lg shadow-xs button-shimmer hover:scale-105 transition-all text-[11px] xl:text-xs"
               >
                 <Link to="/contact">Free Assessment</Link>
               </Button>
