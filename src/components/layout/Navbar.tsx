@@ -190,30 +190,31 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Center: 4x Bigger Phone Number with Email directly underneath */}
+          {/* Center: Extra-Large Phone Number with Generous Vertical Spacing */}
           <div className="flex flex-col items-center justify-center text-center shrink-0">
-            <div className="flex items-center gap-1.5 mb-0.5">
-              <span className="relative flex h-2 w-2">
+            {/* Top Label: 24/7 Helpline */}
+            <div className="flex items-center gap-2 mb-2">
+              <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#40ddd3]"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#40ddd3]"></span>
               </span>
-              <span className="text-[10px] xl:text-xs font-extrabold uppercase tracking-widest text-[#40ddd3]">
+              <span className="text-[11px] xl:text-[12px] font-extrabold uppercase tracking-widest text-[#40ddd3]">
                 24/7 Massachusetts Helpline
               </span>
             </div>
 
-            {/* Phone Number: 4x bigger than standard text, bold and prominent */}
+            {/* Phone Number: Increased Size, Bold & Clear */}
             <a
               href="tel:+17812269910"
-              className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[36px] font-black text-white hover:text-[#40ddd3] tracking-tight transition-colors duration-200 leading-none drop-shadow-xs flex items-center gap-2.5 group"
+              className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-black text-white hover:text-[#40ddd3] tracking-tight transition-colors duration-200 leading-none drop-shadow-sm flex items-center gap-3 group my-1.5"
               title="Call 24/7 Helpline +1 781-226-9910"
             >
-              <i className="fa-solid fa-phone text-xl sm:text-2xl lg:text-3xl text-[#40ddd3] group-hover:scale-110 transition-transform"></i>
+              <i className="fa-solid fa-phone text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] text-[#40ddd3] group-hover:scale-110 transition-transform"></i>
               <span className="text-white group-hover:text-[#40ddd3] transition-colors">+1 781-226-9910</span>
             </a>
 
-            {/* Immediate bottom: Email in original size + office address */}
-            <div className="flex items-center gap-3 mt-1.5 text-xs xl:text-[13px] text-white/90">
+            {/* Bottom Row: Email in original size + office address with generous spacing */}
+            <div className="flex items-center gap-3.5 mt-2 text-xs xl:text-[13.5px] text-white/90">
               <a
                 href="mailto:info@akirapahomecareus.com"
                 className="flex items-center gap-1.5 font-semibold hover:text-[#40ddd3] transition-colors"
