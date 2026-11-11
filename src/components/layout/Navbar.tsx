@@ -22,7 +22,31 @@ const navLinks: NavLinkItem[] = [
     path: "/services",
     subLinks: [
       {
-        name: "All Care Services Overview",
+        name: "Consultancy",
+        path: "/services/consultancy",
+        description: "Expert family guidance & senior care navigation",
+        icon: "fa-solid fa-clipboard-list",
+      },
+      {
+        name: "Transportation",
+        path: "/services/transportation",
+        description: "Safe rides to doctor appointments & local errands",
+        icon: "fa-solid fa-car",
+      },
+      {
+        name: "Personal Care",
+        path: "/services/personal-care",
+        description: "Bathing, dressing, grooming & hygiene support",
+        icon: "fa-solid fa-hand-holding-heart",
+      },
+      {
+        name: "Daily Activities",
+        path: "/services/activities-of-daily-living",
+        description: "Safe transfers, mobility encouragement & toileting",
+        icon: "fa-solid fa-person-walking",
+      },
+      {
+        name: "All Services Overview",
         path: "/services",
         description: "Explore all 16 personalized home care programs",
         icon: "fa-solid fa-briefcase-medical",
@@ -64,12 +88,6 @@ const navLinks: NavLinkItem[] = [
         icon: "fa-solid fa-user-group",
       },
       {
-        name: "Personal Care (ADLs)",
-        path: "/services/personal-care",
-        description: "Bathing, dressing, grooming & hygiene support",
-        icon: "fa-solid fa-hand-holding-heart",
-      },
-      {
         name: "Post-Hospitalization Care",
         path: "/services/post-hospitalization-care",
         description: "Safe surgical transition & readmission prevention",
@@ -100,28 +118,10 @@ const navLinks: NavLinkItem[] = [
         icon: "fa-solid fa-utensils",
       },
       {
-        name: "Senior Transportation",
-        path: "/services/transportation",
-        description: "Safe rides to doctor appointments & local errands",
-        icon: "fa-solid fa-car",
-      },
-      {
         name: "Homemaker Services",
         path: "/services/homemaker-services",
         description: "Light housekeeping, fresh linens & tidy living",
         icon: "fa-solid fa-broom",
-      },
-      {
-        name: "Activities of Daily Living",
-        path: "/services/activities-of-daily-living",
-        description: "Safe transfers, mobility encouragement & toileting",
-        icon: "fa-solid fa-person-walking",
-      },
-      {
-        name: "Care Advisory & Consultancy",
-        path: "/services/consultancy",
-        description: "Expert family guidance & senior care navigation",
-        icon: "fa-solid fa-clipboard-list",
       },
     ],
   },
