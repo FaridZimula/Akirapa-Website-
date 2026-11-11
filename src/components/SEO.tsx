@@ -184,9 +184,9 @@ export const localBusinessSchema = {
 };
 
 const SEO = ({
-  title = `${SITE_NAME} | In-Home Senior Care & 24/7 Services — Burlington, MA`,
-  description = "Compassionate in-home senior care headquartered in Burlington, MA. Hourly care, 24/7 daily care, hospital-to-home recovery, respite care, and specialized Alzheimer's support across Massachusetts. Call +1 781-226-9910.",
-  keywords = "home care Massachusetts, senior care Burlington MA, in-home care MA, 24-hour home care Massachusetts, Alzheimer's care MA, dementia home care, respite care Burlington MA, caregiver Burlington MA, elder care Middlesex County, home health aide MA",
+  title = `${SITE_NAME} | In-Home Senior Care in Massachusetts`,
+  description = "Akirapa Home Care provides licensed, compassionate in-home care in Burlington & across Massachusetts. 24/7 care, CNAs, Alzheimer's support. Call +1 781-226-9910.",
+  keywords = "Akirapa Home Care, home care Massachusetts, senior care Burlington MA, in-home care MA, 24-hour home care Massachusetts, Alzheimer's care MA, dementia home care, respite care Burlington MA, caregiver Burlington MA, elder care Middlesex County, home health aide MA",
   image = DEFAULT_OG_IMAGE,
   path = "/",
   type = "website",

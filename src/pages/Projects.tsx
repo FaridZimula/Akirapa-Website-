@@ -51,9 +51,9 @@ const Projects = () => {
   return (
     <Layout>
       <SEO
-        title="#1 Home Care Services in Massachusetts | Akirapa Home Care"
-        description="Ranked #1 best home care company in Massachusetts. Explore 16 specialized care programs: hourly visits, 24/7 live-in care, hospital-to-home recovery, senior transportation, care consultancy, respite, and dementia support with GPS-verified AkiVault™ tracking."
-        keywords="home care services Massachusetts, best home care company Massachusetts, senior care Burlington MA, in-home care Middlesex County, 24 hour home care MA, dementia care Massachusetts, senior transportation Massachusetts, geriatric care consultancy MA, companion care Burlington MA"
+        title="Senior In-Home Care Services in Massachusetts | Akirapa"
+        description="Explore 16 specialized in-home senior care programs in Massachusetts. Hourly care, 24/7 live-in care, dementia support, and certified CNAs. Call +1 781-226-9910."
+        keywords="home care services Massachusetts, senior care Burlington MA, in-home care Middlesex County, 24 hour home care MA, dementia care Massachusetts, senior transportation Massachusetts, geriatric care consultancy MA, companion care Burlington MA, Akirapa Home Care"
         path="/services"
         breadcrumbs={[
           { name: "Home", path: "/" },
@@ -75,7 +75,7 @@ const Projects = () => {
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
           <h1 className="text-4xl sm:text-5xl font-black text-white animate-word-fade">
-            In-Home Care Services Designed for You
+            In-Home Senior Care Services in Massachusetts
           </h1>
           <p className="text-white/90 text-lg max-w-2xl mx-auto font-medium animate-word-fade [animation-delay:150ms]">
             From flexible hourly visits to 24/7 around-the-clock specialized care, we come to your convenient location in Burlington, MA and surrounding Middlesex County.

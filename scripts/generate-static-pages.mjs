@@ -23,8 +23,9 @@ async function run() {
   const { maCompetitors } = await import('../src/data/maCompetitors.ts');
   const { blogPosts } = await import('../src/data/blogPosts.ts');
   const { detailedServices } = await import('../src/data/detailedServicesData.ts');
+  const { massachusettsLocations } = await import('../src/data/massachusettsLocations.ts');
 
-  console.log(`📊 Loaded: ${maCompetitors.length} competitors, ${blogPosts.length} blog posts, ${detailedServices.length} services.`);
+  console.log(`📊 Loaded: ${maCompetitors.length} competitors, ${blogPosts.length} blog posts, ${detailedServices.length} services, ${massachusettsLocations.length} locations.`);
 
   let pageCount = 0;
 
@@ -32,7 +33,7 @@ async function run() {
   const esc = (str = '') => String(str).replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
   // Helper to write an HTML page
-  function writePage(relPath, { title, description, keywords, canonical, jsonLdList = [], bodyHtml = '' }) {
+  function writePage(relPath, { title, description, keywords, canonical, noindex = false, jsonLdList = [], bodyHtml = '' }) {
     const isRoot = relPath === '' || relPath === '/';
     const targetDir = isRoot ? distDir : path.join(distDir, relPath);
     if (!isRoot) {
@@ -50,6 +51,11 @@ async function run() {
     // 3. Replace Meta Keywords
     if (keywords) {
       html = html.replace(/<meta\s+name=["']keywords["']\s+content=["'].*?["']\s*\/?>/is, `<meta name="keywords" content="${esc(keywords)}" />`);
+    }
+
+    // 3b. Robots / Noindex handling
+    if (noindex) {
+      html = html.replace(/<meta\s+name=["']robots["']\s+content=["'].*?["']\s*\/?>/is, '<meta name="robots" content="noindex, follow" />');
     }
 
     // 4. Replace Canonical URL
@@ -278,7 +284,8 @@ async function run() {
       description: pageDesc,
       keywords: pageKeywords,
       canonical: pageUrl,
-      jsonLdList: [localBusinessSchema, faqSchema, breadcrumbSchema],
+      noindex: true,
+      jsonLdList: [faqSchema, breadcrumbSchema],
       bodyHtml: bodyHtml
     });
   }
@@ -602,21 +609,252 @@ async function run() {
   }
 
   // ==========================================
+  // 4B. Generate Massachusetts Location Pages (/locations, /locations/:slug)
+  // ==========================================
+  console.log(`⚡ Generating ${massachusettsLocations.length} Massachusetts location pages with rich local semantic pre-rendering...`);
+
+  // 1. Locations Hub (/locations)
+  const locHubUrl = 'https://akirapahomecareus.com/locations';
+  const locHubTitle = 'Massachusetts In-Home Senior Care Communities | Akirapa Home Care';
+  const locHubDesc = 'Explore Massachusetts cities and towns served by Akirapa Home Care. Headquartered in Burlington, MA with 24/7 CNA care in Lexington, Woburn, Bedford, Concord, Boston, and beyond.';
+  const locHubKeywords = 'home care Massachusetts locations, senior care Middlesex County, home care Burlington MA, in home care Lexington, senior care Woburn, home health aide Boston MA';
+
+  const locHubItemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Massachusetts Senior Home Care Service Areas",
+    "description": "Cities and communities served by Akirapa Home Care across Middlesex County and Massachusetts.",
+    "numberOfItems": massachusettsLocations.length,
+    "itemListElement": massachusettsLocations.map((loc, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "name": `Akirapa Home Care in ${loc.cityName}, MA`,
+      "url": `https://akirapahomecareus.com/locations/${loc.slug}`
+    }))
+  };
+
+  const locHubBodyHtml = `
+    <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 1000px; margin: 0 auto; padding: 32px 16px;">
+      <header style="background: #561868; color: white; padding: 36px 16px; text-align: center; border-radius: 12px; margin-bottom: 32px;">
+        <h1 style="font-size: 36px; font-weight: 900; color: #ffffff; margin-bottom: 12px;">Massachusetts Communities We Proudly Serve</h1>
+        <p style="font-size: 18px; color: #e9d5ff; max-width: 800px; margin: 0 auto 16px;">Headquartered at 281 Cambridge Street, Burlington, MA 01803. Dedicated caregiver pods and immediate local response across Eastern Massachusetts.</p>
+        <p style="font-size: 16px; font-weight: bold; color: #40ddd3; margin: 0;">24/7 Care Helpline: +1 781-226-9910</p>
+      </header>
+      <h2 style="font-size: 26px; font-weight: bold; color: #561868; margin-bottom: 16px;">Select Your Community for Local Care Details</h2>
+      <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; list-style: none; padding: 0;">
+        ${massachusettsLocations.map(loc => `
+          <li style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #fafafa;">
+            <span style="font-size: 12px; color: #76248a; font-weight: bold; text-transform: uppercase;">${esc(loc.county)} · ${esc(loc.distanceFromHQ)}</span>
+            <h3 style="font-size: 20px; font-weight: bold; color: #561868; margin: 6px 0;"><a href="/locations/${loc.slug}" style="color: #561868; text-decoration: none;">${esc(loc.cityName)}, MA</a></h3>
+            <p style="font-size: 13px; color: #6b7280; margin-bottom: 8px;">Zip codes: ${loc.zipCodes.join(', ')}</p>
+            <p style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">${esc(loc.shortDescription)}</p>
+            <a href="/locations/${loc.slug}" style="color: #76248a; font-weight: bold; font-size: 14px; text-decoration: underline;">View ${esc(loc.cityName)} Services →</a>
+          </li>
+        `).join('')}
+      </ul>
+    </div>
+  `;
+
+  writePage('locations', {
+    title: locHubTitle,
+    description: locHubDesc,
+    keywords: locHubKeywords,
+    canonical: locHubUrl,
+    jsonLdList: [locHubItemListSchema],
+    bodyHtml: locHubBodyHtml
+  });
+
+  // 2. Individual Location Pages (/locations/:slug)
+  for (const loc of massachusettsLocations) {
+    const locUrl = `https://akirapahomecareus.com/locations/${loc.slug}`;
+
+    const localBusinessSchema = {
+      "@context": "https://schema.org",
+      "@type": ["MedicalBusiness", "MedicalOrganization", "LocalBusiness"],
+      "@id": `${locUrl}#organization`,
+      "name": `Akirapa Home Care - ${loc.cityName}, MA`,
+      "legalName": "Akirapa Home Care Inc.",
+      "url": locUrl,
+      "logo": "https://akirapahomecareus.com/akirapa-logo.png",
+      "image": "https://akirapahomecareus.com/akirapa-og-image.jpg",
+      "description": loc.shortDescription,
+      "telephone": "+1 781-226-9910",
+      "email": "info@akirapahomecareus.com",
+      "priceRange": "$$ ($36 - $44/hr)",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "281 Cambridge Street",
+        "addressLocality": "Burlington",
+        "addressRegion": "MA",
+        "postalCode": "01803",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.50289,
+        "longitude": -71.19694
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": loc.cityName,
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Massachusetts"
+        }
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ]
+    };
+
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://akirapahomecareus.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://akirapahomecareus.com/locations" },
+        { "@type": "ListItem", "position": 3, "name": `${loc.cityName}, MA`, "item": locUrl }
+      ]
+    };
+
+    const faqSchema = loc.localFaqs && loc.localFaqs.length > 0 ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": loc.localFaqs.map(f => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": f.answer
+        }
+      }))
+    } : null;
+
+    const locBodyHtml = `
+      <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6;">
+        <header style="background: linear-gradient(135deg, #561868 0%, #76248a 100%); color: white; padding: 48px 16px; text-align: center;">
+          <nav aria-label="Breadcrumb" style="font-size: 14px; margin-bottom: 16px; color: #e9d5ff;">
+            <a href="/" style="color: #40ddd3; text-decoration: none;">Home</a> &gt; 
+            <a href="/locations" style="color: #40ddd3; text-decoration: none;">Locations</a> &gt; 
+            <span>${esc(loc.cityName)}, MA</span>
+          </nav>
+          <span style="display: inline-block; background: #40ddd3; color: #0f172a; font-weight: 800; font-size: 12px; padding: 4px 14px; border-radius: 9999px; text-transform: uppercase; margin-bottom: 12px;">
+            ${esc(loc.county)} • ${esc(loc.distanceFromHQ)}
+          </span>
+          <h1 style="font-size: 36px; font-weight: 900; color: white; margin: 0 0 12px;">
+            In-Home Senior Care in ${esc(loc.cityName)}, MA
+          </h1>
+          <p style="font-size: 18px; color: #e9d5ff; max-width: 700px; margin: 0 auto 20px;">
+            ${esc(loc.tagline)}
+          </p>
+          <div>
+            <a href="tel:+17812269910" style="display: inline-block; background: #40ddd3; color: #0f172a; padding: 12px 28px; border-radius: 9999px; text-decoration: none; font-weight: 800; font-size: 16px;">
+              Call 24/7: +1 781-226-9910
+            </a>
+          </div>
+        </header>
+
+        <main style="max-width: 900px; margin: 0 auto; padding: 40px 16px;">
+          <section style="margin-bottom: 36px;">
+            <h2 style="font-size: 24px; font-weight: bold; color: #561868; margin-top: 0;">Local Care Overview</h2>
+            <p style="font-size: 18px; color: #4b5563; line-height: 1.7;">
+              ${esc(loc.fullOverview)}
+            </p>
+            <div style="background: #fdf4ff; border: 1px solid #f5d0fe; padding: 16px; border-radius: 12px; margin-top: 16px;">
+              <p style="margin: 0; font-size: 15px; color: #701a75;">
+                <strong>Zip Codes Served in ${esc(loc.cityName)}:</strong> ${loc.zipCodes.join(', ')}
+              </p>
+            </div>
+          </section>
+
+          <section style="margin-bottom: 36px;">
+            <h2 style="font-size: 22px; font-weight: bold; color: #561868;">Core Senior Care Programs Available in ${esc(loc.cityName)}</h2>
+            <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; list-style: none; padding: 0;">
+              ${loc.popularServices.map(s => `
+                <li style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #fafafa;">
+                  <h3 style="font-size: 18px; font-weight: bold; color: #561868; margin-top: 0;">
+                    <a href="/services/${s.slug}" style="color: #561868; text-decoration: none;">${esc(s.title)}</a>
+                  </h3>
+                  <p style="font-size: 14px; color: #4b5563; margin-bottom: 12px;">${esc(s.description)}</p>
+                  <a href="/services/${s.slug}" style="color: #76248a; font-weight: bold; font-size: 13px;">Learn More →</a>
+                </li>
+              `).join('')}
+            </ul>
+          </section>
+
+          ${loc.localHospitals && loc.localHospitals.length > 0 ? `
+            <section style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px; margin-bottom: 36px;">
+              <h2 style="font-size: 20px; font-weight: bold; color: #561868; margin-top: 0;">Hospital-to-Home Care Coordination</h2>
+              <ul style="padding-left: 20px; margin: 0; color: #374151;">
+                ${loc.localHospitals.map(h => `<li style="margin-bottom: 8px;"><strong>${esc(h.name)}:</strong> ${esc(h.description)}</li>`).join('')}
+              </ul>
+            </section>
+          ` : ''}
+
+          ${loc.localFaqs && loc.localFaqs.length > 0 ? `
+            <section style="margin-bottom: 36px;">
+              <h2 style="font-size: 22px; font-weight: bold; color: #561868;">Frequently Asked Questions About Senior Care in ${esc(loc.cityName)}, MA</h2>
+              <div style="display: flex; flex-direction: column; gap: 16px;">
+                ${loc.localFaqs.map(f => `
+                  <div style="border-bottom: 1px solid #e5e7eb; padding-bottom: 14px;">
+                    <h3 style="font-size: 17px; font-weight: bold; color: #1f2937; margin: 0 0 6px;">${esc(f.question)}</h3>
+                    <p style="margin: 0; font-size: 15px; color: #4b5563;">${esc(f.answer)}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </section>
+          ` : ''}
+
+          <section style="background: #561868; color: white; border-radius: 16px; padding: 32px; text-align: center; margin-top: 40px;">
+            <h2 style="font-size: 24px; font-weight: bold; margin-top: 0;">Arrange In-Home Care in ${esc(loc.cityName)}, MA</h2>
+            <p style="font-size: 16px; color: #e9d5ff; max-width: 600px; margin: 0 auto 20px;">
+              No long-term contracts. 100% Certified Nursing Assistants with AkiVault™ GPS arrival verification.
+            </p>
+            <p style="margin: 0;">
+              <a href="/contact" style="display: inline-block; background: #40ddd3; color: #0f172a; padding: 12px 28px; border-radius: 9999px; text-decoration: none; font-weight: bold; font-size: 15px;">
+                Schedule Free Consultation
+              </a>
+              <span style="margin-left: 16px; font-weight: bold; color: #ffffff;">Call 24/7: +1 781-226-9910</span>
+            </p>
+          </section>
+        </main>
+      </div>
+    `;
+
+    const schemas = [localBusinessSchema, breadcrumbSchema];
+    if (faqSchema) schemas.push(faqSchema);
+
+    writePage(`locations/${loc.slug}`, {
+      title: loc.metaTitle,
+      description: loc.metaDescription,
+      keywords: loc.keywords,
+      canonical: locUrl,
+      jsonLdList: schemas,
+      bodyHtml: locBodyHtml
+    });
+  }
+
+  // ==========================================
   // 5. Generate Core Static Pages with Rich Semantic HTML
   // ==========================================
   console.log('⚡ Generating core pages with rich semantic pre-rendering...');
   const corePages = [
     {
       path: '',
-      title: 'Akirapa Home Care | Premier In-Home Senior Care — Burlington & Massachusetts',
-      description: 'Compassionate in-home senior care headquartered at 281 Cambridge Street, Burlington, MA 01803. Hourly care, 24/7 daily & live-in care, hospital-to-home recovery, respite care, and specialized Alzheimer\'s support across Massachusetts. Call +1 781-226-9910.',
+      title: 'Akirapa Home Care | In-Home Senior Care in Massachusetts',
+      description: 'Akirapa Home Care provides licensed, compassionate in-home care in Burlington & across Massachusetts. 24/7 care, CNAs, Alzheimer\'s support. Call +1 781-226-9910.',
       canonical: 'https://akirapahomecareus.com/',
       bodyHtml: `
         <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 1000px; margin: 0 auto; padding: 32px 16px;">
           <header style="background: #561868; color: white; padding: 36px 16px; text-align: center; border-radius: 12px; margin-bottom: 32px;">
-            <h1 style="font-size: 36px; font-weight: 900; margin: 0 0 12px; color: #ffffff;">Akirapa Home Care — Massachusetts Premier Senior Care</h1>
+            <h1 style="font-size: 36px; font-weight: 900; margin: 0 0 12px; color: #ffffff;">Akirapa Home Care — In-Home Senior Care in Massachusetts</h1>
             <p style="font-size: 18px; color: #e9d5ff; max-width: 800px; margin: 0 auto 16px;">
-              Compassionate in-home senior care headquartered at 281 Cambridge Street, Burlington, MA 01803.
+              Compassionate in-home senior care headquartered at 281 Cambridge Street, Burlington, MA 01803. Serving Middlesex County and Greater Massachusetts.
             </p>
             <p style="margin: 0; font-size: 16px; font-weight: bold; color: #40ddd3;">
               24/7 Care Helpline: +1 781-226-9910
@@ -631,6 +869,18 @@ async function run() {
                   <h3 style="font-size: 17px; font-weight: bold; color: #561868; margin-top: 0;"><a href="/services/${s.slug}" style="color: #561868; text-decoration: none;">${esc(s.title)}</a></h3>
                   <p style="font-size: 14px; color: #4b5563; margin-bottom: 8px;">${esc(s.shortDescription)}</p>
                   <a href="/services/${s.slug}" style="color: #76248a; font-weight: bold; font-size: 13px;">Learn More →</a>
+                </li>
+              `).join('')}
+            </ul>
+          </section>
+
+          <section style="margin-bottom: 36px;">
+            <h2 style="font-size: 26px; font-weight: bold; color: #561868;">Massachusetts Communities We Serve</h2>
+            <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; list-style: none; padding: 0;">
+              ${massachusettsLocations.map(loc => `
+                <li style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; background: #fafafa;">
+                  <h3 style="font-size: 16px; font-weight: bold; color: #561868; margin: 0 0 4px;"><a href="/locations/${loc.slug}" style="color: #561868; text-decoration: none;">${esc(loc.cityName)}, MA</a></h3>
+                  <p style="font-size: 12px; color: #6b7280; margin: 0;">${esc(loc.distanceFromHQ)}</p>
                 </li>
               `).join('')}
             </ul>
@@ -981,6 +1231,12 @@ async function run() {
     </image:image>
   </url>
   <url>
+    <loc>https://akirapahomecareus.com/locations</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://akirapahomecareus.com/services</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
@@ -1091,15 +1347,25 @@ async function run() {
     <priority>0.5</priority>
   </url>
 
-  <!-- 16 Massachusetts Specialized Care Services -->
+  <!-- 12 Massachusetts Community Location Pages -->
 `;
 
+  for (const loc of massachusettsLocations) {
+    sitemapXml += `  <url>
+    <loc>https://akirapahomecareus.com/locations/${loc.slug}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>\n`;
+  }
+
+  sitemapXml += `\n  <!-- 16 Massachusetts Specialized Care Services -->\n`;
   for (const s of detailedServices) {
     sitemapXml += `  <url>
     <loc>https://akirapahomecareus.com/services/${s.slug}</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>\n`;
   }
 
@@ -1109,17 +1375,7 @@ async function run() {
     <loc>https://akirapahomecareus.com/blog/${p.slug}</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>\n`;
-  }
-
-  sitemapXml += `\n  <!-- 500 Massachusetts Competitor Directory Profile Pages -->\n`;
-  for (const c of maCompetitors) {
-    sitemapXml += `  <url>
-    <loc>https://akirapahomecareus.com/ma-home-care-directory/${c.slug}</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>\n`;
   }
 

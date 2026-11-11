@@ -40,6 +40,10 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import ConsumerRights from "./pages/ConsumerRights";
 
+// Massachusetts Location Pages
+import LocationsHub from "./pages/LocationsHub";
+import LocationDetail from "./pages/LocationDetail";
+
 // Proof Where Families Look & High-Intent Question Pages
 import SampleShiftReport from "./pages/SampleShiftReport";
 import Standards from "./pages/Standards";
@@ -79,6 +83,10 @@ const App = () => {
                   <Route path="/about" element={<Leadership />} />
                   <Route path="/services" element={<Projects />} />
                   <Route path="/services/:slug" element={<ServiceDetail />} />
+
+                  {/* Massachusetts Communities & Location Pages */}
+                  <Route path="/locations" element={<LocationsHub />} />
+                  <Route path="/locations/:slug" element={<LocationDetail />} />
 
                   {/* Dedicated Condition & Service Landing Routes */}
                   <Route path="/dementia-care" element={<ServiceDetail customSlug="dementia-care" />} />

@@ -4,6 +4,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { detailedServices, DetailedService } from "@/data/detailedServicesData";
+import { massachusettsLocations } from "@/data/massachusettsLocations";
 import { BurlingtonCareQuestions } from "@/components/BurlingtonCareQuestions";
 
 interface ServiceDetailProps {
@@ -361,6 +362,29 @@ export default function ServiceDetail({ customSlug }: ServiceDetailProps = {}) {
               </div>
             </div>
           )}
+
+          {/* Local Massachusetts Communities Served */}
+          <div className="max-w-4xl mx-auto pt-8 border-t border-gray-200 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <h3 className="text-lg font-bold text-gray-900">
+                Massachusetts Communities Where We Provide {service.title}
+              </h3>
+              <Link to="/locations" className="text-xs font-bold text-[#76248a] hover:underline">
+                View All Service Areas →
+              </Link>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {massachusettsLocations.map((loc) => (
+                <Link
+                  key={loc.slug}
+                  to={`/locations/${loc.slug}`}
+                  className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-[#76248a] text-gray-700 hover:text-white transition-all"
+                >
+                  {loc.cityName}, MA
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

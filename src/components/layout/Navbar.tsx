@@ -48,6 +48,7 @@ const navLinks: NavLinkItem[] = [
       },
     ],
   },
+  { name: "Locations", path: "/locations" },
   { name: "Blog", path: "/blog" },
   { name: "Careers", path: "/careers" },
   { name: "Contact", path: "/contact" },

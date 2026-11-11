@@ -12,6 +12,7 @@ import { testimonials } from "@/data/testimonials";
 import { leaders } from "@/data/leadership";
 import { CareQuoteCalculator } from "@/components/CareQuoteCalculator";
 import { BurlingtonCareQuestions } from "@/components/BurlingtonCareQuestions";
+import { massachusettsLocations } from "@/data/massachusettsLocations";
 
 const heroSlides = [
   {
@@ -195,9 +196,9 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="Akirapa Home Care | #1 Best Home Care Company in Massachusetts — Burlington & Middlesex County"
-        description="Akirapa Home Care is ranked the #1 best home care company in Massachusetts. Headquartered in Burlington, MA. Compassionate 24/7 senior care, certified CNAs, Alzheimer's care, and AkiVault™ GPS transparency. Call +1 781-226-9910."
-        keywords="home care Massachusetts, best home care company Massachusetts, senior care Burlington MA, in-home care MA, 24-hour home care Massachusetts, Alzheimer's care MA, dementia home care, respite care Burlington MA, caregiver Burlington MA, elder care Middlesex County, home health aide MA"
+        title="Akirapa Home Care | In-Home Senior Care in Massachusetts"
+        description="Akirapa Home Care provides licensed, compassionate in-home care in Burlington & across Massachusetts. 24/7 care, CNAs, Alzheimer's support. Call +1 781-226-9910."
+        keywords="Akirapa Home Care, home care Massachusetts, senior care Burlington MA, in-home care MA, 24-hour home care Massachusetts, Alzheimer's care MA, dementia home care, respite care Burlington MA, caregiver Burlington MA, elder care Middlesex County, home health aide MA"
         path="/"
         faqs={homepageFaqs}
       />
@@ -280,11 +281,15 @@ const Index = () => {
                 <span className="tracking-wide">Premier Concierge Home Care</span>
               </div>
 
-              <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.18] text-left animate-word-fade">
-                {slide.title}
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.18] text-left">
+                Akirapa Home Care — In-Home Senior Care in Massachusetts
               </h1>
 
-              <p className="text-sm sm:text-lg lg:text-xl text-gray-700 font-medium leading-relaxed max-w-2xl text-left animate-word-fade [animation-delay:150ms]">
+              <p className="text-base sm:text-lg lg:text-xl font-bold text-[#561868] text-left animate-word-fade">
+                {slide.title}
+              </p>
+
+              <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-medium leading-relaxed max-w-2xl text-left animate-word-fade [animation-delay:150ms]">
                 {slide.subtitle}
               </p>
             </div>
@@ -819,6 +824,66 @@ const Index = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Massachusetts Communities We Serve (Local SEO & Authority Hub) */}
+      <section className="py-16 md:py-20 bg-white border-b border-gray-100">
+        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-10">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1 rounded-full inline-block">
+              Middlesex County & Eastern Massachusetts
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
+              Massachusetts Communities We Serve
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              Headquartered at 281 Cambridge Street in Burlington, MA. We provide 100% Certified Nursing Assistants (CNAs), real-time GPS clock-in verification, and contract-free in-home care across these local towns:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {massachusettsLocations.map((loc) => {
+              const isHQ = loc.slug === "burlington-ma";
+              return (
+                <Link
+                  key={loc.slug}
+                  to={`/locations/${loc.slug}`}
+                  className={`p-4 rounded-2xl border transition-all duration-200 group flex flex-col justify-between ${
+                    isHQ
+                      ? "bg-purple-50/70 border-[#76248a] shadow-xs hover:shadow-md"
+                      : "bg-gray-50/60 hover:bg-white border-gray-200 hover:border-[#76248a]/40 hover:shadow-md"
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between text-[11px] font-bold text-[#76248a] mb-1">
+                      <span>{isHQ ? "★ Headquarters" : loc.county}</span>
+                      <i className="fa-solid fa-arrow-right text-[10px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                    <h3 className="font-extrabold text-gray-900 group-hover:text-[#76248a] transition-colors text-base">
+                      {loc.cityName}, MA
+                    </h3>
+                    <p className="text-[11px] text-gray-500 mt-1 line-clamp-1">
+                      {loc.distanceFromHQ}
+                    </p>
+                  </div>
+                  <span className="text-[11px] font-bold text-[#76248a] mt-3 block">
+                    View Care Options →
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="text-center pt-2">
+            <Link
+              to="/locations"
+              className="inline-flex items-center gap-2 text-sm font-extrabold text-[#76248a] hover:text-[#561868] hover:underline"
+            >
+              <span>Explore All Massachusetts Care Service Areas</span>
+              <i className="fa-solid fa-arrow-right text-xs"></i>
+            </Link>
           </div>
         </div>
       </section>

@@ -172,6 +172,42 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Massachusetts Communities Service Grid in Footer */}
+        <div className="border-t border-white/10 pt-8 mb-8">
+          <div className="text-center sm:text-left mb-4">
+            <h5 className="font-bold text-xs uppercase tracking-wider text-[#40ddd3]">
+              Massachusetts Service Areas &amp; Communities (24/7 Care Dispatch):
+            </h5>
+          </div>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-2 text-xs text-white/80">
+            <Link to="/locations/burlington-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Burlington, MA (HQ)</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations/lexington-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Lexington, MA</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations/woburn-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Woburn, MA</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations/bedford-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Bedford, MA</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations/winchester-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Winchester, MA</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations/concord-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Concord, MA</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations/waltham-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Waltham, MA</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations/arlington-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Arlington, MA</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations/belmont-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Belmont, MA</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations/boston-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Boston, MA</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations/cambridge-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Cambridge, MA</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations/newton-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Newton, MA</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations" className="text-[#40ddd3] font-bold hover:underline">All Locations →</Link>
+          </div>
+        </div>
+
         {/* Bottom Copyright */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70 text-center md:text-left">
           <p>© {new Date().getFullYear()} Akirapa Home Care. All rights reserved.</p>

@@ -124,10 +124,10 @@ export default function MACompetitorDetail() {
         title={`${competitor.name} - ${competitor.city}, MA | Care Reviews & Alternatives — Akirapa Home Care`}
         description={`Services Offered: ${competitor.services.join(' · ')}. Researching ${competitor.name} in ${competitor.city}, MA? Review estimated rates (${competitor.hourlyRate}), customer ratings (${competitor.rating}/5), and compare with 24/7 CNA care from Akirapa Home Care.`}
         path={`/ma-home-care-directory/${competitor.slug}`}
+        noindex={true}
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(businessSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
