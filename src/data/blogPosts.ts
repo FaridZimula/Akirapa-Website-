@@ -111,7 +111,7 @@ For families and healthcare organizations in Massachusetts, having access to mul
     author: "Hands-On America Services",
     category: "Healthcare & Support Services",
     readTime: "7 min read",
-    image: "/CARE GIVER  (1).jpg",
+    image: "/Blog Posters/11.jpg",
     initialViews: 940,
     status: "published",
     source: "manual"
@@ -177,7 +177,7 @@ Planning ahead transforms eldercare from a source of constant family anxiety int
     author: "Stuart Ssemwogerere",
     category: "Care Advisory & Planning",
     readTime: "7 min read",
-    image: "/CARE GIVER  (9).jpg",
+    image: "/Blog Posters/7.jpg",
     initialViews: 790
   },
   {
@@ -198,7 +198,7 @@ Here are 5 proven strategies to help you recharge your mind and body:
     author: "Cathy Akirapa, CNA",
     category: "Caregiver Support",
     readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800",
+    image: "/Blog Posters/7.jpg",
     initialViews: 642
   },
   {
@@ -254,7 +254,7 @@ Early intervention with customized hourly or daily home care helps seniors maint
     author: "Stuart Ssemwogerere",
     category: "Senior Living",
     readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=800",
+    image: "/Blog Posters/13.png",
     initialViews: 429
   },
   {
@@ -329,7 +329,7 @@ Key care models explained:
     author: "Stuart Ssemwogerere",
     category: "Senior Living",
     readTime: "5 min read",
-    image: "/CARE GIVER  (2).jpg",
+    image: "/Blog Posters/13.png",
     initialViews: 489
   }
 ];

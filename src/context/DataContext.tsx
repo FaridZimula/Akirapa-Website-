@@ -248,17 +248,29 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
                 const parsed = JSON.parse(saved) as BlogPost[];
                 const existingSlugs = new Set(parsed.map(p => p.slug || p.id));
                 const missingInitial = initialBlogPosts.filter(p => !existingSlugs.has(p.slug) && !existingSlugs.has(p.id));
+                
+                // Keep poster images in sync with initial data
+                const initialMap = new Map(initialBlogPosts.map(p => [p.id, p]));
+                const updatedParsed = parsed.map(p => {
+                    const match = initialMap.get(p.id);
+                    if (match && match.image !== p.image) {
+                        return { ...p, image: match.image };
+                    }
+                    return p;
+                });
+
                 if (missingInitial.length > 0) {
                     const formattedMissing = missingInitial.map(p => ({
                         ...p,
                         status: p.status || ('published' as const),
                         source: p.source || ('manual' as const)
                     }));
-                    const merged = [...formattedMissing, ...parsed];
+                    const merged = [...formattedMissing, ...updatedParsed];
                     localStorage.setItem('akirapa_blog_posts', JSON.stringify(merged));
                     return merged;
                 }
-                return parsed;
+                localStorage.setItem('akirapa_blog_posts', JSON.stringify(updatedParsed));
+                return updatedParsed;
             }
             return initialBlogPosts.map(p => ({
                 ...p,
