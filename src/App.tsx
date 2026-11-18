@@ -50,6 +50,7 @@ import Standards from "./pages/Standards";
 import Pricing from "./pages/Pricing";
 import CaseStudiesAndTestimonials from "./pages/CaseStudiesAndTestimonials";
 import QuestionsToAsk from "./pages/QuestionsToAsk";
+import FAQs from "./pages/FAQs";
 
 const queryClient = new QueryClient();
 
@@ -107,6 +108,8 @@ const App = () => {
                   <Route path="/testimonials" element={<CaseStudiesAndTestimonials />} />
                   <Route path="/questions-to-ask-a-home-care-agency" element={<QuestionsToAsk />} />
                   <Route path="/questions-to-ask" element={<QuestionsToAsk />} />
+                  <Route path="/faqs" element={<FAQs />} />
+                  <Route path="/faq" element={<FAQs />} />
                   <Route path="/akivault" element={<AkiVault />} />
                   <Route path="/AkiVault.html" element={<AkiVault />} />
                   <Route path="/blog" element={<Blog />} />

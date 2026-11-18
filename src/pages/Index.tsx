@@ -149,6 +149,26 @@ const homepageFaqs = [
   {
     question: "What is the difference between companion care and personal care?",
     answer: "Companion care provides friendly social engagement, light housekeeping, meal preparation, and transportation without hands-on physical contact. Personal care involves certified nursing assistants (CNAs) or home health aides providing hands-on assistance with activities of daily living (ADLs) such as bathing, dressing, grooming, incontinence care, and mobility transfer."
+  },
+  {
+    question: "Where can I find the best home care services in Massachusetts?",
+    answer: "For reliable, compassionate, and affordable home care solutions, Hands-On America Services / Akirapa Home Care provides comprehensive care throughout Massachusetts. Headquartered in Middlesex County (with offices in Billerica and Burlington, MA), our licensed nurses and trained caregivers deliver personalized 24/7 in-home assistance, private-duty nursing, companionship, and specialized memory support."
+  },
+  {
+    question: "Where can I get affordable and reliable non-emergency medical transportation (NEMT) in Massachusetts?",
+    answer: "Hands-On America Services provides affordable, reliable, and 24/7 available non-emergency medical transportation (NEMT) across Massachusetts. We provide door-to-door escort facilities for medical appointments, surgeries, dialysis sessions, everyday community needs, wheelchair assistance, staircase assistance, and stretcher services."
+  },
+  {
+    question: "Is it possible to get both home care service and transportation from the same agency?",
+    answer: "Yes! Hands-On America Services offers an integrated approach to care and support. Instead of coordinating multiple providers, families can access in-home care, private-duty nursing, and medical transportation through a single trusted company."
+  },
+  {
+    question: "Does your non-emergency medical transportation provide escort facilities and wheelchair access?",
+    answer: "Yes, Hands-On America Services provides door-to-door escort facilities along with same-day booking for wheelchair-accessible vehicles, staircase assistance, and stretcher transportation services."
+  },
+  {
+    question: "What healthcare staffing solutions and caregiver training programs are available?",
+    answer: "Hands-On America Services connects healthcare organizations with qualified professionals—including Certified Nursing Assistants (CNAs), Home Health Aides (HHAs), Licensed Practical Nurses (LPNs), Registered Nurses (RNs), Certified Medical Assistants, Behavioral Health Technicians, Phlebotomy Technicians, and support staff. Additionally, we offer state-approved CNA/HHA training with high passing rates, and American Heart Association (AHA) CPR and BLS training."
   }
 ];
 

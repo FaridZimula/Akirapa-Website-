@@ -153,6 +153,12 @@ const navLinks: NavLinkItem[] = [
         description: "CNA vetting & 8-point welfare checks",
         icon: "fa-solid fa-clipboard-check",
       },
+      {
+        name: "FAQs",
+        path: "/faqs",
+        description: "Answers on home care, NEMT & staffing",
+        icon: "fa-solid fa-circle-question",
+      },
     ],
   },
   { name: "Locations", path: "/locations" },

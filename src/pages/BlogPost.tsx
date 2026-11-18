@@ -63,10 +63,27 @@ const renderArticleContent = (content: string) => {
       return;
     }
 
+    const heading2Match = trimmed.match(/^##\s+(.*)$/);
+    const heading3Match = trimmed.match(/^###\s+(.*)$/);
     const orderedMatch = trimmed.match(/^(\d+)\.\s+(\*\*(.*?)\*\*:?\s*)?(.*)$/);
-    const unorderedMatch = trimmed.match(/^[-*]\s+(\*\*(.*?)\*\*:?\s*)?(.*)$/);
+    const unorderedMatch = trimmed.match(/^[-*•]\s+(\*\*(.*?)\*\*:?\s*)?(.*)$/);
 
-    if (orderedMatch) {
+    if (heading2Match) {
+      flushList();
+      elements.push(
+        <h2 key={index} className="text-2xl font-black text-[#561868] mt-8 mb-4 text-left border-b border-purple-100 pb-2">
+          {parseBoldText(heading2Match[1])}
+        </h2>
+      );
+    } else if (heading3Match) {
+      flushList();
+      elements.push(
+        <h3 key={index} className="text-xl font-bold text-[#76248a] mt-6 mb-3 text-left flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-[#40ddd3] inline-block"></span>
+          {parseBoldText(heading3Match[1])}
+        </h3>
+      );
+    } else if (orderedMatch) {
       const num = orderedMatch[1];
       const title = orderedMatch[3] || "";
       const text = orderedMatch[4] || "";

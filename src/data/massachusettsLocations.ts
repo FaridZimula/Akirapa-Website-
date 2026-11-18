@@ -379,5 +379,64 @@ export const massachusettsLocations: MALocation[] = [
     metaTitle: "In-Home Senior Care in Belmont, MA | Akirapa Home Care",
     metaDescription: "Attentive in-home senior care in Belmont, MA. Verified CNAs, memory care, 24/7 care, and AkiVault™ GPS verification. Call +1 781-226-9910.",
     keywords: "home care Belmont MA, senior care Belmont Massachusetts, in-home caregivers Belmont 02478, elder care Belmont, memory care Belmont MA"
+  },
+  {
+    slug: "billerica-ma",
+    cityName: "Billerica",
+    county: "Middlesex County",
+    zipCodes: ["01821", "01862"],
+    distanceFromHQ: "Hands-On America Services Office (572 Boston Road, Suite 20)",
+    tagline: "Hands-On America Services Billerica Hub — 24/7 Home Care, Medical Transportation & Staffing",
+    shortDescription: "Based at 572 Boston Road, Level 2, Suite 20, Billerica, MA. Providing 24/7 in-home senior care, private-duty nursing, non-emergency medical transportation, and healthcare staffing across Middlesex, Essex, Norfolk, and Suffolk counties.",
+    fullOverview: "Hands-On America Services, Inc. provides a comprehensive range of healthcare and support services designed to meet the needs of individuals, families, caregivers, and healthcare organizations throughout Billerica and Massachusetts. From in-home care and private-duty nursing to non-emergency medical transportation, healthcare staffing, caregiver training, and assisted living placement, Hands-On America Services offers an integrated approach to care and support—allowing families to coordinate multiple services through one trusted company.",
+    localHospitals: [
+      { name: "Lahey Hospital & Medical Center", description: "Top regional teaching hospital and Level I trauma center adjacent in Burlington, MA." },
+      { name: "Lowell General Hospital", description: "Comprehensive acute-care hospital system serving Greater Lowell and Middlesex County." },
+      { name: "Winchester Hospital Outpatient Center", description: "Outpatient clinical diagnostics, surgical follow-up, and imaging nearby." }
+    ],
+    localLandmarks: ["572 Boston Road Business Center", "Billerica Town Common", "Manning State Forest", "Concord River"],
+    popularServices: [
+      { title: "24-Hour In-Home Care", slug: "24-hour-home-care", description: "Round-the-clock compassionate in-home care and personal assistance available 24/7." },
+      { title: "Non-Emergency Medical Transportation", slug: "transportation", description: "Door-to-door escorted transport for medical visits, surgeries, and dialysis sessions." },
+      { title: "Private Duty Nursing", slug: "skilled-nursing", description: "Personalized clinical care by licensed nurses and experienced healthcare professionals." },
+      { title: "Dementia & Memory Care", slug: "dementia-care", description: "Specialized cognitive engagement, routine stability, and wandering prevention." }
+    ],
+    localFaqs: [
+      {
+        question: "Where can I find the best home care services in Massachusetts?",
+        answer: "For reliable and compassionate Home Care solutions, contact Hands-On America Services located at 572 Boston Road, Level 2, Suite 20, Billerica, MA."
+      },
+      {
+        question: "Where can I get cheap non-emergency medical transportation in Massachusetts?",
+        answer: "Hands-On America Services provides cheap, reliable and 24/7 available Non-Emergency Transportation Services."
+      },
+      {
+        question: "Is it possible to get the home care service and transportation from same agency?",
+        answer: "Yes, Hands-On America Services provide both services."
+      },
+      {
+        question: "Does Non-Emergency Medical Transportation provider provide the escort facilities?",
+        answer: "Hands-On America Services provide escort facilities along with door-to-door Non-Emergency Medical Transportation."
+      },
+      {
+        question: "Cheap wheelchair accessible transportation?",
+        answer: "Hands-On America Services provide cheap, best and same day booking wheelchair, staircase assistance and stretcher services."
+      },
+      {
+        question: "Home Care staffing services in Massachusetts?",
+        answer: "Get reliable, compassionate and trained caregiver, RNs, and LPNs from Hands-On America Services."
+      },
+      {
+        question: "Best, state approved and cheap CNA training center in Massachusetts?",
+        answer: "Hands-On America Services is the best and affordable State approved CNA/HHA training center with high state passing rates."
+      },
+      {
+        question: "CPR training near me?",
+        answer: "Hands-On America Services provides easily accessible hands on CPR training from American Heart Association in Massachusetts."
+      }
+    ],
+    metaTitle: "Home Care & Healthcare Services in Billerica, MA | Hands-On America",
+    metaDescription: "Hands-On America Services at 572 Boston Road, Billerica, MA. 24/7 in-home care, private-duty nursing, medical transportation (NEMT), staffing & CNA training.",
+    keywords: "home care Billerica MA, Hands-On America Services Billerica, senior care Billerica Massachusetts, medical transportation Billerica, CNA training Billerica MA"
   }
 ];

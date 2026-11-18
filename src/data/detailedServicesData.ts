@@ -86,6 +86,10 @@ export const detailedServices: DetailedService[] = [
       {
         question: "Are skilled nursing visits available in Burlington and nearby towns?",
         answer: "Yes, Akirapa Home Care provides skilled clinical support throughout Burlington, Bedford, Lexington, Concord, Billerica, and neighboring communities."
+      },
+      {
+        question: "What private-duty nursing and healthcare staffing services are provided?",
+        answer: "Hands-On America Services provides private-duty nursing through licensed nurses (RNs, LPNs), therapists, and experienced healthcare professionals in the home, as well as connecting hospitals and healthcare facilities with qualified CNAs, HHAs, and clinical specialists."
       }
     ],
     relatedServiceSlugs: ["post-hospitalization-care", "medication-assistance", "24-hour-home-care"],
@@ -504,6 +508,22 @@ export const detailedServices: DetailedService[] = [
       {
         question: "What areas are covered for senior transportation?",
         answer: "We cover Burlington, Bedford, Lexington, Concord, Billerica, Woburn, and healthcare facilities throughout Greater Boston."
+      },
+      {
+        question: "Where can I get cheap non-emergency medical transportation in Massachusetts?",
+        answer: "Hands-On America Services provides cheap, reliable and 24/7 available Non-Emergency Transportation Services."
+      },
+      {
+        question: "Is it possible to get the home care service and transportation from same agency?",
+        answer: "Yes, Hands-On America Services provide both services."
+      },
+      {
+        question: "Does Non-Emergency Medical Transportation provider provide the escort facilities?",
+        answer: "Hands-On America Services provide escort facilities along with door-to-door Non-Emergency Medical Transportation."
+      },
+      {
+        question: "Cheap wheelchair accessible transportation?",
+        answer: "Hands-On America Services provide cheap, best and same day booking wheelchair, staircase assistance and stretcher services."
       }
     ],
     relatedServiceSlugs: ["companion-care", "homemaker-services", "post-hospitalization-care"],

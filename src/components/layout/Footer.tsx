@@ -74,6 +74,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { label: "Transparent Pricing Guide", path: "/pricing" },
+                { label: "Frequently Asked Questions (FAQ)", path: "/faqs" },
                 { label: "See a Real Shift Report", path: "/sample-shift-report" },
                 { label: "Our Standards & CNA Vetting", path: "/standards" },
                 { label: "10 Questions to Ask Any Agency", path: "/questions-to-ask-a-home-care-agency" },
@@ -181,6 +182,8 @@ const Footer = () => {
           </div>
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-2 text-xs text-white/80">
             <Link to="/locations/burlington-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Burlington, MA (HQ)</Link>
+            <span className="text-white/30">•</span>
+            <Link to="/locations/billerica-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Billerica, MA (Hands-On America)</Link>
             <span className="text-white/30">•</span>
             <Link to="/locations/lexington-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Lexington, MA</Link>
             <span className="text-white/30">•</span>
