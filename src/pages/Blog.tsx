@@ -8,7 +8,6 @@ import { BlogPost } from "@/data/blogPosts";
 
 const TOPICS = [
   { id: "all", label: "All Topics", icon: "fa-newspaper" },
-  { id: "Healthcare & Support Services", label: "Healthcare & Support Services", icon: "fa-hand-holding-medical" },
   { id: "Senior Transportation", label: "Senior Transportation", icon: "fa-car-side" },
   { id: "Care Advisory & Planning", label: "Care Advisory & Planning", icon: "fa-clipboard-user" },
   { id: "Caregiver Support", label: "Caregiver Support", icon: "fa-heart-pulse" },

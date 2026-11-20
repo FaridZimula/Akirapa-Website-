@@ -245,7 +245,10 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
         try {
             const saved = localStorage.getItem('akirapa_blog_posts');
             if (saved) {
-                const parsed = JSON.parse(saved) as BlogPost[];
+                const parsed = (JSON.parse(saved) as BlogPost[]).filter(
+                    p => p.id !== 'post-hands-on-america-healthcare-services' && 
+                         p.slug !== 'home-care-healthcare-services-massachusetts-hands-on-america'
+                );
                 const existingSlugs = new Set(parsed.map(p => p.slug || p.id));
                 const missingInitial = initialBlogPosts.filter(p => !existingSlugs.has(p.slug) && !existingSlugs.has(p.id));
                 
