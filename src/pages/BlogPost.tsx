@@ -232,9 +232,14 @@ const BlogPostPage = () => {
                   {post.excerpt}
                 </p>
 
-                {/* Embedded Video Feature */}
+                {/* Article Content */}
+                <div className="prose prose-purple max-w-none text-gray-700 leading-relaxed text-base space-y-4 text-left">
+                  {renderArticleContent(post.content)}
+                </div>
+
+                {/* Embedded Video Feature - comes LAST after article content */}
                 {post.videoEmbed && (
-                  <div className="my-8 space-y-2">
+                  <div className="my-8 pt-6 border-t border-purple-100 space-y-3">
                     <div className="flex items-center justify-between pb-1">
                       <span className="text-xs font-black uppercase tracking-wider text-[#76248a] flex items-center gap-2">
                         <i className="fa-brands fa-facebook text-[#1877f2] text-sm"></i>
@@ -260,11 +265,6 @@ const BlogPostPage = () => {
                     />
                   </div>
                 )}
-
-                {/* Article Content */}
-                <div className="prose prose-purple max-w-none text-gray-700 leading-relaxed text-base space-y-4 text-left">
-                  {renderArticleContent(post.content)}
-                </div>
 
                 {/* CTA Box */}
                 <div className="p-6 rounded-2xl bg-[#76248a]/5 border border-[#76248a]/20 mt-8 text-left space-y-2">

@@ -315,24 +315,6 @@
 
   <!-- Blog Articles -->
   <url>
-    <loc>https://akirapahomecareus.com/blog/beyond-individual-care-family-confidence-peace-of-mind</loc>
-    <lastmod>2026-11-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://akirapahomecareus.com/blog/predictive-care-smarter-proactive-senior-wellness-at-home</loc>
-    <lastmod>2026-11-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://akirapahomecareus.com/blog/proactive-daily-care-in-action-preventing-hospital-readmissions</loc>
-    <lastmod>2026-11-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://akirapahomecareus.com/blog/vital-role-of-assisted-senior-transportation</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -388,6 +370,24 @@
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/navigating-massachusetts-senior-care-options</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://akirapahomecareus.com/blog/beyond-individual-care-family-confidence-peace-of-mind</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://akirapahomecareus.com/blog/predictive-care-smarter-proactive-senior-wellness-at-home</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://akirapahomecareus.com/blog/proactive-daily-care-in-action-preventing-hospital-readmissions</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
