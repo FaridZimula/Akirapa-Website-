@@ -49,8 +49,8 @@
     </image:image>
     <video:video>
       <video:thumbnail_loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(17).jpg</video:thumbnail_loc>
-      <video:title>Beyond Individual Care: How In-Home Caregiving Restores Family Confidence and Peace of Mind</video:title>
-      <video:description>Home care is never just about one person. Discover how professional caregiving lifts the silent emotional weight from families, restores parent-child bonds, and delivers lasting peace of mind.</video:description>
+      <video:title>Beyond Individual Care: How In Home Caregiving Restores Family Confidence and Peace of Mind</video:title>
+      <video:description>Home care is never just about one person. Discover how professional caregiving lifts the silent emotional weight from families, restores parent child bonds, and delivers lasting peace of mind.</video:description>
       <video:player_loc allow_embed="yes">https://www.facebook.com/plugins/video.php?height=314&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2292883004603466%2F&amp;show_text=false&amp;width=560&amp;t=0</video:player_loc>
       <video:publication_date>2026-11-17</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -70,7 +70,7 @@
     <video:video>
       <video:thumbnail_loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(19).jpg</video:thumbnail_loc>
       <video:title>Proactive Daily Care in Action: Personalized Routines That Prevent Hospital Readmissions</video:title>
-      <video:description>Proactive care isn&apos;t just a philosophy—it&apos;s an intentional daily routine. Explore how personalized care schedules, mobility support, and medication vigilance keep seniors safely thriving at home.</video:description>
+      <video:description>Proactive care is an intentional daily routine. Explore how personalized care schedules, mobility support, and medication vigilance keep seniors safely thriving at home.</video:description>
       <video:player_loc allow_embed="yes">https://www.facebook.com/plugins/video.php?height=314&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F5532265726997859%2F&amp;show_text=false&amp;width=560&amp;t=0</video:player_loc>
       <video:publication_date>2026-11-11</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -417,7 +417,7 @@
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(16).jpg</image:loc>
-      <image:title>Compassionate Strategies for Supporting Loved Ones with Early-Stage Dementia</image:title>
+      <image:title>Compassionate Strategies for Supporting Loved Ones with Early Stage Dementia</image:title>
     </image:image>
   </url>
   <url>
@@ -427,7 +427,7 @@
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(8).jpg</image:loc>
-      <image:title>The Ultimate Hospital-to-Home Transition Guide for Seniors</image:title>
+      <image:title>The Ultimate Hospital to Home Transition Guide for Seniors</image:title>
     </image:image>
   </url>
   <url>
@@ -457,12 +457,12 @@
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(17).jpg</image:loc>
-      <image:title>Beyond Individual Care: How In-Home Caregiving Restores Family Confidence and Peace of Mind</image:title>
+      <image:title>Beyond Individual Care: How In Home Caregiving Restores Family Confidence and Peace of Mind</image:title>
     </image:image>
     <video:video>
       <video:thumbnail_loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(17).jpg</video:thumbnail_loc>
-      <video:title>Beyond Individual Care: How In-Home Caregiving Restores Family Confidence and Peace of Mind</video:title>
-      <video:description>Home care is never just about one person. Discover how professional caregiving lifts the silent emotional weight from families, restores parent-child bonds, and delivers lasting peace of mind.</video:description>
+      <video:title>Beyond Individual Care: How In Home Caregiving Restores Family Confidence and Peace of Mind</video:title>
+      <video:description>Home care is never just about one person. Discover how professional caregiving lifts the silent emotional weight from families, restores parent child bonds, and delivers lasting peace of mind.</video:description>
       <video:player_loc allow_embed="yes">https://www.facebook.com/plugins/video.php?height=314&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2292883004603466%2F&amp;show_text=false&amp;width=560&amp;t=0</video:player_loc>
       <video:publication_date>2026-11-17</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -502,12 +502,22 @@
     <video:video>
       <video:thumbnail_loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(19).jpg</video:thumbnail_loc>
       <video:title>Proactive Daily Care in Action: Personalized Routines That Prevent Hospital Readmissions</video:title>
-      <video:description>Proactive care isn&apos;t just a philosophy—it&apos;s an intentional daily routine. Explore how personalized care schedules, mobility support, and medication vigilance keep seniors safely thriving at home.</video:description>
+      <video:description>Proactive care is an intentional daily routine. Explore how personalized care schedules, mobility support, and medication vigilance keep seniors safely thriving at home.</video:description>
       <video:player_loc allow_embed="yes">https://www.facebook.com/plugins/video.php?height=314&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F5532265726997859%2F&amp;show_text=false&amp;width=560&amp;t=0</video:player_loc>
       <video:publication_date>2026-11-11</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:uploader info="https://akirapahomecareus.com">Akirapa Home Care</video:uploader>
       <video:category>Post-Hospital Recovery</video:category>
     </video:video>
+  </url>
+  <url>
+    <loc>https://akirapahomecareus.com/blog/comprehensive-home-care-healthcare-services-massachusetts</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/Blog%20Posters/11.jpg</image:loc>
+      <image:title>Comprehensive Home Care and Healthcare Support Services in Massachusetts</image:title>
+    </image:image>
   </url>
 </urlset>

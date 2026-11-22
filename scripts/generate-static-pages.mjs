@@ -1236,7 +1236,7 @@ async function run() {
     },
     {
       path: 'faqs',
-      title: 'Frequently Asked Questions (FAQ) | Hands-On America & Akirapa Home Care',
+      title: 'Frequently Asked Questions (FAQ) | Akirapa Home Care',
       description: 'Find answers about in-home senior care, 24/7 non-emergency medical transportation (NEMT), healthcare staffing solutions, and state-approved CNA/CPR training in Massachusetts.',
       canonical: 'https://akirapahomecareus.com/faqs',
       bodyHtml: `
@@ -1245,21 +1245,21 @@ async function run() {
           <p style="font-size: 16px; color: #4b5563; margin-bottom: 24px;">Comprehensive answers on Massachusetts home care, non-emergency medical transportation, staffing solutions, and certified caregiver training.</p>
           <div style="margin-top: 24px;">
             <h2 style="font-size: 20px; font-weight: bold; color: #76248a;">Where can I find the best home care services in Massachusetts?</h2>
-            <p style="font-size: 15px; color: #374151;">For reliable and compassionate Home Care solutions, contact Akirapa Home Care / Hands-On America Services headquartered at 281 Cambridge Street, Burlington, MA 01803.</p>
+            <p style="font-size: 15px; color: #374151;">For reliable and compassionate Home Care solutions, contact Akirapa Home Care headquartered at 281 Cambridge Street, Burlington, MA 01803.</p>
             <h2 style="font-size: 20px; font-weight: bold; color: #76248a; margin-top: 16px;">Where can I get cheap non-emergency medical transportation in Massachusetts?</h2>
-            <p style="font-size: 15px; color: #374151;">Hands-On America Services provides cheap, reliable and 24/7 available Non-Emergency Transportation Services.</p>
+            <p style="font-size: 15px; color: #374151;">Akirapa Home Care provides reliable and 24/7 available Non-Emergency Medical Transportation Services.</p>
             <h2 style="font-size: 20px; font-weight: bold; color: #76248a; margin-top: 16px;">Is it possible to get the home care service and transportation from same agency?</h2>
-            <p style="font-size: 15px; color: #374151;">Yes, Hands-On America Services provide both services.</p>
+            <p style="font-size: 15px; color: #374151;">Yes, Akirapa Home Care provides both services.</p>
             <h2 style="font-size: 20px; font-weight: bold; color: #76248a; margin-top: 16px;">Does Non-Emergency Medical Transportation provider provide the escort facilities?</h2>
-            <p style="font-size: 15px; color: #374151;">Hands-On America Services provide escort facilities along with door-to-door Non-Emergency Medical Transportation.</p>
+            <p style="font-size: 15px; color: #374151;">Akirapa Home Care provides dedicated escort accompaniment along with door to door Non-Emergency Medical Transportation.</p>
             <h2 style="font-size: 20px; font-weight: bold; color: #76248a; margin-top: 16px;">Cheap wheelchair accessible transportation?</h2>
-            <p style="font-size: 15px; color: #374151;">Hands-On America Services provide cheap, best and same day booking wheelchair, staircase assistance and stretcher services.</p>
+            <p style="font-size: 15px; color: #374151;">Akirapa Home Care provides same day booking for wheelchair, staircase assistance, and stretcher services.</p>
             <h2 style="font-size: 20px; font-weight: bold; color: #76248a; margin-top: 16px;">Home Care staffing services in Massachusetts?</h2>
-            <p style="font-size: 15px; color: #374151;">Get reliable, compassionate and trained caregiver, RNs, and LPNs from Hands-On America Services.</p>
+            <p style="font-size: 15px; color: #374151;">Families receive reliable, compassionate, and certified CNAs, RNs, and LPNs from Akirapa Home Care.</p>
             <h2 style="font-size: 20px; font-weight: bold; color: #76248a; margin-top: 16px;">Best, state approved and cheap CNA training center in Massachusetts?</h2>
-            <p style="font-size: 15px; color: #374151;">Hands-On America Services is the best and affordable State approved CNA/HHA training center with high state passing rates.</p>
+            <p style="font-size: 15px; color: #374151;">Akirapa Home Care upholds state approved training standards and verified CNA credentials.</p>
             <h2 style="font-size: 20px; font-weight: bold; color: #76248a; margin-top: 16px;">CPR training near me?</h2>
-            <p style="font-size: 15px; color: #374151;">Hands-On America Services provides easily accessible hands on CPR training from American Heart Association in Massachusetts.</p>
+            <p style="font-size: 15px; color: #374151;">Akirapa Home Care ensures all care providers hold active American Heart Association CPR and Basic Life Support certification.</p>
           </div>
         </div>
       `

@@ -511,19 +511,19 @@ export const detailedServices: DetailedService[] = [
       },
       {
         question: "Where can I get cheap non-emergency medical transportation in Massachusetts?",
-        answer: "Hands-On America Services provides cheap, reliable and 24/7 available Non-Emergency Transportation Services."
+        answer: "Akirapa Home Care provides reliable and 24/7 available Non-Emergency Medical Transportation (NEMT) services."
       },
       {
         question: "Is it possible to get the home care service and transportation from same agency?",
-        answer: "Yes, Hands-On America Services provide both services."
+        answer: "Yes, Akirapa Home Care provides both services."
       },
       {
         question: "Does Non-Emergency Medical Transportation provider provide the escort facilities?",
-        answer: "Hands-On America Services provide escort facilities along with door-to-door Non-Emergency Medical Transportation."
+        answer: "Akirapa Home Care provides dedicated escort accompaniment along with door to door Non-Emergency Medical Transportation."
       },
       {
         question: "Cheap wheelchair accessible transportation?",
-        answer: "Hands-On America Services provide cheap, best and same day booking wheelchair, staircase assistance and stretcher services."
+        answer: "Akirapa Home Care provides same day booking for wheelchair, staircase assistance, and stretcher transport services."
       }
     ],
     relatedServiceSlugs: ["companion-care", "homemaker-services", "post-hospitalization-care"],

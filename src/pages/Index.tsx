@@ -152,15 +152,15 @@ const homepageFaqs = [
   },
   {
     question: "Where can I find the best home care services in Massachusetts?",
-    answer: "For reliable, compassionate, and affordable home care solutions, Akirapa Home Care / Hands-On America Services provides comprehensive care throughout Massachusetts. Headquartered at 281 Cambridge Street, Burlington, MA 01803, our licensed nurses and trained caregivers deliver personalized 24/7 in-home assistance, private-duty nursing, companionship, and specialized memory support."
+    answer: "For reliable, compassionate, and affordable home care solutions, Akirapa Home Care provides comprehensive care throughout Massachusetts. Headquartered at 281 Cambridge Street, Burlington, MA 01803, our licensed nurses and trained caregivers deliver personalized 24/7 in-home assistance, private-duty nursing, companionship, and specialized memory support."
   },
   {
     question: "Where can I get affordable and reliable non-emergency medical transportation (NEMT) in Massachusetts?",
-    answer: "Hands-On America Services provides affordable, reliable, and 24/7 available non-emergency medical transportation (NEMT) across Massachusetts. We provide door-to-door escort facilities for medical appointments, surgeries, dialysis sessions, everyday community needs, wheelchair assistance, staircase assistance, and stretcher services."
+    answer: "Akirapa Home Care provides reliable and 24/7 available non-emergency medical transportation (NEMT) across Massachusetts. We provide door to door escort accompaniment for medical appointments, surgeries, dialysis sessions, everyday community needs, wheelchair assistance, staircase assistance, and stretcher services."
   },
   {
     question: "Is it possible to get both home care service and transportation from the same agency?",
-    answer: "Yes! Hands-On America Services offers an integrated approach to care and support. Instead of coordinating multiple providers, families can access in-home care, private-duty nursing, and medical transportation through a single trusted company."
+    answer: "Yes, Akirapa Home Care offers an integrated approach to care and support. Instead of coordinating multiple providers, families can access in home care, private duty nursing, and medical transportation through a single trusted partner."
   },
   {
     question: "Does your non-emergency medical transportation provide escort facilities and wheelchair access?",

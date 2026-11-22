@@ -111,7 +111,12 @@ const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const { blogPosts } = useData();
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = blogPosts.find(
+    (p) =>
+      p.slug === slug ||
+      (slug === "home-care-healthcare-services-massachusetts-hands-on-america" &&
+        p.id === "post-comprehensive-home-care-massachusetts")
+  );
   const [views, setViews] = useState<number>(post?.initialViews || 350);
 
   useEffect(() => {

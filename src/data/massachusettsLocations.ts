@@ -388,7 +388,7 @@ export const massachusettsLocations: MALocation[] = [
     distanceFromHQ: "North of Burlington HQ (approx. 7 miles)",
     tagline: "24/7 In-Home Senior Care & Medical Transportation in Billerica, MA",
     shortDescription: "Serving Billerica families from our headquarters at 281 Cambridge Street, Burlington, MA. Providing 24/7 in-home senior care, private-duty nursing, non-emergency medical transportation, and healthcare staffing across Middlesex, Essex, Norfolk, and Suffolk counties.",
-    fullOverview: "Akirapa Home Care / Hands-On America Services provides a comprehensive range of healthcare and support services designed to meet the needs of individuals, families, caregivers, and healthcare organizations throughout Billerica and Massachusetts. Headquartered at 281 Cambridge Street in Burlington, MA, our dedicated caregiver pods provide round-the-clock home care, private-duty nursing, medical transportation, and assisted living placement with immediate local dispatch.",
+    fullOverview: "Akirapa Home Care provides a comprehensive range of healthcare and support services designed to meet the needs of individuals, families, caregivers, and healthcare organizations throughout Billerica and Massachusetts. Headquartered at 281 Cambridge Street in Burlington, MA, our dedicated caregiver pods provide round-the-clock home care, private-duty nursing, medical transportation, and assisted living placement with immediate local dispatch.",
     localHospitals: [
       { name: "Lahey Hospital & Medical Center", description: "Top regional teaching hospital and Level I trauma center adjacent in Burlington, MA." },
       { name: "Lowell General Hospital", description: "Comprehensive acute-care hospital system serving Greater Lowell and Middlesex County." },
@@ -404,35 +404,35 @@ export const massachusettsLocations: MALocation[] = [
     localFaqs: [
       {
         question: "Where can I find the best home care services in Massachusetts?",
-        answer: "For reliable and compassionate Home Care solutions, contact Akirapa Home Care / Hands-On America Services headquartered at 281 Cambridge Street, Burlington, MA 01803."
+        answer: "For reliable and compassionate Home Care solutions, contact Akirapa Home Care headquartered at 281 Cambridge Street, Burlington, MA 01803."
       },
       {
         question: "Where can I get cheap non-emergency medical transportation in Massachusetts?",
-        answer: "Hands-On America Services provides cheap, reliable and 24/7 available Non-Emergency Transportation Services."
+        answer: "Akirapa Home Care provides reliable and 24/7 available Non-Emergency Transportation Services."
       },
       {
         question: "Is it possible to get the home care service and transportation from same agency?",
-        answer: "Yes, Hands-On America Services provide both services."
+        answer: "Yes, Akirapa Home Care provides both services."
       },
       {
         question: "Does Non-Emergency Medical Transportation provider provide the escort facilities?",
-        answer: "Hands-On America Services provide escort facilities along with door-to-door Non-Emergency Medical Transportation."
+        answer: "Akirapa Home Care provides dedicated escort accompaniment along with door to door Non-Emergency Medical Transportation."
       },
       {
         question: "Cheap wheelchair accessible transportation?",
-        answer: "Hands-On America Services provide cheap, best and same day booking wheelchair, staircase assistance and stretcher services."
+        answer: "Akirapa Home Care provides same day booking for wheelchair, staircase assistance, and stretcher services."
       },
       {
         question: "Home Care staffing services in Massachusetts?",
-        answer: "Get reliable, compassionate and trained caregiver, RNs, and LPNs from Hands-On America Services."
+        answer: "Families receive reliable, compassionate, and certified CNAs, RNs, and LPNs from Akirapa Home Care."
       },
       {
         question: "Best, state approved and cheap CNA training center in Massachusetts?",
-        answer: "Hands-On America Services is the best and affordable State approved CNA/HHA training center with high state passing rates."
+        answer: "Akirapa Home Care maintains rigorous training standards with state approved curriculum and certified CNA skill assessments."
       },
       {
         question: "CPR training near me?",
-        answer: "Hands-On America Services provides easily accessible hands on CPR training from American Heart Association in Massachusetts."
+        answer: "Akirapa Home Care ensures all care providers hold active American Heart Association CPR and Basic Life Support (BLS) certification."
       }
     ],
     metaTitle: "Home Care & Healthcare Services in Billerica, MA | Akirapa Home Care",

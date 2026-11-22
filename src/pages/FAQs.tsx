@@ -20,7 +20,7 @@ const FAQ_LIST: FAQItemData[] = [
     category: "home-care",
     categoryLabel: "In-Home Care",
     question: "Where can I find the best home care services in Massachusetts?",
-    answer: "For reliable, compassionate, and affordable Home Care solutions, contact Akirapa Home Care / Hands-On America Services headquartered at 281 Cambridge Street, Burlington, MA 01803. Our trained caregivers and licensed nurses provide personalized 24/7 in-home assistance, companionship, private-duty nursing, and specialized memory support across Middlesex, Essex, Norfolk, and Suffolk counties.",
+    answer: "For reliable, compassionate, and affordable Home Care solutions, contact Akirapa Home Care headquartered at 281 Cambridge Street, Burlington, MA 01803. Our trained caregivers and licensed nurses provide personalized 24/7 in-home assistance, companionship, private-duty nursing, and specialized memory support across Middlesex, Essex, Norfolk, and Suffolk counties.",
     highlight: true,
   },
   {
@@ -28,7 +28,7 @@ const FAQ_LIST: FAQItemData[] = [
     category: "transportation",
     categoryLabel: "Medical Transportation",
     question: "Where can I get cheap non-emergency medical transportation in Massachusetts?",
-    answer: "Hands-On America Services provides cheap, reliable, and 24/7 available Non-Emergency Transportation Services (NEMT) across Massachusetts. We provide door-to-door transportation for doctor appointments, hospital discharges, surgeries, dialysis sessions, physical therapy, and everyday community needs.",
+    answer: "Akirapa Home Care provides reliable and 24/7 available Non-Emergency Transportation Services (NEMT) across Massachusetts. We provide door-to-door transportation for doctor appointments, hospital discharges, surgeries, dialysis sessions, physical therapy, and everyday community needs.",
     highlight: true,
   },
   {
@@ -180,10 +180,10 @@ export default function FAQs() {
   return (
     <Layout>
       <SEO
-        title="Frequently Asked Questions (FAQ) | Hands-On America & Akirapa Home Care"
+        title="Frequently Asked Questions (FAQ) | Akirapa Home Care Massachusetts"
         description="Get answers about in-home senior care, 24/7 non-emergency medical transportation (NEMT), healthcare staffing solutions, and state-approved CNA/CPR training in Massachusetts."
         canonical="https://akirapahomecareus.com/faqs"
-        keywords="home care FAQ Massachusetts, medical transportation FAQ Billerica MA, NEMT Massachusetts, CNA training FAQ, healthcare staffing Massachusetts, Hands-On America Services"
+        keywords="home care FAQ Massachusetts, medical transportation FAQ Burlington MA, NEMT Massachusetts, senior care FAQ, home health aide MA, Akirapa Home Care"
         faqs={seoFaqs}
       />
 
