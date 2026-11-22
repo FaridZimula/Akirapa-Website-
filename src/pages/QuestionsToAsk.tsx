@@ -27,7 +27,7 @@ export default function QuestionsToAsk() {
       number: "01",
       question: "Will the same caregiver show up each week, or will a different stranger arrive at our door?",
       category: "Staffing & Quality",
-      whyItMatters: "Continuity of care is the single greatest predictor of safety, comfort, and cognitive stability—especially for seniors with dementia or Alzheimer's.",
+      whyItMatters: "Continuity of care is the single greatest predictor of safety, comfort, and cognitive stability, especially for seniors with dementia or Alzheimer's.",
       trapToAvoid: "Agencies operating like on-demand taxi dispatchers who send whoever is available that morning. A client with memory loss might see 8 different strangers in 2 weeks, triggering acute paranoia, wandering, or refusal of care.",
       plainLanguageFact: "At Akirapa Home Care, we assign dedicated 2-to-3 person Care Pods so clients see the same trusted, familiar caregivers on every shift.",
       howAkirapaAnswers: "We build dedicated 'Care Pods' (one primary CNA and two secondary backups who know Mom's exact routine). If your primary caregiver takes a vacation or is sick, a familiar backup steps in seamlessly."
@@ -67,7 +67,7 @@ export default function QuestionsToAsk() {
       number: "05",
       question: "What happens if a caregiver notices a health change or fall risk during a shift?",
       category: "Safety & Technology",
-      whyItMatters: "Small symptoms—like drinking less water or mild confusion—are often early warning signs of life-threatening Urinary Tract Infections (UTIs) or dehydration.",
+      whyItMatters: "Small symptoms (such as drinking less water or mild confusion) are often early warning signs of life-threatening Urinary Tract Infections (UTIs) or dehydration.",
       trapToAvoid: "Agencies that rely on paper binders left in the kitchen where notes aren't reviewed by a supervisor until the end of the week, or worse, until the client is in the ER.",
       plainLanguageFact: "Our caregivers complete mandatory 8-point welfare checks every shift, and any red flag triggers instant alerts to our Nurse Supervisor within 60 seconds.",
       howAkirapaAnswers: "Caregivers must complete an 8-point clinical welfare check in AkiVault at every shift completion. Any concerning metric (low appetite, fever, skin redness, fall risk) instantly fires an automated red-flag SMS to our on-call clinical nurse coordinator and the family."
@@ -77,7 +77,7 @@ export default function QuestionsToAsk() {
       number: "06",
       question: "What does home care cost in Burlington, and are there hidden assessment or startup fees?",
       category: "Pricing & Terms",
-      whyItMatters: "Families in crisis need transparent, predictable numbers immediately—not high-pressure sales calls or surprise billing fees.",
+      whyItMatters: "Families in crisis need transparent, predictable numbers immediately, not high-pressure sales calls or surprise billing fees.",
       trapToAvoid: "Agencies quoting a low 'teaser rate' over the phone, then adding $250 intake fees, fuel surcharges, weekend premiums, or administrative filing fees on your first bill.",
       plainLanguageFact: "Home care in Burlington typically ranges from $36 to $44 per hour for licensed CNAs. Akirapa has $0 intake fees and provides free in-home assessments.",
       howAkirapaAnswers: "Our rates in Burlington and Middlesex County range transparently between $36 and $44/hr depending on care intensity. We charge zero assessment fees, zero intake charges, and zero weekend surge penalties."

@@ -318,8 +318,8 @@ const BlogEditor: React.FC = () => {
           />
           <span className="font-semibold text-gray-600">
             {isSupabaseConnected
-              ? "Live Supabase Cloud Synchronized — Changes instantly reflect on production"
-              : "Local Storage Mode — Supabase keys not detected, changes saved locally"}
+              ? "Live Supabase Cloud Synchronized | Changes instantly reflect on production"
+              : "Local Storage Mode | Supabase keys not detected, changes saved locally"}
           </span>
         </div>
         <a

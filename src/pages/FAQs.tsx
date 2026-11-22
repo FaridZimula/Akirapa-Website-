@@ -91,14 +91,14 @@ const FAQ_LIST: FAQItemData[] = [
     category: "home-care",
     categoryLabel: "Contracts & Terms",
     question: "Do you require long-term binding contracts?",
-    answer: "No. We believe families should remain in total control of their care. We operate on a strict zero-contract model—you can start, adjust, pause, or end services anytime with zero financial lock-in or cancellation penalties.",
+    answer: "No. We believe families should remain in total control of their care. We operate on a strict zero-contract model: you can start, adjust, pause, or end services anytime with zero financial lock-in or cancellation penalties.",
   },
   {
     id: "urgent-discharge-start",
     category: "home-care",
     categoryLabel: "In-Home Care",
     question: "How quickly can care begin for an urgent hospital discharge?",
-    answer: "Our care coordinators are available 24/7 at +1 781-226-9910. In urgent situations—such as a hospital or rehab discharge from Lahey Hospital, Lowell General, Winchester Hospital, or Boston-area medical centers—we can initiate care within 2 to 4 hours.",
+    answer: "Our care coordinators are available 24/7 at +1 781-226-9910. In urgent situations, such as a hospital or rehab discharge from Lahey Hospital, Lowell General, Winchester Hospital, or Boston-area medical centers, we can initiate care within 2 to 4 hours.",
   },
   {
     id: "companion-vs-personal-care",
@@ -119,7 +119,7 @@ const FAQ_LIST: FAQItemData[] = [
     category: "home-care",
     categoryLabel: "Service Areas",
     question: "What areas in Massachusetts do you serve?",
-    answer: "We serve communities throughout Middlesex County, Essex County, Norfolk County, and Suffolk County—including Billerica, Burlington, Lexington, Bedford, Woburn, Winchester, Concord, Waltham, Arlington, Belmont, Boston, Cambridge, Newton, and surrounding Greater Boston and North Shore regions.",
+    answer: "We serve communities throughout Middlesex County, Essex County, Norfolk County, and Suffolk County, including Billerica, Burlington, Lexington, Bedford, Woburn, Winchester, Concord, Waltham, Arlington, Belmont, Boston, Cambridge, Newton, and surrounding Greater Boston and North Shore regions.",
   },
 ];
 

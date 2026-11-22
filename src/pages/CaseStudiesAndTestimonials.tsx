@@ -46,7 +46,7 @@ export default function CaseStudiesAndTestimonials() {
       thumbnail: "/CARE GIVER  (4).jpg",
       consentBadge: "Written Consent & HIPAA Media Release on File",
       quote: "Before Akirapa, I was waking up in cold sweats wondering if Mom fell or if her caregiver arrived. Seeing Sarah's GPS clock-in at 8:02 AM and reading her detailed notes at 4 PM changed my entire life.",
-      fullTranscript: "When Mom was diagnosed with early-stage memory loss and then had her hip surgery, my brothers and I were overwhelmed. I work full-time in corporate finance, and I felt like I was drowning. We tried another agency first, and it was a disaster—different strangers showed up every day, and nobody could tell me if Mom ate. When we switched to Akirapa, the difference was night and day. Sarah, our primary CNA, arrived on time every single morning. The AkiVault app sent an alert to my phone confirming she was there. By 4 PM, I had a full report on Mom's appetite, her physical therapy steps, and her mood. That transparency gave me my life and my sleep back."
+      fullTranscript: "When Mom was diagnosed with early-stage memory loss and then had her hip surgery, my brothers and I were overwhelmed. I work full-time in corporate finance, and I felt like I was drowning. We tried another agency first, and it was a disaster: different strangers showed up every day, and nobody could tell me if Mom ate. When we switched to Akirapa, the difference was night and day. Sarah, our primary CNA, arrived on time every single morning. The AkiVault app sent an alert to my phone confirming she was there. By 4 PM, I had a full report on Mom's appetite, her physical therapy steps, and her mood. That transparency gave me my life and my sleep back."
     },
     {
       id: "video-2",
@@ -69,8 +69,8 @@ export default function CaseStudiesAndTestimonials() {
       duration: "1:55",
       thumbnail: "/CARE GIVER  (6).jpg",
       consentBadge: "Written Consent & HIPAA Media Release on File",
-      quote: "People with Alzheimer's cannot handle a new face every day. Akirapa assigned us two dedicated caregivers—Grace and Michelle—who took the time to learn my husband's music and routine.",
-      fullTranscript: "My husband was becoming increasingly agitated around 4:30 PM each evening—what the doctors call sundowning. I was exhausted and close to tears every day. Akirapa didn't just send a sitter; they sent dementia-certified CNAs who brought gentle validation techniques. Grace would put on his favorite Big Band jazz records, make him warm herbal tea, and engage him with photo books. Within two weeks, the evening pacing and anxiety had almost completely stopped. That consistency saved our family."
+      quote: "People with Alzheimer's cannot handle a new face every day. Akirapa assigned us two dedicated caregivers (Grace and Michelle) who took the time to learn my husband's music and routine.",
+      fullTranscript: "My husband was becoming increasingly agitated around 4:30 PM each evening (what the doctors call sundowning). I was exhausted and close to tears every day. Akirapa didn't just send a sitter; they sent dementia-certified CNAs who brought gentle validation techniques. Grace would put on his favorite Big Band jazz records, make him warm herbal tea, and engage him with photo books. Within two weeks, the evening pacing and anxiety had almost completely stopped. That consistency saved our family."
     }
   ];
 

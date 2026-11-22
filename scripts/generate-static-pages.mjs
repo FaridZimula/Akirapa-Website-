@@ -101,7 +101,7 @@ async function run() {
   for (const comp of maCompetitors) {
     const slug = comp.slug;
     const pageUrl = `https://akirapahomecareus.com/ma-home-care-directory/${slug}`;
-    const pageTitle = `${comp.name} - ${comp.city}, MA | Care Reviews & Alternatives — Akirapa Home Care`;
+    const pageTitle = `${comp.name} - ${comp.city}, MA | Care Reviews & Alternatives | Akirapa Home Care`;
     const pageDesc = `Services Offered: ${comp.services.join(' · ')}. Researching ${comp.name} in ${comp.city}, MA? Review estimated rates (${comp.hourlyRate}), customer ratings (${comp.rating}/5), and compare with 24/7 CNA care from Akirapa Home Care.`;
     const pageKeywords = `${comp.name}, ${comp.name} ${comp.city} MA, ${comp.name} reviews, ${comp.name} pricing, ${comp.name} Massachusetts, home care in ${comp.city} MA, senior care ${comp.city}, in-home caregivers ${comp.region}, Akirapa Home Care`;
 
@@ -210,7 +210,7 @@ async function run() {
     const bodyHtml = `
       <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6;">
         <header style="background: #561868; color: white; padding: 24px 16px; text-align: center;">
-          <p style="margin: 0; font-size: 14px;">Akirapa Home Care Directory — Massachusetts In-Home Care Guide</p>
+          <p style="margin: 0; font-size: 14px;">Akirapa Home Care Directory | Massachusetts In-Home Care Guide</p>
           <p style="margin: 4px 0 0; font-size: 13px; color: #40ddd3;">24/7 Care Helpline: <strong>+1 781-226-9910</strong> | Burlington, MA</p>
         </header>
         
@@ -887,7 +887,7 @@ async function run() {
       bodyHtml: `
         <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 1000px; margin: 0 auto; padding: 32px 16px;">
           <header style="background: #561868; color: white; padding: 36px 16px; text-align: center; border-radius: 12px; margin-bottom: 32px;">
-            <h1 style="font-size: 36px; font-weight: 900; margin: 0 0 12px; color: #ffffff;">Akirapa Home Care — In-Home Senior Care in Massachusetts</h1>
+            <h1 style="font-size: 36px; font-weight: 900; margin: 0 0 12px; color: #ffffff;">Akirapa Home Care | In-Home Senior Care in Massachusetts</h1>
             <p style="font-size: 18px; color: #e9d5ff; max-width: 800px; margin: 0 auto 16px;">
               Compassionate in-home senior care headquartered at 281 Cambridge Street, Burlington, MA 01803. Serving Middlesex County and Greater Massachusetts.
             </p>
@@ -956,7 +956,7 @@ async function run() {
     },
     {
       path: 'about',
-      title: 'About Us | Premier Massachusetts Home Care — Akirapa Home Care',
+      title: 'About Us | Premier Massachusetts Home Care | Akirapa Home Care',
       description: 'Learn about Akirapa Home Care Inc., headquartered at 281 Cambridge Street, Burlington, MA. Our mission, certified CNA care team, and GPS-verified standards.',
       canonical: 'https://akirapahomecareus.com/about',
       bodyHtml: `
@@ -977,7 +977,7 @@ async function run() {
     },
     {
       path: 'contact',
-      title: 'Contact Us | Free Care Assessment — Akirapa Home Care',
+      title: 'Contact Us | Free Care Assessment | Akirapa Home Care',
       description: 'Contact Akirapa Home Care for a free in-home assessment. Serving Burlington, Middlesex County, Greater Boston, and Massachusetts. Call +1 781-226-9910.',
       canonical: 'https://akirapahomecareus.com/contact',
       bodyHtml: `

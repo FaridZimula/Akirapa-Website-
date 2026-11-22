@@ -488,7 +488,7 @@ const PrivacyPolicy = () => {
                 </p>
 
                 <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-3 text-sm">
-                  <h3 className="font-extrabold text-[#76248a] text-base">Akirapa Home Care Inc. — Privacy & Compliance Division</h3>
+                  <h3 className="font-extrabold text-[#76248a] text-base">Akirapa Home Care Inc. | Privacy & Compliance Division</h3>
                   <div className="space-y-1.5 text-gray-700">
                     <p><i className="fa-solid fa-user-shield text-[#76248a] w-5"></i> <strong>Attn:</strong> Privacy & Compliance Officer</p>
                     <p><i className="fa-solid fa-location-dot text-[#76248a] w-5"></i> <strong>Address:</strong> 281 Cambridge Street, Burlington, MA 01803</p>

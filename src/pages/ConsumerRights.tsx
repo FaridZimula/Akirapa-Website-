@@ -150,9 +150,9 @@ const ConsumerRights = () => {
                 If you or your family member ever experience dissatisfaction, safety concerns, or care disputes, we maintain a prompt 3-step escalation protocol:
               </p>
               <div className="space-y-2 text-xs sm:text-sm text-teal-950">
-                <p><strong>Step 1 — Immediate Care Coordinator Review:</strong> Call our 24/7 Burlington line at <a href="tel:+17812269910" className="underline font-bold">+1 781-226-9910</a>. Our team is alerted within 60 minutes.</p>
-                <p><strong>Step 2 — Supervisory Nurse Investigation:</strong> Our Supervising Registered Nurse conducts an in-person or telephone review within 24 hours.</p>
-                <p><strong>Step 3 — Written Resolution Conference:</strong> A formal action plan or caregiver replacement is presented within 48 to 72 hours.</p>
+                <p><strong>Step 1: Immediate Care Coordinator Review:</strong> Call our 24/7 Burlington line at <a href="tel:+17812269910" className="underline font-bold">+1 781-226-9910</a>. Our team is alerted within 60 minutes.</p>
+                <p><strong>Step 2: Supervisory Nurse Investigation:</strong> Our Supervising Registered Nurse conducts an in-person or telephone review within 24 hours.</p>
+                <p><strong>Step 3: Written Resolution Conference:</strong> A formal action plan or caregiver replacement is presented within 48 to 72 hours.</p>
               </div>
             </div>
 

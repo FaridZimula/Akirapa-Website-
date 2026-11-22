@@ -1,4 +1,4 @@
-# Akirapa Home Care — Facebook-to-Blog Direct Ingestion Guide (Option 3: Semi-Automated Review Queue)
+# Akirapa Home Care | Facebook-to-Blog Direct Ingestion Guide (Option 3: Semi-Automated Review Queue)
 
 This guide explains how your Facebook posts are ingested, transformed into full blog format, and published to your live website with the **Option 3: Semi-Automated Review Workflow**.
 

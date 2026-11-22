@@ -270,7 +270,7 @@ export const detailedServices: DetailedService[] = [
     title: "Respite Care Services",
     tagline: "Contract-Free, Flexible Relief Care for Family Caregivers in Burlington, MA",
     shortDescription: "Temporary, reliable in-home care giving primary family caregivers essential rest, peace of mind, and time to recharge.",
-    fullDefinition: "Family caregiving is an act of deep love, but without periodic rest, it can lead to physical exhaustion and burnout. Respite care from Akirapa Home Care provides short-term, flexible caregiver relief—whether for a few hours, a weekend, or several weeks—ensuring your loved one receives seamless, high-quality care while you restore your own energy.",
+    fullDefinition: "Family caregiving is an act of deep love, but without periodic rest, it can lead to physical exhaustion and burnout. Respite care from Akirapa Home Care provides short-term, flexible caregiver relief (whether for a few hours, a weekend, or several weeks), ensuring your loved one receives seamless, high-quality care while you restore your own energy.",
     whoCanBenefit: [
       "Family members providing primary daily care to aging parents or spouses",
       "Caregivers needing time off for personal medical appointments, work commitments, or vacations",
@@ -503,7 +503,7 @@ export const detailedServices: DetailedService[] = [
     faqs: [
       {
         question: "Is this curbside pickup or door-through-door assistance?",
-        answer: "Our service is full door-through-door assistance—caregivers walk clients inside clinics and wait with them throughout appointments."
+        answer: "Our service is full door-through-door assistance: caregivers walk clients inside clinics and wait with them throughout appointments."
       },
       {
         question: "What areas are covered for senior transportation?",
@@ -697,7 +697,7 @@ export const detailedServices: DetailedService[] = [
       },
       {
         question: "When is the right time to engage a senior care consultant?",
-        answer: "The best time is before a crisis occurs—such as when you first notice memory changes, frequent balance stumbles, or increasing caregiver stress. However, we also provide rapid crisis intervention following acute hospitalizations or sudden health declines."
+        answer: "The best time is before a crisis occurs, such as when you first notice memory changes, frequent balance stumbles, or increasing caregiver stress. However, we also provide rapid crisis intervention following acute hospitalizations or sudden health declines."
       },
       {
         question: "Can you help our family navigate Long-Term Care Insurance (LTCI)?",

@@ -23,7 +23,7 @@ export const massachusettsLocations: MALocation[] = [
     county: "Middlesex County",
     zipCodes: ["01803", "01805"],
     distanceFromHQ: "Headquarters Location (0 miles)",
-    tagline: "Headquarters of Akirapa Home Care — 24/7 CNA Care & Instant Local Response",
+    tagline: "Headquarters of Akirapa Home Care | 24/7 CNA Care & Instant Local Response",
     shortDescription: "Headquartered at 281 Cambridge Street, Burlington, MA. We provide contract-free hourly and 24/7 in-home senior care with 100% Certified Nursing Assistants and AkiVault™ GPS verification.",
     fullOverview: "As the corporate headquarters and central care dispatch hub of Akirapa Home Care, Burlington families receive our fastest response times, dedicated local caregiver pods, and immediate nurse supervisor check-ins. Situated minutes from Lahey Hospital & Medical Center, our certified caregivers assist Burlington seniors with safe hospital-to-home transitions, dementia care, medication management, and round-the-clock living assistance.",
     localHospitals: [
@@ -331,7 +331,7 @@ export const massachusettsLocations: MALocation[] = [
     distanceFromHQ: "13.5 miles from Burlington HQ",
     tagline: "Premier Private-Duty Elder Care Across Newton's 13 Villages",
     shortDescription: "Concierge in-home senior care in Newton, MA. Certified CNAs, Newton-Wellesley Hospital recovery, 24/7 live-in care, and zero contracts.",
-    fullOverview: "Serving all 13 villages of Newton—from Chestnut Hill and Newton Centre to West Newton, Waban, and Auburndale—Akirapa Home Care delivers bespoke, private-duty caregiving of the highest standard. Our CNAs assist with daily living activities, physical therapy exercises, nutritious culinary preparation, and round-the-clock living oversight.",
+    fullOverview: "Serving all 13 villages of Newton (from Chestnut Hill and Newton Centre to West Newton, Waban, and Auburndale), Akirapa Home Care delivers bespoke, private-duty caregiving of the highest standard. Our CNAs assist with daily living activities, physical therapy exercises, nutritious culinary preparation, and round-the-clock living oversight.",
     localHospitals: [
       { name: "Newton-Wellesley Hospital", description: "Mass General Brigham community hospital located on Washington Street in Newton." }
     ],

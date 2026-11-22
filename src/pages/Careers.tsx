@@ -559,7 +559,7 @@ const Careers = () => {
                   {/* Equal Opportunity Statement */}
                   <div className="text-xs text-gray-500 space-y-2 italic">
                     <p>
-                      If you are looking for a team that feels like family, we want to meet you. Apply today—we read every application personally.
+                      If you are looking for a team that feels like family, we want to meet you. Apply today: we read every application personally.
                     </p>
                     <p>
                       Akirapa Home Care is an equal opportunity employer and values diversity on all of our teams. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.

@@ -63,7 +63,7 @@ const Contact = () => {
     {
       question: "Is it possible to receive home care and medical transportation from the same agency?",
       answer:
-        "Yes, Akirapa Home Care provides both in home care services and non-emergency medical transportation (NEMT) with door-to-door escort, wheelchair, staircase, and stretcher facilities—giving you a single trusted point of contact."
+        "Yes, Akirapa Home Care provides both in home care services and non-emergency medical transportation (NEMT) with door-to-door escort, wheelchair, staircase, and stretcher facilities, giving you a single trusted point of contact."
     },
     {
       question: "Do you provide healthcare staffing for facilities and certified caregiver training?",

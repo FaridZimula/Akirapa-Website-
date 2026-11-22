@@ -107,7 +107,7 @@ const Profile = () => {
                   Step Up Uganda Youth Empowerment League (SUYEL) is a non-governmental organization dedicated to transforming the lives of young people through comprehensive empowerment programs. Founded with the belief that every young person deserves the opportunity to reach their full potential, we work tirelessly to break down barriers and create pathways to success.
                 </p>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Our organization operates at the intersection of education, skills development, and community engagement. We understand that true empowerment requires a holistic approach—one that addresses not just immediate needs but also builds long-term capacity for sustainable change.
+                  Our organization operates at the intersection of education, skills development, and community engagement. We understand that true empowerment requires a holistic approach that addresses not just immediate needs, but also builds long-term capacity for sustainable change.
                 </p>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Since our inception, SUYEL has impacted thousands of young lives across multiple communities. Through partnerships with local organizations, government agencies, and international bodies, we continue to expand our reach and deepen our impact. Learn more about the [dedicated team](file:///leadership) behind these initiatives.

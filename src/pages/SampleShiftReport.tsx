@@ -430,7 +430,7 @@ export default function SampleShiftReport() {
                   <div className="flex items-center gap-2 mb-3">
                     <i className="fa-solid fa-comment-medical text-[#76248a]"></i>
                     <h4 className="text-base font-bold text-gray-900">
-                      Caregiver's Personal Shift Narrative — Written by Sarah Jenkins, CNA
+                      Caregiver's Personal Shift Narrative (Written by Sarah Jenkins, CNA)
                     </h4>
                   </div>
                   <div className="bg-white p-4 rounded-xl border border-gray-200 text-sm text-gray-700 leading-relaxed italic">

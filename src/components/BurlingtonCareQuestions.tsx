@@ -107,7 +107,7 @@ export const BurlingtonCareQuestions: React.FC<BurlingtonCareQuestionsProps> = (
             Key Questions Every Family Asks in Burlington
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
-            When you need care for a parent, you need straight answers—not sales talk. Here is exactly how pricing, contracts, hours, and coverage work at Akirapa Home Care.
+            When you need care for a parent, you need straight answers, not sales talk. Here is exactly how pricing, contracts, hours, and coverage work at Akirapa Home Care.
           </p>
         </div>
 

@@ -18,7 +18,7 @@ const heroSlides = [
   {
     id: 1,
     title: "Concierge In-Home Care. Sophisticated Clinical Management.",
-    subtitle: "Managed securely via the AkiVault System—providing real-time documentation, automated Electronic Visit Verification (EVV), and an exclusive, fully encrypted 24/7 client family portal.",
+    subtitle: "Managed securely via the AkiVault System, providing real-time documentation, automated Electronic Visit Verification (EVV), and an exclusive, fully encrypted 24/7 client family portal.",
     bgImage: "/CARE GIVER  (4).jpg"
   },
   {
@@ -136,15 +136,15 @@ const homepageFaqs = [
   },
   {
     question: "How does Akirapa Home Care guarantee caregiver reliability and safety?",
-    answer: "Every caregiver at Akirapa Home Care undergoes rigorous multi-state criminal background checks, reference verifications, and clinical assessments—we hire only 1 in 25 applicants. Every shift is tracked through our proprietary AkiVault™ system with GPS-verified Electronic Visit Verification (EVV), mandatory 8-point welfare checks, and real-time alerts to families."
+    answer: "Every caregiver at Akirapa Home Care undergoes rigorous multi-state criminal background checks, reference verifications, and clinical assessments (we hire only 1 in 25 applicants). Every shift is tracked through our proprietary AkiVault™ system with GPS-verified Electronic Visit Verification (EVV), mandatory 8-point welfare checks, and real-time alerts to families."
   },
   {
     question: "Does Akirapa Home Care require long-term contracts?",
-    answer: "No. We believe families should remain in total control of their care. Akirapa Home Care operates on a strict zero-contract model—you can start, adjust, pause, or end services anytime with zero financial lock-in or cancellation penalties."
+    answer: "No. We believe families should remain in total control of their care. Akirapa Home Care operates on a strict zero-contract model: you can start, adjust, pause, or end services anytime with zero financial lock-in or cancellation penalties."
   },
   {
     question: "How quickly can home care services begin for an urgent hospital discharge in MA?",
-    answer: "Our clinical care coordinators are available 24/7 at +1 781-226-9910. In urgent situations—such as a hospital or rehab discharge from Lahey Hospital & Medical Center, Winchester Hospital, or Boston-area medical centers—we can initiate care within 24 to 48 hours."
+    answer: "Our clinical care coordinators are available 24/7 at +1 781-226-9910. In urgent situations, such as a hospital or rehab discharge from Lahey Hospital & Medical Center, Winchester Hospital, or Boston-area medical centers, we can initiate care within 24 to 48 hours."
   },
   {
     question: "What is the difference between companion care and personal care?",
@@ -168,7 +168,7 @@ const homepageFaqs = [
   },
   {
     question: "What healthcare staffing solutions and caregiver training programs are available?",
-    answer: "Hands-On America Services connects healthcare organizations with qualified professionals—including Certified Nursing Assistants (CNAs), Home Health Aides (HHAs), Licensed Practical Nurses (LPNs), Registered Nurses (RNs), Certified Medical Assistants, Behavioral Health Technicians, Phlebotomy Technicians, and support staff. Additionally, we offer state-approved CNA/HHA training with high passing rates, and American Heart Association (AHA) CPR and BLS training."
+    answer: "Hands-On America Services connects healthcare organizations with qualified professionals, including Certified Nursing Assistants (CNAs), Home Health Aides (HHAs), Licensed Practical Nurses (LPNs), Registered Nurses (RNs), Certified Medical Assistants, Behavioral Health Technicians, Phlebotomy Technicians, and support staff. Additionally, we offer state-approved CNA/HHA training with high passing rates, and American Heart Association (AHA) CPR and BLS training."
   }
 ];
 
@@ -302,7 +302,7 @@ const Index = () => {
               </div>
 
               <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.18] text-left">
-                Akirapa Home Care — In-Home Senior Care in Massachusetts
+                Akirapa Home Care | In-Home Senior Care in Massachusetts
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl font-bold text-[#561868] text-left animate-word-fade">

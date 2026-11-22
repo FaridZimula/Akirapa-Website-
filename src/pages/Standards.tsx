@@ -140,7 +140,7 @@ export default function Standards() {
               How Caregivers Are Verified as Certified Nurse Aides (CNAs)
             </h2>
             <p className="text-gray-600 text-base sm:text-lg mt-3 leading-relaxed">
-              In Massachusetts, private-duty home care agencies are not legally required to send certified CNAs for non-medical shifts—meaning many agencies send untrained companions for difficult mobility transfers. <strong className="text-gray-900">At Akirapa Home Care, all hands-on personal care is provided by verified CNAs.</strong>
+              In Massachusetts, private-duty home care agencies are not legally required to send certified CNAs for non-medical shifts, which means many agencies send untrained companions for difficult mobility transfers. <strong className="text-gray-900">At Akirapa Home Care, all hands-on personal care is provided by verified CNAs.</strong>
             </p>
           </div>
 
@@ -199,7 +199,7 @@ export default function Standards() {
               What a Red-Flag Alert Triggers & Exactly Who Responds
             </h2>
             <p className="text-gray-600 text-base sm:text-lg mt-3 leading-relaxed">
-              When an aging parent's health changes, hours matter. If a caregiver notices a subtle red flag during the mandatory 8-point welfare check, AkiVault does not wait for a weekly office review—it executes an automated clinical triage escalation.
+              When an aging parent's health changes, hours matter. If a caregiver notices a subtle red flag during the mandatory 8-point welfare check, AkiVault does not wait for a weekly office review; it executes an automated clinical triage escalation.
             </p>
           </div>
 

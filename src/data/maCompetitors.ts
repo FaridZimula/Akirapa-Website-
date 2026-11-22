@@ -284,7 +284,7 @@ export const maCompetitors: MACompetitor[] = [
     services: ["Hospice Care","Palliative Care","Pediatric Palliative Care","Home Nursing","Caregiver Support"],
     description: "Care Dimensions is the largest hospice and palliative care provider in Massachusetts, delivering advanced medical and emotional in-home care for patients facing advanced illnesses.",
     pros: ["Exceptional clinical reputation and comprehensive interdisciplinary team","Operates dedicated inpatient hospice houses in Lincoln and Danvers","24/7 medical on-call response for symptoms"],
-    considerations: ["Clinical hospice/palliative scope only — does not provide general non-medical housekeeping or hourly companion care","Eligibility requires physician certification","Medicare-driven guidelines"],
+    considerations: ["Clinical hospice/palliative scope only; does not provide general non-medical housekeeping or hourly companion care","Eligibility requires physician certification","Medicare-driven guidelines"],
     phone: "(888) 283-1722",
     address: "75 Sylvan St, Danvers, MA 01923"
   },

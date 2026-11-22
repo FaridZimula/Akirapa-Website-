@@ -343,7 +343,7 @@ const TermsOfService = () => {
                   </h2>
                 </div>
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                  All trademarks, service marks, software code, graphic designs, logos, and educational materials—including <strong>Akirapa Home Care™</strong>, <strong>AkiVault™</strong>, and site architecture—are the exclusive property of Akirapa Home Care Inc. You may not copy, reproduce, distribute, or modify any materials without express written authorization.
+                  All trademarks, service marks, software code, graphic designs, logos, and educational materials (including <strong>Akirapa Home Care™</strong>, <strong>AkiVault™</strong>, and site architecture) are the exclusive property of Akirapa Home Care Inc. You may not copy, reproduce, distribute, or modify any materials without express written authorization.
                 </p>
               </section>
 
@@ -384,7 +384,7 @@ const TermsOfService = () => {
                 </p>
 
                 <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-3 text-sm">
-                  <h3 className="font-extrabold text-[#76248a] text-base">Akirapa Home Care Inc. — Legal & Client Relations</h3>
+                  <h3 className="font-extrabold text-[#76248a] text-base">Akirapa Home Care Inc. | Legal & Client Relations</h3>
                   <div className="space-y-1.5 text-gray-700">
                     <p><i className="fa-solid fa-location-dot text-[#76248a] w-5"></i> <strong>Headquarters:</strong> 281 Cambridge Street, Burlington, MA 01803</p>
                     <p><i className="fa-solid fa-phone text-[#76248a] w-5"></i> <strong>24/7 Telephone:</strong> <a href="tel:+17812269910" className="text-[#76248a] font-bold hover:underline">+1 781-226-9910</a></p>
