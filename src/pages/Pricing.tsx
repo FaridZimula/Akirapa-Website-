@@ -269,7 +269,7 @@ export default function Pricing() {
               </div>
               <div className="p-3 bg-gray-50 rounded-xl border border-gray-100">
                 <strong className="text-gray-900 block mb-1">$39 – $41 / Hour</strong>
-                <span>Hands-on personal care: assisted shower/bathing, dressing, incontinence management, and 1-person pivot transfers.</span>
+                <span>Direct personal care: assisted shower/bathing, dressing, incontinence management, and 1-person pivot transfers.</span>
               </div>
               <div className="p-3 bg-gray-50 rounded-xl border border-gray-100">
                 <strong className="text-gray-900 block mb-1">$42 – $44 / Hour</strong>

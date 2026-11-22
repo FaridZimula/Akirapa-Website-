@@ -32,7 +32,7 @@ const initialJobOpenings: JobOpening[] = [
     payRate: "$24.00 - $30.00 per hour",
     payType: "Hourly",
     postedDate: "Aug 04, 2026",
-    description: "Provide hands-on personal care, assistance with daily living activities, medication reminders, and vital sign monitoring for seniors in private homes in Burlington, MA.",
+    description: "Provide direct personal care, assistance with daily living activities, medication reminders, and vital sign monitoring for seniors in private homes in Burlington, MA.",
     requirements: [
       "Active MA CNA or HHA certification",
       "Current CPR & First Aid certification",

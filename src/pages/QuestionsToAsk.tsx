@@ -39,7 +39,7 @@ export default function QuestionsToAsk() {
       category: "Staffing & Quality",
       whyItMatters: "Lifting an adult, assisting with a shower on slick tile, and preventing falls requires specialized clinical body mechanics.",
       trapToAvoid: "In Massachusetts, non-medical home care agencies are not legally required to hire CNAs. Many agencies quietly dispatch uncertified companions for difficult transfer shifts while billing families top-tier rates.",
-      plainLanguageFact: "All hands-on personal hygiene and transfer care at Akirapa is performed exclusively by certified CNAs verified on the Massachusetts DPH Registry.",
+      plainLanguageFact: "All personal hygiene and mobility transfer care at Akirapa is performed exclusively by certified CNAs verified on the Massachusetts DPH Registry.",
       howAkirapaAnswers: "Every caregiver providing personal care at Akirapa holds an active, unencumbered Massachusetts Certified Nurse Aide (CNA) license verified directly with the Department of Public Health, plus CPR/BLS certification."
     },
     {

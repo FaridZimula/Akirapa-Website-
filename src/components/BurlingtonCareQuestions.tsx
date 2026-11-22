@@ -37,7 +37,7 @@ export const BurlingtonCareQuestions: React.FC<BurlingtonCareQuestionsProps> = (
             In Burlington and surrounding Middlesex County communities, private-duty home care by certified nursing assistants typically ranges between <strong className="text-gray-900 font-bold">$36 and $44 per hour</strong>.
           </p>
           <p className="text-xs sm:text-sm text-gray-600 bg-purple-50/60 p-3 rounded-xl border border-[#76248a]/10">
-            <strong className="text-[#76248a]">Why rates vary:</strong> {getConditionContext()} Companion care sits at the lower end, while intensive hands-on transfers or advanced memory care sits toward $42–$44/hr. Akirapa Home Care has <strong className="text-gray-900">zero hidden intake fees, zero assessment charges, and zero weekend surge fees</strong>.
+            <strong className="text-[#76248a]">Why rates vary:</strong> {getConditionContext()} Companion care sits at the lower end, while intensive physical transfers or advanced memory care sits toward $42–$44/hr. Akirapa Home Care has <strong className="text-gray-900">zero hidden intake fees, zero assessment charges, and zero weekend surge fees</strong>.
           </p>
         </div>
       ),

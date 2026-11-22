@@ -36,7 +36,7 @@ const FAQ_LIST: FAQItemData[] = [
     category: "home-care",
     categoryLabel: "Integrated Care",
     question: "Is it possible to get the home care service and transportation from same agency?",
-    answer: "Yes, Hands-On America Services provide both services. Our integrated approach allows families and healthcare facilities to access in-home personal care, private-duty nursing, and medical transportation from one trusted company, giving you a single seamless point of contact for care coordination.",
+    answer: "Yes, Akirapa Home Care provides both services. Our integrated approach allows families and healthcare facilities to access in-home personal care, private-duty nursing, and medical transportation from one trusted company, giving you a single seamless point of contact for care coordination.",
     highlight: true,
   },
   {
@@ -44,7 +44,7 @@ const FAQ_LIST: FAQItemData[] = [
     category: "transportation",
     categoryLabel: "Medical Transportation",
     question: "Does Non-Emergency Medical Transportation provider provide the escort facilities?",
-    answer: "Yes! Hands-On America Services provide escort facilities along with door-to-door Non-Emergency Medical Transportation. Our trained caregivers assist clients from inside their living room, help navigate steps, provide physical balance support, escort them inside clinical waiting rooms, and assist with check-in paperwork.",
+    answer: "Yes! Akirapa Home Care provides escort facilities along with door-to-door Non-Emergency Medical Transportation. Our trained caregivers assist clients from inside their living room, help navigate steps, provide physical balance support, escort them inside clinical waiting rooms, and assist with check-in paperwork.",
     highlight: true,
   },
   {
@@ -52,7 +52,7 @@ const FAQ_LIST: FAQItemData[] = [
     category: "transportation",
     categoryLabel: "Medical Transportation",
     question: "Cheap wheelchair accessible transportation?",
-    answer: "Hands-On America Services provide cheap, best and same day booking wheelchair, staircase assistance and stretcher services. Vehicles are equipped with certified hydraulic lifts and secure tie-downs to ensure complete safety and comfort.",
+    answer: "Akirapa Home Care provides affordable, reliable, and same-day booking for wheelchair, staircase assistance, and stretcher services. Vehicles are equipped with certified hydraulic lifts and secure tie-downs to ensure complete safety and comfort.",
     highlight: true,
   },
   {
@@ -60,7 +60,7 @@ const FAQ_LIST: FAQItemData[] = [
     category: "staffing",
     categoryLabel: "Healthcare Staffing",
     question: "Home Care staffing services in Massachusetts?",
-    answer: "Get reliable, compassionate and trained caregivers, Registered Nurses (RNs), Licensed Practical Nurses (LPNs), Certified Nursing Assistants (CNAs), Home Health Aides (HHAs), Certified Medical Assistants, Behavioral Health Technicians, Phlebotomy Technicians, and housekeeping staff from Hands-On America Services. We support hospitals, nursing homes, assisted living facilities, and private clients statewide.",
+    answer: "Get reliable, compassionate, and trained caregivers, Registered Nurses (RNs), Licensed Practical Nurses (LPNs), Certified Nursing Assistants (CNAs), Home Health Aides (HHAs), Certified Medical Assistants, Behavioral Health Technicians, Phlebotomy Technicians, and housekeeping staff from Akirapa Home Care. We support hospitals, nursing homes, assisted living facilities, and private clients statewide.",
     highlight: true,
   },
   {
@@ -68,7 +68,7 @@ const FAQ_LIST: FAQItemData[] = [
     category: "training",
     categoryLabel: "Education & Training",
     question: "Best, state approved and cheap CNA training center in Massachusetts?",
-    answer: "Hands-On America Services is the best and affordable State approved CNA/HHA training center with high state passing rates. We offer comprehensive Nurse Aide Training (NAT), Home Health Aide (HHA) certification, hands-on clinical lab practice, and direct job placement opportunities.",
+    answer: "Akirapa Home Care connects healthcare facilities and students with state-approved CNA/HHA education pathways and direct career opportunities, offering comprehensive Nurse Aide Training (NAT), Home Health Aide (HHA) certification, practical clinical lab preparation, and clinical placement support.",
     highlight: true,
   },
   {
@@ -76,7 +76,7 @@ const FAQ_LIST: FAQItemData[] = [
     category: "training",
     categoryLabel: "Education & Training",
     question: "CPR training near me?",
-    answer: "Hands-On America Services provides easily accessible hands-on CPR training and Basic Life Support (BLS) certification from the American Heart Association (AHA) in Massachusetts, along with Alzheimer's and dementia specialized care training.",
+    answer: "Akirapa Home Care facilitates accessible CPR training and Basic Life Support (BLS) certification from the American Heart Association (AHA) in Massachusetts, along with Alzheimer's and dementia specialized care training.",
     highlight: true,
   },
   {
@@ -105,7 +105,7 @@ const FAQ_LIST: FAQItemData[] = [
     category: "home-care",
     categoryLabel: "Care Differences",
     question: "What is the difference between companion care and personal care?",
-    answer: "Companion care provides friendly social engagement, light housekeeping, meal preparation, and transportation without hands-on physical contact. Personal care involves certified nursing assistants (CNAs) or home health aides providing hands-on assistance with activities of daily living (ADLs) such as bathing, dressing, grooming, incontinence care, and mobility transfer.",
+    answer: "Companion care provides friendly social engagement, light housekeeping, meal preparation, and transportation without direct physical contact. Personal care involves certified nursing assistants (CNAs) or home health aides providing direct assistance with activities of daily living (ADLs) such as bathing, dressing, grooming, incontinence care, and mobility transfer.",
   },
   {
     id: "akivault-evv-verification",

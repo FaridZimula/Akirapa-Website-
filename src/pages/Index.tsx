@@ -148,7 +148,7 @@ const homepageFaqs = [
   },
   {
     question: "What is the difference between companion care and personal care?",
-    answer: "Companion care provides friendly social engagement, light housekeeping, meal preparation, and transportation without hands-on physical contact. Personal care involves certified nursing assistants (CNAs) or home health aides providing hands-on assistance with activities of daily living (ADLs) such as bathing, dressing, grooming, incontinence care, and mobility transfer."
+    answer: "Companion care provides friendly social engagement, light housekeeping, meal preparation, and transportation without direct physical contact. Personal care involves certified nursing assistants (CNAs) or home health aides providing direct assistance with activities of daily living (ADLs) such as bathing, dressing, grooming, incontinence care, and mobility transfer."
   },
   {
     question: "Where can I find the best home care services in Massachusetts?",
@@ -164,11 +164,11 @@ const homepageFaqs = [
   },
   {
     question: "Does your non-emergency medical transportation provide escort facilities and wheelchair access?",
-    answer: "Yes, Hands-On America Services provides door-to-door escort facilities along with same-day booking for wheelchair-accessible vehicles, staircase assistance, and stretcher transportation services."
+    answer: "Yes, Akirapa Home Care provides door-to-door escort facilities along with same-day booking for wheelchair-accessible vehicles, staircase assistance, and stretcher transportation services."
   },
   {
     question: "What healthcare staffing solutions and caregiver training programs are available?",
-    answer: "Hands-On America Services connects healthcare organizations with qualified professionals, including Certified Nursing Assistants (CNAs), Home Health Aides (HHAs), Licensed Practical Nurses (LPNs), Registered Nurses (RNs), Certified Medical Assistants, Behavioral Health Technicians, Phlebotomy Technicians, and support staff. Additionally, we offer state-approved CNA/HHA training with high passing rates, and American Heart Association (AHA) CPR and BLS training."
+    answer: "Akirapa Home Care connects healthcare organizations with qualified professionals, including Certified Nursing Assistants (CNAs), Home Health Aides (HHAs), Licensed Practical Nurses (LPNs), Registered Nurses (RNs), Certified Medical Assistants, Behavioral Health Technicians, Phlebotomy Technicians, and support staff. Additionally, we provide state-approved CNA/HHA education pathways and American Heart Association (AHA) CPR and BLS training."
   }
 ];
 

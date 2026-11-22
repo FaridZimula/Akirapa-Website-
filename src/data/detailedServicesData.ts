@@ -35,14 +35,14 @@ export const detailedServices: DetailedService[] = [
       "General supervision and safety oversight around the home"
     ],
     familyConsiderations: [
-      "Companion care is non-medical and focuses on social/emotional wellness rather than hands-on personal hygiene.",
+      "Companion care is non-medical and focuses on social/emotional wellness rather than direct personal hygiene assistance.",
       "Visits can be scheduled flexibly from a few hours a week to daily companion shifts.",
       "Companion care can easily be expanded into personal care or specialized dementia care as needs evolve."
     ],
     faqs: [
       {
         question: "What is the difference between companion care and personal care?",
-        answer: "Companion care focuses on social connection, emotional support, hobbies, and light household help without direct physical contact. Personal care includes hands-on assistance with activities of daily living such as bathing, dressing, grooming, and mobility."
+        answer: "Companion care focuses on social connection, emotional support, hobbies, and light household help without direct physical contact. Personal care includes direct assistance with activities of daily living such as bathing, dressing, grooming, and mobility."
       },
       {
         question: "Can companion caregivers drive clients to local appointments in Burlington?",
@@ -89,7 +89,7 @@ export const detailedServices: DetailedService[] = [
       },
       {
         question: "What private-duty nursing and healthcare staffing services are provided?",
-        answer: "Hands-On America Services provides private-duty nursing through licensed nurses (RNs, LPNs), therapists, and experienced healthcare professionals in the home, as well as connecting hospitals and healthcare facilities with qualified CNAs, HHAs, and clinical specialists."
+        answer: "Akirapa Home Care provides private-duty nursing through licensed nurses (RNs, LPNs), therapists, and experienced healthcare professionals in the home, as well as connecting hospitals and healthcare facilities with qualified CNAs, HHAs, and clinical specialists."
       }
     ],
     relatedServiceSlugs: ["post-hospitalization-care", "medication-assistance", "24-hour-home-care"],
@@ -123,7 +123,7 @@ export const detailedServices: DetailedService[] = [
     faqs: [
       {
         question: "How does Akirapa work alongside a hospice agency?",
-        answer: "Our caregivers provide continuous hands-on personal care, positioning, and family support, while the hospice agency manages clinical medications, medical equipment, and physician visits."
+        answer: "Our caregivers provide continuous direct personal care, positioning, and family support, while the hospice agency manages clinical medications, medical equipment, and physician visits."
       },
       {
         question: "Can hospice supportive care be provided 24/7 in Burlington?",
@@ -138,8 +138,8 @@ export const detailedServices: DetailedService[] = [
     slug: "personal-care",
     title: "Personal Care Services",
     tagline: "Dignified Assistance with Activities of Daily Living in Burlington, MA",
-    shortDescription: "Respectful, hands-on personal assistance with bathing, dressing, mobility, grooming, and personal hygiene.",
-    fullDefinition: "Personal care encompasses direct hands-on support for individuals who experience physical limitations, mobility challenges, or cognitive changes that impair their ability to perform daily self-care tasks. Akirapa Home Care certified caregivers treat every client with profound respect, ensuring privacy, physical safety, and personal dignity.",
+    shortDescription: "Respectful, direct personal assistance with bathing, dressing, mobility, grooming, and personal hygiene.",
+    fullDefinition: "Personal care encompasses dedicated one-on-one support for individuals who experience physical limitations, mobility challenges, or cognitive changes that impair their ability to perform daily self-care tasks. Akirapa Home Care certified caregivers treat every client with profound respect, ensuring privacy, physical safety, and personal dignity.",
     whoCanBenefit: [
       "Seniors experiencing physical frailty, arthritis, or severe balance issues",
       "Individuals recovering from surgeries or stroke with impaired mobility",
@@ -693,7 +693,7 @@ export const detailedServices: DetailedService[] = [
     faqs: [
       {
         question: "What is the difference between a care consultant and a home caregiver?",
-        answer: "A home caregiver provides hands-on personal support, companionship, and daily assistance. A care consultant (or geriatric care manager) provides strategic oversight, clinical assessments, healthcare system navigation, insurance guidance, and ongoing care plan coordination."
+        answer: "A home caregiver provides direct personal support, companionship, and daily assistance. A care consultant (or geriatric care manager) provides strategic oversight, clinical assessments, healthcare system navigation, insurance guidance, and ongoing care plan coordination."
       },
       {
         question: "When is the right time to engage a senior care consultant?",

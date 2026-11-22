@@ -134,7 +134,7 @@ export const projects = [
     {
         title: "Tech & Innovation: Mastering the New Economy",
         category: "Technology",
-        description: "SUYEL, in collaboration with Startex Organization, Google Cloud Developers, and Kampala International University (KIU), hosted a transformative tech session. The program focused on building the 'mental infrastructure of discipline' while mastering the literal infrastructure of the future. Students engaged in hands-on learning about AI prompting, Robotics, and Virtual Reality, empowering them to become not just students, but masters and architects of the new economy.",
+        description: "SUYEL, in collaboration with Startex Organization, Google Cloud Developers, and Kampala International University (KIU), hosted a transformative tech session. The program focused on building the 'mental infrastructure of discipline' while mastering the literal infrastructure of the future. Students engaged in interactive, practical learning about AI prompting, Robotics, and Virtual Reality, empowering them to become not just students, but masters and architects of the new economy.",
         shortDescription: "Collaborative tech session with Google Cloud Developers and KIU on AI, Robotics, and VR.",
         impact: "Future Architects",
         images: ["/IT 1.jpeg", "/IT2.jpeg", "/IT3.jpeg"],

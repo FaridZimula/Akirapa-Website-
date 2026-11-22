@@ -1008,7 +1008,7 @@ async function run() {
             <li style="border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; background: #fafafa;">
               <h3 style="margin: 0 0 6px; font-size: 18px; color: #561868;">Caregiver Associate / CNA - Burlington, MA</h3>
               <p style="margin: 0 0 4px; color: #166534; font-weight: bold;">$24.00 - $30.00 per hour · Full Time</p>
-              <p style="margin: 0; color: #4b5563; font-size: 14px;">Hands-on personal care, ADL assistance, medication reminders for seniors in private homes.</p>
+              <p style="margin: 0; color: #4b5563; font-size: 14px;">Direct personal care, ADL assistance, medication reminders for seniors in private homes.</p>
             </li>
             <li style="border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; background: #fafafa;">
               <h3 style="margin: 0 0 6px; font-size: 18px; color: #561868;">Home Health Aide (HHA) - Woburn, MA</h3>

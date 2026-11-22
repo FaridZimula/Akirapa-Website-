@@ -46,7 +46,7 @@ export default function Standards() {
     },
     {
       step: "04",
-      title: "Hands-On Clinical Skills Assessment by an RN",
+      title: "Practical Clinical Skills Assessment by an RN",
       description:
         "We do not rely solely on paper resumes. Each CNA must demonstrate core competency in safe transfer mechanics (pivot, slide board, Hoyer lift), vitals measurement, infection control, and Alzheimer's de-escalation in front of our Registered Nurse supervisor.",
       tag: "RN-Supervised",
@@ -140,7 +140,7 @@ export default function Standards() {
               How Caregivers Are Verified as Certified Nurse Aides (CNAs)
             </h2>
             <p className="text-gray-600 text-base sm:text-lg mt-3 leading-relaxed">
-              In Massachusetts, private-duty home care agencies are not legally required to send certified CNAs for non-medical shifts, which means many agencies send untrained companions for difficult mobility transfers. <strong className="text-gray-900">At Akirapa Home Care, all hands-on personal care is provided by verified CNAs.</strong>
+              In Massachusetts, private-duty home care agencies are not legally required to send certified CNAs for non-medical shifts, which means many agencies send untrained companions for difficult mobility transfers. <strong className="text-gray-900">At Akirapa Home Care, all personal care is provided by verified CNAs.</strong>
             </p>
           </div>
 

@@ -103,7 +103,7 @@ export const massachusettsLocations: MALocation[] = [
     ],
     localLandmarks: ["Horn Pond", "Cummings Center", "Woburn Public Library", "Middlesex Canal"],
     popularServices: [
-      { title: "Personal Care & ADL Support", slug: "personal-care", description: "Hands-on help with bathing, mobility transfers, hygiene, and dressing." },
+      { title: "Personal Care & ADL Support", slug: "personal-care", description: "Direct assistance with bathing, mobility transfers, hygiene, and dressing." },
       { title: "Post-Hospital Recovery", slug: "post-hospitalization-care", description: "Discharge planning and safe home recovery after Winchester Hospital care." },
       { title: "24-Hour Home Care", slug: "24-hour-home-care", description: "Round-the-clock awake CNA supervision for fall prevention and nighttime security." }
     ],
@@ -366,7 +366,7 @@ export const massachusettsLocations: MALocation[] = [
     ],
     localLandmarks: ["Belmont Center", "Belmont Hill", "Habitat Education Center and Wildlife Sanctuary", "Clay Pit Pond"],
     popularServices: [
-      { title: "Personal Care & Hygiene", slug: "personal-care", description: "Hands-on assistance with dressing, bathing, and mobility transfers." },
+      { title: "Personal Care & Hygiene", slug: "personal-care", description: "Dedicated assistance with dressing, bathing, and mobility transfers." },
       { title: "Dementia & Memory Care", slug: "dementia-care", description: "Supportive cognitive care tailored to seniors experiencing memory changes." },
       { title: "Respite & Companion Care", slug: "respite-care", description: "Reliable support giving family caregivers essential rest." }
     ],
