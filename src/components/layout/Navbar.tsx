@@ -348,63 +348,43 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Right: Socials/Badge & 1.5x Sized CTA Buttons */}
-          <div className="flex flex-col items-end gap-2 shrink-0">
-            {/* Badge & Social Media */}
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-1.5 bg-[#40ddd3] text-gray-950 px-2.5 py-0.5 rounded-full font-bold text-[11px] shadow-xs">
-                <i className="fa-solid fa-award text-xs text-[#76248a]"></i>
-                <span>#1 in Massachusetts</span>
-              </div>
-              <div className="flex items-center gap-1.5 pl-2 border-l border-white/20">
-                <a
-                  href="https://www.instagram.com/akirapahomecare/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram @akirapahomecare"
-                  title="Follow Akirapa on Instagram"
-                  className="w-7 h-7 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
-                >
-                  <i className="fa-brands fa-instagram text-xs"></i>
-                </a>
-                <a
-                  href="https://x.com/akirapahomecare"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X @akirapahomecare"
-                  title="Follow Akirapa on X"
-                  className="w-7 h-7 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
-                >
-                  <i className="fa-brands fa-x-twitter text-xs"></i>
-                </a>
-                <a
-                  href="https://www.facebook.com/profile.php?id=61593883607014"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook Akirapa Home Care"
-                  title="Follow Akirapa on Facebook"
-                  className="w-7 h-7 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
-                >
-                  <i className="fa-brands fa-facebook-f text-xs"></i>
-                </a>
-              </div>
+          {/* Right: Our Social Media Handles */}
+          <div className="flex items-center gap-3 shrink-0">
+            <div className="flex items-center gap-1.5 bg-[#40ddd3] text-gray-950 px-3 py-1 rounded-full font-bold text-xs shadow-xs">
+              <i className="fa-solid fa-share-nodes text-xs text-[#76248a]"></i>
+              <span>Our Social Media Handles</span>
             </div>
-
-            {/* Buttons reduced by half (compact, sleek & elegant) */}
-            <div className="flex items-center gap-2">
-              <Button
-                variant="outline"
-                asChild
-                className="border border-[#40ddd3] text-white hover:bg-[#40ddd3] hover:text-gray-950 font-bold h-8 px-3 xl:px-3.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-xs text-[11px] xl:text-xs bg-transparent"
+            <div className="flex items-center gap-1.5 pl-2.5 border-l border-white/20">
+              <a
+                href="https://www.instagram.com/akirapahomecare/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram @akirapahomecare"
+                title="Follow Akirapa on Instagram"
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
               >
-                <Link to="/pricing">Pricing &amp; Rates</Link>
-              </Button>
-              <Button
-                asChild
-                className="bg-[#40ddd3] hover:bg-white text-gray-950 hover:text-[#76248a] font-extrabold h-8 px-3.5 xl:px-4 rounded-lg shadow-xs button-shimmer hover:scale-105 transition-all text-[11px] xl:text-xs"
+                <i className="fa-brands fa-instagram text-sm"></i>
+              </a>
+              <a
+                href="https://x.com/akirapahomecare"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X @akirapahomecare"
+                title="Follow Akirapa on X"
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
               >
-                <Link to="/contact">Free Assessment</Link>
-              </Button>
+                <i className="fa-brands fa-x-twitter text-sm"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61593883607014"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook Akirapa Home Care"
+                title="Follow Akirapa on Facebook"
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
+              >
+                <i className="fa-brands fa-facebook-f text-sm"></i>
+              </a>
             </div>
           </div>
         </div>
