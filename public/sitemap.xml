@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
   <!-- Primary Pages -->
   <url>
@@ -41,6 +43,40 @@
     <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(4).jpg</image:loc>
+      <image:title>Akirapa Senior Care Blog</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(17).jpg</video:thumbnail_loc>
+      <video:title>Beyond Individual Care: How In-Home Caregiving Restores Family Confidence and Peace of Mind</video:title>
+      <video:description>Home care is never just about one person. Discover how professional caregiving lifts the silent emotional weight from families, restores parent-child bonds, and delivers lasting peace of mind.</video:description>
+      <video:player_loc allow_embed="yes">https://www.facebook.com/plugins/video.php?height=314&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2292883004603466%2F&amp;show_text=false&amp;width=560&amp;t=0</video:player_loc>
+      <video:publication_date>2026-11-17</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://akirapahomecareus.com">Akirapa Home Care</video:uploader>
+      <video:category>Caregiver Support</video:category>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(18).jpg</video:thumbnail_loc>
+      <video:title>The Shift to Predictive Care: Smarter, Proactive Approaches to Senior Wellness at Home</video:title>
+      <video:description>Traditional eldercare reacts after a crisis happens. Learn how predictive, proactive home care identifies early warning signs and protects senior wellness before emergencies occur.</video:description>
+      <video:player_loc allow_embed="yes">https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02egQQJdFwUntF4rpxQwtfcsnV4NuDnyojJTiy4y8wtdDD7dizj9GDQecdSyAGfMKTl%26id%3D61593883607014&amp;show_text=true&amp;width=500</video:player_loc>
+      <video:publication_date>2026-11-14</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://akirapahomecareus.com">Akirapa Home Care</video:uploader>
+      <video:category>Senior Safety</video:category>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(19).jpg</video:thumbnail_loc>
+      <video:title>Proactive Daily Care in Action: Personalized Routines That Prevent Hospital Readmissions</video:title>
+      <video:description>Proactive care isn&apos;t just a philosophy—it&apos;s an intentional daily routine. Explore how personalized care schedules, mobility support, and medication vigilance keep seniors safely thriving at home.</video:description>
+      <video:player_loc allow_embed="yes">https://www.facebook.com/plugins/video.php?height=314&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F5532265726997859%2F&amp;show_text=false&amp;width=560&amp;t=0</video:player_loc>
+      <video:publication_date>2026-11-11</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://akirapahomecareus.com">Akirapa Home Care</video:uploader>
+      <video:category>Post-Hospital Recovery</video:category>
+    </video:video>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/careers</loc>
@@ -319,77 +355,159 @@
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(7).jpg</image:loc>
+      <image:title>The Vital Role of Assisted Senior Transportation: Preserving Independence &amp; Health</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/senior-care-consultancy-family-advisory-guide</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/Blog%20Posters/7.jpg</image:loc>
+      <image:title>Senior Care Consultancy &amp; Care Navigation: How Eldercare Advisors Guide Families</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/5-ways-to-regain-your-energy-after-caregiver-burnout</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/Blog%20Posters/7.jpg</image:loc>
+      <image:title>5 Ways to Regain Your Energy After Caregiver Burnout</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/how-family-caregivers-can-benefit-from-respite-care</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(13).jpg</image:loc>
+      <image:title>How Family Caregivers Can Benefit from Respite Care</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/four-fall-prevention-strategies-for-seniors</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800</image:loc>
+      <image:title>Four Fall Prevention Strategies for Seniors Living at Home</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/when-to-hire-senior-home-care-services</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/Blog%20Posters/13.png</image:loc>
+      <image:title>When Is it Time to Hire Senior Home Care Services?</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/supporting-loved-ones-with-early-stage-dementia</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(16).jpg</image:loc>
+      <image:title>Compassionate Strategies for Supporting Loved Ones with Early-Stage Dementia</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/safe-hospital-to-home-transition-guide</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(8).jpg</image:loc>
+      <image:title>The Ultimate Hospital-to-Home Transition Guide for Seniors</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/vital-nutrition-and-hydration-tips-for-seniors</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(5).jpg</image:loc>
+      <image:title>Vital Nutrition and Hydration Guidelines for Aging Well at Home</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/navigating-massachusetts-senior-care-options</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/Blog%20Posters/13.png</image:loc>
+      <image:title>Navigating Senior Care Options in Massachusetts: A Family Guide</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/beyond-individual-care-family-confidence-peace-of-mind</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(17).jpg</image:loc>
+      <image:title>Beyond Individual Care: How In-Home Caregiving Restores Family Confidence and Peace of Mind</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(17).jpg</video:thumbnail_loc>
+      <video:title>Beyond Individual Care: How In-Home Caregiving Restores Family Confidence and Peace of Mind</video:title>
+      <video:description>Home care is never just about one person. Discover how professional caregiving lifts the silent emotional weight from families, restores parent-child bonds, and delivers lasting peace of mind.</video:description>
+      <video:player_loc allow_embed="yes">https://www.facebook.com/plugins/video.php?height=314&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2292883004603466%2F&amp;show_text=false&amp;width=560&amp;t=0</video:player_loc>
+      <video:publication_date>2026-11-17</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://akirapahomecareus.com">Akirapa Home Care</video:uploader>
+      <video:category>Caregiver Support</video:category>
+    </video:video>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/predictive-care-smarter-proactive-senior-wellness-at-home</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(18).jpg</image:loc>
+      <image:title>The Shift to Predictive Care: Smarter, Proactive Approaches to Senior Wellness at Home</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(18).jpg</video:thumbnail_loc>
+      <video:title>The Shift to Predictive Care: Smarter, Proactive Approaches to Senior Wellness at Home</video:title>
+      <video:description>Traditional eldercare reacts after a crisis happens. Learn how predictive, proactive home care identifies early warning signs and protects senior wellness before emergencies occur.</video:description>
+      <video:player_loc allow_embed="yes">https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02egQQJdFwUntF4rpxQwtfcsnV4NuDnyojJTiy4y8wtdDD7dizj9GDQecdSyAGfMKTl%26id%3D61593883607014&amp;show_text=true&amp;width=500</video:player_loc>
+      <video:publication_date>2026-11-14</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://akirapahomecareus.com">Akirapa Home Care</video:uploader>
+      <video:category>Senior Safety</video:category>
+    </video:video>
   </url>
   <url>
     <loc>https://akirapahomecareus.com/blog/proactive-daily-care-in-action-preventing-hospital-readmissions</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(19).jpg</image:loc>
+      <image:title>Proactive Daily Care in Action: Personalized Routines That Prevent Hospital Readmissions</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(19).jpg</video:thumbnail_loc>
+      <video:title>Proactive Daily Care in Action: Personalized Routines That Prevent Hospital Readmissions</video:title>
+      <video:description>Proactive care isn&apos;t just a philosophy—it&apos;s an intentional daily routine. Explore how personalized care schedules, mobility support, and medication vigilance keep seniors safely thriving at home.</video:description>
+      <video:player_loc allow_embed="yes">https://www.facebook.com/plugins/video.php?height=314&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F5532265726997859%2F&amp;show_text=false&amp;width=560&amp;t=0</video:player_loc>
+      <video:publication_date>2026-11-11</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://akirapahomecareus.com">Akirapa Home Care</video:uploader>
+      <video:category>Post-Hospital Recovery</video:category>
+    </video:video>
   </url>
 </urlset>

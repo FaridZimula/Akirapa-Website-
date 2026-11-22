@@ -448,11 +448,37 @@ async function run() {
       </div>
     `;
 
+    const jsonLdList = [blogPostingSchema, breadcrumbSchema];
+
+    if (post.videoEmbed) {
+      const match = post.videoEmbed.match(/src=["'](.*?)["']/);
+      const embedUrl = match ? match[1] : (post.facebookUrl || '');
+      const videoObjectSchema = {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": post.title,
+        "description": postDesc,
+        "thumbnailUrl": [postImageUrl],
+        "uploadDate": isoDate,
+        "contentUrl": post.facebookUrl || embedUrl,
+        "embedUrl": embedUrl,
+        "publisher": {
+          "@type": "Organization",
+          "name": "Akirapa Home Care",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://akirapahomecareus.com/akirapa-logo.png"
+          }
+        }
+      };
+      jsonLdList.push(videoObjectSchema);
+    }
+
     writePage(`blog/${post.slug}`, {
       title: postTitle,
       description: postDesc,
       canonical: postUrl,
-      jsonLdList: [blogPostingSchema, breadcrumbSchema],
+      jsonLdList,
       bodyHtml: blogBodyHtml
     });
   }
@@ -1252,11 +1278,34 @@ async function run() {
   // ==========================================
   // 6. Generate Complete, Valid XML Sitemap
   // ==========================================
-  console.log('⚡ Generating comprehensive sitemap.xml with image tags...');
+  console.log('⚡ Generating comprehensive sitemap.xml with image and video tags...');
   const currentDate = new Date().toISOString().split('T')[0];
 
+  const escXml = (str = '') => String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+
+  const getEmbedUrl = (embedHtml, fallbackUrl) => {
+    if (!embedHtml) return fallbackUrl || '';
+    const match = embedHtml.match(/src=["'](.*?)["']/);
+    return match ? match[1] : (embedHtml.startsWith('http') ? embedHtml : fallbackUrl || '');
+  };
+
+  const getSafeImageUrl = (img) => {
+    if (!img) return 'https://akirapahomecareus.com/akirapa-og-image.jpg';
+    if (img.startsWith('http')) return img;
+    return `https://akirapahomecareus.com${encodeURI(img)}`;
+  };
+
+  const videoBlogPosts = blogPosts.filter(p => Boolean(p.videoEmbed));
+
   let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
   <!-- Primary Pages -->
   <url>
@@ -1298,6 +1347,20 @@ async function run() {
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://akirapahomecareus.com/CARE%20GIVER%20%20(4).jpg</image:loc>
+      <image:title>Akirapa Senior Care Blog</image:title>
+    </image:image>
+${videoBlogPosts.map(vp => `    <video:video>
+      <video:thumbnail_loc>${getSafeImageUrl(vp.image)}</video:thumbnail_loc>
+      <video:title>${escXml(vp.title)}</video:title>
+      <video:description>${escXml(vp.excerpt || vp.title)}</video:description>
+      <video:player_loc allow_embed="yes">${escXml(getEmbedUrl(vp.videoEmbed, vp.facebookUrl))}</video:player_loc>
+      <video:publication_date>${new Date(vp.date).toISOString().split('T')[0]}</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://akirapahomecareus.com">Akirapa Home Care</video:uploader>
+      <video:category>${escXml(vp.category)}</video:category>
+    </video:video>`).join('\n')}
   </url>
   <url>
     <loc>https://akirapahomecareus.com/careers</loc>
@@ -1416,11 +1479,29 @@ async function run() {
 
   sitemapXml += `\n  <!-- Blog Articles -->\n`;
   for (const p of blogPosts) {
+    const pImageUrl = getSafeImageUrl(p.image);
+    const pIsoDate = new Date(p.date).toISOString().split('T')[0];
+    const playerUrl = getEmbedUrl(p.videoEmbed, p.facebookUrl);
+
     sitemapXml += `  <url>
     <loc>https://akirapahomecareus.com/blog/${p.slug}</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>${pImageUrl}</image:loc>
+      <image:title>${escXml(p.title)}</image:title>
+    </image:image>${p.videoEmbed ? `
+    <video:video>
+      <video:thumbnail_loc>${pImageUrl}</video:thumbnail_loc>
+      <video:title>${escXml(p.title)}</video:title>
+      <video:description>${escXml(p.excerpt || p.title)}</video:description>
+      <video:player_loc allow_embed="yes">${escXml(playerUrl)}</video:player_loc>
+      <video:publication_date>${pIsoDate}</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://akirapahomecareus.com">Akirapa Home Care</video:uploader>
+      <video:category>${escXml(p.category)}</video:category>
+    </video:video>` : ''}
   </url>\n`;
   }
 
@@ -1430,6 +1511,66 @@ async function run() {
   fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml, 'utf8');
   fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml, 'utf8');
   console.log('✅ Generated sitemap.xml in public/ and dist/ successfully!');
+
+  // ==========================================
+  // 6b. Generate Dedicated Video XML Sitemap (sitemap-video.xml)
+  // ==========================================
+  console.log('⚡ Generating dedicated sitemap-video.xml for Google Video Search indexing...');
+  let sitemapVideoXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Hub Blog Page Featuring All Videos -->
+  <url>
+    <loc>https://akirapahomecareus.com/blog</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+${videoBlogPosts.map(vp => `    <video:video>
+      <video:thumbnail_loc>${getSafeImageUrl(vp.image)}</video:thumbnail_loc>
+      <video:title>${escXml(vp.title)}</video:title>
+      <video:description>${escXml(vp.excerpt || vp.title)}</video:description>
+      <video:player_loc allow_embed="yes">${escXml(getEmbedUrl(vp.videoEmbed, vp.facebookUrl))}</video:player_loc>
+      <video:publication_date>${new Date(vp.date).toISOString().split('T')[0]}</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://akirapahomecareus.com">Akirapa Home Care</video:uploader>
+      <video:category>${escXml(vp.category)}</video:category>
+    </video:video>`).join('\n')}
+  </url>
+
+  <!-- Individual Video Article Pages -->
+${videoBlogPosts.map(vp => {
+  const vpImg = getSafeImageUrl(vp.image);
+  const vpIso = new Date(vp.date).toISOString().split('T')[0];
+  const vpPlayer = getEmbedUrl(vp.videoEmbed, vp.facebookUrl);
+  return `  <url>
+    <loc>https://akirapahomecareus.com/blog/${vp.slug}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <video:video>
+      <video:thumbnail_loc>${vpImg}</video:thumbnail_loc>
+      <video:title>${escXml(vp.title)}</video:title>
+      <video:description>${escXml(vp.excerpt || vp.title)}</video:description>
+      <video:player_loc allow_embed="yes">${escXml(vpPlayer)}</video:player_loc>
+      <video:publication_date>${vpIso}</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://akirapahomecareus.com">Akirapa Home Care</video:uploader>
+      <video:category>${escXml(vp.category)}</video:category>
+    </video:video>
+  </url>`;
+}).join('\n')}
+</urlset>\n`;
+
+  fs.writeFileSync(path.join(publicDir, 'sitemap-video.xml'), sitemapVideoXml, 'utf8');
+  fs.writeFileSync(path.join(distDir, 'sitemap-video.xml'), sitemapVideoXml, 'utf8');
+  console.log('✅ Generated sitemap-video.xml in public/ and dist/ successfully!');
+
+  // Copy robots.txt to dist/
+  const robotsSrc = path.join(publicDir, 'robots.txt');
+  if (fs.existsSync(robotsSrc)) {
+    fs.copyFileSync(robotsSrc, path.join(distDir, 'robots.txt'));
+  }
 
   // Copy llms.txt and llms-full.txt to dist/ if not already copied
   const llmsSrc = path.join(publicDir, 'llms.txt');

@@ -136,6 +136,25 @@ const BlogPostPage = () => {
 
   const otherPosts = blogPosts.filter((p) => p.slug !== slug && p.status !== "draft").slice(0, 3);
 
+  const videoSchema = post.videoEmbed ? [{
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": post.title,
+    "description": post.excerpt,
+    "thumbnailUrl": [post.image.startsWith("http") ? post.image : `https://akirapahomecareus.com${encodeURI(post.image)}`],
+    "uploadDate": new Date(post.date).toISOString().split("T")[0],
+    "contentUrl": post.facebookUrl,
+    "embedUrl": post.videoEmbed.match(/src=["'](.*?)["']/)?.[1] || post.facebookUrl,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Akirapa Home Care",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://akirapahomecareus.com/akirapa-logo.png"
+      }
+    }
+  }] : undefined;
+
   return (
     <Layout>
       <SEO
@@ -154,6 +173,7 @@ const BlogPostPage = () => {
           { name: "Our Blog", path: "/blog" },
           { name: post.title, path: `/blog/${post.slug}` }
         ]}
+        schemaExtra={videoSchema}
       />
 
       {post.status === "draft" && (
