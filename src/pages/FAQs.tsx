@@ -20,7 +20,7 @@ const FAQ_LIST: FAQItemData[] = [
     category: "home-care",
     categoryLabel: "In-Home Care",
     question: "Where can I find the best home care services in Massachusetts?",
-    answer: "For reliable, compassionate, and affordable Home Care solutions, contact Hands-On America Services / Akirapa Home Care located at 572 Boston Road, Level 2, Suite 20, Billerica, MA (with headquarters in Burlington, MA). Our trained caregivers and licensed nurses provide personalized 24/7 in-home assistance, companionship, private-duty nursing, and specialized memory support across Middlesex, Essex, Norfolk, and Suffolk counties.",
+    answer: "For reliable, compassionate, and affordable Home Care solutions, contact Akirapa Home Care / Hands-On America Services headquartered at 281 Cambridge Street, Burlington, MA 01803. Our trained caregivers and licensed nurses provide personalized 24/7 in-home assistance, companionship, private-duty nursing, and specialized memory support across Middlesex, Essex, Norfolk, and Suffolk counties.",
     highlight: true,
   },
   {
@@ -359,14 +359,14 @@ export default function FAQs() {
                   Speak Directly With Our Care Specialists
                 </h2>
                 <p className="text-purple-100/90 text-sm sm:text-base leading-relaxed">
-                  Call us 24/7 or visit our Massachusetts offices in Billerica (572 Boston Road) or Burlington (281 Cambridge Street). We are ready to assist you anytime.
+                  Call us 24/7 or visit our Massachusetts headquarters in Burlington at 281 Cambridge Street, Burlington, MA 01803. We are ready to assist you anytime.
                 </p>
                 <div className="pt-2 flex flex-wrap gap-4 justify-center md:justify-start text-xs text-purple-200">
                   <span className="flex items-center gap-1.5">
                     <i className="fa-solid fa-phone text-[#40ddd3]"></i> +1 781-226-9910 (24/7 Helpline)
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <i className="fa-solid fa-location-dot text-[#40ddd3]"></i> 572 Boston Rd, Billerica, MA
+                    <i className="fa-solid fa-location-dot text-[#40ddd3]"></i> 281 Cambridge Street, Burlington, MA 01803
                   </span>
                 </div>
               </div>

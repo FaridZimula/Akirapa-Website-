@@ -152,7 +152,7 @@ const homepageFaqs = [
   },
   {
     question: "Where can I find the best home care services in Massachusetts?",
-    answer: "For reliable, compassionate, and affordable home care solutions, Hands-On America Services / Akirapa Home Care provides comprehensive care throughout Massachusetts. Headquartered in Middlesex County (with offices in Billerica and Burlington, MA), our licensed nurses and trained caregivers deliver personalized 24/7 in-home assistance, private-duty nursing, companionship, and specialized memory support."
+    answer: "For reliable, compassionate, and affordable home care solutions, Akirapa Home Care / Hands-On America Services provides comprehensive care throughout Massachusetts. Headquartered at 281 Cambridge Street, Burlington, MA 01803, our licensed nurses and trained caregivers deliver personalized 24/7 in-home assistance, private-duty nursing, companionship, and specialized memory support."
   },
   {
     question: "Where can I get affordable and reliable non-emergency medical transportation (NEMT) in Massachusetts?",

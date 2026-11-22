@@ -58,7 +58,7 @@ const Contact = () => {
     {
       question: "Where can I find the best home care and non-emergency transportation in Massachusetts?",
       answer:
-        "Hands-On America Services / Akirapa Home Care provides comprehensive home care and 24/7 non-emergency medical transportation across Middlesex, Essex, Norfolk, and Suffolk counties. You can contact our Billerica and Burlington offices anytime for immediate dispatch."
+        "Hands-On America Services / Akirapa Home Care provides comprehensive home care and 24/7 non-emergency medical transportation across Middlesex, Essex, Norfolk, and Suffolk counties. You can contact our Burlington headquarters at 281 Cambridge Street, Burlington, MA 01803 anytime for immediate dispatch."
     },
     {
       question: "Is it possible to receive home care and medical transportation from the same agency?",

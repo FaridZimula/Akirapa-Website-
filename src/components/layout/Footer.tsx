@@ -183,7 +183,7 @@ const Footer = () => {
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-2 text-xs text-white/80">
             <Link to="/locations/burlington-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Burlington, MA (HQ)</Link>
             <span className="text-white/30">•</span>
-            <Link to="/locations/billerica-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Billerica, MA (Hands-On America)</Link>
+            <Link to="/locations/billerica-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Billerica, MA</Link>
             <span className="text-white/30">•</span>
             <Link to="/locations/lexington-ma" className="hover:text-[#40ddd3] transition-colors font-semibold">Lexington, MA</Link>
             <span className="text-white/30">•</span>
