@@ -252,12 +252,18 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
                 const existingSlugs = new Set(parsed.map(p => p.slug || p.id));
                 const missingInitial = initialBlogPosts.filter(p => !existingSlugs.has(p.slug) && !existingSlugs.has(p.id));
                 
-                // Keep poster images in sync with initial data
+                // Keep poster images and video embeds in sync with initial data
                 const initialMap = new Map(initialBlogPosts.map(p => [p.id, p]));
                 const updatedParsed = parsed.map(p => {
                     const match = initialMap.get(p.id);
-                    if (match && match.image !== p.image) {
-                        return { ...p, image: match.image };
+                    if (match) {
+                        return {
+                            ...p,
+                            image: match.image,
+                            videoEmbed: match.videoEmbed || p.videoEmbed,
+                            facebookUrl: match.facebookUrl || p.facebookUrl,
+                            facebookPostId: match.facebookPostId || p.facebookPostId,
+                        };
                     }
                     return p;
                 });

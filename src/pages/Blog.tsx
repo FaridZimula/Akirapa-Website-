@@ -5,6 +5,7 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { useData } from "@/context/DataContext";
 import { BlogPost } from "@/data/blogPosts";
+import FacebookVideoEmbed from "@/components/blog/FacebookVideoEmbed";
 
 const TOPICS = [
   { id: "all", label: "All Topics", icon: "fa-newspaper" },
@@ -34,6 +35,7 @@ const getPostViews = (post: BlogPost): number => {
 const Blog = () => {
   const { blogPosts } = useData();
   const publishedPosts = blogPosts.filter((post) => post.status !== "draft");
+  const videoPosts = publishedPosts.filter((post) => Boolean(post.videoEmbed));
   const [selectedTopic, setSelectedTopic] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [viewsMap, setViewsMap] = useState<Record<string, number>>({});
@@ -355,6 +357,100 @@ const Blog = () => {
           </div>
         </div>
       </section>
+
+      {/* Featured Facebook Video Stories & Caregiver Spotlights */}
+      {videoPosts.length > 0 && (
+        <section className="py-12 md:py-16 bg-gradient-to-b from-purple-50/70 via-white to-gray-50 border-b border-purple-100">
+          <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div className="space-y-2 text-left">
+                <div className="inline-flex items-center gap-2 bg-[#76248a]/10 text-[#76248a] px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider">
+                  <i className="fa-brands fa-facebook text-[#1877f2] text-sm"></i>
+                  <span>Featured Video Stories</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
+                  Watch & Learn: Proactive Home Care in Action
+                </h2>
+                <p className="text-gray-600 text-sm max-w-2xl leading-relaxed">
+                  Watch our latest clinical reels and educational spotlights from the official Akirapa Facebook page, paired with in-depth companion articles written by our certified nursing assistants and care managers.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 shrink-0">
+                <a
+                  href="https://www.facebook.com/61593883607014"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#1877f2] hover:bg-[#166fe5] text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md transition-all hover:scale-105"
+                >
+                  <i className="fa-brands fa-facebook"></i>
+                  <span>Akirapa on Facebook</span>
+                  <i className="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
+            {/* Video Cards Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+              {videoPosts.map((post) => (
+                <div
+                  key={`video-${post.id}`}
+                  className="bg-white rounded-3xl overflow-hidden shadow-lg border border-purple-100 flex flex-col justify-between hover:border-purple-300 transition-all group hover:shadow-xl"
+                >
+                  <div className="p-4 sm:p-5 space-y-4">
+                    {/* Embedded Facebook Video/Post Player */}
+                    <FacebookVideoEmbed
+                      embedHtml={post.videoEmbed}
+                      url={post.facebookUrl}
+                      title={post.title}
+                      type={post.videoEmbed?.includes("plugins/post.php") ? "post" : "video"}
+                      className="shadow-md"
+                    />
+
+                    {/* Metadata & Title */}
+                    <div className="space-y-2 text-left pt-1">
+                      <div className="flex items-center justify-between text-xs font-medium text-gray-500">
+                        <span className="bg-[#76248a]/10 text-[#76248a] font-extrabold text-[10px] uppercase px-2.5 py-0.5 rounded-full">
+                          {post.category}
+                        </span>
+                        <span className="flex items-center gap-1 text-[11px]">
+                          <i className="fa-solid fa-clock text-gray-400"></i>
+                          {post.readTime}
+                        </span>
+                      </div>
+
+                      <h3 className="font-bold text-gray-900 text-base leading-snug group-hover:text-[#76248a] transition-colors">
+                        <Link to={`/blog/${post.slug}`}>
+                          {post.title}
+                        </Link>
+                      </h3>
+
+                      <p className="text-gray-600 text-xs leading-relaxed line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Card Action Footer */}
+                  <div className="p-4 sm:p-5 pt-0 mt-auto flex items-center justify-between gap-3 border-t border-gray-100 bg-gray-50/50">
+                    <span className="text-[11px] font-semibold text-gray-500 flex items-center gap-1.5 truncate">
+                      <i className="fa-solid fa-user-pen text-[#76248a]"></i>
+                      {post.author}
+                    </span>
+                    <Link
+                      to={`/blog/${post.slug}`}
+                      className="inline-flex items-center gap-1.5 bg-[#76248a] hover:bg-[#561868] text-white font-bold text-xs px-3.5 py-2 rounded-xl shadow-xs transition-all hover:scale-105 shrink-0"
+                    >
+                      <span>Read Article</span>
+                      <i className="fa-solid fa-arrow-right text-[10px]"></i>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Main Blog List View with Pagination */}
       <section className="section-padding bg-gray-50">

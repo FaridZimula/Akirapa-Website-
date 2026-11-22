@@ -415,6 +415,15 @@ async function run() {
             ${esc(post.excerpt)}
           </p>
 
+          ${post.videoEmbed ? `
+          <div style="margin: 28px 0; text-align: center; background: #0f172a; border-radius: 16px; padding: 16px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);">
+            <div style="max-width: 560px; margin: 0 auto;">
+              ${post.videoEmbed}
+            </div>
+            ${post.facebookUrl ? `<p style="margin-top: 10px; font-size: 13px;"><a href="${esc(post.facebookUrl)}" target="_blank" rel="noopener noreferrer" style="color: #40ddd3; font-weight: bold; text-decoration: underline;">Watch on Facebook →</a></p>` : ''}
+          </div>
+          ` : ''}
+
           <article style="font-size: 17px; color: #1f2937;">
             ${paragraphs.map(p => {
               if (p.startsWith('### ')) return `<h3 style="font-size: 20px; font-weight: bold; color: #561868; margin: 28px 0 12px;">${esc(p.replace('### ', ''))}</h3>`;

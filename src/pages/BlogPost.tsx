@@ -4,6 +4,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { useData } from "@/context/DataContext";
+import FacebookVideoEmbed from "@/components/blog/FacebookVideoEmbed";
 
 const parseBoldText = (text: string) => {
   const parts = text.split(/(\*\*.*?\*\*)/g);
@@ -230,6 +231,35 @@ const BlogPostPage = () => {
                 <p className="font-semibold text-lg text-gray-900 text-left border-l-4 border-[#76248a] pl-4 py-1 bg-[#76248a]/5 rounded-r-xl">
                   {post.excerpt}
                 </p>
+
+                {/* Embedded Video Feature */}
+                {post.videoEmbed && (
+                  <div className="my-8 space-y-2">
+                    <div className="flex items-center justify-between pb-1">
+                      <span className="text-xs font-black uppercase tracking-wider text-[#76248a] flex items-center gap-2">
+                        <i className="fa-brands fa-facebook text-[#1877f2] text-sm"></i>
+                        Accompanying Video Feature
+                      </span>
+                      {post.facebookUrl && (
+                        <a
+                          href={post.facebookUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-bold text-[#1877f2] hover:underline flex items-center gap-1"
+                        >
+                          Watch on Facebook
+                          <i className="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                      )}
+                    </div>
+                    <FacebookVideoEmbed
+                      embedHtml={post.videoEmbed}
+                      url={post.facebookUrl}
+                      title={post.title}
+                      type={post.videoEmbed.includes("plugins/post.php") ? "post" : "video"}
+                    />
+                  </div>
+                )}
 
                 {/* Article Content */}
                 <div className="prose prose-purple max-w-none text-gray-700 leading-relaxed text-base space-y-4 text-left">
