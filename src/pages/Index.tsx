@@ -227,7 +227,7 @@ const Index = () => {
       <section
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="relative pt-24 pb-20 sm:pt-28 sm:pb-24 md:pt-32 md:pb-28 lg:pt-36 lg:pb-32 bg-white text-gray-900 overflow-hidden border-b border-gray-100 min-h-[580px] md:min-h-[660px] flex items-center"
+        className="relative pt-8 pb-16 sm:pt-24 sm:pb-24 md:pt-32 md:pb-28 lg:pt-36 lg:pb-32 bg-white text-gray-900 overflow-hidden border-b border-gray-100 min-h-[460px] sm:min-h-[580px] md:min-h-[660px] flex items-start sm:items-center"
       >
         {/* Animated Background Landscape Images with Smooth Zoom Effect & Living Canvas */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -292,7 +292,7 @@ const Index = () => {
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="max-w-2xl lg:max-w-3xl space-y-6 text-left">
             <div key={slide.id} className="space-y-4 transition-all duration-700 ease-in-out animate-fadeIn">
-              <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.18] text-left">
+              <h1 className="text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.15] text-left">
                 In-Home Senior Care in Burlington, MA
               </h1>
               <p className="text-xs sm:text-sm font-bold text-gray-500 -mt-2 text-left">
