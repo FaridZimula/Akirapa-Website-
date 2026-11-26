@@ -394,7 +394,12 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white/95 hover:bg-[#40ddd3] text-gray-900 text-xs font-extrabold px-3.5 py-1.5 rounded-full shadow-sm transition-all duration-200 hover:scale-105"
             >
-              <i className="fa-brands fa-google text-[#76248a] text-xs"></i>
+              <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z" />
+                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24Z" />
+                <path fill="#FBBC05" d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14Z" />
+                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96Z" />
+              </svg>
               <span className="flex items-center gap-0.5 text-amber-400">
                 <i className="fa-solid fa-star text-[10px]"></i>
                 <i className="fa-solid fa-star text-[10px]"></i>
@@ -567,7 +572,7 @@ const Navbar = () => {
                   isActive
                     ? "bg-[#76248a] text-white shadow-xs scale-105"
                     : isAkiVault
-                    ? "text-[#76248a] bg-purple-50/90 hover:bg-[#76248a] hover:text-white border border-[#76248a]/20 shadow-xs"
+                    ? "bg-[#76248a] hover:bg-[#561868] text-white shadow-xs hover:scale-105 active:scale-95"
                     : "text-gray-700 hover:text-[#76248a] hover:bg-gray-100 hover:scale-105 active:scale-95"
                 }`}
               >
@@ -676,7 +681,7 @@ const Navbar = () => {
                     isActive
                       ? "bg-[#76248a] text-white shadow-sm"
                       : isAkiVault
-                      ? "text-[#76248a] bg-purple-50 hover:bg-[#76248a] hover:text-white border border-[#76248a]/20"
+                      ? "bg-[#76248a] hover:bg-[#561868] text-white shadow-sm"
                       : "text-gray-700 hover:text-[#76248a] hover:bg-gray-100"
                   }`}
                 >
@@ -734,6 +739,28 @@ const Navbar = () => {
                   <i className="fa-brands fa-facebook-f text-sm"></i>
                 </a>
               </div>
+              <a
+                href="https://www.google.com/search?q=Akirapa+Home+Care+Inc.+Burlington+MA#lrd=0x89e39f0e7f3ceda9:0xb8173043064ff6df,3,,,,"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="mt-2 inline-flex items-center justify-center gap-2 w-full bg-white hover:bg-[#40ddd3] text-gray-900 border border-[#76248a]/20 text-xs font-extrabold px-3.5 py-2.5 rounded-xl shadow-xs transition-all duration-200"
+              >
+                <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z" />
+                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24Z" />
+                <path fill="#FBBC05" d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14Z" />
+                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96Z" />
+              </svg>
+                <span className="flex items-center gap-0.5 text-amber-400">
+                  <i className="fa-solid fa-star text-[10px]"></i>
+                  <i className="fa-solid fa-star text-[10px]"></i>
+                  <i className="fa-solid fa-star text-[10px]"></i>
+                  <i className="fa-solid fa-star text-[10px]"></i>
+                  <i className="fa-solid fa-star text-[10px]"></i>
+                </span>
+                <span>Leave a Review</span>
+              </a>
             </div>
 
             {/* Quick Strategy Links for Families */}
@@ -741,7 +768,7 @@ const Navbar = () => {
               <Link
                 to="/questions-to-ask-a-home-care-agency"
                 onClick={() => setIsOpen(false)}
-                className="p-2.5 rounded-xl bg-purple-50 hover:bg-[#76248a] text-[#76248a] hover:text-white font-bold text-xs text-center border border-[#76248a]/20 transition-all"
+                className="p-2.5 rounded-xl bg-[#76248a] hover:bg-[#561868] text-white font-bold text-xs text-center shadow-xs transition-all"
               >
                 <i className="fa-solid fa-list-check block mb-1 text-sm text-[#40ddd3]"></i>
                 10 Questions to Ask
@@ -749,7 +776,7 @@ const Navbar = () => {
               <Link
                 to="/case-studies"
                 onClick={() => setIsOpen(false)}
-                className="p-2.5 rounded-xl bg-purple-50 hover:bg-[#76248a] text-[#76248a] hover:text-white font-bold text-xs text-center border border-[#76248a]/20 transition-all"
+                className="p-2.5 rounded-xl bg-[#76248a] hover:bg-[#561868] text-white font-bold text-xs text-center shadow-xs transition-all"
               >
                 <i className="fa-solid fa-video block mb-1 text-sm text-[#40ddd3]"></i>
                 Case Studies &amp; Videos

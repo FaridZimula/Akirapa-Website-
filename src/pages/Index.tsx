@@ -227,7 +227,7 @@ const Index = () => {
       <section
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="relative pt-8 pb-16 sm:pt-24 sm:pb-24 md:pt-32 md:pb-28 lg:pt-36 lg:pb-32 bg-white text-gray-900 overflow-hidden border-b border-gray-100 min-h-[460px] sm:min-h-[580px] md:min-h-[660px] flex items-start sm:items-center"
+        className="relative pt-8 pb-20 sm:pt-24 sm:pb-24 md:pt-32 md:pb-28 lg:pt-36 lg:pb-32 bg-white text-gray-900 overflow-hidden border-b border-gray-100 min-h-[460px] sm:min-h-[580px] md:min-h-[660px] flex items-start sm:items-center"
       >
         {/* Animated Background Landscape Images with Smooth Zoom Effect & Living Canvas */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -274,7 +274,7 @@ const Index = () => {
         </div>
 
         {/* Slide Indicators */}
-        <div className="absolute bottom-20 sm:bottom-22 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+        <div className="absolute bottom-10 sm:bottom-16 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
           {heroSlides.map((_, index) => (
             <button
               key={index}
@@ -326,7 +326,7 @@ const Index = () => {
               </Link>
             </p>
 
-            <div className="pt-6 border-t border-gray-300/70 flex flex-wrap justify-start gap-5 sm:gap-7 text-xs sm:text-sm font-bold text-gray-700">
+            <div className="pt-4 sm:pt-6 border-t border-gray-300/70 flex flex-wrap justify-start gap-x-5 gap-y-2.5 sm:gap-7 text-xs sm:text-sm font-bold text-gray-700">
               <div className="flex items-center gap-2 group transition-transform duration-200 hover:translate-x-1">
                 <i className="fa-solid fa-circle-check text-[#0d9488] text-base group-hover:scale-125 transition-transform"></i>
                 <span>Licensed Caregivers</span>
@@ -821,9 +821,6 @@ const Index = () => {
       <section className="py-16 md:py-20 bg-white border-b border-gray-100">
         <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-10">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1 rounded-full inline-block">
-              Middlesex County & Eastern Massachusetts
-            </span>
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
               Massachusetts Communities We Serve
             </h2>
@@ -990,9 +987,6 @@ const Index = () => {
             {/* Left: Testimonials List */}
             <div className="lg:col-span-7 space-y-6">
               <div className="space-y-2">
-                <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1 rounded-full inline-block">
-                  Verified Family Experiences
-                </span>
                 <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
                   Stories of Care & Trust
                 </h2>
@@ -1036,7 +1030,12 @@ const Index = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 w-full bg-white text-[#76248a] hover:bg-[#40ddd3] hover:text-gray-950 font-extrabold text-xs sm:text-sm py-2.5 px-4 rounded-xl shadow-md transition-all duration-200"
                 >
-                  <i className="fa-brands fa-google text-sm"></i>
+                  <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z" />
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24Z" />
+                    <path fill="#FBBC05" d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14Z" />
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96Z" />
+                  </svg>
                   <span>Leave a Review on Google</span>
                   <i className="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
                 </a>
@@ -1235,9 +1234,6 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-gray-50/70 border-b border-gray-100">
         <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1 rounded-full inline-block">
-              Frequently Asked Questions
-            </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
               Common Questions About Home Care in Massachusetts
             </h2>
