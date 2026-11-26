@@ -14,30 +14,30 @@ export const BurlingtonCareQuestions: React.FC<BurlingtonCareQuestionsProps> = (
   const getConditionContext = () => {
     switch (conditionFocus) {
       case "dementia":
-        return "Specialized Alzheimer's & dementia memory care in Burlington typically falls in the $38 - $44/hr range due to specialized cognitive engagement training.";
+        return "Specialized Alzheimer's & dementia memory care in Burlington includes dedicated cognitive engagement and wandering safety support.";
       case "post-hospital":
-        return "Post-hospital recovery in Burlington (such as discharge from Lahey Hospital or Winchester Hospital) typically ranges from $36 - $42/hr for surgical transfer and medication adherence support.";
+        return "Post-hospital recovery in Burlington (such as discharge from Lahey Hospital or Winchester Hospital) focuses on safe mobility transfers and medication adherence.";
       case "24-hour":
-        return "24-hour around-the-clock care in Burlington ranges from $800 - $960 per 24-hr cycle for rotating awake CNAs, or $450 - $550/day for live-in care arrangements.";
+        return "24-hour around-the-clock care in Burlington provides rotating awake CNAs or dedicated live-in care arrangements.";
       default:
-        return "Standard hourly care across Burlington and Middlesex County ranges from $36 to $44 per hour depending on care acuity.";
+        return "Standard hourly care across Burlington and Middlesex County is tailored to your loved one's daily care acuity.";
     }
   };
 
   const questions = [
     {
-      id: "cost",
-      badge: "Cost & Transparency",
-      icon: "fa-solid fa-dollar-sign",
-      question: "What does home care cost in Burlington?",
-      shortQuote: "Home care in Burlington, MA costs between $36 and $44 per hour for licensed Certified Nursing Assistants (CNAs).",
+      id: "care-planning",
+      badge: "Personalized Care",
+      icon: "fa-solid fa-clipboard-list",
+      question: "How is home care tailored in Burlington?",
+      shortQuote: "Every care plan in Burlington, MA is customized around your loved one's health needs and delivered by licensed Certified Nursing Assistants (CNAs).",
       detailedAnswer: (
         <div className="space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
           <p>
-            In Burlington and surrounding Middlesex County communities, private-duty home care by certified nursing assistants typically ranges between <strong className="text-gray-900 font-bold">$36 and $44 per hour</strong>.
+            In Burlington and surrounding Middlesex County communities, our clinical team designs individualized care plans matched with <strong className="text-gray-900 font-bold">certified nursing assistants (CNAs)</strong>.
           </p>
           <p className="text-xs sm:text-sm text-gray-600 bg-purple-50/60 p-3 rounded-xl border border-[#76248a]/10">
-            <strong className="text-[#76248a]">Why rates vary:</strong> {getConditionContext()} Companion care sits at the lower end, while intensive physical transfers or advanced memory care sits toward $42–$44/hr. Akirapa Home Care has <strong className="text-gray-900">zero hidden intake fees, zero assessment charges, and zero weekend surge fees</strong>.
+            <strong className="text-[#76248a]">How plans adapt:</strong> {getConditionContext()} Companion care focuses on daily engagement and meals, while personal or memory care adds hands-on clinical support. Akirapa Home Care keeps onboarding simple with <strong className="text-gray-900">zero long-term lock-in and complimentary in-home assessments</strong>.
           </p>
         </div>
       ),
@@ -70,29 +70,29 @@ export const BurlingtonCareQuestions: React.FC<BurlingtonCareQuestionsProps> = (
           <p className="text-base sm:text-lg font-bold text-[#76248a]">
             No long-term contracts.
           </p>
-          <p>
-            You only sign a simple service agreement outlining agreed hours, care tasks, and hourly rates. We understand that senior health conditions change unexpectedly. You are never locked into a 30-, 60-, or 90-day commitment. If your loved one is hospitalized, goes on vacation, or transitions care, you can <strong className="text-gray-900">pause, adjust, or cancel with 24 to 48 hours notice</strong> without cancellation penalties.
-          </p>
-        </div>
-      ),
-    },
-    {
-      id: "medicare",
-      badge: "Insurance & Coverage",
-      icon: "fa-solid fa-shield-heart",
-      question: "Does Medicare pay for home care?",
-      shortQuote: "Traditional Medicare does not pay for non-medical personal home care or 24/7 companionship.",
-      detailedAnswer: (
-        <div className="space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
-          <p>
-            <strong className="text-gray-900 font-bold">Traditional Medicare does not cover non-medical in-home care</strong>, such as assistance with bathing, dressing, meal preparation, or 24/7 companionship.
-          </p>
-          <p className="text-xs sm:text-sm text-gray-600">
-            Medicare only covers short-term, intermittent skilled nursing or physical therapy ordered by a doctor following a qualifying hospital stay. However, <strong className="text-gray-900">our care is covered by Long-Term Care Insurance (LTCI)</strong>, <strong className="text-gray-900">Veterans Aid & Attendance benefits</strong> (which can provide up to $2,431+/month for eligible veterans or surviving spouses), Health Savings Accounts (HSA/FSA), and private pay. We provide complete itemized documentation for direct insurer reimbursement.
-          </p>
-        </div>
-      ),
-    },
+            <p>
+              You only sign a simple service agreement outlining agreed hours and personalized care tasks. We understand that senior health conditions change unexpectedly. You are never locked into a 30-, 60-, or 90-day commitment. If your loved one is hospitalized, goes on vacation, or transitions care, you can <strong className="text-gray-900">pause, adjust, or cancel with 24 to 48 hours notice</strong>.
+            </p>
+          </div>
+        ),
+      },
+      {
+        id: "coverage",
+        badge: "Care Coordination",
+        icon: "fa-solid fa-shield-heart",
+        question: "What care programs and benefits are supported?",
+        shortQuote: "Our care coordinates seamlessly alongside Long-Term Care Insurance (LTCI), Veterans Aid & Attendance, and family care plans.",
+        detailedAnswer: (
+          <div className="space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
+            <p>
+              <strong className="text-gray-900 font-bold">Non-medical in-home care</strong> — including bathing, dressing, meal preparation, and 24/7 companionship — complements short-term skilled clinical recovery.
+            </p>
+            <p className="text-xs sm:text-sm text-gray-600">
+              While traditional Medicare focuses on short-term, doctor-ordered clinical visits, <strong className="text-gray-900">our care works with Long-Term Care Insurance (LTCI)</strong> and <strong className="text-gray-900">Veterans Aid & Attendance support</strong>. We provide complete itemized documentation and shift records for your care team.
+            </p>
+          </div>
+        ),
+      },
   ];
 
   return (
@@ -103,7 +103,7 @@ export const BurlingtonCareQuestions: React.FC<BurlingtonCareQuestionsProps> = (
             Key Questions Every Family Asks in Burlington
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
-            When you need care for a parent, you need straight answers, not sales talk. Here is exactly how pricing, contracts, hours, and coverage work at Akirapa Home Care.
+            When you need care for a parent, you need straight answers, not sales talk. Here is exactly how care plans, contracts, hours, and support work at Akirapa Home Care.
           </p>
         </div>
 
@@ -139,15 +139,15 @@ export const BurlingtonCareQuestions: React.FC<BurlingtonCareQuestionsProps> = (
         {/* Helpful links bar */}
         <div className="mt-8 pt-6 border-t border-gray-100 flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm text-gray-600">
           <div className="flex items-center gap-2">
-            <i className="fa-solid fa-shield-check text-[#40ddd3]"></i>
-            <span>Need more detail on caregiver standards & rates?</span>
+            <i className="fa-solid fa-shield-halved text-[#40ddd3]"></i>
+            <span>Need more detail on our caregiver standards?</span>
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <Link
-              to="/pricing"
+              to="/standards"
               className="font-bold text-[#76248a] hover:underline flex items-center gap-1"
             >
-              <span>See Full Pricing Guide</span>
+              <span>Review Our Care Standards</span>
               <i className="fa-solid fa-arrow-right text-xs"></i>
             </Link>
             <span className="text-gray-300">|</span>

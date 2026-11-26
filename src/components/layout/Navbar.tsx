@@ -253,27 +253,30 @@ const Navbar = () => {
             <div className="w-11 h-11 rounded-full bg-white border-2 border-white shadow-md flex items-center justify-center p-1 overflow-hidden shrink-0">
               <img src="/akirapa-logo.png" alt="Akirapa" className="w-full h-full object-contain" />
             </div>
+</div>
             <div>
               <span className="block text-xs font-black text-white uppercase tracking-wider leading-tight">
                 Akirapa
               </span>
-              <span className="block text-[10px] font-extrabold text-[#40ddd3] uppercase">
+              <span className="block text-[10px] font-extrabold text-white uppercase">
                 Home Care
               </span>
             </div>
+</div>
           </Link>
 
           {/* Center: 1-Tap Helpline */}
           <div className="text-center">
             <a
               href="tel:+17812269910"
-              className="text-base sm:text-lg font-black text-[#40ddd3] block tracking-tight leading-none active:scale-95 transition-transform"
+              className="text-base sm:text-lg font-black text-white block tracking-tight leading-none active:scale-95 transition-transform"
               title="Call 24/7 Helpline"
             >
               781-226-9910
             </a>
             <span className="text-[10px] text-white/80 block mt-0.5 font-medium">24/7 Helpline</span>
           </div>
+</div>
 
           {/* Right: Hamburger Menu Toggle Button */}
           <button
@@ -289,7 +292,9 @@ const Navbar = () => {
             )}
           </button>
         </div>
+</div>
       </div>
+</div>
 
       {/* Prominent Desktop Purple Header Bar (Expanded Height to Reach Image) */}
       <div className="bg-[#76248a] text-white hidden lg:block border-b border-white/15 shadow-sm">
@@ -303,6 +308,7 @@ const Navbar = () => {
                 className="w-full h-full object-contain"
               />
             </div>
+</div>
             <span className="mt-1 text-[11px] xl:text-xs font-black text-white tracking-wider uppercase text-center whitespace-nowrap drop-shadow-xs">
               Akirapa Home Care
             </span>
@@ -316,46 +322,153 @@ const Navbar = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#40ddd3]"></span>
               </span>
-              <span className="text-[11px] xl:text-[12px] font-extrabold uppercase tracking-widest text-[#40ddd3]">
+              <span className="text-[11px] xl:text-[12px] font-extrabold uppercase tracking-widest text-white">
                 24/7 Helpline
               </span>
             </div>
+</div>
 
             {/* Phone Number: Increased Size, Bold & Clear */}
             <a
               href="tel:+17812269910"
-              className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-black text-white hover:text-[#40ddd3] tracking-tight transition-colors duration-200 leading-none drop-shadow-sm flex items-center gap-3 group my-1.5"
+              className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-black text-white hover:text-white tracking-tight transition-colors duration-200 leading-none drop-shadow-sm flex items-center gap-3 group my-1.5"
               title="Call 24/7 Helpline +1 781-226-9910"
             >
-              <i className="fa-solid fa-phone text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] text-[#40ddd3] group-hover:scale-110 transition-transform"></i>
-              <span className="text-white group-hover:text-[#40ddd3] transition-colors">+1 781-226-9910</span>
+              <i className="fa-solid fa-phone text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] text-white group-hover:scale-110 transition-transform"></i>
+              <span className="text-white group-hover:text-white transition-colors">+1 781-226-9910</span>
             </a>
 
             {/* Bottom Row: Email in original size + office address with generous spacing */}
             <div className="flex items-center gap-3.5 mt-2 text-xs xl:text-[13.5px] text-white/90">
               <a
                 href="mailto:info@akirapahomecareus.com"
-                className="flex items-center gap-1.5 font-semibold hover:text-[#40ddd3] transition-colors"
+                className="flex items-center gap-1.5 font-semibold hover:text-white transition-colors"
               >
-                <i className="fa-solid fa-envelope text-[#40ddd3] text-xs"></i>
+                <i className="fa-solid fa-envelope text-white text-xs"></i>
                 <span>info@akirapahomecareus.com</span>
               </a>
               <span className="text-white/40">•</span>
               <div className="flex items-center gap-1.5 text-white/80 font-medium">
-                <i className="fa-solid fa-location-dot text-[#40ddd3] text-xs"></i>
+                <i className="fa-solid fa-location-dot text-white text-xs"></i>
                 <span>281 Cambridge St, Burlington, MA</span>
               </div>
+</div>
             </div>
+</div>
           </div>
+</div>
 
-          {/* Right: Our Social Media Handles + Leave a Review */}
+          {/* Right: Social Media Handles + Leave a Review */}
           <div className="flex flex-col items-end gap-2 shrink-0">
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-1.5 bg-[#40ddd3] text-gray-950 px-3 py-1 rounded-full font-bold text-xs shadow-xs">
-                <i className="fa-solid fa-share-nodes text-xs text-[#76248a]"></i>
-                <span>Our Social Media Handles</span>
+            <div className="flex items-center gap-1.5">
+              <a
+                href="https://www.instagram.com/akirapahomecare/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram @akirapahomecare"
+                title="Follow Akirapa on Instagram"
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
+              >
+                <i className="fa-brands fa-instagram text-sm"></i>
+              </a>
+              <a
+                href="https://x.com/akirapahomecare"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X @akirapahomecare"
+                title="Follow Akirapa on X"
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
+              >
+                <i className="fa-brands fa-x-twitter text-sm"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61593883607014"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook Akirapa Home Care"
+                title="Follow Akirapa on Facebook"
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
+              >
+                <i className="fa-brands fa-facebook-f text-sm"></i>
+              </a>
+            </div>
+</div>
+            <a
+              href="https://www.google.com/search?q=Akirapa+Home+Care+Inc.+Burlington+MA#lrd=0x89e39f0e7f3ceda9:0xb8173043064ff6df,3,,,,"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white/95 hover:bg-[#40ddd3] text-gray-900 text-xs font-extrabold px-3.5 py-1.5 rounded-full shadow-sm transition-all duration-200 hover:scale-105"
+            >
+              <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z" />
+                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24Z" />
+                <path fill="#FBBC05" d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14Z" />
+                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96Z" />
+              </svg>
+              <span className="flex items-center gap-0.5 text-amber-400">
+                <i className="fa-solid fa-star text-[10px]"></i>
+                <i className="fa-solid fa-star text-[10px]"></i>
+                <i className="fa-solid fa-star text-[10px]"></i>
+              </span>
+            </a>
+          </div>
+</div>
+            {/* Container for social icons and review button */}
+            <div className="flex flex-col items-center gap-2 p-2 border border-white bg-white rounded-md">
+              <div className="flex items-center gap-1.5">
+                <a
+                  href="https://www.instagram.com/akirapahomecare/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram @akirapahomecare"
+                  title="Follow Akirapa on Instagram"
+                  className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
+                >
+                  <i className="fa-brands fa-instagram text-sm"></i>
+                </a>
+                <a
+                  href="https://x.com/akirapahomecare"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X @akirapahomecare"
+                  title="Follow Akirapahomecare on X"
+                  className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
+                >
+                  <i className="fa-brands fa-x-twitter text-sm"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61593883607014"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook Akirapa Home Care"
+                  title="Follow Akirapa on Facebook"
+                  className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
+                >
+                  <i className="fa-brands fa-facebook-f text-sm"></i>
+                </a>
               </div>
-              <div className="flex items-center gap-1.5 pl-2.5 border-l border-white/20">
+</div>
+              <a
+                href="https://www.google.com/search?q=Akirapa+Home+Care+Inc.+Burlington+MA#lrd=0x89e39f0e7f3ceda9:0xb8173043064ff6df,3,,,,"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white/95 hover:bg-[#40ddd3] text-gray-900 text-xs font-extrabold px-3.5 py-1.5 rounded-full shadow-sm transition-all duration-200 hover:scale-105"
+              >
+                <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z" />
+                  <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24Z" />
+                  <path fill="#FBBC05" d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14Z" />
+                  <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96Z" />
+                </svg>
+                <span className="flex items-center gap-0.5 text-amber-400">
+                  <i className="fa-solid fa-star text-[10px]"></i>
+                  <i className="fa-solid fa-star text-[10px]"></i>
+                  <i className="fa-solid fa-star text-[10px]"></i>
+                </span>
+              </a>
+            </div>
+</div>
+            <div className="flex items-center gap-1.5">
                 <a
                   href="https://www.instagram.com/akirapahomecare/"
                   target="_blank"
@@ -386,8 +499,8 @@ const Navbar = () => {
                 >
                   <i className="fa-brands fa-facebook-f text-sm"></i>
                 </a>
-              </div>
             </div>
+</div>
             <a
               href="https://www.google.com/search?q=Akirapa+Home+Care+Inc.+Burlington+MA#lrd=0x89e39f0e7f3ceda9:0xb8173043064ff6df,3,,,,"
               target="_blank"
@@ -410,8 +523,11 @@ const Navbar = () => {
               <span>Leave a Review</span>
             </a>
           </div>
+</div>
         </div>
+</div>
       </div>
+</div>
 
       {/* Centered Floating Nav Dock (Spans only up to where tabs end, rounded bottom corners, premium shadow) */}
       <div className="hidden lg:flex justify-center w-full px-4 pointer-events-none">
@@ -442,14 +558,14 @@ const Navbar = () => {
                     className={`px-3 xl:px-3.5 py-1.5 rounded-xl text-xs xl:text-[13.5px] font-bold transition-all duration-300 ease-out whitespace-nowrap flex items-center gap-1.5 cursor-pointer ${
                       isActive
                         ? "bg-[#76248a] text-white shadow-xs scale-105"
-                        : "text-gray-700 hover:text-[#76248a] hover:bg-gray-100 hover:scale-105 active:scale-95"
+                        : "text-gray-700 hover:text-white hover:bg-gray-100 hover:scale-105 active:scale-95"
                     }`}
                   >
                     <span>{link.name}</span>
                     <i
                       className={`fa-solid fa-chevron-down text-[9px] transition-transform duration-200 ${
                         isDropdownOpen ? "rotate-180" : ""
-                      } ${isActive ? "text-white" : "text-gray-400 group-hover:text-[#76248a]"}`}
+                      } ${isActive ? "text-white" : "text-gray-400 group-hover:text-white"}`}
                     ></i>
                   </button>
 
@@ -472,12 +588,13 @@ const Navbar = () => {
                           <i
                             className={`${
                               isCareServices ? "fa-solid fa-hand-holding-heart" : "fa-solid fa-users"
-                            } text-[#76248a] text-xs`}
+                            } text-white text-xs`}
                           ></i>
-                          <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#76248a]">
+                          <span className="text-[11px] font-extrabold uppercase tracking-wider text-white">
                             {isCareServices ? "Care Services Directory" : "About Akirapa"}
                           </span>
                         </div>
+</div>
                         {isCareServices ? (
                           <Link
                             to="/services"
@@ -493,6 +610,7 @@ const Navbar = () => {
                           </span>
                         )}
                       </div>
+</div>
 
                       {/* Dropdown Links List / 2-Column Grid for Services */}
                       <div
@@ -511,36 +629,40 @@ const Navbar = () => {
                               onClick={() => setOpenDropdown(null)}
                               className={`group/sub flex items-center gap-2.5 p-2 rounded-xl transition-all duration-200 ${
                                 isSubActive
-                                  ? "bg-purple-50 text-[#76248a] font-bold"
-                                  : "text-gray-700 hover:text-[#76248a] hover:bg-gray-50"
+                                  ? "bg-purple-50 text-white font-bold"
+                                  : "text-gray-700 hover:text-white hover:bg-gray-50"
                               }`}
                             >
                               <div
                                 className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-200 ${
                                   isSubActive
                                     ? "bg-[#76248a] text-white shadow-xs"
-                                    : "bg-purple-50 text-[#76248a] group-hover/sub:bg-[#76248a] group-hover/sub:text-white"
+                                    : "bg-purple-50 text-white group-hover/sub:bg-[#76248a] group-hover/sub:text-white"
                                 }`}
                               >
                                 <i className={`${sub.icon} text-xs`}></i>
                               </div>
+</div>
                               <div className="flex-1 min-w-0">
                                 <div className="flex items-center justify-between">
                                   <span className="text-xs font-bold block leading-tight truncate">
                                     {sub.name}
                                   </span>
                                   {isSubActive && (
-                                    <i className="fa-solid fa-check text-[10px] text-[#76248a] shrink-0 ml-1"></i>
+                                    <i className="fa-solid fa-check text-[10px] text-white shrink-0 ml-1"></i>
                                   )}
                                 </div>
+</div>
                                 <p className="text-[11px] text-gray-500 font-normal leading-tight line-clamp-1 group-hover/sub:text-gray-600">
                                   {sub.description}
                                 </p>
                               </div>
+</div>
                             </Link>
                           );
                         })}
                       </div>
+</div>
 
                       {/* Quick Consultation Footer Bar */}
                       {isCareServices && (
@@ -551,16 +673,20 @@ const Navbar = () => {
                           <Link
                             to="/contact"
                             onClick={() => setOpenDropdown(null)}
-                            className="text-[#76248a] hover:text-[#561868] font-bold text-[11px] underline flex items-center gap-1"
+                            className="text-white hover:text-[#561868] font-bold text-[11px] underline flex items-center gap-1"
                           >
                             <span>Free Assessment</span>
                             <i className="fa-solid fa-chevron-right text-[8px]"></i>
                           </Link>
                         </div>
+</div>
                       )}
                     </div>
+</div>
                   </div>
+</div>
                 </div>
+</div>
               );
             }
 
@@ -573,16 +699,17 @@ const Navbar = () => {
                     ? "bg-[#76248a] text-white shadow-xs scale-105"
                     : isAkiVault
                     ? "bg-[#76248a] hover:bg-[#561868] text-white shadow-xs hover:scale-105 active:scale-95"
-                    : "text-gray-700 hover:text-[#76248a] hover:bg-gray-100 hover:scale-105 active:scale-95"
+                    : "text-gray-700 hover:text-white hover:bg-gray-100 hover:scale-105 active:scale-95"
                 }`}
               >
-                {isAkiVault && <i className="fa-solid fa-shield-halved text-xs text-[#40ddd3]"></i>}
+                {isAkiVault && <i className="fa-solid fa-shield-halved text-xs text-white"></i>}
                 <span>{link.name}</span>
               </Link>
             );
           })}
         </nav>
       </div>
+</div>
 
       {/* Mobile Navigation Drawer */}
       {isOpen && (
@@ -590,7 +717,7 @@ const Navbar = () => {
           <div className="flex flex-col gap-1.5">
             {/* Quick 1.5x CTA Buttons in Drawer */}
             <div className="grid grid-cols-2 gap-2 mb-3">
-              <Button variant="outline" asChild className="w-full h-11 border-2 border-[#76248a] text-[#76248a] font-bold rounded-xl text-xs active:scale-95">
+              <Button variant="outline" asChild className="w-full h-11 border-2 border-[#76248a] text-white font-bold rounded-xl text-xs active:scale-95">
                 <Link to="/pricing" onClick={() => setIsOpen(false)}>
                   Pricing &amp; Rates
                 </Link>
@@ -601,6 +728,7 @@ const Navbar = () => {
                 </Link>
               </Button>
             </div>
+</div>
 
             {navLinks.map((link) => {
               const isActive = isItemActive(link);
@@ -617,7 +745,7 @@ const Navbar = () => {
                       className={`px-4 py-3 rounded-xl text-base font-bold transition-all duration-200 flex items-center justify-between ${
                         isActive
                           ? "bg-[#76248a] text-white shadow-sm"
-                          : "text-gray-700 hover:text-[#76248a] hover:bg-gray-100"
+                          : "text-gray-700 hover:text-white hover:bg-gray-100"
                       }`}
                     >
                       <span className="flex items-center gap-2">
@@ -631,7 +759,7 @@ const Navbar = () => {
                       <i
                         className={`fa-solid fa-chevron-down text-xs transition-transform duration-200 ${
                           isMenuOpen ? "rotate-180" : ""
-                        } ${isActive ? "text-[#40ddd3]" : "text-gray-400"}`}
+                        } ${isActive ? "text-white" : "text-gray-400"}`}
                       ></i>
                     </button>
 
@@ -651,24 +779,26 @@ const Navbar = () => {
                               className={`px-3 py-2.5 rounded-lg text-sm font-bold transition-all duration-150 flex items-center justify-between ${
                                 isSubActive
                                   ? "bg-[#76248a] text-white shadow-xs"
-                                  : "text-gray-700 hover:text-[#76248a] hover:bg-white"
+                                  : "text-gray-700 hover:text-white hover:bg-white"
                               }`}
                             >
                               <span className="flex items-center gap-2.5">
                                 <i
                                   className={`${sub.icon} text-xs ${
-                                    isSubActive ? "text-[#40ddd3]" : "text-[#76248a]"
+                                    isSubActive ? "text-white" : "text-white"
                                   }`}
                                 ></i>
                                 <span>{sub.name}</span>
                               </span>
-                              {isSubActive && <i className="fa-solid fa-check text-xs text-[#40ddd3]"></i>}
+                              {isSubActive && <i className="fa-solid fa-check text-xs text-white"></i>}
                             </Link>
                           );
                         })}
                       </div>
+</div>
                     )}
                   </div>
+</div>
                 );
               }
 
@@ -682,33 +812,36 @@ const Navbar = () => {
                       ? "bg-[#76248a] text-white shadow-sm"
                       : isAkiVault
                       ? "bg-[#76248a] hover:bg-[#561868] text-white shadow-sm"
-                      : "text-gray-700 hover:text-[#76248a] hover:bg-gray-100"
+                      : "text-gray-700 hover:text-white hover:bg-gray-100"
                   }`}
                 >
                   <span className="flex items-center gap-2">
-                    {isAkiVault && <i className="fa-solid fa-shield-halved text-sm text-[#40ddd3]"></i>}
+                    {isAkiVault && <i className="fa-solid fa-shield-halved text-sm text-white"></i>}
                     {link.name}
                   </span>
-                  {isActive && <i className="fa-solid fa-check text-xs text-[#40ddd3]"></i>}
+                  {isActive && <i className="fa-solid fa-check text-xs text-white"></i>}
                 </Link>
               );
             })}
 
             <div className="px-4 py-3 border-t border-gray-100 mt-2 space-y-2.5 text-sm text-gray-600 bg-gray-50/70 rounded-2xl">
-              <div className="flex items-center gap-2 font-bold text-[#76248a]">
-                <i className="fa-solid fa-phone text-[#40ddd3]"></i>
+              <div className="flex items-center gap-2 font-bold text-white">
+                <i className="fa-solid fa-phone text-white"></i>
                 <a href="tel:+17812269910" className="hover:underline">
                   24/7 Helpline: +1 781-226-9910
                 </a>
               </div>
+</div>
               <div className="flex items-center gap-2 text-xs text-gray-600">
-                <i className="fa-solid fa-envelope text-[#40ddd3]"></i>
+                <i className="fa-solid fa-envelope text-white"></i>
                 <span>info@akirapahomecareus.com</span>
               </div>
+</div>
               <div className="flex items-center gap-2 text-xs text-gray-600">
-                <i className="fa-solid fa-location-dot text-[#40ddd3]"></i>
+                <i className="fa-solid fa-location-dot text-white"></i>
                 <span>281 Cambridge Street, Burlington, MA</span>
               </div>
+</div>
               <div className="flex items-center gap-3 pt-2">
                 <span className="text-xs font-bold text-gray-700">Follow:</span>
                 <a
@@ -716,7 +849,7 @@ const Navbar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="w-9 h-9 rounded-xl bg-white shadow-xs border border-gray-200 hover:bg-[#76248a] text-[#76248a] hover:text-white flex items-center justify-center transition-all"
+                  className="w-9 h-9 rounded-xl bg-white shadow-xs border border-gray-200 hover:bg-[#76248a] text-white hover:text-white flex items-center justify-center transition-all"
                 >
                   <i className="fa-brands fa-instagram text-sm"></i>
                 </a>
@@ -725,7 +858,7 @@ const Navbar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="X (Twitter)"
-                  className="w-9 h-9 rounded-xl bg-white shadow-xs border border-gray-200 hover:bg-[#76248a] text-[#76248a] hover:text-white flex items-center justify-center transition-all"
+                  className="w-9 h-9 rounded-xl bg-white shadow-xs border border-gray-200 hover:bg-[#76248a] text-white hover:text-white flex items-center justify-center transition-all"
                 >
                   <i className="fa-brands fa-x-twitter text-sm"></i>
                 </a>
@@ -734,11 +867,12 @@ const Navbar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="w-9 h-9 rounded-xl bg-white shadow-xs border border-gray-200 hover:bg-[#76248a] text-[#76248a] hover:text-white flex items-center justify-center transition-all"
+                  className="w-9 h-9 rounded-xl bg-white shadow-xs border border-gray-200 hover:bg-[#76248a] text-white hover:text-white flex items-center justify-center transition-all"
                 >
                   <i className="fa-brands fa-facebook-f text-sm"></i>
                 </a>
               </div>
+</div>
               <a
                 href="https://www.google.com/search?q=Akirapa+Home+Care+Inc.+Burlington+MA#lrd=0x89e39f0e7f3ceda9:0xb8173043064ff6df,3,,,,"
                 target="_blank"
@@ -762,6 +896,7 @@ const Navbar = () => {
                 <span>Leave a Review</span>
               </a>
             </div>
+</div>
 
             {/* Quick Strategy Links for Families */}
             <div className="grid grid-cols-2 gap-2 pt-2">
@@ -770,7 +905,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className="p-2.5 rounded-xl bg-[#76248a] hover:bg-[#561868] text-white font-bold text-xs text-center shadow-xs transition-all"
               >
-                <i className="fa-solid fa-list-check block mb-1 text-sm text-[#40ddd3]"></i>
+                <i className="fa-solid fa-list-check block mb-1 text-sm text-white"></i>
                 10 Questions to Ask
               </Link>
               <Link
@@ -778,14 +913,17 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className="p-2.5 rounded-xl bg-[#76248a] hover:bg-[#561868] text-white font-bold text-xs text-center shadow-xs transition-all"
               >
-                <i className="fa-solid fa-video block mb-1 text-sm text-[#40ddd3]"></i>
+                <i className="fa-solid fa-video block mb-1 text-sm text-white"></i>
                 Case Studies &amp; Videos
               </Link>
             </div>
+</div>
           </div>
+</div>
         </div>
+</div>
       )}
-    </header>
+    </div>
   );
 };
 

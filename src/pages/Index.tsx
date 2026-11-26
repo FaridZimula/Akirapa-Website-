@@ -10,7 +10,6 @@ import { useToast } from "@/hooks/use-toast";
 import { careServices } from "@/data/careServices";
 import { testimonials } from "@/data/testimonials";
 import { leaders } from "@/data/leadership";
-import { CareQuoteCalculator } from "@/components/CareQuoteCalculator";
 import { BurlingtonCareQuestions } from "@/components/BurlingtonCareQuestions";
 import { massachusettsLocations } from "@/data/massachusettsLocations";
 
@@ -127,8 +126,8 @@ const technologyPillars = [
 
 const homepageFaqs = [
   {
-    question: "How much does in-home senior care cost in Massachusetts?",
-    answer: "In Massachusetts, private-duty in-home care rates typically range between $32 to $42 per hour depending on whether care is companion support, certified personal care (ADLs), or specialized dementia care. Akirapa Home Care provides transparent rates with zero long-term contracts, zero hidden cancellation fees, and flexible hourly or 24/7 packages."
+    question: "How flexible are Akirapa Home Care's schedules in Massachusetts?",
+    answer: "Akirapa Home Care offers flexible hourly visits, daily routines, live-in support, and 24/7 care tailored to whether your loved one needs companionship, certified personal care (ADLs), or specialized dementia care — with zero long-term contracts."
   },
   {
     question: "What Massachusetts cities and communities does Akirapa Home Care serve?",
@@ -140,7 +139,7 @@ const homepageFaqs = [
   },
   {
     question: "Does Akirapa Home Care require long-term contracts?",
-    answer: "No. We believe families should remain in total control of their care. Akirapa Home Care operates on a strict zero-contract model: you can start, adjust, pause, or end services anytime with zero financial lock-in or cancellation penalties."
+    answer: "No. We believe families should remain in total control of their care. Akirapa Home Care operates on a strict zero-contract model: you can start, adjust, pause, or end services anytime with zero long-term lock-in."
   },
   {
     question: "How quickly can home care services begin for an urgent hospital discharge in MA?",
@@ -152,10 +151,10 @@ const homepageFaqs = [
   },
   {
     question: "Where can I find the best home care services in Massachusetts?",
-    answer: "For reliable, compassionate, and affordable home care solutions, Akirapa Home Care provides comprehensive care throughout Massachusetts. Headquartered at 281 Cambridge Street, Burlington, MA 01803, our licensed nurses and trained caregivers deliver personalized 24/7 in-home assistance, private-duty nursing, companionship, and specialized memory support."
+    answer: "For reliable, compassionate, and dependable home care solutions, Akirapa Home Care provides comprehensive care throughout Massachusetts. Headquartered at 281 Cambridge Street, Burlington, MA 01803, our licensed nurses and trained caregivers deliver personalized 24/7 in-home assistance, private-duty nursing, companionship, and specialized memory support."
   },
   {
-    question: "Where can I get affordable and reliable non-emergency medical transportation (NEMT) in Massachusetts?",
+    question: "Where can I get dependable and reliable non-emergency medical transportation (NEMT) in Massachusetts?",
     answer: "Akirapa Home Care provides reliable and 24/7 available non-emergency medical transportation (NEMT) across Massachusetts. We provide door to door escort accompaniment for medical appointments, surgeries, dialysis sessions, everyday community needs, wheelchair assistance, staircase assistance, and stretcher services."
   },
   {
@@ -316,7 +315,7 @@ const Index = () => {
                 <Link to="/services">View Care Services</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/90 hover:bg-white border-2 border-gray-300 text-gray-700 font-bold text-sm sm:text-base h-12 sm:h-14 px-6 sm:px-8 rounded-xl shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-300 backdrop-blur-sm">
-                <Link to="/contact#pricing">Get Pricing Info</Link>
+                <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
             <p className="text-xs sm:text-sm text-gray-500 font-medium text-left pt-1">
@@ -385,7 +384,7 @@ const Index = () => {
               Verifiable Proof, Not Empty Promises
             </h2>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-              When an adult daughter is in crisis, she needs three things: reassurance, transparent pricing, and rapid availability. We document everything we claim.
+              When an adult daughter is in crisis, she needs three things: reassurance, clear care standards, and rapid availability. We document everything we claim.
             </p>
           </div>
 
@@ -408,20 +407,20 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Card 2: Transparent Pricing */}
+            {/* Card 2: Flexible, Contract-Free Care */}
             <div className="bg-gray-50 rounded-3xl p-6 sm:p-7 border border-gray-200/80 shadow-sm flex flex-col justify-between group hover:border-[#76248a]/30 hover:shadow-md transition-all">
               <div className="space-y-3">
                 <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center font-bold text-lg shadow-sm">
-                  <i className="fa-solid fa-tag"></i>
+                  <i className="fa-solid fa-calendar-check"></i>
                 </div>
-                <h3 className="text-xl font-black text-gray-900">Transparent Pricing</h3>
+                <h3 className="text-xl font-black text-gray-900">Flexible, Contract-Free Care</h3>
                 <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                  $36 – $44/hr for licensed CNAs in Burlington. No long-term contracts. Rapid same-day and 24-hr crisis intake.
+                  Licensed CNAs in Burlington on your schedule. No long-term contracts. Rapid same-day and 24-hr crisis intake.
                 </p>
               </div>
               <div className="pt-6">
                 <Button asChild variant="outline" size="sm" className="w-full border-2 border-[#76248a] text-[#76248a] font-bold text-xs h-10 rounded-xl hover:bg-[#76248a] hover:text-white">
-                  <Link to="/pricing">Review Rate Guide</Link>
+                  <Link to="/contact">Schedule Care Consultation</Link>
                 </Button>
               </div>
             </div>
@@ -516,7 +515,7 @@ const Index = () => {
             <div className="flex items-start gap-4 max-w-2xl">
               <div className="w-16 h-1 bg-[#40ddd3] rounded-full shrink-0 mt-3 hidden sm:block"></div>
               <p className="text-sm sm:text-lg text-gray-700 font-medium leading-relaxed text-left">
-                Akirapa Home Care Inc provides the following home health care programs at flexible schedules and cost-friendly service rates.
+                Akirapa Home Care Inc provides the following home health care programs with flexible schedules tailored to your family's needs.
               </p>
             </div>
 
@@ -1220,7 +1219,7 @@ const Index = () => {
               </div>
               <h3 className="text-2xl font-black text-white">Compare 500 Home Care Agencies Across Massachusetts</h3>
               <p className="text-white/80 text-sm max-w-2xl">
-                Research estimated costs, ratings, and service options for every licensed agency in MA in our comprehensive directory.
+                Compare ratings, care specialties, and service options for licensed agencies across MA in our comprehensive directory.
               </p>
             </div>
             <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold rounded-2xl h-12 px-6 shrink-0 button-shimmer hover:scale-105 transition-all">

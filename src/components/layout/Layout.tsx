@@ -1,4 +1,5 @@
 import { ReactNode, useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { ArrowUp } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -10,6 +11,7 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+  const { pathname } = useLocation();
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -50,8 +52,8 @@ const Layout = ({ children }: LayoutProps) => {
         <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
-      {/* Floating 24/7 AI / Live Chat Widget */}
-      <ChatBot />
+      {/* Floating 24/7 AI / Live Chat Widget (hidden on home page) */}
+      {pathname !== "/" && <ChatBot />}
 
       {/* Interactive Cookie, Privacy & HIPAA Compliance Banner */}
       <CookieConsent />
