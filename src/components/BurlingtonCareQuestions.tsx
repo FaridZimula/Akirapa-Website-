@@ -99,10 +99,6 @@ export const BurlingtonCareQuestions: React.FC<BurlingtonCareQuestionsProps> = (
     <section className={`py-12 bg-white rounded-3xl border border-gray-100 shadow-sm p-6 sm:p-10 ${className}`}>
       <div className="max-w-4xl mx-auto">
         <div className="text-center space-y-3 mb-10">
-          <div className="inline-flex items-center gap-2 bg-[#76248a]/10 text-[#76248a] px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">
-            <i className="fa-solid fa-circle-question text-[#40ddd3]"></i>
-            Plain-Language Answers
-          </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 tracking-tight">
             Key Questions Every Family Asks in Burlington
           </h2>

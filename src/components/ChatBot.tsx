@@ -126,10 +126,10 @@ export const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-20 right-4 sm:bottom-24 sm:right-8 z-50 flex flex-col items-end pointer-events-auto">
+    <div className="fixed bottom-36 right-4 sm:bottom-36 sm:right-8 z-50 flex flex-col items-end pointer-events-auto">
       {/* Floating Tooltip Bubble when unopened */}
       {!isOpen && showTooltip && (
-        <div className="mb-3 max-w-[calc(100vw-3rem)] bg-white/95 backdrop-blur-md text-[#76248a] font-bold text-xs py-2 px-3.5 sm:px-4 rounded-2xl shadow-xl border border-[#76248a]/20 flex items-center gap-2 animate-bounce">
+        <div className="hidden sm:flex mb-3 max-w-[calc(100vw-3rem)] bg-white/95 backdrop-blur-md text-[#76248a] font-bold text-xs py-2 px-3.5 sm:px-4 rounded-2xl shadow-xl border border-[#76248a]/20 items-center gap-2 animate-bounce">
           <i className="fa-solid fa-comments text-[#76248a] shrink-0"></i>
           <span className="truncate">Chat with Akirapa Assistant</span>
           <button

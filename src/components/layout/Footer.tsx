@@ -158,7 +158,7 @@ const Footer = () => {
                 AkiVault™ System
               </span>
               <a
-                href="https://akirapa-home-care-system-ynmt.vercel.app/"
+                href="https://akivualt.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="AkiVault Home Care System"

@@ -292,18 +292,12 @@ const Index = () => {
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="max-w-2xl lg:max-w-3xl space-y-6 text-left">
             <div key={slide.id} className="space-y-4 transition-all duration-700 ease-in-out animate-fadeIn">
-              <div className="inline-flex items-center gap-2.5 bg-purple-50/90 border border-[#76248a]/20 text-[#76248a] font-extrabold text-xs uppercase px-3.5 py-1.5 rounded-full shadow-sm backdrop-blur-sm animate-float">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0d9488] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0d9488]"></span>
-                </span>
-                <i className="fa-solid fa-star text-[#0d9488]"></i>
-                <span className="tracking-wide">Premier Concierge Home Care</span>
-              </div>
-
               <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black text-[#76248a] tracking-tight leading-[1.18] text-left">
-                Akirapa Home Care | In-Home Senior Care in Massachusetts
+                In-Home Senior Care in Burlington, MA
               </h1>
+              <p className="text-xs sm:text-sm font-bold text-gray-500 -mt-2 text-left">
+                Akirapa Home Care · Concierge Home Care Serving Greater Boston
+              </p>
 
               <p className="text-base sm:text-lg lg:text-xl font-bold text-[#561868] text-left animate-word-fade">
                 {slide.title}
@@ -316,12 +310,21 @@ const Index = () => {
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-start items-stretch sm:items-center pt-2">
               <Button asChild size="lg" className="w-full sm:w-auto bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold text-sm sm:text-base h-12 sm:h-14 px-6 sm:px-8 rounded-xl shadow-lg shadow-[#40ddd3]/20 border-none transition-all duration-300 hover:scale-105 active:scale-95 button-shimmer">
-                <Link to="/contact">Explore Concierge Private Care</Link>
+                <Link to="/contact">Free In-Home Assessment</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/90 hover:bg-white border-2 border-[#76248a] text-[#76248a] font-bold text-sm sm:text-base h-12 sm:h-14 px-6 sm:px-8 rounded-xl shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-300 backdrop-blur-sm">
                 <Link to="/services">View Care Services</Link>
               </Button>
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/90 hover:bg-white border-2 border-gray-300 text-gray-700 font-bold text-sm sm:text-base h-12 sm:h-14 px-6 sm:px-8 rounded-xl shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-300 backdrop-blur-sm">
+                <Link to="/contact#pricing">Get Pricing Info</Link>
+              </Button>
             </div>
+            <p className="text-xs sm:text-sm text-gray-500 font-medium text-left pt-1">
+              Not ready to talk yet?{" "}
+              <Link to="/blog" className="text-[#76248a] font-bold hover:underline">
+                Read our Senior Care Planning Guide →
+              </Link>
+            </p>
 
             <div className="pt-6 border-t border-gray-300/70 flex flex-wrap justify-start gap-5 sm:gap-7 text-xs sm:text-sm font-bold text-gray-700">
               <div className="flex items-center gap-2 group transition-transform duration-200 hover:translate-x-1">
@@ -344,41 +347,29 @@ const Index = () => {
       {/* High Impact Helpline Callout Banner */}
       <section className="bg-gray-50/80 pt-6 pb-4">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-xl border border-gray-100 flex flex-col lg:flex-row items-center justify-between gap-6 -mt-8 sm:-mt-14 lg:-mt-16 relative z-20 card-hover-pro card-shine group">
-            <div className="flex items-center gap-4 text-center sm:text-left flex-col sm:flex-row">
-              <div className="w-16 h-16 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                <i className="fa-solid fa-phone-volume text-2xl text-white"></i>
+          <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-xl border border-gray-100 flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 -mt-8 sm:-mt-14 lg:-mt-16 relative z-20 card-hover-pro card-shine group">
+            <div className="flex items-center gap-3 sm:gap-4 text-center sm:text-left flex-col sm:flex-row">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-[#76248a] text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <i className="fa-solid fa-phone-volume text-xl sm:text-2xl text-white"></i>
               </div>
-              <div className="space-y-1">
-                <div className="flex items-center gap-2 justify-center sm:justify-start">
-                  <span className="bg-[#76248a] text-white text-[10px] uppercase font-extrabold px-2.5 py-0.5 rounded-full flex items-center gap-1.5">
-                    <span className="relative flex h-1.5 w-1.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#40ddd3]"></span>
-                    </span>
-                    <span>24/7 Helpline</span>
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-900 group-hover:text-[#76248a] transition-colors">Need Care Right Away?</h3>
-                </div>
-                <p className="text-gray-600 text-sm">
+              <div className="space-y-1.5 sm:space-y-1">
+                <h3 className="text-lg sm:text-2xl font-black text-gray-900 group-hover:text-[#76248a] transition-colors">Need Care Right Away?</h3>
+                <p className="text-gray-600 text-xs sm:text-sm max-w-xs sm:max-w-none mx-auto sm:mx-0">
                   Speak directly with our senior care coordinator in Burlington, MA.
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto shrink-0">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto shrink-0">
               <a
                 href="tel:+17812269910"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#76248a] hover:bg-[#561868] text-white font-extrabold px-6 py-3.5 rounded-2xl shadow-lg transition-all duration-300 text-base hover:scale-105 active:scale-95 button-shimmer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#76248a] hover:bg-[#561868] text-white font-extrabold px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl shadow-lg transition-all duration-300 text-base hover:scale-105 active:scale-95 button-shimmer"
               >
-                <i className="fa-solid fa-phone text-lg text-[#40ddd3] animate-pulse"></i>
-                <div className="text-left">
-                  <span className="text-[10px] text-white/70 block uppercase leading-none">Main Hotline</span>
-                  <span className="text-lg font-black text-[#40ddd3]">+1 781-226-9910</span>
-                </div>
+                <i className="fa-solid fa-phone text-base sm:text-lg text-[#40ddd3] animate-pulse"></i>
+                <span className="text-base sm:text-lg font-black text-[#40ddd3]">+1 781-226-9910</span>
               </a>
 
-              <Button asChild size="lg" className="w-full sm:w-auto bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold text-base h-14 px-6 rounded-2xl shadow-md button-shimmer hover:scale-105 active:scale-95 transition-all duration-300">
+              <Button asChild size="lg" className="w-full sm:w-auto bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-extrabold text-sm sm:text-base h-12 sm:h-14 px-5 sm:px-6 rounded-2xl shadow-md button-shimmer hover:scale-105 active:scale-95 transition-all duration-300">
                 <Link to="/contact">Request Immediate Callback</Link>
               </Button>
             </div>
@@ -390,10 +381,6 @@ const Index = () => {
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-            <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1.5 rounded-full inline-block">
-              <i className="fa-solid fa-shield-check text-[#40ddd3] mr-1.5"></i>
-              Proof Where Families Look
-            </span>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
               Verifiable Proof, Not Empty Promises
             </h2>
@@ -408,9 +395,6 @@ const Index = () => {
               <div className="space-y-3">
                 <div className="w-12 h-12 rounded-2xl bg-[#40ddd3] text-gray-950 flex items-center justify-center font-bold text-lg shadow-sm">
                   <i className="fa-solid fa-file-waveform"></i>
-                </div>
-                <div className="inline-block bg-white/20 text-[#40ddd3] text-[10px] font-black uppercase px-2 py-0.5 rounded-md">
-                  Strongest Asset
                 </div>
                 <h3 className="text-xl font-black text-white">See a Real Shift Report</h3>
                 <p className="text-white/80 text-xs sm:text-sm leading-relaxed">
@@ -427,11 +411,8 @@ const Index = () => {
             {/* Card 2: Transparent Pricing */}
             <div className="bg-gray-50 rounded-3xl p-6 sm:p-7 border border-gray-200/80 shadow-sm flex flex-col justify-between group hover:border-[#76248a]/30 hover:shadow-md transition-all">
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-purple-100 text-[#76248a] flex items-center justify-center font-bold text-lg">
+                <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center font-bold text-lg shadow-sm">
                   <i className="fa-solid fa-tag"></i>
-                </div>
-                <div className="inline-block bg-purple-100 text-[#76248a] text-[10px] font-black uppercase px-2 py-0.5 rounded-md">
-                  No Hidden Fees
                 </div>
                 <h3 className="text-xl font-black text-gray-900">Transparent Pricing</h3>
                 <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
@@ -448,11 +429,8 @@ const Index = () => {
             {/* Card 3: Our Standards */}
             <div className="bg-gray-50 rounded-3xl p-6 sm:p-7 border border-gray-200/80 shadow-sm flex flex-col justify-between group hover:border-[#76248a]/30 hover:shadow-md transition-all">
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-purple-100 text-[#76248a] flex items-center justify-center font-bold text-lg">
-                  <i className="fa-solid fa-shield-check"></i>
-                </div>
-                <div className="inline-block bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase px-2 py-0.5 rounded-md">
-                  State-Verified CNAs
+                <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                  <i className="fa-solid fa-shield-halved"></i>
                 </div>
                 <h3 className="text-xl font-black text-gray-900">Documented Standards</h3>
                 <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
@@ -469,11 +447,8 @@ const Index = () => {
             {/* Card 4: Questions to Ask */}
             <div className="bg-gray-50 rounded-3xl p-6 sm:p-7 border border-gray-200/80 shadow-sm flex flex-col justify-between group hover:border-[#76248a]/30 hover:shadow-md transition-all">
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-purple-100 text-[#76248a] flex items-center justify-center font-bold text-lg">
+                <div className="w-12 h-12 rounded-2xl bg-[#76248a] text-white flex items-center justify-center font-bold text-lg shadow-sm">
                   <i className="fa-solid fa-list-check"></i>
-                </div>
-                <div className="inline-block bg-blue-100 text-blue-800 text-[10px] font-black uppercase px-2 py-0.5 rounded-md">
-                  Consumer Checklist
                 </div>
                 <h3 className="text-xl font-black text-gray-900">10 Questions to Ask</h3>
                 <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
@@ -494,9 +469,6 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white border-b border-gray-100">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-[#76248a] font-extrabold text-sm uppercase tracking-wider bg-[#76248a]/10 px-3 py-1 rounded-full inline-block">
-              Advanced Technology
-            </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
               AkiVault Features
             </h2>
@@ -523,9 +495,6 @@ const Index = () => {
                 <div className="w-14 h-14 rounded-2xl bg-[#76248a] text-white flex items-center justify-center mb-6 shadow-md group-hover:bg-[#40ddd3] group-hover:text-gray-950 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                   <i className={`fa-solid ${pillar.icon} text-2xl`}></i>
                 </div>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#76248a] bg-[#76248a]/10 px-2.5 py-1 rounded-full transition-colors group-hover:bg-[#76248a] group-hover:text-white">
-                  {pillar.badge}
-                </span>
                 <h3 className="text-xl font-bold text-gray-900 mt-3 mb-2 group-hover:text-[#76248a] transition-colors">{pillar.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{pillar.description}</p>
               </div>
@@ -557,22 +526,22 @@ const Index = () => {
           </div>
 
           {/* Mobile Swipe Cue */}
-          <div className="lg:hidden flex items-center justify-between text-xs text-[#76248a] font-bold px-1 pt-1 -mb-2">
-            <span className="flex items-center gap-1.5">
-              <i className="fa-solid fa-arrows-left-right text-[#40ddd3] animate-pulse"></i>
-              <span>Swipe horizontally to view all 5 care services</span>
+          <div className="lg:hidden flex items-center justify-between gap-3 text-xs text-[#76248a] font-bold px-1 pt-1 -mb-2">
+            <span className="flex items-center gap-1.5 min-w-0">
+              <i className="fa-solid fa-arrows-left-right text-[#40ddd3] animate-pulse shrink-0"></i>
+              <span className="truncate">Swipe to view all 7 services</span>
             </span>
-            <span className="text-[10px] bg-purple-100 text-[#76248a] px-2 py-0.5 rounded-full font-black">7 Services</span>
+            <span className="text-[10px] bg-[#76248a] text-white px-2.5 py-1 rounded-full font-black whitespace-nowrap shrink-0 shadow-xs">7 Services</span>
           </div>
 
           {/* 7 Services Images Grid (Horizontal Scroll on Mobile, 7-Col Grid on Desktop) */}
           <div className="flex overflow-x-auto gap-4 sm:gap-6 pt-2 pb-4 snap-x snap-mandatory scrollbar-none no-scrollbar touch-scroll-x -mx-4 px-4 sm:-mx-12 sm:px-12 lg:grid lg:grid-cols-7 lg:gap-4 xl:gap-6 lg:mx-0 lg:px-0 lg:overflow-visible">
             {/* Service 1 */}
-            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
+            <Link to="/services/companion-care" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
                 <img
                   src="/CARE GIVER  (1).jpg"
-                  alt="Hourly home care"
+                  alt="Companion care in Burlington, MA"
                   className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                 />
                 <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
@@ -581,17 +550,17 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
               <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
-                <span>Hourly home care</span>
+                <span>Companion care in Burlington, MA</span>
                 <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>
 
             {/* Service 2 */}
-            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
+            <Link to="/services/24-hour-home-care" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
                 <img
                   src="/CARE GIVER  (5).jpg"
-                  alt="Daily home care"
+                  alt="24-hour home care in Burlington, MA"
                   className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                 />
                 <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
@@ -600,17 +569,17 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
               <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
-                <span>Daily home care</span>
+                <span>24-hour home care in Burlington, MA</span>
                 <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>
 
             {/* Service 3 */}
-            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
+            <Link to="/services/post-hospitalization-care" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
                 <img
                   src="/CARE GIVER  (8).jpg"
-                  alt="Hospital to home care"
+                  alt="Post-hospitalization care in Burlington, MA"
                   className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                 />
                 <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
@@ -619,17 +588,17 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
               <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
-                <span>Hospital to home care</span>
+                <span>Post-hospitalization care in Burlington, MA</span>
                 <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>
 
             {/* Service 4 */}
-            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
+            <Link to="/services/respite-care" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
                 <img
                   src="/CARE GIVER  (14).jpg"
-                  alt="Respite home care"
+                  alt="Respite care in Lexington, MA"
                   className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                 />
                 <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
@@ -638,17 +607,17 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
               <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
-                <span>Respite home care</span>
+                <span>Respite care in Lexington, MA</span>
                 <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>
 
             {/* Service 5 */}
-            <Link to="/services" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
+            <Link to="/services/dementia-care" className="group space-y-3.5 text-center w-[220px] sm:w-[250px] shrink-0 snap-start lg:w-auto lg:shrink picture-card-pro">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
                 <img
                   src="/CARE GIVER  (16).jpg"
-                  alt="Specialized care"
+                  alt="Dementia care in Burlington, MA"
                   className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                 />
                 <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
@@ -657,7 +626,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
               <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
-                <span>Specialized care</span>
+                <span>Dementia care in Burlington, MA</span>
                 <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>
@@ -667,7 +636,7 @@ const Index = () => {
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
                 <img
                   src="/CARE GIVER  (7).jpg"
-                  alt="Senior transportation"
+                  alt="Senior transportation in Bedford, MA"
                   className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                 />
                 <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
@@ -676,7 +645,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
               <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
-                <span>Transportation</span>
+                <span>Senior transportation in Bedford, MA</span>
                 <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>
@@ -686,7 +655,7 @@ const Index = () => {
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-gray-100 bg-gray-50 relative picture-glaze">
                 <img
                   src="/CARE GIVER  (9).jpg"
-                  alt="Care Consultancy"
+                  alt="Care consultancy in Woburn, MA"
                   className="w-full h-full object-cover img-zoom-hover group-hover:scale-110 transition-transform duration-700"
                 />
                 <span className="absolute top-3 left-3 floating-photo-badge text-[#76248a] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm z-10">
@@ -695,7 +664,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#76248a]/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
               <h3 className="text-sm sm:text-base font-bold text-[#76248a] group-hover:text-[#0d9488] transition-all duration-300 flex items-center justify-center gap-1.5">
-                <span>Consultancy</span>
+                <span>Care consultancy in Woburn, MA</span>
                 <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 text-[#0d9488]"></i>
               </h3>
             </Link>
@@ -908,9 +877,115 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Service × Location Cross-Link Hub — SEO authority matrix */}
+      <section className="py-14 md:py-20 bg-gradient-to-b from-white to-gray-50 border-b border-gray-100">
+        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-10">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 tracking-tight">
+              Explore Our 16 Care Services Across 13 Massachusetts Communities
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              Whether your loved one is in Burlington, Lexington, Newton, or beyond — Akirapa delivers concierge in-home care close to home.
+            </p>
+          </div>
+
+          {/* 8 featured service+location pairings */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {[
+              { label: "Dementia care in Burlington, MA", to: "/services/dementia-care", icon: "fa-brain" },
+              { label: "Alzheimer's care in Lexington, MA", to: "/services/alzheimers-care", icon: "fa-heart-pulse" },
+              { label: "24-hour home care in Newton, MA", to: "/services/24-hour-home-care", icon: "fa-clock" },
+              { label: "Post-hospitalization care in Winchester, MA", to: "/services/post-hospitalization-care", icon: "fa-hospital" },
+              { label: "Respite care in Concord, MA", to: "/services/respite-care", icon: "fa-hands-holding-child" },
+              { label: "Personal care in Bedford, MA", to: "/services/personal-care", icon: "fa-user-nurse" },
+              { label: "Companion care in Cambridge, MA", to: "/services/companion-care", icon: "fa-handshake-simple" },
+              { label: "Skilled nursing in Boston, MA", to: "/services/skilled-nursing", icon: "fa-stethoscope" },
+            ].map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 hover:border-[#76248a]/40 hover:shadow-md transition-all duration-200 group"
+              >
+                <div className="w-9 h-9 rounded-xl bg-[#76248a] text-white flex items-center justify-center shrink-0 group-hover:bg-[#561868] transition-all duration-200">
+                  <i className={`fa-solid ${item.icon} text-sm`}></i>
+                </div>
+                <span className="text-sm font-bold text-gray-800 group-hover:text-[#76248a] transition-colors leading-tight">
+                  {item.label}
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          {/* All services + all locations two-column sub-grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto pt-4">
+            <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 space-y-4">
+              <h3 className="text-base font-black text-[#76248a] flex items-center gap-2">
+                <i className="fa-solid fa-list-check text-[#40ddd3]"></i>
+                All 16 Care Services
+              </h3>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+                {[
+                  { label: "Companion Care", slug: "companion-care" },
+                  { label: "Skilled Nursing", slug: "skilled-nursing" },
+                  { label: "Hospice Support", slug: "hospice-supportive-care" },
+                  { label: "Personal Care", slug: "personal-care" },
+                  { label: "Dementia Care", slug: "dementia-care" },
+                  { label: "Alzheimer's Care", slug: "alzheimers-care" },
+                  { label: "Respite Care", slug: "respite-care" },
+                  { label: "Live-In Care", slug: "live-in-care" },
+                  { label: "24-Hour Care", slug: "24-hour-home-care" },
+                  { label: "Medication Assistance", slug: "medication-assistance" },
+                  { label: "Meal Preparation", slug: "meal-preparation" },
+                  { label: "Transportation", slug: "transportation" },
+                  { label: "Homemaker Services", slug: "homemaker-services" },
+                  { label: "Post-Hospital Care", slug: "post-hospitalization-care" },
+                  { label: "Daily Living Activities", slug: "activities-of-daily-living" },
+                  { label: "Care Consultancy", slug: "consultancy" },
+                ].map((s) => (
+                  <li key={s.slug}>
+                    <Link
+                      to={`/services/${s.slug}`}
+                      className="text-xs font-semibold text-gray-700 hover:text-[#76248a] hover:underline flex items-center gap-1 group"
+                    >
+                      <i className="fa-solid fa-angle-right text-[#40ddd3] text-[10px]"></i>
+                      {s.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 space-y-4">
+              <h3 className="text-base font-black text-[#76248a] flex items-center gap-2">
+                <i className="fa-solid fa-map-location-dot text-[#40ddd3]"></i>
+                All 13 Service Areas
+              </h3>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+                {massachusettsLocations.map((loc) => (
+                  <li key={loc.slug}>
+                    <Link
+                      to={`/locations/${loc.slug}`}
+                      className="text-xs font-semibold text-gray-700 hover:text-[#76248a] hover:underline flex items-center gap-1 group"
+                    >
+                      <i className="fa-solid fa-angle-right text-[#40ddd3] text-[10px]"></i>
+                      {loc.cityName}, MA
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/locations"
+                className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#76248a] hover:underline pt-2"
+              >
+                View All Service Areas →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Stories of Care & Trust (Moved from About Us to Home Tab with Full Testimonials & Feedback Form) */}
-      <section id="testimonials" className="py-16 md:py-24 bg-gray-50/70 border-b border-gray-100">
-        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16">
+      <section id="testimonials" className="py-16 md:py-24 bg-gray-50/70 border-b border-gray-100">        <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left: Testimonials List */}
             <div className="lg:col-span-7 space-y-6">
@@ -955,6 +1030,16 @@ const Index = () => {
                 <p className="text-white/80 text-xs sm:text-sm">
                   Has your family experienced care from Akirapa Home Care? We welcome your testimonial.
                 </p>
+                <a
+                  href="https://www.google.com/search?q=Akirapa+Home+Care+Inc.+Burlington+MA#lrd=0x89e39f0e7f3ceda9:0xb8173043064ff6df,3,,,,"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full bg-white text-[#76248a] hover:bg-[#40ddd3] hover:text-gray-950 font-extrabold text-xs sm:text-sm py-2.5 px-4 rounded-xl shadow-md transition-all duration-200"
+                >
+                  <i className="fa-brands fa-google text-sm"></i>
+                  <span>Leave a Review on Google</span>
+                  <i className="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+                </a>
 
                 {!reviewSubmitted ? (
                   <form onSubmit={handleTestimonialSubmit} className="space-y-4 text-gray-900">
@@ -1038,9 +1123,6 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-white border-b border-gray-100">
         <div className="container-narrow mx-auto px-6 sm:px-12 lg:px-16 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-[#76248a] font-extrabold text-xs uppercase tracking-wider bg-[#76248a]/10 px-3.5 py-1 rounded-full inline-block">
-              Massachusetts Coverage
-            </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
               Proudly Serving Massachusetts Families
             </h2>

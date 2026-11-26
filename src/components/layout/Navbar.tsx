@@ -317,7 +317,7 @@ const Navbar = () => {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#40ddd3]"></span>
               </span>
               <span className="text-[11px] xl:text-[12px] font-extrabold uppercase tracking-widest text-[#40ddd3]">
-                24/7 Massachusetts Helpline
+                24/7 Helpline
               </span>
             </div>
 
@@ -348,44 +348,62 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Right: Our Social Media Handles */}
-          <div className="flex items-center gap-3 shrink-0">
-            <div className="flex items-center gap-1.5 bg-[#40ddd3] text-gray-950 px-3 py-1 rounded-full font-bold text-xs shadow-xs">
-              <i className="fa-solid fa-share-nodes text-xs text-[#76248a]"></i>
-              <span>Our Social Media Handles</span>
+          {/* Right: Our Social Media Handles + Leave a Review */}
+          <div className="flex flex-col items-end gap-2 shrink-0">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1.5 bg-[#40ddd3] text-gray-950 px-3 py-1 rounded-full font-bold text-xs shadow-xs">
+                <i className="fa-solid fa-share-nodes text-xs text-[#76248a]"></i>
+                <span>Our Social Media Handles</span>
+              </div>
+              <div className="flex items-center gap-1.5 pl-2.5 border-l border-white/20">
+                <a
+                  href="https://www.instagram.com/akirapahomecare/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram @akirapahomecare"
+                  title="Follow Akirapa on Instagram"
+                  className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
+                >
+                  <i className="fa-brands fa-instagram text-sm"></i>
+                </a>
+                <a
+                  href="https://x.com/akirapahomecare"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X @akirapahomecare"
+                  title="Follow Akirapa on X"
+                  className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
+                >
+                  <i className="fa-brands fa-x-twitter text-sm"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61593883607014"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook Akirapa Home Care"
+                  title="Follow Akirapa on Facebook"
+                  className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
+                >
+                  <i className="fa-brands fa-facebook-f text-sm"></i>
+                </a>
+              </div>
             </div>
-            <div className="flex items-center gap-1.5 pl-2.5 border-l border-white/20">
-              <a
-                href="https://www.instagram.com/akirapahomecare/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram @akirapahomecare"
-                title="Follow Akirapa on Instagram"
-                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
-              >
-                <i className="fa-brands fa-instagram text-sm"></i>
-              </a>
-              <a
-                href="https://x.com/akirapahomecare"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X @akirapahomecare"
-                title="Follow Akirapa on X"
-                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
-              >
-                <i className="fa-brands fa-x-twitter text-sm"></i>
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=61593883607014"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook Akirapa Home Care"
-                title="Follow Akirapa on Facebook"
-                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#40ddd3] text-white hover:text-gray-950 flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-xs"
-              >
-                <i className="fa-brands fa-facebook-f text-sm"></i>
-              </a>
-            </div>
+            <a
+              href="https://www.google.com/search?q=Akirapa+Home+Care+Inc.+Burlington+MA#lrd=0x89e39f0e7f3ceda9:0xb8173043064ff6df,3,,,,"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white/95 hover:bg-[#40ddd3] text-gray-900 text-xs font-extrabold px-3.5 py-1.5 rounded-full shadow-sm transition-all duration-200 hover:scale-105"
+            >
+              <i className="fa-brands fa-google text-[#76248a] text-xs"></i>
+              <span className="flex items-center gap-0.5 text-amber-400">
+                <i className="fa-solid fa-star text-[10px]"></i>
+                <i className="fa-solid fa-star text-[10px]"></i>
+                <i className="fa-solid fa-star text-[10px]"></i>
+                <i className="fa-solid fa-star text-[10px]"></i>
+                <i className="fa-solid fa-star text-[10px]"></i>
+              </span>
+              <span>Leave a Review</span>
+            </a>
           </div>
         </div>
       </div>
