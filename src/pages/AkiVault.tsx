@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
@@ -90,118 +90,6 @@ const technologyPillars = [
 
 export default function AkiVault() {
   const [activeRoleTab, setActiveRoleTab] = useState<"family" | "caregiver" | "coordinator">("family");
-  const [activeSectionNav, setActiveSectionNav] = useState<string>("hero");
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
-  const [cardPosition, setCardPosition] = useState(() => {
-    if (typeof window !== "undefined") {
-      return { x: Math.max(16, window.innerWidth - 330), y: 220 };
-    }
-    return { x: 24, y: 220 };
-  });
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isVibrating, setIsVibrating] = useState(false);
-  const dragDistanceRef = React.useRef(0);
-  const startPosRef = React.useRef({ x: 0, y: 0 });
-  const navCardRef = React.useRef<HTMLDivElement>(null);
-
-  // 100x Hyper-Speed Vibration: Buzzes for exactly 1 second, waits for 5 seconds, continuous loop
-  useEffect(() => {
-    let stopTimer: ReturnType<typeof setTimeout>;
-    const triggerVibration = () => {
-      setIsVibrating(true);
-      stopTimer = setTimeout(() => {
-        setIsVibrating(false);
-      }, 1000); // reduced to exactly 1 second of vibration
-    };
-
-    triggerVibration();
-    const interval = setInterval(triggerVibration, 6000); // 1s vibrate + 5s wait = 6s cycle
-
-    return () => {
-      clearInterval(interval);
-      clearTimeout(stopTimer);
-    };
-  }, []);
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    startPosRef.current = { x: e.clientX, y: e.clientY };
-    dragDistanceRef.current = 0;
-    setIsDragging(true);
-    const rect = navCardRef.current?.getBoundingClientRect();
-    if (rect) {
-      setDragOffset({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      });
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    const dist = Math.hypot(e.clientX - startPosRef.current.x, e.clientY - startPosRef.current.y);
-    dragDistanceRef.current = dist;
-    const newX = e.clientX - dragOffset.x;
-    const newY = e.clientY - dragOffset.y;
-    setCardPosition({ x: Math.max(8, Math.min(window.innerWidth - 280, newX)), y: Math.max(120, Math.min(window.innerHeight - 100, newY)) });
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    const touch = e.touches[0];
-    startPosRef.current = { x: touch.clientX, y: touch.clientY };
-    dragDistanceRef.current = 0;
-    setIsDragging(true);
-    const rect = navCardRef.current?.getBoundingClientRect();
-    if (rect) {
-      setDragOffset({
-        x: touch.clientX - rect.left,
-        y: touch.clientY - rect.top,
-      });
-    }
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    const touch = e.touches[0];
-    const dist = Math.hypot(touch.clientX - startPosRef.current.x, touch.clientY - startPosRef.current.y);
-    dragDistanceRef.current = dist;
-    const newX = touch.clientX - dragOffset.x;
-    const newY = touch.clientY - dragOffset.y;
-    setCardPosition({ x: Math.max(8, Math.min(window.innerWidth - 280, newX)), y: Math.max(120, Math.min(window.innerHeight - 100, newY)) });
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-  };
-
-  const handleHeaderClick = () => {
-    if (dragDistanceRef.current < 8) {
-      setIsNavOpen((prev) => !prev);
-    }
-  };
-
-  const navigationSections = [
-    { id: "hero", label: "Introduction", icon: "fa-vault" },
-    { id: "comparison", label: "vs Traditional Care", icon: "fa-scale-balanced" },
-    { id: "pillars", label: "Technology Pillars", icon: "fa-layer-group" },
-    { id: "family", label: "For Families", icon: "fa-house-medical" },
-    { id: "caregivers", label: "For Caregivers", icon: "fa-user-nurse" },
-    { id: "coordinators", label: "For Coordinators", icon: "fa-clipboard-user" },
-    { id: "cta", label: "Get Started", icon: "fa-phone" },
-  ];
-
-  const scrollToSection = (sectionId: string) => {
-    setActiveSectionNav(sectionId);
-    setIsNavOpen(false);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
 
   return (
     <Layout>
@@ -215,119 +103,6 @@ export default function AkiVault() {
         ]}
       />
 
-      {/* Desktop Floating Interactive & Draggable Navigation Widget */}
-      <div
-        ref={navCardRef}
-        className={`hidden md:block fixed z-40 w-80 overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl animate-purple-glow transition-all duration-200 ${
-          isVibrating ? "animate-vibrate-hyper ring-2 ring-fuchsia-400/60 shadow-[0_0_35px_rgba(217,70,239,0.55)]" : ""
-        }`}
-        style={{ left: `${cardPosition.x}px`, top: `${cardPosition.y}px` }}
-      >
-        <div
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          onClick={handleHeaderClick}
-          style={{ cursor: isDragging ? "grabbing" : "pointer" }}
-          className="flex items-center justify-between bg-gradient-to-r from-[#8e24aa] via-[#76248a] to-[#4a1259] px-4 py-3.5 text-white select-none button-shimmer shadow-md transition-all hover:brightness-105"
-          title="Click anywhere to open/close sections, or drag to reposition"
-        >
-          <div className="flex items-center gap-3">
-            <span className="relative flex h-3.5 w-3.5 shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d946ef] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#e879f9] shadow-[0_0_8px_rgba(217,70,239,0.8)]"></span>
-            </span>
-            <i className="fa-solid fa-compass text-[#f0abfc] text-base"></i>
-            <div>
-              <span className="text-xs font-black uppercase tracking-wider block">AkiVault Navigator</span>
-              <span className="text-[10px] text-purple-200 block font-medium -mt-0.5">
-                Click anywhere to {isNavOpen ? "minimize" : "view 7 sections"}
-              </span>
-            </div>
-          </div>
-          <div className="rounded-lg p-1.5 bg-purple-950/40 hover:bg-purple-900/60 border border-purple-300/20 transition-transform duration-300">
-            <i className={`fa-solid fa-chevron-down text-xs transition-transform duration-300 ${isNavOpen ? "rotate-180 text-[#f0abfc]" : "rotate-0 text-white"}`}></i>
-          </div>
-        </div>
-
-        {isNavOpen && (
-          <nav className="max-h-72 space-y-1 overflow-y-auto p-3 bg-white animate-fadeIn" aria-label="AkiVault sections">
-            {navigationSections.map((section) => (
-              <button
-                key={section.id}
-                type="button"
-                onClick={() => scrollToSection(section.id)}
-                className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-xs font-bold transition-all ${
-                  activeSectionNav === section.id
-                    ? "bg-gradient-to-r from-[#76248a] to-[#561868] text-white shadow-md shadow-purple-950/20 scale-[1.02]"
-                    : "text-gray-700 hover:bg-purple-50 hover:text-[#76248a]"
-                }`}
-              >
-                <i className={`fa-solid ${section.icon} w-4 text-center ${activeSectionNav === section.id ? "text-[#f0abfc]" : "text-[#76248a]"}`}></i>
-                <span>{section.label}</span>
-              </button>
-            ))}
-          </nav>
-        )}
-      </div>
-
-      {/* Mobile Floating Navigator Action Button & Bottom Sheet */}
-      <div className="md:hidden fixed bottom-20 right-4 z-40 flex flex-col items-end">
-        {isNavOpen && (
-          <div className="mb-2 w-72 max-w-[calc(100vw-2rem)] rounded-2xl border-2 border-purple-500/40 bg-white shadow-2xl p-2.5 space-y-1 animate-tab-slide">
-            <div className="flex items-center justify-between px-2 py-1.5 border-b border-gray-100 text-xs font-extrabold text-[#76248a]">
-              <span className="flex items-center gap-1.5">
-                <i className="fa-solid fa-compass text-[#40ddd3]"></i>
-                Jump to Section
-              </span>
-              <button
-                type="button"
-                onClick={() => setIsNavOpen(false)}
-                className="text-gray-400 hover:text-gray-700 text-sm font-bold p-1"
-                aria-label="Close section menu"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="max-h-60 overflow-y-auto space-y-1 pt-1">
-              {navigationSections.map((section) => (
-                <button
-                  key={section.id}
-                  type="button"
-                  onClick={() => scrollToSection(section.id)}
-                  className={`flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-left text-xs font-bold transition-all ${
-                    activeSectionNav === section.id
-                      ? "bg-[#76248a] text-white"
-                      : "text-gray-700 hover:bg-purple-50"
-                  }`}
-                >
-                  <i className={`fa-solid ${section.icon} w-4 text-center ${activeSectionNav === section.id ? "text-[#40ddd3]" : "text-[#76248a]"}`}></i>
-                  <span>{section.label}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <button
-          type="button"
-          onClick={() => setIsNavOpen(!isNavOpen)}
-          className="flex items-center gap-2 bg-[#76248a] hover:bg-[#561868] text-white px-3.5 py-2.5 rounded-full shadow-2xl border-2 border-[#40ddd3]/40 font-black text-xs transition-transform active:scale-95"
-          aria-label="Toggle AkiVault section menu"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#40ddd3] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#40ddd3]"></span>
-          </span>
-          <i className="fa-solid fa-compass text-[#40ddd3] text-sm"></i>
-          <span>Sections</span>
-        </button>
-      </div>
-
       {/* Hero Header matching main site aesthetic */}
       <section id="hero" className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-[#76248a] via-[#561868] to-[#3a0d48] text-white overflow-hidden">
         {/* Glowing Decorative Backdrop Elements */}
@@ -335,11 +110,6 @@ export default function AkiVault() {
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-[#76248a]/40 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-[#40ddd3] border border-[#40ddd3]/30 px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-6">
-            <i className="fa-solid fa-vault text-base text-[#40ddd3]"></i>
-            <span>Proprietary Care Engine</span>
-          </div>
-
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight max-w-4xl mx-auto mb-6">
             Inside <span className="text-[#40ddd3]">AkiVault</span>: Why Akirapa Redefines Senior In-Home Care
           </h1>
@@ -350,7 +120,9 @@ export default function AkiVault() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-[#561868] font-extrabold text-base h-14 px-8 rounded-2xl shadow-lg border-none">
-              <Link to="/contact">Experience Akirapa Care</Link>
+              <a href="https://akivualt.vercel.app/" target="_blank" rel="noopener noreferrer">
+                Experience Akirapa Care
+              </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="bg-white/10 hover:bg-white/20 border-white/30 text-white font-bold text-base h-14 px-8 rounded-2xl backdrop-blur-sm">
               <a href="#comparison">Compare vs Traditional Care</a>
@@ -497,7 +269,7 @@ export default function AkiVault() {
           {/* Role Tabs */}
           <div className="flex flex-wrap sm:flex-nowrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10 w-full max-w-xl mx-auto">
             <button
-              onClick={() => { setActiveRoleTab("family"); setActiveSectionNav("family"); }}
+              onClick={() => setActiveRoleTab("family")}
               className={`flex-1 min-w-[100px] py-2.5 sm:py-3 px-2 sm:px-6 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-base transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer ${
                 activeRoleTab === "family"
                   ? "bg-[#76248a] text-white shadow-xl scale-[1.02]"
@@ -508,7 +280,7 @@ export default function AkiVault() {
               <span>For Families</span>
             </button>
             <button
-              onClick={() => { setActiveRoleTab("caregiver"); setActiveSectionNav("caregivers"); }}
+              onClick={() => setActiveRoleTab("caregiver")}
               className={`flex-1 min-w-[100px] py-2.5 sm:py-3 px-2 sm:px-6 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-base transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer ${
                 activeRoleTab === "caregiver"
                   ? "bg-[#76248a] text-white shadow-xl scale-[1.02]"
@@ -519,7 +291,7 @@ export default function AkiVault() {
               <span>For Caregivers</span>
             </button>
             <button
-              onClick={() => { setActiveRoleTab("coordinator"); setActiveSectionNav("coordinators"); }}
+              onClick={() => setActiveRoleTab("coordinator")}
               className={`flex-1 min-w-[100px] py-2.5 sm:py-3 px-2 sm:px-6 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-base transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer ${
                 activeRoleTab === "coordinator"
                   ? "bg-[#76248a] text-white shadow-xl scale-[1.02]"
