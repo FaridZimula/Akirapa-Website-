@@ -84,10 +84,7 @@ async function run() {
       html = html.replace('</head>', `${jsonLdHtml}\n</head>`);
     }
 
-    // 8. Inject Semantic Pre-rendered HTML inside <div id="root"></div> for immediate crawler indexing
-    if (bodyHtml) {
-      html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
-    }
+    // 8. Leave <div id="root"></div> empty so users don't see a pre-render flash before React mounts
 
     fs.writeFileSync(path.join(targetDir, 'index.html'), html, 'utf8');
     pageCount++;
