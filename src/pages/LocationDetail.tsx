@@ -34,7 +34,7 @@ export default function LocationDetail() {
     "description": locationData.shortDescription,
     "telephone": "+1 781-226-9910",
     "email": "info@akirapahomecareus.com",
-    "priceRange": "$$ ($36 - $44/hr)",
+    "priceRange": "$$",
     "currenciesAccepted": "USD",
     "isAcceptingNewPatients": true,
     "address": {
@@ -165,7 +165,7 @@ export default function LocationDetail() {
                 </p>
               </div>
               <Button asChild className="bg-[#76248a] hover:bg-[#561868] text-white font-bold rounded-xl text-xs sm:text-sm">
-                <Link to="/pricing">View Hourly Rates ($36-$44/hr)</Link>
+                <Link to="/pricing">Explore Care Plans &amp; Options</Link>
               </Button>
             </div>
           </div>

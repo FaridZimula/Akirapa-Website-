@@ -82,9 +82,9 @@ const FAQ_LIST: FAQItemData[] = [
   {
     id: "rates-cost",
     category: "home-care",
-    categoryLabel: "Pricing & Rates",
-    question: "How much does in-home senior care cost in Massachusetts?",
-    answer: "In Massachusetts, private-duty in-home care rates typically range between $32 to $42 per hour depending on whether care is companion support, certified personal care (ADLs), or specialized dementia care. We provide transparent rates with zero long-term contracts, zero hidden cancellation fees, and flexible hourly or 24/7 packages.",
+    categoryLabel: "Care Plans & Flexibility",
+    question: "How are in-home senior care plans structured in Massachusetts?",
+    answer: "In Massachusetts, our private-duty in-home care plans are tailored around your loved one's exact needs—whether companion support, certified personal care (ADLs), or specialized dementia care. We provide complimentary in-home assessments, zero long-term contracts, zero hidden cancellation fees, and flexible hourly or 24/7 care arrangements. Call +1 781-226-9910 for a personalized consultation.",
   },
   {
     id: "contracts-policy",

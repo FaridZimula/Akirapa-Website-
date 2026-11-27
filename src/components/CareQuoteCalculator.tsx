@@ -11,26 +11,6 @@ export const CareQuoteCalculator: React.FC = () => {
   const [phone, setPhone] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Dynamic estimate calculation based on selected duration
-  const getEstimatedWeekly = () => {
-    if (duration.includes("24 Hours") || duration.includes("Live-in")) {
-      return 2240; // Flat rate for 24/7 care (~$320/day * 7)
-    }
-    if (duration.includes("9 to 12")) {
-      return 1400; // ~$35/hr * 10 hrs * 4 days
-    }
-    if (duration.includes("5 to 8")) {
-      return 980; // ~$35/hr * 7 hrs * 4 days
-    }
-    if (duration.includes("3 to 4")) {
-      return 560; // ~$35/hr * 4 hrs * 4 days
-    }
-    return 700; // Default estimate
-  };
-
-  const estimatedWeekly = getEstimatedWeekly();
-  const estimatedMonthly = estimatedWeekly * 4;
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
@@ -43,7 +23,7 @@ export const CareQuoteCalculator: React.FC = () => {
           "Accept": "application/json",
         },
         body: JSON.stringify({
-          _subject: `New Quote Calculator Request from ${phone || "Website Visitor"}`,
+          _subject: `New Care Plan & Quote Request from ${phone || "Website Visitor"}`,
           _template: "table",
           _captcha: "false",
           "Phone Number": phone || "Not provided",
@@ -51,14 +31,12 @@ export const CareQuoteCalculator: React.FC = () => {
           "Preferred Arrival Time": arrivalTime || "Not specified",
           "Care Duration": duration || "Not specified",
           "Location": location || "Not specified",
-          "Estimated Weekly Investment": `$${estimatedWeekly.toLocaleString()}`,
-          "Estimated Monthly Investment": `$${estimatedMonthly.toLocaleString()}`,
         }),
       });
 
       toast({
         title: "Quote Request Submitted!",
-        description: "Our Burlington care team will reach out promptly to discuss your care quote.",
+        description: "Our Burlington care team will reach out promptly to discuss your personalized care plan.",
       });
     } catch (error) {
       toast({
@@ -75,27 +53,16 @@ export const CareQuoteCalculator: React.FC = () => {
         {/* Left Column - Heading & Call to Action text */}
         <div className="lg:col-span-5 space-y-4 sm:space-y-6 text-left">
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight animate-word-fade">
-            Quote calculator
+            Request a custom care quote
           </h2>
           
           <p className="text-[#40ddd3] text-sm sm:text-base md:text-lg leading-relaxed font-medium">
-            If you require services on a public holiday, overnight services or live-in services, please call{" "}
+            Every care plan is tailored to your loved one's exact needs. If you require services on a public holiday, overnight services, or live-in support, please call{" "}
             <a href="tel:+17812269910" className="font-bold underline hover:opacity-80 transition-opacity text-[#40ddd3]">
               +1 781-226-9910
             </a>{" "}
-            so we can discuss prices with you.
+            or submit your schedule below for a complimentary consultation.
           </p>
-
-          {/* Real-time Estimated Badge */}
-          {duration && (
-            <div className="pt-2 animate-tab-slide">
-              <div className="bg-[#40ddd3]/20 border border-[#40ddd3]/60 rounded-2xl p-3.5 sm:p-4 inline-block shadow-lg transition-all duration-300">
-                <span className="text-xs uppercase font-extrabold text-[#40ddd3] block">Estimated Care Rate</span>
-                <span className="text-xl sm:text-2xl font-black text-white">${estimatedWeekly.toLocaleString()} <span className="text-xs font-normal text-white/80">/ week</span></span>
-                <span className="text-xs text-[#40ddd3] block mt-0.5">(~${estimatedMonthly.toLocaleString()}/mo)</span>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Right Column - Form Input Fields Grid */}

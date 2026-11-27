@@ -712,7 +712,7 @@ async function run() {
       "description": loc.shortDescription,
       "telephone": "+1 781-226-9910",
       "email": "info@akirapahomecareus.com",
-      "priceRange": "$$ ($36 - $44/hr)",
+      "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "281 Cambridge Street",
@@ -1148,19 +1148,19 @@ async function run() {
     },
     {
       path: 'pricing',
-      title: 'Transparent Home Care Pricing in Burlington, MA | Hourly Rates & Costs | Akirapa',
-      description: 'Transparent home care costs in Burlington & Middlesex County, MA. Licensed CNA care from $36-$44/hour. Zero long-term contracts, zero hidden fees, and rapid same-day availability.',
+      title: 'Personalized Home Care Plans in Burlington, MA | Care Options | Akirapa',
+      description: 'Flexible in-home care plans in Burlington & Middlesex County, MA. Certified CNA care tailored to your family. Zero long-term contracts, zero hidden fees, and rapid same-day availability.',
       canonical: 'https://akirapahomecareus.com/pricing',
       bodyHtml: `
         <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 32px 16px;">
-          <h1 style="font-size: 36px; font-weight: 900; color: #561868; margin-bottom: 12px;">Transparent Home Care Pricing in Burlington, MA</h1>
-          <p style="font-size: 16px; color: #4b5563; margin-bottom: 24px;">Predictable, honest hourly rates for families in crisis. No long-term contracts, zero hidden intake fees.</p>
-          <h2 style="font-size: 20px; font-weight: bold; color: #561868;">Burlington Rate Ranges</h2>
+          <h1 style="font-size: 36px; font-weight: 900; color: #561868; margin-bottom: 12px;">Personalized Home Care Plans in Burlington, MA</h1>
+          <p style="font-size: 16px; color: #4b5563; margin-bottom: 24px;">Predictable, individualized care options for families in crisis. No long-term contracts, zero hidden intake fees.</p>
+          <h2 style="font-size: 20px; font-weight: bold; color: #561868;">Burlington Care Plan Options</h2>
           <ul style="color: #374151; padding-left: 20px;">
-            <li><strong>Hourly CNA Care:</strong> $36 – $44 per hour (4-hour visit minimum).</li>
-            <li><strong>12-Hour Awake Shifts:</strong> $420 – $500 per shift.</li>
-            <li><strong>24/7 Around-the-Clock Care:</strong> $800 – $960 per 24-hour cycle.</li>
-            <li><strong>Live-In Care:</strong> $450 – $550 per day flat rate.</li>
+            <li><strong>Hourly CNA Care:</strong> Flexible visits tailored to daily routines (4-hour visit minimum).</li>
+            <li><strong>12-Hour Awake Shifts:</strong> Continuous day or overnight supervision.</li>
+            <li><strong>24/7 Around-the-Clock Care:</strong> Rotating awake Care Pod coverage.</li>
+            <li><strong>Live-In Care:</strong> Dedicated primary caregiver residing in the home.</li>
           </ul>
         </div>
       `
@@ -1189,7 +1189,7 @@ async function run() {
           <h2 style="font-size: 20px; font-weight: bold; color: #561868;">Key Plain-Language Facts</h2>
           <ul style="color: #374151; padding-left: 20px;">
             <li><strong>No long-term contracts:</strong> Pause or cancel with 24–48 hours notice.</li>
-            <li><strong>Burlington hourly rates:</strong> $36 – $44 per hour for licensed CNAs.</li>
+            <li><strong>Complimentary Assessments:</strong> Personalized care plans with zero intake fees.</li>
             <li><strong>Medicare coverage:</strong> Traditional Medicare does not pay for non-medical care.</li>
           </ul>
         </div>
@@ -1198,7 +1198,7 @@ async function run() {
     {
       path: 'dementia-care',
       title: 'Dementia Care in Burlington, MA | Memory Care & Cognitive Support | Akirapa',
-      description: 'Specialized dementia and Alzheimer\'s memory care in Burlington, MA. Verified CNAs, calm sensory routines, wandering prevention, and transparent pricing ($38-$44/hr).',
+      description: 'Specialized dementia and Alzheimer\'s memory care in Burlington, MA. Verified CNAs, calm sensory routines, wandering prevention, and individualized care plans.',
       canonical: 'https://akirapahomecareus.com/dementia-care',
       bodyHtml: `
         <div style="font-family: system-ui, sans-serif; color: #1f2937; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 32px 16px;">

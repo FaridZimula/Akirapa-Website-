@@ -199,8 +199,8 @@ export const detailedServices: DetailedService[] = [
     ],
     faqs: [
       {
-        question: "What does dementia care cost in Burlington?",
-        answer: "Dementia and memory care in Burlington typically ranges between $38 and $44 per hour for certified CNAs with specialized cognitive engagement training. There are zero intake fees, zero assessment charges, and zero weekend surge fees."
+        question: "How is dementia care planned and tailored in Burlington?",
+        answer: "Dementia and memory care in Burlington is delivered by certified CNAs with specialized cognitive engagement training, tailored to your loved one's stage and daily routine. There are zero intake fees, zero assessment charges, and zero weekend surge fees."
       },
       {
         question: "Is there a minimum number of hours for dementia care?",
@@ -369,8 +369,8 @@ export const detailedServices: DetailedService[] = [
     ],
     faqs: [
       {
-        question: "What does 24-hour home care cost in Burlington?",
-        answer: "In Burlington and Middlesex County, continuous 24-hour care ranges from $800 to $960 per 24-hour day for rotating 100% awake CNA shifts (two 12-hour or three 8-hour shifts). For stable clients where the caregiver receives private sleeping quarters and 8 hours of uninterrupted rest, live-in care flat rates range from $450 to $550 per day."
+        question: "How is 24-hour home care structured in Burlington?",
+        answer: "In Burlington and Middlesex County, continuous 24-hour care is arranged with rotating 100% awake CNA shifts (two 12-hour or three 8-hour shifts) for uninterrupted day-and-night oversight. For stable clients where the caregiver receives private sleeping quarters and 8 hours of uninterrupted rest, we also offer dedicated live-in care arrangements. Contact us for a complimentary in-home assessment."
       },
       {
         question: "Is there a minimum number of hours for 24-hour care?",
@@ -596,8 +596,8 @@ export const detailedServices: DetailedService[] = [
     ],
     faqs: [
       {
-        question: "What does post-hospital recovery care cost in Burlington?",
-        answer: "Post-hospitalization recovery care in Burlington typically ranges from $36 to $42 per hour for certified CNAs assisting with surgical transfers, mobility, and medication reminders. Akirapa has zero intake fees and zero cancellation penalties."
+        question: "How is post-hospital recovery care arranged in Burlington?",
+        answer: "Post-hospitalization recovery care in Burlington is delivered by certified CNAs assisting with surgical transfers, mobility, and medication reminders, tailored to your discharge plan. Akirapa has zero intake fees and zero cancellation penalties."
       },
       {
         question: "Is there a minimum number of hours for post-hospital care?",

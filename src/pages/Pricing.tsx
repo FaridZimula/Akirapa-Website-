@@ -11,14 +11,14 @@ export default function Pricing() {
   const pricingSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Transparent Home Care Pricing & Hourly Rates in Burlington, MA | Akirapa",
-    "description": "Transparent home care rates in Burlington & Middlesex County, MA. Certified CNA care from $36-$44/hr, 24/7 care, zero long-term contracts, and free in-home assessments.",
+    "name": "Personalized Home Care Plans & Options in Burlington, MA | Akirapa",
+    "description": "Flexible in-home care plans in Burlington & Middlesex County, MA. Certified CNA care, 24/7 care, zero long-term contracts, and complimentary in-home assessments.",
     "publisher": {
       "@type": "MedicalOrganization",
       "name": "Akirapa Home Care",
       "url": "https://akirapahomecareus.com",
       "telephone": "+1 781-226-9910",
-      "priceRange": "$36 - $44 / hr"
+      "priceRange": "$$"
     }
   };
 
@@ -26,8 +26,8 @@ export default function Pricing() {
     {
       title: "Hourly CNA Care",
       subtitle: "Flexible visits tailored around Mom or Dad's daily routine",
-      rate: "$36 – $44",
-      unit: "per hour",
+      rate: "Custom Plan",
+      unit: "tailored hourly schedule",
       badge: "Most Popular",
       badgeColor: "bg-[#76248a] text-white",
       minimum: "4-Hour Minimum per Visit",
@@ -47,8 +47,8 @@ export default function Pricing() {
     {
       title: "12-Hour Day / Night Shift",
       subtitle: "Continuous awake supervision for fall prevention & sundowning",
-      rate: "$420 – $500",
-      unit: "per 12-hour shift",
+      rate: "Dedicated Shift",
+      unit: "day or overnight coverage",
       badge: "High Peace of Mind",
       badgeColor: "bg-emerald-600 text-white",
       minimum: "Day (8A-8P) or Night (8P-8A)",
@@ -67,8 +67,8 @@ export default function Pricing() {
     {
       title: "24/7 Around-the-Clock Care",
       subtitle: "Complete continuous protection with rotating Care Pod teams",
-      rate: "$800 – $960",
-      unit: "per 24-hour cycle",
+      rate: "24/7 Coverage",
+      unit: "continuous rotating shifts",
       badge: "Nursing Home Alternative",
       badgeColor: "bg-purple-900 text-white",
       minimum: "Continuous 2-3 Shift Rotation",
@@ -87,16 +87,16 @@ export default function Pricing() {
     {
       title: "Live-In Care",
       subtitle: "Dedicated caregiver residing in the home with private quarters",
-      rate: "$450 – $550",
-      unit: "per day flat rate",
-      badge: "Cost-Effective 24-Hr",
+      rate: "Live-In Plan",
+      unit: "dedicated daily support",
+      badge: "Consistent 24-Hr",
       badgeColor: "bg-blue-600 text-white",
       minimum: "Private Room & 8hr Sleep Required",
       features: [
         "Consistent primary caregiver residing in client's home",
         "Assistance with daily living throughout waking hours",
         "Home-cooked meals, light housekeeping & companionship",
-        "Substantial savings compared to 24/7 hourly rotating shifts",
+        "Seamless continuity with a familiar, dedicated caregiver",
         "Caregiver requires private bedroom and 8 hours sleep period"
       ],
       idealFor: "Stable seniors who sleep through the night but need steady daytime companionship, transfers, and safety supervision.",
@@ -108,15 +108,15 @@ export default function Pricing() {
   return (
     <Layout>
       <SEO
-        title="Transparent Home Care Pricing in Burlington, MA | Hourly Rates & Costs | Akirapa"
-        description="Transparent home care costs in Burlington & Middlesex County, MA. Licensed CNA care from $36-$44/hour. Zero long-term contracts, zero hidden fees, and rapid same-day availability."
-        keywords="home care cost Burlington MA, in home caregiver hourly rate Massachusetts, 24 hour home care cost, elder care prices Middlesex County, transparent home care pricing"
+        title="Personalized Home Care Plans in Burlington, MA | Care Options | Akirapa"
+        description="Flexible in-home care plans in Burlington & Middlesex County, MA. Licensed CNA care tailored to your family. Zero long-term contracts, zero hidden fees, and rapid same-day availability."
+        keywords="home care plans Burlington MA, in home caregiver Massachusetts, 24 hour home care, elder care options Middlesex County, Akirapa Home Care"
         path="/pricing"
         schemaExtra={[pricingSchema]}
         breadcrumbs={[
           { name: "Home", path: "/" },
           { name: "Care Services", path: "/services" },
-          { name: "Pricing Guide", path: "/pricing" }
+          { name: "Care Plans", path: "/pricing" }
         ]}
       />
 
@@ -133,11 +133,11 @@ export default function Pricing() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight max-w-4xl mx-auto leading-tight">
-            Transparent Home Care Pricing in Burlington, MA
+            Personalized Home Care Plans in Burlington, MA
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            When you're trying to figure out care for Mom or Dad, the last thing you need is phone tag just to get a straight price. Here is exactly what home care costs, how hours work, and how fast we can start.
+            When you're trying to figure out care for Mom or Dad, the last thing you need is phone tag or rigid contracts. Here is exactly how our care schedules work, how plans are tailored, and how fast we can start.
           </p>
 
           {/* Rapid Availability Banner for the Daughter in Crisis */}
@@ -172,7 +172,7 @@ export default function Pricing() {
                 <i className="fa-solid fa-file-invoice-dollar text-base"></i>
               </div>
               <div>
-                <strong className="text-gray-900 block text-sm">$0 Free Clinical Assessment</strong>
+                <strong className="text-gray-900 block text-sm">Complimentary Clinical Assessment</strong>
                 <span className="text-xs text-gray-500">Zero intake fees, setup charges, or hidden deposits</span>
               </div>
             </div>
@@ -190,15 +190,15 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Transparent Pricing Cards */}
+      {/* Personalized Care Plan Cards */}
       <section className="py-16 sm:py-20 bg-gray-50">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 tracking-tight">
-              Clear, Predictable Rates for Every Level of Care
+              Flexible Care Options for Every Level of Support
             </h2>
             <p className="text-gray-600 text-base sm:text-lg">
-              Industry guidance describes the adult child in crisis as needing reassurance, transparent pricing, and rapid availability. Here are our exact rate ranges:
+              Families navigating a sudden transition need clarity, flexibility, and rapid availability. Explore our core care arrangements:
             </p>
           </div>
 
@@ -256,23 +256,23 @@ export default function Pricing() {
             ))}
           </div>
 
-          {/* Explanation of Why Rates Vary */}
+          {/* Explanation of Care Acuity Levels */}
           <div className="mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-xs max-w-4xl mx-auto">
             <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
               <i className="fa-solid fa-circle-info text-[#76248a]"></i>
-              What Determines Where Your Care Falls in the $36 – $44 Range?
+              How We Match Care Plans to Your Loved One's Needs
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm text-gray-600">
               <div className="p-3 bg-gray-50 rounded-xl border border-gray-100">
-                <strong className="text-gray-900 block mb-1">$36 – $38 / Hour</strong>
+                <strong className="text-gray-900 block mb-1">Companion &amp; Daily Support</strong>
                 <span>Light companion care, meal preparation, medication reminders, light housekeeping, and local errand accompaniment.</span>
               </div>
               <div className="p-3 bg-gray-50 rounded-xl border border-gray-100">
-                <strong className="text-gray-900 block mb-1">$39 – $41 / Hour</strong>
+                <strong className="text-gray-900 block mb-1">Personal Care (ADLs)</strong>
                 <span>Direct personal care: assisted shower/bathing, dressing, incontinence management, and 1-person pivot transfers.</span>
               </div>
               <div className="p-3 bg-gray-50 rounded-xl border border-gray-100">
-                <strong className="text-gray-900 block mb-1">$42 – $44 / Hour</strong>
+                <strong className="text-gray-900 block mb-1">Specialized &amp; High-Acuity Care</strong>
                 <span>Advanced dementia care (wandering/sundowning), post-stroke rehab, 2-person or mechanical Hoyer transfers, and high-acuity hospice support.</span>
               </div>
             </div>
@@ -281,19 +281,19 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Interactive Care Quote Calculator Section */}
+      {/* Interactive Care Quote Request Section */}
       <section className="py-16 bg-white border-t border-gray-200">
         <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-10 space-y-3">
             <div className="inline-flex items-center gap-2 bg-[#76248a]/10 text-[#76248a] px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">
-              <i className="fa-solid fa-calculator text-[#40ddd3]"></i>
-              Instant Estimate Tool
+              <i className="fa-solid fa-clipboard-check text-[#40ddd3]"></i>
+              Custom Care Request
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 tracking-tight">
-              Estimate Your Weekly Care Budget in 60 Seconds
+              Request a Personalized Care Plan in 60 Seconds
             </h2>
             <p className="text-gray-600 text-sm sm:text-base">
-              Use our quick calculator to see estimated weekly and monthly investments based on your family's scheduling needs.
+              Share your family's preferred schedule and our Burlington care coordinators will prepare a tailored care quote for you.
             </p>
           </div>
 
@@ -385,7 +385,7 @@ export default function Pricing() {
             Get an Exact Care Quote Tailored to Mom's Needs
           </h2>
           <p className="text-white/90 text-sm sm:text-base leading-relaxed">
-            Our free in-home assessment includes a full functional review, home safety inspection, and a customized care plan with an exact flat rate. No pressure, no obligations.
+            Our free in-home assessment includes a full functional review, home safety inspection, and a customized care plan tailored to your family's schedule. No pressure, no obligations.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Button asChild size="lg" className="bg-[#40ddd3] hover:bg-[#34c4ba] text-gray-950 font-black px-6 rounded-xl shadow-md button-shimmer">

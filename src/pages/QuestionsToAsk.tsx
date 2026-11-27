@@ -47,7 +47,7 @@ export default function QuestionsToAsk() {
       number: "03",
       question: "How do you prove the caregiver was physically inside the home for the full scheduled time?",
       category: "Safety & Technology",
-      whyItMatters: "Families paying $36 to $44 an hour deserve 100% verification that care was actually delivered, not estimated on paper.",
+      whyItMatters: "Families entrusting their loved one's care to an agency deserve 100% verification that care was actually delivered, not estimated on paper.",
       trapToAvoid: "Paper timesheets signed days later or generic clock-ins that allow a caregiver to clock in from a car, Starbucks, or highway miles away from the client's home.",
       plainLanguageFact: "We use GPS-geofenced Electronic Visit Verification (EVV) that pinpoints arrival and departure within 50 feet of the home before allowing clock-in.",
       howAkirapaAnswers: "Through our proprietary AkiVault™ system, caregivers cannot clock in until their mobile GPS coordinates place them within 50 feet of the client's residence. Clock-in and clock-out timestamps are cryptographically recorded and visible to families in real time."
@@ -75,12 +75,12 @@ export default function QuestionsToAsk() {
     {
       id: "q6-pricing-cost",
       number: "06",
-      question: "What does home care cost in Burlington, and are there hidden assessment or startup fees?",
-      category: "Pricing & Terms",
-      whyItMatters: "Families in crisis need transparent, predictable numbers immediately, not high-pressure sales calls or surprise billing fees.",
-      trapToAvoid: "Agencies quoting a low 'teaser rate' over the phone, then adding $250 intake fees, fuel surcharges, weekend premiums, or administrative filing fees on your first bill.",
-      plainLanguageFact: "Home care in Burlington typically ranges from $36 to $44 per hour for licensed CNAs. Akirapa has $0 intake fees and provides free in-home assessments.",
-      howAkirapaAnswers: "Our rates in Burlington and Middlesex County range transparently between $36 and $44/hr depending on care intensity. We charge zero assessment fees, zero intake charges, and zero weekend surge penalties."
+      question: "How is home care structured in Burlington, and are there hidden assessment or startup fees?",
+      category: "Care Plans & Terms",
+      whyItMatters: "Families in crisis need clear, predictable care options immediately, not high-pressure sales calls or surprise billing fees.",
+      trapToAvoid: "Agencies making vague 'teaser' promises over the phone, then adding surprise intake fees, fuel surcharges, weekend premiums, or administrative filing fees on your first bill.",
+      plainLanguageFact: "Akirapa Home Care tailors every care plan in Burlington to your loved one's needs with zero intake fees and complimentary in-home assessments.",
+      howAkirapaAnswers: "We design transparent, individualized care plans in Burlington and Middlesex County tailored to your loved one's care intensity. We charge zero assessment fees, zero intake charges, and zero weekend surge penalties."
     },
     {
       id: "q7-minimum-hours",
